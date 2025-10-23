@@ -1,6 +1,6 @@
 # Alliance Documentation MCP Server
 
-A Model Context Protocol (MCP) server that provides programmatic access to the Digital Research Alliance of Canada's technical documentation. This server mirrors the documentation from the MediaWiki site and exposes it through MCP resources and tools.
+A Model Context Protocol (MCP) server that provides programmatic access to the Digital Research Alliance of Canada's technical documentation. This server mirrors the documentation from the MediaWiki site and exposes it through MCP resources and tools for use with MCP-compatible clients.
 
 ## Features
 
@@ -41,12 +41,10 @@ A Model Context Protocol (MCP) server that provides programmatic access to the D
    uv run python scripts/sync_docs.py
    ```
 
-5. **Configure Cursor with MCP:**
+5. **Start the MCP server:**
    ```bash
-   # Copy the provided MCP configuration
-   cp mcp.json ~/Library/Application\ Support/Cursor/User/globalStorage/mcp.json
+   uv run python -m alliance_docs_mcp.server
    ```
-   Then restart Cursor to load the MCP server.
 
 ## Usage
 
