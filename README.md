@@ -41,10 +41,12 @@ A Model Context Protocol (MCP) server that provides programmatic access to the D
    uv run python scripts/sync_docs.py
    ```
 
-5. **Start the MCP server:**
+5. **Configure Cursor with MCP:**
    ```bash
-   uv run python -m alliance_docs_mcp.server
+   # Copy the provided MCP configuration
+   cp mcp.json ~/Library/Application\ Support/Cursor/User/globalStorage/mcp.json
    ```
+   Then restart Cursor to load the MCP server.
 
 ## Usage
 

@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "alliance-docs": {
+      "command": "uv",
+      "args": ["run", "python", "-m", "alliance_docs_mcp.server"],
+      "cwd": "/Users/alex/repos/alliance-docs-mcp",
+      "env": {
+        "MEDIAWIKI_API_URL": "https://docs.alliancecan.ca/mediawiki/api.php",
+        "DOCS_DIR": "./docs"
+      }
+    }
+  }
+}

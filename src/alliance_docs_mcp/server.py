@@ -216,9 +216,8 @@ def main():
     import argparse
     
     parser = argparse.ArgumentParser(description="Alliance Docs MCP Server")
-    parser.add_argument("--host", default="localhost", help="Host to bind to")
-    parser.add_argument("--port", type=int, default=8000, help="Port to bind to")
     parser.add_argument("--docs-dir", default="./docs", help="Documentation directory")
+    parser.add_argument("--verbose", action="store_true", help="Enable verbose logging")
     
     args = parser.parse_args()
     
@@ -227,16 +226,17 @@ def main():
     storage = DocumentationStorage(args.docs_dir)
     
     # Configure logging
+    log_level = logging.DEBUG if args.verbose else logging.INFO
     logging.basicConfig(
-        level=logging.INFO,
+        level=log_level,
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     )
     
-    logger.info(f"Starting Alliance Docs MCP Server on {args.host}:{args.port}")
+    logger.info("Starting Alliance Docs MCP Server")
     logger.info(f"Documentation directory: {args.docs_dir}")
     
-    # Run the server
-    mcp.run(host=args.host, port=args.port)
+    # Run the server as stdio (for MCP protocol)
+    mcp.run()
 
 
 if __name__ == "__main__":
