@@ -38,7 +38,7 @@ def _discover_docs_directory() -> Path:
     )
 
     for candidate in candidates:
-        if candidate and candidate.exists():
+        if candidate and candidate.is_dir():
             return candidate.resolve()
 
     raise FileNotFoundError(
