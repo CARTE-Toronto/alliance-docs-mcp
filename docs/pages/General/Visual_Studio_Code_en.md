@@ -11,10 +11,10 @@ display_title: "Visual Studio Code"
 
 [Visual Studio Code](https://code.visualstudio.com/) is an integrated development environment (IDE) from [Microsoft](https://www.microsoft.com) which can be used for local development with numerous extensions and is highly customizable.
 
--   Use VS Code locally and avoid connecting it to the systems. Save your changes to your project files with Git, and pull the changes onto the systems when ready to test.
--   Use nano or vim to edit files directly on the systems.
--   For debugging and quick testing, you can load the `code-server` module.
--   When all the above are not possible, one can configure VS Code for remote connections.
+- Use VS Code locally and avoid connecting it to the systems. Save your changes to your project files with Git, and pull the changes onto the systems when ready to test.
+- Use nano or vim to edit files directly on the systems.
+- For debugging and quick testing, you can load the `code-server` module.
+- When all the above are not possible, one can configure VS Code for remote connections.
 
 \_\_FORCETOC\_\_
 
@@ -22,9 +22,9 @@ display_title: "Visual Studio Code"
 
 The advantages of using VS Code locally are
 
--   speed & stability: running VS Code locally means fewer network interruptions and faster performance, which is ideal for iterative development;
--   direct access: you can interact with files, extensions, and terminals directly on your machine with zero latency;
--   offline capability: you're not tied to an internet connection or remote server, so you can code anytime, anywhere.
+- speed & stability: running VS Code locally means fewer network interruptions and faster performance, which is ideal for iterative development;
+- direct access: you can interact with files, extensions, and terminals directly on your machine with zero latency;
+- offline capability: you're not tied to an internet connection or remote server, so you can code anytime, anywhere.
 
 It is recommended to develop locally with VS Code. You are then able to customize and extend VS Code with your preferred extensions and language.
 
@@ -38,7 +38,7 @@ Then clone your repository (if it does not exist).
 
 or change directory to your repository and pull the changes with
 
-You can then test your changes in a short (with minimal resources) [interactive job](https://docs.alliancecan.ca/Running_jobs#Interactive_jobs "wikilink").
+You can then test your changes in a short (with minimal resources) [interactive job](https://docs.alliancecan.ca/Running_jobs#Interactive_jobs "interactive job"){.wikilink}.
 
 # File edition on the systems {#file_edition_on_the_systems}
 
@@ -48,9 +48,9 @@ If you prefer a graphical interface, the [JupyterLab](https://docs.alliancecan.c
 
 # Debugging and testing {#debugging_and_testing}
 
-If you need to debug or test your code on the systems, you can start a [`code-server` instance from Jupyter Lab](https://docs.alliancecan.ca/JupyterLab#VS_Code "wikilink").
+If you need to debug or test your code on the systems, you can start a [`code-server` instance from Jupyter Lab](https://docs.alliancecan.ca/JupyterLab#VS_Code "code-server instance from Jupyter Lab"){.wikilink}.
 
-1.  Access one of the [options to launch JupyterLab](https://docs.alliancecan.ca/JupyterLab#Launching_JupyterLab "wikilink").
+1.  Access one of the [options to launch JupyterLab](https://docs.alliancecan.ca/JupyterLab#Launching_JupyterLab "options to launch JupyterLab"){.wikilink}.
 2.  Select minimal resources and start an interactive JupyterLab job.
 3.  On the Launcher tab, click on the VS Code launcher button.
 
@@ -66,7 +66,7 @@ If none of the above works for your case, one can configure VS Code to connect t
 
 ## SSH configuration {#ssh_configuration}
 
-If not done already, [generate your SSH key](https://docs.alliancecan.ca/SSH_Keys#Generating_an_SSH_Key "wikilink") and [add your `<i>`{=html}public`</i>`{=html} SSH key on the CCDB](https://docs.alliancecan.ca/SSH_Keys#Installing_your_key "wikilink").
+If not done already, [generate your SSH key](https://docs.alliancecan.ca/SSH_Keys#Generating_an_SSH_Key "generate your SSH key"){.wikilink} and [add your `<i>`{=html}public`</i>`{=html} SSH key on the CCDB](https://docs.alliancecan.ca/SSH_Keys#Installing_your_key "add your public SSH key on the CCDB"){.wikilink}.
 
 Then create (or add) an SSH configuration file to your local computer:
 
@@ -214,7 +214,7 @@ Update your ssh configuration to add the following lines: `<tabs>`{=html} `<tab 
 
 `</tab>`{=html} `</tabs>`{=html}
 
-1.  In an external terminal, connected to the system via an ssh connection, start a new `<b>`{=html}[interactive job](https://docs.alliancecan.ca/Running_jobs#Interactive_jobs "wikilink")`</b>`{=html} (with `salloc`) with at least 2000M of memory.
+1.  In an external terminal, connected to the system via an ssh connection, start a new `<b>`{=html}[interactive job](https://docs.alliancecan.ca/Running_jobs#Interactive_jobs "interactive job"){.wikilink}`</b>`{=html} (with `salloc`) with at least 2000M of memory.
     1.  Note the allocated compute node name.
     2.  If you need to work with `SLURM_*` environment variables in VS Code, save them all in a *source* file: grep SLURM\_ sed -e \'s/\^$.*$$.*$\$/export \\1\"\\2\"/g\' \> slurm_var.sh}}
 2.  In VS Code, start a new remote session with the name of the allocated compute node.
@@ -226,4 +226,4 @@ Update your ssh configuration to add the following lines: `<tabs>`{=html} `<tab 
 
 # Special notes {#special_notes}
 
--   VScode is banned on tamIA login nodes.
+- VScode is banned on tamIA login nodes.
