@@ -38,10 +38,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          CHANGES="$(git status --short docs)"
-          if [ -n "$CHANGES" ]; then
+          CHANGES=$(git status --short docs)
+          if [ -n "${CHANGES}" ]; then
             git add docs
             git commit -m "chore: weekly docs sync"
             git push
           else
             echo "No documentation changes detected."
+          fi
