@@ -2,9 +2,12 @@
 
 import logging
 import os
+import gzip
+from pathlib import Path
 from typing import List, Optional
 
 from fastmcp import FastMCP
+from fastmcp.resources import FileResource
 from starlette.requests import Request
 from starlette.responses import PlainTextResponse
 
@@ -20,18 +23,6 @@ docs_dir = os.getenv("DOCS_DIR", "./docs")
 storage = DocumentationStorage(docs_dir)
 
 
-async def _load_page_content(slug: str) -> str:
-    """Load markdown content for a given documentation slug."""
-    page_data = storage.get_page_by_slug(slug)
-    if not page_data:
-        raise FileNotFoundError(f"Page not found: {slug}")
-
-    page_content = storage.load_page(page_data["file_path"])
-    if not page_content:
-        raise FileNotFoundError(f"Error loading page content: {slug}")
-
-    return page_content["content"]
-
 
 def _register_document_resources() -> None:
     """Register each mirrored document as an MCP resource."""
@@ -46,16 +37,44 @@ def _register_document_resources() -> None:
             continue
 
         uri = f"alliance-docs://page/{slug}"
+        path_obj = Path(file_path)
+        if not path_obj.is_absolute():
+            path_obj = Path.cwd() / path_obj
+        absolute_path = path_obj.resolve()
 
-        async def resource_fn(slug=slug) -> str:
-            try:
-                return await _load_page_content(slug)
-            except FileNotFoundError as exc:  # pragma: no cover - defensive
-                logger.error(str(exc))
-                return str(exc)
+        if not absolute_path.exists():
+            logger.warning("Resource file missing on disk: %s", absolute_path)
+            continue
 
-        mcp.resource(
-            uri,
+        if absolute_path.suffix == '.gz':
+            async def gz_reader(file_path=absolute_path):
+                try:
+                    with gzip.open(file_path, 'rt', encoding='utf-8') as handle:
+                        return handle.read()
+                except FileNotFoundError as exc:  # pragma: no cover
+                    logger.error("Compressed resource missing: %s", file_path)
+                    return str(exc)
+
+            mcp.resource(
+                uri,
+                name=page.get("title") or slug,
+                description=page.get("url"),
+                mime_type="text/markdown",
+                tags={page.get("category", "General")},
+                meta={
+                    "title": page.get("title"),
+                    "url": page.get("url"),
+                    "category": page.get("category"),
+                    "last_modified": page.get("last_modified"),
+                    "page_id": page.get("page_id"),
+                },
+            )(gz_reader)
+            total += 1
+            continue
+
+        resource = FileResource(
+            uri=uri,
+            path=absolute_path,
             name=page.get("title") or slug,
             description=page.get("url"),
             mime_type="text/markdown",
@@ -67,7 +86,9 @@ def _register_document_resources() -> None:
                 "last_modified": page.get("last_modified"),
                 "page_id": page.get("page_id"),
             },
-        )(resource_fn)
+        )
+
+        mcp.add_resource(resource)
         total += 1
 
     logger.info("Registered %s documentation resources", total)
