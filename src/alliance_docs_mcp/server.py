@@ -5,6 +5,7 @@ import os
 from typing import List, Optional
 
 from fastmcp import FastMCP
+from fastmcp.resources import FunctionResource
 from starlette.requests import Request
 from starlette.responses import PlainTextResponse
 
@@ -20,31 +21,63 @@ docs_dir = os.getenv("DOCS_DIR", "./docs")
 storage = DocumentationStorage(docs_dir)
 
 
-@mcp.resource("alliance-docs://page/{slug}")
-async def get_page(slug: str) -> str:
-    """Get a documentation page by slug.
-    
-    Args:
-        slug: Page slug (filename without extension)
-        
-    Returns:
-        Markdown content of the page
-    """
-    try:
-        page_data = storage.get_page_by_slug(slug)
-        if not page_data:
-            return f"Page not found: {slug}"
-        
-        # Load the actual content
-        page_content = storage.load_page(page_data["file_path"])
-        if not page_content:
-            return f"Error loading page content: {slug}"
-        
-        return page_content["content"]
-        
-    except Exception as e:
-        logger.error(f"Error getting page {slug}: {e}")
-        return f"Error loading page: {e}"
+async def _load_page_content(slug: str) -> str:
+    """Load markdown content for a given documentation slug."""
+    page_data = storage.get_page_by_slug(slug)
+    if not page_data:
+        raise FileNotFoundError(f"Page not found: {slug}")
+
+    page_content = storage.load_page(page_data["file_path"])
+    if not page_content:
+        raise FileNotFoundError(f"Error loading page content: {slug}")
+
+    return page_content["content"]
+
+
+def _register_document_resources() -> None:
+    """Register each mirrored document as an MCP resource."""
+    pages = storage.get_all_pages()
+    total = 0
+
+    for page in pages:
+        slug = page.get("slug")
+        file_path = page.get("file_path")
+
+        if not slug or not file_path:
+            continue
+
+        uri = f"alliance-docs://page/{slug}"
+
+        async def resource_fn(slug=slug) -> str:
+            try:
+                return await _load_page_content(slug)
+            except FileNotFoundError as exc:  # pragma: no cover - defensive
+                logger.error(str(exc))
+                return str(exc)
+
+        resource = FunctionResource.from_function(
+            resource_fn,
+            uri=uri,
+            name=page.get("title") or slug,
+            description=page.get("url"),
+            mime_type="text/markdown",
+            tags={page.get("category", "General")},
+            meta={
+                "title": page.get("title"),
+                "url": page.get("url"),
+                "category": page.get("category"),
+                "last_modified": page.get("last_modified"),
+                "page_id": page.get("page_id"),
+            },
+        )
+
+        mcp.add_resource(resource)
+        total += 1
+
+    logger.info("Registered %s documentation resources", total)
+
+
+_register_document_resources()
 
 
 @mcp.tool()

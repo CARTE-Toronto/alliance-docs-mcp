@@ -1,6 +1,6 @@
 {
-  "last_updated": "2025-10-24T16:33:45.664538+00:00",
-  "total_pages": 408,
+  "last_updated": "2025-10-24T17:12:35.136850+00:00",
+  "total_pages": 415,
   "pages": [
     {
       "page_id": 10049,
@@ -3673,6 +3673,69 @@
       "last_modified": "2019-12-09T14:34:28Z",
       "file_path": "docs/pages/General/⧼sidebar-available-software-link⧽.md",
       "slug": "⧼sidebar-available-software-link⧽"
+    },
+    {
+      "page_id": 29478,
+      "title": "RAC application guide",
+      "url": "https://docs.alliancecan.ca/wiki/RAC_application_guide",
+      "category": "User Guide",
+      "last_modified": "2025-10-23T18:43:43Z",
+      "file_path": "docs/pages/User Guide/RAC_application_guide.md",
+      "slug": "RAC_application_guide"
+    },
+    {
+      "page_id": 27762,
+      "title": "Killarney",
+      "url": "https://docs.alliancecan.ca/wiki/Killarney",
+      "category": "General",
+      "last_modified": "2025-10-23T18:11:28Z",
+      "file_path": "docs/pages/General/Killarney.md",
+      "slug": "Killarney"
+    },
+    {
+      "page_id": 5912,
+      "title": "ARM software",
+      "url": "https://docs.alliancecan.ca/wiki/ARM_software",
+      "category": "General",
+      "last_modified": "2025-10-23T16:27:42Z",
+      "file_path": "docs/pages/General/ARM_software.md",
+      "slug": "ARM_software"
+    },
+    {
+      "page_id": 29085,
+      "title": "Trillium Quickstart",
+      "url": "https://docs.alliancecan.ca/wiki/Trillium_Quickstart",
+      "category": "General",
+      "last_modified": "2025-10-22T16:56:26Z",
+      "file_path": "docs/pages/General/Trillium_Quickstart.md",
+      "slug": "Trillium_Quickstart"
+    },
+    {
+      "page_id": 29084,
+      "title": "Transition from Niagara to Trillium",
+      "url": "https://docs.alliancecan.ca/wiki/Transition_from_Niagara_to_Trillium",
+      "category": "General",
+      "last_modified": "2025-10-22T16:54:21Z",
+      "file_path": "docs/pages/General/Transition_from_Niagara_to_Trillium.md",
+      "slug": "Transition_from_Niagara_to_Trillium"
+    },
+    {
+      "page_id": 4355,
+      "title": "Star-CCM+",
+      "url": "https://docs.alliancecan.ca/wiki/Star-CCM%2B",
+      "category": "General",
+      "last_modified": "2025-10-22T00:32:56Z",
+      "file_path": "docs/pages/General/Star-CCM+.md",
+      "slug": "Star-CCM+"
+    },
+    {
+      "page_id": 4568,
+      "title": "Ansys",
+      "url": "https://docs.alliancecan.ca/wiki/Ansys",
+      "category": "General",
+      "last_modified": "2025-10-21T20:57:31Z",
+      "file_path": "docs/pages/General/Ansys.md",
+      "slug": "Ansys"
     }
   ]
 }
