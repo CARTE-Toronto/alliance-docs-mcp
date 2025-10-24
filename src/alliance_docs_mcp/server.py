@@ -15,7 +15,7 @@ from .storage import DocumentationStorage
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_DOCS_PATH = Path(__file__).resolve().parent.parent / "docs"
+DEFAULT_DOCS_PATH = Path(__file__).resolve().parents[2] / "docs"
 
 # Initialize FastMCP server
 mcp = FastMCP("Alliance Docs")
@@ -35,11 +35,9 @@ def _resolve_page_path(file_path: str) -> Path:
 
     # Allow paths that already include the docs/ prefix
     if path_obj.parts and path_obj.parts[0] == "docs":
-        relative = Path(*path_obj.parts[1:])
-    else:
-        relative = path_obj
+        path_obj = Path(*path_obj.parts[1:])
 
-    candidate = docs_path / relative
+    candidate = docs_path / path_obj
     return candidate.resolve()
 
 
