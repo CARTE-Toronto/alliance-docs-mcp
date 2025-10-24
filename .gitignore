@@ -41,9 +41,6 @@ venv.bak/
 Thumbs.db
 
 # Project specific
-docs/pages/
-docs/index.json
-docs/
 sync.log
 logs/
 *.log

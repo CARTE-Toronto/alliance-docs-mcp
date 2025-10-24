@@ -124,12 +124,16 @@ Run an incremental sync (only changed pages):
 uv run python scripts/sync_docs.py --incremental
 ```
 
+For FastMCP Cloud deployments, run one of the sync commands above locally and commit the updated `docs/` directory before pushing so the hosted server always mirrors the latest content.
+
 The sync script provides:
 - **Colored output** with rich formatting
 - **Progress bars** for download and processing phases
 - **Real-time statistics** including pages/second
 - **Summary table** with detailed metrics
 - **Error tracking** with warnings for failed pages
+
+> **Note:** Markdown pages larger than 10 MB are stored as `.md.gz` files. The server automatically decompresses them at runtime, so no additional configuration is required.
 
 #### Automated Sync
 
@@ -139,11 +143,13 @@ Set up a cron job for weekly updates:
 0 2 * * 0 cd /path/to/alliance-docs-mcp && uv run python scripts/sync_docs.py --incremental
 ```
 
+This repository also ships with `.github/workflows/weekly-sync.yml`, which performs the same incremental sync on Sundays using GitHub Actions and pushes any changes back to `main`.
+
 ## Configuration
 
 ### Environment Variables
 
-Set the following environment variables (via `.env`, your shell, or Fly secrets) to customize behavior:
+Set the following environment variables (via `.env`, shell exports, or your hosting platform's secret manager) to customize behavior:
 
 - `MEDIAWIKI_API_URL` (default `https://docs.alliancecan.ca/mediawiki/api.php`)
 - `DOCS_DIR` (default `./docs`, or `/data/docs` in the container)
@@ -207,34 +213,18 @@ uv run black src/
 uv run ruff check src/
 ```
 
-### Deployment on Fly.io
+### Deployment Options
 
-1. **Create the Fly app configuration**
-   ```bash
-   cp fly.example.toml fly.toml
-   fly launch --no-deploy
-   ```
-   Edit `fly.toml` to set your Fly app name (`app`), preferred `primary_region`, and VM size.
+**FastMCP Cloud (managed)**
+- Sign in at [fastmcp.cloud](https://fastmcp.cloud) with your GitHub account and create a project that points at this repository.
+- Use `server_entrypoint.py:mcp` as the entrypoint so the platform runs the exported FastMCP server instance.
+- Configure environment variables (e.g., `MEDIAWIKI_API_URL`, `DOCS_DIR`, `USER_AGENT`) via the project settings; the service installs dependencies directly from `pyproject.toml`.
+- Push to `main` to trigger deployments; each pull request automatically gets its own preview environment for testing changes.
 
-2. **Provision the documentation volume**
-   ```bash
-   fly volumes create docs_data --size 1 --region <region-code>
-   ```
-
-3. **Set runtime secrets or overrides** (optional):
-   ```bash
-   fly secrets set MEDIAWIKI_API_URL=https://docs.alliancecan.ca/mediawiki/api.php \
-                   USER_AGENT=AllianceDocsMCP/1.0 \
-                   RUN_SYNC_ON_START=1 \
-                   SYNC_MODE=incremental
-   ```
-
-4. **Deploy the containerised MCP server**
-   ```bash
-   fly deploy
-   ```
-
-The container performs an incremental sync on start and serves the MCP WebSocket endpoint on port `8080`. Use the HTTPS WebSocket URL that Fly assigns for your MCP client. Trigger an on-demand resync by restarting the machine (for example, `fly machine restart <id>`).
+**Self-managed container/VM**
+- Build the Docker image in this repo and run it anywhere that can expose HTTP on port `8080`.
+- Provide the same environment variables via your scheduler or container runtime.
+- Point load balancer health checks at `/health` and connect MCP clients to the `/mcp/` path served by `fastmcp run`.
 
 ### Adding New Features
 

@@ -128,7 +128,7 @@ async def search_docs(query: str, category: str = None) -> list:
 
 **Environment variables** (`.env`):
 ```
-MEDIAWIKI_API_URL=https://docs.alliancecan.ca/wiki/api.php
+MEDIAWIKI_API_URL=https://docs.alliancecan.ca/mediawiki/api.php
 DOCS_DIR=./docs
 SYNC_SCHEDULE=weekly
 USER_AGENT=AllianceDocsMCP/1.0

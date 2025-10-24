@@ -1,8 +1,8 @@
 """File storage and retrieval for mirrored documentation."""
 
+import gzip
 import json
 import logging
-import os
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -15,15 +15,17 @@ logger = logging.getLogger(__name__)
 class DocumentationStorage:
     """Handles storage and retrieval of mirrored documentation."""
     
-    def __init__(self, docs_dir: str = "./docs"):
+    def __init__(self, docs_dir: str = "./docs", compress_threshold_mb: int = 10):
         """Initialize the storage handler.
         
         Args:
             docs_dir: Base directory for storing documentation
+            compress_threshold_mb: Minimum size (in MB) before markdown is gzip-compressed
         """
         self.docs_dir = Path(docs_dir)
         self.pages_dir = self.docs_dir / "pages"
         self.index_file = self.docs_dir / "index.json"
+        self.compress_threshold_bytes = max(compress_threshold_mb, 0) * 1024 * 1024
         
         # Ensure directories exist
         self.docs_dir.mkdir(parents=True, exist_ok=True)
@@ -46,14 +48,41 @@ class DocumentationStorage:
         
         # Generate filename
         filename = self._title_to_filename(page_data.get("title", ""))
-        file_path = category_dir / f"{filename}.md"
+        base_path = category_dir / f"{filename}.md"
+        file_path = base_path
+        encoded_content = markdown_content.encode("utf-8")
+        should_compress = (
+            self.compress_threshold_bytes > 0
+            and len(encoded_content) >= self.compress_threshold_bytes
+        )
         
-        # Write the markdown file
+        if should_compress:
+            file_path = base_path.with_suffix(base_path.suffix + ".gz")
+        
+        # Remove stale variants (plain/compressed) before writing
+        for stale_path in (base_path, base_path.with_suffix(base_path.suffix + ".gz")):
+            if stale_path != file_path and stale_path.exists():
+                try:
+                    stale_path.unlink()
+                except Exception as exc:
+                    logger.warning(f"Unable to remove stale file {stale_path}: {exc}")
+        
+        # Write the markdown (possibly compressed) file
         try:
-            with open(file_path, 'w', encoding='utf-8') as f:
-                f.write(markdown_content)
+            if should_compress:
+                with gzip.open(file_path, "wb") as f:
+                    f.write(encoded_content)
+                logger.info(
+                    "Saved compressed page %s (%.2f MB → %.2f MB)",
+                    file_path,
+                    len(encoded_content) / (1024 * 1024),
+                    file_path.stat().st_size / (1024 * 1024),
+                )
+            else:
+                with open(file_path, 'w', encoding='utf-8') as f:
+                    f.write(markdown_content)
+                logger.info(f"Saved page: {file_path}")
             
-            logger.info(f"Saved page: {file_path}")
             return str(file_path)
             
         except Exception as e:
@@ -70,8 +99,13 @@ class DocumentationStorage:
             Dictionary with content and metadata, or None if not found
         """
         try:
-            with open(file_path, 'r', encoding='utf-8') as f:
-                content = f.read()
+            path = Path(file_path)
+            if path.suffix == ".gz":
+                with gzip.open(path, 'rt', encoding='utf-8') as f:
+                    content = f.read()
+            else:
+                with open(path, 'r', encoding='utf-8') as f:
+                    content = f.read()
             
             # Parse frontmatter
             frontmatter, markdown_content = self._parse_frontmatter(content)
@@ -325,8 +359,9 @@ class DocumentationStorage:
             keep_recent: Number of recent files to keep
         """
         try:
-            # Get all markdown files
+            # Get markdown files (plain and compressed)
             markdown_files = list(self.pages_dir.rglob("*.md"))
+            markdown_files.extend(self.pages_dir.rglob("*.md.gz"))
             
             # Get current pages from index
             current_pages = self.get_all_pages()

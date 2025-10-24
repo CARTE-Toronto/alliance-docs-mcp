@@ -215,7 +215,7 @@ async def sync_documentation():
 async def sync_incremental():
     """Incremental synchronization - only fetch changed pages."""
     # Load configuration
-    api_url = os.getenv("MEDIAWIKI_API_URL", "https://docs.alliancecan.ca/wiki/api.php")
+    api_url = os.getenv("MEDIAWIKI_API_URL", "https://docs.alliancecan.ca/mediawiki/api.php")
     docs_dir = os.getenv("DOCS_DIR", "./docs")
     user_agent = os.getenv("USER_AGENT", "AllianceDocsMCP/1.0")
     
