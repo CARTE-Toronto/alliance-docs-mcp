@@ -4,10 +4,10 @@ A Model Context Protocol (MCP) server that provides programmatic access to the D
 
 ## Features
 
-- **Documentation Mirroring**: Automatically syncs documentation from the Alliance MediaWiki site
+- **Documentation Mirroring**: Syncs documentation from the Alliance MediaWiki site
 - **MCP Resources**: Exposes individual documentation pages as MCP resources
 - **Search & Query Tools**: Provides search, categorization, and querying capabilities
-- **Weekly Updates**: Automated synchronization to keep documentation current
+- **Startup Refresh**: Container entrypoint triggers an incremental sync on boot; schedule additional runs as needed
 - **Markdown Storage**: Stores documentation as markdown files with metadata
 
 ## Quick Start
@@ -31,15 +31,18 @@ A Model Context Protocol (MCP) server that provides programmatic access to the D
    ```
 
 3. **Configure environment (optional):**
-   ```bash
-   cp .env.example .env
-   # Edit .env with your preferred settings
+   Create a `.env` file (or export the variables directly) if you want to override defaults. For example:
+   ```env
+   MEDIAWIKI_API_URL=https://docs.alliancecan.ca/mediawiki/api.php
+   DOCS_DIR=./docs
+   USER_AGENT=AllianceDocsMCP/1.0
    ```
 
 4. **Initial documentation sync:**
    ```bash
    uv run python scripts/sync_docs.py
    ```
+   _Note: Docker images built from this repository automatically run this full sync during the image build so containers start with a warm cache._
 
 5. **Start the MCP server:**
    ```bash
@@ -140,14 +143,11 @@ Set up a cron job for weekly updates:
 
 ### Environment Variables
 
-Create a `.env` file with the following variables:
+Set the following environment variables (via `.env`, your shell, or Fly secrets) to customize behavior:
 
-```env
-MEDIAWIKI_API_URL=https://docs.alliancecan.ca/wiki/api.php
-DOCS_DIR=./docs
-SYNC_SCHEDULE=weekly
-USER_AGENT=AllianceDocsMCP/1.0
-```
+- `MEDIAWIKI_API_URL` (default `https://docs.alliancecan.ca/mediawiki/api.php`)
+- `DOCS_DIR` (default `./docs`, or `/data/docs` in the container)
+- `USER_AGENT` (default `AllianceDocsMCP/1.0`)
 
 ### Server Configuration
 
@@ -161,6 +161,15 @@ Options:
 - `--host`: Host to bind to (default: localhost)
 - `--port`: Port to bind to (default: 8000)
 - `--docs-dir`: Documentation directory (default: ./docs)
+
+### Docker Deployment
+
+The provided Docker image ships with a pre-synced documentation cache baked into `/app/docs_seed`. When the container starts, the entrypoint primes the configured `DOCS_DIR` from this seed (if empty) and then launches the MediaWiki sync in the background so the MCP server begins accepting connections immediately. You can configure startup behavior with:
+
+- `RUN_SYNC_ON_START=0` to skip the background sync (useful when running in read-only environments)
+- `SYNC_MODE=full` to force a full resync instead of the default incremental sync
+- The container starts the server via `fastmcp run server_entrypoint.py:mcp --transport http --path /mcp/ --port 8080`, so any additional FastMCP CLI flags can be injected by overriding `CMD` in your own image if needed.
+- A lightweight `/health` endpoint is exposed for platform probes; point load balancer checks there instead of MCP protocol paths.
 
 ## Project Structure
 
@@ -197,6 +206,35 @@ uv run pytest
 uv run black src/
 uv run ruff check src/
 ```
+
+### Deployment on Fly.io
+
+1. **Create the Fly app configuration**
+   ```bash
+   cp fly.example.toml fly.toml
+   fly launch --no-deploy
+   ```
+   Edit `fly.toml` to set your Fly app name (`app`), preferred `primary_region`, and VM size.
+
+2. **Provision the documentation volume**
+   ```bash
+   fly volumes create docs_data --size 1 --region <region-code>
+   ```
+
+3. **Set runtime secrets or overrides** (optional):
+   ```bash
+   fly secrets set MEDIAWIKI_API_URL=https://docs.alliancecan.ca/mediawiki/api.php \
+                   USER_AGENT=AllianceDocsMCP/1.0 \
+                   RUN_SYNC_ON_START=1 \
+                   SYNC_MODE=incremental
+   ```
+
+4. **Deploy the containerised MCP server**
+   ```bash
+   fly deploy
+   ```
+
+The container performs an incremental sync on start and serves the MCP WebSocket endpoint on port `8080`. Use the HTTPS WebSocket URL that Fly assigns for your MCP client. Trigger an on-demand resync by restarting the machine (for example, `fly machine restart <id>`).
 
 ### Adding New Features
 

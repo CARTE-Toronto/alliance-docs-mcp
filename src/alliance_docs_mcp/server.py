@@ -5,6 +5,8 @@ import os
 from typing import List, Optional
 
 from fastmcp import FastMCP
+from starlette.requests import Request
+from starlette.responses import PlainTextResponse
 
 from .storage import DocumentationStorage
 
@@ -209,6 +211,45 @@ async def list_all_pages() -> List[dict]:
     except Exception as e:
         logger.error(f"Error listing all pages: {e}")
         return []
+
+
+@mcp.tool()
+async def get_page_content(slug: str) -> str:
+    """Get the full content of a documentation page.
+    
+    Args:
+        slug: Page slug (filename without extension)
+        
+    Returns:
+        Full markdown content of the page
+    """
+    try:
+        page_data = storage.get_page_by_slug(slug)
+        if not page_data:
+            return f"Page not found: {slug}"
+        
+        # Load the actual content
+        page_content = storage.load_page(page_data["file_path"])
+        if not page_content:
+            return f"Error loading page content: {slug}"
+        
+        return page_content["content"]
+        
+    except Exception as e:
+        logger.error(f"Error getting page content for {slug}: {e}")
+        return f"Error loading page: {e}"
+
+
+@mcp.custom_route("/health", methods=["GET"])
+async def health_check(request: Request) -> PlainTextResponse:
+    """Simple health endpoint for platform probes."""
+    return PlainTextResponse("ok")
+
+
+@mcp.custom_route("/", methods=["GET"])
+async def root(request: Request) -> PlainTextResponse:
+    """Return a basic status message for root requests."""
+    return PlainTextResponse("Alliance Docs MCP server is running. Try /health for probe status.")
 
 
 def main():

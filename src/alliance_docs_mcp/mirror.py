@@ -14,6 +14,7 @@ logger = logging.getLogger(__name__)
 
 TARGET_LANGUAGE = "en"
 TRANSLATION_SUFFIXES = {TARGET_LANGUAGE, "fr"}
+SKIP_TITLE_SUBSTRINGS = ("wheels",)
 
 
 def _get_translation_suffix(title: str) -> Optional[str]:
@@ -26,11 +27,20 @@ def _get_translation_suffix(title: str) -> Optional[str]:
     return None
 
 
+def _should_skip_title(title: str) -> bool:
+    """Return True if the page title should be skipped during syncing."""
+    if not title:
+        return False
+    normalized = title.strip().lower()
+    return any(substring in normalized for substring in SKIP_TITLE_SUBSTRINGS)
+
+
 def filter_to_target_language(pages: List[Dict], target_language: str = TARGET_LANGUAGE) -> List[Dict]:
     """Filter pages to include only the target language and base pages without translations."""
     english_titles = {
         page.get("title", "").strip().lower()
         for page in pages
+        if not _should_skip_title(page.get("title", ""))
         if _get_translation_suffix(page.get("title", "")) == target_language
     }
     
@@ -38,6 +48,10 @@ def filter_to_target_language(pages: List[Dict], target_language: str = TARGET_L
     for page in pages:
         title = page.get("title", "")
         normalized_title = title.strip()
+
+        if _should_skip_title(normalized_title):
+            continue
+
         suffix = _get_translation_suffix(normalized_title)
         
         if suffix and suffix != target_language:
