@@ -29,7 +29,7 @@ Researchers with a POD license purchased from [Siemens](https://www.plm.automati
 
 # Cluster batch job submission {#cluster_batch_job_submission}
 
-When submitting jobs on a cluster for the first time, you must set up the environment to use your license. If you are using Siemans remote `<i>`{=html}pay-on-usage`</i>`{=html} license server then create a `~/.licenses/starccm.lic` file as shown in the `<b>`{=html}Configuring your account- POD license file`</b>`{=html} section above and license checkouts should immediately work. If however you are using an institutional license server, then after creating your `~/.licenses/starccm.lic` file you must also submit a problem ticket to [technical support](https://docs.alliancecan.ca/technical_support "technical support"){.wikilink} so we can help co-ordinate the necessary one time network firewall changes required to access it (assuming the server has never been setup to be accessed from the Alliance cluster you will be using). If you still have problems getting the licensing to work then try removing or renaming file `~/.flexlmrc` since previous search paths and/or license server settings maybe stored in it. Note that temporary output files from starccm jobs runs may accumulate in hidden directories named `~/.star-version_number` consuming valuable quota space. These can be removed by periodically running `rm -ri ~/.starccm*` and replying yes when prompted.
+When submitting jobs on a cluster for the first time, you must set up the environment to use your license. If you are using Siemans remote `<i>`{=html}pay-on-usage`</i>`{=html} license server then create a `~/.licenses/starccm.lic` file as shown in the `<b>`{=html}Configuring your account- POD license file`</b>`{=html} section above and license checkouts should immediately work. If however you are using an institutional license server, then after creating your `~/.licenses/starccm.lic` file you must also submit a problem ticket to [technical support](https://docs.alliancecan.ca/technical_support "wikilink") so we can help co-ordinate the necessary one time network firewall changes required to access it (assuming the server has never been setup to be accessed from the Alliance cluster you will be using). If you still have problems getting the licensing to work then try removing or renaming file `~/.flexlmrc` since previous search paths and/or license server settings maybe stored in it. Note that temporary output files from starccm jobs runs may accumulate in hidden directories named `~/.star-version_number` consuming valuable quota space. These can be removed by periodically running `rm -ri ~/.starccm*` and replying yes when prompted.
 
 ## Slurm scripts {#slurm_scripts}
 
@@ -97,7 +97,7 @@ To run starccm+ in graphical mode it is recommended to use an [OnDemand](https:/
 
 ## VncViewer
 
-1\. Connect with a VncViewer client to a login or compute node by following [TigerVNC](https://docs.alliancecan.ca/VNC "TigerVNC"){.wikilink}\
+1\. Connect with a VncViewer client to a login or compute node by following [TigerVNC](https://docs.alliancecan.ca/VNC "wikilink")\
 2. Open a new terminal window in your desktop and run one of:
 
 :   `<b>`{=html}STAR-CCM+ 18.04.008 (or newer versions)`</b>`{=html}

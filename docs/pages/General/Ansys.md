@@ -13,7 +13,7 @@ display_title: "Ansys"
 
 # Licensing
 
-We are a hosting provider for Ansys. This means that we have the software installed on our clusters, but we do not provide a generic license accessible to everyone. However, many institutions, faculties, and departments already have licenses that can be used on our clusters. Once the legal aspects are worked out for licensing, there will be remaining technical aspects. The license server on your end will need to be reachable by our compute nodes. This will require our technical team to get in touch with the technical people managing your license software. In some cases, this has already been done. You should then be able to load the Ansys module, and it should find its license automatically. If this is not the case, please contact our [technical support](https://docs.alliancecan.ca/technical_support "technical support"){.wikilink} so that they can arrange this for you.
+We are a hosting provider for Ansys. This means that we have the software installed on our clusters, but we do not provide a generic license accessible to everyone. However, many institutions, faculties, and departments already have licenses that can be used on our clusters. Once the legal aspects are worked out for licensing, there will be remaining technical aspects. The license server on your end will need to be reachable by our compute nodes. This will require our technical team to get in touch with the technical people managing your license software. In some cases, this has already been done. You should then be able to load the Ansys module, and it should find its license automatically. If this is not the case, please contact our [technical support](https://docs.alliancecan.ca/technical_support "wikilink") so that they can arrange this for you.
 
 ## Configuring your license file {#configuring_your_license_file}
 
@@ -25,7 +25,7 @@ Our module for Ansys is designed to look for license information in a few places
 
   : style=\"text-align:left; background-color:#F2F2F2; font-size:110%\" \| FILE: ansys.lic
 
-The following table provides established values for the CMC and SHARCNET license servers. To use a different server, locate the corresponding values as explained in [Local license servers](https://docs.alliancecan.ca/#Local_license_servers "Local license servers"){.wikilink}.
+The following table provides established values for the CMC and SHARCNET license servers. To use a different server, locate the corresponding values as explained in [Local license servers](https://docs.alliancecan.ca/#Local_license_servers "wikilink").
 
   License    System/Cluster   LICSERVER                     FLEXPORT   NOTES
   ---------- ---------------- ----------------------------- ---------- ------------------------------------------------------------------------
@@ -62,7 +62,7 @@ To use a local Ansys license server that has never been setup for use with an Al
 ` 3) the statically configured vendor port (VENDPORT) of the license server`\
 ` 4) confirmation ``<servername>`{=html}` will resolve to the same IP address as LICSERVER on the cluster`
 
-where the `<servername>`{=html} can be found in the first line of the license file with format \"SERVER `<servername>`{=html} `<host id>`{=html} `<lmgrd port>`{=html}\". Send items 1-\>3 by email to [technical support](https://docs.alliancecan.ca/technical_support "technical support"){.wikilink} and mention which Alliance cluster you want to run Ansys jobs on. An Alliance system administrator will then open the outbound cluster firewall so license checkout requests can reach your license server from the cluster compute nodes. A range of IP addresses will then be sent back to you. Give these to your local network administrator. Request the firewall into your local license server be opened so that Ansys license connection (checkout requests) can reach your servers FLEXPORT and VENDPORT ports across the IP range.
+where the `<servername>`{=html} can be found in the first line of the license file with format \"SERVER `<servername>`{=html} `<host id>`{=html} `<lmgrd port>`{=html}\". Send items 1-\>3 by email to [technical support](https://docs.alliancecan.ca/technical_support "wikilink") and mention which Alliance cluster you want to run Ansys jobs on. An Alliance system administrator will then open the outbound cluster firewall so license checkout requests can reach your license server from the cluster compute nodes. A range of IP addresses will then be sent back to you. Give these to your local network administrator. Request the firewall into your local license server be opened so that Ansys license connection (checkout requests) can reach your servers FLEXPORT and VENDPORT ports across the IP range.
 
 ## Checking license {#checking_license}
 
@@ -94,7 +94,7 @@ Ansys provides detailed platform support information describing software/hardwar
 
 ## What\'s new {#whats_new}
 
-Ansys posts [Product Release and Updates](https://www.ansys.com/products/release-highlights) for the latest releases. Similar information for previous releases can generally be pulled up for various application topics by visiting the Ansys [blog](https://www.ansys.com/blog) page and using the FILTERS search bar. For example, searching on `What’s New Fluent 2024 gpu` pulls up a document with title [`What’s New for Ansys Fluent in 2024 R1?`](https://www.ansys.com/blog/fluent-2024-r1) containing a wealth of the latest gpu support information. Specifying a version number in the [Press Release](https://www.ansys.com/news-center/press-releases) search bar is also a good way to find new release information. Recently a module for the latest ANSYS release was installed `ansys/2025R1.02` however to use it requires a suitably updated license server such as CMCs. The upgrade of the SHARCNET license server is underway however until it is complete (and this message updated accordingly) it will only support jobs run with `ansys/2024R2.04` or older. To request a new version be installed or a problem with an exiting module please [submit a ticket](https://docs.alliancecan.ca/Technical_support "submit a ticket"){.wikilink}.
+Ansys posts [Product Release and Updates](https://www.ansys.com/products/release-highlights) for the latest releases. Similar information for previous releases can generally be pulled up for various application topics by visiting the Ansys [blog](https://www.ansys.com/blog) page and using the FILTERS search bar. For example, searching on `What’s New Fluent 2024 gpu` pulls up a document with title [`What’s New for Ansys Fluent in 2024 R1?`](https://www.ansys.com/blog/fluent-2024-r1) containing a wealth of the latest gpu support information. Specifying a version number in the [Press Release](https://www.ansys.com/news-center/press-releases) search bar is also a good way to find new release information. Recently a module for the latest ANSYS release was installed `ansys/2025R1.02` however to use it requires a suitably updated license server such as CMCs. The upgrade of the SHARCNET license server is underway however until it is complete (and this message updated accordingly) it will only support jobs run with `ansys/2024R2.04` or older. To request a new version be installed or a problem with an exiting module please [submit a ticket](https://docs.alliancecan.ca/Technical_support "wikilink").
 
 ## Service packs {#service_packs}
 
@@ -104,7 +104,7 @@ Most users will likely want to load the latest module version equipped with the 
 
 # Cluster batch job submission {#cluster_batch_job_submission}
 
-The Ansys software suite comes with multiple implementations of MPI to support parallel computation. Unfortunately, none of them support our [Slurm scheduler](https://docs.alliancecan.ca/Running_jobs "Slurm scheduler"){.wikilink}. For this reason, we need special instructions for each Ansys package on how to start a parallel job. In the sections below, we give examples of submission scripts for some of the packages. While the slurm scripts should work with on all clusters, Niagara users may need to make some additional changes covered [here](https://docs.scinet.utoronto.ca/index.php).
+The Ansys software suite comes with multiple implementations of MPI to support parallel computation. Unfortunately, none of them support our [Slurm scheduler](https://docs.alliancecan.ca/Running_jobs "wikilink"). For this reason, we need special instructions for each Ansys package on how to start a parallel job. In the sections below, we give examples of submission scripts for some of the packages. While the slurm scripts should work with on all clusters, Niagara users may need to make some additional changes covered [here](https://docs.scinet.utoronto.ca/index.php).
 
 ## Ansys Fluent {#ansys_fluent}
 
@@ -113,10 +113,10 @@ Typically, you would use the following procedure to run Fluent on one of our clu
 1.  Prepare your Fluent job using Fluent from the Ansys Workbench on your desktop machine up to the point where you would run the calculation.
 2.  Export the \"case\" file with `<i>`{=html}File \> Export \> Case...`</i>`{=html} or find the folder where Fluent saves your project\'s files. The case file will often have a name like `FFF-1.cas.gz`.
 3.  If you already have data from a previous calculation, which you want to continue, export a \"data\" file as well (`<i>`{=html}File \> Export \> Data...`</i>`{=html}) or find it in the same project folder (`FFF-1.dat.gz`).
-4.  [Transfer](https://docs.alliancecan.ca/Transferring_data "Transfer"){.wikilink} the case file (and if needed the data file) to a directory on the [/project](https://docs.alliancecan.ca/Project_layout "/project"){.wikilink} or [/scratch](https://docs.alliancecan.ca/Storage_and_file_management#Storage_types "/scratch"){.wikilink} filesystem on the cluster. When exporting, you can save the file(s) under a more instructive name than `FFF-1.*` or rename them when they are uploaded.
+4.  [Transfer](https://docs.alliancecan.ca/Transferring_data "wikilink") the case file (and if needed the data file) to a directory on the [/project](https://docs.alliancecan.ca/Project_layout "wikilink") or [/scratch](https://docs.alliancecan.ca/Storage_and_file_management#Storage_types "wikilink") filesystem on the cluster. When exporting, you can save the file(s) under a more instructive name than `FFF-1.*` or rename them when they are uploaded.
 5.  Now you need to create a \"journal\" file. Its purpose is to load the case file (and optionally the data file), run the solver and finally write the results. See examples below and remember to adjust the filenames and desired number of iterations.
 6.  If jobs frequently fail to start due to license shortages and manual resubmission of failed jobs is not convenient, consider modifying your script to requeue your job (up to 4 times) as shown under the `<i>`{=html}by node + requeue`</i>`{=html} tab further below. Be aware that doing this will also requeue simulations that fail due to non-license related issues (such as divergence), resulting in lost compute time. Therefore it is strongly recommended to monitor and inspect each Slurm output file to confirm each requeue attempt is license related. When it is determined that a job is requeued due to a simulation issue, immediately manually kill the job progression with `scancel jobid` and correct the problem.
-7.  After [running the job](https://docs.alliancecan.ca/Running_jobs "running the job"){.wikilink}, you can download the data file and import it back into Fluent with `<i>`{=html}File \> Import \> Data...`</i>`{=html}.
+7.  After [running the job](https://docs.alliancecan.ca/Running_jobs "wikilink"), you can download the data file and import it back into Fluent with `<i>`{=html}File \> Import \> Data...`</i>`{=html}.
 
 ### Slurm scripts {#slurm_scripts}
 
@@ -639,7 +639,7 @@ define/user-defined/compiled-functions load libudf
 
 #### Parallel
 
-Before a UDF can be used with a fluent parallel job (single node SMP and multinode MPI) it will need to be parallelized. By doing this we control how/which processes (host and/or compute) run specific parts of the UDF code when fluent is run in parallel on the cluster. The instrumenting procedure involves adding compiler directives, predicates and reduction macros into your working serial UDF. Failure to do so will result in fluent running slow at best or immediately crashing at worst. The end result will be a single UDF that runs efficiently when fluent is used in both serial and parallel mode. The subject is described in detail under `<I>`{=html}Part I: Chapter 7: Parallel Considerations`</I>`{=html} of the Ansys 2024 `<I>`{=html}Fluent Customization Manual`</I>`{=html} which can be accessed [here](https://docs.alliancecan.ca/Ansys#Online_Documentation "here"){.wikilink}.
+Before a UDF can be used with a fluent parallel job (single node SMP and multinode MPI) it will need to be parallelized. By doing this we control how/which processes (host and/or compute) run specific parts of the UDF code when fluent is run in parallel on the cluster. The instrumenting procedure involves adding compiler directives, predicates and reduction macros into your working serial UDF. Failure to do so will result in fluent running slow at best or immediately crashing at worst. The end result will be a single UDF that runs efficiently when fluent is used in both serial and parallel mode. The subject is described in detail under `<I>`{=html}Part I: Chapter 7: Parallel Considerations`</I>`{=html} of the Ansys 2024 `<I>`{=html}Fluent Customization Manual`</I>`{=html} which can be accessed [here](https://docs.alliancecan.ca/Ansys#Online_Documentation "wikilink").
 
 #### DPM
 
@@ -675,9 +675,9 @@ A summary of command-line options can be printed by running `<b>`{=html}cfx5solv
 ## Workbench
 
 Before submitting a project file to the queue on a cluster (for the first time) follow these steps to initialize it.\
-\# Connect to the cluster with [TigerVNC](https://docs.alliancecan.ca/VNC#Compute_nodes "TigerVNC"){.wikilink}.
+\# Connect to the cluster with [TigerVNC](https://docs.alliancecan.ca/VNC#Compute_nodes "wikilink").
 
-1.  Switch to the directory where the project file is located (YOURPROJECT.wbpj) and [start Workbench](https://docs.alliancecan.ca/Ansys#Workbench_3 "start Workbench"){.wikilink} with the same Ansys module you used to create your project.
+1.  Switch to the directory where the project file is located (YOURPROJECT.wbpj) and [start Workbench](https://docs.alliancecan.ca/Ansys#Workbench_3 "wikilink") with the same Ansys module you used to create your project.
 2.  In Workbench, open the project with `<I>`{=html}File -\> Open`</I>`{=html}.
 3.  In the main window, right-click on `<i>`{=html}Setup`</i>`{=html} and select `<I>`{=html}Clear All Generated Data`</I>`{=html}.
 4.  In the top menu bar pulldown, select `<I>`{=html}File -\> Exit`</I>`{=html} to exit Workbench.
@@ -739,7 +739,7 @@ Ansys programs may be run interactively in GUI mode on cluster compute nodes or 
 
 ## Compute nodes {#compute_nodes}
 
-Ansys can be run interactively on a single compute node for up to 24 hours. This approach is ideal for testing large simulations since all cores and memory can be requested with salloc as described in [TigerVNC](https://docs.alliancecan.ca/VNC#Compute_Nodes "TigerVNC"){.wikilink}. Once connected with vncviewer, any of the following program versions can be started after loading the required modules as shown below.
+Ansys can be run interactively on a single compute node for up to 24 hours. This approach is ideal for testing large simulations since all cores and memory can be requested with salloc as described in [TigerVNC](https://docs.alliancecan.ca/VNC#Compute_Nodes "wikilink"). Once connected with vncviewer, any of the following program versions can be started after loading the required modules as shown below.
 
 ### Fluids
 
@@ -804,7 +804,7 @@ Note: ansys/2022R2 Ensight is lightly tested on compute nodes. Please let us kno
 
 ## VDI nodes {#vdi_nodes}
 
-Ansys programs can be run for up to 7days on grahams VDI nodes (gra-vdi.alliancecan.ca) using 8 cores (16 cores max) and 128GB memory. The VDI System provides GPU OpenGL acceleration therefore it is ideal for performing tasks that benefit from high performance graphics. One might use VDI to create or modify simulation input files, post-process data or visualize simulation results. To log in connect with [TigerVNC](https://docs.alliancecan.ca/VNC#VDI_Nodes "TigerVNC"){.wikilink} then open a new terminal window and start one of the program versions shown below. The vertical bar `|` notation is used to separate the various commands. The maximum job size for any parallel job run on gra-vdi should be limited to 16cores to avoid overloading the servers and impacting other users. To run two simultaneous gui jobs (16 cores max each) on gra-vdi establish two independent vnc sessions. For the first session, connect to gra-vdi3.sharcnet.ca with vnc. For the second session connect to gra-vdi4.sharecnet.ca also with vnc. Then within each session, start Ansys in gui mode and run your simulation. Note that simultaneous simulations should in general be run in different directories to avoid file conflict issues. Unlike compute nodes vnc connections (which impose slurm limits through salloc) there is no time limit constraint on gra-vdi when running simulations.
+Ansys programs can be run for up to 7days on grahams VDI nodes (gra-vdi.alliancecan.ca) using 8 cores (16 cores max) and 128GB memory. The VDI System provides GPU OpenGL acceleration therefore it is ideal for performing tasks that benefit from high performance graphics. One might use VDI to create or modify simulation input files, post-process data or visualize simulation results. To log in connect with [TigerVNC](https://docs.alliancecan.ca/VNC#VDI_Nodes "wikilink") then open a new terminal window and start one of the program versions shown below. The vertical bar `|` notation is used to separate the various commands. The maximum job size for any parallel job run on gra-vdi should be limited to 16cores to avoid overloading the servers and impacting other users. To run two simultaneous gui jobs (16 cores max each) on gra-vdi establish two independent vnc sessions. For the first session, connect to gra-vdi3.sharcnet.ca with vnc. For the second session connect to gra-vdi4.sharecnet.ca also with vnc. Then within each session, start Ansys in gui mode and run your simulation. Note that simultaneous simulations should in general be run in different directories to avoid file conflict issues. Unlike compute nodes vnc connections (which impose slurm limits through salloc) there is no time limit constraint on gra-vdi when running simulations.
 
 ### Fluids {#fluids_1}
 
@@ -842,7 +842,9 @@ Ansys programs can be run for up to 7days on grahams VDI nodes (gra-vdi.alliance
 
         ------------------------------------------------------------------------
 
+```{=html}
 <!-- -->
+```
 
 :   
 
@@ -853,7 +855,9 @@ Ansys programs can be run for up to 7days on grahams VDI nodes (gra-vdi.alliance
 
         ------------------------------------------------------------------------
 
+```{=html}
 <!-- -->
+```
 
 :   
 
@@ -925,13 +929,13 @@ module load ansys
 lmutil lmstat -c $ANSYSLMD_LICENSE_FILE -a | grep "Users of\|$USER"
 ```
 
-If you discover any licenses unexpectedly in use by your username (usually due to ansys not exiting cleanly on gra-vdi), connect to the node where it\'s running, open a terminal window and run the following command to terminate the rogue processes `pkill -9 -e -u $USER -f "ansys"` after which your licenses should be freed. Note that gra-vdi consists of two nodes (gra-vdi3 and gra-vdi4) which researchers are randomly placed on when connecting to gra-vdi.computecanada.ca with [TigerVNC](https://docs.alliancecan.ca/VNC#VDI_Nodes "TigerVNC"){.wikilink}. Therefore it\'s necessary to specify the full hostname (gra-vdi3.sharcnet.ca or grav-vdi4.sharcnet.ca) when connecting with tigervnc to ensure you log into the correct node before running pkill.
+If you discover any licenses unexpectedly in use by your username (usually due to ansys not exiting cleanly on gra-vdi), connect to the node where it\'s running, open a terminal window and run the following command to terminate the rogue processes `pkill -9 -e -u $USER -f "ansys"` after which your licenses should be freed. Note that gra-vdi consists of two nodes (gra-vdi3 and gra-vdi4) which researchers are randomly placed on when connecting to gra-vdi.computecanada.ca with [TigerVNC](https://docs.alliancecan.ca/VNC#VDI_Nodes "wikilink"). Therefore it\'s necessary to specify the full hostname (gra-vdi3.sharcnet.ca or grav-vdi4.sharcnet.ca) when connecting with tigervnc to ensure you log into the correct node before running pkill.
 
 ### Local modules {#local_modules}
 
 When using gra-vdi, researchers have the choice of loading Ansys modules from our global environment (after loading CcEnv) or loading Ansys modules installed locally on the machine itself (after loading SnEnv). The local modules may be of interest as they include some Ansys programs and versions not yet supported by the standard environment. When starting programs from local Ansys modules, you can select the CMC license server or continue to use the SHARCNET license server by default. Settings from `~/.licenses/ansys.lic` are only used when `dash gui` is appended to the ansys program name for instance `<b>`{=html}`fluent-gui``</b>`{=html} instead of simply `<b>`{=html}`fluent``</b>`{=html}. Suitable usage of Ansys on gra-vdi : run a single job interactively (in the gui or from the command line) with up to 8 cores and 128G RAM, create or modify simulation input files, post process or visualize data. To load and use a local ansys module on gra-vdi do the following:
 
-1.  Connect to gra-vdi.computecanada.ca with [TigerVNC](https://docs.alliancecan.ca/VNC#VDI_Nodes "TigerVNC"){.wikilink}.
+1.  Connect to gra-vdi.computecanada.ca with [TigerVNC](https://docs.alliancecan.ca/VNC#VDI_Nodes "wikilink").
 2.  Open a new terminal window and load a module:
 3.  `<b>`{=html}`module load SnEnv ansys/2024R2``</b>`{=html} (or older)
 4.  Directly start one of the following ansys programs from the command line:
@@ -944,7 +948,7 @@ If you run `<b>`{=html}`cfx5-gui``</b>`{=html} your `~/.licenses/ansys.lic` file
 `   3) CFD-Post      (cfdpost -> cfx5post)`\
 `   4) CFX-Solver    (cfx5solve)`
 
-License feature preferences previously setup with `<i>`{=html}anslic_admin`</i>`{=html} are no longer supported (2021-09-09). If a license problem occurs, try removing the `~/.ansys` directory in your /home account to clear the settings. If problems persist please contact our [technical support](https://docs.alliancecan.ca/technical_support "technical support"){.wikilink} and provide the contents of your `~/.licenses/ansys.lic` file.
+License feature preferences previously setup with `<i>`{=html}anslic_admin`</i>`{=html} are no longer supported (2021-09-09). If a license problem occurs, try removing the `~/.ansys` directory in your /home account to clear the settings. If problems persist please contact our [technical support](https://docs.alliancecan.ca/technical_support "wikilink") and provide the contents of your `~/.licenses/ansys.lic` file.
 
 # Additive Manufacturing {#additive_manufacturing}
 
@@ -956,33 +960,33 @@ This section describes how to make the Ansys Additive Manufacturing ACT extensio
 
 ### Download Extension {#download_extension}
 
-- download AdditiveWizard.wbex from <https://catalog.ansys.com/>
-- upload AdditiveWizard.wbex to the cluster where it will be used
+-   download AdditiveWizard.wbex from <https://catalog.ansys.com/>
+-   upload AdditiveWizard.wbex to the cluster where it will be used
 
 ### Start Workbench {#start_workbench}
 
-- follow the Workbench section in [Graphical use above](https://docs.alliancecan.ca/ANSYS#Graphical_use "Graphical use above"){.wikilink}.
-- File -\> Open your project file (ending in .wbpj) into Workbench gui
+-   follow the Workbench section in [Graphical use above](https://docs.alliancecan.ca/ANSYS#Graphical_use "wikilink").
+-   File -\> Open your project file (ending in .wbpj) into Workbench gui
 
 ### Open Extension Manager {#open_extension_manager}
 
-- click ACT Start Page and the ACT Home page tab will open
-- click Manage Extensions and the Extension Manager will open
+-   click ACT Start Page and the ACT Home page tab will open
+-   click Manage Extensions and the Extension Manager will open
 
 ### Install Extension {#install_extension}
 
-- click the box with the large + sign under the search bar
-- navigate to select and install your AdditiveWizard.wbex file
+-   click the box with the large + sign under the search bar
+-   navigate to select and install your AdditiveWizard.wbex file
 
 ### Load Extension {#load_extension}
 
-- click to highlight the AdditiveWizard box (loads the AdditiveWizard extension for current session only)
-- click lower right corner arrow in the AdditiveWizard box and select `<i>`{=html}Load extension`</i>`{=html} (loads the extension for current AND future sessions)
+-   click to highlight the AdditiveWizard box (loads the AdditiveWizard extension for current session only)
+-   click lower right corner arrow in the AdditiveWizard box and select `<i>`{=html}Load extension`</i>`{=html} (loads the extension for current AND future sessions)
 
 ### Unload Extension {#unload_extension}
 
-- click to un-highlight the AdditiveWizard box (unloads extension for the current session only)
-- click lower right corner arrow in the AdditiveWizard box and select `<I>`{=html}Do not load as default`</i>`{=html} (extension will not load for future sessions)
+-   click to un-highlight the AdditiveWizard box (unloads extension for the current session only)
+-   click lower right corner arrow in the AdditiveWizard box and select `<I>`{=html}Do not load as default`</i>`{=html} (extension will not load for future sessions)
 
 ## Run Additive {#run_additive}
 
@@ -990,16 +994,16 @@ This section describes how to make the Ansys Additive Manufacturing ACT extensio
 
 A user can run a single Ansys Additive Manufacturing job on gra-vdi with up to 16 cores as follows:
 
-- Start Workbench on Gra-vdi as described above in `<b>`{=html}Enable Additive`</b>`{=html}.
-- click File -\> Open and select `<i>`{=html}test.wbpj`</i>`{=html} then click Open
-- click View -\> reset workspace if you get a grey screen
-- start Mechanical, Clear Generated Data, tick Distributed, specify Cores
-- click File -\> Save Project -\> Solve
+-   Start Workbench on Gra-vdi as described above in `<b>`{=html}Enable Additive`</b>`{=html}.
+-   click File -\> Open and select `<i>`{=html}test.wbpj`</i>`{=html} then click Open
+-   click View -\> reset workspace if you get a grey screen
+-   start Mechanical, Clear Generated Data, tick Distributed, specify Cores
+-   click File -\> Save Project -\> Solve
 
 Check utilization:
 
-- open another terminal and run: `top -u $USER` \*\*OR\*\* `ps u -u $USER | grep ansys`
-- kill rogue processes from previous runs: `pkill -9 -e -u $USER -f "ansys|mwrpcss|mwfwrapper|ENGINE"`
+-   open another terminal and run: `top -u $USER` \*\*OR\*\* `ps u -u $USER | grep ansys`
+-   kill rogue processes from previous runs: `pkill -9 -e -u $USER -f "ansys|mwrpcss|mwfwrapper|ENGINE"`
 
 Please note that rogue processes can persistently tie up licenses between gra-vdi login sessions or cause other unusual errors when trying to start gui programs on gra-vdi. Although rare, rogue processes can occur if an ansys gui session (fluent, workbench, etc) is not cleanly terminated by the user before vncviewer is terminated either manually or unexpectedly - for instance due to a transient network outage or hung filesystem. If the latter is to blame then the processes may not by killable until normal disk access is restored.
 
@@ -1039,7 +1043,7 @@ After a job completes, its \"Job Wall-clock time\" can be obtained from `seff my
 
 A publicly accessible online version of the [Ansys Help site](https://ansyshelp.ansys.com/public/account/secured?returnurl=/Views/Secured/prod_page.html?pn=Fluent&pid=Fluent&lang=en) with full Documentation, Tutorial and Videos for the `<b>`{=html}LATEST`</b>`{=html} Ansys release version. Developer documentation is available [here](https://developer.ansys.com/docs) also without login. To access documentation for Ansys versions 2024R1, 2024R2 AND 2025R1 you however WILL need to login [here](https://ansyshelp.ansys.com/). There is documentation for Multiphysics System Coupling versions 2023R1 \-\--\> 202R2 available [here](https://ansysapi.ansys.com) where again login will be required. To access the Ansys Help for a specific version such as 2023R2 perform the below steps precisely which should work for any module installed under StdEnv/2023 (thus back to 2022R2) and \*\*NOT\*\* require login:
 
-1.  Connect to `<b>`{=html}gra-vdi.computecanada.ca`</b>`{=html} with tigervnc as described [here](https://docs.alliancecan.ca/VNC#VDI_Nodes "here"){.wikilink}.
+1.  Connect to `<b>`{=html}gra-vdi.computecanada.ca`</b>`{=html} with tigervnc as described [here](https://docs.alliancecan.ca/VNC#VDI_Nodes "wikilink").
 2.  If the Firefox browser or the Ansys Workbench is open, close it now.
 3.  Start Firefox by clicking `<I>`{=html}Applications -\> Internet -\> Firefox`</I>`{=html}.
 4.  Open a `<b>`{=html}`<i>`{=html}new`</I>`{=html}`</b>`{=html} terminal window by clicking `<I>`{=html}Applications -\> System Tools -\> Mate Terminal`</I>`{=html}.

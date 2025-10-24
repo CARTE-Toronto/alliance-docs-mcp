@@ -17,10 +17,10 @@ display_title: "ARM software"
 
 The following modules are available on Nibi and Trillium (requires StdEnv module loaded):
 
-- ddt-cpu, for CPU debugging and profiling;
-- ddt-gpu, for GPU or mixed CPU/GPU debugging.
+-   ddt-cpu, for CPU debugging and profiling;
+-   ddt-gpu, for GPU or mixed CPU/GPU debugging.
 
-As this is a GUI application, log in using `ssh -Y`, and use an [SSH client](https://docs.alliancecan.ca/SSH "SSH client"){.wikilink} like [MobaXTerm](https://docs.alliancecan.ca/Connecting_with_MobaXTerm "MobaXTerm"){.wikilink} (Windows) or [XQuartz](https://www.xquartz.org/) (Mac) to ensure proper X11 tunnelling.
+As this is a GUI application, log in using `ssh -Y`, and use an [SSH client](https://docs.alliancecan.ca/SSH "wikilink") like [MobaXTerm](https://docs.alliancecan.ca/Connecting_with_MobaXTerm "wikilink") (Windows) or [XQuartz](https://www.xquartz.org/) (Mac) to ensure proper X11 tunnelling.
 
 Both DDT and MAP are normally used interactively through their GUI, which is normally accomplished using the `salloc` command (see below for details). MAP can also be used non-interactively, in which case it can be submitted to the scheduler with the `sbatch` command.
 
@@ -92,11 +92,11 @@ export ALLINEA_FORCE_CUDA_VERSION=10.1
 
 The instructions above use X11 forwarding. X11 is very sensitive to packet latency. As a result, unless you happen to be on the same campus as the computer cluster, the ddt interface will likely be laggy and frustrating to use. This can be fixed by running ddt under VNC.
 
-To do this, follow the directions on our [VNC page](https://docs.alliancecan.ca/VNC "VNC page"){.wikilink} to setup a VNC session. If your VNC session is on the compute node, then you can directly start your program under ddt as above. If you VNC session is on the login node or you are using the graham vdi node, then you need to manual launch the job as follows. From the ddt startup screen
+To do this, follow the directions on our [VNC page](https://docs.alliancecan.ca/VNC "wikilink") to setup a VNC session. If your VNC session is on the compute node, then you can directly start your program under ddt as above. If you VNC session is on the login node or you are using the graham vdi node, then you need to manual launch the job as follows. From the ddt startup screen
 
-- pick the *manually launch backend yourself* job start option,
-- enter the appropriate information for your job and press the *listen* button, and
-- press the *help* button to the right of *waiting for you to start the job\...*.
+-   pick the *manually launch backend yourself* job start option,
+-   enter the appropriate information for your job and press the *listen* button, and
+-   press the *help* button to the right of *waiting for you to start the job\...*.
 
 This will then give you the command you need to run to start your job. Allocate a job on the cluster and start your program as directed. An example of doing this would be (where \$USER is your username and \$PROGAM \... is the command to start your program)
 
@@ -123,11 +123,11 @@ This command will work to remove read and execute permissions for group and othe
 
 ` chmod go-rx /home/$USER`
 
-After you are done using DDT, you can if you like restore permissions to what they were (assuming you recorded them). More information on how to do this can be found on page [Sharing_data](https://docs.alliancecan.ca/Sharing_data "Sharing_data"){.wikilink}.
+After you are done using DDT, you can if you like restore permissions to what they were (assuming you recorded them). More information on how to do this can be found on page [Sharing_data](https://docs.alliancecan.ca/Sharing_data "wikilink").
 
 # See also {#see_also}
 
-- [\"Debugging your code with DDT\"](https://youtu.be/Q8HwLg22BpY), video, 55 minutes.
-- [A short DDT tutorial.](https://docs.alliancecan.ca/Parallel_Debugging_with_DDT "A short DDT tutorial."){.wikilink}
+-   [\"Debugging your code with DDT\"](https://youtu.be/Q8HwLg22BpY), video, 55 minutes.
+-   [A short DDT tutorial.](https://docs.alliancecan.ca/Parallel_Debugging_with_DDT "wikilink")
 
 `</translate>`{=html}
