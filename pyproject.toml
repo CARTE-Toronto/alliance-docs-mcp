@@ -20,6 +20,13 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["src/alliance_docs_mcp"]
 
+[tool.hatch.build]
+include = [
+    "docs/**",
+    "server_entrypoint.py",
+    "scripts/**",
+]
+
 [dependency-groups]
 dev = [
     "black>=25.9.0",

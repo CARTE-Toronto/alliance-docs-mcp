@@ -1,8 +1,8 @@
 """FastMCP server for Alliance documentation."""
 
+import gzip
 import logging
 import os
-import gzip
 from pathlib import Path
 from typing import List, Optional
 
@@ -15,13 +15,32 @@ from .storage import DocumentationStorage
 
 logger = logging.getLogger(__name__)
 
+DEFAULT_DOCS_PATH = Path(__file__).resolve().parent.parent / "docs"
+
 # Initialize FastMCP server
 mcp = FastMCP("Alliance Docs")
 
 # Initialize storage
-docs_dir = os.getenv("DOCS_DIR", "./docs")
-storage = DocumentationStorage(docs_dir)
+configured_docs_dir = os.getenv("DOCS_DIR")
+docs_path = Path(configured_docs_dir).resolve() if configured_docs_dir else DEFAULT_DOCS_PATH.resolve()
+storage = DocumentationStorage(str(docs_path))
 
+
+def _resolve_page_path(file_path: str) -> Path:
+    """Resolve a page path to an absolute location on disk."""
+    path_obj = Path(file_path)
+
+    if path_obj.is_absolute():
+        return path_obj
+
+    # Allow paths that already include the docs/ prefix
+    if path_obj.parts and path_obj.parts[0] == "docs":
+        relative = Path(*path_obj.parts[1:])
+    else:
+        relative = path_obj
+
+    candidate = docs_path / relative
+    return candidate.resolve()
 
 
 def _register_document_resources() -> None:
@@ -37,19 +56,25 @@ def _register_document_resources() -> None:
             continue
 
         uri = f"alliance-docs://page/{slug}"
-        path_obj = Path(file_path)
-        if not path_obj.is_absolute():
-            path_obj = Path.cwd() / path_obj
-        absolute_path = path_obj.resolve()
+        absolute_path = _resolve_page_path(file_path)
 
         if not absolute_path.exists():
             logger.warning("Resource file missing on disk: %s", absolute_path)
             continue
 
-        if absolute_path.suffix == '.gz':
-            async def gz_reader(file_path=absolute_path):
+        metadata = {
+            "title": page.get("title"),
+            "url": page.get("url"),
+            "category": page.get("category"),
+            "last_modified": page.get("last_modified"),
+            "page_id": page.get("page_id"),
+        }
+
+        if absolute_path.suffix == ".gz":
+
+            async def gz_reader(file_path=absolute_path) -> str:
                 try:
-                    with gzip.open(file_path, 'rt', encoding='utf-8') as handle:
+                    with gzip.open(file_path, "rt", encoding="utf-8") as handle:
                         return handle.read()
                 except FileNotFoundError as exc:  # pragma: no cover
                     logger.error("Compressed resource missing: %s", file_path)
@@ -61,13 +86,7 @@ def _register_document_resources() -> None:
                 description=page.get("url"),
                 mime_type="text/markdown",
                 tags={page.get("category", "General")},
-                meta={
-                    "title": page.get("title"),
-                    "url": page.get("url"),
-                    "category": page.get("category"),
-                    "last_modified": page.get("last_modified"),
-                    "page_id": page.get("page_id"),
-                },
+                meta=metadata,
             )(gz_reader)
             total += 1
             continue
@@ -79,13 +98,7 @@ def _register_document_resources() -> None:
             description=page.get("url"),
             mime_type="text/markdown",
             tags={page.get("category", "General")},
-            meta={
-                "title": page.get("title"),
-                "url": page.get("url"),
-                "category": page.get("category"),
-                "last_modified": page.get("last_modified"),
-                "page_id": page.get("page_id"),
-            },
+            meta=metadata,
         )
 
         mcp.add_resource(resource)
