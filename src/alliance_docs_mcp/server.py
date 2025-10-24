@@ -5,7 +5,6 @@ import os
 from typing import List, Optional
 
 from fastmcp import FastMCP
-from fastmcp.resources import FunctionResource
 from starlette.requests import Request
 from starlette.responses import PlainTextResponse
 
@@ -55,9 +54,8 @@ def _register_document_resources() -> None:
                 logger.error(str(exc))
                 return str(exc)
 
-        resource = FunctionResource.from_function(
-            resource_fn,
-            uri=uri,
+        mcp.resource(
+            uri,
             name=page.get("title") or slug,
             description=page.get("url"),
             mime_type="text/markdown",
@@ -69,9 +67,7 @@ def _register_document_resources() -> None:
                 "last_modified": page.get("last_modified"),
                 "page_id": page.get("page_id"),
             },
-        )
-
-        mcp.add_resource(resource)
+        )(resource_fn)
         total += 1
 
     logger.info("Registered %s documentation resources", total)
