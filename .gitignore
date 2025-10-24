@@ -45,3 +45,4 @@ sync.log
 logs/
 *.log
 fastmcp-docs/
+example_implementation/

@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import List, Optional
 
 from fastmcp import FastMCP
-from fastmcp.resources import FileResource
+from fastmcp.resources import TextResource
 from starlette.requests import Request
 from starlette.responses import PlainTextResponse
 
@@ -15,14 +15,38 @@ from .storage import DocumentationStorage
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_DOCS_PATH = Path(__file__).resolve().parents[2] / "docs"
-
 # Initialize FastMCP server
 mcp = FastMCP("Alliance Docs")
 
-# Initialize storage
-configured_docs_dir = os.getenv("DOCS_DIR")
-docs_path = Path(configured_docs_dir).resolve() if configured_docs_dir else DEFAULT_DOCS_PATH.resolve()
+def _discover_docs_directory() -> Path:
+    """Determine the directory that contains mirrored documentation files."""
+    configured_docs_dir = os.getenv("DOCS_DIR")
+    candidates = []
+
+    if configured_docs_dir:
+        configured_path = Path(configured_docs_dir)
+        candidates.append(configured_path)
+
+    module_path = Path(__file__).resolve()
+    candidates.extend(
+        [
+            Path.cwd() / "docs",
+            module_path.parent / "docs",
+            module_path.parents[1] / "docs",
+            module_path.parents[2] / "docs",
+        ]
+    )
+
+    for candidate in candidates:
+        if candidate and candidate.exists():
+            return candidate.resolve()
+
+    raise FileNotFoundError(
+        "Documentation directory not found. Set DOCS_DIR environment variable to the docs path."
+    )
+
+
+docs_path = _discover_docs_directory()
 storage = DocumentationStorage(str(docs_path))
 
 
@@ -60,6 +84,16 @@ def _register_document_resources() -> None:
             logger.warning("Resource file missing on disk: %s", absolute_path)
             continue
 
+        try:
+            if absolute_path.suffix == ".gz":
+                with gzip.open(absolute_path, "rt", encoding="utf-8") as handle:
+                    page_text = handle.read()
+            else:
+                page_text = absolute_path.read_text(encoding="utf-8")
+        except Exception as exc:  # pragma: no cover
+            logger.error("Error loading resource %s: %s", absolute_path, exc)
+            continue
+
         metadata = {
             "title": page.get("title"),
             "url": page.get("url"),
@@ -68,32 +102,11 @@ def _register_document_resources() -> None:
             "page_id": page.get("page_id"),
         }
 
-        if absolute_path.suffix == ".gz":
-
-            async def gz_reader(file_path=absolute_path) -> str:
-                try:
-                    with gzip.open(file_path, "rt", encoding="utf-8") as handle:
-                        return handle.read()
-                except FileNotFoundError as exc:  # pragma: no cover
-                    logger.error("Compressed resource missing: %s", file_path)
-                    return str(exc)
-
-            mcp.resource(
-                uri,
-                name=page.get("title") or slug,
-                description=page.get("url"),
-                mime_type="text/markdown",
-                tags={page.get("category", "General")},
-                meta=metadata,
-            )(gz_reader)
-            total += 1
-            continue
-
-        resource = FileResource(
+        resource = TextResource(
             uri=uri,
-            path=absolute_path,
             name=page.get("title") or slug,
             description=page.get("url"),
+            text=page_text,
             mime_type="text/markdown",
             tags={page.get("category", "General")},
             meta=metadata,
