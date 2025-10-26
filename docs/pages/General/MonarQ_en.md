@@ -2,7 +2,7 @@
 title: "MonarQ/en"
 url: "https://docs.alliancecan.ca/wiki/MonarQ/en"
 category: "General"
-last_modified: "2025-03-30T13:30:49Z"
+last_modified: "2025-10-24T17:55:27Z"
 page_id: 26558
 display_title: "MonarQ"
 ---
@@ -16,9 +16,13 @@ display_title: "MonarQ"
 
 \'\'
 
-MonarQ is a 24-qubit superconducting quantum computer developed in Montreal by [Anyon Systems](https://anyonsys.com/) and located at the [École de technologie supérieure](http://www.etsmtl.ca/). See section [Technical specifications](https://docs.alliancecan.ca/MonarQ/en#Technical_specifications "Technical specifications"){.wikilink} below.
+Monarq is currently undergoing maintenance and should be operational in February 2026. In the meantime, Calcul Québec can offer access to a similar but smaller machine, with 6 bits.
+
+MonarQ is a 24-qubit superconducting quantum computer developed in Montreal by [Anyon Systems](https://anyonsys.com/) and located at the [École de technologie supérieure](http://www.etsmtl.ca/). See section [Technical specifications](https://docs.alliancecan.ca/MonarQ/en#Technical_specifications "wikilink") below.
 
 Its name is inspired by the monarch butterfly, a symbol of evolution and migration. The capital Q denotes the quantum nature of the computer and its origins in Quebec. Acquisition of MonarQ was made possible with the support of the [Ministère de l\'Économie, de l\'Innovation et de l\'Énergie du Québec (MEIE)](https://www.economie.gouv.qc.ca/) and [Canada Economic Development (CED)](https://ced.canada.ca/en/ced-home/).
+
+`<span id="Accéder_à_MonarQ">`{=html}`</span>`{=html}
 
 ## Getting access to MonarQ {#getting_access_to_monarq}
 
@@ -26,9 +30,11 @@ Its name is inspired by the monarch butterfly, a symbol of evolution and migrati
 2.  You must have an [account with the Alliance](https://alliancecan.ca/en/services/advanced-research-computing/account-management/apply-account) in order to get access to MonarQ.
 3.  Meet with our team to discuss the specifics of your project.
 4.  Receive access to the MonarQ dashboard and generate your access token.
-5.  To get started using MonarQ, see [ Getting started](https://docs.alliancecan.ca/MonarQ/en#Getting_started " Getting started"){.wikilink} below.
+5.  To get started using MonarQ, see [ Getting started](https://docs.alliancecan.ca/MonarQ/en#Getting_started "wikilink") below.
 
 Contact our quantum team at <quantique@calculquebec.ca> if you have any questions or if you want to have a more general discussion before requesting access to MonarQ.
+
+`<span id="Spécifications_techniques">`{=html}`</span>`{=html}
 
 ## Technical specifications {#technical_specifications}
 
@@ -38,52 +44,58 @@ Like quantum processors available today, MonarQ operates in an environment where
 
 Among the metrics are:
 
-- 24-qubit quantum processor
-- Single-qubit gate: 99.8% fidelity with gate duration of 15ns
-- Two-qubit gate: 95.6% fidelity with gate duration of 35ns
-- Coherence time: 4-10μs (depending on state)
-- Maximum circuit depth: approximately 350 for single-qubit gates and 115 for two-qubit gates
+-   24-qubit quantum processor
+-   Single-qubit gate: 99.8% fidelity with gate duration of 15ns
+-   Two-qubit gate: 95.6% fidelity with gate duration of 35ns
+-   Coherence time: 4-10μs (depending on state)
+-   Maximum circuit depth: approximately 350 for single-qubit gates and 115 for two-qubit gates
+
+`<span id="Logiciels_de_calcul_quantique">`{=html}`</span>`{=html}
 
 ## Quantum computing software {#quantum_computing_software}
 
 There are several specialized software libraries for quantum computing and the development of quantum algorithms. These libraries allow you to build circuits that are executed on simulators that mimic the performance and results obtained on a quantum computer such as MonarQ. They can be used on all Alliance clusters.
 
-- [PennyLane](https://docs.alliancecan.ca/PennyLane/en "PennyLane"){.wikilink}, for Python commands
-- [Snowflurry](https://docs.alliancecan.ca/Snowflurry/en "Snowflurry"){.wikilink}, for Julia commands
-- [Qiskit](https://docs.alliancecan.ca/Qiskit/fr "Qiskit"){.wikilink}, for Python commands
+-   [PennyLane](https://docs.alliancecan.ca/PennyLane/en "wikilink"), for Python commands
+-   [Snowflurry](https://docs.alliancecan.ca/Snowflurry/en "wikilink"), for Julia commands
+-   [Qiskit](https://docs.alliancecan.ca/Qiskit/fr "wikilink"), for Python commands
 
-The quantum logic gates of the MonarQ processor are called through a [Snowflurry](https://docs.alliancecan.ca/Snowflurry/en "Snowflurry"){.wikilink} software library written in [Julia](https://docs.alliancecan.ca/Julia "Julia"){.wikilink}. Although MonarQ is natively compatible with Snowflurry, there is a [PennyLane-Snowflurry](https://github.com/calculquebec/pennylane-snowflurry\) plugin developed by Calcul Québec that allows you to execute circuits on MonarQ while benefiting from the features and development environment offered by [PennyLane](https://docs.alliancecan.ca/PennyLane/en "PennyLane"){.wikilink}.
+The quantum logic gates of the MonarQ processor are called through a [Snowflurry](https://docs.alliancecan.ca/Snowflurry/en "wikilink") software library written in [Julia](https://docs.alliancecan.ca/Julia "wikilink"). Although MonarQ is natively compatible with Snowflurry, there is a [PennyLane-Snowflurry](https://github.com/calculquebec/pennylane-snowflurry\) plugin developed by Calcul Québec that allows you to execute circuits on MonarQ while benefiting from the features and development environment offered by [PennyLane](https://docs.alliancecan.ca/PennyLane/en "wikilink").
 
 ## Getting started {#getting_started}
 
 **Prerequisites**: Make sure you have access to MonarQ and that you have your login credentials (`<i>`{=html}username`</i>`{=html}, `<i>`{=html}API token`</i>`{=html}). If you have any questions, write to <quantique@calculquebec.ca>.
 
-- **Step 1: Connect to [Narval](https://docs.alliancecan.ca/Narval/en "Narval"){.wikilink}**
-  - MonarQ is only accessible from Narval, a Calcul Québec cluster. Narval is accessed from the login node **narval.alliancecan.ca**.
-  - For help connecting to Narval, see [SSH](https://docs.alliancecan.ca/SSH/en "SSH"){.wikilink}.
+-   **Step 1: Connect to [Narval](https://docs.alliancecan.ca/Narval/en "wikilink")**
+    -   MonarQ is only accessible from Narval, a Calcul Québec cluster. Narval is accessed from the login node **narval.alliancecan.ca**.
+    -   For help connecting to Narval, see [SSH](https://docs.alliancecan.ca/SSH/en "wikilink").
 
+```{=html}
 <!-- -->
+```
+-   **Step 2: Create the environment**
+    -   Create a Python virtual environment (3.11 or later) to use PennyLane and the [PennyLane-CalculQuébec](https://github.com/calculquebec/pennylane-snowflurry\) plugin. These are already installed on Narval so that you will only have to import the software libraries you want.
 
-- **Step 2: Create the environment**
-  - Create a Python virtual environment (3.11 or later) to use PennyLane and the [PennyLane-CalculQuébec](https://github.com/calculquebec/pennylane-snowflurry\) plugin. These are already installed on Narval so that you will only have to import the software libraries you want.
-
+```{=html}
 <!-- -->
+```
+-   **Step 3: Configure your identifiers on MonarQ and define MonarQ as your device**
+    -   Open a Python .py file and import the required dependencies (in the following example, PennyLane and MonarqClient).
+    -   Create a client with your identifiers. Your token is available through the Thunderhead portal. The host is **monarq.calculquebec.ca**.
+    -   Create a PennyLane device with your client. You can also enter the number of qubits (`<i>`{=html}wires`</i>`{=html}) and the number of shots.
+    -   For more information, see [pennylane_calculquebec](https://github.com/calculquebec/pennylane-calculquebec/blob/main/doc/getting_started.ipynb).
 
-- **Step 3: Configure your identifiers on MonarQ and define MonarQ as your device**
-  - Open a Python .py file and import the required dependencies (in the following example, PennyLane and MonarqClient).
-  - Create a client with your identifiers. Your token is available through the Thunderhead portal. The host is **monarq.calculquebec.ca**.
-  - Create a PennyLane device with your client. You can also enter the number of qubits (`<i>`{=html}wires`</i>`{=html}) and the number of shots.
-  - For more information, see [pennylane_calculquebec](https://github.com/calculquebec/pennylane-calculquebec/blob/main/doc/getting_started.ipynb).
-
+```{=html}
 <!-- -->
+```
+-   **Step 4: Create your circuit**
+    -   In the same Python file, you can now code your quantum circuit.
 
-- **Step 4: Create your circuit**
-  - In the same Python file, you can now code your quantum circuit.
-
+```{=html}
 <!-- -->
-
-- **Step 5: Execute your circuit from the scheduler**
-  - The [`sbatch`](https://slurm.schedmd.com/sbatch.html) command is used to submit a task.
+```
+-   **Step 5: Execute your circuit from the scheduler**
+    -   The [`sbatch`](https://slurm.schedmd.com/sbatch.html) command is used to submit a task.
 
 ``` bash
 $ sbatch simple_job.sh
@@ -92,17 +104,17 @@ Submitted batch job 123456
 
 The Slurm script is similar to
 
-- The result is written to a file with a name starting with slurm-, followed by the task ID and the .out suffix, for example `<i>`{=html}slurm-123456.out`</i>`{=html}.
-- The file contains the result in dictionary `{'000': 496, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 504}`.
-- For more information on submitting tasks on Narval, see [Running jobs](https://docs.alliancecan.ca/Running_jobs "Running jobs"){.wikilink}.
+-   The result is written to a file with a name starting with slurm-, followed by the task ID and the .out suffix, for example `<i>`{=html}slurm-123456.out`</i>`{=html}.
+-   The file contains the result in dictionary `{'000': 496, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 504}`.
+-   For more information on submitting tasks on Narval, see [Running jobs](https://docs.alliancecan.ca/Running_jobs "wikilink").
 
 ## FAQ
 
-- [Foire aux questions (FAQ)](https://docs.google.com/document/d/13sfHwJTo5tcmzCZQqeDmAw005v8I5iFeKp3Xc_TdT3U/edit?tab=t.0)
+-   [Foire aux questions (FAQ)](https://docs.google.com/document/d/13sfHwJTo5tcmzCZQqeDmAw005v8I5iFeKp3Xc_TdT3U/edit?tab=t.0)
 
 ## Other tools {#other_tools}
 
-- [Quantum transpilation](https://docs.alliancecan.ca/Transpileur_quantique/en "Quantum transpilation"){.wikilink}
+-   [Quantum transpilation](https://docs.alliancecan.ca/Transpileur_quantique/en "wikilink")
 
 ## Applications
 
