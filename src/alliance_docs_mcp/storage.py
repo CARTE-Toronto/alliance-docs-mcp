@@ -386,3 +386,178 @@ class DocumentationStorage:
             
         except Exception as e:
             logger.error(f"Error during cleanup: {e}")
+    
+    def build_llms_txt(self) -> str:
+        """Build llms.txt file containing a directory of all page names.
+        
+        Returns:
+            Path to the created llms.txt file
+        """
+        try:
+            pages = self.get_all_pages()
+            llms_txt_path = self.docs_dir / "llms.txt"
+            
+            # Sort pages by title for consistent output
+            pages_sorted = sorted(pages, key=lambda x: x.get("title", ""))
+            
+            # Build content - simple list of page titles with URLs
+            lines = []
+            lines.append("# Alliance Documentation - Page Directory")
+            lines.append(f"# Generated: {datetime.now(timezone.utc).isoformat()}")
+            lines.append(f"# Total pages: {len(pages_sorted)}")
+            lines.append("")
+            
+            for page in pages_sorted:
+                title = page.get("title", "Unknown")
+                url = page.get("url", "")
+                category = page.get("category", "General")
+                lines.append(f"- {title} ({category}): {url}")
+            
+            content = "\n".join(lines)
+            
+            # Write the file
+            with open(llms_txt_path, 'w', encoding='utf-8') as f:
+                f.write(content)
+            
+            logger.info(f"Created llms.txt with {len(pages_sorted)} pages at {llms_txt_path}")
+            return str(llms_txt_path)
+            
+        except Exception as e:
+            logger.error(f"Error building llms.txt: {e}")
+            raise
+    
+    def build_llms_full_txt(self, compress: bool = True) -> str:
+        """Build llms_full.txt containing all documentation content.
+        
+        Writes content incrementally to avoid high memory usage.
+        
+        Args:
+            compress: Whether to compress the output with gzip (default: True)
+        
+        Returns:
+            Path to the created llms_full.txt or llms_full.txt.gz file
+        """
+        try:
+            pages = self.get_all_pages()
+            
+            # Sort pages by title for consistent output
+            pages_sorted = sorted(pages, key=lambda x: x.get("title", ""))
+            
+            # Build and write content incrementally to avoid high memory usage
+            base_path = self.docs_dir / "llms_full.txt"
+            
+            if compress:
+                output_path = Path(str(base_path) + ".gz")
+                total_bytes = 0
+                
+                with gzip.open(output_path, 'wt', encoding='utf-8') as f:
+                    def write_line(line):
+                        nonlocal total_bytes
+                        f.write(line + "\n")
+                        total_bytes += len((line + "\n").encode('utf-8'))
+                    
+                    write_line("# Alliance Documentation - Full Content")
+                    write_line(f"# Generated: {datetime.now(timezone.utc).isoformat()}")
+                    write_line(f"# Total pages: {len(pages_sorted)}")
+                    write_line("=" * 80)
+                    write_line("")
+                    
+                    for page in pages_sorted:
+                        title = page.get("title", "Unknown")
+                        url = page.get("url", "")
+                        category = page.get("category", "General")
+                        file_path = page.get("file_path", "")
+                        
+                        # Add page header
+                        write_line("")
+                        write_line("=" * 80)
+                        write_line(f"PAGE: {title}")
+                        write_line(f"URL: {url}")
+                        write_line(f"Category: {category}")
+                        write_line("=" * 80)
+                        write_line("")
+                        
+                        # Load and add page content
+                        if file_path:
+                            try:
+                                page_data = self.load_page(file_path)
+                                if page_data and "content" in page_data:
+                                    # Write content without extra newline since write_line adds it
+                                    f.write(page_data["content"])
+                                    total_bytes += len(page_data["content"].encode('utf-8'))
+                                    write_line("")
+                                else:
+                                    write_line(f"[Content not available for {title}]")
+                            except Exception as e:
+                                logger.warning(f"Error loading content for {title}: {e}")
+                                write_line(f"[Error loading content: {e}]")
+                        else:
+                            write_line(f"[No file path for {title}]")
+                        
+                        write_line("")
+                
+                original_size_mb = total_bytes / (1024 * 1024)
+                compressed_size_mb = output_path.stat().st_size / (1024 * 1024)
+                
+                logger.info(
+                    f"Created compressed llms_full.txt.gz ({original_size_mb:.2f} MB → "
+                    f"{compressed_size_mb:.2f} MB) at {output_path}"
+                )
+            else:
+                output_path = base_path
+                total_bytes = 0
+                
+                with open(output_path, 'w', encoding='utf-8') as f:
+                    def write_line(line):
+                        nonlocal total_bytes
+                        f.write(line + "\n")
+                        total_bytes += len((line + "\n").encode('utf-8'))
+                    
+                    write_line("# Alliance Documentation - Full Content")
+                    write_line(f"# Generated: {datetime.now(timezone.utc).isoformat()}")
+                    write_line(f"# Total pages: {len(pages_sorted)}")
+                    write_line("=" * 80)
+                    write_line("")
+                    
+                    for page in pages_sorted:
+                        title = page.get("title", "Unknown")
+                        url = page.get("url", "")
+                        category = page.get("category", "General")
+                        file_path = page.get("file_path", "")
+                        
+                        # Add page header
+                        write_line("")
+                        write_line("=" * 80)
+                        write_line(f"PAGE: {title}")
+                        write_line(f"URL: {url}")
+                        write_line(f"Category: {category}")
+                        write_line("=" * 80)
+                        write_line("")
+                        
+                        # Load and add page content
+                        if file_path:
+                            try:
+                                page_data = self.load_page(file_path)
+                                if page_data and "content" in page_data:
+                                    # Write content without extra newline since write_line adds it
+                                    f.write(page_data["content"])
+                                    total_bytes += len(page_data["content"].encode('utf-8'))
+                                    write_line("")
+                                else:
+                                    write_line(f"[Content not available for {title}]")
+                            except Exception as e:
+                                logger.warning(f"Error loading content for {title}: {e}")
+                                write_line(f"[Error loading content: {e}]")
+                        else:
+                            write_line(f"[No file path for {title}]")
+                        
+                        write_line("")
+                
+                size_mb = total_bytes / (1024 * 1024)
+                logger.info(f"Created llms_full.txt ({size_mb:.2f} MB) at {output_path}")
+            
+            return str(output_path)
+            
+        except Exception as e:
+            logger.error(f"Error building llms_full.txt: {e}")
+            raise
