@@ -181,6 +181,14 @@ async def sync_documentation():
             storage.cleanup_old_files()
             console.print("[green]✓[/green] Cleanup complete")
         
+        # Build llms.txt files
+        with console.status("[bold green]Building llms.txt files...", spinner="dots"):
+            llms_txt_path = storage.build_llms_txt()
+            console.print(f"[green]✓[/green] Created llms.txt at {llms_txt_path}")
+            
+            llms_full_path = storage.build_llms_full_txt(compress=True)
+            console.print(f"[green]✓[/green] Created llms_full.txt.gz at {llms_full_path}")
+        
         # Calculate statistics
         end_time = datetime.now()
         duration = (end_time - start_time).total_seconds()
@@ -298,6 +306,11 @@ async def sync_incremental():
         
         # Update index
         storage.update_index(list(existing_by_id.values()))
+        
+        # Build llms.txt files
+        logger.info("Building llms.txt files...")
+        storage.build_llms_txt()
+        storage.build_llms_full_txt(compress=True)
         
         logger.info(f"Incremental sync completed. Processed {len(saved_pages)} pages.")
         return len(saved_pages)
