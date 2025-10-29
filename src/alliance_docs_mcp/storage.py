@@ -487,7 +487,7 @@ class DocumentationStorage:
             base_path = self.docs_dir / "llms_full.txt"
             
             if compress:
-                output_path = base_path.with_suffix(base_path.suffix + ".gz")
+                output_path = Path(str(base_path) + ".gz")
                 with gzip.open(output_path, 'wb') as f:
                     f.write(encoded_content)
                 
