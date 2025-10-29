@@ -2,13 +2,16 @@
 title: "MonarQ/en"
 url: "https://docs.alliancecan.ca/wiki/MonarQ/en"
 category: "General"
-last_modified: "2025-10-24T17:55:27Z"
+last_modified: "2025-10-28T14:07:02Z"
 page_id: 26558
 display_title: "MonarQ"
 ---
 
 `<languages />`{=html}
 
+```{=html}
+<div class="mw-translate-fuzzy">
+```
   ----------------------------------------
   Availability: January 2025
   Login node: **monarq.calculquebec.ca**
@@ -16,10 +19,27 @@ display_title: "MonarQ"
 
 \'\'
 
+```{=html}
+</div>
+```
+```{=html}
+<div class="mw-translate-fuzzy">
+```
 Monarq is currently undergoing maintenance and should be operational in February 2026. In the meantime, Calcul Québec can offer access to a similar but smaller machine, with 6 bits.
 
 MonarQ is a 24-qubit superconducting quantum computer developed in Montreal by [Anyon Systems](https://anyonsys.com/) and located at the [École de technologie supérieure](http://www.etsmtl.ca/). See section [Technical specifications](https://docs.alliancecan.ca/MonarQ/en#Technical_specifications "wikilink") below.
 
+```{=html}
+</div>
+```
+```{=html}
+<div lang="fr" dir="ltr" class="mw-content-ltr">
+```
+MonarQ est un ordinateur quantique supraconducteur à 24 qubits développé à Montréal par [Anyon Systèmes](https://anyonsys.com/) et situé à l\'[École de technologie supérieure](http://www.etsmtl.ca/). Pour plus d\'informations sur les spécifications et les performances de MonarQ voir [Spécifications techniques](https://docs.alliancecan.ca/#Spécifications_techniques "wikilink") ci-dessous.
+
+```{=html}
+</div>
+```
 Its name is inspired by the monarch butterfly, a symbol of evolution and migration. The capital Q denotes the quantum nature of the computer and its origins in Quebec. Acquisition of MonarQ was made possible with the support of the [Ministère de l\'Économie, de l\'Innovation et de l\'Énergie du Québec (MEIE)](https://www.economie.gouv.qc.ca/) and [Canada Economic Development (CED)](https://ced.canada.ca/en/ced-home/).
 
 `<span id="Accéder_à_MonarQ">`{=html}`</span>`{=html}
@@ -77,7 +97,7 @@ The quantum logic gates of the MonarQ processor are called through a [Snowflurry
     -   Create a Python virtual environment (3.11 or later) to use PennyLane and the [PennyLane-CalculQuébec](https://github.com/calculquebec/pennylane-snowflurry\) plugin. These are already installed on Narval so that you will only have to import the software libraries you want.
 
 ```{=html}
-<!-- -->
+<div class="mw-translate-fuzzy">
 ```
 -   **Step 3: Configure your identifiers on MonarQ and define MonarQ as your device**
     -   Open a Python .py file and import the required dependencies (in the following example, PennyLane and MonarqClient).

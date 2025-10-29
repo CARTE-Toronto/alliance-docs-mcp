@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-10-26T06:18:13.598358+00:00",
+  "last_updated": "2025-10-29T15:00:19.387947+00:00",
   "total_pages": 415,
   "pages": [
     {
@@ -1942,7 +1942,7 @@
       "title": "Modules avx",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx",
       "category": "General",
-      "last_modified": "2025-10-23T18:00:58Z",
+      "last_modified": "2025-10-29T12:01:28Z",
       "file_path": "docs/pages/General/Modules_avx.md.gz",
       "slug": "Modules_avx"
     },
@@ -1951,7 +1951,7 @@
       "title": "Modules avx2",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx2",
       "category": "General",
-      "last_modified": "2025-10-24T12:07:10Z",
+      "last_modified": "2025-10-28T12:01:45Z",
       "file_path": "docs/pages/General/Modules_avx2.md.gz",
       "slug": "Modules_avx2"
     },
@@ -1960,7 +1960,7 @@
       "title": "Modules avx512",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx512",
       "category": "General",
-      "last_modified": "2025-10-23T18:01:40Z",
+      "last_modified": "2025-10-28T12:01:45Z",
       "file_path": "docs/pages/General/Modules_avx512.md.gz",
       "slug": "Modules_avx512"
     },
@@ -1978,7 +1978,7 @@
       "title": "Modules sse3",
       "url": "https://docs.alliancecan.ca/wiki/Modules_sse3",
       "category": "General",
-      "last_modified": "2025-10-24T00:06:01Z",
+      "last_modified": "2025-10-29T12:01:35Z",
       "file_path": "docs/pages/General/Modules_sse3.md.gz",
       "slug": "Modules_sse3"
     },
@@ -1987,7 +1987,7 @@
       "title": "MonarQ/en",
       "url": "https://docs.alliancecan.ca/wiki/MonarQ/en",
       "category": "General",
-      "last_modified": "2025-10-24T17:55:27Z",
+      "last_modified": "2025-10-28T14:07:02Z",
       "file_path": "docs/pages/General/MonarQ_en.md",
       "slug": "MonarQ_en"
     },
