@@ -1,5 +1,6 @@
 """Tests for documentation storage functionality."""
 
+import gzip
 import json
 import tempfile
 from pathlib import Path
@@ -278,8 +279,6 @@ This is test content for page {i+1}.
     
     def test_build_llms_full_txt_compressed(self):
         """Test building llms_full.txt with compression."""
-        import gzip
-        
         with tempfile.TemporaryDirectory() as temp_dir:
             storage = DocumentationStorage(temp_dir)
             
