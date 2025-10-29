@@ -135,6 +135,15 @@ The sync script provides:
 
 > **Note:** Markdown pages larger than 10 MB are stored as `.md.gz` files. The server automatically decompresses them at runtime, so no additional configuration is required.
 
+#### LLM-Optimized Documentation Files
+
+The sync process automatically generates two files for LLM consumption:
+
+- **`docs/llms.txt`**: A simple directory listing all page names, categories, and URLs (~35 KB)
+- **`docs/llms_full.txt.gz`**: Complete documentation content in a single compressed file (~2.6 MB compressed, ~393 MB uncompressed)
+
+These files are regenerated on every sync (both full and incremental) and committed to the repository, making it easy for LLMs to access the entire documentation corpus.
+
 #### Automated Sync
 
 Set up a cron job for weekly updates:
