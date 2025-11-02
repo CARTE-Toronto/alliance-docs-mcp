@@ -1,6 +1,6 @@
 # Alliance Documentation - Page Directory
-# Generated: 2025-10-29T15:00:19.393318+00:00
-# Total pages: 415
+# Generated: 2025-11-02T06:18:45.122370+00:00
+# Total pages: 416
 
 - A tutorial on 'tar'/en (User Guide): https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/en
 - ABINIT/en (General): https://docs.alliancecan.ca/wiki/ABINIT/en
@@ -227,6 +227,7 @@
 - MonarQ/en (General): https://docs.alliancecan.ca/wiki/MonarQ/en
 - MonarQ/en-ca (General): https://docs.alliancecan.ca/wiki/MonarQ/en-ca
 - Monitoring jobs/en (General): https://docs.alliancecan.ca/wiki/Monitoring_jobs/en
+- Moose/en (General): https://docs.alliancecan.ca/wiki/Moose/en
 - Mounting /project space on a VM in the cloud/en (General): https://docs.alliancecan.ca/wiki/Mounting_/project_space_on_a_VM_in_the_cloud/en
 - Mp2/en (General): https://docs.alliancecan.ca/wiki/Mp2/en
 - MrBayes/en (General): https://docs.alliancecan.ca/wiki/MrBayes/en

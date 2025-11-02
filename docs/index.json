@@ -1,6 +1,6 @@
 {
-  "last_updated": "2025-10-29T15:00:19.387947+00:00",
-  "total_pages": 415,
+  "last_updated": "2025-11-02T06:18:45.115949+00:00",
+  "total_pages": 416,
   "pages": [
     {
       "page_id": 10049,
@@ -1942,7 +1942,7 @@
       "title": "Modules avx",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx",
       "category": "General",
-      "last_modified": "2025-10-29T12:01:28Z",
+      "last_modified": "2025-11-02T00:01:18Z",
       "file_path": "docs/pages/General/Modules_avx.md.gz",
       "slug": "Modules_avx"
     },
@@ -1951,7 +1951,7 @@
       "title": "Modules avx2",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx2",
       "category": "General",
-      "last_modified": "2025-10-28T12:01:45Z",
+      "last_modified": "2025-11-02T00:01:30Z",
       "file_path": "docs/pages/General/Modules_avx2.md.gz",
       "slug": "Modules_avx2"
     },
@@ -1960,7 +1960,7 @@
       "title": "Modules avx512",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx512",
       "category": "General",
-      "last_modified": "2025-10-28T12:01:45Z",
+      "last_modified": "2025-11-02T00:01:30Z",
       "file_path": "docs/pages/General/Modules_avx512.md.gz",
       "slug": "Modules_avx512"
     },
@@ -1978,7 +1978,7 @@
       "title": "Modules sse3",
       "url": "https://docs.alliancecan.ca/wiki/Modules_sse3",
       "category": "General",
-      "last_modified": "2025-10-29T12:01:35Z",
+      "last_modified": "2025-11-02T00:01:17Z",
       "file_path": "docs/pages/General/Modules_sse3.md.gz",
       "slug": "Modules_sse3"
     },
@@ -1987,7 +1987,7 @@
       "title": "MonarQ/en",
       "url": "https://docs.alliancecan.ca/wiki/MonarQ/en",
       "category": "General",
-      "last_modified": "2025-10-28T14:07:02Z",
+      "last_modified": "2025-10-29T16:57:51Z",
       "file_path": "docs/pages/General/MonarQ_en.md",
       "slug": "MonarQ_en"
     },
@@ -1996,7 +1996,7 @@
       "title": "MonarQ/en-ca",
       "url": "https://docs.alliancecan.ca/wiki/MonarQ/en-ca",
       "category": "General",
-      "last_modified": "2025-02-10T19:07:59Z",
+      "last_modified": "2025-10-28T14:06:31Z",
       "file_path": "docs/pages/General/MonarQ_en-ca.md",
       "slug": "MonarQ_en-ca"
     },
@@ -3736,6 +3736,15 @@
       "last_modified": "2025-10-22T00:32:56Z",
       "file_path": "docs/pages/General/Star-CCM+.md",
       "slug": "Star-CCM+"
+    },
+    {
+      "page_id": 31888,
+      "title": "Moose/en",
+      "url": "https://docs.alliancecan.ca/wiki/Moose/en",
+      "category": "General",
+      "last_modified": "2025-10-27T13:21:01Z",
+      "file_path": "docs/pages/General/Moose_en.md",
+      "slug": "Moose_en"
     }
   ]
 }
