@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-11-02T06:18:45.115949+00:00",
+  "last_updated": "2025-11-09T06:18:24.463268+00:00",
   "total_pages": 416,
   "pages": [
     {
@@ -1942,7 +1942,7 @@
       "title": "Modules avx",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx",
       "category": "General",
-      "last_modified": "2025-11-02T00:01:18Z",
+      "last_modified": "2025-11-09T00:00:19Z",
       "file_path": "docs/pages/General/Modules_avx.md.gz",
       "slug": "Modules_avx"
     },
@@ -1951,7 +1951,7 @@
       "title": "Modules avx2",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx2",
       "category": "General",
-      "last_modified": "2025-11-02T00:01:30Z",
+      "last_modified": "2025-11-09T00:00:31Z",
       "file_path": "docs/pages/General/Modules_avx2.md.gz",
       "slug": "Modules_avx2"
     },
@@ -1960,7 +1960,7 @@
       "title": "Modules avx512",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx512",
       "category": "General",
-      "last_modified": "2025-11-02T00:01:30Z",
+      "last_modified": "2025-11-09T00:00:30Z",
       "file_path": "docs/pages/General/Modules_avx512.md.gz",
       "slug": "Modules_avx512"
     },
@@ -1978,7 +1978,7 @@
       "title": "Modules sse3",
       "url": "https://docs.alliancecan.ca/wiki/Modules_sse3",
       "category": "General",
-      "last_modified": "2025-11-02T00:01:17Z",
+      "last_modified": "2025-11-09T00:00:16Z",
       "file_path": "docs/pages/General/Modules_sse3.md.gz",
       "slug": "Modules_sse3"
     },
@@ -3697,7 +3697,7 @@
       "title": "Killarney",
       "url": "https://docs.alliancecan.ca/wiki/Killarney",
       "category": "General",
-      "last_modified": "2025-10-23T18:11:28Z",
+      "last_modified": "2025-10-30T18:39:27Z",
       "file_path": "docs/pages/General/Killarney.md",
       "slug": "Killarney"
     },
@@ -3715,7 +3715,7 @@
       "title": "Trillium Quickstart",
       "url": "https://docs.alliancecan.ca/wiki/Trillium_Quickstart",
       "category": "General",
-      "last_modified": "2025-10-22T16:56:26Z",
+      "last_modified": "2025-11-04T19:42:10Z",
       "file_path": "docs/pages/General/Trillium_Quickstart.md",
       "slug": "Trillium_Quickstart"
     },

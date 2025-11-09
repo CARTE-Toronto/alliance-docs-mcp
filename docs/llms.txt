@@ -1,5 +1,5 @@
 # Alliance Documentation - Page Directory
-# Generated: 2025-11-02T06:18:45.122370+00:00
+# Generated: 2025-11-09T06:18:24.469366+00:00
 # Total pages: 416
 
 - A tutorial on 'tar'/en (User Guide): https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/en

@@ -2,7 +2,7 @@
 title: "Killarney"
 url: "https://docs.alliancecan.ca/wiki/Killarney"
 category: "General"
-last_modified: "2025-10-23T18:11:28Z"
+last_modified: "2025-10-30T18:39:27Z"
 page_id: 27762
 display_title: "Killarney"
 ---
@@ -24,7 +24,7 @@ This cluster is part of the Pan-Canadian AI Compute Environment (PAICE).
 
 ## Site-specific policies {#site_specific_policies}
 
-Killarney is currently open to Vector affiliated PIs with CCAI Chairs. Further access will be announced at a later date.
+Killarney is currently open to Vector affiliated PIs with CCAI Chairs as well as researchers within an AI program at a Canadian university or applying AI methods for their research.
 
 ## Access
 

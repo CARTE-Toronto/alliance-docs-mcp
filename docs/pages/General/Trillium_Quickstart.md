@@ -2,7 +2,7 @@
 title: "Trillium Quickstart"
 url: "https://docs.alliancecan.ca/wiki/Trillium_Quickstart"
 category: "General"
-last_modified: "2025-10-22T16:56:26Z"
+last_modified: "2025-11-04T19:42:10Z"
 page_id: 29085
 display_title: "Trillium Quickstart"
 ---
@@ -377,7 +377,7 @@ Submit this script from a CPU login node while in your `$SCRATCH` directory with
 -   Once it finds such nodes, it runs the script, which does the following:
     -   Change to the submission directory;
     -   Loads modules;
-    -   Preloads a library tuning MPI-IO for the VAST file system; change this to source /scinet/vast/etc/vastpreload-intelmpi.bash if using intelmpi instead of openmpi.
+    -   Preloads a library tuning MPI-IO for the VAST file system; change this to source /scinet/vast/etc/vastpreload-intelmpi.bash if using IntelMPI instead of OpenMPI. **Note: `mpirun` must be used for the VAST preload library to take effect, it does not work with `srun`.**
     -   Runs the `mpi_example` application (SLURM will inform `mpirun` or `srun` how many processes to run).
 
 ### Example: OpenMP job {#example_openmp_job}
@@ -470,7 +470,7 @@ Submit this script from a CPU login node while in your `$SCRATCH` directory with
 -   Once it finds such a node, it runs the script:
     -   Change to the submission directory;
     -   Loads modules;
-    -   Preloads a library tuning MPI-IO for the VAST file system; change this to source /scinet/vast/etc/vastpreload-intelmpi.bash if using intelmpi instead of openmpi.
+    -   Preloads a library tuning MPI-IO for the VAST file system; change this to source /scinet/vast/etc/vastpreload-intelmpi.bash if using IntelMPI instead of OpenMPI. **Note: `mpirun` must be used for the VAST preload library to take effect, it does not work with `srun`.**
     -   Runs the `hybrid_example` application. While SLURM will inform `mpirun` how many processes to run, it needs help to spread the processes and threads evenly over the cores. The \--map-by option solves this.\
         (for more than 8 and at most 24 threads per process, change \'l3cache\' to \'numa\' and for more than 24, change it to \'socket\').
 
