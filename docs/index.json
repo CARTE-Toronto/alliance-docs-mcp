@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-11-09T06:18:24.463268+00:00",
+  "last_updated": "2025-11-16T06:18:42.699217+00:00",
   "total_pages": 416,
   "pages": [
     {
@@ -250,7 +250,7 @@
       "title": "Ansys/en",
       "url": "https://docs.alliancecan.ca/wiki/Ansys/en",
       "category": "General",
-      "last_modified": "2025-10-17T14:10:14Z",
+      "last_modified": "2025-11-06T19:23:01Z",
       "file_path": "docs/pages/General/Ansys_en.md",
       "slug": "Ansys_en"
     },
@@ -1942,7 +1942,7 @@
       "title": "Modules avx",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx",
       "category": "General",
-      "last_modified": "2025-11-09T00:00:19Z",
+      "last_modified": "2025-11-16T00:00:16Z",
       "file_path": "docs/pages/General/Modules_avx.md.gz",
       "slug": "Modules_avx"
     },
@@ -1951,7 +1951,7 @@
       "title": "Modules avx2",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx2",
       "category": "General",
-      "last_modified": "2025-11-09T00:00:31Z",
+      "last_modified": "2025-11-16T00:00:29Z",
       "file_path": "docs/pages/General/Modules_avx2.md.gz",
       "slug": "Modules_avx2"
     },
@@ -1960,7 +1960,7 @@
       "title": "Modules avx512",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx512",
       "category": "General",
-      "last_modified": "2025-11-09T00:00:30Z",
+      "last_modified": "2025-11-16T00:00:29Z",
       "file_path": "docs/pages/General/Modules_avx512.md.gz",
       "slug": "Modules_avx512"
     },
@@ -1978,7 +1978,7 @@
       "title": "Modules sse3",
       "url": "https://docs.alliancecan.ca/wiki/Modules_sse3",
       "category": "General",
-      "last_modified": "2025-11-09T00:00:16Z",
+      "last_modified": "2025-11-16T00:00:14Z",
       "file_path": "docs/pages/General/Modules_sse3.md.gz",
       "slug": "Modules_sse3"
     },
@@ -3220,7 +3220,7 @@
       "title": "Transition from Niagara to Trillium/en",
       "url": "https://docs.alliancecan.ca/wiki/Transition_from_Niagara_to_Trillium/en",
       "category": "General",
-      "last_modified": "2025-09-04T19:06:41Z",
+      "last_modified": "2025-11-06T19:22:47Z",
       "file_path": "docs/pages/General/Transition_from_Niagara_to_Trillium_en.md",
       "slug": "Transition_from_Niagara_to_Trillium_en"
     },
