@@ -2,7 +2,7 @@
 title: "Ray"
 url: "https://docs.alliancecan.ca/wiki/Ray"
 category: "General"
-last_modified: "2023-03-13T12:22:59Z"
+last_modified: "2025-11-14T21:28:51Z"
 page_id: 22158
 display_title: "Ray"
 ---
@@ -15,74 +15,102 @@ display_title: "Ray"
 
 To see the latest version of Ray that we have built:
 
-For more information, see [Available wheels](https://docs.alliancecan.ca/Python#Available_wheels "Available wheels"){.wikilink}.
+For more information, see [Available wheels](https://docs.alliancecan.ca/Python#Available_wheels "wikilink").
 
 ## Installing our wheel {#installing_our_wheel}
 
 The preferred option is to install it using the Python [wheel](https://pythonwheels.com/) as follows:
 
-:   1\. Load a Python [module](https://docs.alliancecan.ca/Utiliser_des_modules/en#Sub-command_load "module"){.wikilink}, thus `module load python`
-:   2\. Create and start a [virtual environment](https://docs.alliancecan.ca/Python#Creating_and_using_a_virtual_environment "virtual environment"){.wikilink}.
+:   1\. Load a Python [module](https://docs.alliancecan.ca/Utiliser_des_modules/en#Sub-command_load "wikilink"), thus `module load python`
+:   2\. Create and start a [virtual environment](https://docs.alliancecan.ca/Python#Creating_and_using_a_virtual_environment "wikilink").
 :   3\. Install Ray in the virtual environment with `pip install`.
 
+```{=html}
 <!-- -->
+```
 
 :   
 
 # Job submission {#job_submission}
 
-## Single Node {#single_node}
+In the example that follows, we submit a job that spawns a single-node Ray cluster with 200GB RAM, 48 CPU cores and 4 H100 GPUs per node.
 
-Below is an example of a job that spawns a single-node Ray cluster with 6 cpus and 1 GPU.
-
-In this simple example, we connect to the single-node Ray cluster launched in the job submission script, then we check that Ray sees the resources allocated to the job.
+The script can be used for multi-node Ray clusters by changing the default value set by the line `#SBATCH --nodes=1`, or overriding it with `sbatch`\'s `--nodes=` command-line argument.
 
 ```{=mediawiki}
 {{File
-  |name=ray-example.py
-  |lang="python"
-  |contents=
-import ray
-import os
-
-# Connect to Ray cluster
-ray.init(address=f"{os.environ['HEAD_NODE']}:{os.environ['RAY_PORT']}",_node_ip_address=os.environ['HEAD_NODE'])
-
-# Check that ray can see 6 cpus and 1 GPU
-print(ray.available_resources())
-}}
-```
-## Multiple Nodes {#multiple_nodes}
-
-In the example that follows, we submit a job that spawns a two-node Ray cluster with 6 cpus and 1 GPU per node.
-
-Where the script `config_env.sh` is:
-
-And the script `launch_ray.sh` is:
-
-```{=mediawiki}
-{{File
-  |name=launch_ray.sh
+  |name=ray-example.sh
   |lang="bash"
   |contents=
 #!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --gpus-per-task=h100:4
+#SBATCH --cpus-per-task=48
+#SBATCH --mem=200G
+#SBATCH --time=0-00:10
+#SBATCH --output=%N-%j.out
 
+# 1. Load modules
+module load python
+
+# 2. & 3. Create a virtualenv and install Ray on all nodes
+#         Then, activate that virtualenv in this shell.
+srun -N $SLURM_NNODES -n $SLURM_NNODES config_env.sh
 source $SLURM_TMPDIR/ENV/bin/activate
-module load gcc/9.3.0 arrow
 
-if [[ "$SLURM_PROCID" -eq "0" ]]; then
-        echo "Ray head node already started..."
-        sleep 10
+# Define Ray head node address (this node) & port (any free port will do)
+export HEAD_NODE=$(hostname)
+export RAY_PORT=$(
+    python -c 'import socket;             \
+               s=socket.socket();         \
+               s.bind(("", 0));           \
+               print(s.getsockname()[1]); \
+               s.close()'
+)
 
-else
-        ray start --address "${HEAD_NODE}:${RAY_PORT}" --num-cpus="${SLURM_CPUS_PER_TASK}" --num-gpus=1 --block
-        sleep 5
-        echo "ray worker started!"
-fi
+# Craft --multi-prog configuration for Ray
+ray_multiprog_config="$SLURM_TMPDIR/ray-multiprog.conf"
+cat <<EOF >"$ray_multiprog_config"
+0   ray start --block --head --node-ip-address=$HEAD_NODE --port=$RAY_PORT
+*   ray start --block --address=${HEAD_NODE}:${RAY_PORT}
+EOF
+
+#
+# Some older Ray versions malfunctioned if the worker nodes started before
+# the head node. In that case, please modify the worker-node launch configuration
+# above to add a 10-second delay, using the following alternative lines:
+#
+# cat <<EOF >"$ray_multiprog_config"
+# 0   ray start --block --head --node-ip-address=$HEAD_NODE --port=$RAY_PORT
+# *   sh -c 'sleep 10; exec "\$@"' sh ray start --block --address=${HEAD_NODE}:${RAY_PORT}
+# EOF
+#
+
+# Launch head and workers on any/all nodes allocated to the job.
+srun -N $SLURM_NNODES -n $SLURM_NNODES                       \
+     --multi-prog "$ray_multiprog_config"                    \
+     ${SLURM_CPUS_ON_NODE:+--num-cpus} ${SLURM_CPUS_ON_NODE} \
+     ${SLURM_GPUS_ON_NODE:+--num-gpus} ${SLURM_GPUS_ON_NODE} &
+ray_cluster_pid=$!
+
+# Run your own script here
+python test_ray.py "$@"
+sleep 10
+
+# Shut down Ray worker nodes after the Python script exits.
+# Await its exit.
+kill $ray_cluster_pid
+wait
+
+# Stage out your results, if any
+# cp $SLURM_TMPDIR/results.json ~/scratch/
 
 }}
 ```
-In this simple example, we connect to the two-node Ray cluster launched in the job submission script, then we check that Ray sees the resources allocated to the job.
+Where the script `config_env.sh` is:
+
+In this simple example, we connect to the Ray cluster launched in the job submission script, then we check that Ray sees the resources allocated to the job.
 
 ```{=mediawiki}
 {{File
@@ -107,7 +135,7 @@ print(ray.available_resources())
 
 Tune is a Ray module for experiment execution and hyperparameter tuning at any scale. It supports a wide range of frameworks including Pytorch, Tensorflow and Scikit-Learn. In the example that follows, we use Tune to perform a hyperparameter sweep and find the best combination of learning rate and batch size to train a convolutional neural network with Pytorch. You can find examples using other frameworks on [Ray\'s official documentation](https://docs.ray.io/en/latest/tune/examples/ml-frameworks.html)
 
-To run this example, you can use one of the job submission templates provided [ above](https://docs.alliancecan.ca/#Job_submission " above"){.wikilink} depending on whether you require one or multiple nodes. As you will see in the code that follows, the amount of resources required by your job will depend mainly on two factors: the number of samples you wish to draw from the search space and the size of your model in memory. Knowing these two things you can reason about how many trials you will run in total and how many of them can run in parallel using as few resources as possible. For example, how many copies of your model can you fit inside the memory of a single GPU? That is the number of trials you can run in parallel using just one GPU.
+To run this example, you can use one of the job submission templates provided [ above](https://docs.alliancecan.ca/#Job_submission "wikilink") depending on whether you require one or multiple nodes. As you will see in the code that follows, the amount of resources required by your job will depend mainly on two factors: the number of samples you wish to draw from the search space and the size of your model in memory. Knowing these two things you can reason about how many trials you will run in total and how many of them can run in parallel using as few resources as possible. For example, how many copies of your model can you fit inside the memory of a single GPU? That is the number of trials you can run in parallel using just one GPU.
 
 In the example, our model takes up about 1GB in memory. We will run 20 trials in total, 10 in parallel at a time on the same GPU, and we will give one CPU to each trial to be used as a `DataLoader` worker. So we will pick the single node job submission template and we will replace the number of cpus per task with `#SBATCH --cpus-per-task=10` and the Python call with `python ray-tune-example.py --num_samples=20 --cpus-per-trial=1 gpus-per-trial=0.1`. We will also need to install the packages `ray[tune]` and `torchvision` in our virtualenv.
 

@@ -1,6 +1,6 @@
 {
-  "last_updated": "2025-11-16T06:18:42.699217+00:00",
-  "total_pages": 416,
+  "last_updated": "2025-11-23T06:17:03.285947+00:00",
+  "total_pages": 417,
   "pages": [
     {
       "page_id": 10049,
@@ -178,7 +178,7 @@
       "title": "Advanced MPI scheduling/en",
       "url": "https://docs.alliancecan.ca/wiki/Advanced_MPI_scheduling/en",
       "category": "General",
-      "last_modified": "2025-09-15T18:24:01Z",
+      "last_modified": "2025-11-14T22:00:43Z",
       "file_path": "docs/pages/General/Advanced_MPI_scheduling_en.md",
       "slug": "Advanced_MPI_scheduling_en"
     },
@@ -1564,7 +1564,7 @@
       "title": "Job scheduling policies/en",
       "url": "https://docs.alliancecan.ca/wiki/Job_scheduling_policies/en",
       "category": "General",
-      "last_modified": "2025-09-02T13:26:35Z",
+      "last_modified": "2025-11-14T20:51:36Z",
       "file_path": "docs/pages/General/Job_scheduling_policies_en.md",
       "slug": "Job_scheduling_policies_en"
     },
@@ -1942,7 +1942,7 @@
       "title": "Modules avx",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx",
       "category": "General",
-      "last_modified": "2025-11-16T00:00:16Z",
+      "last_modified": "2025-11-22T18:00:16Z",
       "file_path": "docs/pages/General/Modules_avx.md.gz",
       "slug": "Modules_avx"
     },
@@ -1951,7 +1951,7 @@
       "title": "Modules avx2",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx2",
       "category": "General",
-      "last_modified": "2025-11-16T00:00:29Z",
+      "last_modified": "2025-11-23T00:00:30Z",
       "file_path": "docs/pages/General/Modules_avx2.md.gz",
       "slug": "Modules_avx2"
     },
@@ -1960,7 +1960,7 @@
       "title": "Modules avx512",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx512",
       "category": "General",
-      "last_modified": "2025-11-16T00:00:29Z",
+      "last_modified": "2025-11-23T00:00:29Z",
       "file_path": "docs/pages/General/Modules_avx512.md.gz",
       "slug": "Modules_avx512"
     },
@@ -1978,7 +1978,7 @@
       "title": "Modules sse3",
       "url": "https://docs.alliancecan.ca/wiki/Modules_sse3",
       "category": "General",
-      "last_modified": "2025-11-16T00:00:14Z",
+      "last_modified": "2025-11-23T00:00:15Z",
       "file_path": "docs/pages/General/Modules_sse3.md.gz",
       "slug": "Modules_sse3"
     },
@@ -2716,7 +2716,7 @@
       "title": "Ray",
       "url": "https://docs.alliancecan.ca/wiki/Ray",
       "category": "General",
-      "last_modified": "2023-03-13T12:22:59Z",
+      "last_modified": "2025-11-14T21:28:51Z",
       "file_path": "docs/pages/General/Ray.md",
       "slug": "Ray"
     },
@@ -3745,6 +3745,15 @@
       "last_modified": "2025-10-27T13:21:01Z",
       "file_path": "docs/pages/General/Moose_en.md",
       "slug": "Moose_en"
+    },
+    {
+      "page_id": 31985,
+      "title": "Test-syntax",
+      "url": "https://docs.alliancecan.ca/wiki/Test-syntax",
+      "category": "General",
+      "last_modified": "2025-11-14T19:48:47Z",
+      "file_path": "docs/pages/General/Test-syntax.md",
+      "slug": "Test-syntax"
     }
   ]
 }

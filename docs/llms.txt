@@ -1,6 +1,6 @@
 # Alliance Documentation - Page Directory
-# Generated: 2025-11-16T06:18:42.706012+00:00
-# Total pages: 416
+# Generated: 2025-11-23T06:17:03.292388+00:00
+# Total pages: 417
 
 - A tutorial on 'tar'/en (User Guide): https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/en
 - ABINIT/en (General): https://docs.alliancecan.ca/wiki/ABINIT/en
@@ -359,6 +359,7 @@
 - Terraform/en (General): https://docs.alliancecan.ca/wiki/Terraform/en
 - Tesseract (General): https://docs.alliancecan.ca/wiki/Tesseract
 - Test-moderation (General): https://docs.alliancecan.ca/wiki/Test-moderation
+- Test-syntax (General): https://docs.alliancecan.ca/wiki/Test-syntax
 - Test12 (General): https://docs.alliancecan.ca/wiki/Test12
 - TestPage (General): https://docs.alliancecan.ca/wiki/TestPage
 - Testing With Graphics (General): https://docs.alliancecan.ca/wiki/Testing_With_Graphics

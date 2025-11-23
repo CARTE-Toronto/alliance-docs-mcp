@@ -2,14 +2,14 @@
 title: "Advanced MPI scheduling/en"
 url: "https://docs.alliancecan.ca/wiki/Advanced_MPI_scheduling/en"
 category: "General"
-last_modified: "2025-09-15T18:24:01Z"
+last_modified: "2025-11-14T22:00:43Z"
 page_id: 3424
 display_title: "Advanced MPI scheduling"
 ---
 
 `<languages />`{=html}
 
-Most users should submit MPI or distributed memory parallel jobs following the example given at [Running jobs](https://docs.alliancecan.ca/Running_jobs#MPI_job "Running jobs"){.wikilink}. Simply request a number of processes with `--ntasks` or `-n` and trust the scheduler to allocate those processes in a way that balances the efficiency of your job with the overall efficiency of the cluster.
+Most users should submit MPI or distributed memory parallel jobs following the example given at [Running jobs](https://docs.alliancecan.ca/Running_jobs#MPI_job "wikilink"). Simply request a number of processes with `--ntasks` or `-n` and trust the scheduler to allocate those processes in a way that balances the efficiency of your job with the overall efficiency of the cluster.
 
 If you want more control over how your job is allocated, then SchedMD\'s page on [multicore support](https://slurm.schedmd.com/mc_support.html) is a good place to begin. It describes how many of the options to the [`sbatch`](https://slurm.schedmd.com/sbatch.html) command interact to constrain the placement of processes.
 
@@ -25,32 +25,32 @@ This will run 15 MPI processes. The cores could be allocated on one node, on 15 
 
 #### Whole nodes {#whole_nodes}
 
-If you have a large parallel job to run, that is, one that can efficiently use 32 cores or more, you should probably request whole nodes. To do so, it helps to know what node types are available at the cluster you are using.
+If you have a large parallel job to run, that is, one that can efficiently use 64 cores or more, you should probably request whole nodes. To do so, it helps to know what node types are available at the cluster you are using.
 
-Typical nodes in [Béluga](https://docs.alliancecan.ca/Béluga/en "Béluga"){.wikilink}, [Cedar](https://docs.alliancecan.ca/Cedar "Cedar"){.wikilink}, [Graham](https://docs.alliancecan.ca/Graham "Graham"){.wikilink}, [Narval](https://docs.alliancecan.ca/Narval/en "Narval"){.wikilink} and [Niagara](https://docs.alliancecan.ca/Niagara "Niagara"){.wikilink} have the following CPU and memory configuration:
+Typical nodes in [Fir](https://docs.alliancecan.ca/Fir "wikilink"), [Narval](https://docs.alliancecan.ca/Narval/en "wikilink"), [Nibi](https://docs.alliancecan.ca/Nibi "wikilink"), [Rorqual](https://docs.alliancecan.ca/Rorqual/en "wikilink") and [Trillium](https://docs.alliancecan.ca/Trillium "wikilink") have the following CPU and memory configuration:
 
-  Cluster                                       cores   usable memory              Notes
-  --------------------------------------------- ------- -------------------------- -----------------------------------------------
-  [Béluga](https://docs.alliancecan.ca/Béluga/en "Béluga"){.wikilink}       40      186 GiB (\~4.6 GiB/core)   Some are reserved for whole node jobs.
-  [Graham](https://docs.alliancecan.ca/Graham "Graham"){.wikilink}          32      125 GiB (\~3.9 GiB/core)   Some are reserved for whole node jobs.
-  [Cedar](https://docs.alliancecan.ca/Cedar "Cedar"){.wikilink} (Skylake)   48      187 GiB (\~3.9 GiB/core)   Some are reserved for whole node jobs.
-  [Narval](https://docs.alliancecan.ca/Narval/en "Narval"){.wikilink}       64      249 GiB (\~3.9 GiB/core)   AMD EPYC Rome processors
-  [Niagara](https://docs.alliancecan.ca/Niagara "Niagara"){.wikilink}       40      188 GiB                    Only whole-node jobs are possible at Niagara.
+  Cluster                            cores   usable memory   Notes
+  ---------------------------------- ------- --------------- ----------------------------------------------------
+  [Fir](https://docs.alliancecan.ca/Fir "wikilink")              192     750 GiB         Some are reserved for whole node jobs.
+  [Narval](https://docs.alliancecan.ca/Narval/en "wikilink")     64      249 GiB         Some are reserved for whole node jobs.
+  [Nibi](https://docs.alliancecan.ca/Nibi "wikilink")            192     748 GiB         No node specifically reserved for whole node jobs.
+  [Rorqual](https://docs.alliancecan.ca/Rorqual/en "wikilink")   192     750 GiB         Some are reserved for whole node jobs.
+  [Trillium](https://docs.alliancecan.ca/Trillium "wikilink")    192     749 GiB         Only whole-node jobs are possible at Trillium.
 
 Whole-node jobs are allowed to run on any node. In the table above, `<i>`{=html}Some are reserved for whole-node jobs`</i>`{=html} indicates that there are nodes on which by-core jobs are forbidden.
 
 A job script requesting whole nodes should look like this:
 
-`<tabs>`{=html} `<tab name="Béluga">`{=html} `</tab>`{=html} `<tab name="Cedar">`{=html} `</tab>`{=html} `<tab name="Graham">`{=html} `</tab>`{=html} `<tab name="Narval">`{=html} `</tab>`{=html} `<tab name="Niagara">`{=html} `</tab>`{=html} `</tabs>`{=html}
+`<tabs>`{=html} `<tab name="Fir">`{=html} `</tab>`{=html} `<tab name="Narval">`{=html} `</tab>`{=html} `<tab name="Nibi">`{=html} `</tab>`{=html} `<tab name="Rorqual">`{=html} `</tab>`{=html} `<tab name="Trillium">`{=html} `</tab>`{=html} `</tabs>`{=html}
 
 Requesting `--mem=0` is interpreted by Slurm to mean `<i>`{=html}reserve all the available memory on each node assigned to the job.`</i>`{=html}
 
-If you need more memory per node than the smallest node provides (e.g. more than 125 GiB at Graham) then you should not use `--mem=0`, but request the amount explicitly. Furthermore, some memory on each node is reserved for the operating system. To find the largest amount your job can request and still qualify for a given node type, see the `<i>`{=html}Available memory`</i>`{=html} column of the `<i>`{=html}Node characteristics`</i>`{=html} table for each cluster.
+If you need more memory per node than the smallest node provides (e.g. more than 748 GiB at Nibi) then you `<b>`{=html}should not`</b>`{=html} use `--mem=0`, but request the amount explicitly. Furthermore, some memory on each node is reserved for the operating system. To find the largest amount your job can request and still qualify for a given node type, see the `<i>`{=html}Available memory`</i>`{=html} column of the `<i>`{=html}Node characteristics`</i>`{=html} table for each cluster.
 
-- [Béluga node characteristics](https://docs.alliancecan.ca/Béluga/en#Node_characteristics "Béluga node characteristics"){.wikilink}
-- [Cedar node characteristics](https://docs.alliancecan.ca/Cedar#Node_characteristics "Cedar node characteristics"){.wikilink}
-- [Graham node characteristics](https://docs.alliancecan.ca/Graham#Node_characteristics "Graham node characteristics"){.wikilink}
-- [Narval node characteristics](https://docs.alliancecan.ca/Narval/en#Node_characteristics "Narval node characteristics"){.wikilink}
+-   [Fir node characteristics](https://docs.alliancecan.ca/Fir#Node_characteristics "wikilink")
+-   [Narval node characteristics](https://docs.alliancecan.ca/Narval/en#Node_characteristics "wikilink")
+-   [Nibi node characteristics](https://docs.alliancecan.ca/Nibi#Node_characteristics "wikilink")
+-   [Rorqual node characteristics](https://docs.alliancecan.ca/Rorqual/en#Node_characteristics "wikilink")
 
 #### Few cores, single node {#few_cores_single_node}
 
@@ -60,7 +60,7 @@ In this case, you could also say `--mem-per-cpu=3G`. The advantage of `--mem=45G
 
 #### Large parallel job, not a multiple of whole nodes {#large_parallel_job_not_a_multiple_of_whole_nodes}
 
-Not every application runs with maximum efficiency on a multiple of 32 (or 40, or 48) cores. Choosing the number of cores to request---and whether or not to request whole nodes---may be a trade-off between `<i>`{=html}running`</i>`{=html} time (or efficient use of the computer) and `<i>`{=html}waiting`</i>`{=html} time (or efficient use of your time). If you want help evaluating these factors, please contact [Technical support](https://docs.alliancecan.ca/Technical_support "Technical support"){.wikilink}.
+Not every application runs with maximum efficiency on a multiple of 32 (or 40, or 48) cores. Choosing the number of cores to request---and whether or not to request whole nodes---may be a trade-off between `<i>`{=html}running`</i>`{=html} time (or efficient use of the computer) and `<i>`{=html}waiting`</i>`{=html} time (or efficient use of your time). If you want help evaluating these factors, please contact [Technical support](https://docs.alliancecan.ca/Technical_support "wikilink").
 
 ### Hybrid jobs: MPI and OpenMP, or MPI and threads {#hybrid_jobs_mpi_and_openmp_or_mpi_and_threads}
 
@@ -97,6 +97,6 @@ For an example of some differences between `srun` and `mpiexec`, see [this discu
 
 ### External links {#external_links}
 
-- [sbatch](https://slurm.schedmd.com/sbatch.html) documentation
-- [srun](https://slurm.schedmd.com/srun.html) documentation
-- [Open MPI](https://www.open-mpi.org/faq/?category=slurm) and Slurm
+-   [sbatch](https://slurm.schedmd.com/sbatch.html) documentation
+-   [srun](https://slurm.schedmd.com/srun.html) documentation
+-   [Open MPI](https://www.open-mpi.org/faq/?category=slurm) and Slurm
