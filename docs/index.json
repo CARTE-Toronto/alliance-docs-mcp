@@ -1,6 +1,6 @@
 {
-  "last_updated": "2025-11-23T06:17:03.285947+00:00",
-  "total_pages": 417,
+  "last_updated": "2025-11-30T06:18:51.782095+00:00",
+  "total_pages": 418,
   "pages": [
     {
       "page_id": 10049,
@@ -1474,7 +1474,7 @@
       "title": "ImageNet",
       "url": "https://docs.alliancecan.ca/wiki/ImageNet",
       "category": "General",
-      "last_modified": "2025-08-21T14:37:09Z",
+      "last_modified": "2025-11-20T12:29:16Z",
       "file_path": "docs/pages/General/ImageNet.md",
       "slug": "ImageNet"
     },
@@ -1942,7 +1942,7 @@
       "title": "Modules avx",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx",
       "category": "General",
-      "last_modified": "2025-11-22T18:00:16Z",
+      "last_modified": "2025-11-29T00:01:30Z",
       "file_path": "docs/pages/General/Modules_avx.md.gz",
       "slug": "Modules_avx"
     },
@@ -1951,7 +1951,7 @@
       "title": "Modules avx2",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx2",
       "category": "General",
-      "last_modified": "2025-11-23T00:00:30Z",
+      "last_modified": "2025-11-30T00:00:29Z",
       "file_path": "docs/pages/General/Modules_avx2.md.gz",
       "slug": "Modules_avx2"
     },
@@ -1960,7 +1960,7 @@
       "title": "Modules avx512",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx512",
       "category": "General",
-      "last_modified": "2025-11-23T00:00:29Z",
+      "last_modified": "2025-11-30T00:00:27Z",
       "file_path": "docs/pages/General/Modules_avx512.md.gz",
       "slug": "Modules_avx512"
     },
@@ -1978,7 +1978,7 @@
       "title": "Modules sse3",
       "url": "https://docs.alliancecan.ca/wiki/Modules_sse3",
       "category": "General",
-      "last_modified": "2025-11-23T00:00:15Z",
+      "last_modified": "2025-11-29T18:00:15Z",
       "file_path": "docs/pages/General/Modules_sse3.md.gz",
       "slug": "Modules_sse3"
     },
@@ -3754,6 +3754,15 @@
       "last_modified": "2025-11-14T19:48:47Z",
       "file_path": "docs/pages/General/Test-syntax.md",
       "slug": "Test-syntax"
+    },
+    {
+      "page_id": 26935,
+      "title": "Fir",
+      "url": "https://docs.alliancecan.ca/wiki/Fir",
+      "category": "General",
+      "last_modified": "2025-11-24T21:23:36Z",
+      "file_path": "docs/pages/General/Fir.md",
+      "slug": "Fir"
     }
   ]
 }

@@ -1,6 +1,6 @@
 # Alliance Documentation - Page Directory
-# Generated: 2025-11-23T06:17:03.292388+00:00
-# Total pages: 417
+# Generated: 2025-11-30T06:18:51.788283+00:00
+# Total pages: 418
 
 - A tutorial on 'tar'/en (User Guide): https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/en
 - ABINIT/en (General): https://docs.alliancecan.ca/wiki/ABINIT/en
@@ -126,6 +126,7 @@
 - FTP server in the Cloud/en (General): https://docs.alliancecan.ca/wiki/FTP_server_in_the_Cloud/en
 - Faiss/en (General): https://docs.alliancecan.ca/wiki/Faiss/en
 - FastTree/en (General): https://docs.alliancecan.ca/wiki/FastTree/en
+- Fir (General): https://docs.alliancecan.ca/wiki/Fir
 - Fir/en (General): https://docs.alliancecan.ca/wiki/Fir/en
 - Firedrake (General): https://docs.alliancecan.ca/wiki/Firedrake
 - Flax (General): https://docs.alliancecan.ca/wiki/Flax
