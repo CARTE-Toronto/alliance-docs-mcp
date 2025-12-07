@@ -2,7 +2,7 @@
 title: "VNC/en"
 url: "https://docs.alliancecan.ca/wiki/VNC/en"
 category: "General"
-last_modified: "2025-10-07T15:04:40Z"
+last_modified: "2025-11-28T18:39:32Z"
 page_id: 8518
 display_title: "VNC"
 ---
@@ -11,7 +11,7 @@ display_title: "VNC"
 
 ![MATLAB running via VNC.](https://docs.alliancecan.ca/Matlab-vnc.png "MATLAB running via VNC."){width="400"}
 
-To remotely start the graphical user interface (gui) of a program, X11 forwarding over [SSH](https://docs.alliancecan.ca/SSH "SSH"){.wikilink} is commonly used. However the performance of this approach is often too slow to perform smooth complex graphics rotations. A much better alternative is to use [VNC](https://en.wikipedia.org/wiki/Virtual_Network_Computing) to connect to a remote desktop.
+To remotely start the graphical user interface (gui) of a program, X11 forwarding over [SSH](https://docs.alliancecan.ca/SSH "wikilink") is commonly used. However the performance of this approach is often too slow to perform smooth complex graphics rotations. A much better alternative is to use [VNC](https://en.wikipedia.org/wiki/Virtual_Network_Computing) to connect to a remote desktop.
 
 # Setup
 
@@ -86,7 +86,7 @@ If your program requires memory and/or cputime limits greater than those provide
 
 `<b>`{=html}1) Start a VNC server`</b>`{=html}
 
-Before starting your VNC server, log into a cluster (such as nibi) and create a compute node allocation using the `salloc` command (24hr time limit applies). For example, to request an [interactive job](https://docs.alliancecan.ca/Running_jobs#Interactive_jobs "interactive job"){.wikilink} using 4 CPUs and 16GB of memory you could use the command:
+Before starting your VNC server, log into a cluster (such as nibi) and create a compute node allocation using the `salloc` command (24hr time limit applies). For example, to request an [interactive job](https://docs.alliancecan.ca/Running_jobs#Interactive_jobs "wikilink") using 4 CPUs and 16GB of memory you could use the command:
 
 `[``<b>`{=html}`l4``</b>`{=html}`(login node):~] salloc --time=1:00:00 --cpus-per-task=4 --mem=16000 --account=def-piusername`\
 `salloc: Pending job allocation 1149016`\
@@ -131,7 +131,7 @@ For nibi, a new form of the tunnel command `ssh -J username@clustername -L local
 `Enter a passcode or select one of the following options:`\
 `[c48(compute node):~]`
 
-If you exit the node that your tunnel is connected to, you will no longer be able to connect to the VNC server with vncviewer. However since your vncserver will continue running, so you may regain access to it by simply starting a new tunnel. For more information about tunnels see [SSH tunnel](https://docs.alliancecan.ca/SSH_tunnelling "SSH tunnel"){.wikilink}.
+If you exit the node that your tunnel is connected to, you will no longer be able to connect to the VNC server with vncviewer. However since your vncserver will continue running, so you may regain access to it by simply starting a new tunnel. For more information about tunnels see [SSH tunnel](https://docs.alliancecan.ca/SSH_tunnelling "wikilink").
 
 `<b>`{=html}3) Connect to the VNC server`</b>`{=html}
 
@@ -154,7 +154,7 @@ If you have a Linux desktop, open a new local terminal window and tell your VNC 
 `CConn:       Using pixel format depth 24 (32bpp) little-endian rgb888`\
 `CConnection: Enabling continuous updates`
 
-If you are on a Mac or Windows desktop (not a linux distro) then instead of running the `vncviewer` from the command line, you may click the `<i>`{=html}TigerVNC Viewer`</i>`{=html} application icon and enter your **localhost:port** information as shown here: [400px\|thumb**Mac Tiger VNC Viewer Connection Details Dialogue Box**](https://docs.alliancecan.ca/File:VNCviewerConnect3.png "400px|thumbMac Tiger VNC Viewer Connection Details Dialogue Box"){.wikilink}. As a side note, the default VNC port assumed by `<i>`{=html}TigerVNC Viewer`</I>`{=html} is 5900, therefore if you specified 5900 as the local port to be forwarded when you started your SSH tunnel, then you could simply specify **localhost**. Windows users however may find they cannot set up an SSH tunnel on local port 5900 in the first place.
+If you are on a Mac or Windows desktop (not a linux distro) then instead of running the `vncviewer` from the command line, you may click the `<i>`{=html}TigerVNC Viewer`</i>`{=html} application icon and enter your **localhost:port** information as shown here: [400px\|thumb**Mac Tiger VNC Viewer Connection Details Dialogue Box**](https://docs.alliancecan.ca/File:VNCviewerConnect3.png "wikilink"). As a side note, the default VNC port assumed by `<i>`{=html}TigerVNC Viewer`</I>`{=html} is 5900, therefore if you specified 5900 as the local port to be forwarded when you started your SSH tunnel, then you could simply specify **localhost**. Windows users however may find they cannot set up an SSH tunnel on local port 5900 in the first place.
 
 Once `vncviewer` connects you will be presented with a [Linux MATE desktop](https://mate-desktop.org/). To launch a terminal, click on the top menu on \"Applications -\> System Tools -\> MATE Terminal\". You may also add a shortcut to the top menu by right-clicking on \"MATE Terminal\" and by clicking on \"Add this launcher to panel\". Finally, to launch a program, invoke the command as you would normally within a `bash` session, for example `xclock`. To start a more complicated program like MATLAB, load the module and then run the `matlab` command.
 
@@ -207,9 +207,9 @@ Repeated failing attempts to establish a new vncserver/vncviewer connection may 
 
 If your VNC screensaver times out and requests a password, enter your cluster account password to unlock it (not your vncserver password). If you are running the MATE desktop and the screensaver will not unlock, try running `killall -9 .mate-screensaver`. This should no longer be a problem on our clusters as the VNC screensaver has been disabled.
 
-## Cannot Login {#cannot_login}
+## Cannot log in {#cannot_log_in}
 
-The procedure to login to gra-vdi.alliancecan.ca is a two step process:
+The procedure to log in to gra-vdi.alliancecan.ca is a two step process:
 
 1\)
 
@@ -221,13 +221,13 @@ The procedure to login to gra-vdi.alliancecan.ca is a two step process:
 `username`\
 `Enter your Duo two-factor MFA passcode`
 
-If you enter the wrong username/password for 1) you will still be prompted by 2). If you then send your username/passcode then you will receive a message that says `<b>`{=html}Success, Logging you in\...`</b>`{=html} and be returned to the login screen of 1). The solution is to try again being sure to enter your correct username/password combination. If you cannot recall your alliance ccdb password then visit [here](https://ccdb.alliancecan.ca/security/forgot) to reset it assuming your account it not pending renewal by your PI.
+If you enter the wrong username/password for 1) you will still be prompted by 2). If you then send your username/passcode then you will receive a message that says `<b>`{=html}Success, Logging you in\...`</b>`{=html} and be returned to the log in screen of 1). The solution is to try again being sure to enter your correct username/password combination. If you cannot recall your CCDB password, visit [here](https://ccdb.alliancecan.ca/security/forgot) to reset it, assuming your account it not pending renewal by your PI.
 
-## OpenGL Graphics {#opengl_graphics}
+## OpenGL graphics {#opengl_graphics}
 
-To run a graphics based program that utilizes hardware-based accelerated OpenGL, a couple of changes will be required in the above `<b>`{=html}Compute Nodes`</b>`{=html} section.
+To run a graphics-based program that uses hardware-based accelerated OpenGL, a couple of changes will be required in the above `<i>`{=html}Compute nodes`</i>`{=html} section.
 
-First, the `salloc` command must be modified to request a gpu node. If this is not done the program will fall back to using software-based rendering on cpus which is relatively much slower. To request the first gpu node that comes available (and in turn minimize your queue wait time if the cluster has multiple gpu node types) simply specify:
+First, the `salloc` command must be modified to request a GPU node. If this is not done, the program will fall back to using software-based rendering on CPUs, which is relatively much slower. To request the first GPU node that brcomes available (and in turn minimize your queue wait time if the cluster has multiple GPU node types) simply specify:
 
 `[``<b>`{=html}`l4``</b>`{=html}`(login node):~] salloc --time=1:00:00 --cpus-per-task=4 --gpus-per-node=1 --mem=16000 --account=def-piname`
 
@@ -241,6 +241,6 @@ Second, `vglrun` will probably need to be added just before the name of your `PR
 
 Then `vglrun` sets some extra environment variables to ensure your program will use correct virtualgl libraries. If however your `PROGRAM` has already been patched to use the current cvmfs standard environment doing so will not be required.
 
-## Portal Alternatives {#portal_alternatives}
+## Portal alternatives {#portal_alternatives}
 
-If you experience graphics issues when using VNC as described above, try instead using [OpenOnDemand](https://ondemand.sharcnet.ca/) on `<b>`{=html}nibi`</b>`{=html} cluster or [JupyterHub](https://jupyterhub.rorqual.alliancecan.ca) on `<b>`{=html}rorqual`</b>`{=html} cluster. Both systems offer an automated modern desktop VDI web interface gui experience that is designed for ease of use with improved hardware performance and software support.
+If you experience graphics issues when using VNC as described above, try instead using [OpenOnDemand](https://ondemand.sharcnet.ca/) on the `<b>`{=html}Nibi`</b>`{=html} cluster or [JupyterHub](https://jupyterhub.rorqual.alliancecan.ca) on the `<b>`{=html}Rorqual`</b>`{=html} cluster. Both systems offer an automated modern desktop VDI web interface GUI experience that is designed for ease of use with improved hardware performance and software support.

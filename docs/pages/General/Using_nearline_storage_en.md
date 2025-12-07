@@ -2,7 +2,7 @@
 title: "Using nearline storage/en"
 url: "https://docs.alliancecan.ca/wiki/Using_nearline_storage/en"
 category: "General"
-last_modified: "2025-03-20T18:55:26Z"
+last_modified: "2025-11-28T18:40:05Z"
 page_id: 9323
 display_title: "Using nearline storage"
 ---
@@ -17,9 +17,9 @@ Nearline is a tape-based filesystem intended for **inactive data**. Datasets whi
 
 Retrieving small files from tape is inefficient, while extremely large files pose other problems. Please observe these guidelines when storing files in /nearline:
 
-- Files smaller than \~10GB should be combined into archive files (`<i>`{=html}tarballs`</i>`{=html}) using [tar](https://docs.alliancecan.ca/A_tutorial_on_'tar' "tar"){.wikilink} or a [similar tool](https://docs.alliancecan.ca/Archiving_and_compressing_files "similar tool"){.wikilink}.
-- Files larger than 4TB should be split in chunks of 1TB using the [split command](https://docs.alliancecan.ca/A_tutorial_on_'tar'#Splitting_files "split command"){.wikilink} or a similar tool.
-- `<b>`{=html}DO NOT SEND SMALL FILES TO NEARLINE, except for indexes (see `<i>`{=html}Create an index`</i>`{=html} below).`</b>`{=html}
+-   Files smaller than \~10GB should be combined into archive files (`<i>`{=html}tarballs`</i>`{=html}) using [tar](https://docs.alliancecan.ca/A_tutorial_on_'tar' "wikilink") or a [similar tool](https://docs.alliancecan.ca/Archiving_and_compressing_files "wikilink").
+-   Files larger than 4TB should be split in chunks of 1TB using the [split command](https://docs.alliancecan.ca/A_tutorial_on_'tar'#Splitting_files "wikilink") or a similar tool.
+-   `<b>`{=html}DO NOT SEND SMALL FILES TO NEARLINE, except for indexes (see `<i>`{=html}Create an index`</i>`{=html} below).`</b>`{=html}
 
 ### Do not compress your data {#do_not_compress_your_data}
 
@@ -27,7 +27,7 @@ There is no need to compress the data in /nearline since the tape archive system
 
 ### Use tar or dar {#use_tar_or_dar}
 
-Use [tar](https://docs.alliancecan.ca/A_tutorial_on_'tar' "tar"){.wikilink} or [dar](https://docs.alliancecan.ca/dar "dar"){.wikilink} to create an archive file.
+Use [tar](https://docs.alliancecan.ca/A_tutorial_on_'tar' "wikilink") or [dar](https://docs.alliancecan.ca/dar "wikilink") to create an archive file.
 
 Keep the source files in their original filesystem. Do NOT copy the source files to /nearline before creating the archive.
 
@@ -53,11 +53,11 @@ Creating a tar or dar file for a large volume of data can be resource-intensive.
 
 ### Use a terminal multiplexer {#use_a_terminal_multiplexer}
 
-Archiving large file collections can take several hours or even days. Your SSH session might be interrupted before your program finishes, or you might want to close your session, keep your program running in the background, and come back to it later. Run `tar` or `dar` in [a terminal multiplexer](https://docs.alliancecan.ca/Prolonging_terminal_sessions#Terminal_multiplexers "a terminal multiplexer"){.wikilink} such as `tmux` to manage these issues.
+Archiving large file collections can take several hours or even days. Your SSH session might be interrupted before your program finishes, or you might want to close your session, keep your program running in the background, and come back to it later. Run `tar` or `dar` in [a terminal multiplexer](https://docs.alliancecan.ca/Prolonging_terminal_sessions#Terminal_multiplexers "wikilink") such as `tmux` to manage these issues.
 
 ### Use `dar` in non-interactive mode {#use_dar_in_non_interactive_mode}
 
-When used in a terminal, `dar` runs in interactive mode and asks to confirm certain operations. When used without an attached terminal, `dar` runs in non-interactive mode and assumes a "no" answer to any questions. We recommend to explicitly disable interactivity with `dar -Q`. This is especially useful when running `dar` in an unattended terminal multiplexer. See [Dar](https://docs.alliancecan.ca/Dar "Dar"){.wikilink} for additional information.
+When used in a terminal, `dar` runs in interactive mode and asks to confirm certain operations. When used without an attached terminal, `dar` runs in non-interactive mode and assumes a "no" answer to any questions. We recommend to explicitly disable interactivity with `dar -Q`. This is especially useful when running `dar` in an unattended terminal multiplexer. See [Dar](https://docs.alliancecan.ca/Dar "wikilink") for additional information.
 
 ## Why /nearline? {#why_nearline}
 
@@ -80,16 +80,16 @@ When a file has been moved entirely to tape (that is, when it is *virtualized*) 
 
 ### Transferring data from /nearline {#transferring_data_from_nearline}
 
-While [transferring data](https://docs.alliancecan.ca/Transferring_data "transferring data"){.wikilink} with [Globus](https://docs.alliancecan.ca/Globus "Globus"){.wikilink} or any other tool, the data that was on tape gets automatically restored on disk upon reading it. Since tape access is relatively slow, each file restoration can hang the transfer for a few seconds to a few minutes. Therefore, users should expect longer transfer times from /nearline.
+While [transferring data](https://docs.alliancecan.ca/Transferring_data "wikilink") with [Globus](https://docs.alliancecan.ca/Globus "wikilink") or any other tool, the data that was on tape gets automatically restored on disk upon reading it. Since tape access is relatively slow, each file restoration can hang the transfer for a few seconds to a few minutes. Therefore, users should expect longer transfer times from /nearline.
 
 For an overview of the state of all files saved on /nearline, **some clusters** support the following command:
 
 The different `Location`\'s are:
 
-- `On disk and tape`: this data is available on disk.
-- `Modified, will be archived again`: the newest version of the data is on disk.
-- `Archiving in progress`: the data is being copied or moved to tape.
-- `On tape`: the data is only on tape.
+-   `On disk and tape`: this data is available on disk.
+-   `Modified, will be archived again`: the newest version of the data is on disk.
+-   `Archiving in progress`: the data is being copied or moved to tape.
+-   `On tape`: the data is only on tape.
 
 Then, you can determine whether or not a given file has been moved to tape or is still on disk using the `lfs hsm_state` command. \"hsm\" stands for \"hierarchical storage manager\".
 
@@ -119,11 +119,11 @@ You can explicitly force a file to be recalled from tape without actually readin
 
 To use /nearline, just put files into your `~/nearline/PROJECT` directory. After a period of time (24 hours as of February 2019), they will be copied onto tape. If the file remains unchanged for another period (24 hours as of February 2019), the copy on disk will be removed, making the file virtualized on tape.
 
-If you accidentally (or deliberately) delete a file from `~/nearline`, the tape copy will be retained for up to 60 days. To restore such a file contact [technical support](https://docs.alliancecan.ca/technical_support "technical support"){.wikilink} with the full path for the file(s) and desired version (by date), just as you would for restoring a [backup](https://docs.alliancecan.ca/Storage_and_file_management#Filesystem_quotas_and_policies "backup"){.wikilink}. Note that since you will need the full path for the file, it is important for you to retain a copy of the complete directory structure of your /nearline space. For example, you can run the command `ls -R > ~/nearline_contents.txt` from the `~/nearline/PROJECT` directory so that you have a copy of the location of all the files. `</tab>`{=html}
+If you accidentally (or deliberately) delete a file from `~/nearline`, the tape copy will be retained for up to 60 days. To restore such a file contact [technical support](https://docs.alliancecan.ca/technical_support "wikilink") with the full path for the file(s) and desired version (by date), just as you would for restoring a [backup](https://docs.alliancecan.ca/Storage_and_file_management#Filesystem_quotas_and_policies "wikilink"). Note that since you will need the full path for the file, it is important for you to retain a copy of the complete directory structure of your /nearline space. For example, you can run the command `ls -R > ~/nearline_contents.txt` from the `~/nearline/PROJECT` directory so that you have a copy of the location of all the files. `</tab>`{=html}
 
 `<tab name="Cedar">`{=html} /nearline service similar to that on Béluga. `</tab>`{=html}
 
-`<tab name="Graham">`{=html} /nearline service similar to that on Béluga, except:
+`<tab name="Nibi">`{=html} /nearline service similar to that on Béluga, except:
 
 1.  It may take longer than 24 hours for the first tape copy of the data to be created.
 2.  The disk copy will not be erased (leaving only the tape copies) until 60 days have passed.
@@ -132,14 +132,14 @@ If you accidentally (or deliberately) delete a file from `~/nearline`, the tape 
 
 `<tab name="Narval">`{=html} /nearline service similar to that on Béluga. `</tab>`{=html}
 
-`<tab name="Niagara">`{=html} HPSS is the /nearline service on Niagara.\
+`<tab name="Trillium">`{=html} HPSS is the /nearline service on Trillium.\
 There are three methods to access the service:
 
 1\. By submitting HPSS-specific commands `htar` or `hsi` to the Slurm scheduler as a job in one of the archive partitions; see [the HPSS documentation](https://docs.scinet.utoronto.ca/index.php/HPSS) for detailed examples. Using job scripts offers the benefit of automating /nearline transfers and is the best method if you use HPSS regularly. Your HPSS files can be found in the \$ARCHIVE directory, which is like \$PROJECT but with */project* replaced by */archive*.
 
 2\. To manage a small number of files in HPSS, you can use the VFS (*Virtual File System*) node, which is accessed with the command `salloc --time=1:00:00 -pvfsshort`. Your HPSS files can be found in the \$ARCHIVE directory, which is like \$PROJECT but with */project* replaced by */archive*.
 
-3\. By using [Globus](https://docs.alliancecan.ca/Globus "Globus"){.wikilink} for transfers to and from HPSS using the endpoint `<b>`{=html}computecanada#hpss`</b>`{=html}. This is useful for occasional usage and for transfers to and from other sites.
+3\. By using [Globus](https://docs.alliancecan.ca/Globus "wikilink") for transfers to and from HPSS using the endpoint `<b>`{=html}alliancecan#hpss`</b>`{=html}. This is useful for occasional usage and for transfers to and from other sites.
 
 `</tab>`{=html}
 

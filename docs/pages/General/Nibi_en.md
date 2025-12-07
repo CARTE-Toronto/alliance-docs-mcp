@@ -2,7 +2,7 @@
 title: "Nibi/en"
 url: "https://docs.alliancecan.ca/wiki/Nibi/en"
 category: "General"
-last_modified: "2025-10-08T21:52:01Z"
+last_modified: "2025-12-04T17:06:02Z"
 page_id: 27510
 display_title: "Nibi"
 ---
@@ -30,21 +30,29 @@ Note also that Nibi is using a new, experimental mechanism for handling /scratch
 
 # Interconnect fabric {#interconnect_fabric}
 
-- Nokia 200/400G ethernet
-  - 200 Gbit/s network bandwidth for CPU nodes.
-  - 200 Gbit/s non-blocking network bandwidth between all Nvidia GPU nodes.
-  - 200 Gbit/s network bandwidth between all AMD GPU nodes.
-  - 24x100 Gbit/s connection to the VAST storage nodes.
-  - 2:1 blocking at 400 Gbit/s uplinks for all compute nodes.
+-   Nokia 200/400G ethernet
+    -   200 Gbit/s network bandwidth for CPU nodes.
+    -   200 Gbit/s non-blocking network bandwidth between all Nvidia GPU nodes.
+    -   200 Gbit/s network bandwidth between all AMD GPU nodes.
+    -   24x100 Gbit/s connection to the VAST storage nodes.
+    -   2:1 blocking at 400 Gbit/s uplinks for all compute nodes.
+
+The topology of the network is described in the file:
+
+`/opt/software/slurm/24.11.6/etc/topology.conf`
+
+For better performance of tightly coupled multi-node jobs, you may constrain them to use only one network switch, by adding this option to your job submission script:
+
+`#SBATCH --switches=1`
 
 # Node characteristics {#node_characteristics}
 
   nodes   cores   available memory    node-local storage   CPU                                         GPU
-  ------- ------- ------------------- -------------------- ------------------------------------------- ---------------------------------
+  ------- ------- ------------------- -------------------- ------------------------------------------- ---------------------------------------------------------------------------------------
   700     192     748G or 766000M     3T                   2 x Intel 6972P @ 2.4 GHz, 384MB cache L3   
   10      192     6000G or 6144000M   3T                   2 x Intel 6972P @ 2.4 GHz, 384MB cache L3   
   36      112     2000G or 2048000M   11T                  2 x Intel 8570 @ 2.1 GHz, 300MB cache L3    8 x Nvidia H100 SXM (80 GB)
-  6       96      495G or 507000M     3T                   4 x AMD MI300A @ 2.1GHz                     4 x Zen4+CDNA3 (unified memory)
+  6       96      495G or 507000M     3T                   4 x AMD MI300A @ 2.1GHz (Zen4+CDNA3)        The CPU cores and CDNA3-based GPUs are in the same socket and share a unified memory.
 
 # Site specifics {#site_specifics}
 
@@ -58,7 +66,7 @@ User directories are no longer created by default on `/project`. User\'s can alw
 
 ## Scratch quota {#scratch_quota}
 
-An 1 TB soft quota on scratch applies to each user. This soft quota can be exceeded for up to 60 days after which no additional files may be written to scratch. Files may be written again once the user has removed or deleted enough files to bring their total scratch use under 1 TB. See the [Storage and file management](https://docs.alliancecan.ca/Storage_and_file_management "Storage and file management"){.wikilink} for more information.
+An 1 TB soft quota on scratch applies to each user. This soft quota can be exceeded for up to 60 days after which no additional files may be written to scratch. Files may be written again once the user has removed or deleted enough files to bring their total scratch use under 1 TB. See the [Storage and file management](https://docs.alliancecan.ca/Storage_and_file_management "wikilink") for more information.
 
 ## Access through Open OnDemand (OOD) {#access_through_open_ondemand_ood}
 
@@ -68,21 +76,21 @@ One can now access the Nibi cluster simply through a web browser. Nibi uses Open
 
 ![](nibi-jupyterlab.png "nibi-jupyterlab.png") You can run JupyterLab interactively via the Nibi Open OnDemand [portal](https://ondemand.sharcnet.ca).
 
-**Option 1**: working with a pre-configured environment, same as from [JupyterHub](https://docs.alliancecan.ca/JupyterHub "JupyterHub"){.wikilink}
+**Option 1**: working with a pre-configured environment, same as from [JupyterHub](https://docs.alliancecan.ca/JupyterHub "wikilink")
 
 After logging in to the Nibi Open OnDemand [portal](https://ondemand.sharcnet.ca), click "Compute Node" from the top menu and select "Nibi JupyterLab." This will open a page with a form where you can request a new Nibi JupyterLab session.
 
 After completing the form with your requirement details, click "Launch" to submit your request. Once the status of the requested Nibi JupyterLab changes to Running, click "Connect to Jupyter" to open JupyterLab in your web browser.
 
-More details about the pre-configured JupyterLab are described [here](https://docs.alliancecan.ca/JupyterLab#The_JupyterLab_interface "here"){.wikilink}.
+More details about the pre-configured JupyterLab are described [here](https://docs.alliancecan.ca/JupyterLab#The_JupyterLab_interface "wikilink").
 
-**Option 2**: working with a self-built [Python virtual environment](https://docs.alliancecan.ca/Python#Creating_and_using_a_virtual_environment "Python virtual environment"){.wikilink}
+**Option 2**: working with a self-built [Python virtual environment](https://docs.alliancecan.ca/Python#Creating_and_using_a_virtual_environment "wikilink")
 
-After logging in to the Nibi Open OnDemand [portal](https://ondemand.sharcnet.ca), click "Compute Node" from the top menu and select "Nibi Desktop." This will open a page with a form where you can request a new Nibi Desktop session. ![](nibi-desktop.png "nibi-desktop.png")
+After logging in to the Nibi Open OnDemand [portal](https://ondemand.sharcnet.ca), click "Compute Node" from the top menu and select "Compute Desktop." This will open a page with a form where you can request a new Compute Desktop session. ![](nibi-desktop.png "nibi-desktop.png")
 
-After completing the form with your requirement details, click "Launch" to submit your request. Once the status of the requested Nibi desktop changes to Running, click "Launch Nibi Desktop" to connect to the desktop. A Linux desktop will appear.
+After completing the form with your requirement details, click "Launch" to submit your request. Once the status of the requested Compute desktop changes to Running, click "Launch Compute Desktop" to connect to the desktop. A Linux desktop will appear.
 
-On the Nibi desktop, right-click the mouse in any blank area, a shortcut menu appears; select \"Open in Terminal\" to open a terminal window, where you can create or activate your Python virtual environment that has JupyterLab installed.
+On the Compute desktop, right-click the mouse in any blank area, a shortcut menu appears; select \"Open in Terminal\" to open a terminal window, where you can create or activate your Python virtual environment that has JupyterLab installed.
 
 If you do not have JupyterLab installed in the Python virtual environment, which you would like to work with, you can have it installed with the command:
 

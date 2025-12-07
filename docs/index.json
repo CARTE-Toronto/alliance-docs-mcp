@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-11-30T06:18:51.782095+00:00",
+  "last_updated": "2025-12-07T06:16:54.310075+00:00",
   "total_pages": 418,
   "pages": [
     {
@@ -1519,7 +1519,7 @@
       "title": "Infrastructure renewal/en",
       "url": "https://docs.alliancecan.ca/wiki/Infrastructure_renewal/en",
       "category": "General",
-      "last_modified": "2025-10-07T16:59:51Z",
+      "last_modified": "2025-11-28T18:40:04Z",
       "file_path": "docs/pages/General/Infrastructure_renewal_en.md",
       "slug": "Infrastructure_renewal_en"
     },
@@ -1942,7 +1942,7 @@
       "title": "Modules avx",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx",
       "category": "General",
-      "last_modified": "2025-11-29T00:01:30Z",
+      "last_modified": "2025-12-01T12:01:07Z",
       "file_path": "docs/pages/General/Modules_avx.md.gz",
       "slug": "Modules_avx"
     },
@@ -1951,7 +1951,7 @@
       "title": "Modules avx2",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx2",
       "category": "General",
-      "last_modified": "2025-11-30T00:00:29Z",
+      "last_modified": "2025-12-01T00:01:17Z",
       "file_path": "docs/pages/General/Modules_avx2.md.gz",
       "slug": "Modules_avx2"
     },
@@ -1960,7 +1960,7 @@
       "title": "Modules avx512",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx512",
       "category": "General",
-      "last_modified": "2025-11-30T00:00:27Z",
+      "last_modified": "2025-12-01T00:01:18Z",
       "file_path": "docs/pages/General/Modules_avx512.md.gz",
       "slug": "Modules_avx512"
     },
@@ -1978,7 +1978,7 @@
       "title": "Modules sse3",
       "url": "https://docs.alliancecan.ca/wiki/Modules_sse3",
       "category": "General",
-      "last_modified": "2025-11-29T18:00:15Z",
+      "last_modified": "2025-12-01T12:01:21Z",
       "file_path": "docs/pages/General/Modules_sse3.md.gz",
       "slug": "Modules_sse3"
     },
@@ -2167,7 +2167,7 @@
       "title": "Nibi/en",
       "url": "https://docs.alliancecan.ca/wiki/Nibi/en",
       "category": "General",
-      "last_modified": "2025-10-08T21:52:01Z",
+      "last_modified": "2025-12-04T17:06:02Z",
       "file_path": "docs/pages/General/Nibi_en.md",
       "slug": "Nibi_en"
     },
@@ -2932,7 +2932,7 @@
       "title": "Services d'informatique quantique/en",
       "url": "https://docs.alliancecan.ca/wiki/Services_d%27informatique_quantique/en",
       "category": "General",
-      "last_modified": "2025-01-09T13:19:46Z",
+      "last_modified": "2025-11-28T18:40:04Z",
       "file_path": "docs/pages/General/Services_d'informatique_quantique_en.md",
       "slug": "Services_d'informatique_quantique_en"
     },
@@ -3364,7 +3364,7 @@
       "title": "Using nearline storage/en",
       "url": "https://docs.alliancecan.ca/wiki/Using_nearline_storage/en",
       "category": "General",
-      "last_modified": "2025-03-20T18:55:26Z",
+      "last_modified": "2025-11-28T18:40:05Z",
       "file_path": "docs/pages/General/Using_nearline_storage_en.md",
       "slug": "Using_nearline_storage_en"
     },
@@ -3445,7 +3445,7 @@
       "title": "VNC/en",
       "url": "https://docs.alliancecan.ca/wiki/VNC/en",
       "category": "General",
-      "last_modified": "2025-10-07T15:04:40Z",
+      "last_modified": "2025-11-28T18:39:32Z",
       "file_path": "docs/pages/General/VNC_en.md",
       "slug": "VNC_en"
     },
