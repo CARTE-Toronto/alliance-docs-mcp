@@ -1,0 +1,26 @@
+name: Manual Rebuild All Docs
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v1
+
+      - name: Sync dependencies
+        run: uv sync
+
+      - name: Rebuild docs and indexes
+        env:
+          MEDIAWIKI_API_URL: ${{ secrets.MEDIAWIKI_API_URL }}
+          USER_AGENT: ${{ secrets.USER_AGENT }}
+          DOCS_DIR: ./docs
+        run: |
+          uv run python scripts/sync_docs.py --rebuild-all
+
