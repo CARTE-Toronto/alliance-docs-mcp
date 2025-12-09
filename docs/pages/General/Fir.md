@@ -61,22 +61,18 @@ For transferring data via Globus, use the endpoint specified at the top of this 
 
 # High-performance interconnect {#high_performance_interconnect}
 
-- InfiniBand NDR interconnect
-- CPU node island size, is 27:5 blocking factor over 216 nodes of 192 cores
-- GPU nodes are 2:1 blocking factor
-- Storage access is fully non-blocking
+-   InfiniBand NDR interconnect
+-   CPU node island size, is 27:5 blocking factor over 216 nodes of 192 cores
+-   GPU nodes are 2:1 blocking factor
+-   Storage access is fully non-blocking
 
 # Node characteristics {#node_characteristics}
 
-+-------+-------+-------------------+------------------------------------------------------+-------------+-------------------------------------+
-| nodes | cores | available memory  | CPU                                                  | Storage     | GPU                                 |
-+=======+=======+===================+======================================================+=============+=====================================+
-| 864   | 192   | 750G or 768000M   | 2 x AMD EPYC 9655 (Zen 5) @ 2.7 GHz, 384MB cache L3  | 7.84TB NVMe |                                     |
-+-------+       +-------------------+------------------------------------------------------+-------------+-------------------------------------+
-| 8     |       | 6000G or 6144000M | 2 x AMD EPYC 9654 (Zen 4) @ 2.4 GHz, 384MB cache L3  | 7.84TB NVMe |                                     |
-+-------+-------+-------------------+------------------------------------------------------+-------------+-------------------------------------+
-| 160   | 48    | 1125G or 1152000M | 1 x AMD EPYC 9454 (Zen 4) @ 2.75 GHz, 256MB cache L3 | 7.84TB NVMe | 4 x NVidia H100 SXM5 (80 GB memory) |
-+-------+-------+-------------------+------------------------------------------------------+-------------+-------------------------------------+
+  nodes   cores   available memory    CPU                                                    Storage       GPU
+  ------- ------- ------------------- ------------------------------------------------------ ------------- -------------------------------------
+  864     192     750G or 768000M     2 x AMD EPYC 9655 (Zen 5) @ 2.7 GHz, 384MB cache L3    7.84TB NVMe   
+  8               6000G or 6144000M   2 x AMD EPYC 9654 (Zen 4) @ 2.4 GHz, 384MB cache L3    7.84TB NVMe   
+  160     48      1125G or 1152000M   1 x AMD EPYC 9454 (Zen 4) @ 2.75 GHz, 256MB cache L3   7.84TB NVMe   4 x NVidia H100 SXM5 (80 GB memory)
 
 ## CPU nodes {#cpu_nodes}
 
@@ -86,26 +82,26 @@ Each node features 2 × AMD EPYC 9655 (Zen 5) @ 2.7 GHz processors, totaling 192
 
 ### Layout
 
-- 2 sockets, each with:
-  - 96 cores
-  - 4 NUMA nodes, each with:
-    - 3 CCDs (chiplets), each with:
-      - 8 cores
-      - 32 MiB shared L3 cache
-    - 3 memory channels
+-   2 sockets, each with:
+    -   96 cores
+    -   4 NUMA nodes, each with:
+        -   3 CCDs (chiplets), each with:
+            -   8 cores
+            -   32 MiB shared L3 cache
+        -   3 memory channels
 
 Each core with:
 
-- 1 MiB L2 cache
-- 32+32 KiB L1 instruction/data cache
-- 12 DDR5 memory channels (shared via the I/O die)
+-   1 MiB L2 cache
+-   32+32 KiB L1 instruction/data cache
+-   12 DDR5 memory channels (shared via the I/O die)
 
 Total:
 
-- 8 NUMA nodes per node (4 per socket × 2)
-- 24 CCDs (chiplets) per node (12 per socket × 2)
-- 192 cores total
-- 768 MiB L3 cache total
+-   8 NUMA nodes per node (4 per socket × 2)
+-   24 CCDs (chiplets) per node (12 per socket × 2)
+-   192 cores total
+-   768 MiB L3 cache total
 
 ### Performance tuning recommendations {#performance_tuning_recommendations}
 
@@ -135,24 +131,25 @@ Each GPU node contains 1 × AMD EPYC 9454 (Zen 4) @ 2.75 GHz processor with 48 p
 
 ![Layout of Fir GPU nodes, as reported by the \"lstopo\" command](https://docs.alliancecan.ca/Firgpulayout.png.png "Layout of Fir GPU nodes, as reported by the "lstopo" command"){width="900" height="900"}
 
-- 1 socket, configured as NPS=4:
-  - 4 NUMA nodes, each with
-    - 2 CCDs (Core Complex Dies), each with
-      - 6 cores
-      - 32 MiB of shared L3 cache
-    - 3 memory channels
+-   1 socket, configured as NPS=4:
+    -   4 NUMA nodes, each with
+        -   2 CCDs (Core Complex Dies), each with
+            -   6 cores
+            -   32 MiB of shared L3 cache
+        -   3 memory channels
 
 Each core has:
 
-- 1 MiB L2 cache
-- 32 KiB L1 instruction cache
-- 32 KiB L1 data cache
-- 12 DDR5 memory channels (shared via the I/O die)
+-   1 MiB L2 cache
+-   32 KiB L1 instruction cache
+-   32 KiB L1 data cache
+-   12 DDR5 memory channels (shared via the I/O die)
 
+```{=html}
 <!-- -->
-
-- 2 NVidia H100 80GB accelerators
-  - The 4 node accelerators are interconnected by SXM5.
+```
+-   2 NVidia H100 80GB accelerators
+    -   The 4 node accelerators are interconnected by SXM5.
 
 ### Performance tuning recommendations {#performance_tuning_recommendations_1}
 
@@ -181,20 +178,20 @@ To request one or more full H100 GPUs, you need to use one of the following Slur
 
 **Multiple H100-80gb per node** :
 
-- `--gpus-per-node=h100:2`
-- `--gpus-per-node=h100:3`
-- `--gpus-per-node=h100:4`
+-   `--gpus-per-node=h100:2`
+-   `--gpus-per-node=h100:3`
+-   `--gpus-per-node=h100:4`
 
 **For multiple full H100 GPUs spread anywhere**: `--gpus=h100:n` (replace n with the number of GPUs you want)
 
 Approximately half of the GPU nodes are configured with MIG technology, and only 3 GPU instance sizes are available:
 
-- **1g.10gb**: 1/8th of the computing power with 10GB GPU memory
-- **2g.20gb**: 2/8th of the computing power with 20GB GPU memory
-- **3g.40gb**: 3/8th of the computing power with 40GB GPU memory
+-   **1g.10gb**: 1/8th of the computing power with 10GB GPU memory
+-   **2g.20gb**: 2/8th of the computing power with 20GB GPU memory
+-   **3g.40gb**: 3/8th of the computing power with 40GB GPU memory
 
 To request one and only one GPU instance for your compute job, use the corresponding option:
 
-- **1g.10gb** : `--gpus=nvidia_h100_80gb_hbm3_1g.10gb:1`
-- **2g.20gb** : `--gpus=nvidia_h100_80gb_hbm3_2g.20gb:1`
-- **3g.40gb** : `--gpus=nvidia_h100_80gb_hbm3_3g.40gb:1`
+-   **1g.10gb** : `--gpus=nvidia_h100_80gb_hbm3_1g.10gb:1`
+-   **2g.20gb** : `--gpus=nvidia_h100_80gb_hbm3_2g.20gb:1`
+-   **3g.40gb** : `--gpus=nvidia_h100_80gb_hbm3_3g.40gb:1`

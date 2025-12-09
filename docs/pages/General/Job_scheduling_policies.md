@@ -9,15 +9,15 @@ display_title: "Job scheduling policies"
 
 `<languages/>`{=html}
 
-*Parent page: [Running jobs](https://docs.alliancecan.ca/Running_jobs "Running jobs"){.wikilink}*
+*Parent page: [Running jobs](https://docs.alliancecan.ca/Running_jobs "wikilink")*
 
-You can do much work on our clusters by [submitting jobs](https://docs.alliancecan.ca/Running_jobs "submitting jobs"){.wikilink} that specify only the number of cores and a runtime limit. However if you submit large numbers of jobs, or jobs that require large amounts of resources, you may be able to improve your productivity by understanding the policies affecting job scheduling.
+You can do much work on our clusters by [submitting jobs](https://docs.alliancecan.ca/Running_jobs "wikilink") that specify only the number of cores and a runtime limit. However if you submit large numbers of jobs, or jobs that require large amounts of resources, you may be able to improve your productivity by understanding the policies affecting job scheduling.
 
 ### Priority and fair-share {#priority_and_fair_share}
 
 The order in which jobs are considered for scheduling is determined by *priority*. Priority on our systems is determined using the [Fair Tree](https://slurm.schedmd.com/fair_tree.html) algorithm.[^1]
 
-Each job is charged to a Resource Allocation Project (RAP). You specify the project with the `--account` argument to `sbatch`. The project might hold a grant of CPU or GPU time from a [Resource Allocation Competition](https://www.computecanada.ca/research-portal/accessing-resources/resource-allocation-competitions/), in which case the account code will probably begin with `rrg-` or `rpp-`. Or it could be a non-RAC project, also known as a Rapid Access Service project, in which case the account code will probably begin with `def-`. See [Accounts and Projects](https://docs.alliancecan.ca/Running_jobs#Accounts_and_projects "Accounts and Projects"){.wikilink} for how to determine what account codes you can use.
+Each job is charged to a Resource Allocation Project (RAP). You specify the project with the `--account` argument to `sbatch`. The project might hold a grant of CPU or GPU time from a [Resource Allocation Competition](https://www.computecanada.ca/research-portal/accessing-resources/resource-allocation-competitions/), in which case the account code will probably begin with `rrg-` or `rpp-`. Or it could be a non-RAC project, also known as a Rapid Access Service project, in which case the account code will probably begin with `def-`. See [Accounts and Projects](https://docs.alliancecan.ca/Running_jobs#Accounts_and_projects "wikilink") for how to determine what account codes you can use.
 
 Every project has a target usage level. RAC projects have target levels determined by the number of CPU-years or GPU-years granted with each RAC award. Non-RAC projects (i.e. `def-` accounts) all have equal target levels, and that equal value is adjusted every few minutes based on the number of projects that are active on the cluster.
 
@@ -37,37 +37,37 @@ Successive lines describe the status of each user relative to other users *in th
 
 The project by itself, or the user within a project, is referred to as an \"association\" in the Slurm documentation.
 
-- `Account`, obviously, is the project name with `_cpu` or `_gpu` appended.
-- `User`: Notice that the first line of output, the highlighted line, does not include a user name.
-- `RawShares` is proportional to the number of CPU-years that was granted to the project for use on this cluster in the Resource Allocation Competition. All non-RAC accounts have small equal numbers of shares. For numeric reasons, inactive accounts (which do not have pending or running jobs) are given only one share. Activity is checked periodically, so if you submit a job with an inactive account, it may take up to 15 minutes before the account shows the expected `RawShares` and `LevelFS`.
-- `NormShares` is the number of shares assigned to the user or account divided by the total number of assigned shares within the level. So for the first line, the NormShares of 0.001607 is the fraction of the shares held by the project, relative to all other projects. The NormShares of 0.10000 on the other three lines are the fraction of shares held by each member of the project relative to the other members. (This project has ten members, but we only asked for information about three.)
-- `RawUsage` is calculated from the total number of resource-seconds (that is, CPU time, GPU time, and memory) that have been charged to this account. Past usage is discounted with a [half-life](https://en.wikipedia.org/wiki/Half-life) of one week, so usage more than a few weeks in the past will have only a small effect on priority.
-- `EffectvUsage` is the association\'s usage normalized with its parent; that is, the project\'s usage relative to other projects, the user\'s relative to other users in that project. In this example, `postdoc3` has 56.6% of the project\'s usage, and `grad2` has 3.6%.
-- `LevelFS` is the association\'s fairshare value compared to its siblings, calculated as NormShares / EffectvUsage. If an association is over-served, the value is between 0 and 1. If an association is under-served, the value is greater than 1. Associations with no usage receive the highest possible value, infinity. For inactive accounts, as described above for `RawShares`, this value equals a meaningless small number close to 0.0001.
+-   `Account`, obviously, is the project name with `_cpu` or `_gpu` appended.
+-   `User`: Notice that the first line of output, the highlighted line, does not include a user name.
+-   `RawShares` is proportional to the number of CPU-years that was granted to the project for use on this cluster in the Resource Allocation Competition. All non-RAC accounts have small equal numbers of shares. For numeric reasons, inactive accounts (which do not have pending or running jobs) are given only one share. Activity is checked periodically, so if you submit a job with an inactive account, it may take up to 15 minutes before the account shows the expected `RawShares` and `LevelFS`.
+-   `NormShares` is the number of shares assigned to the user or account divided by the total number of assigned shares within the level. So for the first line, the NormShares of 0.001607 is the fraction of the shares held by the project, relative to all other projects. The NormShares of 0.10000 on the other three lines are the fraction of shares held by each member of the project relative to the other members. (This project has ten members, but we only asked for information about three.)
+-   `RawUsage` is calculated from the total number of resource-seconds (that is, CPU time, GPU time, and memory) that have been charged to this account. Past usage is discounted with a [half-life](https://en.wikipedia.org/wiki/Half-life) of one week, so usage more than a few weeks in the past will have only a small effect on priority.
+-   `EffectvUsage` is the association\'s usage normalized with its parent; that is, the project\'s usage relative to other projects, the user\'s relative to other users in that project. In this example, `postdoc3` has 56.6% of the project\'s usage, and `grad2` has 3.6%.
+-   `LevelFS` is the association\'s fairshare value compared to its siblings, calculated as NormShares / EffectvUsage. If an association is over-served, the value is between 0 and 1. If an association is under-served, the value is greater than 1. Associations with no usage receive the highest possible value, infinity. For inactive accounts, as described above for `RawShares`, this value equals a meaningless small number close to 0.0001.
 
 A project which consistently uses its target amount will have a LevelFS near 1.0. If the project uses more than its target, then its LevelFS will be below 1.0 and the priority of new jobs belonging to that project will also be low. If the project uses less than its target usage then its LevelFS will be greater than 1.0 and new jobs will enjoy high priority.
 
-**See also:** [Allocations and compute scheduling](https://docs.alliancecan.ca/Allocations_and_compute_scheduling "Allocations and compute scheduling"){.wikilink}.
+**See also:** [Allocations and compute scheduling](https://docs.alliancecan.ca/Allocations_and_compute_scheduling "wikilink").
 
 ### Whole nodes versus cores {#whole_nodes_versus_cores}
 
-Applications which can efficiently use more cores than are found in a single node may benefit from being scheduled on **whole nodes**. Some clusters have nodes reserved for jobs which request one or more entire nodes. See [whole nodes](https://docs.alliancecan.ca/Advanced_MPI_scheduling#Whole_nodes "whole nodes"){.wikilink} on the page [Advanced MPI scheduling](https://docs.alliancecan.ca/Advanced_MPI_scheduling "Advanced MPI scheduling"){.wikilink} for example scripts and further discussion.
+Applications which can efficiently use more cores than are found in a single node may benefit from being scheduled on **whole nodes**. Some clusters have nodes reserved for jobs which request one or more entire nodes. See [whole nodes](https://docs.alliancecan.ca/Advanced_MPI_scheduling#Whole_nodes "wikilink") on the page [Advanced MPI scheduling](https://docs.alliancecan.ca/Advanced_MPI_scheduling "wikilink") for example scripts and further discussion.
 
 Note that requesting an inefficient number of processors for a calculation simply in order to take advantage of whole-node scheduling will be construed as abuse of the system. For example, a program which takes just as long to run on 192 cores as on 64 cores should request 64 cores, not 192.
 
-If you have huge amounts of serial work and can efficiently use [META-Farm](https://docs.alliancecan.ca/META-Farm "META-Farm"){.wikilink}, [GNU Parallel](https://docs.alliancecan.ca/GNU_Parallel "GNU Parallel"){.wikilink}, [GLOST](https://docs.alliancecan.ca/GLOST "GLOST"){.wikilink}, or [other techniques](https://docs.scinet.utoronto.ca/index.php/Running_Serial_Jobs_on_Niagara) to pack serial processes onto a single node, you are also welcome to use whole-node scheduling.
+If you have huge amounts of serial work and can efficiently use [META-Farm](https://docs.alliancecan.ca/META-Farm "wikilink"), [GNU Parallel](https://docs.alliancecan.ca/GNU_Parallel "wikilink"), [GLOST](https://docs.alliancecan.ca/GLOST "wikilink"), or [other techniques](https://docs.scinet.utoronto.ca/index.php/Running_Serial_Jobs_on_Niagara) to pack serial processes onto a single node, you are also welcome to use whole-node scheduling.
 
 ### Time limits {#time_limits}
 
-[Trillium](https://docs.alliancecan.ca/Trillium "Trillium"){.wikilink} accepts jobs of up to 24 hours run-time, [Fir](https://docs.alliancecan.ca/Fir "Fir"){.wikilink}, [Narval](https://docs.alliancecan.ca/Narval/en "Narval"){.wikilink}, [Nibi](https://docs.alliancecan.ca/Nibi "Nibi"){.wikilink} and [Rorqual](https://docs.alliancecan.ca/Rorqual/en "Rorqual"){.wikilink} up to 7 days. These limits are subject to change at the discretion of each site\'s sysadmin team.
+[Trillium](https://docs.alliancecan.ca/Trillium "wikilink") accepts jobs of up to 24 hours run-time, [Fir](https://docs.alliancecan.ca/Fir "wikilink"), [Narval](https://docs.alliancecan.ca/Narval/en "wikilink"), [Nibi](https://docs.alliancecan.ca/Nibi "wikilink") and [Rorqual](https://docs.alliancecan.ca/Rorqual/en "wikilink") up to 7 days. These limits are subject to change at the discretion of each site\'s sysadmin team.
 
 On the general-purpose clusters, longer jobs are restricted to use only a fraction of the cluster by *partitions*. There are partitions for jobs of
 
-- 3 hours or less,
-- 12 hours or less,
-- 24 hours (1 day) or less,
-- 72 hours (3 days) or less,
-- 7 days or less
+-   3 hours or less,
+-   12 hours or less,
+-   24 hours (1 day) or less,
+-   72 hours (3 days) or less,
+-   7 days or less
 
 Because any job of 3 hours is also less than 12 hours, 24 hours, and so on, shorter jobs can always run in partitions with longer time-limits. A shorter job will have more scheduling opportunities than an otherwise-identical longer job.
 
@@ -85,9 +85,9 @@ This section aims at giving some insight into how the general-purpose clusters (
 
 First, the nodes are partitioned into four different categories:
 
-- Base nodes, which have 4 or 8 GB of memory per core
-- Large memory nodes, which have 16 to 96 GB of memory per core
-- GPU nodes
+-   Base nodes, which have 4 or 8 GB of memory per core
+-   Large memory nodes, which have 16 to 96 GB of memory per core
+-   GPU nodes
 
 Upon submission, your job will be routed to one of these categories based on what resources are requested.
 
@@ -97,10 +97,10 @@ Finally, the nodes are partitioned based on the walltime requested by your job. 
 
 The utility `partition-stats` shows
 
-- how many jobs are waiting to run (\"queued\") in each partition,
-- how many jobs are currently running,
-- how many nodes are currently idle, and
-- how many nodes are assigned to each partition.
+-   how many jobs are waiting to run (\"queued\") in each partition,
+-   how many jobs are currently running,
+-   how many nodes are currently idle, and
+-   how many nodes are assigned to each partition.
 
 Here is some sample output from `partition-stats`:
 
@@ -136,39 +136,39 @@ Here is some sample output from `partition-stats`:
 
 Looking at the first entry in the table, at the upper left, the numbers `12:170, 0:0`, and `5:14` mean that there were
 
-- 12 jobs waiting to run which requested
-  - whole nodes,
-  - less than 8GB of memory per core, and
-  - 3 hours or less of run time.
-- 170 jobs waiting which requested
-  - less than whole nodes and were therefore waiting to be scheduled on individual cores,
-  - less than 8GB memory per core, and
-  - 3 hours or less of run time.
-- 5 jobs waiting which requested
-  - a whole node equipped with GPUs and
-  - 3 hours or less of run time.
-- 14 jobs waiting which requested
-  - single GPUs and
-  - 3 hours or less of run time.
+-   12 jobs waiting to run which requested
+    -   whole nodes,
+    -   less than 8GB of memory per core, and
+    -   3 hours or less of run time.
+-   170 jobs waiting which requested
+    -   less than whole nodes and were therefore waiting to be scheduled on individual cores,
+    -   less than 8GB memory per core, and
+    -   3 hours or less of run time.
+-   5 jobs waiting which requested
+    -   a whole node equipped with GPUs and
+    -   3 hours or less of run time.
+-   14 jobs waiting which requested
+    -   single GPUs and
+    -   3 hours or less of run time.
 
 There were no jobs running or waiting which requested large-memory nodes and 3 hours of run time.
 
 At the bottom of the table we find the division of resources by policy, independent of the immediate number of jobs. Hence there are 871 base nodes, called \"regular\" here (that is, nodes with 4 to 8 GB memory per core), which may receive whole-node jobs of up to 3 hours. Of those 871,
 
-- 431 of them may also receive by-core jobs of up to three hours,
-- 851 of them may receive whole-node jobs of up to 12 hours,
-- and so on.
+-   431 of them may also receive by-core jobs of up to three hours,
+-   851 of them may receive whole-node jobs of up to 12 hours,
+-   and so on.
 
 It may help to think of these partitions as being like [Matryoshka (Russian) dolls](https://en.wikipedia.org/wiki/Matryoshka_doll). The 3-hour partition contains the nodes for the 12-hour partition as a subset. The 12-hour partition in turn contains the 24-hour partition, and so on.
 
 The `partition-stats` utility does not give information about the number of cores represented by running or waiting jobs, nor the number of cores free in partly-assigned nodes in by-core partitions, nor about available memory associated with free cores in by-core partitions.
 
-Running `partition-stats` is somewhat costly to the scheduler. Please do not write a script which automatically calls `partition-stats` repeatedly. If you have a workflow which you believe would benefit from automatic parsing of the information from `partition-stats`, please contact [Technical support](https://docs.alliancecan.ca/Technical_support "Technical support"){.wikilink} and ask for guidance.
+Running `partition-stats` is somewhat costly to the scheduler. Please do not write a script which automatically calls `partition-stats` repeatedly. If you have a workflow which you believe would benefit from automatic parsing of the information from `partition-stats`, please contact [Technical support](https://docs.alliancecan.ca/Technical_support "wikilink") and ask for guidance.
 
 ## Number of jobs {#number_of_jobs}
 
 There may be a limit on the number of jobs you can have in the system at any one time.
 
-On [Narval](https://docs.alliancecan.ca/Narval/en "Narval"){.wikilink}, [Nibi](https://docs.alliancecan.ca/Nibi "Nibi"){.wikilink} and [Rorqual](https://docs.alliancecan.ca/Rorqual/en "Rorqual"){.wikilink}, normal accounts can have no more than 1000 jobs in a pending or running state at any time. Each task of a [job array](https://docs.alliancecan.ca/job_arrays "job array"){.wikilink} counts as one job. The limit is applied using Slurm\'s [MaxSubmit](https://slurm.schedmd.com/sacctmgr.html) parameter.
+On [Narval](https://docs.alliancecan.ca/Narval/en "wikilink"), [Nibi](https://docs.alliancecan.ca/Nibi "wikilink") and [Rorqual](https://docs.alliancecan.ca/Rorqual/en "wikilink"), normal accounts can have no more than 1000 jobs in a pending or running state at any time. Each task of a [job array](https://docs.alliancecan.ca/job_arrays "wikilink") counts as one job. The limit is applied using Slurm\'s [MaxSubmit](https://slurm.schedmd.com/sacctmgr.html) parameter.
 
 [^1]: A detailed description of Fair Tree can be found at <https://slurm.schedmd.com/SC14/BYU_Fair_Tree.pdf>, with references to early rock\'n\'roll music.

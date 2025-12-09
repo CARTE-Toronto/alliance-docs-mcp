@@ -30,12 +30,12 @@ Note also that Nibi is using a new, experimental mechanism for handling /scratch
 
 # Interconnect fabric {#interconnect_fabric}
 
-- Nokia 200/400G ethernet
-  - 200 Gbit/s network bandwidth for CPU nodes.
-  - 200 Gbit/s non-blocking network bandwidth between all Nvidia GPU nodes.
-  - 200 Gbit/s network bandwidth between all AMD GPU nodes.
-  - 24x100 Gbit/s connection to the VAST storage nodes.
-  - 2:1 blocking at 400 Gbit/s uplinks for all compute nodes.
+-   Nokia 200/400G ethernet
+    -   200 Gbit/s network bandwidth for CPU nodes.
+    -   200 Gbit/s non-blocking network bandwidth between all Nvidia GPU nodes.
+    -   200 Gbit/s network bandwidth between all AMD GPU nodes.
+    -   24x100 Gbit/s connection to the VAST storage nodes.
+    -   2:1 blocking at 400 Gbit/s uplinks for all compute nodes.
 
 The topology of the network is described in the file:
 
@@ -66,7 +66,7 @@ User directories are no longer created by default on `/project`. User\'s can alw
 
 ## Scratch quota {#scratch_quota}
 
-An 1 TB soft quota on scratch applies to each user. This soft quota can be exceeded for up to 60 days after which no additional files may be written to scratch. Files may be written again once the user has removed or deleted enough files to bring their total scratch use under 1 TB. See the [Storage and file management](https://docs.alliancecan.ca/Storage_and_file_management "Storage and file management"){.wikilink} for more information.
+An 1 TB soft quota on scratch applies to each user. This soft quota can be exceeded for up to 60 days after which no additional files may be written to scratch. Files may be written again once the user has removed or deleted enough files to bring their total scratch use under 1 TB. See the [Storage and file management](https://docs.alliancecan.ca/Storage_and_file_management "wikilink") for more information.
 
 ## Access through Open OnDemand (OOD) {#access_through_open_ondemand_ood}
 
@@ -76,15 +76,15 @@ One can now access the Nibi cluster simply through a web browser. Nibi uses Open
 
 ![](nibi-jupyterlab.png "nibi-jupyterlab.png") You can run JupyterLab interactively via the Nibi Open OnDemand [portal](https://ondemand.sharcnet.ca).
 
-**Option 1**: working with a pre-configured environment, same as from [JupyterHub](https://docs.alliancecan.ca/JupyterHub "JupyterHub"){.wikilink}
+**Option 1**: working with a pre-configured environment, same as from [JupyterHub](https://docs.alliancecan.ca/JupyterHub "wikilink")
 
 After logging in to the Nibi Open OnDemand [portal](https://ondemand.sharcnet.ca), click "Compute Node" from the top menu and select "Nibi JupyterLab." This will open a page with a form where you can request a new Nibi JupyterLab session.
 
 After completing the form with your requirement details, click "Launch" to submit your request. Once the status of the requested Nibi JupyterLab changes to Running, click "Connect to Jupyter" to open JupyterLab in your web browser.
 
-More details about the pre-configured JupyterLab are described [here](https://docs.alliancecan.ca/JupyterLab#The_JupyterLab_interface "here"){.wikilink}.
+More details about the pre-configured JupyterLab are described [here](https://docs.alliancecan.ca/JupyterLab#The_JupyterLab_interface "wikilink").
 
-**Option 2**: working with a self-built [Python virtual environment](https://docs.alliancecan.ca/Python#Creating_and_using_a_virtual_environment "Python virtual environment"){.wikilink}
+**Option 2**: working with a self-built [Python virtual environment](https://docs.alliancecan.ca/Python#Creating_and_using_a_virtual_environment "wikilink")
 
 After logging in to the Nibi Open OnDemand [portal](https://ondemand.sharcnet.ca), click "Compute Node" from the top menu and select "Compute Desktop." This will open a page with a form where you can request a new Compute Desktop session. ![](nibi-desktop.png "nibi-desktop.png")
 

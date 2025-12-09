@@ -1,13 +1,15 @@
 ---
-title: "COMSOL/en"
-url: "https://docs.alliancecan.ca/wiki/COMSOL/en"
+title: "COMSOL"
+url: "https://docs.alliancecan.ca/wiki/COMSOL"
 category: "General"
-last_modified: "2025-09-10T18:26:38Z"
-page_id: 6233
+last_modified: "2025-12-06T15:16:28Z"
+page_id: 5690
 display_title: "COMSOL"
 ---
 
 `<languages />`{=html}
+
+`<translate>`{=html}
 
 # Introduction
 
@@ -15,7 +17,7 @@ display_title: "COMSOL"
 
 # Licensing
 
-We are a hosting provider for COMSOL. This means that we have COMSOL software installed on our clusters, but we do not provide a generic license accessible to everyone. Many institutions, faculties, and departments already have licenses that can be used on our clusters. Alternatively, you can purchase a license from [CMC](https://account.cmc.ca/en/WhatWeOffer/Products/CMC-00200-00368.aspx) for use anywhere in Canada. Once the legal aspects are worked out for licensing, there will be remaining technical aspects. The license server on your end will need to be reachable by our compute nodes. This will require our technical team to get in touch with the technical people managing your license software. If you have purchased a CMC license and will be connecting to the CMC license server, this has already been done. Once the license server work is done and your `<i>`{=html}\~/.licenses/comsol.lic`</i>`{=html} has been created, you can load any COMSOL module and begin using the software. If this is not the case, please contact our [technical support](https://docs.alliancecan.ca/technical_support "technical support"){.wikilink}.
+We are a hosting provider for COMSOL. This means that we have COMSOL software installed on our clusters, but we do not provide a generic license accessible to everyone. Many institutions, faculties, and departments already have licenses that can be used on our clusters. Alternatively, you can purchase a license from [CMC](https://account.cmc.ca/en/WhatWeOffer/Products/CMC-00200-00368.aspx) for use anywhere in Canada. Once the legal aspects are worked out for licensing, there will be remaining technical aspects. The license server on your end will need to be reachable by our compute nodes. This will require our technical team to get in touch with the technical people managing your license software. If you have purchased a CMC license and will be connecting to the CMC license server, this has already been done. Once the license server work is done and your `<i>`{=html}\~/.licenses/comsol.lic`</i>`{=html} has been created, you can load any COMSOL module and begin using the software. If this is not the case, please contact our [technical support](https://docs.alliancecan.ca/technical_support "wikilink").
 
 ## Configuring your own license file {#configuring_your_own_license_file}
 
@@ -25,16 +27,16 @@ Where `<server>`{=html} is your license server hostname and `<port>`{=html} is t
 
 ### Local license setup {#local_license_setup}
 
-For researchers wanting to use a new local institutional license server, firewall changes will need to be done to the network on both the Alliance (system/cluster) side and the institutional (server) side. To arrange this, send an email to [technical support](https://docs.alliancecan.ca/technical_support "technical support"){.wikilink} containing 1) the COMSOL lmgrd TCP flex port number (typically 1718 default) and 2) the static LMCOMSOL TCP vendor port number (typically 1719 default) and finally 3) the fully qualified hostname of your COMSOL license server. Once this is complete, create a corresponding `<i>`{=html}comsol.lic`</i>`{=html} text file as shown above.
+For researchers wanting to use a new local institutional license server, firewall changes will need to be done to the network on both the Alliance (system/cluster) side and the institutional (server) side. To arrange this, send an email to [technical support](https://docs.alliancecan.ca/technical_support "wikilink") containing 1) the COMSOL lmgrd TCP flex port number (typically 1718 default) and 2) the static LMCOMSOL TCP vendor port number (typically 1719 default) and finally 3) the fully qualified hostname of your COMSOL license server. Once this is complete, create a corresponding `<i>`{=html}comsol.lic`</i>`{=html} text file as shown above.
 
 ### CMC license setup {#cmc_license_setup}
 
 Researchers who own a COMSOL license subscription from CMC should use the following preconfigured public IP settings in their `<i>`{=html}comsol.lic`</i>`{=html} file:
 
-- Fir: SERVER 172.26.0.101 ANY 6601
-- Nibi: SERVER 10.25.1.56 ANY 6601
-- Narval/Rorqual: SERVER 10.100.64.10 ANY 6601
-- Trillium: SERVER 172.16.205.198 ANY 6601
+-   Fir: SERVER 172.26.0.101 ANY 6601
+-   Nibi: SERVER 10.25.1.56 ANY 6601
+-   Narval/Rorqual: SERVER 10.100.64.10 ANY 6601
+-   Trillium: SERVER nia-cmc ANY 6601
 
 For example, a license file created on Nibi cluster would look as follows:
 
@@ -46,7 +48,7 @@ If initial license checkout attempts fail, create a support case with [CMC](http
 
 ## Installed products {#installed_products}
 
-To check which [modules and products](https://www.comsol.com/products) are available for use, start COMSOL in [graphical mode](https://docs.alliancecan.ca/#Graphical_use "graphical mode"){.wikilink} and then click `<i>`{=html}Options -\> Licensed and Used Products`</i>`{=html} on the upper pull-down menu. For a more detailed explanation, click [here](https://doc.comsol.com/6.0/docserver/#!/com.comsol.help.comsol/comsol_ref_customizing.16.09.html). If a module/product is missing or reports being unlicensed, contact [technical support](https://docs.alliancecan.ca/technical_support "technical support"){.wikilink} as a reinstall of the CVMFS module you are using may be required.
+To check which [modules and products](https://www.comsol.com/products) are available for use, start COMSOL in [graphical mode](https://docs.alliancecan.ca/#Graphical_use "wikilink") and then click `<i>`{=html}Options -\> Licensed and Used Products`</i>`{=html} on the upper pull-down menu. For a more detailed explanation, click [here](https://doc.comsol.com/6.0/docserver/#!/com.comsol.help.comsol/comsol_ref_customizing.16.09.html). If a module/product is missing or reports being unlicensed, contact [technical support](https://docs.alliancecan.ca/technical_support "wikilink") as a reinstall of the CVMFS module you are using may be required.
 
 ## Installed versions {#installed_versions}
 
@@ -79,13 +81,16 @@ Sample submission script to run a COMSOL job with eight cores on a single comput
 #SBATCH --nodes=1                  # Do not change
 #SBATCH --ntasks-per-node=1        # Do not change
 
+<!--T:205-->
 INPUTFILE="ModelToSolve.mph"       # Specify input filename
 OUTPUTFILE="SolvedModel.mph"       # Specify output filename
 
+<!--T:206-->
 # module load StdEnv/2020          # Versions < 6.2
 module load StdEnv/2023
 module load comsol/6.2
 
+<!--T:10-->
 comsol batch -inputfile ${INPUTFILE} -outputfile ${OUTPUTFILE} -np $SLURM_CPUS_ON_NODE
 }}`{=mediawiki}
 
@@ -108,25 +113,32 @@ Sample submission script to run a COMSOL job with eight cores distributed evenly
 #SBATCH --nodes=2                  # Specify (the number of compute nodes to use for the job)
 #SBATCH --ntasks-per-node=1        # Do not change
 
+<!--T:207-->
 INPUTFILE="ModelToSolve.mph"       # Specify input filename
 OUTPUTFILE="SolvedModel.mph"       # Specify output filename
 
+<!--T:208-->
 # module load StdEnv/2020          # Versions < 6.2
 module load StdEnv/2023
 module load comsol/6.2
 
+<!--T:209-->
 RECOVERYDIR=$SCRATCH/comsol/recoverydir
 mkdir -p $RECOVERYDIR
 
+<!--T:210-->
 cp -f ${EBROOTCOMSOL}/bin/glnxa64/comsolbatch.ini comsolbatch.ini
 cp -f ${EBROOTCOMSOL}/mli/startup/java.opts java.opts
 
+<!--T:217-->
 # export I_MPI_COLL_EXTERNAL=0      # Uncomment this line on narval 
 
+<!--T:211-->
 comsol batch -inputfile $INPUTFILE -outputfile $OUTPUTFILE -np $SLURM_CPUS_ON_NODE -nn $SLURM_NNODES \
 -recoverydir $RECOVERYDIR -tmpdir $SLURM_TMPDIR -comsolinifile comsolbatch.ini -alivetime 15 \
 # -recover -continue                # Uncomment this line to restart solving from latest recovery files
 
+<!--T:221-->
 }}
 ```
 Note 1: If your multiple node job crashes on startup with a java segmentation fault, try increasing the java heap by adding the following two `sed` lines after the two `cp -f` lines. If it does not help, try further changing both 4g values to 8g. For further information see [Out of Memory](https://www.comsol.ch/support/knowledgebase/1243).
@@ -146,7 +158,7 @@ COMSOL can be run interactively in full graphical mode using either of the follo
 
 Suitable to interactively run computationally intensive test jobs using ALL available cores and memory reserved by `salloc` on a single cluster compute node:
 
-:   1\) Connect to a compute node (3-hour time limit) with [TigerVNC](https://docs.alliancecan.ca/VNC#Compute_nodes "TigerVNC"){.wikilink}.
+:   1\) Connect to a compute node (3-hour time limit) with [TigerVNC](https://docs.alliancecan.ca/VNC#Compute_nodes "wikilink").
 :   2\) Open a terminal window in vncviewer and run:
     :; `export XDG_RUNTIME_DIR=${SLURM_TMPDIR}`
 :   3\) Start COMSOL Multiphysics 6.2 (or newer versions).
@@ -172,7 +184,7 @@ Suitable to interactively run computationally intensive test jobs using ALL avai
 
 Suitable interactive use on gra-vdi includes: running compute calculations with a maximum of 12 cores and 128GB memory, creating or modifying simulation input files, performing post-processing or data visualization tasks. If you need more cores or memory when working in graphical mode, use COMSOL on a cluster compute node (as shown above) where you can reserve up to all available cores and/or memory on the node.
 
-:   1\) Connect to gra-vdi (no time limit) with [TigerVNC](https://docs.alliancecan.ca/VNC#Compute_nodes "TigerVNC"){.wikilink}.
+:   1\) Connect to gra-vdi (no time limit) with [TigerVNC](https://docs.alliancecan.ca/VNC#Compute_nodes "wikilink").
 :   2\) Open a terminal window in vncviewer.
 :   3\) Start COMSOL Multiphysics 6.2 (or newer versions).
     :; `module load CcEnv StdEnv/2023`
@@ -209,4 +221,4 @@ When working interactively in the COMSOL GUI, parametric problems may be solved 
 
 ## Cluster sweep {#cluster_sweep}
 
-To run a parameter sweep on a cluster, a job must be submitted to the scheduler from the command line using `sbatch slurmscript`. For a discussion regarding additional required arguments, see [a](https://www.comsol.com/support/knowledgebase/1250) and [b](https://www.comsol.com/blogs/how-to-use-job-sequences-to-save-data-after-solving-your-model/) for details. Support for submitting parametric simulations to the cluster queue from the graphical interface using a [Cluster Sweep node](https://www.comsol.com/blogs/how-to-use-the-cluster-sweep-node-in-comsol-multiphysics/) is not available at this time.
+To run a parameter sweep on a cluster, a job must be submitted to the scheduler from the command line using `sbatch slurmscript`. For a discussion regarding additional required arguments, see [a](https://www.comsol.com/support/knowledgebase/1250) and [b](https://www.comsol.com/blogs/how-to-use-job-sequences-to-save-data-after-solving-your-model/) for details. Support for submitting parametric simulations to the cluster queue from the graphical interface using a [Cluster Sweep node](https://www.comsol.com/blogs/how-to-use-the-cluster-sweep-node-in-comsol-multiphysics/) is not available at this time. `</translate>`{=html}

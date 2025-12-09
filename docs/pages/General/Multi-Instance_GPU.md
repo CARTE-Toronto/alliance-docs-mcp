@@ -17,7 +17,7 @@ Using GPU instances is less wasteful, and usage is billed accordingly. Jobs subm
 
 Jobs that use less than half of the computing power of a full GPU and less than half of the available memory should be evaluated and tested on an instance. In most cases, these jobs will run just as fast and consume less than half of the computing resource.
 
-See section [Finding which of your jobs should use an instance](https://docs.alliancecan.ca/Multi-Instance_GPU#Finding_which_of_your_jobs_should_use_an_instance "Finding which of your jobs should use an instance"){.wikilink} for more details.
+See section [Finding which of your jobs should use an instance](https://docs.alliancecan.ca/Multi-Instance_GPU#Finding_which_of_your_jobs_should_use_an_instance "wikilink") for more details.
 
 # Limitations
 
@@ -25,18 +25,18 @@ See section [Finding which of your jobs should use an instance](https://docs.all
 
 Please note that graphic APIs are not supported (for example, OpenGL, Vulkan, etc.); see [Application Considerations](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html#application-considerations).
 
-GPU jobs requiring many CPU cores may also require a full GPU instead of an instance. The maximum number of CPU cores per instance depends on [the number of cores per full GPU](https://docs.alliancecan.ca/Allocations_and_compute_scheduling#Ratios_in_bundles "the number of cores per full GPU"){.wikilink} and on the configured [MIG profiles](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html#a100-profiles). Both vary between clusters and between GPU nodes in a cluster.
+GPU jobs requiring many CPU cores may also require a full GPU instead of an instance. The maximum number of CPU cores per instance depends on [the number of cores per full GPU](https://docs.alliancecan.ca/Allocations_and_compute_scheduling#Ratios_in_bundles "wikilink") and on the configured [MIG profiles](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html#a100-profiles). Both vary between clusters and between GPU nodes in a cluster.
 
 # Available configurations {#available_configurations}
 
 While there are [many possible MIG configurations and profiles](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html#supported-mig-profiles), the supported profiles are system dependant:
 
-- [Narval, with NVIDIA A100-40gb GPUs](https://docs.alliancecan.ca/Narval/en#GPU_instances "Narval, with NVIDIA A100-40gb GPUs"){.wikilink}
-- [Rorqual, with NVIDIA H100-80gb GPUs](https://docs.alliancecan.ca/Rorqual/en#GPU_instances "Rorqual, with NVIDIA H100-80gb GPUs"){.wikilink}
-- Nibi:
-  - nvidia_h100_80gb_hbm3_1g.10gb
-  - nvidia_h100_80gb_hbm3_2g.20gb
-  - nvidia_h100_80gb_hbm3_3g.40gb
+-   [Narval, with NVIDIA A100-40gb GPUs](https://docs.alliancecan.ca/Narval/en#GPU_instances "wikilink")
+-   [Rorqual, with NVIDIA H100-80gb GPUs](https://docs.alliancecan.ca/Rorqual/en#GPU_instances "wikilink")
+-   Nibi:
+    -   nvidia_h100_80gb_hbm3_1g.10gb
+    -   nvidia_h100_80gb_hbm3_2g.20gb
+    -   nvidia_h100_80gb_hbm3_3g.40gb
 
 The profile name describes the size of the instance. For example, a `3g.20gb` instance has 20 GB of GPU memory and offers 3/8^th^ of the computing performance of a full GPU. Using less powerful profiles will have a lower impact on your allocation and priority.
 
@@ -44,19 +44,19 @@ To list all the flavours of MIGs (plus the full size GPU names) available on a g
 
 grep gpused \'s/gpu://g\'sed \'s/),/\\n/g\'cut -d: -f1sortuniq}}
 
-The recommended maximum number of CPU cores and amount of system memory per instance are listed in the [table of ratios in bundles](https://docs.alliancecan.ca/Allocations_and_compute_scheduling#Ratios_in_bundles "table of ratios in bundles"){.wikilink}.
+The recommended maximum number of CPU cores and amount of system memory per instance are listed in the [table of ratios in bundles](https://docs.alliancecan.ca/Allocations_and_compute_scheduling#Ratios_in_bundles "wikilink").
 
 # Job examples {#job_examples}
 
-- Requesting an instance of power 3/8 and size 20GB for a 1-hour interactive job:
+-   Requesting an instance of power 3/8 and size 20GB for a 1-hour interactive job:
 
 def-someuser \--gpusa100_3g.20gb:1 \--cpus-per-task2 \--mem40gb \--time1:0:0 }}
 
-- Requesting an instance of power 4/8 and size 20GB for a 24-hour batch job using the maximum recommended number of cores and system memory:
+-   Requesting an instance of power 4/8 and size 20GB for a 24-hour batch job using the maximum recommended number of cores and system memory:
 
 # Finding which of your jobs should use an instance {#finding_which_of_your_jobs_should_use_an_instance}
 
-You can find information on current and past jobs on the [Narval usage portal (writing in progress)](https://docs.alliancecan.ca/Portail "Narval usage portal (writing in progress)"){.wikilink}.
+You can find information on current and past jobs on the [Narval usage portal (writing in progress)](https://docs.alliancecan.ca/Portail "wikilink").
 
 Power consumption is a good indicator of the total computing power requested from the GPU. For example, the following job requested a full A100 GPU with a maximum TDP of 400W, but only used 100W on average, which is only 50W more than the idle electric consumption:
 
@@ -72,8 +72,8 @@ The final metrics to consider are the maximum amount of GPU memory and the avera
 
 It was also launched using a single CPU core. When taking into account these three last metrics, we can confirm that the job should easily run on a 3g.20GB or 4g.20GB GPU instance with power and memory to spare.
 
-Another way to monitor the usage of a running job is by [attaching to the node](https://docs.alliancecan.ca/Running_jobs#Attaching_to_a_running_job "attaching to the node"){.wikilink} where the job is currently running and then by using `nvidia-smi` to read the GPU metrics in real time. This will not provide maximum and average values for memory and power usage of the entire job, but it may be helpful to identify and troubleshoot underperforming jobs.
+Another way to monitor the usage of a running job is by [attaching to the node](https://docs.alliancecan.ca/Running_jobs#Attaching_to_a_running_job "wikilink") where the job is currently running and then by using `nvidia-smi` to read the GPU metrics in real time. This will not provide maximum and average values for memory and power usage of the entire job, but it may be helpful to identify and troubleshoot underperforming jobs.
 
 # Can I use multiple instances on the same GPU? {#can_i_use_multiple_instances_on_the_same_gpu}
 
-No. While this is possible in principle, we don\'t support this. If you want to run multiple independent tasks on a GPU, you should use [MPS](https://docs.alliancecan.ca/Hyper-Q_/_MPS "MPS"){.wikilink} rather than MIG.
+No. While this is possible in principle, we don\'t support this. If you want to run multiple independent tasks on a GPU, you should use [MPS](https://docs.alliancecan.ca/Hyper-Q_/_MPS "wikilink") rather than MIG.
