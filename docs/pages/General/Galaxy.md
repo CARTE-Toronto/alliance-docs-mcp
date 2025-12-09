@@ -7,100 +7,86 @@ page_id: 15711
 display_title: "Galaxy"
 ---
 
-<languages />
+== Introduction ==
 
-## Introduction
-
-Galaxy is an open source, web-based platform for data-intensive biomedical research. It aims to make computational biology accessible to research scientists who do not have computer programming or systems administration experience. Although it was initially developed for genomics research, it is largely domain-agnostic and is now used as a general workflow management system in bioinformatics. The list of tutorials [here](https://training.galaxyproject.org/) suggests the range of applications of Galaxy.
+Galaxy is an open source, web-based platform for data-intensive biomedical research. It aims to make computational biology accessible to research scientists who do not have computer programming or systems administration experience. Although it was initially developed for genomics research, it is largely domain-agnostic and is now used as a general workflow management system in bioinformatics. The list of tutorials here suggests the range of applications of Galaxy.
 
 There are 2 ways to use the platform:
-- accessing UseGalaxy Canada directly,
-- requesting a Galaxy instance on Cedar.
+* accessing UseGalaxy Canada directly,
+* requesting a Galaxy instance on Cedar.
 
 The following table compares both options to help you decide which is best for you.
 
-{| class="wikitable"
-|-re are 2 ways to use the platform
-! Feature  !! UseGalaxy Canada !! Galaxy instance on Cedar
-|-
-| Server || Beluga Cloud & Arbutus || Cedar
-|-
-| Galaxy configuration || None (done by UseGalaxy Canada admin)  || High (done by user)
-|-
-| Required knowledge of Linux || None || High
-|-
-| Management/Updates || UseGalaxy Canada team || User
-|-
-| Server configuration || None || User
-|-
-| Pre-installed tools || Synchronized with UseGalaxy.eu || Yes (default subset)
-|-
-| Irida integration || No || Yes
-|-
-| Reference Genome || Yes (through CVMFS) || Managed by user
-|-
-| Quota ||  500GB per User || Storage RAC
-|}
+Feature                    	UseGalaxy Canada                     	Galaxy instance on Cedar
+Server                     	Beluga Cloud & Arbutus               	Cedar
+Galaxy configuration       	None (done by UseGalaxy Canada admin)	High (done by user)
+Required knowledge of Linux	None                                 	High
+Management/Updates         	UseGalaxy Canada team                	User
+Server configuration       	None                                 	User
+Pre-installed tools        	Synchronized with UseGalaxy.eu       	Yes (default subset)
+Irida integration          	No                                   	Yes
+Reference Genome           	Yes (through CVMFS)                  	Managed by user
+Quota                      	500GB per User                       	Storage RAC
 
 If you are not dealing with large files or jobs that require a large number of CPU or GPU, we highly recommend the UseGalaxy platform.
 
-## Accessing UseGalaxy Canada directly
+== Accessing UseGalaxy Canada directly ==
 
-To access UseGalaxy Canada go to [https://starthere.usegalaxy.ca](https://starthere.usegalaxy.ca), follow the link to log in through CILogon and select your institution to authenticate. The platform will detect if you are a Canadian user and allocate you a default starting allocation of 500 GB of storage.
+To access UseGalaxy Canada go to https://starthere.usegalaxy.ca, follow the link to log in through CILogon and select your institution to authenticate. The platform will detect if you are a Canadian user and allocate you a default starting allocation of 500 GB of storage.
 
-The site [https://starthere.usegalaxy.ca](https://starthere.usegalaxy.ca) provides all the necessary information about UseGalalxy.ca and Galaxy in general, as well as a “Help/Request” form to report issues, get assistance or ask for new tools and data to be installed on the platform. 
+The site https://starthere.usegalaxy.ca provides all the necessary information about UseGalalxy.ca and Galaxy in general, as well as a “Help/Request” form to report issues, get assistance or ask for new tools and data to be installed on the platform.
 
-## Requesting a Galaxy instance on Cedar
+== Requesting a Galaxy instance on Cedar ==
 
-On Cedar, we provide one Galaxy instance for every research group. Galaxy installation requires a special setup that needs to be done by our staff. If you need Galaxy for your group write to [support](https://docs.alliancecan.ca/technical)(technical support).
+On Cedar, we provide one Galaxy instance for every research group. Galaxy installation requires a special setup that needs to be done by our staff. If you need Galaxy for your group write to technical support.
 
-### Galaxy directory structure
+=== Galaxy directory structure ===
 
-Galaxy is usually installed on the project directory of the group and it contains several subdirectories. The name of the Galaxy top directory is determined by taking the first two characters of the PI username + "glxy". For example if PI username is "davidc" the Galaxy top directory will be "daglxy" and be located in `/project/group name/` where `group name` is the default group name of PI, eg., `def-davidc`. Galaxy main directory contains the following subdirectories which is slightly different than the original Galaxy package.
+Galaxy is usually installed on the project directory of the group and it contains several subdirectories. The name of the Galaxy top directory is determined by taking the first two characters of the PI username + "glxy". For example if PI username is "davidc" the Galaxy top directory will be "daglxy" and be located in /project/group name/ where group name is the default group name of PI, eg., def-davidc. Galaxy main directory contains the following subdirectories which is slightly different than the original Galaxy package.
 
-- **config**: contains all required configuration files to set up and optimize the Galaxy server. Below we explain some basic concepts of some of the configuration files that need to be set up in order to be compatible with our HPC environment, however, we will not cover all concepts.  
-- **galaxy.log**: all messages during startup or shutdown of the server are written in this file. 
-- **server.log**: all messages during the run are written in this file.
+* config: contains all required configuration files to set up and optimize the Galaxy server. Below we explain some basic concepts of some of the configuration files that need to be set up in order to be compatible with our HPC environment, however, we will not cover all concepts.
+* galaxy.log: all messages during startup or shutdown of the server are written in this file.
+* server.log: all messages during the run are written in this file.
 
-### Galaxy files ownership and modification
+=== Galaxy files ownership and modification ===
 
-All files of your Galaxy instance belong to a "pseudo-account", a shared account that is generated by an administrator at installation time. A pseudo-account does not belong to an individual person, but belongs to a specific group. Everyone in the group can log in to the pseudo-account using [SSH keys](https://docs.computecanada.ca/wiki/Using_SSH_keys_in_Linux). The name of the pseudo-account in this case is the same name as the top Galaxy directory explained above, eg., `daglxy`. In order to modify any file of your Galaxy instance, e.g. configuration files, you first need to log in to the pseudo-account. Before you can log in, you must generate an SSH key pair, store your public key somewhere in your `home` directory, and let the administrator know about that. The administrator will store your public key in an appropriate place, after which you can log in to your pseudo-account.
+All files of your Galaxy instance belong to a "pseudo-account", a shared account that is generated by an administrator at installation time. A pseudo-account does not belong to an individual person, but belongs to a specific group. Everyone in the group can log in to the pseudo-account using SSH keys. The name of the pseudo-account in this case is the same name as the top Galaxy directory explained above, eg., daglxy. In order to modify any file of your Galaxy instance, e.g. configuration files, you first need to log in to the pseudo-account. Before you can log in, you must generate an SSH key pair, store your public key somewhere in your home directory, and let the administrator know about that. The administrator will store your public key in an appropriate place, after which you can log in to your pseudo-account.
 
-### Galaxy server management
+=== Galaxy server management ===
 
-The first thing you need to do is to start the Galaxy server.  This server should NOT be run on a Cedar login node or a compute node. We recommend you use the dedicated server called "gateway" which contains a web server with the relevant /project and /home directories mounted on it. You cannot make an SSH connection to this gateway due to security reasons; however, we have designed a front-end on this gateway that lets you start/stop your Galaxy server and use the Galaxy web interface to communicate with the server.<br>
+The first thing you need to do is to start the Galaxy server.  This server should NOT be run on a Cedar login node or a compute node. We recommend you use the dedicated server called "gateway" which contains a web server with the relevant /project and /home directories mounted on it. You cannot make an SSH connection to this gateway due to security reasons; however, we have designed a front-end on this gateway that lets you start/stop your Galaxy server and use the Galaxy web interface to communicate with the server.
 To start the Galaxy server, follow https://gateway.cedar.computecanada.ca/ and click on the Galaxy link. You will be asked for your username and password, which are the same as those you entered in your Alliance account. After you authenticate, you will be automatically redirected to your Galaxy server manager page where you can manage your server and use the Galaxy web interface.
 
-### Galaxy configuration
+=== Galaxy configuration ===
 
-Files in the `config` directory are used to configure your Galaxy server. Configuring and optimizing Galaxy is tricky and explaining all the configuration files is beyond the scope of this article. If you want more information about this, we recommend you read documentation on the [Galaxy website](https://docs.galaxyproject.org/en/master/admin/config.html).  We list below some basic variables that are set for you by the administrator.  We strongly recommend you do not change them.
+Files in the config directory are used to configure your Galaxy server. Configuring and optimizing Galaxy is tricky and explaining all the configuration files is beyond the scope of this article. If you want more information about this, we recommend you read documentation on the Galaxy website.  We list below some basic variables that are set for you by the administrator.  We strongly recommend you do not change them.
 
-- In file `galaxy.yml` (the main configuration file):
-** `http:` contains your unique port number
-** `database_connection` is the name of your Galaxy database and your database server.
-** `virtualenv` is the path to a [virtual environment](https://docs.alliancecan.ca/Python)(Python#Creating_and_using_a_virtual_environment) in the gateway machine
-** `file_path, new_file_path, tool_config_file, shed_tool_config_file, tool_dependency_dir, tool_data_path, visualization_plugins_directory, job_working_directory, cluster_files_directory, template_cache_path, citation_cache_data_dir, citation_cache_lock_dir` are appropriate paths for tools, tool sheds and dependencies.
+* In file galaxy.yml (the main configuration file):
+** http: contains your unique port number
+** database_connection is the name of your Galaxy database and your database server.
+** virtualenv is the path to a Python virtual environment in the gateway machine
+** file_path, new_file_path, tool_config_file, shed_tool_config_file, tool_dependency_dir, tool_data_path, visualization_plugins_directory, job_working_directory, cluster_files_directory, template_cache_path, citation_cache_data_dir, citation_cache_lock_dir are appropriate paths for tools, tool sheds and dependencies.
 
 Other variables and files in this directory can be changed by the user.
 
-### Running tools
+=== Running tools ===
 
-There are basically two ways to run tools in your Galaxy instance.  
-- Run tools on gateway (locally) where galaxy server was installed.
-- Run tools by [jobs](https://docs.alliancecan.ca/submitting)(Running jobs) to the Cedar cluster. 
+There are basically two ways to run tools in your Galaxy instance.
+* Run tools on gateway (locally) where galaxy server was installed.
+* Run tools by submitting jobs to the Cedar cluster.
 
-### Submitting jobs
+=== Submitting jobs ===
 Here are some key points you need to know regarding job submission:
 
-- Default configuration:
-** Galaxy uses `job_conf.xml` to define how and where jobs are executed.
+* Default configuration:
+** Galaxy uses job_conf.xml to define how and where jobs are executed.
 ** By default, jobs are submitted to the Cedar cluster.
 
-- Avoid running locally:
+* Avoid running locally:
 ** Running jobs on the gateway machine is not recommended due to limited memory and inefficiency.
 
-- Customization:
+* Customization:
 ** You may need to adjust the job_conf.xml file based on tool requirements, particularly for memory allocation and walltime limits; optimizing these values is crucial to ensure tools run efficiently and do not fail due to resource constraints.
 
-- Testing:
+* Testing:
 ** Perform test runs to determine the appropriate memory and walltime for each tool.

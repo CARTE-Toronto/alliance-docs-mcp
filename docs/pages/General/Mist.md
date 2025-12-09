@@ -7,6 +7,4 @@ page_id: 27533
 display_title: "Mist"
 ---
 
-`<languages />`{=html}
-
-This page is under construction. Please see <https://docs.scinet.utoronto.ca/index.php/Mist> for now.
+This page is under construction.  Please see https://docs.scinet.utoronto.ca/index.php/Mist for now.

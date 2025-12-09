@@ -316,7 +316,7 @@ This is test content.
             storage.update_index(pages)
             
             # Build llms_full.txt with compression
-            llms_full_path = storage.build_llms_full_txt(compress=True)
+            llms_full_path = storage.build_llms_full_txt(compress=True, compress_threshold_mb=0)
             
             # Verify file exists and is compressed
             assert Path(llms_full_path).exists()
@@ -330,3 +330,33 @@ This is test content.
             assert "Alliance Documentation - Full Content" in content
             assert "PAGE: Test Page" in content
             assert "This is test content" in content
+
+    def test_build_llms_full_txt_skips_compression_below_threshold(self):
+        """Compression is skipped when below threshold even if compress=True."""
+        with tempfile.TemporaryDirectory() as temp_dir:
+            storage = DocumentationStorage(temp_dir)
+            
+            page_data = {
+                "title": "Tiny Page",
+                "url": "https://example.com/Tiny",
+                "pageid": 1,
+                "lastmodified": "2025-01-01T00:00:00Z",
+            }
+            markdown_content = "# Tiny\n\nsmall content"
+            file_path = storage.save_page(page_data, markdown_content)
+            
+            pages = [{
+                "page_id": 1,
+                "title": "Tiny Page",
+                "url": "https://example.com/Tiny",
+                "category": "General",
+                "last_modified": "2025-01-01T00:00:00Z",
+                "file_path": file_path,
+                "slug": "tiny_page",
+            }]
+            storage.update_index(pages)
+            
+            llms_full_path = storage.build_llms_full_txt(compress=True)
+            assert llms_full_path.endswith("llms_full.txt")
+            assert not llms_full_path.endswith(".gz")
+            assert Path(llms_full_path).exists()

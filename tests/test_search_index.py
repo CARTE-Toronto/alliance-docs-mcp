@@ -41,3 +41,6 @@ def test_search_index_disabled_returns_unavailable():
         with pytest.raises(SearchIndexUnavailable):
             search_index.search("anything")
 
+
+
+

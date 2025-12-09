@@ -2,10 +2,6 @@ FROM ghcr.io/astral-sh/uv:python3.12-bookworm
 
 WORKDIR /app
 
-# Install build/runtime requirements for documentation conversion
-RUN apt-get update && apt-get install -y --no-install-recommends pandoc && \
-    rm -rf /var/lib/apt/lists/*
-
 # Copy dependency manifests and README first for better caching
 COPY pyproject.toml uv.lock README.md ./
 

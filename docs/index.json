@@ -1,6 +1,6 @@
 {
-  "last_updated": "2025-12-09T17:52:05.189296+00:00",
-  "total_pages": 416,
+  "last_updated": "2025-12-09T19:42:10.250099+00:00",
+  "total_pages": 413,
   "pages": [
     {
       "page_id": 10049,
@@ -238,7 +238,7 @@
     },
     {
       "page_id": 4505,
-      "title": "Anaconda/en",
+      "title": "Anaconda",
       "url": "https://docs.alliancecan.ca/wiki/Anaconda/en",
       "category": "General",
       "last_modified": "2025-12-02T14:59:54Z",
@@ -247,7 +247,7 @@
     },
     {
       "page_id": 4948,
-      "title": "Ansys/en",
+      "title": "Ansys",
       "url": "https://docs.alliancecan.ca/wiki/Ansys/en",
       "category": "General",
       "last_modified": "2025-12-03T14:50:05Z",
@@ -385,7 +385,7 @@
       "title": "Automation in the context of multifactor authentication",
       "url": "https://docs.alliancecan.ca/wiki/Automation_in_the_context_of_multifactor_authentication/en",
       "category": "General",
-      "last_modified": "2025-09-25T20:47:10Z",
+      "last_modified": "2025-12-09T19:11:06Z",
       "file_path": "docs/pages/General/Automation_in_the_context_of_multifactor_authentication.md",
       "slug": "Automation_in_the_context_of_multifactor_authentication"
     },
@@ -592,7 +592,7 @@
       "title": "COMSOL",
       "url": "https://docs.alliancecan.ca/wiki/COMSOL/en",
       "category": "General",
-      "last_modified": "2025-09-10T18:26:38Z",
+      "last_modified": "2025-12-09T19:11:29Z",
       "file_path": "docs/pages/General/COMSOL.md",
       "slug": "COMSOL"
     },
@@ -1069,7 +1069,7 @@
       "title": "FEniCS",
       "url": "https://docs.alliancecan.ca/wiki/FEniCS/en",
       "category": "General",
-      "last_modified": "2025-09-09T16:44:01Z",
+      "last_modified": "2025-12-09T19:11:02Z",
       "file_path": "docs/pages/General/FEniCS.md",
       "slug": "FEniCS"
     },
@@ -1111,7 +1111,7 @@
     },
     {
       "page_id": 26936,
-      "title": "Fir/en",
+      "title": "Fir",
       "url": "https://docs.alliancecan.ca/wiki/Fir/en",
       "category": "General",
       "last_modified": "2025-12-03T14:47:51Z",
@@ -1327,7 +1327,7 @@
     },
     {
       "page_id": 635,
-      "title": "Getting started/en",
+      "title": "Getting started",
       "url": "https://docs.alliancecan.ca/wiki/Getting_started/en",
       "category": "Getting Started",
       "last_modified": "2025-12-05T13:37:27Z",
@@ -1570,7 +1570,7 @@
     },
     {
       "page_id": 4074,
-      "title": "Job scheduling policies/en",
+      "title": "Job scheduling policies",
       "url": "https://docs.alliancecan.ca/wiki/Job_scheduling_policies/en",
       "category": "General",
       "last_modified": "2025-12-02T18:49:00Z",
@@ -1606,7 +1606,7 @@
     },
     {
       "page_id": 15666,
-      "title": "JupyterLab/en",
+      "title": "JupyterLab",
       "url": "https://docs.alliancecan.ca/wiki/JupyterLab/en",
       "category": "General",
       "last_modified": "2025-12-03T19:36:53Z",
@@ -1952,7 +1952,7 @@
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx",
       "category": "General",
       "last_modified": "2025-12-01T12:01:07Z",
-      "file_path": "docs/pages/General/Modules_avx.md.gz",
+      "file_path": "docs/pages/General/Modules_avx.md",
       "slug": "Modules_avx"
     },
     {
@@ -1961,7 +1961,7 @@
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx2",
       "category": "General",
       "last_modified": "2025-12-01T00:01:17Z",
-      "file_path": "docs/pages/General/Modules_avx2.md.gz",
+      "file_path": "docs/pages/General/Modules_avx2.md",
       "slug": "Modules_avx2"
     },
     {
@@ -1970,7 +1970,7 @@
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx512",
       "category": "General",
       "last_modified": "2025-12-01T00:01:18Z",
-      "file_path": "docs/pages/General/Modules_avx512.md.gz",
+      "file_path": "docs/pages/General/Modules_avx512.md",
       "slug": "Modules_avx512"
     },
     {
@@ -1988,7 +1988,7 @@
       "url": "https://docs.alliancecan.ca/wiki/Modules_sse3",
       "category": "General",
       "last_modified": "2025-12-01T12:01:21Z",
-      "file_path": "docs/pages/General/Modules_sse3.md.gz",
+      "file_path": "docs/pages/General/Modules_sse3.md",
       "slug": "Modules_sse3"
     },
     {
@@ -2065,7 +2065,7 @@
     },
     {
       "page_id": 26132,
-      "title": "Multi-Instance GPU/en",
+      "title": "Multi-Instance GPU",
       "url": "https://docs.alliancecan.ca/wiki/Multi-Instance_GPU/en",
       "category": "General",
       "last_modified": "2025-12-03T14:48:04Z",
@@ -2182,7 +2182,7 @@
     },
     {
       "page_id": 27510,
-      "title": "Nibi/en",
+      "title": "Nibi",
       "url": "https://docs.alliancecan.ca/wiki/Nibi/en",
       "category": "General",
       "last_modified": "2025-12-04T17:06:02Z",
@@ -3091,7 +3091,7 @@
     },
     {
       "page_id": 28130,
-      "title": "TamIA/en",
+      "title": "TamIA",
       "url": "https://docs.alliancecan.ca/wiki/TamIA/en",
       "category": "General",
       "last_modified": "2025-12-03T21:24:01Z",
@@ -3265,7 +3265,7 @@
       "title": "Trillium",
       "url": "https://docs.alliancecan.ca/wiki/Trillium/en",
       "category": "General",
-      "last_modified": "2025-10-10T18:59:32Z",
+      "last_modified": "2025-12-09T19:10:38Z",
       "file_path": "docs/pages/General/Trillium.md",
       "slug": "Trillium"
     },
@@ -3307,7 +3307,7 @@
     },
     {
       "page_id": 32061,
-      "title": "Using Conda in Apptainer/en",
+      "title": "Using Conda in Apptainer",
       "url": "https://docs.alliancecan.ca/wiki/Using_Conda_in_Apptainer/en",
       "category": "General",
       "last_modified": "2025-12-03T14:48:20Z",
@@ -3400,7 +3400,7 @@
       "title": "Using nearline storage",
       "url": "https://docs.alliancecan.ca/wiki/Using_nearline_storage/en",
       "category": "General",
-      "last_modified": "2025-11-28T18:40:05Z",
+      "last_modified": "2025-12-09T19:11:14Z",
       "file_path": "docs/pages/General/Using_nearline_storage.md",
       "slug": "Using_nearline_storage"
     },
@@ -3718,33 +3718,6 @@
       "last_modified": "2019-12-09T14:34:28Z",
       "file_path": "docs/pages/General/⧼sidebar-available-software-link⧽.md",
       "slug": "⧼sidebar-available-software-link⧽"
-    },
-    {
-      "page_id": 5690,
-      "title": "COMSOL",
-      "url": "https://docs.alliancecan.ca/wiki/COMSOL",
-      "category": "General",
-      "last_modified": "2025-12-06T15:16:28Z",
-      "file_path": "docs/pages/General/COMSOL.md",
-      "slug": "COMSOL"
-    },
-    {
-      "page_id": 5571,
-      "title": "Using nearline storage",
-      "url": "https://docs.alliancecan.ca/wiki/Using_nearline_storage",
-      "category": "General",
-      "last_modified": "2025-12-06T00:07:27Z",
-      "file_path": "docs/pages/General/Using_nearline_storage.md",
-      "slug": "Using_nearline_storage"
-    },
-    {
-      "page_id": 3850,
-      "title": "FEniCS",
-      "url": "https://docs.alliancecan.ca/wiki/FEniCS",
-      "category": "General",
-      "last_modified": "2025-12-05T03:30:06Z",
-      "file_path": "docs/pages/General/FEniCS.md",
-      "slug": "FEniCS"
     }
   ]
 }

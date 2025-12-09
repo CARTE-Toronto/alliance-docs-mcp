@@ -7,13 +7,11 @@ page_id: 5798
 display_title: "Building a web portal"
 ---
 
-#### Potentially useful resources for building Research Platforms and Portals: {#potentially_useful_resources_for_building_research_platforms_and_portals}
+==== Potentially useful resources for building Research Platforms and Portals: ====
 
 General:
-
-- <https://sciencegateways.org/building-a-gateway>
-- <https://sciencegateways.org/engage/webinar-archive>
+* https://sciencegateways.org/building-a-gateway
+* https://sciencegateways.org/engage/webinar-archive
 
 Meta-Scheduling:
-
-- <https://github.com/aces/cbrain/wiki/CbrainTask-Recovery-and-Restart>
+* https://github.com/aces/cbrain/wiki/CbrainTask-Recovery-and-Restart

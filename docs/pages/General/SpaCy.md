@@ -7,29 +7,28 @@ page_id: 9301
 display_title: "SpaCy"
 ---
 
-`<languages />`{=html}
+spaCy is a Python package that provides industrial-strength natural language processing.
 
-[spaCy](https://spacy.io/) is a Python package that provides industrial-strength natural language processing.
+= Installation =
 
-# Installation
+==Latest available wheels==
 
-## Latest available wheels {#latest_available_wheels}
+To see the latest version of spaCy that we have built:
 
-To see the latest version of `spaCy` that we have built:
+For more information on listing wheels, see  listing available wheels.
 
-For more information on listing wheels, see [ listing available wheels](https://docs.alliancecan.ca/Python#Listing_available_wheels " listing available wheels"){.wikilink}.
+==Pre-build==
 
-## Pre-build {#pre_build}
+The preferred option is to install it using the python wheel that we compile, as follows:
+:1. Load python 3.6 module: python/3.6
+:2. Create and activate a virtual environment.
+:3. Install spaCy in the virtual environment with pip install. For both GPU and CPU support:
+:
+:If you only need CPU support:
+:
 
-The preferred option is to install it using the python [wheel](https://pythonwheels.com/) that we compile, as follows:
+GPU version: At the present time, in order to use the GPU version you need to add the CUDA libraries to LD_LIBRARY_PATH:
+$CUDA_HOME/lib64:$LD_LIBRARY_PATH
+}}
 
-:   1\. Load python 3.6 module: `python/3.6`
-:   2\. Create and activate a [virtual environment](https://docs.alliancecan.ca/Python#Creating_and_using_a_virtual_environment "virtual environment"){.wikilink}.
-:   3\. Install `spaCy` in the virtual environment with `pip install`. For both GPU and CPU support:
-:   
-:   If you only need CPU support:
-:   
-
-**GPU version**: At the present time, in order to use the GPU version you need to add the CUDA libraries to `LD_LIBRARY_PATH`: \$CUDA_HOME/lib64:\$LD_LIBRARY_PATH }}
-
-If you want to use the [Pytorch](https://docs.computecanada.ca/wiki/PyTorch) wrapper with `thinc`, you\'ll also need to install the `torch_cpu` or `torch_gpu` wheel.
+If you want to use the Pytorch wrapper with thinc, you'll also need to install the torch_cpu or  torch_gpu wheel.

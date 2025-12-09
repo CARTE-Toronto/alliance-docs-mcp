@@ -5,7 +5,8 @@ from datetime import datetime
 from typing import Dict, Optional
 from urllib.parse import urljoin
 
-import pypandoc
+import wikitextparser as wtp
+from bs4 import BeautifulSoup
 
 
 class WikiTextConverter:
@@ -19,37 +20,30 @@ class WikiTextConverter:
         """
         self.base_url = base_url
     
-    def convert_to_markdown(self, wikitext: str, metadata: Dict) -> str:
+    def convert_to_markdown(
+        self,
+        wikitext: str,
+        metadata: Dict,
+        strip_html: bool = True,
+    ) -> str:
         """Convert WikiText to Markdown with frontmatter.
         
         Args:
             wikitext: The raw WikiText content
             metadata: Page metadata (title, url, etc.)
+            strip_html: Whether to strip HTML tags from the generated markdown
             
         Returns:
             Markdown content with frontmatter
         """
-        # Clean up the wikitext first
         cleaned_wikitext = self._clean_wikitext(wikitext)
+        markdown_content = self._wikitext_to_markdown(cleaned_wikitext)
+
+        if strip_html:
+            markdown_content = self._strip_html(markdown_content)
         
-        # Convert using pandoc
-        try:
-            markdown_content = pypandoc.convert_text(
-                cleaned_wikitext,
-                'markdown',
-                format='mediawiki',
-                extra_args=['--wrap=none']
-            )
-        except Exception as e:
-            # Fallback to basic conversion if pandoc fails
-            markdown_content = self._basic_wikitext_to_markdown(cleaned_wikitext)
-        
-        # Process links to make them absolute
         markdown_content = self._process_links(markdown_content)
-        
-        # Create frontmatter
         frontmatter = self._create_frontmatter(metadata)
-        
         return f"{frontmatter}\n\n{markdown_content}"
     
     def _clean_wikitext(self, wikitext: str) -> str:
@@ -71,6 +65,23 @@ class WikiTextConverter:
         wikitext = re.sub(r'\n{3,}', '\n\n', wikitext)
         
         return wikitext.strip()
+    
+    def _wikitext_to_markdown(self, wikitext: str) -> str:
+        """Convert WikiText to Markdown without pandoc.
+        
+        Uses wikitextparser to strip markup, then falls back to regex-based
+        conversion if parsing fails.
+        """
+        try:
+            parsed = wtp.parse(wikitext)
+            plain = parsed.plain_text() if hasattr(parsed, "plain_text") else None
+            if plain and plain.strip():
+                return plain.strip()
+        except Exception:
+            # Fall back to regex-based conversion below
+            pass
+        
+        return self._basic_wikitext_to_markdown(wikitext)
     
     def _basic_wikitext_to_markdown(self, wikitext: str) -> str:
         """Basic WikiText to Markdown conversion without pandoc.
@@ -107,6 +118,60 @@ class WikiTextConverter:
         wikitext = re.sub(r'<code>(.*?)</code>', r'`\1`', wikitext)
         
         return wikitext
+    
+    def _strip_html(self, markdown: str) -> str:
+        """Remove HTML tags while preserving readable text layout."""
+        soup = BeautifulSoup(markdown, "html.parser")
+
+        for tag in soup(["script", "style"]):
+            tag.decompose()
+
+        for br in soup.find_all("br"):
+            br.replace_with("\n")
+
+        block_like = {
+            "p",
+            "div",
+            "section",
+            "article",
+            "header",
+            "footer",
+            "blockquote",
+        }
+        list_like = {"ul", "ol"}
+        table_like = {"table", "thead", "tbody", "tr", "td", "th"}
+
+        for tag in list(soup.find_all(True)):
+            if tag.name in block_like:
+                tag.insert_after("\n")
+                tag.unwrap()
+            elif tag.name == "li":
+                prefix = "- " if tag.find_parent("ul") else "1. "
+                tag.insert_before("\n" + prefix)
+                tag.unwrap()
+            elif tag.name in list_like:
+                tag.insert_before("\n")
+                tag.insert_after("\n")
+                tag.unwrap()
+            elif tag.name in table_like:
+                tag.insert_before("\n")
+                tag.insert_after("\n")
+                tag.unwrap()
+            elif tag.name == "pre":
+                tag.insert_before("\n```\n")
+                tag.insert_after("\n```\n")
+                tag.unwrap()
+            elif tag.name == "code":
+                tag.insert_before("`")
+                tag.insert_after("`")
+                tag.unwrap()
+            else:
+                tag.unwrap()
+
+        text = soup.get_text()
+        text = re.sub(r"[ \t]+\n", "\n", text)
+        text = re.sub(r"\n{3,}", "\n\n", text)
+        return text.strip()
     
     def _process_links(self, markdown: str) -> str:
         """Process links to make them absolute where appropriate.

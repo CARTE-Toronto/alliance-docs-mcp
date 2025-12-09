@@ -7,7 +7,7 @@ page_id: 16839
 display_title: "Arbutus user documentation"
 ---
 
-## Arbutus Documentation {#arbutus_documentation}
+== Arbutus Documentation ==
 
 We keep a curated collection of user facing documents here for the Arbutus community to reference.
 
@@ -15,14 +15,13 @@ Please let us know through cloud@computecanada.ca if there are documents you wou
 
 While we have a lot of specific documentation for Arbutus, some of this may translate over to other cloud sites as well.
 
-#### Openstack
+==== Openstack ====
 
-[VM recovery via cloud console](https://docs.alliancecan.ca/VM_recovery_via_cloud_console "VM recovery via cloud console"){.wikilink}
+VM recovery via cloud console
 
-#### Storage
+==== Storage ====
+Arbutus CephFS
 
-[Arbutus CephFS](https://docs.alliancecan.ca/Arbutus_CephFS "Arbutus CephFS"){.wikilink}
+Arbutus object storage
 
-[Arbutus object storage](https://docs.alliancecan.ca/Arbutus_object_storage "Arbutus object storage"){.wikilink}
-
-#### General
+==== General ====

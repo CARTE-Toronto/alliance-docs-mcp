@@ -281,7 +281,7 @@ uv run ruff check src/
 
 1. **Sync Failures**: Check API access and network connectivity
 2. **Missing Pages**: Verify MediaWiki API responses
-3. **Conversion Errors**: Check pandoc installation and WikiText format
+3. **Conversion Errors**: Ensure `beautifulsoup4`/`wikitextparser` are installed and valid HTML is being stripped (use `--no-strip-html` to disable)
 
 ### Logs
 

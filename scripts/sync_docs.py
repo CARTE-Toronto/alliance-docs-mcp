@@ -159,6 +159,7 @@ async def sync_documentation(
     related_index_dir: Optional[str] = None,
     related_model_name: str = "all-MiniLM-L6-v2",
     related_backend: str = "chroma",
+    strip_html: bool = True,
 ):
     """Main synchronization function."""
     # Load configuration from environment
@@ -268,7 +269,8 @@ async def sync_documentation(
                     # Convert to markdown
                     markdown_content = converter.convert_to_markdown(
                         page_data["content"], 
-                        page_data
+                        page_data,
+                        strip_html=strip_html,
                     )
                     
                     # Save the page
@@ -377,6 +379,7 @@ async def sync_incremental(
     related_index_dir: Optional[str] = None,
     related_model_name: str = "all-MiniLM-L6-v2",
     related_backend: str = "chroma",
+    strip_html: bool = True,
 ):
     """Incremental synchronization - only fetch changed pages."""
     # Load configuration
@@ -445,7 +448,8 @@ async def sync_incremental(
                 # Convert to markdown
                 markdown_content = converter.convert_to_markdown(
                     page_data["content"], 
-                    page_data
+                    page_data,
+                    strip_html=strip_html,
                 )
                 
                 # Save the page
@@ -521,12 +525,18 @@ def main():
     related_index_dir_env = os.getenv("RELATED_INDEX_DIR")
     related_backend_env = os.getenv("RELATED_BACKEND", "chroma")
     related_disabled_env = os.getenv("DISABLE_RELATED_INDEX", "").lower() in ("1", "true", "yes")
+    strip_html_disabled_env = os.getenv("DISABLE_STRIP_HTML", "").lower() in ("1", "true", "yes")
 
     parser = argparse.ArgumentParser(description="Sync Alliance documentation")
     parser.add_argument("--incremental", action="store_true", 
                        help="Perform incremental sync (only changed pages)")
     parser.add_argument("--verbose", "-v", action="store_true",
                        help="Enable verbose logging")
+    parser.add_argument(
+        "--no-strip-html",
+        action="store_true",
+        help="Skip stripping HTML tags from converted markdown",
+    )
     parser.add_argument(
         "--no-index",
         action="store_true",
@@ -579,6 +589,7 @@ def main():
     
     args = parser.parse_args()
     disable_related_index = related_disabled_env or args.no_related_index
+    strip_html = not (strip_html_disabled_env or args.no_strip_html)
     
     if args.verbose:
         logging.getLogger().setLevel(logging.DEBUG)
@@ -596,6 +607,7 @@ def main():
                     related_index_dir=args.related_index_dir,
                     related_model_name=args.related_model_name,
                     related_backend=args.related_backend,
+                    strip_html=strip_html,
                 )
             )
         else:
@@ -610,6 +622,7 @@ def main():
                     related_index_dir=args.related_index_dir,
                     related_model_name=args.related_model_name,
                     related_backend=args.related_backend,
+                    strip_html=strip_html,
                 )
             )
         

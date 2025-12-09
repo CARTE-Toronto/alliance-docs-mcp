@@ -7,16 +7,10 @@ page_id: 14911
 display_title: "Événements passés"
 ---
 
-`<tabs>`{=html} `<tab name="Calcul Québec">`{=html}
+==== Événements futurs ====
+* Nos ateliers de formation à venir sont sur Eventbrite
+* Si vous voulez que nous organisions un atelier de formation en particulier, veuillez nous joindre à l'adresse formation@calculquebec.ca
 
-#### Événements futurs {#événements_futurs}
+==== Événements passés ====
 
-- [Nos ateliers de formation à venir sont sur Eventbrite](https://www.eventbrite.ca/o/calcul-quebec-8295332683)
-- Si vous voulez que nous organisions un atelier de formation en particulier, veuillez nous joindre à l\'adresse <formation@calculquebec.ca>
-
-#### Événements passés {#événements_passés}
-
-  Date   Institution   Code   Titre   Présentateur   Complément
-  ------ ------------- ------ ------- -------------- ------------
-
-`</tab>`{=html} `</tabs>`{=html}
+Date	Institution	Code	Titre	Présentateur	Complément

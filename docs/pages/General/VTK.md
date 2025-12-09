@@ -7,6 +7,4 @@ page_id: 10414
 display_title: "VTK"
 ---
 
-`<languages />`{=html}
-
 VTK is installed on our clusters and can be loaded with a module:

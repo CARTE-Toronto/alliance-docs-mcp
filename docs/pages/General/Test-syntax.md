@@ -7,10 +7,8 @@ page_id: 31985
 display_title: "Test-syntax"
 ---
 
-Where the script `config_env.sh` is:
+Where the script config_env.sh is:
 
-``` {.python .numberLines}
 import torch
 device = torch.device("cuda")
 matrix_size = 10000  # Adjust this value to increase/decrease GPU intensity
-```

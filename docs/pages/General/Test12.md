@@ -7,4 +7,4 @@ page_id: 16608
 display_title: "Test12"
 ---
 
-![](eclipse32.png "eclipse32.png"){width="400"}
+[400px](https://docs.alliancecan.ca/File:eclipse32.png)

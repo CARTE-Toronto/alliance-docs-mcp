@@ -43,7 +43,7 @@ alliance-docs-mcp/
 **Process**:
 1. Fetch list of all pages from `docs.alliancecan.ca/wiki/api.php`
 2. For each page, retrieve raw wikitext content
-3. Convert wikitext to markdown using pandoc or custom parser
+3. Convert wikitext to markdown using a pure-Python parser (wikitextparser) with HTML stripping
 4. Save to `docs/pages/{category}/{page_name}.md` with metadata
 5. Maintain an index file (`docs/index.json`) with page metadata:
    - Title, URL, category, last modified, file path
@@ -115,7 +115,7 @@ async def search_docs(query: str, category: str = None) -> list:
 **Core**:
 - `fastmcp` - MCP server framework
 - `requests` - HTTP client for MediaWiki API
-- `pypandoc` or `wikitextparser` - WikiText to Markdown conversion
+- `wikitextparser` + `beautifulsoup4` - WikiText to Markdown conversion and HTML cleanup
 - `pyyaml` - Frontmatter parsing
 - `python-dotenv` - Configuration management
 

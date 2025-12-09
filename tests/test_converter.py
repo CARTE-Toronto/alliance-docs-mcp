@@ -149,3 +149,25 @@ Multiple newlines
         # Check external links (just verify we have some)
         external_links = [link for link in links if link["type"] == "external"]
         assert len(external_links) >= 2  # Should have at least the expected external links
+
+    def test_strip_html_removes_tags(self):
+        """Ensure HTML tags are stripped from markdown fragments."""
+        converter = WikiTextConverter()
+        markdown = converter._strip_html("<div>Alpha <b>Beta</b><br/>Gamma</div>")
+        assert "<" not in markdown
+        assert "Alpha" in markdown
+        assert "Beta" in markdown
+        assert "Gamma" in markdown
+        assert "Beta\nGamma" in markdown or "Beta Gamma" in markdown
+
+    def test_convert_to_markdown_respects_strip_flag(self, monkeypatch):
+        """Verify strip_html flag controls HTML removal."""
+        converter = WikiTextConverter()
+        monkeypatch.setattr(converter, "_wikitext_to_markdown", lambda wt: "<p>HTML Body</p>")
+        metadata = {"title": "Sample"}
+
+        with_html = converter.convert_to_markdown("ignored", metadata, strip_html=False)
+        assert "<p>HTML Body</p>" in with_html
+
+        stripped = converter.convert_to_markdown("ignored", metadata, strip_html=True)
+        assert "<p>HTML Body</p>" not in stripped

@@ -7,50 +7,36 @@ page_id: 29717
 display_title: "Resource Allocation Competition"
 ---
 
-`<languages />`{=html} The Resource Allocation Competition (RAC) enables faculty members and their research groups to access compute, storage and cloud resources beyond what can be obtained via the [Rapid Access Service](https://docs.alliancecan.ca/Rapid_Access_Service "Rapid Access Service"){.wikilink} (RAS).
+The Resource Allocation Competition (RAC) enables faculty members and their research groups to access compute, storage and cloud resources beyond what can be obtained via the Rapid Access Service (RAS).
 
-If you are not sure about which application process is best for your project, please email <allocations@tech.alliancecan.ca>.
+If you are not sure about which application process is best for your project, please email allocations@tech.alliancecan.ca.
 
-You may also wish to consult the RAC [Frequently Asked Questions](https://docs.alliancecan.ca/RAC_FAQ "Frequently Asked Questions"){.wikilink} and [Technical Glossary](https://docs.computecanada.ca/wiki/Technical_glossary_for_the_resource_allocation_competitions).
+You may also wish to consult the RAC Frequently Asked Questions and Technical Glossary.
+= Key dates =
 
-# Key dates {#key_dates}
+Event                                   	Date
+Resources for Research Groups (RRG)
+* Including Fast Track applications
+Research Platforms and Portals (RPP)
+* Including RPP Annual Progress Reports	September 23 to November 4, 2025, until 11:59 PM (EST)
+(extension of this deadline is not possible)
+RAC general overview information session	September 24 (English) – Presentation, Recording
+RAC general overview information session	September 29 (French) – Presentation, Recording
+Information session about GPU requests  	October 1 (English) - Presentation, Recording
+Information session about GPU requests  	October 2 (French) - Presentation, Recording
+Information session about Cloud requests	October 3 (English) - Presentation, Recording
+Announcement of RAC results             	Late March 2026
+Start of allocations                    	Early April 2026
 
-+---------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Event**                                                                                                     | **Date**                                                                                                                                                                                                                                                                                   |
-+---------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **[Resources for Research Groups](https://docs.alliancecan.ca/RAC_application_guide "Resources for Research Groups"){.wikilink}** (RRG)   | September 23 to November 4, 2025, until 11:59 PM (EST) *(extension of this deadline is not possible)*                                                                                                                                                                                      |
-|                                                                                                               |                                                                                                                                                                                                                                                                                            |
-| - Including Fast Track applications                                                                           |                                                                                                                                                                                                                                                                                            |
-|                                                                                                               |                                                                                                                                                                                                                                                                                            |
-| **[Research Platforms and Portals](https://docs.alliancecan.ca/RAC_application_guide "Research Platforms and Portals"){.wikilink}** (RPP) |                                                                                                                                                                                                                                                                                            |
-|                                                                                                               |                                                                                                                                                                                                                                                                                            |
-| - Including RPP Annual Progress Reports                                                                       |                                                                                                                                                                                                                                                                                            |
-+---------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| RAC general overview information session                                                                      | September 24 (English) -- [Presentation](https://docs.google.com/presentation/d/1DNKC_jDaMQnGyC8oI0kXH_WyTia6xvZ8DkSofRuKlfo/edit?usp=drive_link), [Recording](https://drive.google.com/file/d/1Rcaw0wXyycnoTnOd9i6Dqzv7Bjyln9fB/view?usp=drive_link)                                      |
-|                                                                                                               +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                                                               | September 29 (French) -- [Presentation](https://docs.google.com/presentation/d/1xs5yEf5FunOa4omgb5NyCVxEwHlY72unzXJUYm0zM28/edit?usp=drive_link), [Recording](https://drive.google.com/file/d/1dFFUcQgt6nrjhYhsTXdMUc6zqXcG5-cI/view?usp=drive_link)                                       |
-+---------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Information session about GPU requests                                                                        | October 1 (English) - [Presentation](https://docs.google.com/presentation/d/151nG5ReL8tKQu--wumJ9235uy8tgDhjMoq0i3baWtjU/edit?slide=id.g27bcdee3b37_0_318#slide=id.g27bcdee3b37_0_318), [Recording](https://drive.google.com/file/d/1kPLQyHO30cFHDhZh6n80XGiLo9TqaxCJ/view?usp=drive_link) |
-|                                                                                                               +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                                                               | October 2 (French) - [Presentation](https://docs.google.com/presentation/d/1ba_08Hy40A9yTAYROnEOACc5vRHBSUyA6fv-KxNrq40/edit?slide=id.g302e07458c2_1_0#slide=id.g302e07458c2_1_0), [Recording](https://drive.google.com/file/d/1H8GocKaPQ0KSSxCCZR3jtIRXX8zt6KPq/view?usp=drive_link)      |
-+---------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Information session about Cloud requests                                                                      | October 3 (English) - [Presentation](https://docs.google.com/presentation/d/1QDc5SSjnjVWDPL_2g4Zlw3CQQWqtp0iO9JO6imMsr50/edit?slide=id.g11edde04bc5_0_0#slide=id.g11edde04bc5_0_0), [Recording](https://drive.google.com/file/d/19VUw5j-HeyNSkljyruKJFE2tKASMMQeR/view?usp=sharing)        |
-+---------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Announcement of RAC results                                                                                   | Late March 2026                                                                                                                                                                                                                                                                            |
-+---------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Start of allocations                                                                                          | Early April 2026                                                                                                                                                                                                                                                                           |
-+---------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+= Useful RAC documentation =
 
-# Useful RAC documentation {#useful_rac_documentation}
+* RAC Application Guide (for RRG and RPP full applications)
+** Fast Track application guide
+** Annual RPP progress report guide
+* Available resources
+* RAC FAQ
+* CCV submission guide
+* Rapid Access Service
 
-- [RAC Application Guide](https://docs.alliancecan.ca/RAC_application_guide "RAC Application Guide"){.wikilink} (for RRG and RPP full applications)
-  - [Fast Track application guide](https://docs.alliancecan.ca/RAC_Fast_Track_Application_Guide "Fast Track application guide"){.wikilink}
-  - [Annual RPP progress report guide](https://docs.alliancecan.ca/RPP_Annual_Progress_Report_Guidelines "Annual RPP progress report guide"){.wikilink}
-- [Available resources](https://docs.alliancecan.ca/RAC_available_resources "Available resources"){.wikilink}
-- [RAC FAQ](https://docs.alliancecan.ca/RAC_FAQ "RAC FAQ"){.wikilink}
-- [CCV submission guide](https://docs.alliancecan.ca/Alliance_CCV_submission_guide "CCV submission guide"){.wikilink}
-- [Rapid Access Service](https://docs.alliancecan.ca/Rapid_Access_Service "Rapid Access Service"){.wikilink}
-
-# Past competitions {#past_competitions}
-
-To view the annual reports with the results of past RAC rounds, please visit this [page](https://docs.alliancecan.ca/RAC_Annual_Reports "page"){.wikilink}.
+= Past competitions =
+To view the annual reports with the results of past RAC rounds, please visit this page.

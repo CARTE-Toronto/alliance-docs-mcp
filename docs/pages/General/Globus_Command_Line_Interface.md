@@ -7,4 +7,3 @@ page_id: 12448
 display_title: "Globus Command Line Interface"
 ---
 
-

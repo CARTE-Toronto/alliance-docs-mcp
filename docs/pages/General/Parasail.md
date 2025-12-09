@@ -7,58 +7,48 @@ page_id: 25885
 display_title: "Parasail"
 ---
 
-`<languages />`{=html}
+parasail is a SIMD C (C99) library containing implementations of the Smith-Waterman (local), Needleman-Wunsch (global), and various semi-global pairwise sequence alignment algorithms.
 
-[parasail](https://github.com/jeffdaily/parasail) is a SIMD C (C99) library containing implementations of the Smith-Waterman (local), Needleman-Wunsch (global), and various semi-global pairwise sequence alignment algorithms.
-
-# Usage
+= Usage =
 
 Find the required versions using
 
 and load the library using
 
-## parasail_aligner Example {#parasail_aligner_example}
+== parasail_aligner Example ==
+When using the binary parasail_aligner, it is important to set the number of threads according to the number of cores allocated in our job. We can set it with
 
-When using the binary `parasail_aligner`, it is important to set the number of threads according to the number of cores allocated in our job. We can set it with
-
-``` bash
 parasail_aligner -t ${SLURM_CPUS_PER_TASK:-1} ...}}
-```
 
-## Python extension {#python_extension}
+== Python extension ==
+The module contains bindings for multiple Python versions.
+To discover which are the compatible Python versions, run
 
-The module contains bindings for multiple Python versions. To discover which are the compatible Python versions, run
+=== Usage ===
+1. Load the required modules.
 
-### Usage {#usage_1}
-
-1\. Load the required modules.
-
-2\. Import parasail 1.3.4.
+2. Import parasail 1.3.4.
 
 If the command displays nothing, the import was successful.
 
-### Example
-
+=== Example ===
 Run a quick local alignment score comparison between BioPython and parasail.
 
-1\. Write the Python script:
+1. Write the Python script:
 
-2\. Write the job submission script: `<tabs>`{=html} `<tab name="Default StdEnv">`{=html}
+2. Write the job submission script:
 
-`</tab>`{=html} `<tab name="StdEnv/2020">`{=html} 2.1. Identify available wheels first :
+2.1. Identify available wheels first :
 
 Install the desired version in your virtual environment:
 
-`</tab>`{=html} `</tabs>`{=html}
+3. Submit the job with
 
-3\. Submit the job with
+4. When the job has run, the output will be in the Slurm output file:
 
-4\. When the job has run, the output will be in the Slurm output file:
-
-#### Available Python packages {#available_python_packages}
-
+==== Available Python packages  ====
 Other Python packages that depend on parasail will have their requirement satisfied by loading the parasail module:
-
-`grep parasail`
-
-\|result= parasail 1.3.4 }}
+ grep parasail
+|result=
+parasail                           1.3.4
+}}

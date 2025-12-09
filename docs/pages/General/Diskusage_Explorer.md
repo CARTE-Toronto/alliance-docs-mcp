@@ -7,56 +7,50 @@ page_id: 16270
 display_title: "Diskusage Explorer"
 ---
 
-`<languages />`{=html}
+==Content of folders==
 
-## Content of folders {#content_of_folders}
+Warning: This tool is currently only available on Rorqual and Narval.
 
-`<span style="color:red">`{=html}Warning: This tool is currently only available on [Rorqual](https://docs.alliancecan.ca/Rorqual/en "Rorqual"){.wikilink} and [Narval](https://docs.alliancecan.ca/Narval/en "Narval"){.wikilink}.`</span>`{=html}
+You can get a breakdown by folder of how the disk space is being consumed in your /home, /scratch and /project spaces. That information is currently updated once a day and is stored in an SQLite format for fast access.
 
-You can get a breakdown by folder of how the disk space is being consumed in your /home, /scratch and /project spaces. That information is currently updated once a day and is stored in an [SQLite](https://docs.alliancecan.ca/SQLite "SQLite"){.wikilink} format for fast access.
+Here is how to explore your disk consumption, using the example of /project space def-professor as the particular directory to investigate.
 
-Here is how to explore your disk consumption, using the example of /project space `def-professor` as the particular directory to investigate.
+=== ncurse user interface ===
+Choose a /project space you have access to and want to analyze; for the purpose of this discussion we will use def-professor.
 
-### ncurse user interface {#ncurse_user_interface}
+This command loads a browser that shows the resources consumed by all files under any directory tree.
 
-Choose a /project space you have access to and want to analyze; for the purpose of this discussion we will use `def-professor`.
-
-This command loads a browser that shows the resources consumed by all files under any directory tree. ![using\|450px\|frame\|left\| Navigating your project space with duc\'s ncurse tool](https://docs.alliancecan.ca/Ncurse_duc.png "using|450px|frame|left| Navigating your project space with duc's ncurse tool")\
-
-Type `c` to toggle between consumed disk space and the number of files, `q` or `<esc>`{=html} to quit and `h` for help.
+Type c to toggle between consumed disk space and the number of files, q or  to quit and h for help.
 
 If you are only interested in a subdirectory of this /project space and do not want to navigate the whole tree in the ncurse user interface, use
 
-A complete manual page is available with the `man duc` command.
+A complete manual page is available with the man duc command.
 
-### Graphical user interface {#graphical_user_interface}
+=== Graphical user interface ===
 
-Note that when the login node is especially busy or if you have an especially large number of files in your /project space, the graphical interface mode can be slow and choppy. For a better experience, you can read the section below to run `diskusage_explorer` on your own machine.
+Note that when the login node is especially busy or if you have an especially large number of files in your /project space, the graphical interface mode can be slow and choppy. For a better experience, you can read the section below to run diskusage_explorer on your own machine.
 
-Note that we recommend the use of the standard text-based ncurse mode on our cluster login nodes but `diskusage_explorer` does also include a nice graphical user interface (GUI).
+Note that we recommend the use of the standard text-based ncurse mode on our cluster login nodes but diskusage_explorer does also include a nice graphical user interface (GUI).
 
-First, make sure that you are connected to the cluster in such a way that [SSH](https://docs.alliancecan.ca/SSH "SSH"){.wikilink} is capable of correctly displaying GUI applications. You can then use a graphical interface by means of the command,
+First, make sure that you are connected to the cluster in such a way that SSH is capable of correctly displaying GUI applications. You can then use a graphical interface by means of the command,
 
-You can navigate the folders with the mouse and still type `c` to toggle between the size of the files and the number of files.
+You can navigate the folders with the mouse and still type c to toggle between the size of the files and the number of files.
 
-![using\|450px\|frame\|left\|Navigating your project space with duc\'s GUI tool](https://docs.alliancecan.ca/Duc_gui_navigation.gif "using|450px|frame|left|Navigating your project space with duc's GUI tool")\
+=== Browse faster on your own machine ===
 
-### Browse faster on your own machine {#browse_faster_on_your_own_machine}
+First, install the diskusage_explorer software on your local machine and then, still on your local machine, download the SQLite file from your cluster and run duc.
 
-First, [install the diskusage_explorer software](http://duc.zevv.nl/#download) on your local machine and then, still on your local machine, download the SQLite file from your cluster and run `duc`.
-
-    rsync -v --progress username@beluga.calculcanada.ca:/project/.duc_databases/def-professor.sqlite  .
-    duc gui -d ./def-professor.sqlite  /project/def-professor
+rsync -v --progress username@beluga.calculcanada.ca:/project/.duc_databases/def-professor.sqlite  .
+duc gui -d ./def-professor.sqlite  /project/def-professor
 
 This immediately leads to a smoother and more satisfying browsing experience.
 
-## Space and file count usage per user on Cedar {#space_and_file_count_usage_per_user_on_cedar}
+== Space and file count usage per user on Cedar ==
 
-On Cedar, it is possible for any member of a group to run `diskusage_report` with the following options `--per_user` and `--all_users` to have the breakdown per user. The first option displays only heavy users. In other terms, members of the group who have more files and/or occupy more space. When both options are used, the command gives the breakdown for all members of the group. This is a handy command that helps to identify the users within a group who have more files and/or a large amount of data and ask them to better manage their data by reducing their file count usage for example.
+On Cedar, it is possible for any member of a group to run diskusage_report with the following options --per_user and --all_users to have the breakdown per user. The first option displays only heavy users. In other terms, members of the group who have more files and/or occupy more space. When both options are used, the command gives the breakdown for all members of the group. This is a handy command that helps to identify the users within a group who have more files and/or a large amount of data and ask them to better manage their data by reducing their file count usage for example.
 
-In the following example, user `<b>`{=html}user01`</b>`{=html} runs the command and gets the following output:
+In the following example, user user01 runs the command and gets the following output:
 
-``` bash
 [user01@cedar1 ~]$ diskusage_report --per_user --all_users
                              Description                Space           # of files
                      /home (user user01)             109k/50G              12/500k
@@ -82,15 +76,12 @@ Breakdown for nearline def-professor (Last update: 2023-05-02 01:01:30)
 -------------------------------------------------------------------------
          user03               5          1197.90 GiB     On disk and tape
           Total               5          1197.90 GiB     On disk and tape
-```
 
 This group has 8 users and the above output shows clearly that at least 4 of them have a large number of files for a small amount of data:
 
-``` bash
            User      File count                 Size             Location
 -------------------------------------------------------------------------
          user01           28313             4.00 GiB              On disk
          user02           11926             3.74 GiB              On disk
          user05          125929           262.75 GiB              On disk
          user06          201099            60.51 GiB              On disk
-```

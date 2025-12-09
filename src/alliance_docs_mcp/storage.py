@@ -3,6 +3,7 @@
 import gzip
 import json
 import logging
+import shutil
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -445,13 +446,14 @@ class DocumentationStorage:
             logger.error(f"Error building llms.txt: {e}")
             raise
     
-    def build_llms_full_txt(self, compress: bool = True) -> str:
+    def build_llms_full_txt(self, compress: bool = True, compress_threshold_mb: float = 50.0) -> str:
         """Build llms_full.txt containing all documentation content.
         
         Writes content incrementally to avoid high memory usage.
         
         Args:
             compress: Whether to compress the output with gzip (default: True)
+            compress_threshold_mb: Only compress when uncompressed size >= this many MB
         
         Returns:
             Path to the created llms_full.txt or llms_full.txt.gz file
@@ -464,116 +466,84 @@ class DocumentationStorage:
             
             # Build and write content incrementally to avoid high memory usage
             base_path = self.docs_dir / "llms_full.txt"
+            total_bytes = 0
+            threshold_bytes = max(int(compress_threshold_mb * 1024 * 1024), 0)
             
-            if compress:
-                output_path = Path(str(base_path) + ".gz")
-                total_bytes = 0
+            with open(base_path, 'w', encoding='utf-8') as f:
+                def write_line(line):
+                    nonlocal total_bytes
+                    f.write(line + "\n")
+                    total_bytes += len((line + "\n").encode('utf-8'))
                 
-                with gzip.open(output_path, 'wt', encoding='utf-8') as f:
-                    def write_line(line):
-                        nonlocal total_bytes
-                        f.write(line + "\n")
-                        total_bytes += len((line + "\n").encode('utf-8'))
+                write_line("# Alliance Documentation - Full Content")
+                write_line(f"# Generated: {datetime.now(timezone.utc).isoformat()}")
+                write_line(f"# Total pages: {len(pages_sorted)}")
+                write_line("=" * 80)
+                write_line("")
+                
+                for page in pages_sorted:
+                    title = page.get("title", "Unknown")
+                    url = page.get("url", "")
+                    category = page.get("category", "General")
+                    file_path = page.get("file_path", "")
                     
-                    write_line("# Alliance Documentation - Full Content")
-                    write_line(f"# Generated: {datetime.now(timezone.utc).isoformat()}")
-                    write_line(f"# Total pages: {len(pages_sorted)}")
+                    # Add page header
+                    write_line("")
+                    write_line("=" * 80)
+                    write_line(f"PAGE: {title}")
+                    write_line(f"URL: {url}")
+                    write_line(f"Category: {category}")
                     write_line("=" * 80)
                     write_line("")
                     
-                    for page in pages_sorted:
-                        title = page.get("title", "Unknown")
-                        url = page.get("url", "")
-                        category = page.get("category", "General")
-                        file_path = page.get("file_path", "")
-                        
-                        # Add page header
-                        write_line("")
-                        write_line("=" * 80)
-                        write_line(f"PAGE: {title}")
-                        write_line(f"URL: {url}")
-                        write_line(f"Category: {category}")
-                        write_line("=" * 80)
-                        write_line("")
-                        
-                        # Load and add page content
-                        if file_path:
-                            try:
-                                page_data = self.load_page(file_path)
-                                if page_data and "content" in page_data:
-                                    # Write content without extra newline since write_line adds it
-                                    f.write(page_data["content"])
-                                    total_bytes += len(page_data["content"].encode('utf-8'))
-                                    write_line("")
-                                else:
-                                    write_line(f"[Content not available for {title}]")
-                            except Exception as e:
-                                logger.warning(f"Error loading content for {title}: {e}")
-                                write_line(f"[Error loading content: {e}]")
-                        else:
-                            write_line(f"[No file path for {title}]")
-                        
-                        write_line("")
+                    # Load and add page content
+                    if file_path:
+                        try:
+                            page_data = self.load_page(file_path)
+                            if page_data and "content" in page_data:
+                                # Write content without extra newline since write_line adds it
+                                f.write(page_data["content"])
+                                total_bytes += len(page_data["content"].encode('utf-8'))
+                                write_line("")
+                            else:
+                                write_line(f"[Content not available for {title}]")
+                        except Exception as e:
+                            logger.warning(f"Error loading content for {title}: {e}")
+                            write_line(f"[Error loading content: {e}]")
+                    else:
+                        write_line(f"[No file path for {title}]")
+                    
+                    write_line("")
+            
+            should_compress = compress and total_bytes >= threshold_bytes
+            output_path: Path
+            
+            if should_compress:
+                output_path = Path(str(base_path) + ".gz")
+                with open(base_path, "rb") as src, gzip.open(output_path, "wb") as dst:
+                    shutil.copyfileobj(src, dst)
                 
                 original_size_mb = total_bytes / (1024 * 1024)
                 compressed_size_mb = output_path.stat().st_size / (1024 * 1024)
-                
+                base_path.unlink(missing_ok=True)
                 logger.info(
-                    f"Created compressed llms_full.txt.gz ({original_size_mb:.2f} MB → "
-                    f"{compressed_size_mb:.2f} MB) at {output_path}"
+                    "Created compressed llms_full.txt.gz (%.2f MB → %.2f MB) at %s",
+                    original_size_mb,
+                    compressed_size_mb,
+                    output_path,
                 )
             else:
                 output_path = base_path
-                total_bytes = 0
-                
-                with open(output_path, 'w', encoding='utf-8') as f:
-                    def write_line(line):
-                        nonlocal total_bytes
-                        f.write(line + "\n")
-                        total_bytes += len((line + "\n").encode('utf-8'))
-                    
-                    write_line("# Alliance Documentation - Full Content")
-                    write_line(f"# Generated: {datetime.now(timezone.utc).isoformat()}")
-                    write_line(f"# Total pages: {len(pages_sorted)}")
-                    write_line("=" * 80)
-                    write_line("")
-                    
-                    for page in pages_sorted:
-                        title = page.get("title", "Unknown")
-                        url = page.get("url", "")
-                        category = page.get("category", "General")
-                        file_path = page.get("file_path", "")
-                        
-                        # Add page header
-                        write_line("")
-                        write_line("=" * 80)
-                        write_line(f"PAGE: {title}")
-                        write_line(f"URL: {url}")
-                        write_line(f"Category: {category}")
-                        write_line("=" * 80)
-                        write_line("")
-                        
-                        # Load and add page content
-                        if file_path:
-                            try:
-                                page_data = self.load_page(file_path)
-                                if page_data and "content" in page_data:
-                                    # Write content without extra newline since write_line adds it
-                                    f.write(page_data["content"])
-                                    total_bytes += len(page_data["content"].encode('utf-8'))
-                                    write_line("")
-                                else:
-                                    write_line(f"[Content not available for {title}]")
-                            except Exception as e:
-                                logger.warning(f"Error loading content for {title}: {e}")
-                                write_line(f"[Error loading content: {e}]")
-                        else:
-                            write_line(f"[No file path for {title}]")
-                        
-                        write_line("")
-                
                 size_mb = total_bytes / (1024 * 1024)
-                logger.info(f"Created llms_full.txt ({size_mb:.2f} MB) at {output_path}")
+                if compress and threshold_bytes > 0:
+                    logger.info(
+                        "Skipped compression for llms_full.txt (%.2f MB < %.2f MB threshold) at %s",
+                        size_mb,
+                        threshold_bytes / (1024 * 1024),
+                        output_path,
+                    )
+                else:
+                    logger.info("Created llms_full.txt (%.2f MB) at %s", size_mb, output_path)
             
             return str(output_path)
             
