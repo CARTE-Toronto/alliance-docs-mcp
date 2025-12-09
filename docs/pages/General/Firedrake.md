@@ -2,7 +2,7 @@
 title: "Firedrake"
 url: "https://docs.alliancecan.ca/wiki/Firedrake"
 category: "General"
-last_modified: "2025-07-31T19:23:02Z"
+last_modified: "2025-11-27T12:46:05Z"
 page_id: 29047
 display_title: "Firedrake"
 ---
@@ -17,7 +17,7 @@ Please note that all modules must be loaded before creating and/or activating th
 
 ## Firedrake 2025.4.2 {#firedrake_2025.4.2}
 
-2025.4.2 }}
+2025.2.2 immutabledict \|pip install \--no-index firedrake\[check\]2025.4.2 }}
 
 The above has been tested with both `python/3.13` as well as `python/3.12`.
 

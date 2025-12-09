@@ -1,15 +1,13 @@
 ---
-title: "Killarney"
-url: "https://docs.alliancecan.ca/wiki/Killarney"
+title: "Killarney/en"
+url: "https://docs.alliancecan.ca/wiki/Killarney/en"
 category: "General"
-last_modified: "2025-10-30T18:39:27Z"
-page_id: 27762
+last_modified: "2025-11-03T20:57:05Z"
+page_id: 28159
 display_title: "Killarney"
 ---
 
 `<languages />`{=html}
-
-`<translate>`{=html}
 
   ----------------------------------------------------------------------
   Availability: June 9, 2025
@@ -32,10 +30,10 @@ To access Killarney, each researcher must [request access in the CCDB](https://c
 
 Principal Investigators must be granted an AIP-type RAP (prefix `aip-` ) by their AI Institution. For the PI to sponsor researchers in their AIP RAP, the PI must:
 
--   Go to the \"Resource Allocation Projects\" table on the CCDB Home page.
--   Locate the RAPI of your AIP project (with the aip- prefix) and click on it to reach the RAP management page.
--   At the bottom of the RAP management page, click on \"Manage RAP memberships.\"
--   Enter the CCRI of the user you want to add in the \"Add Members\" section.
+- Go to the \"Resource Allocation Projects\" table on the CCDB Home page.
+- Locate the RAPI of your AIP project (with the aip- prefix) and click on it to reach the RAP management page.
+- At the bottom of the RAP management page, click on \"Manage RAP memberships.\"
+- Enter the CCRI of the user you want to add in the \"Add Members\" section.
 
 To ensure the integrity and security of this resource, Vector enforces geo-blocking on Killarney as one of its cyber-security controls. Vector restricts access to and from countries identified in the [Government of Canada\'s Cyber Threat Assessment](https://www.cyber.gc.ca/en/guidance/national-cyber-threat-assessment-2025-2026).
 
@@ -50,19 +48,19 @@ To ensure the integrity and security of this resource, Vector enforces geo-block
 
 `<b>`{=html}Killarney`</b>`{=html}\'s storage system is an all-NVME VastData platform with a total usable capacity of 1.7PB.
 
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| `<b>`{=html}Home space`</b>`{=html}    | -   Location of /home directories.                                                                                         |
-|                                        | -   Each /home directory has a small fixed [quota](https://docs.alliancecan.ca/Storage_and_file_management#Filesystem_quotas_and_policies "wikilink"). |
-|                                        | -   Larger requests go to the /project space.                                                                              |
-|                                        | -   Has daily backup                                                                                                       |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| `<b>`{=html}Scratch space`</b>`{=html} | -   For active or temporary (scratch) storage.                                                                             |
-|                                        | -   Large fixed [quota](https://docs.alliancecan.ca/Storage_and_file_management#Filesystem_quotas_and_policies "wikilink") per user.                   |
-|                                        | -   Inactive data will be [purged](https://docs.alliancecan.ca/Scratch_purging_policy "wikilink").                                                     |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| `<b>`{=html}Project space`</b>`{=html} | -   Large adjustable [quota](https://docs.alliancecan.ca/Storage_and_file_management#Filesystem_quotas_and_policies "wikilink") per project.           |
-|                                        | -   Has daily backup.                                                                                                      |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| `<b>`{=html}Home space`</b>`{=html}    | - Location of /home directories.                                                                                                 |
+|                                        | - Each /home directory has a small fixed [quota](https://docs.alliancecan.ca/Storage_and_file_management#Filesystem_quotas_and_policies "quota"){.wikilink}. |
+|                                        | - Larger requests go to the /project space.                                                                                      |
+|                                        | - Has daily backup                                                                                                               |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| `<b>`{=html}Scratch space`</b>`{=html} | - For active or temporary (scratch) storage.                                                                                     |
+|                                        | - Large fixed [quota](https://docs.alliancecan.ca/Storage_and_file_management#Filesystem_quotas_and_policies "quota"){.wikilink} per user.                   |
+|                                        | - Inactive data will be [purged](https://docs.alliancecan.ca/Scratch_purging_policy "purged"){.wikilink}.                                                    |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| `<b>`{=html}Project space`</b>`{=html} | - Large adjustable [quota](https://docs.alliancecan.ca/Storage_and_file_management#Filesystem_quotas_and_policies "quota"){.wikilink} per project.           |
+|                                        | - Has daily backup.                                                                                                              |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 ## Network interconnects {#network_interconnects}
 
@@ -74,7 +72,5 @@ The `<b>`{=html}Killarney`</b>`{=html} cluster uses the Slurm scheduler to run u
 
 ## Software
 
--   Module-based software stack.
--   Both the standard Alliance software stack as well as cluster-specific software.
-
-`</translate>`{=html}
+- Module-based software stack.
+- Both the standard Alliance software stack as well as cluster-specific software.

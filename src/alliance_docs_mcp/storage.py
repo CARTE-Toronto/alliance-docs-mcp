@@ -41,13 +41,17 @@ class DocumentationStorage:
         Returns:
             Path to the saved file
         """
+        # Normalize title for filenames and categorization
+        raw_title = page_data.get("title", "")
+        normalized_title = self._strip_language_suffix(raw_title)
+
         # Create category directory
-        category = self._extract_category(page_data.get("title", ""))
+        category = self._extract_category(normalized_title)
         category_dir = self.pages_dir / category
         category_dir.mkdir(parents=True, exist_ok=True)
         
         # Generate filename
-        filename = self._title_to_filename(page_data.get("title", ""))
+        filename = self._title_to_filename(normalized_title)
         base_path = category_dir / f"{filename}.md"
         file_path = base_path
         encoded_content = markdown_content.encode("utf-8")
@@ -335,6 +339,7 @@ class DocumentationStorage:
         Returns:
             Safe filename
         """
+        title = self._strip_language_suffix(title)
         # Remove or replace invalid characters
         filename = title.replace(" ", "_")
         filename = filename.replace("/", "_")
@@ -351,6 +356,20 @@ class DocumentationStorage:
         filename = "_".join(filter(None, filename.split("_")))
         
         return filename
+
+    def _strip_language_suffix(self, title: str) -> str:
+        """Remove trailing language markers like '/en' or '_en'."""
+        if not title:
+            return title
+
+        trimmed = title.strip()
+        lowered = trimmed.lower()
+
+        for suffix in ("/en", "_en"):
+            if lowered.endswith(suffix):
+                return trimmed[: -len(suffix)]
+
+        return trimmed
     
     def cleanup_old_files(self, keep_recent: int = 100) -> None:
         """Clean up old files that are no longer in the index.

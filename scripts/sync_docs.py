@@ -4,9 +4,11 @@
 import asyncio
 import logging
 import os
+import shutil
 import sys
 from datetime import datetime
 from pathlib import Path
+from typing import Optional
 
 from rich.console import Console
 from rich.logging import RichHandler
@@ -32,6 +34,8 @@ from alliance_docs_mcp.mirror import (
     fetch_page_contents,
     filter_to_target_language,
 )
+from alliance_docs_mcp.related import RelatedIndex, RelatedIndexUnavailable
+from alliance_docs_mcp.search_index import SearchIndex, SearchIndexUnavailable
 from alliance_docs_mcp.storage import DocumentationStorage
 
 # Initialize rich console
@@ -49,7 +53,101 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-async def sync_documentation():
+def _prepare_search_index(
+    docs_dir: str, index_dir: Optional[str], enable_index: bool, rebuild_index: bool
+) -> Optional[SearchIndex]:
+    """Initialize (and optionally rebuild) the Whoosh search index."""
+    if not enable_index:
+        logger.info("Search indexing disabled (--no-index)")
+        return None
+
+    resolved_index_dir = Path(index_dir) if index_dir else Path(docs_dir) / "search_index"
+
+    if rebuild_index and resolved_index_dir.exists():
+        shutil.rmtree(resolved_index_dir)
+        logger.info("Rebuilding search index at %s", resolved_index_dir)
+
+    try:
+        return SearchIndex(resolved_index_dir)
+    except SearchIndexUnavailable as exc:
+        logger.warning("Search index unavailable, continuing without it: %s", exc)
+        return None
+
+
+def _prepare_related_index(
+    docs_dir: str,
+    related_index_dir: Optional[str],
+    enable_related_index: bool,
+    rebuild_related_index: bool,
+    related_model_name: str,
+    related_backend: str,
+) -> Optional[RelatedIndex]:
+    """Initialize (and optionally rebuild) the embeddings-based related index."""
+    if not enable_related_index:
+        logger.info("Related-page indexing disabled (--no-related-index)")
+        return None
+
+    resolved_index_dir = (
+        Path(related_index_dir) if related_index_dir else Path(docs_dir) / "related_index"
+    )
+
+    if rebuild_related_index and resolved_index_dir.exists():
+        shutil.rmtree(resolved_index_dir)
+        logger.info("Rebuilding related index at %s", resolved_index_dir)
+
+    try:
+        return RelatedIndex(
+            resolved_index_dir,
+            model_name=related_model_name,
+            backend=related_backend,
+        )
+    except RelatedIndexUnavailable as exc:
+        logger.warning("Related index unavailable, continuing without it: %s", exc)
+        return None
+
+
+def _rebuild_all(
+    docs_dir: str,
+    index_dir: Optional[str],
+    related_index_dir: Optional[str],
+) -> None:
+    """Remove docs content and indexes for a clean rebuild."""
+    docs_path = Path(docs_dir)
+    targets = [
+        docs_path / "pages",
+        docs_path / "index.json",
+        docs_path / "llms.txt",
+        docs_path / "llms_full.txt",
+        docs_path / "llms_full.txt.gz",
+        Path(index_dir) if index_dir else docs_path / "search_index",
+        Path(related_index_dir) if related_index_dir else docs_path / "related_index",
+    ]
+
+    for target in targets:
+        if not target.exists():
+            continue
+        try:
+            if target.is_dir():
+                shutil.rmtree(target)
+                logger.info("Removed directory for rebuild: %s", target)
+            else:
+                target.unlink()
+                logger.info("Removed file for rebuild: %s", target)
+        except Exception as exc:
+            logger.warning("Failed to remove %s: %s", target, exc)
+
+
+async def sync_documentation(
+    enable_index: bool = True,
+    rebuild_index: bool = False,
+    index_dir: Optional[str] = None,
+    rebuild_all: bool = False,
+    enable_related_index: bool = True,
+    rebuild_related_index: bool = False,
+    related_index_dir: Optional[str] = None,
+    related_model_name: str = "all-MiniLM-L6-v2",
+    related_backend: str = "chroma",
+):
     """Main synchronization function."""
     # Load configuration from environment
     api_url = os.getenv("MEDIAWIKI_API_URL", "https://docs.alliancecan.ca/mediawiki/api.php")
@@ -65,8 +163,20 @@ async def sync_documentation():
     ))
     
     # Initialize components
+    if rebuild_all:
+        _rebuild_all(docs_dir, index_dir, related_index_dir)
+
     client = MediaWikiClient(api_url, user_agent)
     storage = DocumentationStorage(docs_dir)
+    search_index = _prepare_search_index(docs_dir, index_dir, enable_index, rebuild_index)
+    related_index = _prepare_related_index(
+        docs_dir,
+        related_index_dir,
+        enable_related_index,
+        rebuild_related_index,
+        related_model_name,
+        related_backend,
+    )
     converter = WikiTextConverter()
     
     start_time = datetime.now()
@@ -141,6 +251,8 @@ async def sync_documentation():
             
             for page_data in pages_with_content:
                 try:
+                    normalized_title = storage._strip_language_suffix(page_data.get("title", ""))
+
                     # Convert to markdown
                     markdown_content = converter.convert_to_markdown(
                         page_data["content"], 
@@ -153,14 +265,33 @@ async def sync_documentation():
                     # Add to saved pages list
                     saved_page = {
                         "page_id": page_data["pageid"],
-                        "title": page_data["title"],
+                        "title": normalized_title,
                         "url": page_data["url"],
-                        "category": storage._extract_category(page_data["title"]),
+                        "category": storage._extract_category(normalized_title),
                         "last_modified": page_data["lastmodified"],
                         "file_path": file_path,
-                        "slug": storage._title_to_filename(page_data["title"])
+                        "slug": storage._title_to_filename(normalized_title)
                     }
                     saved_pages.append(saved_page)
+
+                    # Index page content for full-text search
+                    if search_index:
+                        search_index.index_page(
+                            slug=saved_page["slug"],
+                            title=saved_page["title"],
+                            content=markdown_content,
+                            category=saved_page["category"],
+                            url=saved_page["url"],
+                            last_modified=saved_page["last_modified"],
+                        )
+
+                    if related_index:
+                        try:
+                            related_index.upsert_page(saved_page, markdown_content)
+                        except RelatedIndexUnavailable as exc:
+                            logger.warning("Related index unavailable, skipping: %s", exc)
+                        except Exception as exc:  # pragma: no cover - defensive
+                            logger.warning("Failed to index related page %s: %s", saved_page["slug"], exc)
                     
                 except Exception as e:
                     error_msg = f"{page_data.get('title', 'Unknown')}: {str(e)}"
@@ -175,6 +306,10 @@ async def sync_documentation():
         with console.status("[bold green]Updating index...", spinner="dots"):
             storage.update_index(saved_pages)
             console.print("[green]✓[/green] Index updated")
+            if search_index:
+                search_index.optimize()
+            if related_index:
+                related_index.cleanup({page["slug"] for page in saved_pages})
         
         # Cleanup old files
         with console.status("[bold green]Cleaning up old files...", spinner="dots"):
@@ -220,7 +355,17 @@ async def sync_documentation():
         client.close()
 
 
-async def sync_incremental():
+async def sync_incremental(
+    enable_index: bool = True,
+    rebuild_index: bool = False,
+    index_dir: Optional[str] = None,
+    rebuild_all: bool = False,
+    enable_related_index: bool = True,
+    rebuild_related_index: bool = False,
+    related_index_dir: Optional[str] = None,
+    related_model_name: str = "all-MiniLM-L6-v2",
+    related_backend: str = "chroma",
+):
     """Incremental synchronization - only fetch changed pages."""
     # Load configuration
     api_url = os.getenv("MEDIAWIKI_API_URL", "https://docs.alliancecan.ca/mediawiki/api.php")
@@ -230,8 +375,20 @@ async def sync_incremental():
     logger.info("Starting incremental synchronization")
     
     # Initialize components
+    if rebuild_all:
+        _rebuild_all(docs_dir, index_dir, related_index_dir)
+
     client = MediaWikiClient(api_url, user_agent)
     storage = DocumentationStorage(docs_dir)
+    search_index = _prepare_search_index(docs_dir, index_dir, enable_index, rebuild_index)
+    related_index = _prepare_related_index(
+        docs_dir,
+        related_index_dir,
+        enable_related_index,
+        rebuild_related_index,
+        related_model_name,
+        related_backend,
+    )
     converter = WikiTextConverter()
     
     try:
@@ -271,6 +428,8 @@ async def sync_incremental():
         saved_pages = []
         for page_data in pages_with_content:
             try:
+                normalized_title = storage._strip_language_suffix(page_data.get("title", ""))
+
                 # Convert to markdown
                 markdown_content = converter.convert_to_markdown(
                     page_data["content"], 
@@ -291,6 +450,24 @@ async def sync_incremental():
                     "slug": storage._title_to_filename(page_data["title"])
                 }
                 saved_pages.append(saved_page)
+
+                if search_index:
+                    search_index.index_page(
+                        slug=saved_page["slug"],
+                        title=saved_page["title"],
+                        content=markdown_content,
+                        category=saved_page["category"],
+                        url=saved_page["url"],
+                        last_modified=saved_page["last_modified"],
+                    )
+
+                if related_index:
+                    try:
+                        related_index.upsert_page(saved_page, markdown_content)
+                    except RelatedIndexUnavailable as exc:
+                        logger.warning("Related index unavailable, skipping: %s", exc)
+                    except Exception as exc:  # pragma: no cover - defensive
+                        logger.warning("Failed to index related page %s: %s", saved_page["slug"], exc)
                 
             except Exception as e:
                 logger.error(f"Error processing page {page_data.get('title', 'Unknown')}: {e}")
@@ -306,6 +483,8 @@ async def sync_incremental():
         
         # Update index
         storage.update_index(list(existing_by_id.values()))
+        if related_index:
+            related_index.cleanup({page["slug"] for page in existing_by_id.values()})
         
         # Build llms.txt files
         logger.info("Building llms.txt files...")
@@ -326,22 +505,101 @@ def main():
     """Main entry point."""
     import argparse
     
+    related_model_env = os.getenv("RELATED_MODEL_NAME", "all-MiniLM-L6-v2")
+    related_index_dir_env = os.getenv("RELATED_INDEX_DIR")
+    related_backend_env = os.getenv("RELATED_BACKEND", "chroma")
+    related_disabled_env = os.getenv("DISABLE_RELATED_INDEX", "").lower() in ("1", "true", "yes")
+
     parser = argparse.ArgumentParser(description="Sync Alliance documentation")
     parser.add_argument("--incremental", action="store_true", 
                        help="Perform incremental sync (only changed pages)")
     parser.add_argument("--verbose", "-v", action="store_true",
                        help="Enable verbose logging")
+    parser.add_argument(
+        "--no-index",
+        action="store_true",
+        help="Skip building/updating the search index",
+    )
+    parser.add_argument(
+        "--rebuild-index",
+        action="store_true",
+        help="Rebuild the search index before syncing",
+    )
+    parser.add_argument(
+        "--rebuild-all",
+        action="store_true",
+        help="Remove docs, llms files, and all indexes before syncing",
+    )
+    parser.add_argument(
+        "--index-dir",
+        type=str,
+        default=None,
+        help="Optional path for the search index (defaults to DOCS_DIR/search_index)",
+    )
+    parser.add_argument(
+        "--no-related-index",
+        action="store_true",
+        help="Skip building/updating the related-page embeddings index",
+    )
+    parser.add_argument(
+        "--rebuild-related-index",
+        action="store_true",
+        help="Rebuild the related-page index before syncing",
+    )
+    parser.add_argument(
+        "--related-index-dir",
+        type=str,
+        default=related_index_dir_env,
+        help="Optional path for the related-page index (defaults to DOCS_DIR/related_index)",
+    )
+    parser.add_argument(
+        "--related-model-name",
+        type=str,
+        default=related_model_env,
+        help="Sentence-transformer model to use for related-page embeddings",
+    )
+    parser.add_argument(
+        "--related-backend",
+        type=str,
+        default=related_backend_env,
+        help="Related index backend (currently only 'chroma' is supported)",
+    )
     
     args = parser.parse_args()
+    disable_related_index = related_disabled_env or args.no_related_index
     
     if args.verbose:
         logging.getLogger().setLevel(logging.DEBUG)
     
     try:
         if args.incremental:
-            result = asyncio.run(sync_incremental())
+            result = asyncio.run(
+                sync_incremental(
+                    enable_index=not args.no_index,
+                    rebuild_index=args.rebuild_index,
+                    index_dir=args.index_dir,
+                    rebuild_all=args.rebuild_all,
+                    enable_related_index=not disable_related_index,
+                    rebuild_related_index=args.rebuild_related_index,
+                    related_index_dir=args.related_index_dir,
+                    related_model_name=args.related_model_name,
+                    related_backend=args.related_backend,
+                )
+            )
         else:
-            result = asyncio.run(sync_documentation())
+            result = asyncio.run(
+                sync_documentation(
+                    enable_index=not args.no_index,
+                    rebuild_index=args.rebuild_index,
+                    index_dir=args.index_dir,
+                    rebuild_all=args.rebuild_all,
+                    enable_related_index=not disable_related_index,
+                    rebuild_related_index=args.rebuild_related_index,
+                    related_index_dir=args.related_index_dir,
+                    related_model_name=args.related_model_name,
+                    related_backend=args.related_backend,
+                )
+            )
         
         print(f"Sync completed successfully. Processed {result} pages.")
         sys.exit(0)

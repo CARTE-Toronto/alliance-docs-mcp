@@ -1,13 +1,13 @@
 ---
-title: "Trillium Quickstart"
-url: "https://docs.alliancecan.ca/wiki/Trillium_Quickstart"
+title: "Trillium Quickstart/en"
+url: "https://docs.alliancecan.ca/wiki/Trillium_Quickstart/en"
 category: "General"
-last_modified: "2025-11-04T19:42:10Z"
-page_id: 29085
+last_modified: "2025-11-04T19:42:25Z"
+page_id: 29436
 display_title: "Trillium Quickstart"
 ---
 
-`<languages />`{=html} `<translate>`{=html} \_\_TOC\_\_
+`<languages />`{=html} \_\_TOC\_\_
 
 # Overview
 
@@ -15,32 +15,32 @@ Trillium is a large parallel cluster built by Lenovo Canada and hosted by SciNet
 
 1\. CPU Subcluster
 
--   235,008 cores provided by 1224 CPU compute nodes
--   Each CPU compute node has 192 cores from two 96-core AMD EPYC 9655 CPUs (\"Zen 5\" a.k.a. \"Turin\") at 2.6 GHz (base frequency)
--   Each CPU compute node has 755 GiB / 810 GB of available memory
--   The nodes are connected by a non-blocking (1:1) 400 Gb/s InfiniBand NDR interconnect
--   This subcluster is designed for large-scale parallel workloads
+- 235,008 cores provided by 1224 CPU compute nodes
+- Each CPU compute node has 192 cores from two 96-core AMD EPYC 9655 CPUs (\"Zen 5\" a.k.a. \"Turin\") at 2.6 GHz (base frequency)
+- Each CPU compute node has 755 GiB / 810 GB of available memory
+- The nodes are connected by a non-blocking (1:1) 400 Gb/s InfiniBand NDR interconnect
+- This subcluster is designed for large-scale parallel workloads
 
 2\. GPU Subcluster
 
--   252 GPUs provided by 63 GPU compute nodes.
--   Each GPU compute node has 4 NVIDIA H100 (SXM) GPUs with 80 GB of dedicated VRAM
--   Each GPU compute node also has 96 cores from one 96-core AMD EPYC 9654 CPUs (\"Zen 4\" a.k.a. \"Genoa\") at 2.4 GHz (base frequency)
--   The nodes are connected by a non-blocking (1:1) 800 Gb/s InfiniBand NDR interconnect, i.e. 200 Gb/s per GPU
--   Has a dedicated login node (trig-login01) with 4 four NVIDIA H100 (SXM) GPUs.
--   This subcluster is optimized for AI/ML and accelerated science workloads
+- 252 GPUs provided by 63 GPU compute nodes.
+- Each GPU compute node has 4 NVIDIA H100 (SXM) GPUs with 80 GB of dedicated VRAM
+- Each GPU compute node also has 96 cores from one 96-core AMD EPYC 9654 CPUs (\"Zen 4\" a.k.a. \"Genoa\") at 2.4 GHz (base frequency)
+- The nodes are connected by a non-blocking (1:1) 800 Gb/s InfiniBand NDR interconnect, i.e. 200 Gb/s per GPU
+- Has a dedicated login node (trig-login01) with 4 four NVIDIA H100 (SXM) GPUs.
+- This subcluster is optimized for AI/ML and accelerated science workloads
 
 3\. Storage System
 
--   Unified 29 PB VAST NVMe storage for all workloads
--   All flash-based for consistent performance
--   Accessible as a standard shared parallel file system.
+- Unified 29 PB VAST NVMe storage for all workloads
+- All flash-based for consistent performance
+- Accessible as a standard shared parallel file system.
 
 # Getting started on Trillium {#getting_started_on_trillium}
 
 You need an active [CCDB](https://ccdb.alliancecan.ca) account from the [Digital Research Alliance of Canada](https://alliancecan.ca/en). With that, you can then request access to Trillium on the [Access Systems](https://ccdb.alliancecan.ca/me/access_systems) page on the [CCDB](https://ccdb.alliancecan.ca) site. After clicking the \"I request access\" button, it usually takes about an hour for your account to be actually created and available on Trillium.
 
-Please read this present document carefully. The [Frequently Asked Questions](https://docs.alliancecan.ca/Frequently_Asked_Questions "wikilink") is also a useful resource. If at any time you require assistance, or if something is unclear, please do not hesitate to [contact us](https://docs.alliancecan.ca/mailto:trillium@tech.alliancecan.ca).
+Please read this present document carefully. The [Frequently Asked Questions](https://docs.alliancecan.ca/Frequently_Asked_Questions "Frequently Asked Questions"){.wikilink} is also a useful resource. If at any time you require assistance, or if something is unclear, please do not hesitate to [contact us](https://docs.alliancecan.ca/mailto:trillium@tech.alliancecan.ca).
 
 ## Logging in {#logging_in}
 
@@ -49,43 +49,41 @@ There are two ways to access Trillium:
 1.  Via your browser with Open OnDemand. This is recommended for users who are not familiar with Linux or the command line. Please see our [quickstart guide](https://docs.scinet.utoronto.ca/index.php/Open_OnDemand_Quickstart) for more instructions on how to use Open OnDemand.
 2.  Terminal access with ssh. Please read the following instructions.
 
-As with all SciNet and Alliance compute systems, access is done via [SSH](https://docs.alliancecan.ca/SSH "wikilink") (secure shell). Furthermore, for Trillium specifically, authentication is only allowed via SSH keys that are uploaded to the [CCDB](https://ccdb.alliancecan.ca). [ Please refer to this page](https://docs.alliancecan.ca/SSH_Keys "wikilink") on how to generate your SSH key pair, upload, and use SSH Keys.
+As with all SciNet and Alliance compute systems, access is done via [SSH](https://docs.alliancecan.ca/SSH "SSH"){.wikilink} (secure shell). Furthermore, for Trillium specifically, authentication is only allowed via SSH keys that are uploaded to the [CCDB](https://ccdb.alliancecan.ca). [ Please refer to this page](https://docs.alliancecan.ca/SSH_Keys " Please refer to this page"){.wikilink} on how to generate your SSH key pair, upload, and use SSH Keys.
 
-Trillium runs Rocky Linux 9.6, which is a type of Linux. You will need to be familiar with the Linux shell to work on Trillium. If you are not, it will be worth your time to review the [Linux introduction](https://docs.alliancecan.ca/Linux_introduction "wikilink"), to attend a [Linux Shell course](https://explora.alliancecan.ca/events?include_expired=true&keywords=Shell), or to take some of our [Self-paced courses](https://docs.alliancecan.ca/Self-paced_courses "wikilink").
+Trillium runs Rocky Linux 9.6, which is a type of Linux. You will need to be familiar with the Linux shell to work on Trillium. If you are not, it will be worth your time to review the [Linux introduction](https://docs.alliancecan.ca/Linux_introduction "Linux introduction"){.wikilink}, to attend a [Linux Shell course](https://explora.alliancecan.ca/events?include_expired=true&keywords=Shell), or to take some of our [Self-paced courses](https://docs.alliancecan.ca/Self-paced_courses "Self-paced courses"){.wikilink}.
 
-You can use [SSH](https://docs.alliancecan.ca/SSH "wikilink") by opening a terminal window (e.g. [Connecting with PuTTY](https://docs.alliancecan.ca/Connecting_with_PuTTY "wikilink") on Windows or [Connecting with MobaXTerm](https://docs.alliancecan.ca/Connecting_with_MobaXTerm "wikilink")), then SSH into the Trillium login nodes with your CCDB credentials.
+You can use [SSH](https://docs.alliancecan.ca/SSH "SSH"){.wikilink} by opening a terminal window (e.g. [Connecting with PuTTY](https://docs.alliancecan.ca/Connecting_with_PuTTY "Connecting with PuTTY"){.wikilink} on Windows or [Connecting with MobaXTerm](https://docs.alliancecan.ca/Connecting_with_MobaXTerm "Connecting with MobaXTerm"){.wikilink}), then SSH into the Trillium login nodes with your CCDB credentials.
 
--   Use this command to log into one of the login nodes of the CPU subcluster:
+- Use this command to log into one of the login nodes of the CPU subcluster:
 
-```{=html}
 <!-- -->
-```
+
     $ ssh -i /PATH/TO/SSH_PRIVATE_KEY  MYALLIANCEUSERNAME@trillium.scinet.utoronto.ca
 
--   To log into the login node for the GPU cluster, use this command
+- To log into the login node for the GPU cluster, use this command
 
-```{=html}
 <!-- -->
-```
+
     $ ssh -i /PATH/TO/SSH_PRIVATE_KEY  MYALLIANCEUSERNAME@trillium-gpu.scinet.utoronto.ca
 
 Here, `/PATH/TO/SSH_PRIVATE_KEY` is the path to your private SSH key and `MYALLIANCEUSERNAME` is your username on the CCDB.
 
 **Note that:**
 
--   The first time you login, you should make sure you are actually accessing Trillium by checking if the [login node ssh host key fingerprint](https://docs.alliancecan.ca/SSH_security_improvements/en#Trillium "wikilink") matches.
--   The Trillium login nodes are where you develop, edit, compile, prepare and submit jobs.
--   The CPU login nodes and the GPU login node are not part of the compute nodes but they have the same architecture, operating system, and software stack as the CPU and GPU compute nodes, respectively.
--   You can ssh from one login node to another using their internal hostnames `tri-login01, ..., tri-login06` and `trig-login01` (the latter is the GPU login node).
--   If you add the option `-Y` you enable X11 forwarding, which allows graphical programs on Trillium to open windows on your local computer.
--   To run on compute nodes, you must submit a batch job.
+- The first time you login, you should make sure you are actually accessing Trillium by checking if the [login node ssh host key fingerprint](https://docs.alliancecan.ca/SSH_security_improvements/en#Trillium "login node ssh host key fingerprint"){.wikilink} matches.
+- The Trillium login nodes are where you develop, edit, compile, prepare and submit jobs.
+- The CPU login nodes and the GPU login node are not part of the compute nodes but they have the same architecture, operating system, and software stack as the CPU and GPU compute nodes, respectively.
+- You can ssh from one login node to another using their internal hostnames `tri-login01, ..., tri-login06` and `trig-login01` (the latter is the GPU login node).
+- If you add the option `-Y` you enable X11 forwarding, which allows graphical programs on Trillium to open windows on your local computer.
+- To run on compute nodes, you must submit a batch job.
 
 **On the login nodes, you may not:**
 
--   Run large memory jobs
--   Run parallel training or highly multi-threaded processes
--   Run long computations (keep them under a few minutes)
--   Run resource-intensive tasks like I/O-heavy operations or simulation.
+- Run large memory jobs
+- Run parallel training or highly multi-threaded processes
+- Run long computations (keep them under a few minutes)
+- Run resource-intensive tasks like I/O-heavy operations or simulation.
 
 If you cannot log in, be sure to first check the [System Status](https://status.alliancecan.ca), ensure your [CCDB](https://ccdb.alliancecan.ca) account is active and that your public key was uploaded (in openssh format) to CCDB, and check that you had requested access on the [Access Systems](https://ccdb.alliancecan.ca/me/access_systems) page.
 
@@ -93,9 +91,9 @@ If you cannot log in, be sure to first check the [System Status](https://status.
 
 Trillium features a unified high-performance storage system based on the VAST platform. It serves the following directories:
 
--   `home file system` -- For personal files and configurations.
--   `scratch file system` -- High-speed, temporary personal storage for job data.
--   `project file system` -- Shared storage for project teams and collaborations.
+- `home file system` -- For personal files and configurations.
+- `scratch file system` -- High-speed, temporary personal storage for job data.
+- `project file system` -- Shared storage for project teams and collaborations.
 
 For your convenience, the location of the top level of your home and scratch directories on these file systems are available in the environment variables `$HOME` and `$SCRATCH`, while the variable `$PROJECT` points at your directory on /project.
 
@@ -105,7 +103,7 @@ You may be part of several projects. In that case, `$PROJECT` points at your las
 
 The content of the `$HOME/links/projects` will automatically update when you leave or join projects.
 
-On [HPSS](https://docs.alliancecan.ca/Using_nearline_storage "wikilink"), the nearline system to be attached to Trillium, there will also be an environment variable called `$ARCHIVE` to point at the location of your top directory there, if you have one.
+On [HPSS](https://docs.alliancecan.ca/Using_nearline_storage "HPSS"){.wikilink}, the nearline system to be attached to Trillium, there will also be an environment variable called `$ARCHIVE` to point at the location of your top directory there, if you have one.
 
 The table below summarized the available space and policiies for each location:
 
@@ -122,21 +120,21 @@ The table below summarized the available space and policiies for each location:
 
 ## Software
 
-Trillium uses the [environment modules](https://docs.alliancecan.ca/Using_modules "wikilink") system to manage compilers, libraries, and other software packages. Modules dynamically modify your environment (e.g., `PATH`, `LD_LIBRARY_PATH`) so you can access different versions of software without conflicts.
+Trillium uses the [environment modules](https://docs.alliancecan.ca/Using_modules "environment modules"){.wikilink} system to manage compilers, libraries, and other software packages. Modules dynamically modify your environment (e.g., `PATH`, `LD_LIBRARY_PATH`) so you can access different versions of software without conflicts.
 
 Commonly used module commands:
 
--   `module load ``<module-name>`{=html} -- Load the default version of a software package.
--   `module load ``<module-name>`{=html}`/``<module-version>`{=html} -- Load a specific version.
--   `module purge` -- Unload all currently loaded modules.
--   `module avail` -- List available modules that can be loaded.
--   `module list` -- Show currently loaded modules.
--   `module spider` or `module spider ``<module-name>`{=html} -- Search for modules and their versions.
+- `module load ``<module-name>`{=html} -- Load the default version of a software package.
+- `module load ``<module-name>`{=html}`/``<module-version>`{=html} -- Load a specific version.
+- `module purge` -- Unload all currently loaded modules.
+- `module avail` -- List available modules that can be loaded.
+- `module list` -- Show currently loaded modules.
+- `module spider` or `module spider ``<module-name>`{=html} -- Search for modules and their versions.
 
 Handy abbreviations are available:
 
--   `ml` -- Equivalent to `module list`.
--   `ml ``<module-name>`{=html} -- Equivalent to `module load ``<module-name>`{=html}.
+- `ml` -- Equivalent to `module list`.
+- `ml ``<module-name>`{=html} -- Equivalent to `module load ``<module-name>`{=html}.
 
 When you have just logged in, only the `CCconfig`, `gentoo/2023` and `mii` modules are loaded, which provide basic OS-level functionality. To get a standard set of compilers and libraries like on the other compute clusters in the Alliance, you load the `StdEnv/2023`.
 
@@ -144,72 +142,62 @@ When you have just logged in, only the `CCconfig`, `gentoo/2023` and `mii` modul
 
 Properly managing your software environment is key to avoiding conflicts and ensuring reproducibility. Here are some best practices:
 
--   Avoid loading modules in your `.bashrc` file. Doing so can cause unexpected behavior, particularly in non-interactive environments like batch jobs or remote shells.
+- Avoid loading modules in your `.bashrc` file. Doing so can cause unexpected behavior, particularly in non-interactive environments like batch jobs or remote shells.
 
-```{=html}
 <!-- -->
-```
--   Instead, load modules manually, from a separate script, or using module collections. This approach gives you more control and helps keep environments clean.
 
-```{=html}
-<!-- -->
-```
--   Load required modules inside your job script. This ensures that your job runs with the expected software environment, regardless of your interactive shell settings.
+- Instead, load modules manually, from a separate script, or using module collections. This approach gives you more control and helps keep environments clean.
 
-```{=html}
 <!-- -->
-```
--   Be explicit about module versions. Short names like `gcc` will load the system default (e.g., `gcc/12.3`), which may change in the future. Specify full versions (e.g., `gcc/13.3`) for long-term reproducibility.
 
-```{=html}
+- Load required modules inside your job script. This ensures that your job runs with the expected software environment, regardless of your interactive shell settings.
+
 <!-- -->
-```
--   Resolve dependencies with `module spider`. Some modules depend on others. Use `module spider ``<module-name>`{=html} to discover which modules are required and how to load them in the correct order. For more, see [Sub-command spider](https://docs.alliancecan.ca/Utiliser_des_modules/en#Sub-command_spider "wikilink").
+
+- Be explicit about module versions. Short names like `gcc` will load the system default (e.g., `gcc/12.3`), which may change in the future. Specify full versions (e.g., `gcc/13.3`) for long-term reproducibility.
+
+<!-- -->
+
+- Resolve dependencies with `module spider`. Some modules depend on others. Use `module spider ``<module-name>`{=html} to discover which modules are required and how to load them in the correct order. For more, see [Sub-command spider](https://docs.alliancecan.ca/Utiliser_des_modules/en#Sub-command_spider "Sub-command spider"){.wikilink}.
 
 ## Using commercial software {#using_commercial_software}
 
 You may be able to use commercial software on Trillium, but there are a few important considerations:
 
--   Bring your own license. You can use commercial software on Trillium if you have a valid license. If the software requires a license server, you can connect to it securely using [SSH tunnelling](https://docs.alliancecan.ca/SSH_tunnelling "wikilink").
+- Bring your own license. You can use commercial software on Trillium if you have a valid license. If the software requires a license server, you can connect to it securely using [SSH tunnelling](https://docs.alliancecan.ca/SSH_tunnelling "SSH tunnelling"){.wikilink}.
 
-```{=html}
 <!-- -->
-```
--   We do not provide user-specific licenses. Due to the large and diverse user base, we cannot provide licenses for individual or specialized commercial packages.
 
-```{=html}
-<!-- -->
-```
--   Some widely useful commercial tools are available system-wide, such as compilers (Intel), math libraries (MKL), debuggers (DDT).
+- We do not provide user-specific licenses. Due to the large and diverse user base, we cannot provide licenses for individual or specialized commercial packages.
 
-```{=html}
 <!-- -->
-```
--   We\'re here to help. If you have a valid license and need help installing commercial software, feel free to contact us, we\'ll assist where possible.
+
+- Some widely useful commercial tools are available system-wide, such as compilers (Intel), math libraries (MKL), debuggers (DDT).
+
+<!-- -->
+
+- We\'re here to help. If you have a valid license and need help installing commercial software, feel free to contact us, we\'ll assist where possible.
 
 # Testing and debugging {#testing_and_debugging}
 
 Before submitting your job to the cluster, it\'s important to test your code to ensure correctness and determine the resources it requires.
 
--   **Lightweight tests** can be run directly on the login nodes. As a rule of thumb, these should:
-    -   Run in under a few minutes
-    -   Use no more than 1--2 GB of memory
-    -   Use only 1--4 CPU cores
-    -   Use at most 1 GPU
+- **Lightweight tests** can be run directly on the login nodes. As a rule of thumb, these should:
+  - Run in under a few minutes
+  - Use no more than 1--2 GB of memory
+  - Use only 1--4 CPU cores
+  - Use at most 1 GPU
 
-```{=html}
 <!-- -->
-```
--   You can also run the parallel [ARM DDT](https://docs.alliancecan.ca/ARM_software "wikilink") debugger on the login nodes after loading it with `module load ddt-cpu` or `module load ddt-gpu`
 
-```{=html}
-<!-- -->
-```
--   For tests that exceed login node limits or require dedicated resources, request an interactive debug job using the `debugjob` command on a login node:
+- You can also run the parallel [ARM DDT](https://docs.alliancecan.ca/ARM_software "ARM DDT"){.wikilink} debugger on the login nodes after loading it with `module load ddt-cpu` or `module load ddt-gpu`
 
-```{=html}
 <!-- -->
-```
+
+- For tests that exceed login node limits or require dedicated resources, request an interactive debug job using the `debugjob` command on a login node:
+
+<!-- -->
+
     $ debugjob
 
 When run from a CPU login node, this command gives you an interactive shell on a CPU compute session for 1-hour. When running the debugjob command from the GPU login node, you get an interactive session with 1 GPU on a (shared) GPU compute node for two hours. A few variations of this command that you can use to request more resources for an interactive session, are given in the next table. Note that the more resources you request, the shorter the allowed walltime is (this helps makes sure that interactive session almost always start right away).
@@ -233,19 +221,18 @@ When run from a CPU login node, this command gives you an interactive shell on a
 
 The shell environment in a debugjob will be similar to the environment you get when you have just logged in: only standard modules loaded, no internet access, no write access to the home and project file systems, and no job submissions. By the way, if you want the session to inherit the modules that you had loaded before issuing the debugjob command, you can add \"`--export=ALL`\" as the first option to debugjob.
 
--   If your test job requires more time than allowed by `debugjob`, you can request an interactive session from the regular queue using `salloc`. For CPU test jobs, the command would be as follows:
+- If your test job requires more time than allowed by `debugjob`, you can request an interactive session from the regular queue using `salloc`. For CPU test jobs, the command would be as follows:
 
-```{=html}
 <!-- -->
-```
+
     $ salloc --export=NONE --nodes=N --time=M:00:00 [--ngpus-per-node=G] [--x11]
 
 where
 
--   `N` is the number of nodes
--   `M` is the number of hours the job should run
--   `G` is the number of GPUs per node (when applicable).
--   `--x11` is required for graphical applications (e.g., when using [ARM DDT](https://docs.alliancecan.ca/ARM_software "wikilink")), but otherwise optional.
+- `N` is the number of nodes
+- `M` is the number of hours the job should run
+- `G` is the number of GPUs per node (when applicable).
+- `--x11` is required for graphical applications (e.g., when using [ARM DDT](https://docs.alliancecan.ca/ARM_software "ARM DDT"){.wikilink}), but otherwise optional.
 
 **Note:** Jobs submitted with `salloc` may take longer to start than with debugjob and count towards your allocation.
 
@@ -253,7 +240,7 @@ where
 
 Once you have compiled and tested your code or workflow on the Trillium login nodes and confirmed that it behaves correctly, you are ready to submit jobs to the cluster. These jobs will run on Trillium\'s compute nodes, and their execution is managed by the scheduler.
 
-Trillium uses SLURM as its job scheduler. More advanced details of how to interact with the scheduler can be found on the [Slurm page](https://docs.alliancecan.ca/Running_jobs "wikilink").
+Trillium uses SLURM as its job scheduler. More advanced details of how to interact with the scheduler can be found on the [Slurm page](https://docs.alliancecan.ca/Running_jobs "Slurm page"){.wikilink}.
 
 To submit a job, use the `sbatch` command on a login node:
 
@@ -263,14 +250,14 @@ CPU compute jobs need to be submitted from the CPU login nodes, while GPU comput
 
 The sbatch command places your job into the queue. The job script should contain lines starting with `#SBATCH` that specify the resources that this script will need (the most common options will be given below). SLURM will begin execution of this script on compute nodes when your job is at the top of the priority queue and these resources are available.
 
-The priority of a job in the queue depends on requested resources, time spent in the queue, recent past usage, as well as on the SLURM account under which the job was submitted. SLURM accounts correspond to [Resource Allocation Projects](https://docs.alliancecan.ca/Frequently_Asked_Questions_about_the_CCDB#Resource_Allocation_Projects_(RAP) "wikilink"), or RAPs:
+The priority of a job in the queue depends on requested resources, time spent in the queue, recent past usage, as well as on the SLURM account under which the job was submitted. SLURM accounts correspond to [Resource Allocation Projects](https://docs.alliancecan.ca/Frequently_Asked_Questions_about_the_CCDB#Resource_Allocation_Projects_(RAP) "Resource Allocation Projects"){.wikilink}, or RAPs:
 
--   Each PI has at least one RAP, the RAS or default RAP. Users sponsored by that PI have access to the corresponding SLURM account, whose name starts with `def-`.
--   PIs that have a RAC allocation have an additional RAC RAP, to which they can add users. The names of corresponding SLURM accounts typically start with `rrg-` or `rpp-`. Note that RACs are bound to a system, e.g. a RAC for Nibi cannot be used on Trillium.
+- Each PI has at least one RAP, the RAS or default RAP. Users sponsored by that PI have access to the corresponding SLURM account, whose name starts with `def-`.
+- PIs that have a RAC allocation have an additional RAC RAP, to which they can add users. The names of corresponding SLURM accounts typically start with `rrg-` or `rpp-`. Note that RACs are bound to a system, e.g. a RAC for Nibi cannot be used on Trillium.
 
 ## Trillium specific restrictions {#trillium_specific_restrictions}
 
-Because Trillium is designed as a system for large parallel jobs, there are some differences with the General Purpose clusters [Fir](https://docs.alliancecan.ca/Fir "wikilink"), [Nibi](https://docs.alliancecan.ca/Nibi "wikilink"), [Narval](https://docs.alliancecan.ca/Narval/en "wikilink"), and [Rorqual](https://docs.alliancecan.ca/Rorqual/en "wikilink"), which we will now discuss.
+Because Trillium is designed as a system for large parallel jobs, there are some differences with the General Purpose clusters [Fir](https://docs.alliancecan.ca/Fir "Fir"){.wikilink}, [Nibi](https://docs.alliancecan.ca/Nibi "Nibi"){.wikilink}, [Narval](https://docs.alliancecan.ca/Narval/en "Narval"){.wikilink}, and [Rorqual](https://docs.alliancecan.ca/Rorqual/en "Rorqual"){.wikilink}, which we will now discuss.
 
 ### Job output must be written to the scratch file system {#job_output_must_be_written_to_the_scratch_file_system}
 
@@ -288,11 +275,11 @@ Jobs cannot be submitted from compute nodes (nor datamover nodes). This prevents
 
 ### Whole node or whole gpu scheduling {#whole_node_or_whole_gpu_scheduling}
 
-It is not possible to request a certain number of core on Trillium. On the CPU subcluster, all jobs must use full nodes. That means the minimum size of a CPU job has 192 cores are its disposal which you must use effectively. If you are running serial or low-core-count jobs you must still use all 192 cores on the node by bundling multiple independent tasks in one job script. For examples, see [GNU Parallel](https://docs.alliancecan.ca/GNU_Parallel "wikilink") and [this section of the META-Farm advanced page](https://docs.alliancecan.ca/META-Farm:_Advanced_features_and_troubleshooting#WHOLE_NODE_mode "wikilink").
+It is not possible to request a certain number of core on Trillium. On the CPU subcluster, all jobs must use full nodes. That means the minimum size of a CPU job has 192 cores are its disposal which you must use effectively. If you are running serial or low-core-count jobs you must still use all 192 cores on the node by bundling multiple independent tasks in one job script. For examples, see [GNU Parallel](https://docs.alliancecan.ca/GNU_Parallel "GNU Parallel"){.wikilink} and [this section of the META-Farm advanced page](https://docs.alliancecan.ca/META-Farm:_Advanced_features_and_troubleshooting#WHOLE_NODE_mode "this section of the META-Farm advanced page"){.wikilink}.
 
 If your job underutilizes the cores, our support team may reach out to assist you in optimizing your workflow, or you can [contact us](https://docs.alliancecan.ca/mailto:trillium@tech.alliancecan.ca) to get assistance.
 
-On the GPU subcluster, each node contains 4 GPUs. The scheduler allows you to request either a whole number of nodes, or a single GPU. The latter amounts to a quarter node, with 24 cores and about 188GiB of RAM. It is important to use the GPU efficiently. Trillium does not support MIG as on the other clusters (MIG allows you to schedule a fraction of a GPU), but you can use [Hyper-Q / MPS](https://docs.alliancecan.ca/Hyper-Q_/_MPS "wikilink") within your jobs.
+On the GPU subcluster, each node contains 4 GPUs. The scheduler allows you to request either a whole number of nodes, or a single GPU. The latter amounts to a quarter node, with 24 cores and about 188GiB of RAM. It is important to use the GPU efficiently. Trillium does not support MIG as on the other clusters (MIG allows you to schedule a fraction of a GPU), but you can use [Hyper-Q / MPS](https://docs.alliancecan.ca/Hyper-Q_/_MPS "Hyper-Q / MPS"){.wikilink} within your jobs.
 
 ### Memory requests are ignored {#memory_requests_are_ignored}
 
@@ -319,7 +306,7 @@ The following options are commonly used:
 
 These options should be put in separate comment lines at the top of the job script (but after `#!/bin/bash`), prefixed with `#SBATCH`. They can also be used as command line options for `salloc`. Some examples of job scripts are given below.
 
-More options and details can be found on the [Running jobs](https://docs.alliancecan.ca/Running_jobs "wikilink") page and in the [SLURM documentation](https://slurm.schedmd.com/sbatch.html).
+More options and details can be found on the [Running jobs](https://docs.alliancecan.ca/Running_jobs "Running jobs"){.wikilink} page and in the [SLURM documentation](https://slurm.schedmd.com/sbatch.html).
 
 ## Submitting jobs on the CPU subcluster {#submitting_jobs_on_the_cpu_subcluster}
 
@@ -351,18 +338,14 @@ Even if you respect these limits, your jobs will still have to wait in the queue
 #SBATCH --output=mpi_output_%j.txt
 #SBATCH --mail-type=FAIL
 
-<!--T:210-->
 cd $SLURM_SUBMIT_DIR
 
-<!--T:211-->
 module load StdEnv/2023
 module load gcc/12.3
 module load openmpi/4.1.5
 
-<!--T:212-->
 source /scinet/vast/etc/vastpreload-openmpi.bash # important if doing MPI-IO
 
-<!--T:213-->
 mpirun ./mpi_example
 ```
 
@@ -370,15 +353,15 @@ Submit this script from a CPU login node while in your `$SCRATCH` directory with
 
     $ sbatch mpi_job.sh
 
--   First line indicates that this is a bash script.
--   Lines starting with `#SBATCH` go to SLURM.
--   `sbatch` reads these lines as a job request (which it gives the name `mpi_job`).
--   In this case, SLURM looks for 2 nodes each running 192 tasks, for 1 hour.
--   Once it finds such nodes, it runs the script, which does the following:
-    -   Change to the submission directory;
-    -   Loads modules;
-    -   Preloads a library tuning MPI-IO for the VAST file system; change this to source /scinet/vast/etc/vastpreload-intelmpi.bash if using IntelMPI instead of OpenMPI. **Note: `mpirun` must be used for the VAST preload library to take effect, it does not work with `srun`.**
-    -   Runs the `mpi_example` application (SLURM will inform `mpirun` or `srun` how many processes to run).
+- First line indicates that this is a bash script.
+- Lines starting with `#SBATCH` go to SLURM.
+- `sbatch` reads these lines as a job request (which it gives the name `mpi_job`).
+- In this case, SLURM looks for 2 nodes each running 192 tasks, for 1 hour.
+- Once it finds such nodes, it runs the script, which does the following:
+  - Change to the submission directory;
+  - Loads modules;
+  - Preloads a library tuning MPI-IO for the VAST file system; change this to source /scinet/vast/etc/vastpreload-intelmpi.bash if using IntelMPI instead of OpenMPI. **Note: `mpirun` must be used for the VAST preload library to take effect, it does not work with `srun`.**
+  - Runs the `mpi_example` application (SLURM will inform `mpirun` or `srun` how many processes to run).
 
 ### Example: OpenMP job {#example_openmp_job}
 
@@ -392,17 +375,13 @@ Submit this script from a CPU login node while in your `$SCRATCH` directory with
 #SBATCH --output=openmp_output_%j.txt
 #SBATCH --mail-type=FAIL
 
-<!--T:218-->
 cd $SLURM_SUBMIT_DIR
 
-<!--T:219-->
 module load StdEnv/2023
 module load gcc/12.3
 
-<!--T:220-->
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
-<!--T:221-->
 ./openmp_example
 # or "srun ./openmp_example"
 ```
@@ -411,15 +390,15 @@ Submit this script from a CPU login node while in your `$SCRATCH` directory with
 
     $ sbatch openmp_job.sh
 
--   First line indicates that this is a Bash script.
--   Lines starting with `#SBATCH` are directives for SLURM.
--   `sbatch` reads these lines as a job request (which it gives the name `openmp_job`).
--   In this case, SLURM looks for one node with 192 CPUs for a single task running up to 192 OpenMP threads, for 1 hour.
--   Once such a node is allocated, it runs the script:
-    -   Changes to the submission directory;
-    -   Loads the required modules;
-    -   Sets `OMP_NUM_THREADS` based on SLURM's CPU allocation;
-    -   Runs the `openmp_example` application.
+- First line indicates that this is a Bash script.
+- Lines starting with `#SBATCH` are directives for SLURM.
+- `sbatch` reads these lines as a job request (which it gives the name `openmp_job`).
+- In this case, SLURM looks for one node with 192 CPUs for a single task running up to 192 OpenMP threads, for 1 hour.
+- Once such a node is allocated, it runs the script:
+  - Changes to the submission directory;
+  - Loads the required modules;
+  - Sets `OMP_NUM_THREADS` based on SLURM's CPU allocation;
+  - Runs the `openmp_example` application.
 
 ### Example: hybrid MPI/OpenMP job {#example_hybrid_mpiopenmp_job}
 
@@ -433,53 +412,39 @@ Submit this script from a CPU login node while in your `$SCRATCH` directory with
 #SBATCH --output=hybrid_output_%j.txt
 #SBATCH --mail-type=FAIL
 
-<!--T:226-->
 cd $SLURM_SUBMIT_DIR
 
-<!--T:227-->
 module load StdEnv/2023
 module load gcc/12.3
 module load openmpi/4.1.5
 
-<!--T:228-->
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 export OMP_PLACES=cores
 export OMP_PROC_BIND=true
 
-<!--T:229-->
 export CORES_PER_L3CACHE=8
 export RANKS_PER_L3CACHE=$(( $CORES_PER_L3CACHE / $OMP_NUM_THREADS ))  # this works up to 8 threads 
 
-<!--T:230-->
 source /scinet/vast/etc/vastpreload-openmpi.bash # important if doing MPI-IO
 
-<!--T:231-->
 mpirun --bind-to core --map-by ppr:$RANKS_PER_L3CACHE:l3cache:pe=$OMP_NUM_THREADS ./hybrid_example
-
-<!--T:232-->
 ```
 
 Submit this script from a CPU login node while in your `$SCRATCH` directory with the command:
 
     $ sbatch hybrid_job.sh
 
--   First line indicates that this is a bash script.
--   Lines starting with `#SBATCH` go to SLURM.
--   `sbatch` reads these lines as a job request (which it gives the name `hybrid_job`).
--   In this case, SLURM looks for 2 nodes each running 48 tasks, each with 4 threads for 1 hour.
--   Once it finds such a node, it runs the script:
-    -   Change to the submission directory;
-    -   Loads modules;
-    -   Preloads a library tuning MPI-IO for the VAST file system; change this to source /scinet/vast/etc/vastpreload-intelmpi.bash if using IntelMPI instead of OpenMPI. **Note: `mpirun` must be used for the VAST preload library to take effect, it does not work with `srun`.**
-    -   Runs the `hybrid_example` application. While SLURM will inform `mpirun` how many processes to run, it needs help to spread the processes and threads evenly over the cores. The \--map-by option solves this.\
-        (for more than 8 and at most 24 threads per process, change \'l3cache\' to \'numa\' and for more than 24, change it to \'socket\').
+- First line indicates that this is a bash script.
+- Lines starting with `#SBATCH` go to SLURM.
+- `sbatch` reads these lines as a job request (which it gives the name `hybrid_job`).
+- In this case, SLURM looks for 2 nodes each running 48 tasks, each with 4 threads for 1 hour.
+- Once it finds such a node, it runs the script:
+  - Change to the submission directory;
+  - Loads modules;
+  - Preloads a library tuning MPI-IO for the VAST file system; change this to source /scinet/vast/etc/vastpreload-intelmpi.bash if using IntelMPI instead of OpenMPI. **Note: `mpirun` must be used for the VAST preload library to take effect, it does not work with `srun`.**
+  - Runs the `hybrid_example` application. While SLURM will inform `mpirun` how many processes to run, it needs help to spread the processes and threads evenly over the cores. The \--map-by option solves this.\
+    (for more than 8 and at most 24 threads per process, change \'l3cache\' to \'numa\' and for more than 24, change it to \'socket\').
 
-```{=html}
-</li>
-```
-```{=html}
-</ul>
-```
 ## Submitting jobs for the GPU subcluster {#submitting_jobs_for_the_gpu_subcluster}
 
 ### Partitions and limits {#partitions_and_limits_1}
@@ -488,8 +453,8 @@ As with the CPU subcluster, there are limits to the size and duration of your jo
 
 On Trillium, you are only allowed to request exactly 1 GPU or a multiple of 4 GPUs. You cannot request \--gpus-per-node=2 or 3, nor can you use NVIDIA\'s MIG technology to allocate a subdivision of a GPU. Inside a job, you can use NVIDIA\'s Multi-Process Service (MPS) to share a GPU among processes running on the same job.
 
--   For single-GPU jobs, use `--gpus-per-node=1`.
--   For whole-node GPU job, use `--gpus-per-node=4`.
+- For single-GPU jobs, use `--gpus-per-node=1`.
+- For whole-node GPU job, use `--gpus-per-node=4`.
 
 +------------------+-----------+-----------------------+-----------------------------------------+-----------------------------+-------------------------------------------------+---------------+---------------------------------------+
 | Usage            | Partition | Limit on Running jobs | Limit on Submitted jobs (incl. running) | Min. size of jobs           | Max. size of jobs                               | Min. walltime | Max. walltime                         |
@@ -512,21 +477,17 @@ Even if you respect these limits, your jobs will still have to wait in the queue
 #SBATCH --gpus-per-node=1                 # Request 1 GPU
 #SBATCH --time=00:30:00                   # Max runtime (30 minutes)
 
-<!--T:245-->
 # Load modules
 module load StdEnv/2023
 module load cuda/12.6
 module load python/3.11.5
 
-<!--T:246-->
 # Activate Python environment (if applicable)
 source ~/myenv/bin/activate
 
-<!--T:247-->
 # Check GPU allocation
 srun nvidia-smi
 
-<!--T:248-->
 # Run your workload
 srun python my_script.py
 ```
@@ -541,16 +502,13 @@ srun python my_script.py
 #SBATCH --gpus-per-node=4
 #SBATCH --time=02:00:00
 
-<!--T:251-->
 module load StdEnv/2023
 module load cuda/12.6
 module load python/3.11.5
 
-<!--T:252-->
 # Activate Python environment (if applicable)
 source ~/myenv/bin/activate
 
-<!--T:253-->
 srun python my_distributed_script.py
 ```
 
@@ -564,32 +522,28 @@ srun python my_distributed_script.py
 #SBATCH --gpus-per-node=4                # 4 GPUs per node (full node)
 #SBATCH --time=04:00:00
 
-<!--T:256-->
 module load StdEnv/2023
 module load cuda/12.6
 module load openmpi/4.1.5
 
-<!--T:257-->
 # Check all GPUs allocated
 srun nvidia-smi
 
-<!--T:258-->
 # Activate Python environment (if applicable)
 source ~/myenv/bin/activate
 
-<!--T:259-->
 # Example: run a distributed training job with 8 GPUs (2 nodes × 4 GPUs)
 srun python train_distributed.py
 ```
 
 ### Best Practices for GPU Jobs {#best_practices_for_gpu_jobs}
 
--   Do not use `--mem` --- memory is fixed per GPU (192 GB) or per node (768 GB).
--   Always specify node count, and `--gpus-per-node=4` for whole-node or multi-node jobs.
--   Load only the modules you need --- see [Using modules](https://docs.alliancecan.ca/Using_modules "wikilink").
--   Be explicit with software versions for reproducibility (e.g., `cuda/12.6` rather than just `cuda`).
--   Test on a single GPU before scaling to multiple GPUs or nodes.
--   Monitor usage with `nvidia-smi` to ensure GPUs are fully utilized.
+- Do not use `--mem` --- memory is fixed per GPU (192 GB) or per node (768 GB).
+- Always specify node count, and `--gpus-per-node=4` for whole-node or multi-node jobs.
+- Load only the modules you need --- see [Using modules](https://docs.alliancecan.ca/Using_modules "Using modules"){.wikilink}.
+- Be explicit with software versions for reproducibility (e.g., `cuda/12.6` rather than just `cuda`).
+- Test on a single GPU before scaling to multiple GPUs or nodes.
+- Monitor usage with `nvidia-smi` to ensure GPUs are fully utilized.
 
 # Monitoring
 
@@ -597,52 +551,36 @@ srun python train_distributed.py
 
 Once your job is submitted to the queue, you can monitor its status and performance using the following SLURM commands:
 
--   `squeue` shows all jobs in the queue. Use `squeue -u $USER` to view only your jobs.
+- `squeue` shows all jobs in the queue. Use `squeue -u $USER` to view only your jobs.
 
-```{=html}
 <li>
-```
+
 `squeue -j JOBID` shows the current status of a specific job. Alternatively, use `scontrol show job JOBID` for detailed information, including allocated nodes, resources, and job flags.
 
-```{=html}
 </li>
-```
-```{=html}
 <li>
-```
+
 `squeue --start -j JOBID` gives a rough estimate of when a pending job is expected to start. Note that this estimate is often inaccurate and can change depending on system load and priorities.
 
-```{=html}
 </li>
-```
-```{=html}
 <li>
-```
+
 `scancel JOBID` cancels a job you submitted.
 
-```{=html}
 </li>
-```
-```{=html}
 <li>
-```
+
 `jobperf JOBID` gives a live snapshot of the CPU and memory usage of your job while it is running.
 
-```{=html}
 </li>
-```
-```{=html}
 <li>
-```
+
 `sacct` shows information about your past jobs, including start time, run time, node usage, and exit status.
 
-```{=html}
 </li>
-```
-```{=html}
 </ul>
-```
-More details on monitoring jobs can be found on the [ Slurm page](https://docs.alliancecan.ca/Running_jobs "wikilink").
+
+More details on monitoring jobs can be found on the [ Slurm page](https://docs.alliancecan.ca/Running_jobs " Slurm page"){.wikilink}.
 
 ## Monitoring running and past jobs {#monitoring_running_and_past_jobs}
 
@@ -657,9 +595,7 @@ Your past jobs and their resource usage can be inspected through the [my.SciNet]
 +=================================+================================================+
 | sbatch                          | Submit a batch job script                      |
 |                                 |                                                |
-| ```{=html}                      |                                                |
 | <script>                        |                                                |
-| ```                             |                                                |
 +---------------------------------+------------------------------------------------+
 | squeue \[-u \$USER\]            | View queued jobs (optionally for current user) |
 +---------------------------------+------------------------------------------------+
@@ -683,5 +619,3 @@ Your past jobs and their resource usage can be inspected through the [my.SciNet]
 +---------------------------------+------------------------------------------------+
 | nvidia-smi                      | Check GPU status (on GPU nodes)                |
 +---------------------------------+------------------------------------------------+
-
-`</translate>`{=html}

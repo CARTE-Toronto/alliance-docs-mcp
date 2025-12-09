@@ -2,7 +2,7 @@
 title: "CESM"
 url: "https://docs.alliancecan.ca/wiki/CESM"
 category: "General"
-last_modified: "2025-08-04T14:11:25Z"
+last_modified: "2025-12-04T20:02:09Z"
 page_id: 24186
 display_title: "CESM"
 ---
@@ -67,11 +67,7 @@ See [this documentation page](https://escomp.github.io/CESM/versions/cesm2.1/htm
       <PROJECT_REQUIRED>TRUE</PROJECT_REQUIRED>
 
       <mpirun mpilib="openmpi">
-        <executable>mpirun</executable>
-        <arguments>
-          <arg name="anum_tasks"> -np <nowiki></nowiki></arg>
-          <!--arg name="labelstdout">-prepend-rank</arg> -->
-        </arguments>
+        <executable>srun</executable>
       </mpirun>
       <module_system type="module" allow_error="true">
         <init_path lang="perl">/cvmfs/soft.computecanada.ca/custom/software/lmod/lmod/init/perl</init_path>
@@ -151,10 +147,7 @@ See [this documentation page](https://escomp.github.io/CESM/versions/cesm2.1/htm
       <PROJECT_REQUIRED>TRUE</PROJECT_REQUIRED>
 
       <mpirun mpilib="openmpi">
-        <executable>mpirun</executable>
-        <arguments>
-          <arg name="anum_tasks"> -np <nowiki></nowiki></arg>
-        </arguments>
+        <executable>srun</executable>
       </mpirun>
       <module_system type="module" allow_error="true">
         <init_path lang="perl">/cvmfs/soft.computecanada.ca/custom/software/lmod/lmod/init/perl</init_path>
@@ -234,10 +227,7 @@ See [this documentation page](https://escomp.github.io/CESM/versions/cesm2.1/htm
       <PROJECT_REQUIRED>TRUE</PROJECT_REQUIRED>
 
       <mpirun mpilib="openmpi">
-        <executable>mpirun</executable>
-        <arguments>
-          <arg name="anum_tasks"> -np <nowiki></nowiki></arg>
-        </arguments>
+        <executable>srun</executable>
       </mpirun>
       <module_system type="module" allow_error="true">
         <init_path lang="perl">/cvmfs/soft.computecanada.ca/custom/software/lmod/lmod/init/perl</init_path>
@@ -317,10 +307,7 @@ See [this documentation page](https://escomp.github.io/CESM/versions/cesm2.1/htm
       <PROJECT_REQUIRED>TRUE</PROJECT_REQUIRED>
 
       <mpirun mpilib="openmpi">
-        <executable>mpirun</executable>
-        <arguments>
-          <arg name="anum_tasks"> -np <nowiki></nowiki></arg>
-        </arguments>
+        <executable>srun</executable>
       </mpirun>
       <module_system type="module" allow_error="true">
         <init_path lang="perl">/cvmfs/soft.computecanada.ca/custom/software/lmod/lmod/init/perl</init_path>
@@ -400,10 +387,7 @@ See [this documentation page](https://escomp.github.io/CESM/versions/cesm2.1/htm
       <PROJECT_REQUIRED>TRUE</PROJECT_REQUIRED>
 
       <mpirun mpilib="openmpi">
-        <executable>mpirun</executable>
-        <arguments>
-          <arg name="anum_tasks"> -np <nowiki></nowiki></arg>
-        </arguments>
+        <executable>srun</executable>
       </mpirun>
       <module_system type="module" allow_error="true">
         <init_path lang="perl">/cvmfs/soft.computecanada.ca/custom/software/lmod/lmod/init/perl</init_path>
@@ -483,10 +467,7 @@ See [this documentation page](https://escomp.github.io/CESM/versions/cesm2.1/htm
       <PROJECT_REQUIRED>TRUE</PROJECT_REQUIRED>
 
       <mpirun mpilib="openmpi">
-        <executable>mpirun</executable>
-        <arguments>
-          <arg name="anum_tasks"> -np <nowiki></nowiki></arg>
-        </arguments>
+        <executable>srun</executable>
       </mpirun>
       <module_system type="module" allow_error="true">
         <init_path lang="perl">/cvmfs/soft.computecanada.ca/custom/software/lmod/lmod/init/perl</init_path>

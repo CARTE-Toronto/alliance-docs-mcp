@@ -1,15 +1,13 @@
 ---
-title: "Transition from Niagara to Trillium"
-url: "https://docs.alliancecan.ca/wiki/Transition_from_Niagara_to_Trillium"
+title: "Transition from Niagara to Trillium/en"
+url: "https://docs.alliancecan.ca/wiki/Transition_from_Niagara_to_Trillium/en"
 category: "General"
-last_modified: "2025-10-22T16:54:21Z"
-page_id: 29084
+last_modified: "2025-11-06T19:22:47Z"
+page_id: 29133
 display_title: "Transition from Niagara to Trillium"
 ---
 
 `<languages />`{=html}
-
-`<translate>`{=html}
 
 ## Getting Access {#getting_access}
 
@@ -31,7 +29,7 @@ You can login to the CPU subcluster of Trillium by ssh-ing to trillium.alliancec
 
     $ ssh USERNAME@trillium.alliancecan.ca
 
-The first time you login, please make sure you are actually accessing Trillium by checking if the [login node ssh host key fingerprint](https://docs.alliancecan.ca/SSH_security_improvements/en#Trillium "wikilink") matches. As was the case on Niagara and Mist, you will need to use [SSH Keys](https://docs.alliancecan.ca/SSH_Keys "wikilink") and have MFA enabled on your CCDB account. This will get you onto one of six CPU login nodes called tri-login01-6. These login nodes do not have GPUs and *can only submit jobs to CPU compute nodes*.
+The first time you login, please make sure you are actually accessing Trillium by checking if the [login node ssh host key fingerprint](https://docs.alliancecan.ca/SSH_security_improvements/en#Trillium "login node ssh host key fingerprint"){.wikilink} matches. As was the case on Niagara and Mist, you will need to use [SSH Keys](https://docs.alliancecan.ca/SSH_Keys "SSH Keys"){.wikilink} and have MFA enabled on your CCDB account. This will get you onto one of six CPU login nodes called tri-login01-6. These login nodes do not have GPUs and *can only submit jobs to CPU compute nodes*.
 
 To access the GPU subcluster of Trillium, you should log into trillium-gpu.alliancecan.ca (also with ssh keys and MFA):
 
@@ -61,7 +59,7 @@ Trillium consists of two homogeneous subclusters, a CPU subcluster and a GPU sub
 
 Each compute node of the CPU subcluster has 192 cores (Niagara had 40) and 755 GB of available memory (Niagara had 188 GB). The CPUs are AMD Zen 5 chips - a.k.a Turin (Niagara had Intel Skylake and Cascaselake chips). There are 1224 compute nodes in the Trillium CPU subcluster, for a total of 235,008 cores.
 
-If you were compiling code that used math and linear algebra routines from the Intel MKL, we suggest you switch to [ Flexiblas ](https://docs.alliancecan.ca/BLAS_and_LAPACK "wikilink"), or use the AMD AOCL libraries directly; these are in available in the `aocl-blas` and `aocl-lapack` modules.
+If you were compiling code that used math and linear algebra routines from the Intel MKL, we suggest you switch to [ Flexiblas ](https://docs.alliancecan.ca/BLAS_and_LAPACK " Flexiblas "){.wikilink}, or use the AMD AOCL libraries directly; these are in available in the `aocl-blas` and `aocl-lapack` modules.
 
 ### GPUS
 
@@ -73,7 +71,7 @@ It is important to make sure that your jobs are not wasting resources. They shou
 
 ### Automatic data migration {#automatic_data_migration}
 
-Any data that was present on your home, scratch, and project directories on Niagara on July 31st and that you did not change after that, will have been copied over to the corresponding directory on Trillium. Any data that was added or modified afterwards on Niagara may need to be copied over by the user. For example, a user might ssh to Niagara datamover 1:
+Any data that was present on your home, scratch, and project directories on Niagara on July 31st 2025 and that you did not change after that, will have been copied over to the corresponding directory on Trillium. Any data that was added or modified afterwards on Niagara may need to be copied over by the user. For example, a user might ssh to Niagara `nia-datamover1`:
 
     $ ssh USERNAME@nia-datamover1.scinet.utoronto.ca
 
@@ -81,7 +79,7 @@ and take advantage that both Niagara and Trillium file systems are mounted there
 
     USERNAME@nia-dm1:~$ cp /home/G/GROUP/USERNAME/file.txt /trillium_home/USERNAME/file.txt
 
-For now, the quotas of home and scratch remain the same default values as they were on Niagara, i.e., 100 GB and 25 TB, respectively.
+As of November 4, 2025, the quotas of home and scratch remain the same default values as they were on Niagara, i.e., 100 GB and 25 TB, respectively.
 
 ### Directory locations {#directory_locations}
 
@@ -141,8 +139,6 @@ If you had anaconda virtual environments, you will find that there is no anacond
 
 ## Training, documentation, and support {#training_documentation_and_support}
 
--   New quickstart: [Trillium Quickstart](https://docs.alliancecan.ca/Trillium_Quickstart "wikilink")
--   Support email: <trillium@tech.alliancecan.ca>
--   Self-guided \"[Intro to SciNet and Trillium](https://education.scinet.utoronto.ca/course/view.php?id=1389)\"
-
-`</translate>`{=html}
+- New quickstart: [Trillium Quickstart](https://docs.alliancecan.ca/Trillium_Quickstart "Trillium Quickstart"){.wikilink}
+- Support email: <trillium@tech.alliancecan.ca>
+- Self-guided \"[Intro to SciNet and Trillium](https://education.scinet.utoronto.ca/course/view.php?id=1389)\"

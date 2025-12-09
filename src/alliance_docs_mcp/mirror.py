@@ -7,6 +7,7 @@ from typing import Dict, List, Optional, Tuple
 from urllib.parse import urljoin
 
 import requests
+from langdetect import DetectorFactory, LangDetectException, detect_langs
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
@@ -15,6 +16,9 @@ logger = logging.getLogger(__name__)
 TARGET_LANGUAGE = "en"
 TRANSLATION_SUFFIXES = {TARGET_LANGUAGE, "fr"}
 SKIP_TITLE_SUBSTRINGS = ("wheels",)
+
+# Deterministic langdetect
+DetectorFactory.seed = 0
 
 
 def _get_translation_suffix(title: str) -> Optional[str]:
@@ -65,6 +69,27 @@ def filter_to_target_language(pages: List[Dict], target_language: str = TARGET_L
         filtered_pages.append(page)
     
     return filtered_pages
+
+
+def _is_probably_english(text: str, min_probability: float = 0.7) -> bool:
+    """Heuristic English detector using langdetect with a small fallback."""
+    if not text:
+        return True
+
+    sample = text[:5000]
+    ascii_count = sum(1 for ch in sample if ord(ch) < 128)
+    if ascii_count / max(len(sample), 1) > 0.95:
+        return True
+
+    try:
+        predictions = detect_langs(sample)
+    except LangDetectException:
+        return False
+
+    for pred in predictions:
+        if pred.lang == "en" and pred.prob >= min_probability:
+            return True
+    return False
 
 
 class MediaWikiClient:
@@ -345,8 +370,10 @@ async def fetch_page_contents(client: MediaWikiClient, page_ids: List[int]) -> L
         for page_id in batch:
             try:
                 content = client.get_page_content(page_id)
-                if content:
+                if content and _is_probably_english(content.get("content", "")):
                     pages_with_content.append(content)
+                elif content:
+                    logger.info("Skipping non-English page: %s", content.get("title", page_id))
                 await asyncio.sleep(0.1)  # Small delay between requests
             except Exception as e:
                 logger.error(f"Error fetching content for page {page_id}: {e}")
