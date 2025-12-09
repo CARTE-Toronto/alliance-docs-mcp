@@ -46,3 +46,5 @@ logs/
 *.log
 fastmcp-docs/
 example_implementation/
+docs/search_index/
+docs/related_index/

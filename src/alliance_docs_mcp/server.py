@@ -11,6 +11,8 @@ from fastmcp.resources import TextResource
 from starlette.requests import Request
 from starlette.responses import PlainTextResponse
 
+from .related import RelatedIndex, RelatedIndexUnavailable
+from .search_index import SearchIndex, SearchIndexUnavailable
 from .storage import DocumentationStorage
 
 logger = logging.getLogger(__name__)
@@ -48,6 +50,38 @@ def _discover_docs_directory() -> Path:
 
 docs_path = _discover_docs_directory()
 storage = DocumentationStorage(str(docs_path))
+search_index = None
+
+try:
+    search_index_disabled = os.getenv("DISABLE_SEARCH_INDEX", "").lower() in ("1", "true", "yes")
+    search_index_dir = Path(os.getenv("SEARCH_INDEX_DIR", docs_path / "search_index"))
+    if not search_index_disabled:
+        search_index = SearchIndex(search_index_dir)
+    else:
+        logger.info("Search index disabled via DISABLE_SEARCH_INDEX")
+except Exception as exc:  # pragma: no cover - defensive initialization
+    logger.warning("Search index unavailable, falling back to title search: %s", exc)
+    search_index = None
+
+related_index = None
+
+try:
+    related_index_disabled = os.getenv("DISABLE_RELATED_INDEX", "").lower() in ("1", "true", "yes")
+    related_index_dir = Path(os.getenv("RELATED_INDEX_DIR", docs_path / "related_index"))
+    related_model_name = os.getenv("RELATED_MODEL_NAME", "all-MiniLM-L6-v2")
+    related_backend = os.getenv("RELATED_BACKEND", "chroma")
+
+    if not related_index_disabled:
+        related_index = RelatedIndex(
+            related_index_dir,
+            model_name=related_model_name,
+            backend=related_backend,
+        )
+    else:
+        logger.info("Related index disabled via DISABLE_RELATED_INDEX")
+except Exception as exc:  # pragma: no cover - defensive initialization
+    logger.warning("Related index unavailable, using heuristic fallback: %s", exc)
+    related_index = None
 
 
 def _resolve_page_path(file_path: str) -> Path:
@@ -121,35 +155,63 @@ def _register_document_resources() -> None:
 _register_document_resources()
 
 
-@mcp.tool()
-async def search_docs(query: str, category: Optional[str] = None) -> List[dict]:
-    """Search documentation pages.
-    
-    Args:
-        query: Search query
-        category: Optional category filter
-        
-    Returns:
-        List of matching pages with metadata
-    """
+async def _search_docs_impl(
+    query: str,
+    category: Optional[str] = None,
+    limit: int = 20,
+    search_content: bool = True,
+    fuzzy: bool = False,
+) -> List[dict]:
+    """Core search implementation used by the MCP tool and tests."""
     try:
+        if search_content and search_index:
+            try:
+                results = search_index.search(query, category=category, limit=limit, fuzzy=fuzzy)
+                return [
+                    {
+                        "title": hit.get("title"),
+                        "url": hit.get("url"),
+                        "category": hit.get("category"),
+                        "slug": hit.get("slug"),
+                        "last_modified": hit.get("last_modified"),
+                        "score": hit.get("score"),
+                        "snippet": hit.get("highlights"),
+                        "highlights": hit.get("highlights"),
+                    }
+                    for hit in results
+                ]
+            except SearchIndexUnavailable:
+                logger.warning("Search index unavailable, falling back to title search")
+            except Exception as exc:  # pragma: no cover - defensive fallback
+                logger.warning("Full-text search failed, falling back to title search: %s", exc)
+
         results = storage.search_pages(query, category)
-        
-        # Return simplified results for MCP
         return [
             {
                 "title": page["title"],
                 "url": page["url"],
                 "category": page["category"],
                 "slug": page["slug"],
-                "last_modified": page["last_modified"]
+                "last_modified": page["last_modified"],
             }
-            for page in results
+            for page in results[:limit]
         ]
-        
+
     except Exception as e:
         logger.error(f"Error searching docs: {e}")
         return []
+
+
+@mcp.tool()
+async def search_docs(
+    query: str,
+    category: Optional[str] = None,
+    limit: int = 20,
+    search_content: bool = True,
+    fuzzy: bool = False,
+) -> List[dict]:
+    """Search documentation with optional full-text index and relevance ranking."""
+    return await _search_docs_impl(query, category, limit, search_content, fuzzy)
 
 
 @mcp.tool()
@@ -164,6 +226,38 @@ async def list_categories() -> List[str]:
     except Exception as e:
         logger.error(f"Error listing categories: {e}")
         return []
+
+
+def _heuristic_related(page: dict, limit: int) -> List[dict]:
+    """Lightweight heuristic fallback for related pages."""
+    base_tokens = set((page.get("title", "") or "").lower().split())
+    candidates = []
+
+    for candidate in storage.get_all_pages():
+        if candidate.get("slug") == page.get("slug"):
+            continue
+
+        score = 0
+        if candidate.get("category") == page.get("category"):
+            score += 2
+
+        candidate_tokens = set((candidate.get("title", "") or "").lower().split())
+        score += len(base_tokens.intersection(candidate_tokens))
+
+        if score > 0:
+            candidates.append((score, candidate))
+
+    candidates.sort(key=lambda item: item[0], reverse=True)
+    return [
+        {
+            "title": candidate["title"],
+            "url": candidate["url"],
+            "category": candidate["category"],
+            "slug": candidate["slug"],
+            "score": score,
+        }
+        for score, candidate in candidates[:limit]
+    ]
 
 
 @mcp.tool()
@@ -223,6 +317,36 @@ async def list_recent_updates(limit: int = 10) -> List[dict]:
         
     except Exception as e:
         logger.error(f"Error getting recent updates: {e}")
+        return []
+
+
+@mcp.tool()
+async def find_related_pages(slug: str, limit: int = 5, min_score: float = 0.0) -> List[dict]:
+    """Find related pages using embeddings when available, with heuristic fallback."""
+    return await _find_related_pages_impl(slug, limit, min_score)
+
+
+async def _find_related_pages_impl(slug: str, limit: int = 5, min_score: float = 0.0) -> List[dict]:
+    """Core related-pages implementation for tool and tests."""
+    try:
+        page = storage.get_page_by_slug(slug)
+        if not page:
+            return []
+
+        if related_index:
+            try:
+                results = related_index.find_related(slug, limit=limit, min_score=min_score)
+                if results:
+                    return results
+            except RelatedIndexUnavailable as exc:
+                logger.warning("Related index unavailable for %s: %s", slug, exc)
+            except Exception as exc:  # pragma: no cover - defensive fallback
+                logger.warning("Related index error for %s: %s", slug, exc)
+
+        return _heuristic_related(page, limit)
+
+    except Exception as exc:
+        logger.error("Error finding related pages for %s: %s", slug, exc)
         return []
 
 

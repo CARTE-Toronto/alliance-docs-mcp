@@ -1,15 +1,15 @@
 {
-  "last_updated": "2025-12-07T06:16:54.310075+00:00",
-  "total_pages": 418,
+  "last_updated": "2025-12-09T17:43:11.565361+00:00",
+  "total_pages": 413,
   "pages": [
     {
       "page_id": 10049,
-      "title": "ABINIT/en",
+      "title": "ABINIT",
       "url": "https://docs.alliancecan.ca/wiki/ABINIT/en",
       "category": "General",
       "last_modified": "2022-07-19T22:42:02Z",
-      "file_path": "docs/pages/General/ABINIT_en.md",
-      "slug": "ABINIT_en"
+      "file_path": "docs/pages/General/ABINIT.md",
+      "slug": "ABINIT"
     },
     {
       "page_id": 27862,
@@ -22,138 +22,138 @@
     },
     {
       "page_id": 5365,
-      "title": "ADF/en",
+      "title": "ADF",
       "url": "https://docs.alliancecan.ca/wiki/ADF/en",
       "category": "General",
       "last_modified": "2022-07-19T13:25:01Z",
-      "file_path": "docs/pages/General/ADF_en.md",
-      "slug": "ADF_en"
+      "file_path": "docs/pages/General/ADF.md",
+      "slug": "ADF"
     },
     {
       "page_id": 11862,
-      "title": "AI and Machine Learning/en",
+      "title": "AI and Machine Learning",
       "url": "https://docs.alliancecan.ca/wiki/AI_and_Machine_Learning/en",
       "category": "General",
       "last_modified": "2024-10-16T16:55:18Z",
-      "file_path": "docs/pages/General/AI_and_Machine_Learning_en.md",
-      "slug": "AI_and_Machine_Learning_en"
+      "file_path": "docs/pages/General/AI_and_Machine_Learning.md",
+      "slug": "AI_and_Machine_Learning"
     },
     {
       "page_id": 4211,
-      "title": "AMBER/en",
+      "title": "AMBER",
       "url": "https://docs.alliancecan.ca/wiki/AMBER/en",
       "category": "General",
       "last_modified": "2025-09-09T20:12:01Z",
-      "file_path": "docs/pages/General/AMBER_en.md",
-      "slug": "AMBER_en"
+      "file_path": "docs/pages/General/AMBER.md",
+      "slug": "AMBER"
     },
     {
       "page_id": 15810,
-      "title": "AMS/en",
+      "title": "AMS",
       "url": "https://docs.alliancecan.ca/wiki/AMS/en",
       "category": "General",
       "last_modified": "2025-09-23T22:25:24Z",
-      "file_path": "docs/pages/General/AMS_en.md",
-      "slug": "AMS_en"
+      "file_path": "docs/pages/General/AMS.md",
+      "slug": "AMS"
     },
     {
       "page_id": 5985,
-      "title": "ARM software/en",
+      "title": "ARM software",
       "url": "https://docs.alliancecan.ca/wiki/ARM_software/en",
       "category": "General",
-      "last_modified": "2025-10-08T20:56:03Z",
-      "file_path": "docs/pages/General/ARM_software_en.md",
-      "slug": "ARM_software_en"
+      "last_modified": "2025-11-03T20:56:23Z",
+      "file_path": "docs/pages/General/ARM_software.md",
+      "slug": "ARM_software"
     },
     {
       "page_id": 23141,
-      "title": "A tutorial on 'tar'/en",
+      "title": "A tutorial on 'tar'",
       "url": "https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/en",
       "category": "User Guide",
       "last_modified": "2023-04-21T20:20:54Z",
-      "file_path": "docs/pages/User Guide/A_tutorial_on_'tar'_en.md",
-      "slug": "A_tutorial_on_'tar'_en"
+      "file_path": "docs/pages/User Guide/A_tutorial_on_'tar'.md",
+      "slug": "A_tutorial_on_'tar'"
     },
     {
       "page_id": 10030,
-      "title": "Abaqus/en",
+      "title": "Abaqus",
       "url": "https://docs.alliancecan.ca/wiki/Abaqus/en",
       "category": "General",
       "last_modified": "2025-10-21T17:29:34Z",
-      "file_path": "docs/pages/General/Abaqus_en.md",
-      "slug": "Abaqus_en"
+      "file_path": "docs/pages/General/Abaqus.md",
+      "slug": "Abaqus"
     },
     {
       "page_id": 23420,
-      "title": "Access to files of users leaving a project/en",
+      "title": "Access to files of users leaving a project",
       "url": "https://docs.alliancecan.ca/wiki/Access_to_files_of_users_leaving_a_project/en",
       "category": "User Guide",
       "last_modified": "2024-08-30T20:18:02Z",
-      "file_path": "docs/pages/User Guide/Access_to_files_of_users_leaving_a_project_en.md",
-      "slug": "Access_to_files_of_users_leaving_a_project_en"
+      "file_path": "docs/pages/User Guide/Access_to_files_of_users_leaving_a_project.md",
+      "slug": "Access_to_files_of_users_leaving_a_project"
     },
     {
       "page_id": 12126,
-      "title": "Accessing CVMFS/en",
+      "title": "Accessing CVMFS",
       "url": "https://docs.alliancecan.ca/wiki/Accessing_CVMFS/en",
       "category": "General",
       "last_modified": "2025-08-29T13:25:19Z",
-      "file_path": "docs/pages/General/Accessing_CVMFS_en.md",
-      "slug": "Accessing_CVMFS_en"
+      "file_path": "docs/pages/General/Accessing_CVMFS.md",
+      "slug": "Accessing_CVMFS"
     },
     {
       "page_id": 22571,
-      "title": "Accessing object storage with WinSCP/en",
+      "title": "Accessing object storage with WinSCP",
       "url": "https://docs.alliancecan.ca/wiki/Accessing_object_storage_with_WinSCP/en",
       "category": "General",
       "last_modified": "2023-03-13T21:21:52Z",
-      "file_path": "docs/pages/General/Accessing_object_storage_with_WinSCP_en.md",
-      "slug": "Accessing_object_storage_with_WinSCP_en"
+      "file_path": "docs/pages/General/Accessing_object_storage_with_WinSCP.md",
+      "slug": "Accessing_object_storage_with_WinSCP"
     },
     {
       "page_id": 22497,
-      "title": "Accessing object storage with s3cmd/en",
+      "title": "Accessing object storage with s3cmd",
       "url": "https://docs.alliancecan.ca/wiki/Accessing_object_storage_with_s3cmd/en",
       "category": "General",
       "last_modified": "2024-02-09T20:19:23Z",
-      "file_path": "docs/pages/General/Accessing_object_storage_with_s3cmd_en.md",
-      "slug": "Accessing_object_storage_with_s3cmd_en"
+      "file_path": "docs/pages/General/Accessing_object_storage_with_s3cmd.md",
+      "slug": "Accessing_object_storage_with_s3cmd"
     },
     {
       "page_id": 22460,
-      "title": "Accessing the Arbutus object storage with AWS CLI/en",
+      "title": "Accessing the Arbutus object storage with AWS CLI",
       "url": "https://docs.alliancecan.ca/wiki/Accessing_the_Arbutus_object_storage_with_AWS_CLI/en",
       "category": "General",
       "last_modified": "2024-06-20T18:17:26Z",
-      "file_path": "docs/pages/General/Accessing_the_Arbutus_object_storage_with_AWS_CLI_en.md",
-      "slug": "Accessing_the_Arbutus_object_storage_with_AWS_CLI_en"
+      "file_path": "docs/pages/General/Accessing_the_Arbutus_object_storage_with_AWS_CLI.md",
+      "slug": "Accessing_the_Arbutus_object_storage_with_AWS_CLI"
     },
     {
       "page_id": 29858,
-      "title": "Account renewal/en",
+      "title": "Account renewal",
       "url": "https://docs.alliancecan.ca/wiki/Account_renewal/en",
       "category": "General",
       "last_modified": "2025-08-13T21:31:40Z",
-      "file_path": "docs/pages/General/Account_renewal_en.md",
-      "slug": "Account_renewal_en"
+      "file_path": "docs/pages/General/Account_renewal.md",
+      "slug": "Account_renewal"
     },
     {
       "page_id": 31074,
-      "title": "Account renewal FAQ/en",
+      "title": "Account renewal FAQ",
       "url": "https://docs.alliancecan.ca/wiki/Account_renewal_FAQ/en",
       "category": "General",
       "last_modified": "2025-09-04T21:29:39Z",
-      "file_path": "docs/pages/General/Account_renewal_FAQ_en.md",
-      "slug": "Account_renewal_FAQ_en"
+      "file_path": "docs/pages/General/Account_renewal_FAQ.md",
+      "slug": "Account_renewal_FAQ"
     },
     {
       "page_id": 29798,
-      "title": "Acknowledging the Alliance/en",
+      "title": "Acknowledging the Alliance",
       "url": "https://docs.alliancecan.ca/wiki/Acknowledging_the_Alliance/en",
       "category": "General",
       "last_modified": "2025-08-13T21:28:03Z",
-      "file_path": "docs/pages/General/Acknowledging_the_Alliance_en.md",
-      "slug": "Acknowledging_the_Alliance_en"
+      "file_path": "docs/pages/General/Acknowledging_the_Alliance.md",
+      "slug": "Acknowledging_the_Alliance"
     },
     {
       "page_id": 13946,
@@ -166,21 +166,21 @@
     },
     {
       "page_id": 18533,
-      "title": "Advanced Jupyter configuration/en",
+      "title": "Advanced Jupyter configuration",
       "url": "https://docs.alliancecan.ca/wiki/Advanced_Jupyter_configuration/en",
       "category": "General",
       "last_modified": "2025-09-23T21:59:54Z",
-      "file_path": "docs/pages/General/Advanced_Jupyter_configuration_en.md",
-      "slug": "Advanced_Jupyter_configuration_en"
+      "file_path": "docs/pages/General/Advanced_Jupyter_configuration.md",
+      "slug": "Advanced_Jupyter_configuration"
     },
     {
       "page_id": 3424,
-      "title": "Advanced MPI scheduling/en",
+      "title": "Advanced MPI scheduling",
       "url": "https://docs.alliancecan.ca/wiki/Advanced_MPI_scheduling/en",
       "category": "General",
       "last_modified": "2025-11-14T22:00:43Z",
-      "file_path": "docs/pages/General/Advanced_MPI_scheduling_en.md",
-      "slug": "Advanced_MPI_scheduling_en"
+      "file_path": "docs/pages/General/Advanced_MPI_scheduling.md",
+      "slug": "Advanced_MPI_scheduling"
     },
     {
       "page_id": 25587,
@@ -193,138 +193,138 @@
     },
     {
       "page_id": 29846,
-      "title": "Alliance CCV submission guide/en",
+      "title": "Alliance CCV submission guide",
       "url": "https://docs.alliancecan.ca/wiki/Alliance_CCV_submission_guide/en",
       "category": "User Guide",
       "last_modified": "2025-08-13T21:28:23Z",
-      "file_path": "docs/pages/User Guide/Alliance_CCV_submission_guide_en.md",
-      "slug": "Alliance_CCV_submission_guide_en"
+      "file_path": "docs/pages/User Guide/Alliance_CCV_submission_guide.md",
+      "slug": "Alliance_CCV_submission_guide"
     },
     {
       "page_id": 6419,
-      "title": "Allocations and compute scheduling/en",
+      "title": "Allocations and compute scheduling",
       "url": "https://docs.alliancecan.ca/wiki/Allocations_and_compute_scheduling/en",
       "category": "General",
       "last_modified": "2025-09-19T14:36:02Z",
-      "file_path": "docs/pages/General/Allocations_and_compute_scheduling_en.md",
-      "slug": "Allocations_and_compute_scheduling_en"
+      "file_path": "docs/pages/General/Allocations_and_compute_scheduling.md",
+      "slug": "Allocations_and_compute_scheduling"
     },
     {
       "page_id": 20387,
-      "title": "AlphaFold2/en",
+      "title": "AlphaFold2",
       "url": "https://docs.alliancecan.ca/wiki/AlphaFold2/en",
       "category": "General",
       "last_modified": "2024-11-22T13:54:29Z",
-      "file_path": "docs/pages/General/AlphaFold2_en.md",
-      "slug": "AlphaFold2_en"
+      "file_path": "docs/pages/General/AlphaFold2.md",
+      "slug": "AlphaFold2"
     },
     {
       "page_id": 27116,
-      "title": "AlphaFold3/en",
+      "title": "AlphaFold3",
       "url": "https://docs.alliancecan.ca/wiki/AlphaFold3/en",
       "category": "General",
       "last_modified": "2025-07-18T17:48:59Z",
-      "file_path": "docs/pages/General/AlphaFold3_en.md",
-      "slug": "AlphaFold3_en"
+      "file_path": "docs/pages/General/AlphaFold3.md",
+      "slug": "AlphaFold3"
     },
     {
       "page_id": 10036,
-      "title": "Altair FEKO/en",
+      "title": "Altair FEKO",
       "url": "https://docs.alliancecan.ca/wiki/Altair_FEKO/en",
       "category": "General",
       "last_modified": "2022-07-11T22:14:01Z",
-      "file_path": "docs/pages/General/Altair_FEKO_en.md",
-      "slug": "Altair_FEKO_en"
+      "file_path": "docs/pages/General/Altair_FEKO.md",
+      "slug": "Altair_FEKO"
     },
     {
       "page_id": 4505,
-      "title": "Anaconda/en",
+      "title": "Anaconda",
       "url": "https://docs.alliancecan.ca/wiki/Anaconda/en",
       "category": "General",
-      "last_modified": "2025-02-13T20:44:32Z",
-      "file_path": "docs/pages/General/Anaconda_en.md",
-      "slug": "Anaconda_en"
+      "last_modified": "2025-12-02T14:59:54Z",
+      "file_path": "docs/pages/General/Anaconda.md",
+      "slug": "Anaconda"
     },
     {
       "page_id": 4948,
-      "title": "Ansys/en",
+      "title": "Ansys",
       "url": "https://docs.alliancecan.ca/wiki/Ansys/en",
       "category": "General",
-      "last_modified": "2025-11-06T19:23:01Z",
-      "file_path": "docs/pages/General/Ansys_en.md",
-      "slug": "Ansys_en"
+      "last_modified": "2025-12-03T14:50:05Z",
+      "file_path": "docs/pages/General/Ansys.md",
+      "slug": "Ansys"
     },
     {
       "page_id": 28884,
-      "title": "AnsysEDT/en",
+      "title": "AnsysEDT",
       "url": "https://docs.alliancecan.ca/wiki/AnsysEDT/en",
       "category": "General",
       "last_modified": "2025-09-04T19:06:52Z",
-      "file_path": "docs/pages/General/AnsysEDT_en.md",
-      "slug": "AnsysEDT_en"
+      "file_path": "docs/pages/General/AnsysEDT.md",
+      "slug": "AnsysEDT"
     },
     {
       "page_id": 9508,
-      "title": "Apache Spark/en",
+      "title": "Apache Spark",
       "url": "https://docs.alliancecan.ca/wiki/Apache_Spark/en",
       "category": "General",
       "last_modified": "2024-08-29T23:04:12Z",
-      "file_path": "docs/pages/General/Apache_Spark_en.md",
-      "slug": "Apache_Spark_en"
+      "file_path": "docs/pages/General/Apache_Spark.md",
+      "slug": "Apache_Spark"
     },
     {
       "page_id": 29533,
-      "title": "Apply for a CCDB account/en",
+      "title": "Apply for a CCDB account",
       "url": "https://docs.alliancecan.ca/wiki/Apply_for_a_CCDB_account/en",
       "category": "General",
       "last_modified": "2025-08-15T17:34:03Z",
-      "file_path": "docs/pages/General/Apply_for_a_CCDB_account_en.md",
-      "slug": "Apply_for_a_CCDB_account_en"
+      "file_path": "docs/pages/General/Apply_for_a_CCDB_account.md",
+      "slug": "Apply_for_a_CCDB_account"
     },
     {
       "page_id": 23356,
-      "title": "Apptainer/en",
+      "title": "Apptainer",
       "url": "https://docs.alliancecan.ca/wiki/Apptainer/en",
       "category": "General",
-      "last_modified": "2024-11-13T19:55:34Z",
-      "file_path": "docs/pages/General/Apptainer_en.md",
-      "slug": "Apptainer_en"
+      "last_modified": "2025-12-02T14:36:02Z",
+      "file_path": "docs/pages/General/Apptainer.md",
+      "slug": "Apptainer"
     },
     {
       "page_id": 27302,
-      "title": "Arbutus/en",
+      "title": "Arbutus",
       "url": "https://docs.alliancecan.ca/wiki/Arbutus/en",
       "category": "General",
       "last_modified": "2025-06-27T18:07:03Z",
-      "file_path": "docs/pages/General/Arbutus_en.md",
-      "slug": "Arbutus_en"
+      "file_path": "docs/pages/General/Arbutus.md",
+      "slug": "Arbutus"
     },
     {
       "page_id": 9289,
-      "title": "Arbutus Migration Guide/en",
+      "title": "Arbutus Migration Guide",
       "url": "https://docs.alliancecan.ca/wiki/Arbutus_Migration_Guide/en",
       "category": "User Guide",
       "last_modified": "2023-02-27T21:17:50Z",
-      "file_path": "docs/pages/User Guide/Arbutus_Migration_Guide_en.md",
-      "slug": "Arbutus_Migration_Guide_en"
+      "file_path": "docs/pages/User Guide/Arbutus_Migration_Guide.md",
+      "slug": "Arbutus_Migration_Guide"
     },
     {
       "page_id": 19935,
-      "title": "Arbutus object storage/en",
+      "title": "Arbutus object storage",
       "url": "https://docs.alliancecan.ca/wiki/Arbutus_object_storage/en",
       "category": "General",
       "last_modified": "2025-02-14T19:33:27Z",
-      "file_path": "docs/pages/General/Arbutus_object_storage_en.md",
-      "slug": "Arbutus_object_storage_en"
+      "file_path": "docs/pages/General/Arbutus_object_storage.md",
+      "slug": "Arbutus_object_storage"
     },
     {
       "page_id": 19993,
-      "title": "Arbutus object storage clients/en",
+      "title": "Arbutus object storage clients",
       "url": "https://docs.alliancecan.ca/wiki/Arbutus_object_storage_clients/en",
       "category": "General",
       "last_modified": "2025-02-13T22:22:02Z",
-      "file_path": "docs/pages/General/Arbutus_object_storage_clients_en.md",
-      "slug": "Arbutus_object_storage_clients_en"
+      "file_path": "docs/pages/General/Arbutus_object_storage_clients.md",
+      "slug": "Arbutus_object_storage_clients"
     },
     {
       "page_id": 16839,
@@ -337,21 +337,21 @@
     },
     {
       "page_id": 11774,
-      "title": "Archiving and compressing files/en",
+      "title": "Archiving and compressing files",
       "url": "https://docs.alliancecan.ca/wiki/Archiving_and_compressing_files/en",
       "category": "General",
       "last_modified": "2019-07-18T19:40:02Z",
-      "file_path": "docs/pages/General/Archiving_and_compressing_files_en.md",
-      "slug": "Archiving_and_compressing_files_en"
+      "file_path": "docs/pages/General/Archiving_and_compressing_files.md",
+      "slug": "Archiving_and_compressing_files"
     },
     {
       "page_id": 13183,
-      "title": "Arrow/en",
+      "title": "Arrow",
       "url": "https://docs.alliancecan.ca/wiki/Arrow/en",
       "category": "General",
       "last_modified": "2024-07-16T15:13:02Z",
-      "file_path": "docs/pages/General/Arrow_en.md",
-      "slug": "Arrow_en"
+      "file_path": "docs/pages/General/Arrow.md",
+      "slug": "Arrow"
     },
     {
       "page_id": 17217,
@@ -364,120 +364,120 @@
     },
     {
       "page_id": 108,
-      "title": "Authoring guidelines/en",
+      "title": "Authoring guidelines",
       "url": "https://docs.alliancecan.ca/wiki/Authoring_guidelines/en",
       "category": "User Guide",
       "last_modified": "2025-09-17T14:33:33Z",
-      "file_path": "docs/pages/User Guide/Authoring_guidelines_en.md",
-      "slug": "Authoring_guidelines_en"
+      "file_path": "docs/pages/User Guide/Authoring_guidelines.md",
+      "slug": "Authoring_guidelines"
     },
     {
       "page_id": 740,
-      "title": "Automating VM creation/en",
+      "title": "Automating VM creation",
       "url": "https://docs.alliancecan.ca/wiki/Automating_VM_creation/en",
       "category": "General",
       "last_modified": "2024-07-15T19:47:03Z",
-      "file_path": "docs/pages/General/Automating_VM_creation_en.md",
-      "slug": "Automating_VM_creation_en"
+      "file_path": "docs/pages/General/Automating_VM_creation.md",
+      "slug": "Automating_VM_creation"
     },
     {
       "page_id": 24806,
-      "title": "Automation in the context of multifactor authentication/en",
+      "title": "Automation in the context of multifactor authentication",
       "url": "https://docs.alliancecan.ca/wiki/Automation_in_the_context_of_multifactor_authentication/en",
       "category": "General",
       "last_modified": "2025-09-25T20:47:10Z",
-      "file_path": "docs/pages/General/Automation_in_the_context_of_multifactor_authentication_en.md",
-      "slug": "Automation_in_the_context_of_multifactor_authentication_en"
+      "file_path": "docs/pages/General/Automation_in_the_context_of_multifactor_authentication.md",
+      "slug": "Automation_in_the_context_of_multifactor_authentication"
     },
     {
       "page_id": 2236,
-      "title": "Autotools/en",
+      "title": "Autotools",
       "url": "https://docs.alliancecan.ca/wiki/Autotools/en",
       "category": "General",
       "last_modified": "2017-02-20T17:29:04Z",
-      "file_path": "docs/pages/General/Autotools_en.md",
-      "slug": "Autotools_en"
+      "file_path": "docs/pages/General/Autotools.md",
+      "slug": "Autotools"
     },
     {
       "page_id": 2490,
-      "title": "Available software/en",
+      "title": "Available software",
       "url": "https://docs.alliancecan.ca/wiki/Available_software/en",
       "category": "General",
       "last_modified": "2025-10-15T13:49:23Z",
-      "file_path": "docs/pages/General/Available_software_en.md",
-      "slug": "Available_software_en"
+      "file_path": "docs/pages/General/Available_software.md",
+      "slug": "Available_software"
     },
     {
       "page_id": 8812,
-      "title": "BEAST/en",
+      "title": "BEAST",
       "url": "https://docs.alliancecan.ca/wiki/BEAST/en",
       "category": "General",
       "last_modified": "2022-12-12T15:34:23Z",
-      "file_path": "docs/pages/General/BEAST_en.md",
-      "slug": "BEAST_en"
+      "file_path": "docs/pages/General/BEAST.md",
+      "slug": "BEAST"
     },
     {
       "page_id": 9806,
-      "title": "BLAST/en",
+      "title": "BLAST",
       "url": "https://docs.alliancecan.ca/wiki/BLAST/en",
       "category": "General",
       "last_modified": "2024-01-25T20:21:02Z",
-      "file_path": "docs/pages/General/BLAST_en.md",
-      "slug": "BLAST_en"
+      "file_path": "docs/pages/General/BLAST.md",
+      "slug": "BLAST"
     },
     {
       "page_id": 18718,
-      "title": "BLAS and LAPACK/en",
+      "title": "BLAS and LAPACK",
       "url": "https://docs.alliancecan.ca/wiki/BLAS_and_LAPACK/en",
       "category": "General",
       "last_modified": "2025-01-06T16:20:02Z",
-      "file_path": "docs/pages/General/BLAS_and_LAPACK_en.md",
-      "slug": "BLAS_and_LAPACK_en"
+      "file_path": "docs/pages/General/BLAS_and_LAPACK.md",
+      "slug": "BLAS_and_LAPACK"
     },
     {
       "page_id": 9850,
-      "title": "BUSCO/en",
+      "title": "BUSCO",
       "url": "https://docs.alliancecan.ca/wiki/BUSCO/en",
       "category": "General",
       "last_modified": "2024-05-01T23:07:01Z",
-      "file_path": "docs/pages/General/BUSCO_en.md",
-      "slug": "BUSCO_en"
+      "file_path": "docs/pages/General/BUSCO.md",
+      "slug": "BUSCO"
     },
     {
       "page_id": 8053,
-      "title": "Backing up your VM/en",
+      "title": "Backing up your VM",
       "url": "https://docs.alliancecan.ca/wiki/Backing_up_your_VM/en",
       "category": "General",
       "last_modified": "2023-02-27T20:45:01Z",
-      "file_path": "docs/pages/General/Backing_up_your_VM_en.md",
-      "slug": "Backing_up_your_VM_en"
+      "file_path": "docs/pages/General/Backing_up_your_VM.md",
+      "slug": "Backing_up_your_VM"
     },
     {
       "page_id": 20700,
-      "title": "Best practices for job submission/en",
+      "title": "Best practices for job submission",
       "url": "https://docs.alliancecan.ca/wiki/Best_practices_for_job_submission/en",
       "category": "General",
       "last_modified": "2023-07-17T19:34:01Z",
-      "file_path": "docs/pages/General/Best_practices_for_job_submission_en.md",
-      "slug": "Best_practices_for_job_submission_en"
+      "file_path": "docs/pages/General/Best_practices_for_job_submission.md",
+      "slug": "Best_practices_for_job_submission"
     },
     {
       "page_id": 5198,
-      "title": "Bioinformatics/en",
+      "title": "Bioinformatics",
       "url": "https://docs.alliancecan.ca/wiki/Bioinformatics/en",
       "category": "General",
       "last_modified": "2025-05-26T09:45:20Z",
-      "file_path": "docs/pages/General/Bioinformatics_en.md",
-      "slug": "Bioinformatics_en"
+      "file_path": "docs/pages/General/Bioinformatics.md",
+      "slug": "Bioinformatics"
     },
     {
       "page_id": 5661,
-      "title": "Biomolecular simulation/en",
+      "title": "Biomolecular simulation",
       "url": "https://docs.alliancecan.ca/wiki/Biomolecular_simulation/en",
       "category": "General",
       "last_modified": "2025-02-10T19:07:41Z",
-      "file_path": "docs/pages/General/Biomolecular_simulation_en.md",
-      "slug": "Biomolecular_simulation_en"
+      "file_path": "docs/pages/General/Biomolecular_simulation.md",
+      "slug": "Biomolecular_simulation"
     },
     {
       "page_id": 22804,
@@ -499,21 +499,21 @@
     },
     {
       "page_id": 2936,
-      "title": "Build tools/en",
+      "title": "Build tools",
       "url": "https://docs.alliancecan.ca/wiki/Build_tools/en",
       "category": "General",
       "last_modified": "2019-02-21T19:43:41Z",
-      "file_path": "docs/pages/General/Build_tools_en.md",
-      "slug": "Build_tools_en"
+      "file_path": "docs/pages/General/Build_tools.md",
+      "slug": "Build_tools"
     },
     {
       "page_id": 760,
-      "title": "Building a Software Carpentry style lesson on the wiki/en",
+      "title": "Building a Software Carpentry style lesson on the wiki",
       "url": "https://docs.alliancecan.ca/wiki/Building_a_Software_Carpentry_style_lesson_on_the_wiki/en",
       "category": "General",
       "last_modified": "2024-12-11T19:25:02Z",
-      "file_path": "docs/pages/General/Building_a_Software_Carpentry_style_lesson_on_the_wiki_en.md",
-      "slug": "Building_a_Software_Carpentry_style_lesson_on_the_wiki_en"
+      "file_path": "docs/pages/General/Building_a_Software_Carpentry_style_lesson_on_the_wiki.md",
+      "slug": "Building_a_Software_Carpentry_style_lesson_on_the_wiki"
     },
     {
       "page_id": 5798,
@@ -526,147 +526,147 @@
     },
     {
       "page_id": 10987,
-      "title": "Béluga/en",
+      "title": "Béluga",
       "url": "https://docs.alliancecan.ca/wiki/B%C3%A9luga/en",
       "category": "General",
       "last_modified": "2025-10-20T17:59:56Z",
-      "file_path": "docs/pages/General/Béluga_en.md",
-      "slug": "Béluga_en"
+      "file_path": "docs/pages/General/Béluga.md",
+      "slug": "Béluga"
     },
     {
       "page_id": 3102,
-      "title": "C++/en",
+      "title": "C++",
       "url": "https://docs.alliancecan.ca/wiki/C%2B%2B/en",
       "category": "General",
       "last_modified": "2024-03-20T17:56:39Z",
-      "file_path": "docs/pages/General/C++_en.md",
-      "slug": "C++_en"
+      "file_path": "docs/pages/General/C++.md",
+      "slug": "C++"
     },
     {
       "page_id": 3115,
-      "title": "C/en",
+      "title": "C",
       "url": "https://docs.alliancecan.ca/wiki/C/en",
       "category": "General",
       "last_modified": "2017-05-02T12:59:02Z",
-      "file_path": "docs/pages/General/C_en.md",
-      "slug": "C_en"
+      "file_path": "docs/pages/General/C.md",
+      "slug": "C"
     },
     {
       "page_id": 20282,
-      "title": "CASTEP/en",
+      "title": "CASTEP",
       "url": "https://docs.alliancecan.ca/wiki/CASTEP/en",
       "category": "General",
       "last_modified": "2024-11-05T16:33:58Z",
-      "file_path": "docs/pages/General/CASTEP_en.md",
-      "slug": "CASTEP_en"
+      "file_path": "docs/pages/General/CASTEP.md",
+      "slug": "CASTEP"
     },
     {
       "page_id": 24186,
       "title": "CESM",
       "url": "https://docs.alliancecan.ca/wiki/CESM",
       "category": "General",
-      "last_modified": "2025-08-04T14:11:25Z",
+      "last_modified": "2025-12-04T20:02:09Z",
       "file_path": "docs/pages/General/CESM.md",
       "slug": "CESM"
     },
     {
       "page_id": 9101,
-      "title": "CFOUR/en",
+      "title": "CFOUR",
       "url": "https://docs.alliancecan.ca/wiki/CFOUR/en",
       "category": "General",
       "last_modified": "2024-04-03T17:28:45Z",
-      "file_path": "docs/pages/General/CFOUR_en.md",
-      "slug": "CFOUR_en"
+      "file_path": "docs/pages/General/CFOUR.md",
+      "slug": "CFOUR"
     },
     {
       "page_id": 2297,
-      "title": "CMake/en",
+      "title": "CMake",
       "url": "https://docs.alliancecan.ca/wiki/CMake/en",
       "category": "General",
       "last_modified": "2023-06-18T00:45:02Z",
-      "file_path": "docs/pages/General/CMake_en.md",
-      "slug": "CMake_en"
+      "file_path": "docs/pages/General/CMake.md",
+      "slug": "CMake"
     },
     {
       "page_id": 6233,
-      "title": "COMSOL/en",
+      "title": "COMSOL",
       "url": "https://docs.alliancecan.ca/wiki/COMSOL/en",
       "category": "General",
       "last_modified": "2025-09-10T18:26:38Z",
-      "file_path": "docs/pages/General/COMSOL_en.md",
-      "slug": "COMSOL_en"
+      "file_path": "docs/pages/General/COMSOL.md",
+      "slug": "COMSOL"
     },
     {
       "page_id": 13508,
-      "title": "COVID19 related requests/en",
+      "title": "COVID19 related requests",
       "url": "https://docs.alliancecan.ca/wiki/COVID19_related_requests/en",
       "category": "General",
       "last_modified": "2021-03-04T21:24:41Z",
-      "file_path": "docs/pages/General/COVID19_related_requests_en.md",
-      "slug": "COVID19_related_requests_en"
+      "file_path": "docs/pages/General/COVID19_related_requests.md",
+      "slug": "COVID19_related_requests"
     },
     {
       "page_id": 17029,
-      "title": "CP2K/en",
+      "title": "CP2K",
       "url": "https://docs.alliancecan.ca/wiki/CP2K/en",
       "category": "General",
       "last_modified": "2023-04-25T15:53:28Z",
-      "file_path": "docs/pages/General/CP2K_en.md",
-      "slug": "CP2K_en"
+      "file_path": "docs/pages/General/CP2K.md",
+      "slug": "CP2K"
     },
     {
       "page_id": 6706,
-      "title": "CPLEX/en",
+      "title": "CPLEX",
       "url": "https://docs.alliancecan.ca/wiki/CPLEX/en",
       "category": "General",
       "last_modified": "2023-03-24T16:27:20Z",
-      "file_path": "docs/pages/General/CPLEX_en.md",
-      "slug": "CPLEX_en"
+      "file_path": "docs/pages/General/CPLEX.md",
+      "slug": "CPLEX"
     },
     {
       "page_id": 11471,
-      "title": "CPMD/en",
+      "title": "CPMD",
       "url": "https://docs.alliancecan.ca/wiki/CPMD/en",
       "category": "General",
       "last_modified": "2024-04-30T21:32:07Z",
-      "file_path": "docs/pages/General/CPMD_en.md",
-      "slug": "CPMD_en"
+      "file_path": "docs/pages/General/CPMD.md",
+      "slug": "CPMD"
     },
     {
       "page_id": 6116,
-      "title": "CUDA/en",
+      "title": "CUDA",
       "url": "https://docs.alliancecan.ca/wiki/CUDA/en",
       "category": "General",
       "last_modified": "2023-06-01T21:58:01Z",
-      "file_path": "docs/pages/General/CUDA_en.md",
-      "slug": "CUDA_en"
+      "file_path": "docs/pages/General/CUDA.md",
+      "slug": "CUDA"
     },
     {
       "page_id": 4410,
-      "title": "CUDA tutorial/en",
+      "title": "CUDA tutorial",
       "url": "https://docs.alliancecan.ca/wiki/CUDA_tutorial/en",
       "category": "User Guide",
       "last_modified": "2019-03-05T21:21:42Z",
-      "file_path": "docs/pages/User Guide/CUDA_tutorial_en.md",
-      "slug": "CUDA_tutorial_en"
+      "file_path": "docs/pages/User Guide/CUDA_tutorial.md",
+      "slug": "CUDA_tutorial"
     },
     {
       "page_id": 16159,
-      "title": "CVMFS/en",
+      "title": "CVMFS",
       "url": "https://docs.alliancecan.ca/wiki/CVMFS/en",
       "category": "General",
       "last_modified": "2024-03-11T16:10:27Z",
-      "file_path": "docs/pages/General/CVMFS_en.md",
-      "slug": "CVMFS_en"
+      "file_path": "docs/pages/General/CVMFS.md",
+      "slug": "CVMFS"
     },
     {
       "page_id": 1156,
-      "title": "Cedar/en",
+      "title": "Cedar",
       "url": "https://docs.alliancecan.ca/wiki/Cedar/en",
       "category": "General",
       "last_modified": "2025-08-29T15:40:21Z",
-      "file_path": "docs/pages/General/Cedar_en.md",
-      "slug": "Cedar_en"
+      "file_path": "docs/pages/General/Cedar.md",
+      "slug": "Cedar"
     },
     {
       "page_id": 20864,
@@ -679,12 +679,12 @@
     },
     {
       "page_id": 20857,
-      "title": "CephFS/en",
+      "title": "CephFS",
       "url": "https://docs.alliancecan.ca/wiki/CephFS/en",
       "category": "General",
       "last_modified": "2025-01-21T20:20:02Z",
-      "file_path": "docs/pages/General/CephFS_en.md",
-      "slug": "CephFS_en"
+      "file_path": "docs/pages/General/CephFS.md",
+      "slug": "CephFS"
     },
     {
       "page_id": 20666,
@@ -697,39 +697,39 @@
     },
     {
       "page_id": 17440,
-      "title": "Chapel/en",
+      "title": "Chapel",
       "url": "https://docs.alliancecan.ca/wiki/Chapel/en",
       "category": "General",
       "last_modified": "2025-07-25T17:32:57Z",
-      "file_path": "docs/pages/General/Chapel_en.md",
-      "slug": "Chapel_en"
+      "file_path": "docs/pages/General/Chapel.md",
+      "slug": "Chapel"
     },
     {
       "page_id": 24665,
-      "title": "CheckV/en",
+      "title": "CheckV",
       "url": "https://docs.alliancecan.ca/wiki/CheckV/en",
       "category": "General",
       "last_modified": "2023-11-27T20:11:58Z",
-      "file_path": "docs/pages/General/CheckV_en.md",
-      "slug": "CheckV_en"
+      "file_path": "docs/pages/General/CheckV.md",
+      "slug": "CheckV"
     },
     {
       "page_id": 26685,
-      "title": "CirQ/en",
+      "title": "CirQ",
       "url": "https://docs.alliancecan.ca/wiki/CirQ/en",
       "category": "General",
       "last_modified": "2024-10-16T15:55:59Z",
-      "file_path": "docs/pages/General/CirQ_en.md",
-      "slug": "CirQ_en"
+      "file_path": "docs/pages/General/CirQ.md",
+      "slug": "CirQ"
     },
     {
       "page_id": 538,
-      "title": "Cloud/en",
+      "title": "Cloud",
       "url": "https://docs.alliancecan.ca/wiki/Cloud/en",
       "category": "General",
       "last_modified": "2025-09-18T17:17:58Z",
-      "file_path": "docs/pages/General/Cloud_en.md",
-      "slug": "Cloud_en"
+      "file_path": "docs/pages/General/Cloud.md",
+      "slug": "Cloud"
     },
     {
       "page_id": 22575,
@@ -742,66 +742,66 @@
     },
     {
       "page_id": 228,
-      "title": "Cloud Quick Start/en",
+      "title": "Cloud Quick Start",
       "url": "https://docs.alliancecan.ca/wiki/Cloud_Quick_Start/en",
       "category": "General",
       "last_modified": "2023-12-19T15:00:02Z",
-      "file_path": "docs/pages/General/Cloud_Quick_Start_en.md",
-      "slug": "Cloud_Quick_Start_en"
+      "file_path": "docs/pages/General/Cloud_Quick_Start.md",
+      "slug": "Cloud_Quick_Start"
     },
     {
       "page_id": 9229,
-      "title": "Cloud RAS Allocations/en",
+      "title": "Cloud RAS Allocations",
       "url": "https://docs.alliancecan.ca/wiki/Cloud_RAS_Allocations/en",
       "category": "General",
       "last_modified": "2025-09-04T19:05:18Z",
-      "file_path": "docs/pages/General/Cloud_RAS_Allocations_en.md",
-      "slug": "Cloud_RAS_Allocations_en"
+      "file_path": "docs/pages/General/Cloud_RAS_Allocations.md",
+      "slug": "Cloud_RAS_Allocations"
     },
     {
       "page_id": 20325,
-      "title": "Cloud Technical Glossary/en",
+      "title": "Cloud Technical Glossary",
       "url": "https://docs.alliancecan.ca/wiki/Cloud_Technical_Glossary/en",
       "category": "Technical Reference",
       "last_modified": "2023-02-27T20:48:34Z",
-      "file_path": "docs/pages/Technical Reference/Cloud_Technical_Glossary_en.md",
-      "slug": "Cloud_Technical_Glossary_en"
+      "file_path": "docs/pages/Technical Reference/Cloud_Technical_Glossary.md",
+      "slug": "Cloud_Technical_Glossary"
     },
     {
       "page_id": 184,
-      "title": "Cloud resources/en",
+      "title": "Cloud resources",
       "url": "https://docs.alliancecan.ca/wiki/Cloud_resources/en",
       "category": "General",
       "last_modified": "2024-12-19T17:48:01Z",
-      "file_path": "docs/pages/General/Cloud_resources_en.md",
-      "slug": "Cloud_resources_en"
+      "file_path": "docs/pages/General/Cloud_resources.md",
+      "slug": "Cloud_resources"
     },
     {
       "page_id": 15467,
-      "title": "Cloud shared security responsibility model/en",
+      "title": "Cloud shared security responsibility model",
       "url": "https://docs.alliancecan.ca/wiki/Cloud_shared_security_responsibility_model/en",
       "category": "General",
       "last_modified": "2024-11-07T20:21:01Z",
-      "file_path": "docs/pages/General/Cloud_shared_security_responsibility_model_en.md",
-      "slug": "Cloud_shared_security_responsibility_model_en"
+      "file_path": "docs/pages/General/Cloud_shared_security_responsibility_model.md",
+      "slug": "Cloud_shared_security_responsibility_model"
     },
     {
       "page_id": 20550,
-      "title": "Cloud storage options/en",
+      "title": "Cloud storage options",
       "url": "https://docs.alliancecan.ca/wiki/Cloud_storage_options/en",
       "category": "General",
       "last_modified": "2024-07-15T19:47:16Z",
-      "file_path": "docs/pages/General/Cloud_storage_options_en.md",
-      "slug": "Cloud_storage_options_en"
+      "file_path": "docs/pages/General/Cloud_storage_options.md",
+      "slug": "Cloud_storage_options"
     },
     {
       "page_id": 15409,
-      "title": "Cloud troubleshooting guide/en",
+      "title": "Cloud troubleshooting guide",
       "url": "https://docs.alliancecan.ca/wiki/Cloud_troubleshooting_guide/en",
       "category": "User Guide",
       "last_modified": "2023-02-27T20:49:02Z",
-      "file_path": "docs/pages/User Guide/Cloud_troubleshooting_guide_en.md",
-      "slug": "Cloud_troubleshooting_guide_en"
+      "file_path": "docs/pages/User Guide/Cloud_troubleshooting_guide.md",
+      "slug": "Cloud_troubleshooting_guide"
     },
     {
       "page_id": 16419,
@@ -814,93 +814,93 @@
     },
     {
       "page_id": 12614,
-      "title": "Comet.ml/en",
+      "title": "Comet.ml",
       "url": "https://docs.alliancecan.ca/wiki/Comet.ml/en",
       "category": "General",
       "last_modified": "2025-08-29T15:40:47Z",
-      "file_path": "docs/pages/General/Comet.ml_en.md",
-      "slug": "Comet.ml_en"
+      "file_path": "docs/pages/General/Comet.ml.md",
+      "slug": "Comet.ml"
     },
     {
       "page_id": 5636,
-      "title": "Computational chemistry/en",
+      "title": "Computational chemistry",
       "url": "https://docs.alliancecan.ca/wiki/Computational_chemistry/en",
       "category": "General",
       "last_modified": "2025-01-27T16:17:17Z",
-      "file_path": "docs/pages/General/Computational_chemistry_en.md",
-      "slug": "Computational_chemistry_en"
+      "file_path": "docs/pages/General/Computational_chemistry.md",
+      "slug": "Computational_chemistry"
     },
     {
       "page_id": 25586,
-      "title": "Computational fluid dynamics/en",
+      "title": "Computational fluid dynamics",
       "url": "https://docs.alliancecan.ca/wiki/Computational_fluid_dynamics/en",
       "category": "General",
       "last_modified": "2024-05-16T19:45:01Z",
-      "file_path": "docs/pages/General/Computational_fluid_dynamics_en.md",
-      "slug": "Computational_fluid_dynamics_en"
+      "file_path": "docs/pages/General/Computational_fluid_dynamics.md",
+      "slug": "Computational_fluid_dynamics"
     },
     {
       "page_id": 701,
-      "title": "Configuring Apache to use SSL/en",
+      "title": "Configuring Apache to use SSL",
       "url": "https://docs.alliancecan.ca/wiki/Configuring_Apache_to_use_SSL/en",
       "category": "General",
       "last_modified": "2024-07-04T14:32:03Z",
-      "file_path": "docs/pages/General/Configuring_Apache_to_use_SSL_en.md",
-      "slug": "Configuring_Apache_to_use_SSL_en"
+      "file_path": "docs/pages/General/Configuring_Apache_to_use_SSL.md",
+      "slug": "Configuring_Apache_to_use_SSL"
     },
     {
       "page_id": 25216,
-      "title": "Configuring WSL as a ControlMaster relay server/en",
+      "title": "Configuring WSL as a ControlMaster relay server",
       "url": "https://docs.alliancecan.ca/wiki/Configuring_WSL_as_a_ControlMaster_relay_server/en",
       "category": "General",
       "last_modified": "2024-04-03T17:28:39Z",
-      "file_path": "docs/pages/General/Configuring_WSL_as_a_ControlMaster_relay_server_en.md",
-      "slug": "Configuring_WSL_as_a_ControlMaster_relay_server_en"
+      "file_path": "docs/pages/General/Configuring_WSL_as_a_ControlMaster_relay_server.md",
+      "slug": "Configuring_WSL_as_a_ControlMaster_relay_server"
     },
     {
       "page_id": 5040,
-      "title": "Configuring a data or web server/en",
+      "title": "Configuring a data or web server",
       "url": "https://docs.alliancecan.ca/wiki/Configuring_a_data_or_web_server/en",
       "category": "General",
       "last_modified": "2023-05-29T14:53:47Z",
-      "file_path": "docs/pages/General/Configuring_a_data_or_web_server_en.md",
-      "slug": "Configuring_a_data_or_web_server_en"
+      "file_path": "docs/pages/General/Configuring_a_data_or_web_server.md",
+      "slug": "Configuring_a_data_or_web_server"
     },
     {
       "page_id": 1665,
-      "title": "Connecting with MobaXTerm/en",
+      "title": "Connecting with MobaXTerm",
       "url": "https://docs.alliancecan.ca/wiki/Connecting_with_MobaXTerm/en",
       "category": "General",
       "last_modified": "2019-03-21T14:12:37Z",
-      "file_path": "docs/pages/General/Connecting_with_MobaXTerm_en.md",
-      "slug": "Connecting_with_MobaXTerm_en"
+      "file_path": "docs/pages/General/Connecting_with_MobaXTerm.md",
+      "slug": "Connecting_with_MobaXTerm"
     },
     {
       "page_id": 1658,
-      "title": "Connecting with PuTTY/en",
+      "title": "Connecting with PuTTY",
       "url": "https://docs.alliancecan.ca/wiki/Connecting_with_PuTTY/en",
       "category": "General",
       "last_modified": "2023-04-24T18:42:53Z",
-      "file_path": "docs/pages/General/Connecting_with_PuTTY_en.md",
-      "slug": "Connecting_with_PuTTY_en"
+      "file_path": "docs/pages/General/Connecting_with_PuTTY.md",
+      "slug": "Connecting_with_PuTTY"
     },
     {
       "page_id": 687,
-      "title": "Creating a web server on a cloud/en",
+      "title": "Creating a web server on a cloud",
       "url": "https://docs.alliancecan.ca/wiki/Creating_a_web_server_on_a_cloud/en",
       "category": "General",
       "last_modified": "2023-06-01T21:01:58Z",
-      "file_path": "docs/pages/General/Creating_a_web_server_on_a_cloud_en.md",
-      "slug": "Creating_a_web_server_on_a_cloud_en"
+      "file_path": "docs/pages/General/Creating_a_web_server_on_a_cloud.md",
+      "slug": "Creating_a_web_server_on_a_cloud"
     },
     {
       "page_id": 20830,
-      "title": "Cybersecurity: Personal computer health check/en",
+      "title": "Cybersecurity: Personal computer health check",
       "url": "https://docs.alliancecan.ca/wiki/Cybersecurity:_Personal_computer_health_check/en",
       "category": "Cybersecurity",
       "last_modified": "2022-10-11T20:02:20Z",
-      "file_path": "docs/pages/Cybersecurity/Cybersecurity_Personal_computer_health_check_en.md",
-      "slug": "Cybersecurity_Personal_computer_health_check_en"
+      "file_path": "docs/pages/Cybersecurity/Cybersecurity_Personal_computer_health_check.md",
+      "slug": "Cybersecurity_Personal_computer_health_check"
     },
     {
       "page_id": 20819,
@@ -913,57 +913,57 @@
     },
     {
       "page_id": 20818,
-      "title": "Cybersecurity for your personal computer/en",
+      "title": "Cybersecurity for your personal computer",
       "url": "https://docs.alliancecan.ca/wiki/Cybersecurity_for_your_personal_computer/en",
       "category": "General",
       "last_modified": "2022-10-12T18:29:02Z",
-      "file_path": "docs/pages/General/Cybersecurity_for_your_personal_computer_en.md",
-      "slug": "Cybersecurity_for_your_personal_computer_en"
+      "file_path": "docs/pages/General/Cybersecurity_for_your_personal_computer.md",
+      "slug": "Cybersecurity_for_your_personal_computer"
     },
     {
       "page_id": 15393,
-      "title": "DBaaS/en",
+      "title": "DBaaS",
       "url": "https://docs.alliancecan.ca/wiki/DBaaS/en",
       "category": "General",
       "last_modified": "2020-12-02T16:37:43Z",
-      "file_path": "docs/pages/General/DBaaS_en.md",
-      "slug": "DBaaS_en"
+      "file_path": "docs/pages/General/DBaaS.md",
+      "slug": "DBaaS"
     },
     {
       "page_id": 11152,
-      "title": "DL POLY/en",
+      "title": "DL POLY",
       "url": "https://docs.alliancecan.ca/wiki/DL_POLY/en",
       "category": "General",
       "last_modified": "2025-02-20T15:28:43Z",
-      "file_path": "docs/pages/General/DL_POLY_en.md",
-      "slug": "DL_POLY_en"
+      "file_path": "docs/pages/General/DL_POLY.md",
+      "slug": "DL_POLY"
     },
     {
       "page_id": 8908,
-      "title": "Dalton/en",
+      "title": "Dalton",
       "url": "https://docs.alliancecan.ca/wiki/Dalton/en",
       "category": "General",
       "last_modified": "2018-09-17T17:22:19Z",
-      "file_path": "docs/pages/General/Dalton_en.md",
-      "slug": "Dalton_en"
+      "file_path": "docs/pages/General/Dalton.md",
+      "slug": "Dalton"
     },
     {
       "page_id": 11266,
-      "title": "Dar/en",
+      "title": "Dar",
       "url": "https://docs.alliancecan.ca/wiki/Dar/en",
       "category": "General",
       "last_modified": "2024-07-15T20:45:30Z",
-      "file_path": "docs/pages/General/Dar_en.md",
-      "slug": "Dar_en"
+      "file_path": "docs/pages/General/Dar.md",
+      "slug": "Dar"
     },
     {
       "page_id": 27324,
-      "title": "Dask/en",
+      "title": "Dask",
       "url": "https://docs.alliancecan.ca/wiki/Dask/en",
       "category": "General",
       "last_modified": "2025-05-30T08:34:16Z",
-      "file_path": "docs/pages/General/Dask_en.md",
-      "slug": "Dask_en"
+      "file_path": "docs/pages/General/Dask.md",
+      "slug": "Dask"
     },
     {
       "page_id": 5597,
@@ -976,48 +976,48 @@
     },
     {
       "page_id": 9482,
-      "title": "Data management at Niagara/en",
+      "title": "Data management at Niagara",
       "url": "https://docs.alliancecan.ca/wiki/Data_management_at_Niagara/en",
       "category": "General",
       "last_modified": "2025-06-13T14:47:42Z",
-      "file_path": "docs/pages/General/Data_management_at_Niagara_en.md",
-      "slug": "Data_management_at_Niagara_en"
+      "file_path": "docs/pages/General/Data_management_at_Niagara.md",
+      "slug": "Data_management_at_Niagara"
     },
     {
       "page_id": 15537,
-      "title": "Data protection, privacy, and confidentiality/en",
+      "title": "Data protection, privacy, and confidentiality",
       "url": "https://docs.alliancecan.ca/wiki/Data_protection,_privacy,_and_confidentiality/en",
       "category": "General",
       "last_modified": "2025-06-17T17:54:47Z",
-      "file_path": "docs/pages/General/Data_protection,_privacy,_and_confidentiality_en.md",
-      "slug": "Data_protection,_privacy,_and_confidentiality_en"
+      "file_path": "docs/pages/General/Data_protection,_privacy,_and_confidentiality.md",
+      "slug": "Data_protection,_privacy,_and_confidentiality"
     },
     {
       "page_id": 6825,
-      "title": "Database servers/en",
+      "title": "Database servers",
       "url": "https://docs.alliancecan.ca/wiki/Database_servers/en",
       "category": "General",
       "last_modified": "2025-09-15T18:25:06Z",
-      "file_path": "docs/pages/General/Database_servers_en.md",
-      "slug": "Database_servers_en"
+      "file_path": "docs/pages/General/Database_servers.md",
+      "slug": "Database_servers"
     },
     {
       "page_id": 11634,
-      "title": "Debugging and profiling/en",
+      "title": "Debugging and profiling",
       "url": "https://docs.alliancecan.ca/wiki/Debugging_and_profiling/en",
       "category": "General",
       "last_modified": "2023-06-05T17:40:21Z",
-      "file_path": "docs/pages/General/Debugging_and_profiling_en.md",
-      "slug": "Debugging_and_profiling_en"
+      "file_path": "docs/pages/General/Debugging_and_profiling.md",
+      "slug": "Debugging_and_profiling"
     },
     {
       "page_id": 25399,
-      "title": "Dedalus/en",
+      "title": "Dedalus",
       "url": "https://docs.alliancecan.ca/wiki/Dedalus/en",
       "category": "General",
       "last_modified": "2024-09-30T17:25:50Z",
-      "file_path": "docs/pages/General/Dedalus_en.md",
-      "slug": "Dedalus_en"
+      "file_path": "docs/pages/General/Dedalus.md",
+      "slug": "Dedalus"
     },
     {
       "page_id": 23434,
@@ -1039,21 +1039,21 @@
     },
     {
       "page_id": 16270,
-      "title": "Diskusage Explorer/en",
+      "title": "Diskusage Explorer",
       "url": "https://docs.alliancecan.ca/wiki/Diskusage_Explorer/en",
       "category": "General",
       "last_modified": "2025-09-10T18:37:53Z",
-      "file_path": "docs/pages/General/Diskusage_Explorer_en.md",
-      "slug": "Diskusage_Explorer_en"
+      "file_path": "docs/pages/General/Diskusage_Explorer.md",
+      "slug": "Diskusage_Explorer"
     },
     {
       "page_id": 18573,
-      "title": "EasyBuild/en",
+      "title": "EasyBuild",
       "url": "https://docs.alliancecan.ca/wiki/EasyBuild/en",
       "category": "General",
       "last_modified": "2023-09-14T16:12:01Z",
-      "file_path": "docs/pages/General/EasyBuild_en.md",
-      "slug": "EasyBuild_en"
+      "file_path": "docs/pages/General/EasyBuild.md",
+      "slug": "EasyBuild"
     },
     {
       "page_id": 28370,
@@ -1066,64 +1066,64 @@
     },
     {
       "page_id": 3859,
-      "title": "FEniCS/en",
+      "title": "FEniCS",
       "url": "https://docs.alliancecan.ca/wiki/FEniCS/en",
       "category": "General",
       "last_modified": "2025-09-09T16:44:01Z",
-      "file_path": "docs/pages/General/FEniCS_en.md",
-      "slug": "FEniCS_en"
+      "file_path": "docs/pages/General/FEniCS.md",
+      "slug": "FEniCS"
     },
     {
       "page_id": 24490,
-      "title": "FMRIPrep/en",
+      "title": "FMRIPrep",
       "url": "https://docs.alliancecan.ca/wiki/FMRIPrep/en",
       "category": "General",
       "last_modified": "2023-11-02T19:27:36Z",
-      "file_path": "docs/pages/General/FMRIPrep_en.md",
-      "slug": "FMRIPrep_en"
+      "file_path": "docs/pages/General/FMRIPrep.md",
+      "slug": "FMRIPrep"
     },
     {
       "page_id": 3122,
-      "title": "FTP server in the Cloud/en",
+      "title": "FTP server in the Cloud",
       "url": "https://docs.alliancecan.ca/wiki/FTP_server_in_the_Cloud/en",
       "category": "General",
       "last_modified": "2023-07-06T21:23:01Z",
-      "file_path": "docs/pages/General/FTP_server_in_the_Cloud_en.md",
-      "slug": "FTP_server_in_the_Cloud_en"
+      "file_path": "docs/pages/General/FTP_server_in_the_Cloud.md",
+      "slug": "FTP_server_in_the_Cloud"
     },
     {
       "page_id": 25426,
-      "title": "Faiss/en",
+      "title": "Faiss",
       "url": "https://docs.alliancecan.ca/wiki/Faiss/en",
       "category": "General",
       "last_modified": "2024-05-02T20:11:23Z",
-      "file_path": "docs/pages/General/Faiss_en.md",
-      "slug": "Faiss_en"
+      "file_path": "docs/pages/General/Faiss.md",
+      "slug": "Faiss"
     },
     {
       "page_id": 27265,
-      "title": "FastTree/en",
+      "title": "FastTree",
       "url": "https://docs.alliancecan.ca/wiki/FastTree/en",
       "category": "General",
       "last_modified": "2024-12-17T21:19:57Z",
-      "file_path": "docs/pages/General/FastTree_en.md",
-      "slug": "FastTree_en"
+      "file_path": "docs/pages/General/FastTree.md",
+      "slug": "FastTree"
     },
     {
       "page_id": 26936,
-      "title": "Fir/en",
+      "title": "Fir",
       "url": "https://docs.alliancecan.ca/wiki/Fir/en",
       "category": "General",
-      "last_modified": "2025-10-10T19:00:03Z",
-      "file_path": "docs/pages/General/Fir_en.md",
-      "slug": "Fir_en"
+      "last_modified": "2025-12-03T14:47:51Z",
+      "file_path": "docs/pages/General/Fir.md",
+      "slug": "Fir"
     },
     {
       "page_id": 29047,
       "title": "Firedrake",
       "url": "https://docs.alliancecan.ca/wiki/Firedrake",
       "category": "General",
-      "last_modified": "2025-07-31T19:23:02Z",
+      "last_modified": "2025-11-27T12:46:05Z",
       "file_path": "docs/pages/General/Firedrake.md",
       "slug": "Firedrake"
     },
@@ -1147,219 +1147,219 @@
     },
     {
       "page_id": 3471,
-      "title": "Fortran/en",
+      "title": "Fortran",
       "url": "https://docs.alliancecan.ca/wiki/Fortran/en",
       "category": "General",
       "last_modified": "2019-03-05T21:25:25Z",
-      "file_path": "docs/pages/General/Fortran_en.md",
-      "slug": "Fortran_en"
+      "file_path": "docs/pages/General/Fortran.md",
+      "slug": "Fortran"
     },
     {
       "page_id": 14372,
-      "title": "FreeSurfer/en",
+      "title": "FreeSurfer",
       "url": "https://docs.alliancecan.ca/wiki/FreeSurfer/en",
       "category": "General",
       "last_modified": "2022-07-08T22:19:58Z",
-      "file_path": "docs/pages/General/FreeSurfer_en.md",
-      "slug": "FreeSurfer_en"
+      "file_path": "docs/pages/General/FreeSurfer.md",
+      "slug": "FreeSurfer"
     },
     {
       "page_id": 5091,
-      "title": "Frequently Asked Questions/en",
+      "title": "Frequently Asked Questions",
       "url": "https://docs.alliancecan.ca/wiki/Frequently_Asked_Questions/en",
       "category": "General",
       "last_modified": "2024-07-15T19:47:35Z",
-      "file_path": "docs/pages/General/Frequently_Asked_Questions_en.md",
-      "slug": "Frequently_Asked_Questions_en"
+      "file_path": "docs/pages/General/Frequently_Asked_Questions.md",
+      "slug": "Frequently_Asked_Questions"
     },
     {
       "page_id": 8741,
-      "title": "Frequently Asked Questions about the CCDB/en",
+      "title": "Frequently Asked Questions about the CCDB",
       "url": "https://docs.alliancecan.ca/wiki/Frequently_Asked_Questions_about_the_CCDB/en",
       "category": "General",
       "last_modified": "2025-09-03T19:32:33Z",
-      "file_path": "docs/pages/General/Frequently_Asked_Questions_about_the_CCDB_en.md",
-      "slug": "Frequently_Asked_Questions_about_the_CCDB_en"
+      "file_path": "docs/pages/General/Frequently_Asked_Questions_about_the_CCDB.md",
+      "slug": "Frequently_Asked_Questions_about_the_CCDB"
     },
     {
       "page_id": 6511,
-      "title": "GAMESS-US/en",
+      "title": "GAMESS-US",
       "url": "https://docs.alliancecan.ca/wiki/GAMESS-US/en",
       "category": "General",
       "last_modified": "2024-07-12T14:55:04Z",
-      "file_path": "docs/pages/General/GAMESS-US_en.md",
-      "slug": "GAMESS-US_en"
+      "file_path": "docs/pages/General/GAMESS-US.md",
+      "slug": "GAMESS-US"
     },
     {
       "page_id": 14578,
-      "title": "GATK/en",
+      "title": "GATK",
       "url": "https://docs.alliancecan.ca/wiki/GATK/en",
       "category": "General",
       "last_modified": "2023-07-24T18:04:02Z",
-      "file_path": "docs/pages/General/GATK_en.md",
-      "slug": "GATK_en"
+      "file_path": "docs/pages/General/GATK.md",
+      "slug": "GATK"
     },
     {
       "page_id": 7066,
-      "title": "GBrowse/en",
+      "title": "GBrowse",
       "url": "https://docs.alliancecan.ca/wiki/GBrowse/en",
       "category": "General",
       "last_modified": "2025-09-10T18:40:08Z",
-      "file_path": "docs/pages/General/GBrowse_en.md",
-      "slug": "GBrowse_en"
+      "file_path": "docs/pages/General/GBrowse.md",
+      "slug": "GBrowse"
     },
     {
       "page_id": 5126,
-      "title": "GCC C++ Dual ABI/en",
+      "title": "GCC C++ Dual ABI",
       "url": "https://docs.alliancecan.ca/wiki/GCC_C%2B%2B_Dual_ABI/en",
       "category": "General",
       "last_modified": "2017-12-05T16:47:49Z",
-      "file_path": "docs/pages/General/GCC_C++_Dual_ABI_en.md",
-      "slug": "GCC_C++_Dual_ABI_en"
+      "file_path": "docs/pages/General/GCC_C++_Dual_ABI.md",
+      "slug": "GCC_C++_Dual_ABI"
     },
     {
       "page_id": 24833,
-      "title": "GDAL/en",
+      "title": "GDAL",
       "url": "https://docs.alliancecan.ca/wiki/GDAL/en",
       "category": "General",
       "last_modified": "2025-02-11T16:22:00Z",
-      "file_path": "docs/pages/General/GDAL_en.md",
-      "slug": "GDAL_en"
+      "file_path": "docs/pages/General/GDAL.md",
+      "slug": "GDAL"
     },
     {
       "page_id": 9401,
-      "title": "GDB/en",
+      "title": "GDB",
       "url": "https://docs.alliancecan.ca/wiki/GDB/en",
       "category": "General",
       "last_modified": "2024-07-12T14:54:51Z",
-      "file_path": "docs/pages/General/GDB_en.md",
-      "slug": "GDB_en"
+      "file_path": "docs/pages/General/GDB.md",
+      "slug": "GDB"
     },
     {
       "page_id": 17360,
-      "title": "GIS/en",
+      "title": "GIS",
       "url": "https://docs.alliancecan.ca/wiki/GIS/en",
       "category": "General",
       "last_modified": "2024-01-22T22:28:17Z",
-      "file_path": "docs/pages/General/GIS_en.md",
-      "slug": "GIS_en"
+      "file_path": "docs/pages/General/GIS.md",
+      "slug": "GIS"
     },
     {
       "page_id": 7759,
-      "title": "GLOST/en",
+      "title": "GLOST",
       "url": "https://docs.alliancecan.ca/wiki/GLOST/en",
       "category": "General",
       "last_modified": "2025-03-05T21:05:05Z",
-      "file_path": "docs/pages/General/GLOST_en.md",
-      "slug": "GLOST_en"
+      "file_path": "docs/pages/General/GLOST.md",
+      "slug": "GLOST"
     },
     {
       "page_id": 728,
-      "title": "GNU Parallel/en",
+      "title": "GNU Parallel",
       "url": "https://docs.alliancecan.ca/wiki/GNU_Parallel/en",
       "category": "General",
       "last_modified": "2025-04-03T13:45:32Z",
-      "file_path": "docs/pages/General/GNU_Parallel_en.md",
-      "slug": "GNU_Parallel_en"
+      "file_path": "docs/pages/General/GNU_Parallel.md",
+      "slug": "GNU_Parallel"
     },
     {
       "page_id": 21749,
-      "title": "GPAW/en",
+      "title": "GPAW",
       "url": "https://docs.alliancecan.ca/wiki/GPAW/en",
       "category": "General",
       "last_modified": "2023-04-21T20:20:50Z",
-      "file_path": "docs/pages/General/GPAW_en.md",
-      "slug": "GPAW_en"
+      "file_path": "docs/pages/General/GPAW.md",
+      "slug": "GPAW"
     },
     {
       "page_id": 4167,
-      "title": "GROMACS/en",
+      "title": "GROMACS",
       "url": "https://docs.alliancecan.ca/wiki/GROMACS/en",
       "category": "General",
       "last_modified": "2025-08-29T12:31:02Z",
-      "file_path": "docs/pages/General/GROMACS_en.md",
-      "slug": "GROMACS_en"
+      "file_path": "docs/pages/General/GROMACS.md",
+      "slug": "GROMACS"
     },
     {
       "page_id": 15711,
-      "title": "Galaxy/en",
+      "title": "Galaxy",
       "url": "https://docs.alliancecan.ca/wiki/Galaxy/en",
       "category": "General",
       "last_modified": "2025-09-10T18:32:40Z",
-      "file_path": "docs/pages/General/Galaxy_en.md",
-      "slug": "Galaxy_en"
+      "file_path": "docs/pages/General/Galaxy.md",
+      "slug": "Galaxy"
     },
     {
       "page_id": 3737,
-      "title": "Gaussian/en",
+      "title": "Gaussian",
       "url": "https://docs.alliancecan.ca/wiki/Gaussian/en",
       "category": "General",
       "last_modified": "2025-09-05T19:26:33Z",
-      "file_path": "docs/pages/General/Gaussian_en.md",
-      "slug": "Gaussian_en"
+      "file_path": "docs/pages/General/Gaussian.md",
+      "slug": "Gaussian"
     },
     {
       "page_id": 6205,
-      "title": "Gaussian error messages/en",
+      "title": "Gaussian error messages",
       "url": "https://docs.alliancecan.ca/wiki/Gaussian_error_messages/en",
       "category": "General",
       "last_modified": "2022-07-19T22:43:17Z",
-      "file_path": "docs/pages/General/Gaussian_error_messages_en.md",
-      "slug": "Gaussian_error_messages_en"
+      "file_path": "docs/pages/General/Gaussian_error_messages.md",
+      "slug": "Gaussian_error_messages"
     },
     {
       "page_id": 1608,
-      "title": "General directives for migration/en",
+      "title": "General directives for migration",
       "url": "https://docs.alliancecan.ca/wiki/General_directives_for_migration/en",
       "category": "General",
       "last_modified": "2023-11-27T16:49:01Z",
-      "file_path": "docs/pages/General/General_directives_for_migration_en.md",
-      "slug": "General_directives_for_migration_en"
+      "file_path": "docs/pages/General/General_directives_for_migration.md",
+      "slug": "General_directives_for_migration"
     },
     {
       "page_id": 1802,
-      "title": "Generating SSH keys in Windows/en",
+      "title": "Generating SSH keys in Windows",
       "url": "https://docs.alliancecan.ca/wiki/Generating_SSH_keys_in_Windows/en",
       "category": "General",
       "last_modified": "2023-01-31T20:50:36Z",
-      "file_path": "docs/pages/General/Generating_SSH_keys_in_Windows_en.md",
-      "slug": "Generating_SSH_keys_in_Windows_en"
+      "file_path": "docs/pages/General/Generating_SSH_keys_in_Windows.md",
+      "slug": "Generating_SSH_keys_in_Windows"
     },
     {
       "page_id": 635,
-      "title": "Getting started/en",
+      "title": "Getting started",
       "url": "https://docs.alliancecan.ca/wiki/Getting_started/en",
       "category": "Getting Started",
-      "last_modified": "2025-10-07T15:03:50Z",
-      "file_path": "docs/pages/Getting Started/Getting_started_en.md",
-      "slug": "Getting_started_en"
+      "last_modified": "2025-12-05T13:37:27Z",
+      "file_path": "docs/pages/Getting Started/Getting_started.md",
+      "slug": "Getting_started"
     },
     {
       "page_id": 3506,
-      "title": "Getting started with the new national systems/en",
+      "title": "Getting started with the new national systems",
       "url": "https://docs.alliancecan.ca/wiki/Getting_started_with_the_new_national_systems/en",
       "category": "Getting Started",
       "last_modified": "2023-09-25T18:22:01Z",
-      "file_path": "docs/pages/Getting Started/Getting_started_with_the_new_national_systems_en.md",
-      "slug": "Getting_started_with_the_new_national_systems_en"
+      "file_path": "docs/pages/Getting Started/Getting_started_with_the_new_national_systems.md",
+      "slug": "Getting_started_with_the_new_national_systems"
     },
     {
       "page_id": 8994,
-      "title": "Git/en",
+      "title": "Git",
       "url": "https://docs.alliancecan.ca/wiki/Git/en",
       "category": "General",
       "last_modified": "2025-08-12T19:14:03Z",
-      "file_path": "docs/pages/General/Git_en.md",
-      "slug": "Git_en"
+      "file_path": "docs/pages/General/Git.md",
+      "slug": "Git"
     },
     {
       "page_id": 222,
-      "title": "Globus/en",
+      "title": "Globus",
       "url": "https://docs.alliancecan.ca/wiki/Globus/en",
       "category": "General",
       "last_modified": "2025-08-28T22:13:01Z",
-      "file_path": "docs/pages/General/Globus_en.md",
-      "slug": "Globus_en"
+      "file_path": "docs/pages/General/Globus.md",
+      "slug": "Globus"
     },
     {
       "page_id": 12448,
@@ -1372,48 +1372,48 @@
     },
     {
       "page_id": 14784,
-      "title": "Gprof/en",
+      "title": "Gprof",
       "url": "https://docs.alliancecan.ca/wiki/Gprof/en",
       "category": "General",
       "last_modified": "2020-10-13T17:50:03Z",
-      "file_path": "docs/pages/General/Gprof_en.md",
-      "slug": "Gprof_en"
+      "file_path": "docs/pages/General/Gprof.md",
+      "slug": "Gprof"
     },
     {
       "page_id": 1194,
-      "title": "Graham/en",
+      "title": "Graham",
       "url": "https://docs.alliancecan.ca/wiki/Graham/en",
       "category": "General",
       "last_modified": "2025-09-23T22:00:56Z",
-      "file_path": "docs/pages/General/Graham_en.md",
-      "slug": "Graham_en"
+      "file_path": "docs/pages/General/Graham.md",
+      "slug": "Graham"
     },
     {
       "page_id": 14002,
-      "title": "Gurobi/en",
+      "title": "Gurobi",
       "url": "https://docs.alliancecan.ca/wiki/Gurobi/en",
       "category": "General",
       "last_modified": "2025-01-20T19:16:02Z",
-      "file_path": "docs/pages/General/Gurobi_en.md",
-      "slug": "Gurobi_en"
+      "file_path": "docs/pages/General/Gurobi.md",
+      "slug": "Gurobi"
     },
     {
       "page_id": 6595,
-      "title": "HDF5/en",
+      "title": "HDF5",
       "url": "https://docs.alliancecan.ca/wiki/HDF5/en",
       "category": "General",
       "last_modified": "2025-08-29T13:27:02Z",
-      "file_path": "docs/pages/General/HDF5_en.md",
-      "slug": "HDF5_en"
+      "file_path": "docs/pages/General/HDF5.md",
+      "slug": "HDF5"
     },
     {
       "page_id": 12500,
-      "title": "HPC4Health/en",
+      "title": "HPC4Health",
       "url": "https://docs.alliancecan.ca/wiki/HPC4Health/en",
       "category": "General",
       "last_modified": "2020-09-25T21:11:03Z",
-      "file_path": "docs/pages/General/HPC4Health_en.md",
-      "slug": "HPC4Health_en"
+      "file_path": "docs/pages/General/HPC4Health.md",
+      "slug": "HPC4Health"
     },
     {
       "page_id": 26013,
@@ -1426,12 +1426,12 @@
     },
     {
       "page_id": 11765,
-      "title": "Handling large collections of files/en",
+      "title": "Handling large collections of files",
       "url": "https://docs.alliancecan.ca/wiki/Handling_large_collections_of_files/en",
       "category": "General",
       "last_modified": "2024-08-29T22:26:37Z",
-      "file_path": "docs/pages/General/Handling_large_collections_of_files_en.md",
-      "slug": "Handling_large_collections_of_files_en"
+      "file_path": "docs/pages/General/Handling_large_collections_of_files.md",
+      "slug": "Handling_large_collections_of_files"
     },
     {
       "page_id": 23413,
@@ -1444,30 +1444,30 @@
     },
     {
       "page_id": 20165,
-      "title": "Humanities and Social Sciences/en",
+      "title": "Humanities and Social Sciences",
       "url": "https://docs.alliancecan.ca/wiki/Humanities_and_Social_Sciences/en",
       "category": "General",
       "last_modified": "2025-07-23T18:50:11Z",
-      "file_path": "docs/pages/General/Humanities_and_Social_Sciences_en.md",
-      "slug": "Humanities_and_Social_Sciences_en"
+      "file_path": "docs/pages/General/Humanities_and_Social_Sciences.md",
+      "slug": "Humanities_and_Social_Sciences"
     },
     {
       "page_id": 24565,
-      "title": "Hyper-Q / MPS/en",
+      "title": "Hyper-Q / MPS",
       "url": "https://docs.alliancecan.ca/wiki/Hyper-Q_/_MPS/en",
       "category": "General",
       "last_modified": "2025-08-31T14:16:03Z",
-      "file_path": "docs/pages/General/Hyper-Q_MPS_en.md",
-      "slug": "Hyper-Q_MPS_en"
+      "file_path": "docs/pages/General/Hyper-Q_MPS.md",
+      "slug": "Hyper-Q_MPS"
     },
     {
       "page_id": 12768,
-      "title": "Hélios/en",
+      "title": "Hélios",
       "url": "https://docs.alliancecan.ca/wiki/H%C3%A9lios/en",
       "category": "General",
       "last_modified": "2024-08-29T23:00:02Z",
-      "file_path": "docs/pages/General/Hélios_en.md",
-      "slug": "Hélios_en"
+      "file_path": "docs/pages/General/Hélios.md",
+      "slug": "Hélios"
     },
     {
       "page_id": 17342,
@@ -1480,30 +1480,30 @@
     },
     {
       "page_id": 243,
-      "title": "Including a command within the wiki/en",
+      "title": "Including a command within the wiki",
       "url": "https://docs.alliancecan.ca/wiki/Including_a_command_within_the_wiki/en",
       "category": "General",
       "last_modified": "2019-02-15T17:58:04Z",
-      "file_path": "docs/pages/General/Including_a_command_within_the_wiki_en.md",
-      "slug": "Including_a_command_within_the_wiki_en"
+      "file_path": "docs/pages/General/Including_a_command_within_the_wiki.md",
+      "slug": "Including_a_command_within_the_wiki"
     },
     {
       "page_id": 1380,
-      "title": "Including a source code file within the wiki/en",
+      "title": "Including a source code file within the wiki",
       "url": "https://docs.alliancecan.ca/wiki/Including_a_source_code_file_within_the_wiki/en",
       "category": "General",
       "last_modified": "2018-02-14T12:45:20Z",
-      "file_path": "docs/pages/General/Including_a_source_code_file_within_the_wiki_en.md",
-      "slug": "Including_a_source_code_file_within_the_wiki_en"
+      "file_path": "docs/pages/General/Including_a_source_code_file_within_the_wiki.md",
+      "slug": "Including_a_source_code_file_within_the_wiki"
     },
     {
       "page_id": 232,
-      "title": "Including source code within the wiki/en",
+      "title": "Including source code within the wiki",
       "url": "https://docs.alliancecan.ca/wiki/Including_source_code_within_the_wiki/en",
       "category": "General",
       "last_modified": "2016-05-19T21:57:56Z",
-      "file_path": "docs/pages/General/Including_source_code_within_the_wiki_en.md",
-      "slug": "Including_source_code_within_the_wiki_en"
+      "file_path": "docs/pages/General/Including_source_code_within_the_wiki.md",
+      "slug": "Including_source_code_within_the_wiki"
     },
     {
       "page_id": 24929,
@@ -1516,102 +1516,111 @@
     },
     {
       "page_id": 26409,
-      "title": "Infrastructure renewal/en",
+      "title": "Infrastructure renewal",
       "url": "https://docs.alliancecan.ca/wiki/Infrastructure_renewal/en",
       "category": "General",
       "last_modified": "2025-11-28T18:40:04Z",
-      "file_path": "docs/pages/General/Infrastructure_renewal_en.md",
-      "slug": "Infrastructure_renewal_en"
+      "file_path": "docs/pages/General/Infrastructure_renewal.md",
+      "slug": "Infrastructure_renewal"
     },
     {
       "page_id": 27579,
-      "title": "Infrastructure renewal completed events/en",
+      "title": "Infrastructure renewal completed events",
       "url": "https://docs.alliancecan.ca/wiki/Infrastructure_renewal_completed_events/en",
       "category": "General",
       "last_modified": "2025-09-30T20:33:04Z",
-      "file_path": "docs/pages/General/Infrastructure_renewal_completed_events_en.md",
-      "slug": "Infrastructure_renewal_completed_events_en"
+      "file_path": "docs/pages/General/Infrastructure_renewal_completed_events.md",
+      "slug": "Infrastructure_renewal_completed_events"
     },
     {
       "page_id": 2933,
-      "title": "Installing software in your home directory/en",
+      "title": "Installing software in your home directory",
       "url": "https://docs.alliancecan.ca/wiki/Installing_software_in_your_home_directory/en",
       "category": "Getting Started",
       "last_modified": "2025-10-22T18:37:28Z",
-      "file_path": "docs/pages/Getting Started/Installing_software_in_your_home_directory_en.md",
-      "slug": "Installing_software_in_your_home_directory_en"
+      "file_path": "docs/pages/Getting Started/Installing_software_in_your_home_directory.md",
+      "slug": "Installing_software_in_your_home_directory"
+    },
+    {
+      "page_id": 32081,
+      "title": "Interpretable AI",
+      "url": "https://docs.alliancecan.ca/wiki/Interpretable_AI",
+      "category": "General",
+      "last_modified": "2025-12-06T14:07:27Z",
+      "file_path": "docs/pages/General/Interpretable_AI.md",
+      "slug": "Interpretable_AI"
     },
     {
       "page_id": 2951,
-      "title": "Java/en",
+      "title": "Java",
       "url": "https://docs.alliancecan.ca/wiki/Java/en",
       "category": "General",
       "last_modified": "2023-03-31T17:03:42Z",
-      "file_path": "docs/pages/General/Java_en.md",
-      "slug": "Java_en"
+      "file_path": "docs/pages/General/Java.md",
+      "slug": "Java"
     },
     {
       "page_id": 7979,
-      "title": "Job arrays/en",
+      "title": "Job arrays",
       "url": "https://docs.alliancecan.ca/wiki/Job_arrays/en",
       "category": "General",
       "last_modified": "2024-02-09T20:27:02Z",
-      "file_path": "docs/pages/General/Job_arrays_en.md",
-      "slug": "Job_arrays_en"
+      "file_path": "docs/pages/General/Job_arrays.md",
+      "slug": "Job_arrays"
     },
     {
       "page_id": 4074,
-      "title": "Job scheduling policies/en",
+      "title": "Job scheduling policies",
       "url": "https://docs.alliancecan.ca/wiki/Job_scheduling_policies/en",
       "category": "General",
-      "last_modified": "2025-11-14T20:51:36Z",
-      "file_path": "docs/pages/General/Job_scheduling_policies_en.md",
-      "slug": "Job_scheduling_policies_en"
+      "last_modified": "2025-12-02T18:49:00Z",
+      "file_path": "docs/pages/General/Job_scheduling_policies.md",
+      "slug": "Job_scheduling_policies"
     },
     {
       "page_id": 10354,
-      "title": "Julia/en",
+      "title": "Julia",
       "url": "https://docs.alliancecan.ca/wiki/Julia/en",
       "category": "General",
       "last_modified": "2025-10-15T14:45:54Z",
-      "file_path": "docs/pages/General/Julia_en.md",
-      "slug": "Julia_en"
+      "file_path": "docs/pages/General/Julia.md",
+      "slug": "Julia"
     },
     {
       "page_id": 18540,
-      "title": "Jupyter/en",
+      "title": "Jupyter",
       "url": "https://docs.alliancecan.ca/wiki/Jupyter/en",
       "category": "General",
       "last_modified": "2022-07-19T12:51:41Z",
-      "file_path": "docs/pages/General/Jupyter_en.md",
-      "slug": "Jupyter_en"
+      "file_path": "docs/pages/General/Jupyter.md",
+      "slug": "Jupyter"
     },
     {
       "page_id": 4743,
-      "title": "JupyterHub/en",
+      "title": "JupyterHub",
       "url": "https://docs.alliancecan.ca/wiki/JupyterHub/en",
       "category": "General",
       "last_modified": "2025-09-30T16:07:01Z",
-      "file_path": "docs/pages/General/JupyterHub_en.md",
-      "slug": "JupyterHub_en"
+      "file_path": "docs/pages/General/JupyterHub.md",
+      "slug": "JupyterHub"
     },
     {
       "page_id": 15666,
-      "title": "JupyterLab/en",
+      "title": "JupyterLab",
       "url": "https://docs.alliancecan.ca/wiki/JupyterLab/en",
       "category": "General",
-      "last_modified": "2025-10-22T14:13:35Z",
-      "file_path": "docs/pages/General/JupyterLab_en.md",
-      "slug": "JupyterLab_en"
+      "last_modified": "2025-12-03T19:36:53Z",
+      "file_path": "docs/pages/General/JupyterLab.md",
+      "slug": "JupyterLab"
     },
     {
       "page_id": 4559,
-      "title": "JupyterNotebook/en",
+      "title": "JupyterNotebook",
       "url": "https://docs.alliancecan.ca/wiki/JupyterNotebook/en",
       "category": "General",
       "last_modified": "2025-09-10T17:59:02Z",
-      "file_path": "docs/pages/General/JupyterNotebook_en.md",
-      "slug": "JupyterNotebook_en"
+      "file_path": "docs/pages/General/JupyterNotebook.md",
+      "slug": "JupyterNotebook"
     },
     {
       "page_id": 13870,
@@ -1624,39 +1633,39 @@
     },
     {
       "page_id": 9908,
-      "title": "Keras/en",
+      "title": "Keras",
       "url": "https://docs.alliancecan.ca/wiki/Keras/en",
       "category": "General",
       "last_modified": "2023-06-27T16:13:02Z",
-      "file_path": "docs/pages/General/Keras_en.md",
-      "slug": "Keras_en"
+      "file_path": "docs/pages/General/Keras.md",
+      "slug": "Keras"
     },
     {
       "page_id": 28159,
-      "title": "Killarney/en",
+      "title": "Killarney",
       "url": "https://docs.alliancecan.ca/wiki/Killarney/en",
       "category": "General",
-      "last_modified": "2025-09-04T19:06:01Z",
-      "file_path": "docs/pages/General/Killarney_en.md",
-      "slug": "Killarney_en"
+      "last_modified": "2025-11-03T20:57:05Z",
+      "file_path": "docs/pages/General/Killarney.md",
+      "slug": "Killarney"
     },
     {
       "page_id": 8890,
-      "title": "LAMMPS/en",
+      "title": "LAMMPS",
       "url": "https://docs.alliancecan.ca/wiki/LAMMPS/en",
       "category": "General",
       "last_modified": "2025-03-06T14:09:16Z",
-      "file_path": "docs/pages/General/LAMMPS_en.md",
-      "slug": "LAMMPS_en"
+      "file_path": "docs/pages/General/LAMMPS.md",
+      "slug": "LAMMPS"
     },
     {
       "page_id": 14902,
-      "title": "LS-DYNA/en",
+      "title": "LS-DYNA",
       "url": "https://docs.alliancecan.ca/wiki/LS-DYNA/en",
       "category": "General",
       "last_modified": "2025-10-21T14:19:23Z",
-      "file_path": "docs/pages/General/LS-DYNA_en.md",
-      "slug": "LS-DYNA_en"
+      "file_path": "docs/pages/General/LS-DYNA.md",
+      "slug": "LS-DYNA"
     },
     {
       "page_id": 31318,
@@ -1669,66 +1678,66 @@
     },
     {
       "page_id": 19194,
-      "title": "Large Scale Machine Learning (Big Data)/en",
+      "title": "Large Scale Machine Learning (Big Data)",
       "url": "https://docs.alliancecan.ca/wiki/Large_Scale_Machine_Learning_(Big_Data)/en",
       "category": "General",
       "last_modified": "2023-11-28T20:44:25Z",
-      "file_path": "docs/pages/General/Large_Scale_Machine_Learning_(Big_Data)_en.md",
-      "slug": "Large_Scale_Machine_Learning_(Big_Data)_en"
+      "file_path": "docs/pages/General/Large_Scale_Machine_Learning_(Big_Data).md",
+      "slug": "Large_Scale_Machine_Learning_(Big_Data)"
     },
     {
       "page_id": 225,
-      "title": "Linux introduction/en",
+      "title": "Linux introduction",
       "url": "https://docs.alliancecan.ca/wiki/Linux_introduction/en",
       "category": "General",
       "last_modified": "2024-10-16T16:58:05Z",
-      "file_path": "docs/pages/General/Linux_introduction_en.md",
-      "slug": "Linux_introduction_en"
+      "file_path": "docs/pages/General/Linux_introduction.md",
+      "slug": "Linux_introduction"
     },
     {
       "page_id": 6301,
-      "title": "Lumerical/en",
+      "title": "Lumerical",
       "url": "https://docs.alliancecan.ca/wiki/Lumerical/en",
       "category": "General",
       "last_modified": "2022-12-12T15:34:23Z",
-      "file_path": "docs/pages/General/Lumerical_en.md",
-      "slug": "Lumerical_en"
+      "file_path": "docs/pages/General/Lumerical.md",
+      "slug": "Lumerical"
     },
     {
       "page_id": 14095,
-      "title": "MAFFT/en",
+      "title": "MAFFT",
       "url": "https://docs.alliancecan.ca/wiki/MAFFT/en",
       "category": "General",
       "last_modified": "2020-07-29T15:36:02Z",
-      "file_path": "docs/pages/General/MAFFT_en.md",
-      "slug": "MAFFT_en"
+      "file_path": "docs/pages/General/MAFFT.md",
+      "slug": "MAFFT"
     },
     {
       "page_id": 3915,
-      "title": "MATLAB/en",
+      "title": "MATLAB",
       "url": "https://docs.alliancecan.ca/wiki/MATLAB/en",
       "category": "General",
       "last_modified": "2025-08-29T13:18:02Z",
-      "file_path": "docs/pages/General/MATLAB_en.md",
-      "slug": "MATLAB_en"
+      "file_path": "docs/pages/General/MATLAB.md",
+      "slug": "MATLAB"
     },
     {
       "page_id": 18131,
-      "title": "META-Farm/en",
+      "title": "META-Farm",
       "url": "https://docs.alliancecan.ca/wiki/META-Farm/en",
       "category": "General",
       "last_modified": "2025-09-08T20:00:19Z",
-      "file_path": "docs/pages/General/META-Farm_en.md",
-      "slug": "META-Farm_en"
+      "file_path": "docs/pages/General/META-Farm.md",
+      "slug": "META-Farm"
     },
     {
       "page_id": 21476,
-      "title": "META-Farm: Advanced features and troubleshooting/en",
+      "title": "META-Farm: Advanced features and troubleshooting",
       "url": "https://docs.alliancecan.ca/wiki/META-Farm:_Advanced_features_and_troubleshooting/en",
       "category": "META-Farm",
       "last_modified": "2025-09-05T17:48:06Z",
-      "file_path": "docs/pages/META-Farm/META-Farm_Advanced_features_and_troubleshooting_en.md",
-      "slug": "META-Farm_Advanced_features_and_troubleshooting_en"
+      "file_path": "docs/pages/META-Farm/META-Farm_Advanced_features_and_troubleshooting.md",
+      "slug": "META-Farm_Advanced_features_and_troubleshooting"
     },
     {
       "page_id": 12604,
@@ -1741,12 +1750,12 @@
     },
     {
       "page_id": 21986,
-      "title": "MIKE/en",
+      "title": "MIKE",
       "url": "https://docs.alliancecan.ca/wiki/MIKE/en",
       "category": "General",
       "last_modified": "2025-09-03T12:24:42Z",
-      "file_path": "docs/pages/General/MIKE_en.md",
-      "slug": "MIKE_en"
+      "file_path": "docs/pages/General/MIKE.md",
+      "slug": "MIKE"
     },
     {
       "page_id": 17829,
@@ -1759,129 +1768,129 @@
     },
     {
       "page_id": 12992,
-      "title": "MPI-IO/en",
+      "title": "MPI-IO",
       "url": "https://docs.alliancecan.ca/wiki/MPI-IO/en",
       "category": "General",
       "last_modified": "2021-07-05T22:33:10Z",
-      "file_path": "docs/pages/General/MPI-IO_en.md",
-      "slug": "MPI-IO_en"
+      "file_path": "docs/pages/General/MPI-IO.md",
+      "slug": "MPI-IO"
     },
     {
       "page_id": 1935,
-      "title": "MPI/en",
+      "title": "MPI",
       "url": "https://docs.alliancecan.ca/wiki/MPI/en",
       "category": "General",
       "last_modified": "2024-11-04T16:33:01Z",
-      "file_path": "docs/pages/General/MPI_en.md",
-      "slug": "MPI_en"
+      "file_path": "docs/pages/General/MPI.md",
+      "slug": "MPI"
     },
     {
       "page_id": 26625,
-      "title": "MPI4py/en",
+      "title": "MPI4py",
       "url": "https://docs.alliancecan.ca/wiki/MPI4py/en",
       "category": "General",
       "last_modified": "2024-10-17T19:25:01Z",
-      "file_path": "docs/pages/General/MPI4py_en.md",
-      "slug": "MPI4py_en"
+      "file_path": "docs/pages/General/MPI4py.md",
+      "slug": "MPI4py"
     },
     {
       "page_id": 25469,
-      "title": "MRCC/en",
+      "title": "MRCC",
       "url": "https://docs.alliancecan.ca/wiki/MRCC/en",
       "category": "General",
       "last_modified": "2024-05-08T21:09:02Z",
-      "file_path": "docs/pages/General/MRCC_en.md",
-      "slug": "MRCC_en"
+      "file_path": "docs/pages/General/MRCC.md",
+      "slug": "MRCC"
     },
     {
       "page_id": 11093,
-      "title": "MXNet/en",
+      "title": "MXNet",
       "url": "https://docs.alliancecan.ca/wiki/MXNet/en",
       "category": "General",
       "last_modified": "2022-11-09T18:31:50Z",
-      "file_path": "docs/pages/General/MXNet_en.md",
-      "slug": "MXNet_en"
+      "file_path": "docs/pages/General/MXNet.md",
+      "slug": "MXNet"
     },
     {
       "page_id": 2001,
-      "title": "Make/en",
+      "title": "Make",
       "url": "https://docs.alliancecan.ca/wiki/Make/en",
       "category": "General",
       "last_modified": "2024-07-22T22:22:04Z",
-      "file_path": "docs/pages/General/Make_en.md",
-      "slug": "Make_en"
+      "file_path": "docs/pages/General/Make.md",
+      "slug": "Make"
     },
     {
       "page_id": 20960,
-      "title": "Managing Slurm accounts/en",
+      "title": "Managing Slurm accounts",
       "url": "https://docs.alliancecan.ca/wiki/Managing_Slurm_accounts/en",
       "category": "General",
       "last_modified": "2025-08-29T13:31:34Z",
-      "file_path": "docs/pages/General/Managing_Slurm_accounts_en.md",
-      "slug": "Managing_Slurm_accounts_en"
+      "file_path": "docs/pages/General/Managing_Slurm_accounts.md",
+      "slug": "Managing_Slurm_accounts"
     },
     {
       "page_id": 21279,
-      "title": "Managing your Linux VM/en",
+      "title": "Managing your Linux VM",
       "url": "https://docs.alliancecan.ca/wiki/Managing_your_Linux_VM/en",
       "category": "General",
       "last_modified": "2023-05-01T20:09:02Z",
-      "file_path": "docs/pages/General/Managing_your_Linux_VM_en.md",
-      "slug": "Managing_your_Linux_VM_en"
+      "file_path": "docs/pages/General/Managing_your_Linux_VM.md",
+      "slug": "Managing_your_Linux_VM"
     },
     {
       "page_id": 705,
-      "title": "Managing your cloud resources with OpenStack/en",
+      "title": "Managing your cloud resources with OpenStack",
       "url": "https://docs.alliancecan.ca/wiki/Managing_your_cloud_resources_with_OpenStack/en",
       "category": "General",
       "last_modified": "2023-07-07T20:42:10Z",
-      "file_path": "docs/pages/General/Managing_your_cloud_resources_with_OpenStack_en.md",
-      "slug": "Managing_your_cloud_resources_with_OpenStack_en"
+      "file_path": "docs/pages/General/Managing_your_cloud_resources_with_OpenStack.md",
+      "slug": "Managing_your_cloud_resources_with_OpenStack"
     },
     {
       "page_id": 8006,
-      "title": "Materials Studio/en",
+      "title": "Materials Studio",
       "url": "https://docs.alliancecan.ca/wiki/Materials_Studio/en",
       "category": "General",
       "last_modified": "2023-07-19T21:14:01Z",
-      "file_path": "docs/pages/General/Materials_Studio_en.md",
-      "slug": "Materials_Studio_en"
+      "file_path": "docs/pages/General/Materials_Studio.md",
+      "slug": "Materials_Studio"
     },
     {
       "page_id": 5556,
-      "title": "Meltdown and Spectre bugs/en",
+      "title": "Meltdown and Spectre bugs",
       "url": "https://docs.alliancecan.ca/wiki/Meltdown_and_Spectre_bugs/en",
       "category": "General",
       "last_modified": "2018-03-12T14:42:01Z",
-      "file_path": "docs/pages/General/Meltdown_and_Spectre_bugs_en.md",
-      "slug": "Meltdown_and_Spectre_bugs_en"
+      "file_path": "docs/pages/General/Meltdown_and_Spectre_bugs.md",
+      "slug": "Meltdown_and_Spectre_bugs"
     },
     {
       "page_id": 21607,
-      "title": "MetaPhlAn/en",
+      "title": "MetaPhlAn",
       "url": "https://docs.alliancecan.ca/wiki/MetaPhlAn/en",
       "category": "General",
       "last_modified": "2022-11-11T17:17:59Z",
-      "file_path": "docs/pages/General/MetaPhlAn_en.md",
-      "slug": "MetaPhlAn_en"
+      "file_path": "docs/pages/General/MetaPhlAn.md",
+      "slug": "MetaPhlAn"
     },
     {
       "page_id": 31422,
-      "title": "Metrix/en",
+      "title": "Metrix",
       "url": "https://docs.alliancecan.ca/wiki/Metrix/en",
       "category": "General",
       "last_modified": "2025-09-24T18:53:41Z",
-      "file_path": "docs/pages/General/Metrix_en.md",
-      "slug": "Metrix_en"
+      "file_path": "docs/pages/General/Metrix.md",
+      "slug": "Metrix"
     },
     {
       "page_id": 19746,
-      "title": "Migrating between clusters/en",
+      "title": "Migrating between clusters",
       "url": "https://docs.alliancecan.ca/wiki/Migrating_between_clusters/en",
       "category": "General",
       "last_modified": "2025-08-29T12:59:42Z",
-      "file_path": "docs/pages/General/Migrating_between_clusters_en.md",
-      "slug": "Migrating_between_clusters_en"
+      "file_path": "docs/pages/General/Migrating_between_clusters.md",
+      "slug": "Migrating_between_clusters"
     },
     {
       "page_id": 676,
@@ -1903,39 +1912,39 @@
     },
     {
       "page_id": 16321,
-      "title": "Migration to the new standard environment/en",
+      "title": "Migration to the new standard environment",
       "url": "https://docs.alliancecan.ca/wiki/Migration_to_the_new_standard_environment/en",
       "category": "General",
       "last_modified": "2024-02-14T15:21:35Z",
-      "file_path": "docs/pages/General/Migration_to_the_new_standard_environment_en.md",
-      "slug": "Migration_to_the_new_standard_environment_en"
+      "file_path": "docs/pages/General/Migration_to_the_new_standard_environment.md",
+      "slug": "Migration_to_the_new_standard_environment"
     },
     {
       "page_id": 17742,
-      "title": "Mii/en",
+      "title": "Mii",
       "url": "https://docs.alliancecan.ca/wiki/Mii/en",
       "category": "General",
       "last_modified": "2021-10-18T13:53:19Z",
-      "file_path": "docs/pages/General/Mii_en.md",
-      "slug": "Mii_en"
+      "file_path": "docs/pages/General/Mii.md",
+      "slug": "Mii"
     },
     {
       "page_id": 27533,
-      "title": "Mist/en",
+      "title": "Mist",
       "url": "https://docs.alliancecan.ca/wiki/Mist/en",
       "category": "General",
       "last_modified": "2025-01-09T20:24:31Z",
-      "file_path": "docs/pages/General/Mist_en.md",
-      "slug": "Mist_en"
+      "file_path": "docs/pages/General/Mist.md",
+      "slug": "Mist"
     },
     {
       "page_id": 17114,
-      "title": "Modules/en",
+      "title": "Modules",
       "url": "https://docs.alliancecan.ca/wiki/Modules/en",
       "category": "General",
       "last_modified": "2022-06-22T01:35:02Z",
-      "file_path": "docs/pages/General/Modules_en.md",
-      "slug": "Modules_en"
+      "file_path": "docs/pages/General/Modules.md",
+      "slug": "Modules"
     },
     {
       "page_id": 10648,
@@ -1984,75 +1993,84 @@
     },
     {
       "page_id": 26558,
-      "title": "MonarQ/en",
+      "title": "MonarQ",
       "url": "https://docs.alliancecan.ca/wiki/MonarQ/en",
       "category": "General",
-      "last_modified": "2025-10-29T16:57:51Z",
-      "file_path": "docs/pages/General/MonarQ_en.md",
-      "slug": "MonarQ_en"
+      "last_modified": "2025-11-27T19:18:01Z",
+      "file_path": "docs/pages/General/MonarQ.md",
+      "slug": "MonarQ"
     },
     {
       "page_id": 27460,
       "title": "MonarQ/en-ca",
       "url": "https://docs.alliancecan.ca/wiki/MonarQ/en-ca",
       "category": "General",
-      "last_modified": "2025-10-28T14:06:31Z",
+      "last_modified": "2025-11-03T20:57:14Z",
       "file_path": "docs/pages/General/MonarQ_en-ca.md",
       "slug": "MonarQ_en-ca"
     },
     {
       "page_id": 28553,
-      "title": "Monitoring jobs/en",
+      "title": "Monitoring jobs",
       "url": "https://docs.alliancecan.ca/wiki/Monitoring_jobs/en",
       "category": "General",
       "last_modified": "2025-05-08T19:22:05Z",
-      "file_path": "docs/pages/General/Monitoring_jobs_en.md",
-      "slug": "Monitoring_jobs_en"
+      "file_path": "docs/pages/General/Monitoring_jobs.md",
+      "slug": "Monitoring_jobs"
+    },
+    {
+      "page_id": 31888,
+      "title": "Moose",
+      "url": "https://docs.alliancecan.ca/wiki/Moose/en",
+      "category": "General",
+      "last_modified": "2025-10-27T13:21:01Z",
+      "file_path": "docs/pages/General/Moose.md",
+      "slug": "Moose"
     },
     {
       "page_id": 11482,
-      "title": "Mounting /project space on a VM in the cloud/en",
+      "title": "Mounting /project space on a VM in the cloud",
       "url": "https://docs.alliancecan.ca/wiki/Mounting_/project_space_on_a_VM_in_the_cloud/en",
       "category": "General",
       "last_modified": "2025-08-29T13:44:13Z",
-      "file_path": "docs/pages/General/Mounting_project_space_on_a_VM_in_the_cloud_en.md",
-      "slug": "Mounting_project_space_on_a_VM_in_the_cloud_en"
+      "file_path": "docs/pages/General/Mounting_project_space_on_a_VM_in_the_cloud.md",
+      "slug": "Mounting_project_space_on_a_VM_in_the_cloud"
     },
     {
       "page_id": 13562,
-      "title": "Mp2/en",
+      "title": "Mp2",
       "url": "https://docs.alliancecan.ca/wiki/Mp2/en",
       "category": "General",
       "last_modified": "2024-11-13T17:24:12Z",
-      "file_path": "docs/pages/General/Mp2_en.md",
-      "slug": "Mp2_en"
+      "file_path": "docs/pages/General/Mp2.md",
+      "slug": "Mp2"
     },
     {
       "page_id": 25953,
-      "title": "MrBayes/en",
+      "title": "MrBayes",
       "url": "https://docs.alliancecan.ca/wiki/MrBayes/en",
       "category": "General",
       "last_modified": "2025-07-23T15:18:18Z",
-      "file_path": "docs/pages/General/MrBayes_en.md",
-      "slug": "MrBayes_en"
+      "file_path": "docs/pages/General/MrBayes.md",
+      "slug": "MrBayes"
     },
     {
       "page_id": 7543,
-      "title": "MuJoCo/en",
+      "title": "MuJoCo",
       "url": "https://docs.alliancecan.ca/wiki/MuJoCo/en",
       "category": "General",
       "last_modified": "2022-09-27T17:58:02Z",
-      "file_path": "docs/pages/General/MuJoCo_en.md",
-      "slug": "MuJoCo_en"
+      "file_path": "docs/pages/General/MuJoCo.md",
+      "slug": "MuJoCo"
     },
     {
       "page_id": 26132,
-      "title": "Multi-Instance GPU/en",
+      "title": "Multi-Instance GPU",
       "url": "https://docs.alliancecan.ca/wiki/Multi-Instance_GPU/en",
       "category": "General",
-      "last_modified": "2025-10-15T14:46:02Z",
-      "file_path": "docs/pages/General/Multi-Instance_GPU_en.md",
-      "slug": "Multi-Instance_GPU_en"
+      "last_modified": "2025-12-03T14:48:04Z",
+      "file_path": "docs/pages/General/Multi-Instance_GPU.md",
+      "slug": "Multi-Instance_GPU"
     },
     {
       "page_id": 27250,
@@ -2065,21 +2083,21 @@
     },
     {
       "page_id": 22441,
-      "title": "Multifactor authentication/en",
+      "title": "Multifactor authentication",
       "url": "https://docs.alliancecan.ca/wiki/Multifactor_authentication/en",
       "category": "General",
       "last_modified": "2025-07-16T16:11:06Z",
-      "file_path": "docs/pages/General/Multifactor_authentication_en.md",
-      "slug": "Multifactor_authentication_en"
+      "file_path": "docs/pages/General/Multifactor_authentication.md",
+      "slug": "Multifactor_authentication"
     },
     {
       "page_id": 5596,
-      "title": "NAMD/en",
+      "title": "NAMD",
       "url": "https://docs.alliancecan.ca/wiki/NAMD/en",
       "category": "General",
-      "last_modified": "2025-10-20T16:52:27Z",
-      "file_path": "docs/pages/General/NAMD_en.md",
-      "slug": "NAMD_en"
+      "last_modified": "2025-11-11T22:28:22Z",
+      "file_path": "docs/pages/General/NAMD.md",
+      "slug": "NAMD"
     },
     {
       "page_id": 15258,
@@ -2092,84 +2110,84 @@
     },
     {
       "page_id": 26990,
-      "title": "NVTOP/en",
+      "title": "NVTOP",
       "url": "https://docs.alliancecan.ca/wiki/NVTOP/en",
       "category": "General",
       "last_modified": "2024-12-09T22:42:01Z",
-      "file_path": "docs/pages/General/NVTOP_en.md",
-      "slug": "NVTOP_en"
+      "file_path": "docs/pages/General/NVTOP.md",
+      "slug": "NVTOP"
     },
     {
       "page_id": 17288,
-      "title": "Narval/en",
+      "title": "Narval",
       "url": "https://docs.alliancecan.ca/wiki/Narval/en",
       "category": "General",
       "last_modified": "2025-09-08T18:50:35Z",
-      "file_path": "docs/pages/General/Narval_en.md",
-      "slug": "Narval_en"
+      "file_path": "docs/pages/General/Narval.md",
+      "slug": "Narval"
     },
     {
       "page_id": 994,
-      "title": "National systems/en",
+      "title": "National systems",
       "url": "https://docs.alliancecan.ca/wiki/National_systems/en",
       "category": "General",
       "last_modified": "2025-08-29T12:44:46Z",
-      "file_path": "docs/pages/General/National_systems_en.md",
-      "slug": "National_systems_en"
+      "file_path": "docs/pages/General/National_systems.md",
+      "slug": "National_systems"
     },
     {
       "page_id": 6483,
-      "title": "NetCDF/en",
+      "title": "NetCDF",
       "url": "https://docs.alliancecan.ca/wiki/NetCDF/en",
       "category": "General",
       "last_modified": "2018-12-10T15:26:15Z",
-      "file_path": "docs/pages/General/NetCDF_en.md",
-      "slug": "NetCDF_en"
+      "file_path": "docs/pages/General/NetCDF.md",
+      "slug": "NetCDF"
     },
     {
       "page_id": 14336,
-      "title": "Nextcloud/en",
+      "title": "Nextcloud",
       "url": "https://docs.alliancecan.ca/wiki/Nextcloud/en",
       "category": "General",
       "last_modified": "2024-06-12T15:51:09Z",
-      "file_path": "docs/pages/General/Nextcloud_en.md",
-      "slug": "Nextcloud_en"
+      "file_path": "docs/pages/General/Nextcloud.md",
+      "slug": "Nextcloud"
     },
     {
       "page_id": 22694,
-      "title": "Nextflow/en",
+      "title": "Nextflow",
       "url": "https://docs.alliancecan.ca/wiki/Nextflow/en",
       "category": "General",
-      "last_modified": "2025-10-17T16:43:51Z",
-      "file_path": "docs/pages/General/Nextflow_en.md",
-      "slug": "Nextflow_en"
+      "last_modified": "2025-11-24T22:04:01Z",
+      "file_path": "docs/pages/General/Nextflow.md",
+      "slug": "Nextflow"
     },
     {
       "page_id": 4990,
-      "title": "Niagara/en",
+      "title": "Niagara",
       "url": "https://docs.alliancecan.ca/wiki/Niagara/en",
       "category": "General",
       "last_modified": "2025-09-10T18:38:17Z",
-      "file_path": "docs/pages/General/Niagara_en.md",
-      "slug": "Niagara_en"
+      "file_path": "docs/pages/General/Niagara.md",
+      "slug": "Niagara"
     },
     {
       "page_id": 7034,
-      "title": "Niagara Quickstart/en",
+      "title": "Niagara Quickstart",
       "url": "https://docs.alliancecan.ca/wiki/Niagara_Quickstart/en",
       "category": "General",
       "last_modified": "2025-04-19T05:17:02Z",
-      "file_path": "docs/pages/General/Niagara_Quickstart_en.md",
-      "slug": "Niagara_Quickstart_en"
+      "file_path": "docs/pages/General/Niagara_Quickstart.md",
+      "slug": "Niagara_Quickstart"
     },
     {
       "page_id": 27510,
-      "title": "Nibi/en",
+      "title": "Nibi",
       "url": "https://docs.alliancecan.ca/wiki/Nibi/en",
       "category": "General",
       "last_modified": "2025-12-04T17:06:02Z",
-      "file_path": "docs/pages/General/Nibi_en.md",
-      "slug": "Nibi_en"
+      "file_path": "docs/pages/General/Nibi.md",
+      "slug": "Nibi"
     },
     {
       "page_id": 9488,
@@ -2182,12 +2200,12 @@
     },
     {
       "page_id": 4592,
-      "title": "ORCA/en",
+      "title": "ORCA",
       "url": "https://docs.alliancecan.ca/wiki/ORCA/en",
       "category": "General",
       "last_modified": "2025-03-11T18:18:52Z",
-      "file_path": "docs/pages/General/ORCA_en.md",
-      "slug": "ORCA_en"
+      "file_path": "docs/pages/General/ORCA.md",
+      "slug": "ORCA"
     },
     {
       "page_id": 20614,
@@ -2209,93 +2227,93 @@
     },
     {
       "page_id": 1390,
-      "title": "OpenACC Tutorial/en",
+      "title": "OpenACC Tutorial",
       "url": "https://docs.alliancecan.ca/wiki/OpenACC_Tutorial/en",
       "category": "User Guide",
       "last_modified": "2024-10-16T16:56:41Z",
-      "file_path": "docs/pages/User Guide/OpenACC_Tutorial_en.md",
-      "slug": "OpenACC_Tutorial_en"
+      "file_path": "docs/pages/User Guide/OpenACC_Tutorial.md",
+      "slug": "OpenACC_Tutorial"
     },
     {
       "page_id": 1447,
-      "title": "OpenACC Tutorial - Adding directives/en",
+      "title": "OpenACC Tutorial - Adding directives",
       "url": "https://docs.alliancecan.ca/wiki/OpenACC_Tutorial_-_Adding_directives/en",
       "category": "User Guide",
       "last_modified": "2023-06-08T19:37:05Z",
-      "file_path": "docs/pages/User Guide/OpenACC_Tutorial_-_Adding_directives_en.md",
-      "slug": "OpenACC_Tutorial_-_Adding_directives_en"
+      "file_path": "docs/pages/User Guide/OpenACC_Tutorial_-_Adding_directives.md",
+      "slug": "OpenACC_Tutorial_-_Adding_directives"
     },
     {
       "page_id": 1479,
-      "title": "OpenACC Tutorial - Data movement/en",
+      "title": "OpenACC Tutorial - Data movement",
       "url": "https://docs.alliancecan.ca/wiki/OpenACC_Tutorial_-_Data_movement/en",
       "category": "User Guide",
       "last_modified": "2017-05-12T18:27:08Z",
-      "file_path": "docs/pages/User Guide/OpenACC_Tutorial_-_Data_movement_en.md",
-      "slug": "OpenACC_Tutorial_-_Data_movement_en"
+      "file_path": "docs/pages/User Guide/OpenACC_Tutorial_-_Data_movement.md",
+      "slug": "OpenACC_Tutorial_-_Data_movement"
     },
     {
       "page_id": 726,
-      "title": "OpenACC Tutorial - Introduction/en",
+      "title": "OpenACC Tutorial - Introduction",
       "url": "https://docs.alliancecan.ca/wiki/OpenACC_Tutorial_-_Introduction/en",
       "category": "User Guide",
       "last_modified": "2022-11-30T20:58:07Z",
-      "file_path": "docs/pages/User Guide/OpenACC_Tutorial_-_Introduction_en.md",
-      "slug": "OpenACC_Tutorial_-_Introduction_en"
+      "file_path": "docs/pages/User Guide/OpenACC_Tutorial_-_Introduction.md",
+      "slug": "OpenACC_Tutorial_-_Introduction"
     },
     {
       "page_id": 1511,
-      "title": "OpenACC Tutorial - Optimizing loops/en",
+      "title": "OpenACC Tutorial - Optimizing loops",
       "url": "https://docs.alliancecan.ca/wiki/OpenACC_Tutorial_-_Optimizing_loops/en",
       "category": "User Guide",
       "last_modified": "2017-05-12T14:16:37Z",
-      "file_path": "docs/pages/User Guide/OpenACC_Tutorial_-_Optimizing_loops_en.md",
-      "slug": "OpenACC_Tutorial_-_Optimizing_loops_en"
+      "file_path": "docs/pages/User Guide/OpenACC_Tutorial_-_Optimizing_loops.md",
+      "slug": "OpenACC_Tutorial_-_Optimizing_loops"
     },
     {
       "page_id": 1448,
-      "title": "OpenACC Tutorial - Profiling/en",
+      "title": "OpenACC Tutorial - Profiling",
       "url": "https://docs.alliancecan.ca/wiki/OpenACC_Tutorial_-_Profiling/en",
       "category": "User Guide",
       "last_modified": "2022-12-20T22:27:07Z",
-      "file_path": "docs/pages/User Guide/OpenACC_Tutorial_-_Profiling_en.md",
-      "slug": "OpenACC_Tutorial_-_Profiling_en"
+      "file_path": "docs/pages/User Guide/OpenACC_Tutorial_-_Profiling.md",
+      "slug": "OpenACC_Tutorial_-_Profiling"
     },
     {
       "page_id": 20503,
-      "title": "OpenCV/en",
+      "title": "OpenCV",
       "url": "https://docs.alliancecan.ca/wiki/OpenCV/en",
       "category": "General",
       "last_modified": "2024-04-09T14:59:02Z",
-      "file_path": "docs/pages/General/OpenCV_en.md",
-      "slug": "OpenCV_en"
+      "file_path": "docs/pages/General/OpenCV.md",
+      "slug": "OpenCV"
     },
     {
       "page_id": 6747,
-      "title": "OpenFOAM/en",
+      "title": "OpenFOAM",
       "url": "https://docs.alliancecan.ca/wiki/OpenFOAM/en",
       "category": "General",
       "last_modified": "2025-09-09T21:14:21Z",
-      "file_path": "docs/pages/General/OpenFOAM_en.md",
-      "slug": "OpenFOAM_en"
+      "file_path": "docs/pages/General/OpenFOAM.md",
+      "slug": "OpenFOAM"
     },
     {
       "page_id": 19330,
-      "title": "OpenMM/en",
+      "title": "OpenMM",
       "url": "https://docs.alliancecan.ca/wiki/OpenMM/en",
       "category": "General",
       "last_modified": "2024-10-16T16:58:41Z",
-      "file_path": "docs/pages/General/OpenMM_en.md",
-      "slug": "OpenMM_en"
+      "file_path": "docs/pages/General/OpenMM.md",
+      "slug": "OpenMM"
     },
     {
       "page_id": 1831,
-      "title": "OpenMP/en",
+      "title": "OpenMP",
       "url": "https://docs.alliancecan.ca/wiki/OpenMP/en",
       "category": "General",
       "last_modified": "2024-07-15T19:47:44Z",
-      "file_path": "docs/pages/General/OpenMP_en.md",
-      "slug": "OpenMP_en"
+      "file_path": "docs/pages/General/OpenMP.md",
+      "slug": "OpenMP"
     },
     {
       "page_id": 24675,
@@ -2317,12 +2335,12 @@
     },
     {
       "page_id": 780,
-      "title": "OpenStack command line clients/en",
+      "title": "OpenStack command line clients",
       "url": "https://docs.alliancecan.ca/wiki/OpenStack_command_line_clients/en",
       "category": "General",
       "last_modified": "2024-10-07T15:31:51Z",
-      "file_path": "docs/pages/General/OpenStack_command_line_clients_en.md",
-      "slug": "OpenStack_command_line_clients_en"
+      "file_path": "docs/pages/General/OpenStack_command_line_clients.md",
+      "slug": "OpenStack_command_line_clients"
     },
     {
       "page_id": 21639,
@@ -2335,12 +2353,12 @@
     },
     {
       "page_id": 24865,
-      "title": "Open Babel/en",
+      "title": "Open Babel",
       "url": "https://docs.alliancecan.ca/wiki/Open_Babel/en",
       "category": "General",
       "last_modified": "2024-03-04T21:57:41Z",
-      "file_path": "docs/pages/General/Open_Babel_en.md",
-      "slug": "Open_Babel_en"
+      "file_path": "docs/pages/General/Open_Babel.md",
+      "slug": "Open_Babel"
     },
     {
       "page_id": 31510,
@@ -2371,39 +2389,39 @@
     },
     {
       "page_id": 9424,
-      "title": "PGPROF/en",
+      "title": "PGPROF",
       "url": "https://docs.alliancecan.ca/wiki/PGPROF/en",
       "category": "General",
       "last_modified": "2019-09-23T13:08:24Z",
-      "file_path": "docs/pages/General/PGPROF_en.md",
-      "slug": "PGPROF_en"
+      "file_path": "docs/pages/General/PGPROF.md",
+      "slug": "PGPROF"
     },
     {
       "page_id": 220,
-      "title": "Page translation/en",
+      "title": "Page translation",
       "url": "https://docs.alliancecan.ca/wiki/Page_translation/en",
       "category": "General",
       "last_modified": "2022-07-08T22:34:02Z",
-      "file_path": "docs/pages/General/Page_translation_en.md",
-      "slug": "Page_translation_en"
+      "file_path": "docs/pages/General/Page_translation.md",
+      "slug": "Page_translation"
     },
     {
       "page_id": 10505,
-      "title": "ParaView/en",
+      "title": "ParaView",
       "url": "https://docs.alliancecan.ca/wiki/ParaView/en",
       "category": "General",
       "last_modified": "2025-10-21T18:36:43Z",
-      "file_path": "docs/pages/General/ParaView_en.md",
-      "slug": "ParaView_en"
+      "file_path": "docs/pages/General/ParaView.md",
+      "slug": "ParaView"
     },
     {
       "page_id": 14606,
-      "title": "Parabricks/en",
+      "title": "Parabricks",
       "url": "https://docs.alliancecan.ca/wiki/Parabricks/en",
       "category": "General",
       "last_modified": "2020-09-09T12:06:02Z",
-      "file_path": "docs/pages/General/Parabricks_en.md",
-      "slug": "Parabricks_en"
+      "file_path": "docs/pages/General/Parabricks.md",
+      "slug": "Parabricks"
     },
     {
       "page_id": 16291,
@@ -2416,57 +2434,57 @@
     },
     {
       "page_id": 25786,
-      "title": "Parallel I/O introductory tutorial/en",
+      "title": "Parallel I/O introductory tutorial",
       "url": "https://docs.alliancecan.ca/wiki/Parallel_I/O_introductory_tutorial/en",
       "category": "User Guide",
       "last_modified": "2025-08-20T15:23:03Z",
-      "file_path": "docs/pages/User Guide/Parallel_I_O_introductory_tutorial_en.md",
-      "slug": "Parallel_I_O_introductory_tutorial_en"
+      "file_path": "docs/pages/User Guide/Parallel_I_O_introductory_tutorial.md",
+      "slug": "Parallel_I_O_introductory_tutorial"
     },
     {
       "page_id": 25885,
-      "title": "Parasail/en",
+      "title": "Parasail",
       "url": "https://docs.alliancecan.ca/wiki/Parasail/en",
       "category": "General",
       "last_modified": "2024-06-28T14:07:49Z",
-      "file_path": "docs/pages/General/Parasail_en.md",
-      "slug": "Parasail_en"
+      "file_path": "docs/pages/General/Parasail.md",
+      "slug": "Parasail"
     },
     {
       "page_id": 26337,
-      "title": "PennyLane/en",
+      "title": "PennyLane",
       "url": "https://docs.alliancecan.ca/wiki/PennyLane/en",
       "category": "General",
       "last_modified": "2025-07-02T14:37:29Z",
-      "file_path": "docs/pages/General/PennyLane_en.md",
-      "slug": "PennyLane_en"
+      "file_path": "docs/pages/General/PennyLane.md",
+      "slug": "PennyLane"
     },
     {
       "page_id": 4089,
-      "title": "Perl/en",
+      "title": "Perl",
       "url": "https://docs.alliancecan.ca/wiki/Perl/en",
       "category": "General",
       "last_modified": "2025-09-11T12:37:54Z",
-      "file_path": "docs/pages/General/Perl_en.md",
-      "slug": "Perl_en"
+      "file_path": "docs/pages/General/Perl.md",
+      "slug": "Perl"
     },
     {
       "page_id": 11614,
-      "title": "Pgdbg/en",
+      "title": "Pgdbg",
       "url": "https://docs.alliancecan.ca/wiki/Pgdbg/en",
       "category": "General",
       "last_modified": "2019-10-29T19:12:02Z",
-      "file_path": "docs/pages/General/Pgdbg_en.md",
-      "slug": "Pgdbg_en"
+      "file_path": "docs/pages/General/Pgdbg.md",
+      "slug": "Pgdbg"
     },
     {
       "page_id": 3991,
-      "title": "Points de contrôle/en",
+      "title": "Points de contrôle",
       "url": "https://docs.alliancecan.ca/wiki/Points_de_contr%C3%B4le/en",
       "category": "General",
       "last_modified": "2024-09-27T14:24:02Z",
-      "file_path": "docs/pages/General/Points_de_contrôle_en.md",
-      "slug": "Points_de_contrôle_en"
+      "file_path": "docs/pages/General/Points_de_contrôle.md",
+      "slug": "Points_de_contrôle"
     },
     {
       "page_id": 10650,
@@ -2479,75 +2497,75 @@
     },
     {
       "page_id": 534,
-      "title": "Programming guide/en",
+      "title": "Programming guide",
       "url": "https://docs.alliancecan.ca/wiki/Programming_guide/en",
       "category": "User Guide",
       "last_modified": "2021-11-12T19:34:28Z",
-      "file_path": "docs/pages/User Guide/Programming_guide_en.md",
-      "slug": "Programming_guide_en"
+      "file_path": "docs/pages/User Guide/Programming_guide.md",
+      "slug": "Programming_guide"
     },
     {
       "page_id": 4342,
-      "title": "Project layout/en",
+      "title": "Project layout",
       "url": "https://docs.alliancecan.ca/wiki/Project_layout/en",
       "category": "General",
       "last_modified": "2025-10-17T15:14:01Z",
-      "file_path": "docs/pages/General/Project_layout_en.md",
-      "slug": "Project_layout_en"
+      "file_path": "docs/pages/General/Project_layout.md",
+      "slug": "Project_layout"
     },
     {
       "page_id": 22803,
-      "title": "Prolonging terminal sessions/en",
+      "title": "Prolonging terminal sessions",
       "url": "https://docs.alliancecan.ca/wiki/Prolonging_terminal_sessions/en",
       "category": "General",
       "last_modified": "2023-07-04T16:40:30Z",
-      "file_path": "docs/pages/General/Prolonging_terminal_sessions_en.md",
-      "slug": "Prolonging_terminal_sessions_en"
+      "file_path": "docs/pages/General/Prolonging_terminal_sessions.md",
+      "slug": "Prolonging_terminal_sessions"
     },
     {
       "page_id": 1773,
-      "title": "Pthreads/en",
+      "title": "Pthreads",
       "url": "https://docs.alliancecan.ca/wiki/Pthreads/en",
       "category": "General",
       "last_modified": "2018-04-27T18:44:02Z",
-      "file_path": "docs/pages/General/Pthreads_en.md",
-      "slug": "Pthreads_en"
+      "file_path": "docs/pages/General/Pthreads.md",
+      "slug": "Pthreads"
     },
     {
       "page_id": 26510,
-      "title": "PyKeOps/en",
+      "title": "PyKeOps",
       "url": "https://docs.alliancecan.ca/wiki/PyKeOps/en",
       "category": "General",
       "last_modified": "2024-09-30T19:02:03Z",
-      "file_path": "docs/pages/General/PyKeOps_en.md",
-      "slug": "PyKeOps_en"
+      "file_path": "docs/pages/General/PyKeOps.md",
+      "slug": "PyKeOps"
     },
     {
       "page_id": 14078,
-      "title": "PyRETIS/en",
+      "title": "PyRETIS",
       "url": "https://docs.alliancecan.ca/wiki/PyRETIS/en",
       "category": "General",
       "last_modified": "2020-07-30T17:24:01Z",
-      "file_path": "docs/pages/General/PyRETIS_en.md",
-      "slug": "PyRETIS_en"
+      "file_path": "docs/pages/General/PyRETIS.md",
+      "slug": "PyRETIS"
     },
     {
       "page_id": 4520,
-      "title": "PyTorch/en",
+      "title": "PyTorch",
       "url": "https://docs.alliancecan.ca/wiki/PyTorch/en",
       "category": "General",
-      "last_modified": "2025-08-29T15:41:05Z",
-      "file_path": "docs/pages/General/PyTorch_en.md",
-      "slug": "PyTorch_en"
+      "last_modified": "2025-11-12T21:15:20Z",
+      "file_path": "docs/pages/General/PyTorch.md",
+      "slug": "PyTorch"
     },
     {
       "page_id": 2586,
-      "title": "Python/en",
+      "title": "Python",
       "url": "https://docs.alliancecan.ca/wiki/Python/en",
       "category": "General",
       "last_modified": "2025-09-18T12:26:01Z",
-      "file_path": "docs/pages/General/Python_en.md",
-      "slug": "Python_en"
+      "file_path": "docs/pages/General/Python.md",
+      "slug": "Python"
     },
     {
       "page_id": 9102,
@@ -2560,156 +2578,156 @@
     },
     {
       "page_id": 12853,
-      "title": "QIIME/en",
+      "title": "QIIME",
       "url": "https://docs.alliancecan.ca/wiki/QIIME/en",
       "category": "General",
       "last_modified": "2024-11-29T11:25:12Z",
-      "file_path": "docs/pages/General/QIIME_en.md",
-      "slug": "QIIME_en"
+      "file_path": "docs/pages/General/QIIME.md",
+      "slug": "QIIME"
     },
     {
       "page_id": 26302,
-      "title": "Qiskit/en",
+      "title": "Qiskit",
       "url": "https://docs.alliancecan.ca/wiki/Qiskit/en",
       "category": "General",
       "last_modified": "2025-03-31T21:16:04Z",
-      "file_path": "docs/pages/General/Qiskit_en.md",
-      "slug": "Qiskit_en"
+      "file_path": "docs/pages/General/Qiskit.md",
+      "slug": "Qiskit"
     },
     {
       "page_id": 19833,
-      "title": "QuantumATK/en",
+      "title": "QuantumATK",
       "url": "https://docs.alliancecan.ca/wiki/QuantumATK/en",
       "category": "General",
       "last_modified": "2025-10-07T15:04:23Z",
-      "file_path": "docs/pages/General/QuantumATK_en.md",
-      "slug": "QuantumATK_en"
+      "file_path": "docs/pages/General/QuantumATK.md",
+      "slug": "QuantumATK"
     },
     {
       "page_id": 4177,
-      "title": "Quantum ESPRESSO/en",
+      "title": "Quantum ESPRESSO",
       "url": "https://docs.alliancecan.ca/wiki/Quantum_ESPRESSO/en",
       "category": "General",
       "last_modified": "2025-08-29T13:38:02Z",
-      "file_path": "docs/pages/General/Quantum_ESPRESSO_en.md",
-      "slug": "Quantum_ESPRESSO_en"
+      "file_path": "docs/pages/General/Quantum_ESPRESSO.md",
+      "slug": "Quantum_ESPRESSO"
     },
     {
       "page_id": 28933,
-      "title": "R-INLA/en",
+      "title": "R-INLA",
       "url": "https://docs.alliancecan.ca/wiki/R-INLA/en",
       "category": "General",
       "last_modified": "2025-07-16T19:13:42Z",
-      "file_path": "docs/pages/General/R-INLA_en.md",
-      "slug": "R-INLA_en"
+      "file_path": "docs/pages/General/R-INLA.md",
+      "slug": "R-INLA"
     },
     {
       "page_id": 2629,
-      "title": "R/en",
+      "title": "R",
       "url": "https://docs.alliancecan.ca/wiki/R/en",
       "category": "General",
-      "last_modified": "2024-05-29T17:43:06Z",
-      "file_path": "docs/pages/General/R_en.md",
-      "slug": "R_en"
+      "last_modified": "2025-11-13T14:20:02Z",
+      "file_path": "docs/pages/General/R.md",
+      "slug": "R"
     },
     {
       "page_id": 29797,
-      "title": "RAC Annual Reports/en",
+      "title": "RAC Annual Reports",
       "url": "https://docs.alliancecan.ca/wiki/RAC_Annual_Reports/en",
       "category": "General",
       "last_modified": "2025-08-13T21:28:03Z",
-      "file_path": "docs/pages/General/RAC_Annual_Reports_en.md",
-      "slug": "RAC_Annual_Reports_en"
+      "file_path": "docs/pages/General/RAC_Annual_Reports.md",
+      "slug": "RAC_Annual_Reports"
     },
     {
       "page_id": 30421,
-      "title": "RAC FAQ/en",
+      "title": "RAC FAQ",
       "url": "https://docs.alliancecan.ca/wiki/RAC_FAQ/en",
       "category": "General",
       "last_modified": "2025-08-25T14:21:43Z",
-      "file_path": "docs/pages/General/RAC_FAQ_en.md",
-      "slug": "RAC_FAQ_en"
+      "file_path": "docs/pages/General/RAC_FAQ.md",
+      "slug": "RAC_FAQ"
     },
     {
       "page_id": 29995,
-      "title": "RAC Fast Track Application Guide/en",
+      "title": "RAC Fast Track Application Guide",
       "url": "https://docs.alliancecan.ca/wiki/RAC_Fast_Track_Application_Guide/en",
       "category": "User Guide",
       "last_modified": "2025-08-20T15:58:16Z",
-      "file_path": "docs/pages/User Guide/RAC_Fast_Track_Application_Guide_en.md",
-      "slug": "RAC_Fast_Track_Application_Guide_en"
+      "file_path": "docs/pages/User Guide/RAC_Fast_Track_Application_Guide.md",
+      "slug": "RAC_Fast_Track_Application_Guide"
     },
     {
       "page_id": 29716,
-      "title": "RAC application guide/en",
+      "title": "RAC application guide",
       "url": "https://docs.alliancecan.ca/wiki/RAC_application_guide/en",
       "category": "User Guide",
-      "last_modified": "2025-09-15T18:26:04Z",
-      "file_path": "docs/pages/User Guide/RAC_application_guide_en.md",
-      "slug": "RAC_application_guide_en"
+      "last_modified": "2025-11-03T20:57:51Z",
+      "file_path": "docs/pages/User Guide/RAC_application_guide.md",
+      "slug": "RAC_application_guide"
     },
     {
       "page_id": 29764,
-      "title": "RAC available resources/en",
+      "title": "RAC available resources",
       "url": "https://docs.alliancecan.ca/wiki/RAC_available_resources/en",
       "category": "General",
       "last_modified": "2025-09-11T18:45:39Z",
-      "file_path": "docs/pages/General/RAC_available_resources_en.md",
-      "slug": "RAC_available_resources_en"
+      "file_path": "docs/pages/General/RAC_available_resources.md",
+      "slug": "RAC_available_resources"
     },
     {
       "page_id": 11019,
-      "title": "RAC transition FAQ/en",
+      "title": "RAC transition FAQ",
       "url": "https://docs.alliancecan.ca/wiki/RAC_transition_FAQ/en",
       "category": "General",
       "last_modified": "2021-03-11T17:49:02Z",
-      "file_path": "docs/pages/General/RAC_transition_FAQ_en.md",
-      "slug": "RAC_transition_FAQ_en"
+      "file_path": "docs/pages/General/RAC_transition_FAQ.md",
+      "slug": "RAC_transition_FAQ"
     },
     {
       "page_id": 15766,
-      "title": "RAPIDS/en",
+      "title": "RAPIDS",
       "url": "https://docs.alliancecan.ca/wiki/RAPIDS/en",
       "category": "Technical Reference",
       "last_modified": "2025-10-08T21:51:02Z",
-      "file_path": "docs/pages/Technical Reference/RAPIDS_en.md",
-      "slug": "RAPIDS_en"
+      "file_path": "docs/pages/Technical Reference/RAPIDS.md",
+      "slug": "RAPIDS"
     },
     {
       "page_id": 27750,
-      "title": "RDKit/en",
+      "title": "RDKit",
       "url": "https://docs.alliancecan.ca/wiki/RDKit/en",
       "category": "General",
       "last_modified": "2025-01-27T21:11:16Z",
-      "file_path": "docs/pages/General/RDKit_en.md",
-      "slug": "RDKit_en"
+      "file_path": "docs/pages/General/RDKit.md",
+      "slug": "RDKit"
     },
     {
       "page_id": 29080,
-      "title": "README files/en",
+      "title": "README files",
       "url": "https://docs.alliancecan.ca/wiki/README_files/en",
       "category": "General",
       "last_modified": "2025-07-29T16:23:18Z",
-      "file_path": "docs/pages/General/README_files_en.md",
-      "slug": "README_files_en"
+      "file_path": "docs/pages/General/README_files.md",
+      "slug": "README_files"
     },
     {
       "page_id": 29749,
-      "title": "RPP Annual Progress Report Guidelines/en",
+      "title": "RPP Annual Progress Report Guidelines",
       "url": "https://docs.alliancecan.ca/wiki/RPP_Annual_Progress_Report_Guidelines/en",
       "category": "User Guide",
       "last_modified": "2025-09-09T16:07:01Z",
-      "file_path": "docs/pages/User Guide/RPP_Annual_Progress_Report_Guidelines_en.md",
-      "slug": "RPP_Annual_Progress_Report_Guidelines_en"
+      "file_path": "docs/pages/User Guide/RPP_Annual_Progress_Report_Guidelines.md",
+      "slug": "RPP_Annual_Progress_Report_Guidelines"
     },
     {
       "page_id": 29782,
-      "title": "Rapid Access Service/en",
+      "title": "Rapid Access Service",
       "url": "https://docs.alliancecan.ca/wiki/Rapid_Access_Service/en",
       "category": "Technical Reference",
-      "last_modified": "2025-08-13T21:27:36Z",
-      "file_path": "docs/pages/Technical Reference/Rapid_Access_Service_en.md",
-      "slug": "Rapid_Access_Service_en"
+      "last_modified": "2025-11-17T13:54:00Z",
+      "file_path": "docs/pages/Technical Reference/Rapid_Access_Service.md",
+      "slug": "Rapid_Access_Service"
     },
     {
       "page_id": 22158,
@@ -2731,66 +2749,66 @@
     },
     {
       "page_id": 22905,
-      "title": "Recovering data from a compromised VM/en",
+      "title": "Recovering data from a compromised VM",
       "url": "https://docs.alliancecan.ca/wiki/Recovering_data_from_a_compromised_VM/en",
       "category": "General",
       "last_modified": "2023-05-30T16:51:01Z",
-      "file_path": "docs/pages/General/Recovering_data_from_a_compromised_VM_en.md",
-      "slug": "Recovering_data_from_a_compromised_VM_en"
+      "file_path": "docs/pages/General/Recovering_data_from_a_compromised_VM.md",
+      "slug": "Recovering_data_from_a_compromised_VM"
     },
     {
       "page_id": 14836,
-      "title": "Research Data Management/en",
+      "title": "Research Data Management",
       "url": "https://docs.alliancecan.ca/wiki/Research_Data_Management/en",
       "category": "General",
       "last_modified": "2025-09-02T17:52:48Z",
-      "file_path": "docs/pages/General/Research_Data_Management_en.md",
-      "slug": "Research_Data_Management_en"
+      "file_path": "docs/pages/General/Research_Data_Management.md",
+      "slug": "Research_Data_Management"
     },
     {
       "page_id": 29717,
-      "title": "Resource Allocation Competition/en",
+      "title": "Resource Allocation Competition",
       "url": "https://docs.alliancecan.ca/wiki/Resource_Allocation_Competition/en",
       "category": "General",
       "last_modified": "2025-10-07T18:13:19Z",
-      "file_path": "docs/pages/General/Resource_Allocation_Competition_en.md",
-      "slug": "Resource_Allocation_Competition_en"
+      "file_path": "docs/pages/General/Resource_Allocation_Competition.md",
+      "slug": "Resource_Allocation_Competition"
     },
     {
       "page_id": 26842,
-      "title": "Rorqual/en",
+      "title": "Rorqual",
       "url": "https://docs.alliancecan.ca/wiki/Rorqual/en",
       "category": "General",
       "last_modified": "2025-09-09T21:49:06Z",
-      "file_path": "docs/pages/General/Rorqual_en.md",
-      "slug": "Rorqual_en"
+      "file_path": "docs/pages/General/Rorqual.md",
+      "slug": "Rorqual"
     },
     {
       "page_id": 2538,
-      "title": "Running jobs/en",
+      "title": "Running jobs",
       "url": "https://docs.alliancecan.ca/wiki/Running_jobs/en",
       "category": "General",
       "last_modified": "2025-09-15T18:26:02Z",
-      "file_path": "docs/pages/General/Running_jobs_en.md",
-      "slug": "Running_jobs_en"
+      "file_path": "docs/pages/General/Running_jobs.md",
+      "slug": "Running_jobs"
     },
     {
       "page_id": 22075,
-      "title": "Rust/en",
+      "title": "Rust",
       "url": "https://docs.alliancecan.ca/wiki/Rust/en",
       "category": "General",
       "last_modified": "2025-08-29T13:08:19Z",
-      "file_path": "docs/pages/General/Rust_en.md",
-      "slug": "Rust_en"
+      "file_path": "docs/pages/General/Rust.md",
+      "slug": "Rust"
     },
     {
       "page_id": 22859,
-      "title": "SAIGE/en",
+      "title": "SAIGE",
       "url": "https://docs.alliancecan.ca/wiki/SAIGE/en",
       "category": "General",
       "last_modified": "2023-07-07T16:32:21Z",
-      "file_path": "docs/pages/General/SAIGE_en.md",
-      "slug": "SAIGE_en"
+      "file_path": "docs/pages/General/SAIGE.md",
+      "slug": "SAIGE"
     },
     {
       "page_id": 17201,
@@ -2803,111 +2821,111 @@
     },
     {
       "page_id": 13014,
-      "title": "SQLite/en",
+      "title": "SQLite",
       "url": "https://docs.alliancecan.ca/wiki/SQLite/en",
       "category": "General",
       "last_modified": "2020-03-12T19:47:58Z",
-      "file_path": "docs/pages/General/SQLite_en.md",
-      "slug": "SQLite_en"
+      "file_path": "docs/pages/General/SQLite.md",
+      "slug": "SQLite"
     },
     {
       "page_id": 506,
-      "title": "SSH/en",
+      "title": "SSH",
       "url": "https://docs.alliancecan.ca/wiki/SSH/en",
       "category": "General",
       "last_modified": "2025-09-10T18:17:15Z",
-      "file_path": "docs/pages/General/SSH_en.md",
-      "slug": "SSH_en"
+      "file_path": "docs/pages/General/SSH.md",
+      "slug": "SSH"
     },
     {
       "page_id": 770,
-      "title": "SSH Keys/en",
+      "title": "SSH Keys",
       "url": "https://docs.alliancecan.ca/wiki/SSH_Keys/en",
       "category": "General",
       "last_modified": "2025-08-29T12:53:58Z",
-      "file_path": "docs/pages/General/SSH_Keys_en.md",
-      "slug": "SSH_Keys_en"
+      "file_path": "docs/pages/General/SSH_Keys.md",
+      "slug": "SSH_Keys"
     },
     {
       "page_id": 23199,
-      "title": "SSH configuration file/en",
+      "title": "SSH configuration file",
       "url": "https://docs.alliancecan.ca/wiki/SSH_configuration_file/en",
       "category": "General",
       "last_modified": "2025-02-03T17:28:41Z",
-      "file_path": "docs/pages/General/SSH_configuration_file_en.md",
-      "slug": "SSH_configuration_file_en"
+      "file_path": "docs/pages/General/SSH_configuration_file.md",
+      "slug": "SSH_configuration_file"
     },
     {
       "page_id": 11681,
-      "title": "SSH host keys/en",
+      "title": "SSH host keys",
       "url": "https://docs.alliancecan.ca/wiki/SSH_host_keys/en",
       "category": "General",
       "last_modified": "2019-09-10T16:15:02Z",
-      "file_path": "docs/pages/General/SSH_host_keys_en.md",
-      "slug": "SSH_host_keys_en"
+      "file_path": "docs/pages/General/SSH_host_keys.md",
+      "slug": "SSH_host_keys"
     },
     {
       "page_id": 11671,
-      "title": "SSH security improvements/en",
+      "title": "SSH security improvements",
       "url": "https://docs.alliancecan.ca/wiki/SSH_security_improvements/en",
       "category": "General",
       "last_modified": "2025-06-04T17:26:02Z",
-      "file_path": "docs/pages/General/SSH_security_improvements_en.md",
-      "slug": "SSH_security_improvements_en"
+      "file_path": "docs/pages/General/SSH_security_improvements.md",
+      "slug": "SSH_security_improvements"
     },
     {
       "page_id": 7403,
-      "title": "SSH tunnelling/en",
+      "title": "SSH tunnelling",
       "url": "https://docs.alliancecan.ca/wiki/SSH_tunnelling/en",
       "category": "General",
       "last_modified": "2025-09-23T22:00:06Z",
-      "file_path": "docs/pages/General/SSH_tunnelling_en.md",
-      "slug": "SSH_tunnelling_en"
+      "file_path": "docs/pages/General/SSH_tunnelling.md",
+      "slug": "SSH_tunnelling"
     },
     {
       "page_id": 28329,
-      "title": "Samtools/en",
+      "title": "Samtools",
       "url": "https://docs.alliancecan.ca/wiki/Samtools/en",
       "category": "General",
       "last_modified": "2025-05-02T19:22:01Z",
-      "file_path": "docs/pages/General/Samtools_en.md",
-      "slug": "Samtools_en"
+      "file_path": "docs/pages/General/Samtools.md",
+      "slug": "Samtools"
     },
     {
       "page_id": 7232,
-      "title": "Scalability/en",
+      "title": "Scalability",
       "url": "https://docs.alliancecan.ca/wiki/Scalability/en",
       "category": "General",
       "last_modified": "2019-02-12T16:03:04Z",
-      "file_path": "docs/pages/General/Scalability_en.md",
-      "slug": "Scalability_en"
+      "file_path": "docs/pages/General/Scalability.md",
+      "slug": "Scalability"
     },
     {
       "page_id": 6041,
-      "title": "Scratch purging policy/en",
+      "title": "Scratch purging policy",
       "url": "https://docs.alliancecan.ca/wiki/Scratch_purging_policy/en",
       "category": "General",
       "last_modified": "2025-07-25T17:33:02Z",
-      "file_path": "docs/pages/General/Scratch_purging_policy_en.md",
-      "slug": "Scratch_purging_policy_en"
+      "file_path": "docs/pages/General/Scratch_purging_policy.md",
+      "slug": "Scratch_purging_policy"
     },
     {
       "page_id": 13449,
-      "title": "Securing your account/en",
+      "title": "Securing your account",
       "url": "https://docs.alliancecan.ca/wiki/Securing_your_account/en",
       "category": "General",
       "last_modified": "2023-10-11T16:31:55Z",
-      "file_path": "docs/pages/General/Securing_your_account_en.md",
-      "slug": "Securing_your_account_en"
+      "file_path": "docs/pages/General/Securing_your_account.md",
+      "slug": "Securing_your_account"
     },
     {
       "page_id": 2707,
-      "title": "Security considerations when running a VM/en",
+      "title": "Security considerations when running a VM",
       "url": "https://docs.alliancecan.ca/wiki/Security_considerations_when_running_a_VM/en",
       "category": "General",
       "last_modified": "2024-09-26T20:07:03Z",
-      "file_path": "docs/pages/General/Security_considerations_when_running_a_VM_en.md",
-      "slug": "Security_considerations_when_running_a_VM_en"
+      "file_path": "docs/pages/General/Security_considerations_when_running_a_VM.md",
+      "slug": "Security_considerations_when_running_a_VM"
     },
     {
       "page_id": 27923,
@@ -2920,39 +2938,39 @@
     },
     {
       "page_id": 26915,
-      "title": "Self-paced courses/en",
+      "title": "Self-paced courses",
       "url": "https://docs.alliancecan.ca/wiki/Self-paced_courses/en",
       "category": "General",
       "last_modified": "2025-09-30T20:33:27Z",
-      "file_path": "docs/pages/General/Self-paced_courses_en.md",
-      "slug": "Self-paced_courses_en"
+      "file_path": "docs/pages/General/Self-paced_courses.md",
+      "slug": "Self-paced_courses"
     },
     {
       "page_id": 24113,
-      "title": "Services d'informatique quantique/en",
+      "title": "Services d'informatique quantique",
       "url": "https://docs.alliancecan.ca/wiki/Services_d%27informatique_quantique/en",
       "category": "General",
       "last_modified": "2025-11-28T18:40:04Z",
-      "file_path": "docs/pages/General/Services_d'informatique_quantique_en.md",
-      "slug": "Services_d'informatique_quantique_en"
+      "file_path": "docs/pages/General/Services_d'informatique_quantique.md",
+      "slug": "Services_d'informatique_quantique"
     },
     {
       "page_id": 15396,
-      "title": "Setting up GUI Desktop on a VM/en",
+      "title": "Setting up GUI Desktop on a VM",
       "url": "https://docs.alliancecan.ca/wiki/Setting_up_GUI_Desktop_on_a_VM/en",
       "category": "General",
       "last_modified": "2023-02-27T21:02:02Z",
-      "file_path": "docs/pages/General/Setting_up_GUI_Desktop_on_a_VM_en.md",
-      "slug": "Setting_up_GUI_Desktop_on_a_VM_en"
+      "file_path": "docs/pages/General/Setting_up_GUI_Desktop_on_a_VM.md",
+      "slug": "Setting_up_GUI_Desktop_on_a_VM"
     },
     {
       "page_id": 2555,
-      "title": "Sharing data/en",
+      "title": "Sharing data",
       "url": "https://docs.alliancecan.ca/wiki/Sharing_data/en",
       "category": "General",
       "last_modified": "2025-08-29T12:47:04Z",
-      "file_path": "docs/pages/General/Sharing_data_en.md",
-      "slug": "Sharing_data_en"
+      "file_path": "docs/pages/General/Sharing_data.md",
+      "slug": "Sharing_data"
     },
     {
       "page_id": 29086,
@@ -2965,48 +2983,48 @@
     },
     {
       "page_id": 10153,
-      "title": "Slicer/en",
+      "title": "Slicer",
       "url": "https://docs.alliancecan.ca/wiki/Slicer/en",
       "category": "General",
       "last_modified": "2019-03-05T20:48:02Z",
-      "file_path": "docs/pages/General/Slicer_en.md",
-      "slug": "Slicer_en"
+      "file_path": "docs/pages/General/Slicer.md",
+      "slug": "Slicer"
     },
     {
       "page_id": 26343,
-      "title": "Snowflurry/en",
+      "title": "Snowflurry",
       "url": "https://docs.alliancecan.ca/wiki/Snowflurry/en",
       "category": "General",
       "last_modified": "2024-10-24T20:38:45Z",
-      "file_path": "docs/pages/General/Snowflurry_en.md",
-      "slug": "Snowflurry_en"
+      "file_path": "docs/pages/General/Snowflurry.md",
+      "slug": "Snowflurry"
     },
     {
       "page_id": 9301,
-      "title": "SpaCy/en",
+      "title": "SpaCy",
       "url": "https://docs.alliancecan.ca/wiki/SpaCy/en",
       "category": "General",
       "last_modified": "2022-07-19T22:44:03Z",
-      "file_path": "docs/pages/General/SpaCy_en.md",
-      "slug": "SpaCy_en"
+      "file_path": "docs/pages/General/SpaCy.md",
+      "slug": "SpaCy"
     },
     {
       "page_id": 14669,
-      "title": "Standard software environments/en",
+      "title": "Standard software environments",
       "url": "https://docs.alliancecan.ca/wiki/Standard_software_environments/en",
       "category": "General",
       "last_modified": "2025-10-15T14:45:17Z",
-      "file_path": "docs/pages/General/Standard_software_environments_en.md",
-      "slug": "Standard_software_environments_en"
+      "file_path": "docs/pages/General/Standard_software_environments.md",
+      "slug": "Standard_software_environments"
     },
     {
       "page_id": 5428,
-      "title": "Star-CCM+/en",
+      "title": "Star-CCM+",
       "url": "https://docs.alliancecan.ca/wiki/Star-CCM%2B/en",
       "category": "General",
-      "last_modified": "2025-10-21T18:37:03Z",
-      "file_path": "docs/pages/General/Star-CCM+_en.md",
-      "slug": "Star-CCM+_en"
+      "last_modified": "2025-11-03T20:57:23Z",
+      "file_path": "docs/pages/General/Star-CCM+.md",
+      "slug": "Star-CCM+"
     },
     {
       "page_id": 13223,
@@ -3019,48 +3037,48 @@
     },
     {
       "page_id": 3195,
-      "title": "Storage and file management/en",
+      "title": "Storage and file management",
       "url": "https://docs.alliancecan.ca/wiki/Storage_and_file_management/en",
       "category": "General",
       "last_modified": "2025-10-16T21:52:46Z",
-      "file_path": "docs/pages/General/Storage_and_file_management_en.md",
-      "slug": "Storage_and_file_management_en"
+      "file_path": "docs/pages/General/Storage_and_file_management.md",
+      "slug": "Storage_and_file_management"
     },
     {
       "page_id": 8832,
-      "title": "Structure/en",
+      "title": "Structure",
       "url": "https://docs.alliancecan.ca/wiki/Structure/en",
       "category": "General",
       "last_modified": "2022-01-21T18:35:08Z",
-      "file_path": "docs/pages/General/Structure_en.md",
-      "slug": "Structure_en"
+      "file_path": "docs/pages/General/Structure.md",
+      "slug": "Structure"
     },
     {
       "page_id": 13580,
-      "title": "SubatomicPhysics/en",
+      "title": "SubatomicPhysics",
       "url": "https://docs.alliancecan.ca/wiki/SubatomicPhysics/en",
       "category": "General",
       "last_modified": "2021-07-27T21:02:01Z",
-      "file_path": "docs/pages/General/SubatomicPhysics_en.md",
-      "slug": "SubatomicPhysics_en"
+      "file_path": "docs/pages/General/SubatomicPhysics.md",
+      "slug": "SubatomicPhysics"
     },
     {
       "page_id": 7351,
-      "title": "Symbolic algebra software/en",
+      "title": "Symbolic algebra software",
       "url": "https://docs.alliancecan.ca/wiki/Symbolic_algebra_software/en",
       "category": "General",
       "last_modified": "2022-12-13T18:08:08Z",
-      "file_path": "docs/pages/General/Symbolic_algebra_software_en.md",
-      "slug": "Symbolic_algebra_software_en"
+      "file_path": "docs/pages/General/Symbolic_algebra_software.md",
+      "slug": "Symbolic_algebra_software"
     },
     {
       "page_id": 536,
-      "title": "System status/en",
+      "title": "System status",
       "url": "https://docs.alliancecan.ca/wiki/System_status/en",
       "category": "General",
       "last_modified": "2023-02-27T21:04:01Z",
-      "file_path": "docs/pages/General/System_status_en.md",
-      "slug": "System_status_en"
+      "file_path": "docs/pages/General/System_status.md",
+      "slug": "System_status"
     },
     {
       "page_id": 12863,
@@ -3073,57 +3091,57 @@
     },
     {
       "page_id": 28130,
-      "title": "TamIA/en",
+      "title": "TamIA",
       "url": "https://docs.alliancecan.ca/wiki/TamIA/en",
       "category": "General",
-      "last_modified": "2025-09-30T20:42:23Z",
-      "file_path": "docs/pages/General/TamIA_en.md",
-      "slug": "TamIA_en"
+      "last_modified": "2025-12-03T21:24:01Z",
+      "file_path": "docs/pages/General/TamIA.md",
+      "slug": "TamIA"
     },
     {
       "page_id": 1577,
-      "title": "Tar/en",
+      "title": "Tar",
       "url": "https://docs.alliancecan.ca/wiki/Tar/en",
       "category": "General",
       "last_modified": "2019-07-03T12:59:08Z",
-      "file_path": "docs/pages/General/Tar_en.md",
-      "slug": "Tar_en"
+      "file_path": "docs/pages/General/Tar.md",
+      "slug": "Tar"
     },
     {
       "page_id": 20210,
-      "title": "Technical documentation/en",
+      "title": "Technical documentation",
       "url": "https://docs.alliancecan.ca/wiki/Technical_documentation/en",
       "category": "Technical Reference",
       "last_modified": "2025-09-05T17:48:21Z",
-      "file_path": "docs/pages/Technical Reference/Technical_documentation_en.md",
-      "slug": "Technical_documentation_en"
+      "file_path": "docs/pages/Technical Reference/Technical_documentation.md",
+      "slug": "Technical_documentation"
     },
     {
       "page_id": 14456,
-      "title": "Technical glossary for the resource allocation competitions/en",
+      "title": "Technical glossary for the resource allocation competitions",
       "url": "https://docs.alliancecan.ca/wiki/Technical_glossary_for_the_resource_allocation_competitions/en",
       "category": "Technical Reference",
-      "last_modified": "2023-10-24T16:21:13Z",
-      "file_path": "docs/pages/Technical Reference/Technical_glossary_for_the_resource_allocation_competitions_en.md",
-      "slug": "Technical_glossary_for_the_resource_allocation_competitions_en"
+      "last_modified": "2025-11-24T22:06:46Z",
+      "file_path": "docs/pages/Technical Reference/Technical_glossary_for_the_resource_allocation_competitions.md",
+      "slug": "Technical_glossary_for_the_resource_allocation_competitions"
     },
     {
       "page_id": 531,
-      "title": "Technical support/en",
+      "title": "Technical support",
       "url": "https://docs.alliancecan.ca/wiki/Technical_support/en",
       "category": "Technical Reference",
       "last_modified": "2025-08-29T12:33:30Z",
-      "file_path": "docs/pages/Technical Reference/Technical_support_en.md",
-      "slug": "Technical_support_en"
+      "file_path": "docs/pages/Technical Reference/Technical_support.md",
+      "slug": "Technical_support"
     },
     {
       "page_id": 3577,
-      "title": "TensorFlow/en",
+      "title": "TensorFlow",
       "url": "https://docs.alliancecan.ca/wiki/TensorFlow/en",
       "category": "General",
       "last_modified": "2025-08-29T13:09:26Z",
-      "file_path": "docs/pages/General/TensorFlow_en.md",
-      "slug": "TensorFlow_en"
+      "file_path": "docs/pages/General/TensorFlow.md",
+      "slug": "TensorFlow"
     },
     {
       "page_id": 5475,
@@ -3136,12 +3154,12 @@
     },
     {
       "page_id": 12030,
-      "title": "Terraform/en",
+      "title": "Terraform",
       "url": "https://docs.alliancecan.ca/wiki/Terraform/en",
       "category": "General",
       "last_modified": "2025-07-09T20:49:42Z",
-      "file_path": "docs/pages/General/Terraform_en.md",
-      "slug": "Terraform_en"
+      "file_path": "docs/pages/General/Terraform.md",
+      "slug": "Terraform"
     },
     {
       "page_id": 29081,
@@ -3160,6 +3178,15 @@
       "last_modified": "2021-07-27T19:17:33Z",
       "file_path": "docs/pages/General/Test-moderation.md",
       "slug": "Test-moderation"
+    },
+    {
+      "page_id": 31985,
+      "title": "Test-syntax",
+      "url": "https://docs.alliancecan.ca/wiki/Test-syntax",
+      "category": "General",
+      "last_modified": "2025-11-14T19:48:47Z",
+      "file_path": "docs/pages/General/Test-syntax.md",
+      "slug": "Test-syntax"
     },
     {
       "page_id": 16608,
@@ -3190,102 +3217,111 @@
     },
     {
       "page_id": 6677,
-      "title": "Torch/en",
+      "title": "Torch",
       "url": "https://docs.alliancecan.ca/wiki/Torch/en",
       "category": "General",
       "last_modified": "2024-03-20T15:18:44Z",
-      "file_path": "docs/pages/General/Torch_en.md",
-      "slug": "Torch_en"
+      "file_path": "docs/pages/General/Torch.md",
+      "slug": "Torch"
     },
     {
       "page_id": 2144,
-      "title": "Transferring data/en",
+      "title": "Transferring data",
       "url": "https://docs.alliancecan.ca/wiki/Transferring_data/en",
       "category": "General",
       "last_modified": "2025-08-29T12:50:27Z",
-      "file_path": "docs/pages/General/Transferring_data_en.md",
-      "slug": "Transferring_data_en"
+      "file_path": "docs/pages/General/Transferring_data.md",
+      "slug": "Transferring_data"
     },
     {
       "page_id": 23587,
-      "title": "Transferring files with Aspera Connect/ascp/en",
+      "title": "Transferring files with Aspera Connect/ascp",
       "url": "https://docs.alliancecan.ca/wiki/Transferring_files_with_Aspera_Connect/ascp/en",
       "category": "General",
       "last_modified": "2024-05-31T14:47:01Z",
-      "file_path": "docs/pages/General/Transferring_files_with_Aspera_Connect_ascp_en.md",
-      "slug": "Transferring_files_with_Aspera_Connect_ascp_en"
+      "file_path": "docs/pages/General/Transferring_files_with_Aspera_Connect_ascp.md",
+      "slug": "Transferring_files_with_Aspera_Connect_ascp"
     },
     {
       "page_id": 29133,
-      "title": "Transition from Niagara to Trillium/en",
+      "title": "Transition from Niagara to Trillium",
       "url": "https://docs.alliancecan.ca/wiki/Transition_from_Niagara_to_Trillium/en",
       "category": "General",
       "last_modified": "2025-11-06T19:22:47Z",
-      "file_path": "docs/pages/General/Transition_from_Niagara_to_Trillium_en.md",
-      "slug": "Transition_from_Niagara_to_Trillium_en"
+      "file_path": "docs/pages/General/Transition_from_Niagara_to_Trillium.md",
+      "slug": "Transition_from_Niagara_to_Trillium"
     },
     {
       "page_id": 27501,
-      "title": "Transpileur quantique/en",
+      "title": "Transpileur quantique",
       "url": "https://docs.alliancecan.ca/wiki/Transpileur_quantique/en",
       "category": "General",
       "last_modified": "2025-01-08T19:33:50Z",
-      "file_path": "docs/pages/General/Transpileur_quantique_en.md",
-      "slug": "Transpileur_quantique_en"
+      "file_path": "docs/pages/General/Transpileur_quantique.md",
+      "slug": "Transpileur_quantique"
     },
     {
       "page_id": 26932,
-      "title": "Trillium/en",
+      "title": "Trillium",
       "url": "https://docs.alliancecan.ca/wiki/Trillium/en",
       "category": "General",
       "last_modified": "2025-10-10T18:59:32Z",
-      "file_path": "docs/pages/General/Trillium_en.md",
-      "slug": "Trillium_en"
+      "file_path": "docs/pages/General/Trillium.md",
+      "slug": "Trillium"
     },
     {
       "page_id": 29436,
-      "title": "Trillium Quickstart/en",
+      "title": "Trillium Quickstart",
       "url": "https://docs.alliancecan.ca/wiki/Trillium_Quickstart/en",
       "category": "General",
-      "last_modified": "2025-09-16T21:28:48Z",
-      "file_path": "docs/pages/General/Trillium_Quickstart_en.md",
-      "slug": "Trillium_Quickstart_en"
+      "last_modified": "2025-11-04T19:42:25Z",
+      "file_path": "docs/pages/General/Trillium_Quickstart.md",
+      "slug": "Trillium_Quickstart"
     },
     {
       "page_id": 4105,
-      "title": "Tuning Lustre/en",
+      "title": "Tuning Lustre",
       "url": "https://docs.alliancecan.ca/wiki/Tuning_Lustre/en",
       "category": "General",
       "last_modified": "2022-04-28T13:24:01Z",
-      "file_path": "docs/pages/General/Tuning_Lustre_en.md",
-      "slug": "Tuning_Lustre_en"
+      "file_path": "docs/pages/General/Tuning_Lustre.md",
+      "slug": "Tuning_Lustre"
     },
     {
       "page_id": 12411,
-      "title": "Tutoriel Apprentissage machine/en",
+      "title": "Tutoriel Apprentissage machine",
       "url": "https://docs.alliancecan.ca/wiki/Tutoriel_Apprentissage_machine/en",
       "category": "General",
       "last_modified": "2023-04-03T19:08:59Z",
-      "file_path": "docs/pages/General/Tutoriel_Apprentissage_machine_en.md",
-      "slug": "Tutoriel_Apprentissage_machine_en"
+      "file_path": "docs/pages/General/Tutoriel_Apprentissage_machine.md",
+      "slug": "Tutoriel_Apprentissage_machine"
     },
     {
       "page_id": 29549,
-      "title": "User roles to access resources and services of the Alliance Federation/en",
+      "title": "User roles to access resources and services of the Alliance Federation",
       "url": "https://docs.alliancecan.ca/wiki/User_roles_to_access_resources_and_services_of_the_Alliance_Federation/en",
       "category": "User Guide",
-      "last_modified": "2025-08-13T21:07:19Z",
-      "file_path": "docs/pages/User Guide/User_roles_to_access_resources_and_services_of_the_Alliance_Federation_en.md",
-      "slug": "User_roles_to_access_resources_and_services_of_the_Alliance_Federation_en"
+      "last_modified": "2025-11-03T20:57:02Z",
+      "file_path": "docs/pages/User Guide/User_roles_to_access_resources_and_services_of_the_Alliance_Federation.md",
+      "slug": "User_roles_to_access_resources_and_services_of_the_Alliance_Federation"
+    },
+    {
+      "page_id": 32061,
+      "title": "Using Conda in Apptainer",
+      "url": "https://docs.alliancecan.ca/wiki/Using_Conda_in_Apptainer/en",
+      "category": "General",
+      "last_modified": "2025-12-03T14:48:20Z",
+      "file_path": "docs/pages/General/Using_Conda_in_Apptainer.md",
+      "slug": "Using_Conda_in_Apptainer"
     },
     {
       "page_id": 4369,
-      "title": "Using GPUs with Slurm/en",
+      "title": "Using GPUs with Slurm",
       "url": "https://docs.alliancecan.ca/wiki/Using_GPUs_with_Slurm/en",
       "category": "General",
       "last_modified": "2025-09-10T20:39:53Z",
-      "file_path": "docs/pages/General/Using_GPUs_with_Slurm_en.md",
-      "slug": "Using_GPUs_with_Slurm_en"
+      "file_path": "docs/pages/General/Using_GPUs_with_Slurm.md",
+      "slug": "Using_GPUs_with_Slurm"
     },
     {
       "page_id": 10136,
@@ -3307,21 +3343,21 @@
     },
     {
       "page_id": 647,
-      "title": "Using SSH keys in Linux/en",
+      "title": "Using SSH keys in Linux",
       "url": "https://docs.alliancecan.ca/wiki/Using_SSH_keys_in_Linux/en",
       "category": "General",
       "last_modified": "2023-02-02T15:47:02Z",
-      "file_path": "docs/pages/General/Using_SSH_keys_in_Linux_en.md",
-      "slug": "Using_SSH_keys_in_Linux_en"
+      "file_path": "docs/pages/General/Using_SSH_keys_in_Linux.md",
+      "slug": "Using_SSH_keys_in_Linux"
     },
     {
       "page_id": 6658,
-      "title": "Using a new empty volume on a Linux VM/en",
+      "title": "Using a new empty volume on a Linux VM",
       "url": "https://docs.alliancecan.ca/wiki/Using_a_new_empty_volume_on_a_Linux_VM/en",
       "category": "General",
       "last_modified": "2020-10-08T16:05:03Z",
-      "file_path": "docs/pages/General/Using_a_new_empty_volume_on_a_Linux_VM_en.md",
-      "slug": "Using_a_new_empty_volume_on_a_Linux_VM_en"
+      "file_path": "docs/pages/General/Using_a_new_empty_volume_on_a_Linux_VM.md",
+      "slug": "Using_a_new_empty_volume_on_a_Linux_VM"
     },
     {
       "page_id": 6667,
@@ -3334,48 +3370,48 @@
     },
     {
       "page_id": 10335,
-      "title": "Using a resource allocation/en",
+      "title": "Using a resource allocation",
       "url": "https://docs.alliancecan.ca/wiki/Using_a_resource_allocation/en",
       "category": "General",
       "last_modified": "2024-06-11T18:00:31Z",
-      "file_path": "docs/pages/General/Using_a_resource_allocation_en.md",
-      "slug": "Using_a_resource_allocation_en"
+      "file_path": "docs/pages/General/Using_a_resource_allocation.md",
+      "slug": "Using_a_resource_allocation"
     },
     {
       "page_id": 17579,
-      "title": "Using cloud vGPUs/en",
+      "title": "Using cloud vGPUs",
       "url": "https://docs.alliancecan.ca/wiki/Using_cloud_vGPUs/en",
       "category": "General",
       "last_modified": "2025-01-21T20:56:43Z",
-      "file_path": "docs/pages/General/Using_cloud_vGPUs_en.md",
-      "slug": "Using_cloud_vGPUs_en"
+      "file_path": "docs/pages/General/Using_cloud_vGPUs.md",
+      "slug": "Using_cloud_vGPUs"
     },
     {
       "page_id": 20575,
-      "title": "Using ipv6 in cloud/en",
+      "title": "Using ipv6 in cloud",
       "url": "https://docs.alliancecan.ca/wiki/Using_ipv6_in_cloud/en",
       "category": "General",
       "last_modified": "2023-02-27T21:10:01Z",
-      "file_path": "docs/pages/General/Using_ipv6_in_cloud_en.md",
-      "slug": "Using_ipv6_in_cloud_en"
+      "file_path": "docs/pages/General/Using_ipv6_in_cloud.md",
+      "slug": "Using_ipv6_in_cloud"
     },
     {
       "page_id": 9323,
-      "title": "Using nearline storage/en",
+      "title": "Using nearline storage",
       "url": "https://docs.alliancecan.ca/wiki/Using_nearline_storage/en",
       "category": "General",
       "last_modified": "2025-11-28T18:40:05Z",
-      "file_path": "docs/pages/General/Using_nearline_storage_en.md",
-      "slug": "Using_nearline_storage_en"
+      "file_path": "docs/pages/General/Using_nearline_storage.md",
+      "slug": "Using_nearline_storage"
     },
     {
       "page_id": 14251,
-      "title": "Using node-local storage/en",
+      "title": "Using node-local storage",
       "url": "https://docs.alliancecan.ca/wiki/Using_node-local_storage/en",
       "category": "General",
       "last_modified": "2025-08-29T13:04:31Z",
-      "file_path": "docs/pages/General/Using_node-local_storage_en.md",
-      "slug": "Using_node-local_storage_en"
+      "file_path": "docs/pages/General/Using_node-local_storage.md",
+      "slug": "Using_node-local_storage"
     },
     {
       "page_id": 19216,
@@ -3388,21 +3424,30 @@
     },
     {
       "page_id": 1610,
-      "title": "Utiliser des modules/en",
+      "title": "Utiliser des modules",
       "url": "https://docs.alliancecan.ca/wiki/Utiliser_des_modules/en",
       "category": "General",
       "last_modified": "2024-08-29T23:01:39Z",
-      "file_path": "docs/pages/General/Utiliser_des_modules_en.md",
-      "slug": "Utiliser_des_modules_en"
+      "file_path": "docs/pages/General/Utiliser_des_modules.md",
+      "slug": "Utiliser_des_modules"
+    },
+    {
+      "page_id": 31905,
+      "title": "Uv",
+      "url": "https://docs.alliancecan.ca/wiki/Uv/en",
+      "category": "General",
+      "last_modified": "2025-11-18T21:44:02Z",
+      "file_path": "docs/pages/General/Uv.md",
+      "slug": "Uv"
     },
     {
       "page_id": 4649,
-      "title": "VASP/en",
+      "title": "VASP",
       "url": "https://docs.alliancecan.ca/wiki/VASP/en",
       "category": "General",
-      "last_modified": "2025-09-19T16:04:44Z",
-      "file_path": "docs/pages/General/VASP_en.md",
-      "slug": "VASP_en"
+      "last_modified": "2025-11-18T19:41:29Z",
+      "file_path": "docs/pages/General/VASP.md",
+      "slug": "VASP"
     },
     {
       "page_id": 28589,
@@ -3415,111 +3460,111 @@
     },
     {
       "page_id": 10582,
-      "title": "VMD/en",
+      "title": "VMD",
       "url": "https://docs.alliancecan.ca/wiki/VMD/en",
       "category": "General",
       "last_modified": "2025-08-29T13:37:02Z",
-      "file_path": "docs/pages/General/VMD_en.md",
-      "slug": "VMD_en"
+      "file_path": "docs/pages/General/VMD.md",
+      "slug": "VMD"
     },
     {
       "page_id": 5256,
-      "title": "VM Best Practices/en",
+      "title": "VM Best Practices",
       "url": "https://docs.alliancecan.ca/wiki/VM_Best_Practices/en",
       "category": "General",
       "last_modified": "2023-02-27T21:11:02Z",
-      "file_path": "docs/pages/General/VM_Best_Practices_en.md",
-      "slug": "VM_Best_Practices_en"
+      "file_path": "docs/pages/General/VM_Best_Practices.md",
+      "slug": "VM_Best_Practices"
     },
     {
       "page_id": 22896,
-      "title": "VM recovery via cloud console/en",
+      "title": "VM recovery via cloud console",
       "url": "https://docs.alliancecan.ca/wiki/VM_recovery_via_cloud_console/en",
       "category": "General",
       "last_modified": "2023-09-20T16:46:30Z",
-      "file_path": "docs/pages/General/VM_recovery_via_cloud_console_en.md",
-      "slug": "VM_recovery_via_cloud_console_en"
+      "file_path": "docs/pages/General/VM_recovery_via_cloud_console.md",
+      "slug": "VM_recovery_via_cloud_console"
     },
     {
       "page_id": 8518,
-      "title": "VNC/en",
+      "title": "VNC",
       "url": "https://docs.alliancecan.ca/wiki/VNC/en",
       "category": "General",
       "last_modified": "2025-11-28T18:39:32Z",
-      "file_path": "docs/pages/General/VNC_en.md",
-      "slug": "VNC_en"
+      "file_path": "docs/pages/General/VNC.md",
+      "slug": "VNC"
     },
     {
       "page_id": 10414,
-      "title": "VTK/en",
+      "title": "VTK",
       "url": "https://docs.alliancecan.ca/wiki/VTK/en",
       "category": "General",
       "last_modified": "2025-08-29T13:34:02Z",
-      "file_path": "docs/pages/General/VTK_en.md",
-      "slug": "VTK_en"
+      "file_path": "docs/pages/General/VTK.md",
+      "slug": "VTK"
     },
     {
       "page_id": 9558,
-      "title": "Valgrind/en",
+      "title": "Valgrind",
       "url": "https://docs.alliancecan.ca/wiki/Valgrind/en",
       "category": "General",
       "last_modified": "2025-09-02T15:35:58Z",
-      "file_path": "docs/pages/General/Valgrind_en.md",
-      "slug": "Valgrind_en"
+      "file_path": "docs/pages/General/Valgrind.md",
+      "slug": "Valgrind"
     },
     {
       "page_id": 236,
-      "title": "Version control/en",
+      "title": "Version control",
       "url": "https://docs.alliancecan.ca/wiki/Version_control/en",
       "category": "General",
       "last_modified": "2023-11-22T20:47:54Z",
-      "file_path": "docs/pages/General/Version_control_en.md",
-      "slug": "Version_control_en"
+      "file_path": "docs/pages/General/Version_control.md",
+      "slug": "Version_control"
     },
     {
       "page_id": 24639,
-      "title": "VirSorter2/en",
+      "title": "VirSorter2",
       "url": "https://docs.alliancecan.ca/wiki/VirSorter2/en",
       "category": "General",
       "last_modified": "2024-07-12T18:02:24Z",
-      "file_path": "docs/pages/General/VirSorter2_en.md",
-      "slug": "VirSorter2_en"
+      "file_path": "docs/pages/General/VirSorter2.md",
+      "slug": "VirSorter2"
     },
     {
       "page_id": 722,
-      "title": "Virtual machine flavors/en",
+      "title": "Virtual machine flavors",
       "url": "https://docs.alliancecan.ca/wiki/Virtual_machine_flavors/en",
       "category": "General",
       "last_modified": "2023-03-30T20:50:21Z",
-      "file_path": "docs/pages/General/Virtual_machine_flavors_en.md",
-      "slug": "Virtual_machine_flavors_en"
+      "file_path": "docs/pages/General/Virtual_machine_flavors.md",
+      "slug": "Virtual_machine_flavors"
     },
     {
       "page_id": 10559,
-      "title": "VisIt/en",
+      "title": "VisIt",
       "url": "https://docs.alliancecan.ca/wiki/VisIt/en",
       "category": "General",
       "last_modified": "2025-08-31T14:16:39Z",
-      "file_path": "docs/pages/General/VisIt_en.md",
-      "slug": "VisIt_en"
+      "file_path": "docs/pages/General/VisIt.md",
+      "slug": "VisIt"
     },
     {
       "page_id": 24790,
-      "title": "Visual Studio Code/en",
+      "title": "Visual Studio Code",
       "url": "https://docs.alliancecan.ca/wiki/Visual_Studio_Code/en",
       "category": "General",
       "last_modified": "2025-10-21T20:16:42Z",
-      "file_path": "docs/pages/General/Visual_Studio_Code_en.md",
-      "slug": "Visual_Studio_Code_en"
+      "file_path": "docs/pages/General/Visual_Studio_Code.md",
+      "slug": "Visual_Studio_Code"
     },
     {
       "page_id": 719,
-      "title": "Visualization/en",
+      "title": "Visualization",
       "url": "https://docs.alliancecan.ca/wiki/Visualization/en",
       "category": "General",
       "last_modified": "2025-10-21T16:16:29Z",
-      "file_path": "docs/pages/General/Visualization_en.md",
-      "slug": "Visualization_en"
+      "file_path": "docs/pages/General/Visualization.md",
+      "slug": "Visualization"
     },
     {
       "page_id": 17343,
@@ -3532,75 +3577,75 @@
     },
     {
       "page_id": 15889,
-      "title": "Vtune/en",
+      "title": "Vtune",
       "url": "https://docs.alliancecan.ca/wiki/Vtune/en",
       "category": "General",
       "last_modified": "2024-02-14T15:15:05Z",
-      "file_path": "docs/pages/General/Vtune_en.md",
-      "slug": "Vtune_en"
+      "file_path": "docs/pages/General/Vtune.md",
+      "slug": "Vtune"
     },
     {
       "page_id": 28485,
-      "title": "Vulcan/en",
+      "title": "Vulcan",
       "url": "https://docs.alliancecan.ca/wiki/Vulcan/en",
       "category": "General",
       "last_modified": "2025-08-09T15:27:02Z",
-      "file_path": "docs/pages/General/Vulcan_en.md",
-      "slug": "Vulcan_en"
+      "file_path": "docs/pages/General/Vulcan.md",
+      "slug": "Vulcan"
     },
     {
       "page_id": 25620,
-      "title": "WRF/en",
+      "title": "WRF",
       "url": "https://docs.alliancecan.ca/wiki/WRF/en",
       "category": "General",
       "last_modified": "2024-05-17T17:21:22Z",
-      "file_path": "docs/pages/General/WRF_en.md",
-      "slug": "WRF_en"
+      "file_path": "docs/pages/General/WRF.md",
+      "slug": "WRF"
     },
     {
       "page_id": 15989,
-      "title": "Weights & Biases (wandb)/en",
+      "title": "Weights & Biases (wandb)",
       "url": "https://docs.alliancecan.ca/wiki/Weights_%26_Biases_(wandb)/en",
       "category": "General",
       "last_modified": "2025-08-31T14:15:55Z",
-      "file_path": "docs/pages/General/Weights_&_Biases_(wandb)_en.md",
-      "slug": "Weights_&_Biases_(wandb)_en"
+      "file_path": "docs/pages/General/Weights_&_Biases_(wandb).md",
+      "slug": "Weights_&_Biases_(wandb)"
     },
     {
       "page_id": 3598,
-      "title": "What is a scheduler?/en",
+      "title": "What is a scheduler?",
       "url": "https://docs.alliancecan.ca/wiki/What_is_a_scheduler%3F/en",
       "category": "General",
       "last_modified": "2023-07-20T21:54:02Z",
-      "file_path": "docs/pages/General/What_is_a_scheduler_en.md",
-      "slug": "What_is_a_scheduler_en"
+      "file_path": "docs/pages/General/What_is_a_scheduler.md",
+      "slug": "What_is_a_scheduler"
     },
     {
       "page_id": 25182,
-      "title": "Windows Subsystem for Linux (WSL)/en",
+      "title": "Windows Subsystem for Linux (WSL)",
       "url": "https://docs.alliancecan.ca/wiki/Windows_Subsystem_for_Linux_(WSL)/en",
       "category": "General",
       "last_modified": "2024-04-02T21:23:48Z",
-      "file_path": "docs/pages/General/Windows_Subsystem_for_Linux_(WSL)_en.md",
-      "slug": "Windows_Subsystem_for_Linux_(WSL)_en"
+      "file_path": "docs/pages/General/Windows_Subsystem_for_Linux_(WSL).md",
+      "slug": "Windows_Subsystem_for_Linux_(WSL)"
     },
     {
       "page_id": 21290,
-      "title": "Working with VMs/en",
+      "title": "Working with VMs",
       "url": "https://docs.alliancecan.ca/wiki/Working_with_VMs/en",
       "category": "General",
       "last_modified": "2023-02-27T21:12:49Z",
-      "file_path": "docs/pages/General/Working_with_VMs_en.md",
-      "slug": "Working_with_VMs_en"
+      "file_path": "docs/pages/General/Working_with_VMs.md",
+      "slug": "Working_with_VMs"
     },
     {
       "page_id": 21244,
-      "title": "Working with images/en",
+      "title": "Working with images",
       "url": "https://docs.alliancecan.ca/wiki/Working_with_images/en",
       "category": "General",
       "last_modified": "2023-09-15T21:59:13Z",
-      "file_path": "docs/pages/General/Working_with_images_en.md",
-      "slug": "Working_with_images_en"
+      "file_path": "docs/pages/General/Working_with_images.md",
+      "slug": "Working_with_images"
     },
     {
       "page_id": 18982,
@@ -3613,30 +3658,30 @@
     },
     {
       "page_id": 21268,
-      "title": "Working with volumes/en",
+      "title": "Working with volumes",
       "url": "https://docs.alliancecan.ca/wiki/Working_with_volumes/en",
       "category": "General",
       "last_modified": "2023-03-30T21:32:31Z",
-      "file_path": "docs/pages/General/Working_with_volumes_en.md",
-      "slug": "Working_with_volumes_en"
+      "file_path": "docs/pages/General/Working_with_volumes.md",
+      "slug": "Working_with_volumes"
     },
     {
       "page_id": 9832,
-      "title": "XGBoost/en",
+      "title": "XGBoost",
       "url": "https://docs.alliancecan.ca/wiki/XGBoost/en",
       "category": "General",
       "last_modified": "2024-06-10T16:15:07Z",
-      "file_path": "docs/pages/General/XGBoost_en.md",
-      "slug": "XGBoost_en"
+      "file_path": "docs/pages/General/XGBoost.md",
+      "slug": "XGBoost"
     },
     {
       "page_id": 10595,
-      "title": "Yt/en",
+      "title": "Yt",
       "url": "https://docs.alliancecan.ca/wiki/Yt/en",
       "category": "General",
       "last_modified": "2019-12-16T15:46:11Z",
-      "file_path": "docs/pages/General/Yt_en.md",
-      "slug": "Yt_en"
+      "file_path": "docs/pages/General/Yt.md",
+      "slug": "Yt"
     },
     {
       "page_id": 10338,
@@ -3673,96 +3718,6 @@
       "last_modified": "2019-12-09T14:34:28Z",
       "file_path": "docs/pages/General/⧼sidebar-available-software-link⧽.md",
       "slug": "⧼sidebar-available-software-link⧽"
-    },
-    {
-      "page_id": 11766,
-      "title": "SSH host keys",
-      "url": "https://docs.alliancecan.ca/wiki/SSH_host_keys",
-      "category": "General",
-      "last_modified": "2025-10-24T17:39:40Z",
-      "file_path": "docs/pages/General/SSH_host_keys.md",
-      "slug": "SSH_host_keys"
-    },
-    {
-      "page_id": 29478,
-      "title": "RAC application guide",
-      "url": "https://docs.alliancecan.ca/wiki/RAC_application_guide",
-      "category": "User Guide",
-      "last_modified": "2025-10-23T18:43:43Z",
-      "file_path": "docs/pages/User Guide/RAC_application_guide.md",
-      "slug": "RAC_application_guide"
-    },
-    {
-      "page_id": 27762,
-      "title": "Killarney",
-      "url": "https://docs.alliancecan.ca/wiki/Killarney",
-      "category": "General",
-      "last_modified": "2025-10-30T18:39:27Z",
-      "file_path": "docs/pages/General/Killarney.md",
-      "slug": "Killarney"
-    },
-    {
-      "page_id": 5912,
-      "title": "ARM software",
-      "url": "https://docs.alliancecan.ca/wiki/ARM_software",
-      "category": "General",
-      "last_modified": "2025-10-23T16:27:42Z",
-      "file_path": "docs/pages/General/ARM_software.md",
-      "slug": "ARM_software"
-    },
-    {
-      "page_id": 29085,
-      "title": "Trillium Quickstart",
-      "url": "https://docs.alliancecan.ca/wiki/Trillium_Quickstart",
-      "category": "General",
-      "last_modified": "2025-11-04T19:42:10Z",
-      "file_path": "docs/pages/General/Trillium_Quickstart.md",
-      "slug": "Trillium_Quickstart"
-    },
-    {
-      "page_id": 29084,
-      "title": "Transition from Niagara to Trillium",
-      "url": "https://docs.alliancecan.ca/wiki/Transition_from_Niagara_to_Trillium",
-      "category": "General",
-      "last_modified": "2025-10-22T16:54:21Z",
-      "file_path": "docs/pages/General/Transition_from_Niagara_to_Trillium.md",
-      "slug": "Transition_from_Niagara_to_Trillium"
-    },
-    {
-      "page_id": 4355,
-      "title": "Star-CCM+",
-      "url": "https://docs.alliancecan.ca/wiki/Star-CCM%2B",
-      "category": "General",
-      "last_modified": "2025-10-22T00:32:56Z",
-      "file_path": "docs/pages/General/Star-CCM+.md",
-      "slug": "Star-CCM+"
-    },
-    {
-      "page_id": 31888,
-      "title": "Moose/en",
-      "url": "https://docs.alliancecan.ca/wiki/Moose/en",
-      "category": "General",
-      "last_modified": "2025-10-27T13:21:01Z",
-      "file_path": "docs/pages/General/Moose_en.md",
-      "slug": "Moose_en"
-    },
-    {
-      "page_id": 31985,
-      "title": "Test-syntax",
-      "url": "https://docs.alliancecan.ca/wiki/Test-syntax",
-      "category": "General",
-      "last_modified": "2025-11-14T19:48:47Z",
-      "file_path": "docs/pages/General/Test-syntax.md",
-      "slug": "Test-syntax"
-    },
-    {
-      "page_id": 26935,
-      "title": "Fir",
-      "url": "https://docs.alliancecan.ca/wiki/Fir",
-      "category": "General",
-      "last_modified": "2025-11-24T21:23:36Z",
-      "file_path": "docs/pages/General/Fir.md",
-      "slug": "Fir"
     }
   ]
 }
