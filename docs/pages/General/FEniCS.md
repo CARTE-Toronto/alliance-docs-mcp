@@ -1,20 +1,20 @@
 ---
-title: "FEniCS/en"
-url: "https://docs.alliancecan.ca/wiki/FEniCS/en"
+title: "FEniCS"
+url: "https://docs.alliancecan.ca/wiki/FEniCS"
 category: "General"
-last_modified: "2025-09-09T16:44:01Z"
-page_id: 3859
-display_title: "FEniCS/en"
+last_modified: "2025-12-05T03:30:06Z"
+page_id: 3850
+display_title: "FEniCS"
 ---
 
 `<languages />`{=html}
 
-[FEniCS](https://fenicsproject.org) is a popular open-source computing platform for solving partial differential equations (PDEs).
+`<translate>`{=html} [FEniCS](https://fenicsproject.org) is a popular open-source computing platform for solving partial differential equations (PDEs).
 
 FEniCS can be built with various extensions, so we do not offer a single, global installation. Please choose between
 
-- Installation in a virtual environment
-- Using a Singularity container
+-   Installation in a virtual environment
+-   Using a Singularity container
 
 # Installation in a virtual environment {#installation_in_a_virtual_environment}
 
@@ -24,8 +24,7 @@ You can run the script below by copying it to the cluster you are using and runn
 
 Note that the installation will warn you that it will create (or replace) the application directory, and will give usage instructions when the installation is successful. The script can be modified to change the installation directory if needed.
 
-```{=mediawiki}
-{{File
+`</translate>`{=html} `{{File
   |name=fenics-install.sh
   |lang="sh"
   |contents=
@@ -161,17 +160,19 @@ make_dolfin () {
 }
 
 main
-}}
-```
+}}`{=mediawiki}
+
+`<translate>`{=html}
+
 ## FEniCS add-ons {#fenics_add_ons}
 
 `<b>`{=html}This section has not been updated to work with StdEnv/2020`</b>`{=html}.
 
-First install FEniCS following instructions above.
+First install FEniCS following instructions above. `</translate>`{=html}
 
 ### mshr
 
-Then run
+`<translate>`{=html} Then run
 
 # Using a Singularity container {#using_a_singularity_container}
 
@@ -182,6 +183,10 @@ To build your FEniCS image using this recipe, run the following command:
 ` sudo singularity build FEniCS.simg FEniCS-ComputeCanada-Singularity-Recipe`
 
 and then upload `FEniCS.simg` to your account. The FEniCS Docker image places a number of files in `/home/fenics`.
+
+`</translate>`{=html}
+
+`<translate>`{=html}
 
 # FEniCS Legacy (2019) Installation on Trillium {#fenics_legacy_2019_installation_on_trillium}
 
@@ -199,9 +204,9 @@ Create a writable directory tree (*fenics-legacy.sandbox*) from the SIF file so 
 
 **Note:**
 
-- *fenics-legacy.sandbox* is just a directory name the command will create.
-- You can call it something else (e.g. *fenics-dev/* or *my_rw_image/*).
-- The *.sandbox* suffix is just a convention, not required.
+-   *fenics-legacy.sandbox* is just a directory name the command will create.
+-   You can call it something else (e.g. *fenics-dev/* or *my_rw_image/*).
+-   The *.sandbox* suffix is just a convention, not required.
 
 ## 3. Fix pip certificate bundle path {#fix_pip_certificate_bundle_path}
 
@@ -209,9 +214,9 @@ Inside the sandbox, create a certs folder and symlink the CA bundle so pip/SSL t
 
     apptainer exec --writable fenics-legacy.sandbox sh -c "mkdir -p /etc/pki/tls/certs && ln -s /etc/ssl/certs/ca-certificates.crt /etc/pki/tls/certs/ca-bundle.crt"
 
-## 4. Freeze sandbox into a new SIF {#freeze_sandbox_into_a_new_sif}
+## 4. Create a new SIF from the sandbox {#create_a_new_sif_from_the_sandbox}
 
-After modifications, freeze your sandbox into a new read-only image (portable, reproducible):
+After modifications, create a new read-only image (portable, reproducible):
 
     apptainer build fenics-legacy-updated.sif fenics-legacy.sandbox
 
@@ -221,15 +226,15 @@ After modifications, freeze your sandbox into a new read-only image (portable, r
 
 **Note:**
 
-- `--bind $PWD:/root/shared` mounts your current host directory in the container.
-- `--pwd` sets the working directory there.
+-   `--bind $PWD:/root/shared` mounts your current host directory in the container.
+-   `--pwd` sets the working directory there.
 
 ## Important Notes {#important_notes}
 
-- FEniCS Legacy (2019.1.x) requires UFL Legacy, already bundled.
-- The Python package is named `ufl_legacy`, not `ufl`.
-- Compatible UFL version is 2022.3.0 (provided by `ufl_legacy`).
-- A plain `import ufl` should fail, while `import ufl_legacy` should succeed.
+-   FEniCS Legacy (2019.1.x) requires UFL Legacy, already bundled.
+-   The Python package is named `ufl_legacy`, not `ufl`.
+-   Compatible UFL version is 2022.3.0 (provided by `ufl_legacy`).
+-   A plain `import ufl` should fail, while `import ufl_legacy` should succeed.
 
 ## Aliasing ufl_legacy as ufl {#aliasing_ufl_legacy_as_ufl}
 
@@ -240,6 +245,7 @@ Create the file `/pyshims/ufl/__init__.py` with the following contents:
     import sys
     import ufl_legacy as ufl
 
+    <!--T:38-->
     api = [k for k in ufl.__dict__.keys() if not k.startswith('__') and not k.endswith('__')]
     for key in api:
         sys.modules['ufl.{}'.format(key)] = getattr(ufl, key)
@@ -250,3 +256,5 @@ Create the file `/pyshims/ufl/__init__.py` with the following contents:
 Prepend the shim path to PYTHONPATH when launching inside the container:
 
     APPTAINERENV_PYTHONPATH=<path_to_shim>:$PYTHONPATH apptainer exec --bind /scratch:/scratch ~/fenics-legacy-updated.sif python3 -c "from ufl.tensors import ListTensor; print('UFL tensors ok')"
+
+`</translate>`{=html}

@@ -1,6 +1,6 @@
 # Alliance Documentation - Page Directory
-# Generated: 2025-12-09T17:43:13.161804+00:00
-# Total pages: 413
+# Generated: 2025-12-09T17:52:05.195809+00:00
+# Total pages: 416
 
 - A tutorial on 'tar' (User Guide): https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/en
 - ABINIT (General): https://docs.alliancecan.ca/wiki/ABINIT/en
@@ -28,8 +28,8 @@
 - AlphaFold2 (General): https://docs.alliancecan.ca/wiki/AlphaFold2/en
 - AlphaFold3 (General): https://docs.alliancecan.ca/wiki/AlphaFold3/en
 - Altair FEKO (General): https://docs.alliancecan.ca/wiki/Altair_FEKO/en
-- Anaconda (General): https://docs.alliancecan.ca/wiki/Anaconda/en
-- Ansys (General): https://docs.alliancecan.ca/wiki/Ansys/en
+- Anaconda/en (General): https://docs.alliancecan.ca/wiki/Anaconda/en
+- Ansys/en (General): https://docs.alliancecan.ca/wiki/Ansys/en
 - AnsysEDT (General): https://docs.alliancecan.ca/wiki/AnsysEDT/en
 - Apache Spark (General): https://docs.alliancecan.ca/wiki/Apache_Spark/en
 - Apply for a CCDB account (General): https://docs.alliancecan.ca/wiki/Apply_for_a_CCDB_account/en
@@ -68,6 +68,7 @@
 - CFOUR (General): https://docs.alliancecan.ca/wiki/CFOUR/en
 - CMake (General): https://docs.alliancecan.ca/wiki/CMake/en
 - COMSOL (General): https://docs.alliancecan.ca/wiki/COMSOL/en
+- COMSOL (General): https://docs.alliancecan.ca/wiki/COMSOL
 - COVID19 related requests (General): https://docs.alliancecan.ca/wiki/COVID19_related_requests/en
 - CP2K (General): https://docs.alliancecan.ca/wiki/CP2K/en
 - CPLEX (General): https://docs.alliancecan.ca/wiki/CPLEX/en
@@ -121,11 +122,12 @@
 - EasyBuild (General): https://docs.alliancecan.ca/wiki/EasyBuild/en
 - Estimer et prévenir le gaspillage des ressources (General): https://docs.alliancecan.ca/wiki/Estimer_et_pr%C3%A9venir_le_gaspillage_des_ressources
 - FEniCS (General): https://docs.alliancecan.ca/wiki/FEniCS/en
+- FEniCS (General): https://docs.alliancecan.ca/wiki/FEniCS
 - FMRIPrep (General): https://docs.alliancecan.ca/wiki/FMRIPrep/en
 - FTP server in the Cloud (General): https://docs.alliancecan.ca/wiki/FTP_server_in_the_Cloud/en
 - Faiss (General): https://docs.alliancecan.ca/wiki/Faiss/en
 - FastTree (General): https://docs.alliancecan.ca/wiki/FastTree/en
-- Fir (General): https://docs.alliancecan.ca/wiki/Fir/en
+- Fir/en (General): https://docs.alliancecan.ca/wiki/Fir/en
 - Firedrake (General): https://docs.alliancecan.ca/wiki/Firedrake
 - Flax (General): https://docs.alliancecan.ca/wiki/Flax
 - Formation (General): https://docs.alliancecan.ca/wiki/Formation
@@ -149,8 +151,8 @@
 - Gaussian error messages (General): https://docs.alliancecan.ca/wiki/Gaussian_error_messages/en
 - General directives for migration (General): https://docs.alliancecan.ca/wiki/General_directives_for_migration/en
 - Generating SSH keys in Windows (General): https://docs.alliancecan.ca/wiki/Generating_SSH_keys_in_Windows/en
-- Getting started (Getting Started): https://docs.alliancecan.ca/wiki/Getting_started/en
 - Getting started with the new national systems (Getting Started): https://docs.alliancecan.ca/wiki/Getting_started_with_the_new_national_systems/en
+- Getting started/en (Getting Started): https://docs.alliancecan.ca/wiki/Getting_started/en
 - Git (General): https://docs.alliancecan.ca/wiki/Git/en
 - Globus (General): https://docs.alliancecan.ca/wiki/Globus/en
 - Globus Command Line Interface (General): https://docs.alliancecan.ca/wiki/Globus_Command_Line_Interface
@@ -176,11 +178,11 @@
 - Interpretable AI (General): https://docs.alliancecan.ca/wiki/Interpretable_AI
 - Java (General): https://docs.alliancecan.ca/wiki/Java/en
 - Job arrays (General): https://docs.alliancecan.ca/wiki/Job_arrays/en
-- Job scheduling policies (General): https://docs.alliancecan.ca/wiki/Job_scheduling_policies/en
+- Job scheduling policies/en (General): https://docs.alliancecan.ca/wiki/Job_scheduling_policies/en
 - Julia (General): https://docs.alliancecan.ca/wiki/Julia/en
 - Jupyter (General): https://docs.alliancecan.ca/wiki/Jupyter/en
 - JupyterHub (General): https://docs.alliancecan.ca/wiki/JupyterHub/en
-- JupyterLab (General): https://docs.alliancecan.ca/wiki/JupyterLab/en
+- JupyterLab/en (General): https://docs.alliancecan.ca/wiki/JupyterLab/en
 - JupyterNotebook (General): https://docs.alliancecan.ca/wiki/JupyterNotebook/en
 - Kentutils (General): https://docs.alliancecan.ca/wiki/Kentutils
 - Keras (General): https://docs.alliancecan.ca/wiki/Keras/en
@@ -231,7 +233,7 @@
 - Mp2 (General): https://docs.alliancecan.ca/wiki/Mp2/en
 - MrBayes (General): https://docs.alliancecan.ca/wiki/MrBayes/en
 - MuJoCo (General): https://docs.alliancecan.ca/wiki/MuJoCo/en
-- Multi-Instance GPU (General): https://docs.alliancecan.ca/wiki/Multi-Instance_GPU/en
+- Multi-Instance GPU/en (General): https://docs.alliancecan.ca/wiki/Multi-Instance_GPU/en
 - Multifactor authentication (General): https://docs.alliancecan.ca/wiki/Multifactor_authentication/en
 - Multifactor authentication/ (General): https://docs.alliancecan.ca/wiki/Multifactor_authentication/
 - NAMD (General): https://docs.alliancecan.ca/wiki/NAMD/en
@@ -244,7 +246,7 @@
 - Nextflow (General): https://docs.alliancecan.ca/wiki/Nextflow/en
 - Niagara (General): https://docs.alliancecan.ca/wiki/Niagara/en
 - Niagara Quickstart (General): https://docs.alliancecan.ca/wiki/Niagara_Quickstart/en
-- Nibi (General): https://docs.alliancecan.ca/wiki/Nibi/en
+- Nibi/en (General): https://docs.alliancecan.ca/wiki/Nibi/en
 - Nvprof (General): https://docs.alliancecan.ca/wiki/Nvprof
 - ORCA (General): https://docs.alliancecan.ca/wiki/ORCA/en
 - Octave (General): https://docs.alliancecan.ca/wiki/Octave
@@ -345,7 +347,7 @@
 - Symbolic algebra software (General): https://docs.alliancecan.ca/wiki/Symbolic_algebra_software/en
 - System status (General): https://docs.alliancecan.ca/wiki/System_status/en
 - Systems overview (General): https://docs.alliancecan.ca/wiki/Systems_overview
-- TamIA (General): https://docs.alliancecan.ca/wiki/TamIA/en
+- TamIA/en (General): https://docs.alliancecan.ca/wiki/TamIA/en
 - Tar (General): https://docs.alliancecan.ca/wiki/Tar/en
 - Technical documentation (Technical Reference): https://docs.alliancecan.ca/wiki/Technical_documentation/en
 - Technical glossary for the resource allocation competitions (Technical Reference): https://docs.alliancecan.ca/wiki/Technical_glossary_for_the_resource_allocation_competitions/en
@@ -369,7 +371,7 @@
 - Tuning Lustre (General): https://docs.alliancecan.ca/wiki/Tuning_Lustre/en
 - Tutoriel Apprentissage machine (General): https://docs.alliancecan.ca/wiki/Tutoriel_Apprentissage_machine/en
 - User roles to access resources and services of the Alliance Federation (User Guide): https://docs.alliancecan.ca/wiki/User_roles_to_access_resources_and_services_of_the_Alliance_Federation/en
-- Using Conda in Apptainer (General): https://docs.alliancecan.ca/wiki/Using_Conda_in_Apptainer/en
+- Using Conda in Apptainer/en (General): https://docs.alliancecan.ca/wiki/Using_Conda_in_Apptainer/en
 - Using GPUs with Slurm (General): https://docs.alliancecan.ca/wiki/Using_GPUs_with_Slurm/en
 - Using Nix (General): https://docs.alliancecan.ca/wiki/Using_Nix
 - Using Nix: nix-env (Using Nix): https://docs.alliancecan.ca/wiki/Using_Nix:_nix-env
@@ -380,6 +382,7 @@
 - Using cloud vGPUs (General): https://docs.alliancecan.ca/wiki/Using_cloud_vGPUs/en
 - Using ipv6 in cloud (General): https://docs.alliancecan.ca/wiki/Using_ipv6_in_cloud/en
 - Using nearline storage (General): https://docs.alliancecan.ca/wiki/Using_nearline_storage/en
+- Using nearline storage (General): https://docs.alliancecan.ca/wiki/Using_nearline_storage
 - Using node-local storage (General): https://docs.alliancecan.ca/wiki/Using_node-local_storage/en
 - Using swift (General): https://docs.alliancecan.ca/wiki/Using_swift
 - Utiliser des modules (General): https://docs.alliancecan.ca/wiki/Utiliser_des_modules/en
