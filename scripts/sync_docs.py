@@ -52,6 +52,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+DEFAULT_API_URL = "https://docs.alliancecan.ca/mediawiki/api.php"
+
 
 def _prepare_search_index(
     docs_dir: str, index_dir: Optional[str], enable_index: bool, rebuild_index: bool
@@ -137,6 +139,16 @@ def _rebuild_all(
             logger.warning("Failed to remove %s: %s", target, exc)
 
 
+def _resolve_api_url() -> str:
+    """Return a valid API URL, falling back to default if env is missing/invalid."""
+    env_value = (os.getenv("MEDIAWIKI_API_URL") or "").strip()
+    if env_value and env_value.startswith("http"):
+        return env_value
+    if env_value:
+        logger.warning("MEDIAWIKI_API_URL is invalid; falling back to default.")
+    return DEFAULT_API_URL
+
+
 async def sync_documentation(
     enable_index: bool = True,
     rebuild_index: bool = False,
@@ -150,7 +162,7 @@ async def sync_documentation(
 ):
     """Main synchronization function."""
     # Load configuration from environment
-    api_url = os.getenv("MEDIAWIKI_API_URL", "https://docs.alliancecan.ca/mediawiki/api.php")
+    api_url = _resolve_api_url()
     docs_dir = os.getenv("DOCS_DIR", "./docs")
     user_agent = os.getenv("USER_AGENT", "AllianceDocsMCP/1.0")
     
@@ -368,7 +380,7 @@ async def sync_incremental(
 ):
     """Incremental synchronization - only fetch changed pages."""
     # Load configuration
-    api_url = os.getenv("MEDIAWIKI_API_URL", "https://docs.alliancecan.ca/mediawiki/api.php")
+    api_url = _resolve_api_url()
     docs_dir = os.getenv("DOCS_DIR", "./docs")
     user_agent = os.getenv("USER_AGENT", "AllianceDocsMCP/1.0")
     
