@@ -1,9 +1,9 @@
 ---
-title: "Julia/en"
-url: "https://docs.alliancecan.ca/wiki/Julia/en"
+title: "Julia"
+url: "https://docs.alliancecan.ca/wiki/Julia"
 category: "General"
-last_modified: "2025-10-15T14:45:54Z"
-page_id: 10354
+last_modified: "2025-12-12T19:45:36Z"
+page_id: 10111
 display_title: "Julia"
 ---
 
@@ -17,7 +17,7 @@ From Julia 1.6 onwards, Julia packages include their binary dependencies (such a
 
 With Julia 1.5 and earlier, you may run into problems if a package depends on system-provided binaries.  For instance, JLD depends on a system-provided HDF5 library.  On a personal computer, Julia attempts to install such a dependency using yum or apt with sudo.  This will not work on our clusters; instead, some extra information must be provided to allow Julia's package manager (Pkg) to find the HDF5 library.
 
- $ module load gcc/7.3.0 hdf5 julia/1.4.1
+$ module load gcc/7.3.0 hdf5 julia/1.4.1
  $ julia
  julia> using Libdl
  julia> push!(Libdl.DL_LOAD_PATH, ENV["HDF5_DIR"] * "/lib")
@@ -43,11 +43,11 @@ Installing Julia packages in your home directory will create large numbers of fi
 
 To avoid this issue, you can store your personal Julia “depot” (containing packages, registries, precompiled files, etc.) in a different location, such as your project space. For example, user alice, a member of the def-bob project, could add the following to her ~/.bashrc file:
 
- export JULIA_DEPOT_PATH="/project/def-bob/alice/julia:$JULIA_DEPOT_PATH"
+export JULIA_DEPOT_PATH="/project/def-bob/alice/julia:$JULIA_DEPOT_PATH"
 
 This will use the /project/def-bob/alice/julia directory preferentially. Files in ~/.julia will still be considered, and ~/.julia will still be used for some files such as your command history. When moving your depot to a different location, it is better to remove your existing ~/.julia depot first if you have one:
 
- $ rm -rf $HOME/.julia
+$ rm -rf $HOME/.julia
 
 Alternatively, one can create an Apptainer image with a chosen version of Julia and a selection of packages, and JULIA_DEPOT_PATH redirected inside the container. This does mean that you lose the advantage of our optimized Julia modules. However, your container now contains the potentially very large set of small files inside 1 container file (.sif), potentially improving IO performance. Reproducibility is also improved, the container will run anywhere as-is. Another use case is if you want to test Julia nightly builds without altering your local Julia installation, or when you need to bundle your own specific dependencies, because the container creation gives you complete control at creation.
 
@@ -55,7 +55,7 @@ Alternatively, one can create an Apptainer image with a chosen version of Julia 
 
 Julia can interface with Python code using PyCall.jl. When using PyCall.jl, set the PYTHON environment variable to the python executable in your virtual Python environment. On our clusters, we recommend using virtual Python environments as described in our Python documentation. After activating a virtual Python environment, you can use it in PyCall.jl:
 
- $ source "$HOME/myenv/bin/activate"
+$ source "$HOME/myenv/bin/activate"
  (myenv) $ julia
  [...]
  julia> using Pkg, PyCall
@@ -83,50 +83,26 @@ starts one main Julia process and 100 worker processes on the nodes specified in
 
 = Running Julia with MPI =
 
-You must make sure Julia's MPI is configured to use our MPI libraries.  If you are using Julia MPI 0.19 or earlier, run the following:
+You must make sure Julia's MPI is configured to use our MPI libraries. Run the following:
 
- module load StdEnv  julia
- export JULIA_MPI_BINARY=system
- export JULIA_MPI_PATH=$EBROOTOPENMPI
- export JULIA_MPI_LIBRARY=$EBROOTOPENMPI/lib64/libmpi.so
- export JULIA_MPI_ABI=OpenMPI
- export JULIA_MPIEXEC=$EBROOTOPENMPI/bin/mpiexec
+ module load StdEnv julia
 
 Then start Julia and inside it run:
 
- import Pkg;
+ import Pkg
+ Pkg.add("MPIPreferences")
+ using MPIPreferences
+ MPIPreferences.use_system_binary(;extra_paths=[joinpath(ENV["EBROOTOPENMPI"],"lib64")])
  Pkg.add("MPI")
-
-If you are using Julia MPI 0.20 or later, run the following.  Note that this will append an [MPIPreferences] section to your .julia/environments/vX.Y/LocalPreferences.toml file.
-If that file already exists and has an [MPIPreferences] section, first edit the file and remove the section.
-
-  module load julia
-
-  mkdir -p .julia/environments/v${EBVERSIONJULIA%.*}
-
-  cat >> .julia/environments/v${EBVERSIONJULIA%.*}/LocalPreferences.toml << EOF
-  [MPIPreferences]
-  _format = "1.0"
-  abi = "OpenMPI"
-  binary = "system"
-  libmpi = "${EBROOTOPENMPI}/lib64/libmpi.so"
-  mpiexec = "${EBROOTOPENMPI}/bin/mpiexec"
-  EOF
-
-Then start Julia and inside it run:
-
-  import Pkg
-  Pkg.add("MPIPreferences")
-  Pkg.add("MPI")
 
 To use afterwards, run (with two processes in this example):
 
- module load StdEnv julia
+module load StdEnv julia
  mpirun -np 2 julia hello.jl
 
 The hello.jl code here is:
 
- using MPI
+using MPI
  MPI.Init()
  comm = MPI.COMM_WORLD
  print("Hello world, I am rank $(MPI.Comm_rank(comm)) of $(MPI.Comm_size(comm))\n")
@@ -145,7 +121,7 @@ It goes without saying that configuring these values should only be done when on
 = Using GPUs with Julia =
 Julia's primary programming interface for GPUs is the CUDA.jl package. The Julia package manager can be used to install it. First download the package on a login node:
 
-  # on a login node!
+ # on a login node!
  $ module load cuda/12.9 julia/1.11.3
  $ julia
  julia> ENV["JULIA_PKG_PRECOMPILE_AUTO"]=0
@@ -153,7 +129,7 @@ Julia's primary programming interface for GPUs is the CUDA.jl package. The Julia
 
 Everything that follows should be done on a GPU compute node. It is possible that the CUDA toolkit downloaded during installation will not work with the installed CUDA driver. This problem can be avoided by configuring Julia to use the local CUDA toolkit:
 
-  # on a GPU node!
+ # on a GPU node!
  $ julia
  using CUDA
  julia> CUDA.set_runtime_version!(v"version_of_cuda", local_toolkit=true)
@@ -161,19 +137,19 @@ where version_of_cuda is 12.6 if cuda/12.6 is loaded.
 
 After restarting Julia you can verify that it is using the correct CUDA version:
 
- julia> CUDA.versioninfo()
+julia> CUDA.versioninfo()
  CUDA runtime 12.6, local installation
  ...
 
 The following Julia code can be used to test the installation:
 
- julia> a = CuArray([1,2,3])
+julia> a = CuArray([1,2,3])
  3-element CuArray{Int64, 1, CUDA.Mem.DeviceBuffer}:
   1
   2
   3
 
- julia> a.+=1
+julia> a.+=1
  3-element CuArray{Int64, 1, CUDA.Mem.DeviceBuffer}:
   2
   3

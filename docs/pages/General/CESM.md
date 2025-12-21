@@ -2,7 +2,7 @@
 title: "CESM"
 url: "https://docs.alliancecan.ca/wiki/CESM"
 category: "General"
-last_modified: "2025-12-04T20:02:09Z"
+last_modified: "2025-12-17T19:55:15Z"
 page_id: 24186
 display_title: "CESM"
 ---
@@ -51,7 +51,7 @@ Create and edit the file ~/.cime/config_batch.xml from the following minimal con
 
 regular
 
-beluga
+fir
 
 }}
 
@@ -63,19 +63,7 @@ beluga
 
 regular
 
-cedar
-
-}}
-
---nodes=
---ntasks-per-node=
---output=
---exclusive
---mem=0
-
-regular
-
-graham
+nibi
 
 }}
 

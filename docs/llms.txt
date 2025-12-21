@@ -1,6 +1,6 @@
 # Alliance Documentation - Page Directory
-# Generated: 2025-12-14T06:16:55.750496+00:00
-# Total pages: 413
+# Generated: 2025-12-21T06:17:57.018807+00:00
+# Total pages: 418
 
 - A tutorial on 'tar' (User Guide): https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/en
 - ABINIT (General): https://docs.alliancecan.ca/wiki/ABINIT/en
@@ -29,6 +29,7 @@
 - AlphaFold3 (General): https://docs.alliancecan.ca/wiki/AlphaFold3/en
 - Altair FEKO (General): https://docs.alliancecan.ca/wiki/Altair_FEKO/en
 - Anaconda (General): https://docs.alliancecan.ca/wiki/Anaconda/en
+- Ansys (General): https://docs.alliancecan.ca/wiki/Ansys
 - Ansys/en (General): https://docs.alliancecan.ca/wiki/Ansys/en
 - AnsysEDT (General): https://docs.alliancecan.ca/wiki/AnsysEDT/en
 - Apache Spark (General): https://docs.alliancecan.ca/wiki/Apache_Spark/en
@@ -172,12 +173,14 @@
 - Infrastructure for Research Data Management (General): https://docs.alliancecan.ca/wiki/Infrastructure_for_Research_Data_Management
 - Infrastructure renewal (General): https://docs.alliancecan.ca/wiki/Infrastructure_renewal/en
 - Infrastructure renewal completed events (General): https://docs.alliancecan.ca/wiki/Infrastructure_renewal_completed_events/en
+- Infrastructure renewal completed events (General): https://docs.alliancecan.ca/wiki/Infrastructure_renewal_completed_events
 - Installing software in your home directory (Getting Started): https://docs.alliancecan.ca/wiki/Installing_software_in_your_home_directory/en
 - Interpretable AI (General): https://docs.alliancecan.ca/wiki/Interpretable_AI
 - Java (General): https://docs.alliancecan.ca/wiki/Java/en
 - Job arrays (General): https://docs.alliancecan.ca/wiki/Job_arrays/en
 - Job scheduling policies (General): https://docs.alliancecan.ca/wiki/Job_scheduling_policies/en
 - Julia (General): https://docs.alliancecan.ca/wiki/Julia/en
+- Julia (General): https://docs.alliancecan.ca/wiki/Julia
 - Jupyter (General): https://docs.alliancecan.ca/wiki/Jupyter/en
 - JupyterHub (General): https://docs.alliancecan.ca/wiki/JupyterHub/en
 - JupyterLab/en (General): https://docs.alliancecan.ca/wiki/JupyterLab/en
@@ -286,6 +289,7 @@
 - PyKeOps (General): https://docs.alliancecan.ca/wiki/PyKeOps/en
 - PyRETIS (General): https://docs.alliancecan.ca/wiki/PyRETIS/en
 - PyTorch (General): https://docs.alliancecan.ca/wiki/PyTorch/en
+- PyTorch (General): https://docs.alliancecan.ca/wiki/PyTorch
 - Python (General): https://docs.alliancecan.ca/wiki/Python/en
 - QGIS (General): https://docs.alliancecan.ca/wiki/QGIS
 - QIIME (General): https://docs.alliancecan.ca/wiki/QIIME/en
@@ -338,6 +342,7 @@
 - SpaCy (General): https://docs.alliancecan.ca/wiki/SpaCy/en
 - Standard software environments (General): https://docs.alliancecan.ca/wiki/Standard_software_environments/en
 - Star-CCM+ (General): https://docs.alliancecan.ca/wiki/Star-CCM%2B/en
+- Star-CCM+ (General): https://docs.alliancecan.ca/wiki/Star-CCM%2B
 - Stata (General): https://docs.alliancecan.ca/wiki/Stata
 - Storage and file management (General): https://docs.alliancecan.ca/wiki/Storage_and_file_management/en
 - Structure (General): https://docs.alliancecan.ca/wiki/Structure/en

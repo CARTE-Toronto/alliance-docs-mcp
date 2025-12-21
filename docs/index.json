@@ -1,6 +1,6 @@
 {
-  "last_updated": "2025-12-14T06:16:55.744196+00:00",
-  "total_pages": 413,
+  "last_updated": "2025-12-21T06:17:57.012681+00:00",
+  "total_pages": 418,
   "pages": [
     {
       "page_id": 10049,
@@ -565,7 +565,7 @@
       "title": "CESM",
       "url": "https://docs.alliancecan.ca/wiki/CESM",
       "category": "General",
-      "last_modified": "2025-12-04T20:02:09Z",
+      "last_modified": "2025-12-17T19:55:15Z",
       "file_path": "docs/pages/General/CESM.md",
       "slug": "CESM"
     },
@@ -3718,6 +3718,51 @@
       "last_modified": "2019-12-09T14:34:28Z",
       "file_path": "docs/pages/General/⧼sidebar-available-software-link⧽.md",
       "slug": "⧼sidebar-available-software-link⧽"
+    },
+    {
+      "page_id": 27571,
+      "title": "Infrastructure renewal completed events",
+      "url": "https://docs.alliancecan.ca/wiki/Infrastructure_renewal_completed_events",
+      "category": "General",
+      "last_modified": "2025-12-12T20:20:11Z",
+      "file_path": "docs/pages/General/Infrastructure_renewal_completed_events.md",
+      "slug": "Infrastructure_renewal_completed_events"
+    },
+    {
+      "page_id": 10111,
+      "title": "Julia",
+      "url": "https://docs.alliancecan.ca/wiki/Julia",
+      "category": "General",
+      "last_modified": "2025-12-12T19:45:36Z",
+      "file_path": "docs/pages/General/Julia.md",
+      "slug": "Julia"
+    },
+    {
+      "page_id": 4457,
+      "title": "PyTorch",
+      "url": "https://docs.alliancecan.ca/wiki/PyTorch",
+      "category": "General",
+      "last_modified": "2025-12-11T20:22:59Z",
+      "file_path": "docs/pages/General/PyTorch.md",
+      "slug": "PyTorch"
+    },
+    {
+      "page_id": 4355,
+      "title": "Star-CCM+",
+      "url": "https://docs.alliancecan.ca/wiki/Star-CCM%2B",
+      "category": "General",
+      "last_modified": "2025-12-18T06:30:51Z",
+      "file_path": "docs/pages/General/Star-CCM+.md",
+      "slug": "Star-CCM+"
+    },
+    {
+      "page_id": 4568,
+      "title": "Ansys",
+      "url": "https://docs.alliancecan.ca/wiki/Ansys",
+      "category": "General",
+      "last_modified": "2025-12-15T15:01:17Z",
+      "file_path": "docs/pages/General/Ansys.md",
+      "slug": "Ansys"
     }
   ]
 }

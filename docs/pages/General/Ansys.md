@@ -1,9 +1,9 @@
 ---
-title: "Ansys/en"
-url: "https://docs.alliancecan.ca/wiki/Ansys/en"
+title: "Ansys"
+url: "https://docs.alliancecan.ca/wiki/Ansys"
 category: "General"
-last_modified: "2025-12-03T14:50:05Z"
-page_id: 4948
+last_modified: "2025-12-15T15:01:17Z"
+page_id: 4568
 display_title: "Ansys"
 ---
 
@@ -27,7 +27,7 @@ License 	System/Cluster	LICSERVER                	FLEXPORT	NOTES
 CMC     	fir           	172.26.0.101             	6624    	None
 CMC     	narval/rorqual	10.100.64.10             	6624    	None
 CMC     	nibi          	10.25.1.56               	6624    	NewIP Feb21/2025
-CMC     	trillium      	172.16.205.198           	6624    	None
+CMC     	trillium      	scinet-cmc               	6624    	None
 SHARCNET	fir           	license1.computecanada.ca	1055    	Currently NOT working
 SHARCNET	narval/rorqual	license3.sharcnet.ca     	1055    	Supports <= ansys/2024R2.04
 SHARCNET	nibi          	license1.computecanada.ca	1055    	Supports <= ansys/2025R1.02
@@ -68,10 +68,10 @@ If Fail is output then jobs will likely fail requiring a problem ticket to be su
 
 Ansys simulations are typically forward compatible but NOT backwards compatible.  This means that simulations created using an older version of Ansys can be expected to load and run fine with any newer version.  For example, a simulation created and saved with ansys/2022R2 should load and run smoothly with ansys/2023R2 but NOT the other way around.  While it may be possible to start a simulation running with an older version random error messages or crashing will likely occur.  Regarding Fluent simulations, if you cannot recall which version of ansys was used to create your cas file try grepping it as follows to look for clues :
 
- $ grep -ia fluent combustor.cas
+$ grep -ia fluent combustor.cas
    (0 "fluent15.0.7  build-id: 596")
 
- $ grep -ia fluent cavity.cas.h5
+$ grep -ia fluent cavity.cas.h5
    ANSYS_FLUENT 24.1 Build 1018
 
 == Platform support ==
@@ -150,17 +150,17 @@ The first step is to transfer your User-Defined Function or UDF (namely the samp
 
 To tell fluent to interpret your UDF at runtime, add the following command line into your journal file before the cas/dat files are read or initialized. The filename sampleudf.c should be replaced with the name of your source file.  The command remains the same regardless if the simulation is being run in serial or parallel.  To ensure the UDF can be found in the same directory as the journal file, open your cas file in the fluent gui, remove any managed definitions and resave it.   Doing this will ensure only the following command/method is in control when fluent runs. To use an interpreted UDF with parallel jobs, it will need to be parallelized as described in the section below.
 
- define/user-defined/interpreted-functions "sampleudf.c" "cpp" 10000 no
+define/user-defined/interpreted-functions "sampleudf.c" "cpp" 10000 no
 
 ==== Compiled ====
 
 To use this approach, your UDF must be compiled on an Alliance cluster at least once.  Doing so will create a libudf subdirectory structure containing the required libudf.so shared library.   The libudf directory cannot simply be copied from a remote system (such as your laptop) to the Alliance since the library dependencies of the shared library will not be satisfied, resulting in fluent crashing on startup.  That said, once you have compiled your UDF on an Alliance cluster, you can transfer the newly created libudf to any other Alliance cluster, providing your account loads the same StdEnv environment module version.  Once copied, the UDF can be used by uncommenting the second (load) libudf line below in your journal file when submitting jobs to the cluster.  Both (compile and load) libudf lines should not be left uncommented in your journal file when submitting jobs on the cluster, otherwise your UDF will automatically (re)compiled for each and every job.  Not only is this highly inefficient, but it will also lead to racetime-like build conflicts if multiple jobs are run from the same directory. Besides configuring your journal file to build your UDF, the fluent gui (run on any cluster compute node or gra-vdi) may also be used.  To do this, you would navigate to the Compiled UDFs Dialog Box, add the UDF source file and click Build.   When using a compiled UDF with parallel jobs, your source file should be parallelized as discussed in the section below.
 
- define/user-defined/compiled-functions compile libudf yes sampleudf.c "" ""
+define/user-defined/compiled-functions compile libudf yes sampleudf.c "" ""
 
 and/or
 
- define/user-defined/compiled-functions load libudf
+define/user-defined/compiled-functions load libudf
 
 ==== Parallel ====
 
@@ -213,7 +213,7 @@ In the following slurm scripts, lines beginning with ##SBATCH are commented.
 
 Ansys allocates 1024 MB total memory and 1024 MB database memory by default for APDL jobs. These values can be manually specified (or changed) by adding arguments -m 1024 and/or -db 1024 to the mapdl command line in the above scripts. When using a remote institutional license server with multiple Ansys licenses, it may be necessary to add -p aa_r or -ppf anshpc, depending on which Ansys module you are using. As always, perform detailed scaling tests before running production jobs to ensure that the optimal number of cores and minimum amount memory is specified in your scripts. The single node (SMP Shared Memory Parallel) scripts will typically perform better than the multinode (DIS Distributed Memory Parallel) scripts and therefore should be used whenever possible. To help avoid compatibility issues the Ansys module loaded in your script should ideally match the version used to generate the input file:
 
-  [gra-login2:~/testcase] cat YOURAPDLFILE.inp | grep version
+ [gra-login2:~/testcase] cat YOURAPDLFILE.inp | grep version
  ! ANSYS input file written by Workbench version 2019 R3
 
 == Ansys ROCKY ==
@@ -228,7 +228,7 @@ To get a full listing of command line options run Rocky -h on the command line a
 
 To run Ansys programs in graphical mode click on one of the following OnDemand or Jupyterhub links.  A job submission web page to configure the resources for an interactive session should appear in your browser :
 
- NIBI: https://ondemand.sharcnet.ca
+NIBI: https://ondemand.sharcnet.ca
  FIR: https://jupyterhub.fir.alliancecan.ca
  RORQUAL: https://jupyterhub.rorqual.alliancecan.ca
  NARVAL:  https://jupyterhub.narval.alliancecan.ca/
@@ -237,30 +237,83 @@ To run Ansys programs in graphical mode click on one of the following OnDemand o
 Submit your resource request and then wait.  If you started a Juypter Lab launcher interface then you can simply load an ansys software module from the left side menu and then click one of the ansys icons to start cfx, fluent mapdl or workbench.  Otherwise if you started a Compute/Basic Desktop from the Nibi OnDemand system then you will need to open a terminal window and manually load an ansys module and run one of the following programs from the command line.  For this later case, if your work requires accelerated graphics then either a whole GPU resource (H100 or T4 at the time of this writing) should be requested.  Since the various ansys applications launched in graphical mode behave differently when different ansys module versions are loaded, recommendations for adding command line argument and exporting environment variables for virtualgl or mesa environments have been documented below depending on whether a GPU has been requested or not and wether a On Demand or Juypter Lab system launcher is being used.
 
 === Fluids ===
-::: module load StdEnv/2023 ansys/2022R2 (or newer versions)
-::: fluent -mpi=intel -driver opengl|null, or,
-::: cfx5 -graphics ogl|mesa
+
+==== Fluent ====
+
+When starting Fluent from a terminal window command line of an On Demand Desktop or the convenience Icon of a Juypter Lab Desktop the following steps should be done including setting the indicated Environment Variables depending on which type of Compute Node the desktop is being started on (with or without a gpu).
+
+::: module load StdEnv/2023 ansys/2025R1
+::: fluent
+
+Compute Node (no GPU requested) or Basic Desktop
+
+::: In the Fluent Launcher Click the Environment Tab
+::: Copy/paste the following environment variable settings:
+:::: export I_MPI_HYDRA_BOOTSTRAP=ssh     (required on nibi)
+:::: HOOPS_PICTURE=opengl2-mesa           (2025R1 or newer)
+:::: HOOPS_PICTURE=null                   (2024R2 or older)
+::: Click the Start button
+
+Compute Node (with GPU requested)
+
+::: In the Fluent Launcher Click the Environment Tab
+::: Copy/paste the following environment variable settings:
+:::: I_MPI_HYDRA_BOOTSTRAP=ssh            (required on nibi)
+:::: HOOPS_PICTURE=opengl2                (2025R1 or newer)
+:::: HOOPS_PICTURE=opengl                 (2024R2 or older)
+::: Click the Start button
+
+==== CFX ====
+
+When starting CFX from an On Demand Desktop the following arguments maybe specified on the terminal window command line depending on whether a GPU was requested when the Desktop was started.
+
+::: module load StdEnv/2023 ansys/2025R1  (or older)
+::: cfx5 -graphics mesa   (no GPU requested)
+::: cfx5 -graphics ogl    (with GPU requested)
 
 === Mapdl ===
+
+The following steps for starting the Mechanical APDL gui from the command line of a terminal window should work regardless if you have started your On Demand Desktop on a Compute node with or without a gpu.
+
 ::: module load StdEnv/2023 ansys/2022R2 (or newer versions)
-::: mapdl -g, or via launcher,
-::: launcher --> click RUN button
+::: mapdl -g, or,
+::: launcher then click RUN button
 
 === Workbench ===
 
-Compute Node or Basic Desktop (without a GPU allocated)
+Note that when starting Fluent from within Workbench the same GPU dependent Environment Variable settings should be specified in the Environment Tabl of the Fluent Launcher that are explained in the Fluids section above when starting fluent from a terminal window command line.
 
-::: module load StdEnv/2023 ansys/2025R1 (or newer versions)
-::: export I_MPI_HYDRA_BOOTSTRAP=ssh  (only required on nibi)
-::: export HOOPS_PICTURE=opengl2-mesa
+==== On Demand Desktop ====
+
+Compute Node (no GPU requested) or Basic Desktop
+
+::: module load StdEnv/2023 ansys/2025R1
 ::: runwb2 -oglmesa
 
-Compute Node (with at least one GPU allocated)
+Compute Node (with GPU requested)
 
-::: module load StdEnv/2023 ansys/2025R1 (or newer versions)
-::: export I_MPI_HYDRA_BOOTSTRAP=ssh  (only required on nibi)
-::: export HOOPS_PICTURE=opengl2
+::: module load StdEnv/2023 ansys/2025R1
 ::: runwb2
+
+==== Jupyter Lab Desktop ====
+
+Compute Node (no GPU requested)
+
+::: Click to load ansys/2025R1 (or newer version) in the Desktop left hand side menu
+::: Click the "Workbench (VNC)" icon located in the Jupyter Lab desktop center window
+::: Since the default icon is configured for a gpu node, we must customize it so
+::: workbench can be restart in mesa mode.  To proceed, Exit the Workbench desktop,
+::: open a terminal window, and run the following commands on the command line:
+::: cd ~/Desktop; cp -p $(realpath workbench.desktop) workbench-mesa.desktop
+::: then edit workbench-mesa.desktop and change runwb2 -> runwb2 -oglmesa
+::: Save the file then click your newly customized icon to start workbench.
+::: Note the workbench icon that you created will persist for future sessions
+::: until manually deleted with: rm -f ~/Desktop/workbench-mesa.desktop
+
+Compute Node (with GPU requested)
+
+::: Click to load ansys/2025R1 (or newer version) in the Desktop left hand side menu
+::: Click the Workbench (VNC) icon located in the Jupyter Lab desktop center window
 
 === Ensight ===
 ::: module load StdEnv/2023 ansys/2022R2; A=222; B=5.12.6

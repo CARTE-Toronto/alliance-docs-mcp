@@ -1,9 +1,9 @@
 ---
-title: "PyTorch/en"
-url: "https://docs.alliancecan.ca/wiki/PyTorch/en"
+title: "PyTorch"
+url: "https://docs.alliancecan.ca/wiki/PyTorch"
 category: "General"
-last_modified: "2025-11-12T21:15:20Z"
-page_id: 4520
+last_modified: "2025-12-11T20:22:59Z"
+page_id: 4457
 display_title: "PyTorch"
 ---
 
@@ -130,14 +130,17 @@ In cases where a model is fairly small, such that it does not take up a large po
 In the example that follows, we adapt the code from the previous section to run on a single GPU. This task is fairly small - with a batch size of 512 images, our model takes up about 1GB of GPU memory space, and it uses only about 6% of its compute capacity during training. This is a model that should not be trained on a GPU on our clusters. However, using Data Parallelism, we can fit several replicas of this model on a single GPU and increase our resource usage, while getting a nice speed-up. We use Nvidia's Multi-Process Service (MPS), along with MPI to efficiently place multiple model replicas on one GPU:
 
 ==Fully Sharded Data Parallelism==
+
 Similar to Deepspeed, Fully Sharded Data Parallelism (FSDP) enables distributed storage and computing of different elements of a training task - such as optimizer states, model weights, model gradients and model activations - across multiple devices, including GPU, CPU, local hard disk, and/or combinations of these devices. This "pooling" of resources, notably for storage, allows models with massive amounts of parameters to be trained efficiently, across multiple nodes.
 
 Note that, with FSDP, a model layer that gets sharded across devices may be collected inside a single device during a forward or backward pass. You should not use FSDP if your model has layers that do not fit entirely in the memory of a single GPU. See the section on Tensor Parallelism to see how to deal with this case.
 
 ==Tensor Parallelism==
+
 Tensor Parallelism (TP) is a model sharding approach that differs from FSDP in that the computation of a forward or backward pass through a model layer is split along with the layers' weights across multiple devices. In other words, while FSDP shards model weights across devices, it must still collect  shards together in the same device during certain computation steps. This introduces overhead from having to move model shards across devices, and it implies that individual FSDP layers, or sharded model blocks, must fit entirely in the memory of a single device. With TP on the other hand, computation steps are done locally in the device where a model shard is placed.
 
 ==Pipeline Parallelism==
+
 Pipeline Parallelism (PP) is a model sharding approach where the shards are groups of consecutive of layers of a model. Each shard, or block of sequential layers, gets placed on a different device, thus a forward or backward pass through the model means performing computations on each device in sequence. This means that the farther away a block of layers is from the current block being used in a computation at any given time, the longer the device hosting it will have to wait for its turn to perform any computations. To mitigate this, in PP, every input batch is broken into "micro-batches", which are fed to the model in sequence. This ensures all devices stay busy as the first micro-batch reaches the last model block.
 
 =Creating model checkpoints=
@@ -170,6 +173,22 @@ You must be careful when loading a checkpoint created in this manner. If a proce
  map_location = f"cuda:{local_rank}"
  ddp_model.load_state_dict(
  torch.load("./checkpoint_path", map_location=map_location))
+
+This section gives ResNet-18 benchmark results on different clusters with various configurations.
+
+All numbers are images per second per GPU, using DistributedDataParallel and NCCL.
+
+These results are provisional and there is a lot of variance in their measurement. Work is being done to get a clearer picture.
+
+ Graham[P100], images per second per GPU
+
+Batch size	1 node, 1 GPU	1 node, 2 GPUs	2 * (1 node, 2 GPUs)	3 * (1 node, 2 GPUs)
+32        	542          	134           	103                 	82
+64        	620          	190           	149                 	134
+128       	646          	241           	197                 	180
+256       	587          	263           	184                 	368
+
+ -->
 
 = Troubleshooting =
 

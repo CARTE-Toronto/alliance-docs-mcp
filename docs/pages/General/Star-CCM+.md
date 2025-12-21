@@ -1,9 +1,9 @@
 ---
-title: "Star-CCM+/en"
-url: "https://docs.alliancecan.ca/wiki/Star-CCM%2B/en"
+title: "Star-CCM+"
+url: "https://docs.alliancecan.ca/wiki/Star-CCM%2B"
 category: "General"
-last_modified: "2025-11-03T20:57:23Z"
-page_id: 5428
+last_modified: "2025-12-18T06:30:51Z"
+page_id: 4355
 display_title: "Star-CCM+"
 ---
 
@@ -31,25 +31,37 @@ When submitting jobs on a cluster for the first time, you must set up the enviro
 port=$(cat $CDLMD_LICENSE_FILE  grep -Eo '[0-9]+$')
 nmap $server -Pn -p $port  grep -v '^$'; echo
 
-slurm_hl2hl.py --format STAR-CCM+ > $SLURM_TMPDIR/machinefile
-NCORE=$((SLURM_NNODES * SLURM_CPUS_PER_TASK * SLURM_NTASKS_PER_NODE))
-
 if [ -n "$LM_PROJECT" ]; then
-   # Siemens PoD license server
+   echo "Siemens PoD license server ..."
    starccm+ -jvmargs -Xmx4G -jvmargs -Djava.io.tmpdir=$SLURM_TMPDIR -batch -power -podkey $LM_PROJECT -np $NCORE -nbuserdir $SLURM_TMPDIR -machinefile $SLURM_TMPDIR/machinefile $JAVA_FILE $SIM_FILE -mpi intel -fabric psm2
 else
-   # Institutional license server
+   echo "Institutional license server ..."
+   [ $(command -v lmutil) ] && lmutil lmstat -c ~/.licenses/starccm.lic -a  egrep "license1UPuse$USER"; echo
    starccm+ -jvmargs -Xmx4G -jvmargs -Djava.io.tmpdir=$SLURM_TMPDIR -batch -np $NCORE -nbuserdir $SLURM_TMPDIR -machinefile $SLURM_TMPDIR/machinefile $JAVA_FILE $SIM_FILE -mpi intel -fabric psm2
+fi
+}}
+
+ awk '{print $2}')
+port=$(cat $CDLMD_LICENSE_FILE  grep -Eo '[0-9]+$')
+nmap $server -Pn -p $port  grep -v '^$'; echo
+
+if [ -n "$LM_PROJECT" ]; then
+   echo "Siemens PoD license server ..."
+   starccm+ -jvmargs -Xmx4G -jvmargs -Djava.io.tmpdir=$SLURM_TMPDIR -batch -power -podkey $LM_PROJECT -np $NCORE -nbuserdir $SLURM_TMPDIR -machinefile $SLURM_TMPDIR/machinefile $JAVA_FILE $SIM_FILE -mpi openmpi
+else
+   echo "Institutional license server ..."
+   [ $(command -v lmutil) ] && lmutil lmstat -c ~/.licenses/starccm.lic -a  egrep "license1UPuse$USER"; echo
+   starccm+ -jvmargs -Xmx4G -jvmargs -Djava.io.tmpdir=$SLURM_TMPDIR -batch -np $NCORE -nbuserdir $SLURM_TMPDIR -machinefile $SLURM_TMPDIR/machinefile $JAVA_FILE $SIM_FILE -mpi openmpi
 fi
 }}
 
  sleep 5
           echo "Attempt number: "$I
           if [ -n "$LM_PROJECT" ]; then
-          # Siemens PoD license server
+          echo "Siemens PoD license server ..."
           starccm+ -jvmargs -Xmx4G -jvmargs -Djava.io.tmpdir=$SLURM_TMPDIR -batch -power -podkey $LM_PROJECT -np $NCORE -nbuserdir $SLURM_TMPDIR -machinefile $SLURM_TMPDIR/machinefile $JAVA_FILE $SIM_FILE
         else
-          # Institutional license server
+          echo "Institutional license server ..."
           starccm+ -jvmargs -Xmx4G -jvmargs -Djava.io.tmpdir=$SLURM_TMPDIR -batch -np $NCORE -nbuserdir $SLURM_TMPDIR -machinefile $SLURM_TMPDIR/machinefile $JAVA_FILE $SIM_FILE
         fi
         RET=$?
