@@ -2,14 +2,14 @@
 title: "Diskusage Explorer/en"
 url: "https://docs.alliancecan.ca/wiki/Diskusage_Explorer/en"
 category: "General"
-last_modified: "2025-09-10T18:37:53Z"
+last_modified: "2025-12-19T15:08:30Z"
 page_id: 16270
 display_title: "Diskusage Explorer"
 ---
 
 ==Content of folders==
 
-Warning: This tool is currently only available on Rorqual and Narval.
+Warning: This tool is currently only available on Narval.
 
 You can get a breakdown by folder of how the disk space is being consumed in your /home, /scratch and /project spaces. That information is currently updated once a day and is stored in an SQLite format for fast access.
 

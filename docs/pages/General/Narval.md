@@ -2,7 +2,7 @@
 title: "Narval/en"
 url: "https://docs.alliancecan.ca/wiki/Narval/en"
 category: "General"
-last_modified: "2025-09-08T18:50:35Z"
+last_modified: "2025-12-16T19:17:02Z"
 page_id: 17288
 display_title: "Narval"
 ---
@@ -59,7 +59,7 @@ In practice the Narval racks contain islands of 48 or 56 regular CPU nodes. It i
 ==Node characteristics==
 
 nodes	cores	available memory 	CPU                                                	storage           	GPU
-1145 	64   	249G or 255000M  	2 x AMD EPYC 7532 (Zen 2) @ 2.40 GHz, 256M cache L3	1 x 960G SSD
+1145 	64   	250G or 256000M  	2 x AMD EPYC 7532 (Zen 2) @ 2.40 GHz, 256M cache L3	1 x 960G SSD
 33   	64   	2009G or 2057500M	2 x AMD EPYC 7532 (Zen 2) @ 2.40 GHz, 256M cache L3	1 x 960G SSD
 3    	64   	4000G or 4096000M	2 x AMD EPYC 7502 (Zen 2) @ 2.50 GHz, 128M cache L3	1 x 960G SSD
 159  	48   	498G or 510000M  	2 x AMD EPYC 7413 (Zen 3) @ 2.65 GHz, 128M cache L3	1 x SSD of 3.84 TB	4 x NVidia A100SXM4 (40 GB memory), connected via NVLink

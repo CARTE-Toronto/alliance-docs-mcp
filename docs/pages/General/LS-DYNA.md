@@ -1,9 +1,9 @@
 ---
-title: "LS-DYNA/en"
-url: "https://docs.alliancecan.ca/wiki/LS-DYNA/en"
+title: "LS-DYNA"
+url: "https://docs.alliancecan.ca/wiki/LS-DYNA"
 category: "General"
-last_modified: "2025-10-21T14:19:23Z"
-page_id: 14902
+last_modified: "2025-12-15T16:30:52Z"
+page_id: 13871
 display_title: "LS-DYNA"
 ---
 
@@ -17,7 +17,7 @@ The Alliance is a hosting provider for LS-DYNA. This means that we have LS-DYNA 
 
 If your (existing or new) license server has never been used on the cluster where you plan to run jobs, firewall changes will first need to be done on both the cluster side and server side.  This will typically require involvement from both our technical team and the technical people managing your license software.  To arrange this, send an email containing the service port and IP address of your floating license server to technical support. To check if your license file is working run the following commands
 
- module load ls-dyna
+module load ls-dyna
  ls-dyna_s or ls-dyna_d
 
 You don't need to specify any input file or arguments to run this test.  The output header should contain a (non-empty) value for Licensed to: with the exception of CMC license servers.  Press ^C to quit the program and return to the command line.
@@ -60,7 +60,7 @@ If your LS-DYNA license was purchased from CMC, set the following two environmen
  Nibi:     export ANSYSLMD_LICENSE_FILE=6624@10.25.1.56
  Narval:   export ANSYSLMD_LICENSE_FILE=6624@10.100.64.10
  Rorqual:  export ANSYSLMD_LICENSE_FILE=6624@10.100.64.10
- Trillium: export ANSYSLMD_LICENSE_FILE=6624@172.16.205.198
+ Trillium: export ANSYSLMD_LICENSE_FILE=6624@scinet-cmc
 
 where the IP address corresponds to the respective CADpass servers.  No firewall changes are required to use a CMC license on any cluster since these have already been done.  Since the remote CMC server that hosts LS=DYNA licenses is Ansys-based, these variables cannot be defined in your ~/.licenses/ls-dyna.lic file.  The file however must exist (even if it's empty) for any ls-dyna module to load.  To ensure this is the case, run touch ~/.licenses/ls-dyna.lic once from the command line (or each time in your slurm scripts).  Note that only module versions >= 13.1.1 will work with Ansys license servers.
 

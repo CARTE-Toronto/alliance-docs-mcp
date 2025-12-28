@@ -1,9 +1,9 @@
 ---
-title: "CephFS/en"
-url: "https://docs.alliancecan.ca/wiki/CephFS/en"
+title: "CephFS"
+url: "https://docs.alliancecan.ca/wiki/CephFS"
 category: "General"
-last_modified: "2025-01-21T20:20:02Z"
-page_id: 20857
+last_modified: "2025-12-19T03:09:27Z"
+page_id: 16840
 display_title: "CephFS"
 ---
 
@@ -27,9 +27,9 @@ If you do not already have a quota for the service, you will need to request thi
 : Share Name = enter a name that identifies your project (e.g. project-name-shareName)
 : Share Protocol = CephFS
 : Size = size you need for this share
-: Share Type = cephfs
+: Share Type = cephfs (or cephfs-ec42 on SD4H/Juno)
 : Availability Zone = nova
-: Do not check Make visible for all, otherwise the share will be accessible by all users in all projects.
+: Do not check Make visible for all (or Make visible to users from all projects on SD4H/Juno), otherwise the share will be accessible by all users in all projects.
 : Click on the Create button.
 
 ; Create an access rule to generate access key.
@@ -41,7 +41,7 @@ If you do not already have a quota for the service, you will need to request thi
 
 ; Note the share details which you will need later.
 : In Project --> Share --> Shares, click on the name of the share.
-: In the Share Overview, note the three elements circled in red in the "Properly configured" image: Path, which will be used in the  mount command on the VM, the Access Rules, which will be the client name and the Access Key that will let the VM's client connect.
+: In the Share Overview, note the three elements circled in red in the image above: Path, which will be used in the  mount command on the VM, the Access to, which will be the client name and the Access Key that will let the VM's client connect.
 
 == Attach the CephFS network to your VM ==
 
@@ -101,6 +101,10 @@ You can get the repository once you have figured out your distro {codename} with
 
 sudo apt-add-repository 'deb https://download.ceph.com/debian-quincy/ {codename} main'
 
+If the previous command gave an error, revert it with the following command and go to the next step:
+
+sudo add-apt-repository -r 'deb https://download.ceph.com/debian-quincy/ {codename} main'
+
 You can now install the ceph lib, cephfs client and other dependencies:
 
  sudo apt-get install -y libcephfs2 python3-cephfs ceph-common python3-ceph-argparse
@@ -119,7 +123,7 @@ Look for Project --> Share --> Shares, then click on the name of the share.
 
 ; Retrieve the connection information from the share page for your connection:
 : Open up the share details by clicking on the name of the share in the Shares page.
-: Copy the entire path of the share to mount the filesystem.
+: Copy the portion of the Path of the share that starts with : which we will use to mount the filesystem (for example :/volumes/_nogroup/f6cb8f06-f0a4-4b88-b261-f8bd6b03582c, is used here).
 
 ;Mount the filesystem
 :Create a mount point directory somewhere in your host (/cephfs, is used here)

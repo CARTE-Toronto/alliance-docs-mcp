@@ -1,9 +1,9 @@
 ---
-title: "OpenFOAM/en"
-url: "https://docs.alliancecan.ca/wiki/OpenFOAM/en"
+title: "OpenFOAM"
+url: "https://docs.alliancecan.ca/wiki/OpenFOAM"
 category: "General"
-last_modified: "2025-09-09T21:14:21Z"
-page_id: 6747
+last_modified: "2025-12-17T15:53:45Z"
+page_id: 5185
 display_title: "OpenFOAM"
 ---
 
@@ -75,3 +75,7 @@ OpenFOAM can emit a lot of debugging information in very frequent small writes (
 There are a variety of other parameters which can be used to reduce the amount of output that OpenFOAM writes to disk as well as the frequency; these run-time parameters are documented for version 6 and version 7.
 
 For example, the debugSwitches dictionary in $HOME/.OpenFOAM/$WM_PROJECT_VERSION/controlDict can be altered to change the flags from values greater than zero to zero. Another solution would be to make use of the local scratch ($SLURM_TMPDIR), a disk attached directly to the compute node, discussed here.
+
+==== Node-local scratch ====
+
+If your workflow involves the creation of many small files, you may benefit from making $SLURM_TMPDIR your working directory.  See Using node-local storage for more on this.

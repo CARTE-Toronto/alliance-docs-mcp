@@ -2,7 +2,7 @@
 title: "GROMACS/en"
 url: "https://docs.alliancecan.ca/wiki/GROMACS/en"
 category: "General"
-last_modified: "2025-08-29T12:31:02Z"
+last_modified: "2025-12-19T17:19:48Z"
 page_id: 4167
 display_title: "GROMACS"
 ---
@@ -50,6 +50,8 @@ This section summarizes configuration details.
 The following versions have been installed:
 
 GROMACS version	modules for running on CPUs                         	modules for running on GPUs (CUDA)                             	Notes
+gromacs/2025.4 	StdEnv/2023  gcc/12.3  openmpi/4.1.5  gromacs/2025.4	StdEnv/2023 gcc/12.3  openmpi/4.1.5  cuda/12.6  gromacs/2025.4 	GCC, FlexiBLAS & FFTW
+gromacs/2024.6 	StdEnv/2023  gcc/12.3  openmpi/4.1.5  gromacs/2024.6	StdEnv/2023 gcc/12.3  openmpi/4.1.5  cuda/12.6  gromacs/2024.6 	GCC, FlexiBLAS & FFTW
 gromacs/2024.4 	StdEnv/2023  gcc/12.3  openmpi/4.1.5  gromacs/2024.4	StdEnv/2023 gcc/12.3  openmpi/4.1.5  cuda/12.2  gromacs/2024.4 	GCC, FlexiBLAS & FFTW
 gromacs/2024.1 	StdEnv/2023  gcc/12.3  openmpi/4.1.5  gromacs/2024.1	StdEnv/2023 gcc/12.3  openmpi/4.1.5  cuda/12.2  gromacs/2024.1 	GCC, FlexiBLAS & FFTW
 gromacs/2023.5 	StdEnv/2023  gcc/12.3  openmpi/4.1.5  gromacs/2023.5	StdEnv/2023  gcc/12.3  openmpi/4.1.5  cuda/12.2  gromacs/2023.5	GCC, FlexiBLAS & FFTW
@@ -97,13 +99,13 @@ Notes:
 These modules can be loaded by using a module load command with the modules as stated in the second column in the above table.
 For example:
 
- $ module load  StdEnv/2023  gcc/12.3   openmpi/4.1.5  gromacs/2024.4
+ $ module load  StdEnv/2023  gcc/12.3   openmpi/4.1.5  gromacs/2025.4
  or
  $ module load  StdEnv/2020  gcc/9.3.0  openmpi/4.0.3  gromacs/2023.2
 
 These versions are also available with GPU support, albeit only with single precision. In order to load the GPU enabled version, the cuda module needs to be loaded first. The modules needed are listed in the third column of above table, e.g.:
 
- $ module load  StdEnv/2023  gcc/12.3  openmpi/4.1.5  cuda/12.2  gromacs/2024.4
+ $ module load  StdEnv/2023  gcc/12.3  openmpi/4.1.5  cuda/12.6  gromacs/2025.4
  or
  $ module load  StdEnv/2020  gcc/9.3.0  cuda/11.4  openmpi/4.0.3  gromacs/2023.2
 
@@ -380,6 +382,8 @@ Both packages feature a versatile atom-selection language and expose the coordin
 PLUMEDPLUMED Home is an open source library for free energy calculations in molecular systems which works together with some of the most popular molecular dynamics engines.
 
 The gromacs-plumed modules are versions of GROMACS that have been patched with PLUMED's modifications  so that they can run meta-dynamics simulations.
+
+Also note that gromacs modules version 2025 and newer have native PLUMED support enabled, which can be used after loading any plumed module.
 
 GROMACS	PLUMED	modules for running on CPUs                                	modules for running on GPUs (CUDA)                                    	Notes
 v2023.5	v2.9.2	StdEnv/2023  gcc/12.3  openmpi/4.1.5  gromacs-plumed/2023.5	StdEnv/2023  gcc/12.3  openmpi/4.1.5  cuda/12.2  gromacs-plumed/2023.5	GCC, FlexiBLAS & FFTW

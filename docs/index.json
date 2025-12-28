@@ -1,6 +1,6 @@
 {
-  "last_updated": "2025-12-21T06:17:57.012681+00:00",
-  "total_pages": 418,
+  "last_updated": "2025-12-28T06:18:38.004992+00:00",
+  "total_pages": 422,
   "pages": [
     {
       "page_id": 10049,
@@ -1039,10 +1039,10 @@
     },
     {
       "page_id": 16270,
-      "title": "Diskusage Explorer",
+      "title": "Diskusage Explorer/en",
       "url": "https://docs.alliancecan.ca/wiki/Diskusage_Explorer/en",
       "category": "General",
-      "last_modified": "2025-09-10T18:37:53Z",
+      "last_modified": "2025-12-19T15:08:30Z",
       "file_path": "docs/pages/General/Diskusage_Explorer.md",
       "slug": "Diskusage_Explorer"
     },
@@ -1273,10 +1273,10 @@
     },
     {
       "page_id": 4167,
-      "title": "GROMACS",
+      "title": "GROMACS/en",
       "url": "https://docs.alliancecan.ca/wiki/GROMACS/en",
       "category": "General",
-      "last_modified": "2025-08-29T12:31:02Z",
+      "last_modified": "2025-12-19T17:19:48Z",
       "file_path": "docs/pages/General/GROMACS.md",
       "slug": "GROMACS"
     },
@@ -2119,10 +2119,10 @@
     },
     {
       "page_id": 17288,
-      "title": "Narval",
+      "title": "Narval/en",
       "url": "https://docs.alliancecan.ca/wiki/Narval/en",
       "category": "General",
-      "last_modified": "2025-09-08T18:50:35Z",
+      "last_modified": "2025-12-16T19:17:02Z",
       "file_path": "docs/pages/General/Narval.md",
       "slug": "Narval"
     },
@@ -2623,10 +2623,10 @@
     },
     {
       "page_id": 2629,
-      "title": "R",
+      "title": "R/en",
       "url": "https://docs.alliancecan.ca/wiki/R/en",
       "category": "General",
-      "last_modified": "2025-11-13T14:20:02Z",
+      "last_modified": "2025-12-16T18:27:00Z",
       "file_path": "docs/pages/General/R.md",
       "slug": "R"
     },
@@ -2785,10 +2785,10 @@
     },
     {
       "page_id": 2538,
-      "title": "Running jobs",
+      "title": "Running jobs/en",
       "url": "https://docs.alliancecan.ca/wiki/Running_jobs/en",
       "category": "General",
-      "last_modified": "2025-09-15T18:26:02Z",
+      "last_modified": "2025-12-16T20:07:47Z",
       "file_path": "docs/pages/General/Running_jobs.md",
       "slug": "Running_jobs"
     },
@@ -3751,7 +3751,7 @@
       "title": "Star-CCM+",
       "url": "https://docs.alliancecan.ca/wiki/Star-CCM%2B",
       "category": "General",
-      "last_modified": "2025-12-18T06:30:51Z",
+      "last_modified": "2025-12-28T02:41:05Z",
       "file_path": "docs/pages/General/Star-CCM+.md",
       "slug": "Star-CCM+"
     },
@@ -3763,6 +3763,42 @@
       "last_modified": "2025-12-15T15:01:17Z",
       "file_path": "docs/pages/General/Ansys.md",
       "slug": "Ansys"
+    },
+    {
+      "page_id": 16840,
+      "title": "CephFS",
+      "url": "https://docs.alliancecan.ca/wiki/CephFS",
+      "category": "General",
+      "last_modified": "2025-12-19T03:09:27Z",
+      "file_path": "docs/pages/General/CephFS.md",
+      "slug": "CephFS"
+    },
+    {
+      "page_id": 5185,
+      "title": "OpenFOAM",
+      "url": "https://docs.alliancecan.ca/wiki/OpenFOAM",
+      "category": "General",
+      "last_modified": "2025-12-17T15:53:45Z",
+      "file_path": "docs/pages/General/OpenFOAM.md",
+      "slug": "OpenFOAM"
+    },
+    {
+      "page_id": 32094,
+      "title": "Classiq",
+      "url": "https://docs.alliancecan.ca/wiki/Classiq",
+      "category": "General",
+      "last_modified": "2025-12-16T16:39:37Z",
+      "file_path": "docs/pages/General/Classiq.md",
+      "slug": "Classiq"
+    },
+    {
+      "page_id": 13871,
+      "title": "LS-DYNA",
+      "url": "https://docs.alliancecan.ca/wiki/LS-DYNA",
+      "category": "General",
+      "last_modified": "2025-12-15T16:30:52Z",
+      "file_path": "docs/pages/General/LS-DYNA.md",
+      "slug": "LS-DYNA"
     }
   ]
 }
