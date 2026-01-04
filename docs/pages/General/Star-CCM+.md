@@ -2,7 +2,7 @@
 title: "Star-CCM+"
 url: "https://docs.alliancecan.ca/wiki/Star-CCM%2B"
 category: "General"
-last_modified: "2025-12-28T02:41:05Z"
+last_modified: "2026-01-02T06:33:23Z"
 page_id: 4355
 display_title: "Star-CCM+"
 ---
@@ -50,26 +50,29 @@ fi
 port=$(cat $CDLMD_LICENSE_FILE  grep -Eo '[0-9]+$')
 nmap $server -Pn -p $port  grep -v '^$'; echo
 
-#export FLEXIBLAS_VERBOSE=1
+export FLEXIBLAS=NETLIB
+STAR_MPI="-mpi openmpi"
 if [ "$RSNT_CPU_VENDOR_ID" == intel ]; then
   export FLEXIBLAS=StarMKL
   STAR_MPI="-mpi intel"
 elif [ "$RSNT_CPU_VENDOR_ID" == amd ]; then
   export FLEXIBLAS=StarAOCL
-  STAR_MPI="-mpi openmpi"
-else
-  export FLEXIBLAS=NETLIB
-  STAR_MPI="-mpi openmpi"
 fi
 echo "FLEXIBLAS=$FLEXIBLAS"
 
+if [ "${EBVERSIONSTARCCM:0:2}" -lt 20 ]; then
+  STAR_FABRIC="-fabric ofi"
+else
+  STAR_FABRIC="-fabric ucx"
+fi
+
 if [ -n "$LM_PROJECT" ]; then
    echo "Siemens PoD license server ..."
-   starccm+ -jvmargs -Xmx4G -jvmargs -Djava.io.tmpdir=$SLURM_TMPDIR -batch -power -podkey $LM_PROJECT -np $NCORE -nbuserdir $SLURM_TMPDIR -machinefile $SLURM_TMPDIR/machinefile $JAVA_FILE $SIM_FILE $STAR_MPI
+   starccm+ -jvmargs -Xmx4G -jvmargs -Djava.io.tmpdir=$SLURM_TMPDIR -batch -power -podkey $LM_PROJECT -np $NCORE -nbuserdir $SLURM_TMPDIR -machinefile $SLURM_TMPDIR/machinefile $JAVA_FILE $SIM_FILE $STAR_MPI $STAR_FABRIC
 else
    echo "Institutional license server ..."
    [ $(command -v lmutil) ] && lmutil lmstat -c ~/.licenses/starccm.lic -a  egrep "license1UPuse$USER"; echo
-   starccm+ -jvmargs -Xmx4G -jvmargs -Djava.io.tmpdir=$SLURM_TMPDIR -batch -np $NCORE -nbuserdir $SLURM_TMPDIR -machinefile $SLURM_TMPDIR/machinefile $JAVA_FILE $SIM_FILE $STAR_MPI
+   starccm+ -jvmargs -Xmx4G -jvmargs -Djava.io.tmpdir=$SLURM_TMPDIR -batch -np $NCORE -nbuserdir $SLURM_TMPDIR -machinefile $SLURM_TMPDIR/machinefile $JAVA_FILE $SIM_FILE $STAR_MPI $STAR_FABRIC
 fi
 }}
 
