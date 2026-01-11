@@ -2,7 +2,7 @@
 title: "OpenFOAM"
 url: "https://docs.alliancecan.ca/wiki/OpenFOAM"
 category: "General"
-last_modified: "2025-12-17T15:53:45Z"
+last_modified: "2026-01-07T14:10:05Z"
 page_id: 5185
 display_title: "OpenFOAM"
 ---

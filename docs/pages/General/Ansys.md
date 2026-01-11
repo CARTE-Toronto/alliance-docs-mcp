@@ -2,7 +2,7 @@
 title: "Ansys"
 url: "https://docs.alliancecan.ca/wiki/Ansys"
 category: "General"
-last_modified: "2025-12-15T15:01:17Z"
+last_modified: "2026-01-06T15:43:10Z"
 page_id: 4568
 display_title: "Ansys"
 ---
@@ -249,7 +249,7 @@ Compute Node (no GPU requested) or Basic Desktop
 
 ::: In the Fluent Launcher Click the Environment Tab
 ::: Copy/paste the following environment variable settings:
-:::: export I_MPI_HYDRA_BOOTSTRAP=ssh     (required on nibi)
+:::: I_MPI_HYDRA_BOOTSTRAP=ssh     (required on nibi)
 :::: HOOPS_PICTURE=opengl2-mesa           (2025R1 or newer)
 :::: HOOPS_PICTURE=null                   (2024R2 or older)
 ::: Click the Start button

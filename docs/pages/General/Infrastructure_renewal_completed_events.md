@@ -2,7 +2,7 @@
 title: "Infrastructure renewal completed events"
 url: "https://docs.alliancecan.ca/wiki/Infrastructure_renewal_completed_events"
 category: "General"
-last_modified: "2025-12-12T20:20:11Z"
+last_modified: "2026-01-07T14:09:01Z"
 page_id: 27571
 display_title: "Infrastructure renewal completed events"
 ---

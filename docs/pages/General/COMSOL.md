@@ -2,7 +2,7 @@
 title: "COMSOL/en"
 url: "https://docs.alliancecan.ca/wiki/COMSOL/en"
 category: "General"
-last_modified: "2025-12-09T19:11:29Z"
+last_modified: "2026-01-07T14:08:31Z"
 page_id: 6233
 display_title: "COMSOL"
 ---
@@ -31,7 +31,7 @@ Researchers who own a COMSOL license subscription from CMC should use the follow
 * Fir: SERVER 172.26.0.101 ANY 6601
 * Nibi: SERVER 10.25.1.56 ANY 6601
 * Narval/Rorqual: SERVER 10.100.64.10 ANY 6601
-* Trillium: SERVER nia-cmc ANY 6601
+* Trillium: SERVER scinet-cmc ANY 6601
 
 For example, a license file created on Nibi cluster would look as follows:
  [l2:~] cat ~/.licenses/comsol.lic
