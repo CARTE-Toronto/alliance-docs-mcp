@@ -125,6 +125,54 @@ Embeddings-backed related-pages helper (Chroma + sentence-transformers) with aut
 
 **Returns:** List of related pages with similarity scores (or heuristic scores when falling back)
 
+### MCP Prompts
+
+The server provides reusable prompt templates that guide LLMs on how to effectively query and use the documentation system. These prompts can be used by MCP clients to structure queries and improve consistency.
+
+#### `documentation_search_guide(query: str, category: Optional[str] = None)`
+Guide for effectively searching Alliance documentation. Provides instructions on using the `search_docs` tool, interpreting search results, and filtering by category.
+
+**Parameters:**
+- `query`: The user's search query
+- `category`: Optional category filter
+
+**Use Case**: When an LLM needs to help a user search for documentation on a specific topic.
+
+#### `technical_question_template(question: str, context: Optional[str] = None)`
+Template for answering technical questions using documentation. Guides the LLM through searching, reading relevant pages, finding related content, and synthesizing information.
+
+**Parameters:**
+- `question`: The technical question to answer
+- `context`: Additional context about what the user is trying to accomplish
+
+**Use Case**: When an LLM needs to answer technical questions based on the documentation.
+
+#### `category_exploration_guide(category: str, purpose: Optional[str] = None)`
+Guide for exploring documentation by category. Helps discover pages within a specific category and understand the documentation structure.
+
+**Parameters:**
+- `category`: The category to explore
+- `purpose`: What the user is trying to accomplish
+
+**Use Case**: When an LLM needs to help users explore documentation in a specific category (e.g., "Getting Started", "Technical Reference").
+
+#### `related_content_discovery(topic: str, goal: Optional[str] = None)`
+Guide for finding related documentation pages. Provides instructions on using the `find_related_pages` tool and interpreting similarity scores.
+
+**Parameters:**
+- `topic`: The topic or page slug to find related content for
+- `goal`: The user's goal (learning, troubleshooting, etc.)
+
+**Use Case**: When an LLM needs to help users discover related documentation after finding a relevant page.
+
+#### `getting_started_helper(use_case: str)`
+Template for helping new users get started. Guides LLMs to point users to getting started documentation and common first steps.
+
+**Parameters:**
+- `use_case`: What the user wants to do (e.g., "set up account", "run first job", "install software")
+
+**Use Case**: When an LLM needs to help new users with onboarding and initial setup tasks.
+
 ### Synchronization
 
 #### Manual Sync
