@@ -584,7 +584,7 @@ Related pages are useful when:
 @mcp.prompt(
     name="getting_started_helper",
     description="Template for helping new users get started",
-    tags={"getting-started", "onboarding", "documentation"}
+    tags=["getting-started", "onboarding", "documentation"]
 )
 def getting_started_helper(use_case: str) -> str:
     """Generate a prompt template for helping new users get started.
