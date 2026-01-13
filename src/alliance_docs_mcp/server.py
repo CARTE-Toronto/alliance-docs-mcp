@@ -443,7 +443,7 @@ async def get_page_content(slug: str) -> str:
 @mcp.prompt(
     name="documentation_search_guide",
     description="Guide for effectively searching Alliance documentation",
-    tags={"search", "documentation"}
+    tags=["search", "documentation"]
 )
 def documentation_search_guide(query: str, category: Optional[str] = None) -> str:
     """Generate a prompt template for searching documentation.
