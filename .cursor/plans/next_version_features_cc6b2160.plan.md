@@ -10,7 +10,7 @@ todos:
     status: pending
   - id: mcp-prompts
     content: Add MCP prompts for common documentation query patterns (search, related content, category exploration, technical questions)
-    status: pending
+    status: completed
   - id: progress-reporting
     content: Add progress reporting to long-running operations (list_all_pages, complex searches)
     status: pending
