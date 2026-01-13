@@ -548,7 +548,7 @@ Common categories:
 @mcp.prompt(
     name="related_content_discovery",
     description="Guide for finding related documentation pages",
-    tags={"related", "discovery", "documentation"}
+    tags=["related", "discovery", "documentation"]
 )
 def related_content_discovery(topic: str, goal: Optional[str] = None) -> str:
     """Generate a prompt template for finding related documentation.
