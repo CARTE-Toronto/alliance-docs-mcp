@@ -438,6 +438,184 @@ async def get_page_content(slug: str) -> str:
         return f"Error loading page: {e}"
 
 
+# MCP Prompts
+
+@mcp.prompt(
+    name="documentation_search_guide",
+    description="Guide for effectively searching Alliance documentation",
+    tags={"search", "documentation"}
+)
+def documentation_search_guide(query: str, category: Optional[str] = None) -> str:
+    """Generate a prompt template for searching documentation.
+    
+    Args:
+        query: The user's search query
+        category: Optional category filter
+    """
+    prompt = f"""Search the Alliance documentation for information about: {query}
+
+Use the search_docs tool to find relevant documentation pages. When searching:
+- Use the query parameter: "{query}"
+"""
+    
+    if category:
+        prompt += f"- Filter results by category: {category}\n"
+    else:
+        prompt += "- Consider filtering by category if you get too many results\n"
+    
+    prompt += """- Review the search results, paying attention to:
+  * Relevance scores (higher scores indicate better matches)
+  * Highlighted snippets showing where the query matches
+  * Categories to understand the context of each result
+
+If you find relevant pages, use get_page_content to read the full content for detailed information.
+If the search returns many results, consider using a category filter or refining the query."""
+    
+    return prompt
+
+
+@mcp.prompt(
+    name="technical_question_template",
+    description="Template for answering technical questions using documentation",
+    tags={"technical", "question", "documentation"}
+)
+def technical_question_template(question: str, context: Optional[str] = None) -> str:
+    """Generate a prompt template for answering technical questions.
+    
+    Args:
+        question: The technical question to answer
+        context: Additional context about what the user is trying to accomplish
+    """
+    prompt = f"""Answer this technical question using the Alliance documentation: {question}
+"""
+    
+    if context:
+        prompt += f"\nContext: {context}\n"
+    
+    prompt += """
+Follow these steps:
+1. Use search_docs to find relevant documentation pages related to the question
+2. Review the search results and identify the most relevant pages
+3. Use get_page_content to read the full content of relevant pages
+4. If you find a specific page that seems directly relevant, use find_related_pages to discover additional related documentation
+5. Synthesize information from multiple sources to provide a comprehensive answer
+
+Focus on:
+- Practical steps and procedures from the documentation
+- Specific configurations, commands, or code examples
+- Any prerequisites or requirements mentioned
+- Related topics that might be helpful"""
+    
+    return prompt
+
+
+@mcp.prompt(
+    name="category_exploration_guide",
+    description="Guide for exploring documentation by category",
+    tags={"category", "exploration", "documentation"}
+)
+def category_exploration_guide(category: str, purpose: Optional[str] = None) -> str:
+    """Generate a prompt template for exploring documentation by category.
+    
+    Args:
+        category: The category to explore
+        purpose: What the user is trying to accomplish
+    """
+    prompt = f"""Explore the Alliance documentation in the "{category}" category.
+"""
+    
+    if purpose:
+        prompt += f"\nPurpose: {purpose}\n"
+    
+    prompt += f"""
+Available categories include: Getting Started, Technical Reference, User Guide, and others.
+
+To explore the {category} category:
+1. Use list_categories to see all available categories (if needed)
+2. Use search_docs with category="{category}" to find pages within this category
+3. Review the results to understand what documentation is available
+4. Use get_page_content to read specific pages of interest
+5. Use find_related_pages to discover additional related content
+
+Common categories:
+- Getting Started: For new users learning the basics
+- Technical Reference: Technical specifications and detailed information
+- User Guide: Step-by-step guides and tutorials"""
+    
+    return prompt
+
+
+@mcp.prompt(
+    name="related_content_discovery",
+    description="Guide for finding related documentation pages",
+    tags={"related", "discovery", "documentation"}
+)
+def related_content_discovery(topic: str, goal: Optional[str] = None) -> str:
+    """Generate a prompt template for finding related documentation.
+    
+    Args:
+        topic: The topic or page slug to find related content for
+        goal: The user's goal (learning, troubleshooting, etc.)
+    """
+    prompt = f"""Find documentation pages related to: {topic}
+"""
+    
+    if goal:
+        prompt += f"\nGoal: {goal}\n"
+    
+    prompt += """
+To discover related content:
+1. First, use search_docs or get_page_by_title to find the main page about this topic
+2. Once you have the page slug, use find_related_pages to discover related documentation
+3. Review the similarity scores:
+   - Higher scores (closer to 1.0) indicate more closely related content
+   - Scores above 0.7 typically indicate highly relevant related pages
+4. Use get_page_content to read the related pages for additional context
+5. You can also combine related pages with additional searches to build a comprehensive understanding
+
+Related pages are useful when:
+- You want to explore a topic in depth
+- You're learning about a subject and want to see related concepts
+- You're troubleshooting and need to understand related systems or procedures"""
+    
+    return prompt
+
+
+@mcp.prompt(
+    name="getting_started_helper",
+    description="Template for helping new users get started",
+    tags={"getting-started", "onboarding", "documentation"}
+)
+def getting_started_helper(use_case: str) -> str:
+    """Generate a prompt template for helping new users get started.
+    
+    Args:
+        use_case: What the user wants to do (e.g., "set up account", "run first job", "install software")
+    """
+    prompt = f"""Help a new user get started with: {use_case}
+
+The Alliance documentation includes a "Getting Started" category with guides for new users.
+
+Follow these steps:
+1. Use list_categories to confirm available categories
+2. Search in the "Getting Started" category using: search_docs(query="{use_case}", category="Getting Started")
+3. Also check list_recent_updates to see if there are recent updates to getting started documentation
+4. Review the results and use get_page_content to read relevant getting started guides
+5. Use find_related_pages to discover additional helpful documentation
+
+Common getting started topics include:
+- Setting up an account and authentication
+- Connecting to systems via SSH
+- Running your first job
+- Installing software
+- Understanding the file system structure
+- Learning about available systems and resources
+
+Provide clear, step-by-step guidance based on the documentation found."""
+    
+    return prompt
+
+
 @mcp.custom_route("/health", methods=["GET"])
 async def health_check(request: Request) -> PlainTextResponse:
     """Simple health endpoint for platform probes."""
