@@ -512,7 +512,7 @@ Focus on:
 @mcp.prompt(
     name="category_exploration_guide",
     description="Guide for exploring documentation by category",
-    tags={"category", "exploration", "documentation"}
+    tags=["category", "exploration", "documentation"]
 )
 def category_exploration_guide(category: str, purpose: Optional[str] = None) -> str:
     """Generate a prompt template for exploring documentation by category.
