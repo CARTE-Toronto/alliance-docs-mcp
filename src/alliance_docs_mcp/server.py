@@ -142,7 +142,7 @@ def _register_document_resources() -> None:
             description=page.get("url"),
             text=page_text,
             mime_type="text/markdown",
-            tags={page.get("category", "General")},
+            tags=[page.get("category", "General")],
             meta=metadata,
         )
 
@@ -477,7 +477,7 @@ If the search returns many results, consider using a category filter or refining
 @mcp.prompt(
     name="technical_question_template",
     description="Template for answering technical questions using documentation",
-    tags={"technical", "question", "documentation"}
+    tags=["technical", "question", "documentation"]
 )
 def technical_question_template(question: str, context: Optional[str] = None) -> str:
     """Generate a prompt template for answering technical questions.
