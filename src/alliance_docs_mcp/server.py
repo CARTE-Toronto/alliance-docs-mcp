@@ -57,6 +57,18 @@ try:
     search_index_dir = Path(os.getenv("SEARCH_INDEX_DIR", docs_path / "search_index"))
     if not search_index_disabled:
         search_index = SearchIndex(search_index_dir)
+        
+        # Auto-populate search index if empty
+        if search_index and search_index.is_empty():
+            logger.info("Search index is empty, populating from existing documentation...")
+            try:
+                count = search_index.populate_from_storage(storage)
+                if count > 0:
+                    logger.info(f"Populated search index with {count} pages")
+                else:
+                    logger.warning("No pages were indexed - check if documentation files exist")
+            except Exception as exc:
+                logger.warning(f"Failed to populate search index: {exc}")
     else:
         logger.info("Search index disabled via DISABLE_SEARCH_INDEX")
 except Exception as exc:  # pragma: no cover - defensive initialization
@@ -164,9 +176,13 @@ async def _search_docs_impl(
 ) -> List[dict]:
     """Core search implementation used by the MCP tool and tests."""
     try:
+        logger.debug(f"Searching docs: query='{query}', category={category}, limit={limit}, search_content={search_content}, fuzzy={fuzzy}")
+        
         if search_content and search_index:
             try:
+                logger.debug("Attempting full-text search using search index")
                 results = search_index.search(query, category=category, limit=limit, fuzzy=fuzzy)
+                logger.info(f"Full-text search found {len(results)} results for query '{query}'")
                 return [
                     {
                         "title": hit.get("title"),
@@ -181,11 +197,13 @@ async def _search_docs_impl(
                     for hit in results
                 ]
             except SearchIndexUnavailable:
-                logger.warning("Search index unavailable, falling back to title search")
+                logger.warning("Search index unavailable, falling back to file-based search")
             except Exception as exc:  # pragma: no cover - defensive fallback
-                logger.warning("Full-text search failed, falling back to title search: %s", exc)
+                logger.warning(f"Full-text search failed, falling back to file-based search: {exc}")
 
+        logger.debug("Using fallback file-based search")
         results = storage.search_pages(query, category)
+        logger.info(f"File-based search found {len(results)} results for query '{query}'")
         return [
             {
                 "title": page["title"],
@@ -198,7 +216,7 @@ async def _search_docs_impl(
         ]
 
     except Exception as e:
-        logger.error(f"Error searching docs: {e}")
+        logger.error(f"Error searching docs: {e}", exc_info=True)
         return []
 
 

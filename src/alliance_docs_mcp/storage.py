@@ -203,10 +203,31 @@ class DocumentationStorage:
             # Search in title
             title_match = query_lower in page.get("title", "").lower()
             
-            # Search in content (if available)
+            # Search in content - try metadata first, then load from file
             content_match = False
             if "content" in page:
                 content_match = query_lower in page["content"].lower()
+            else:
+                # Load content from file if not in metadata
+                file_path = page.get("file_path")
+                if file_path:
+                    try:
+                        page_data = self.load_page(file_path)
+                        if page_data and "content" in page_data:
+                            content = page_data["content"]
+                            # Remove frontmatter for searching
+                            if content.startswith("---\n"):
+                                lines = content.split('\n')
+                                end_marker = None
+                                for i, line in enumerate(lines[1:], 1):
+                                    if line.strip() == "---":
+                                        end_marker = i
+                                        break
+                                if end_marker is not None:
+                                    content = '\n'.join(lines[end_marker + 1:])
+                            content_match = query_lower in content.lower()
+                    except Exception as exc:
+                        logger.debug(f"Error loading content for search from {file_path}: {exc}")
             
             if title_match or content_match:
                 results.append(page)

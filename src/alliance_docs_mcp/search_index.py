@@ -136,6 +136,84 @@ class SearchIndex:
             logger.warning("Search failed: %s", exc)
             raise SearchIndexUnavailable(str(exc))
 
+    def is_empty(self) -> bool:
+        """Check if the index is empty (has no documents)."""
+        if not self.enabled or not self._index:
+            return True
+        try:
+            with self._index.searcher() as searcher:
+                return searcher.doc_count() == 0
+        except Exception as exc:
+            logger.debug("Error checking if index is empty: %s", exc)
+            return True
+
+    def populate_from_storage(self, storage) -> int:
+        """Populate the index from existing documentation storage.
+        
+        Args:
+            storage: DocumentationStorage instance to load pages from
+            
+        Returns:
+            Number of pages indexed
+        """
+        if not self.enabled or not self._index:
+            return 0
+        
+        pages = storage.get_all_pages()
+        indexed_count = 0
+        
+        logger.info(f"Populating search index from {len(pages)} pages...")
+        
+        for page in pages:
+            try:
+                file_path = page.get("file_path")
+                if not file_path:
+                    continue
+                
+                # Load page content
+                page_data = storage.load_page(file_path)
+                if not page_data:
+                    logger.debug(f"Skipping page {page.get('slug')}: could not load content")
+                    continue
+                
+                content = page_data.get("content", "")
+                # Remove frontmatter from content for indexing
+                # (frontmatter is already in metadata)
+                if content.startswith("---\n"):
+                    lines = content.split('\n')
+                    end_marker = None
+                    for i, line in enumerate(lines[1:], 1):
+                        if line.strip() == "---":
+                            end_marker = i
+                            break
+                    if end_marker is not None:
+                        content = '\n'.join(lines[end_marker + 1:])
+                
+                # Index the page
+                self.index_page(
+                    slug=page.get("slug", ""),
+                    title=page.get("title", ""),
+                    content=content,
+                    category=page.get("category", "General"),
+                    url=page.get("url", ""),
+                    last_modified=page.get("last_modified"),
+                )
+                indexed_count += 1
+                
+            except Exception as exc:
+                logger.warning(f"Failed to index page {page.get('slug', 'unknown')}: {exc}")
+                continue
+        
+        # Optimize the index after bulk population
+        if indexed_count > 0:
+            try:
+                self.optimize()
+            except Exception as exc:
+                logger.debug(f"Index optimization failed after population: {exc}")
+        
+        logger.info(f"Populated search index with {indexed_count} pages")
+        return indexed_count
+
     def optimize(self) -> None:
         """Optimize the index storage."""
         if not self.enabled or not self._index:
