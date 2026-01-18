@@ -2,7 +2,7 @@
 title: "Visual Studio Code/en"
 url: "https://docs.alliancecan.ca/wiki/Visual_Studio_Code/en"
 category: "General"
-last_modified: "2025-10-21T20:16:42Z"
+last_modified: "2026-01-09T10:01:33Z"
 page_id: 24790
 display_title: "Visual Studio Code"
 ---

@@ -2,9 +2,9 @@
 title: "JupyterLab/en"
 url: "https://docs.alliancecan.ca/wiki/JupyterLab/en"
 category: "General"
-last_modified: "2025-12-03T19:36:53Z"
+last_modified: "2026-01-08T16:15:02Z"
 page_id: 15666
-display_title: "JupyterLab/en"
+display_title: "JupyterLab"
 ---
 
 = JupyterLab =
@@ -125,6 +125,10 @@ It is possible to reopen an active RStudio session after the web browser tab was
 The RStudio session will end when the JupyterLab session ends.
 
 Note that simply quitting RStudio or closing the RStudio and JupyterHub tabs in your browser will not release the resources (CPU, memory, GPU) nor end the underlying Slurm job.  Please end your session with the menu item File > Log Out on the JupyterLab browser tab.
+
+==== MLflow ====
+MLflow is an open-source platform, purpose-built to assist machine learning practitioners and teams in handling the complexities of the machine learning process. MLflow focuses on the full lifecycle for machine learning projects, ensuring that each phase is manageable, traceable, and reproducible. We load a default version of MLflow by default, but you may use a different version of it by loading a mlflow module. Please see our MLflow page for more information on how to use MLflow to track your AI experiments.
+
 ==== OpenRefine ====
 
 OpenRefine is a powerful, free and open-source tool to clean up messy data, to transform it, and to extend it in order to add value to it.
@@ -136,6 +140,9 @@ For a new session, the OpenRefine session can take up to 3 minutes to complete i
 It is possible to reopen an active OpenRefine session after the web browser tab was closed.
 
 The OpenRefine session will end when the JupyterLab session ends.
+
+==== Tensorboard ====
+Tensorboard provides the visualization and tooling needed for machine learning experimentation. TensorBoard is a tool for providing the measurements and visualizations needed during the machine learning workflow. It enables tracking experiment metrics like loss and accuracy, visualizing the model graph, projecting embeddings to a lower dimensional space, and much more. We load a default version of tensorboard, but if a different module is available, you can change the version. See our page on Tensorboard for more details on using this software package.
 
 ==== Desktop ====
 

@@ -1,16 +1,19 @@
 ---
-title: "Open OnDemand"
-url: "https://docs.alliancecan.ca/wiki/Open_OnDemand"
+title: "Open OnDemand/en"
+url: "https://docs.alliancecan.ca/wiki/Open_OnDemand/en"
 category: "General"
-last_modified: "2025-09-16T19:42:16Z"
-page_id: 31510
+last_modified: "2026-01-11T13:06:28Z"
+page_id: 32248
 display_title: "Open OnDemand"
 ---
 
 =Introduction=
 
-This guide will walk you through the basic steps to get started with Open OnDemand (OOD) on Alliance systems.
-Open OnDemand is a web-based platform that provides access to a wide range of scientific applications and computing resources, such as Jupyter Lab, R Studio, and VS Code. It allows you to interact with a cluster through a web browser instead of via a terminal, without the need to install any software on your local machine. You will be able to perform file management, submit/monitor jobs and run applications interactively. More information on this project can be found at https://openondemand.org.
+This guide will walk you through the basic steps to get started with Open OnDemand (OOD) on our systems.
+Open OnDemand is a web-based platform that provides access to a wide range of scientific applications and computing resources, such as Jupyter Lab, R Studio, and VS Code. It allows you to interact with a cluster through a web browser instead of via a terminal, without the need to install any software on your local machine. You will be able to perform file management, submit/monitor jobs and run applications interactively. More information on this project can be found at https://openondemand.org. For cluster specific documentation please see:
+
+* Trillium Open OnDemand Quickstart
+* Nibi Open OnDemand Quickstart
 
 =Logging into the Open OnDemand portal=
 

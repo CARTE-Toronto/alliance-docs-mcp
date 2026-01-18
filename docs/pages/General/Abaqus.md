@@ -1,16 +1,20 @@
 ---
-title: "Abaqus/en"
-url: "https://docs.alliancecan.ca/wiki/Abaqus/en"
+title: "Abaqus"
+url: "https://docs.alliancecan.ca/wiki/Abaqus"
 category: "General"
-last_modified: "2025-10-21T17:29:34Z"
-page_id: 10030
+last_modified: "2026-01-17T22:49:18Z"
+page_id: 7347
 display_title: "Abaqus"
 ---
 
 __FORCETOC__
+
 Abaqus FEA is a software suite for finite element analysis and computer-aided engineering.
 
 = Using your own license =
+
+[[ A module for abaqus/2026 will not be available on Alliance clusters until ~Jan25 (delayed).  The new version should resolve the *** buffer overflow detected *** errors occurring with abaqus/2021.  A workaround for this issue has been added into the Single node computing slurm scripts below.  To use it copy the two unshare related lines that appear directly before the abaqus command line into your scripts being sure there are no empty lines or spaces after the continuation slashes.  Further testing has shown that simply increasing the value of ABA_SINT_CAP in your local abaqus_v6.env file will not reliably solve this problem afterall. ]]
+
 Abaqus software modules are available on our clusters; however, you must provide your own license. To configure your account on a cluster, log in and create a file named $HOME/.licenses/abaqus.lic containing the following line. Next, replace port@server with the flexlm port number and server IP address (or fully qualified hostname) of your Abaqus license server.  If you want to use legacy version 6.14.1 then replace ABAQUSLM_LICENSE_FILE with LM_LICENSE_FILE.
 
 If your license has not been set up for use on an Alliance cluster, some additional configuration changes by the Alliance system administrator and your local system administrator will need to be done. Such changes are necessary to ensure the flexlm and vendor TCP ports of your Abaqus server are reachable from all cluster compute nodes when jobs are run via the queue. For us to help you get this done, write to technical support. Please be sure to include the following three items:
@@ -57,7 +61,7 @@ The restart input file should contain:
 
 === Multiple node computing ===
 
-Users with large memory or compute needs (and correspondingly large licenses) can use the following script to perform mpi-based computing over an arbitrary range of nodes ideally left to the scheduler to  automatically determine.  A companion template script to perform restart of multinode jobs is not provided due to additional limitations when they can be used.
+[[ The below script for Multinode computing is no longer usable with abaqus/2021 due to an increased process id range configuration on Alliance clusters. The issue will be resolved once abaqus/2026 is installed.  In the meantime please use one of the Single node computing slurm scripts provided above. ]] Users with large memory or compute needs (and correspondingly large licenses) can use the following script to perform mpi-based computing over an arbitrary range of nodes ideally left to the scheduler to  automatically determine.  A companion template script to perform restart of multinode jobs is not provided due to additional limitations when they can be used.
 
  xargs)"
 for i in `echo "$nodes"  xargs -n1  uniq`; do hostlist=${hostlist}$(echo "['${i}',$(echo "$nodes"  xargs -n1  grep $i  wc -l)],"); done
@@ -92,6 +96,8 @@ No input file modifications are required to restart the analysis.
 
 === Multiple node computing ===
 
+[[ The below script for Multinode computing is no longer usable with abaqus/2021 due to an increased process id range configuration on Alliance clusters. The issue will be resolved once abaqus/2026 is installed.  In the meantime please use one of the Single node computing slurm scripts provided above. ]]
+
  xargs)"
 for i in `echo "$nodes"  xargs -n1  uniq`; do hostlist=${hostlist}$(echo "['${i}',$(echo "$nodes"  xargs -n1  grep $i  wc -l)],"); done
 hostlist="$(echo "$hostlist"  sed 's/,$//g')"
@@ -118,10 +124,11 @@ An estimate for the total slurm node memory (--mem=) required for a simulation t
 
      1          1.89E+14             3612              96345
 
-Alternatively the total memory estimate for a single node threaded process could be obtained by running the simulation interactively on a compute node and then monitor the memory consumption using the ps or top commands. The follows described how to do the latter:
-1) ssh into a cluster, obtain an allocation on a compute node (such as gra100), and start your simulation running:
+Alternatively a total memory estimate for a single node threaded process can be obtained by running the simulation interactively on a compute node and then monitoring the memory use with the top (or ps) command as follows:
 
-2) ssh into the cluster again, then ssh into the compute node reserved by salloc and run top i.e.
+1) First obtain an allocation on a compute node and start your simulation running:
+
+2) Next ssh into the compute node (c50 according to the sq command) and then run top i.e.
 
 3) watch the VIRT and RES columns until steady peak memory values are observed
 
@@ -131,7 +138,7 @@ To completely satisfy the recommended "MEMORY TO OPERATIONS REQUIRED MINIMIZE I/
 
 To determine the required slurm memory for multi-node slurm scripts, memory estimates (per compute process) required to minimize I/O are given in the output dat file of completed jobs.  If mp_host_split is not specified (or is set to 1) then the total number of compute processes will equal the number of nodes.  The mem-per-cpu value can then be roughly determined by multiplying the largest memory estimate by the number of nodes and then dividing by the number or ntasks.  If however a value for mp_host_split is specified (greater than 1) than the mem-per-cpu value can be roughly determined from the largest memory estimate times the number of nodes times the value of mp_host_split divided by the number of tasks.  Note that mp_host_split must be less than or equal to the number of cores per node assigned by slurm at runtime otherwise Abaqus will terminate.  This scenario can be controlled by uncommenting to specify a value for tasks-per-node.  The following definitive statement is given in every output dat file and mentioned here for reference:
 
-  THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+ THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
  THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
  THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
  SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
@@ -251,6 +258,9 @@ where TOKENS = floor[5 X CORES^0.422]
 Each GPU used requires 1 additional TOKEN
 
 == Western license ==
+
+[[ The abaqus.lic file given below no longer works since the license4 machine has been shutdown and retired.  Therefore all abaqus license checkout requests on dusky cluster from the Western/Robarts abaqus license server currently will fail.  A replacement server for license4 is currently be worked on.  Once it is ready for use abaqus.lic will be updated with the new server name and this red warning message removed.  In the meantime the SHARCNET License maybe used instead by following the above procedure to request access. ]]
+
 The Western site license may only be used by Western researchers on hardware located at Western's campus.  Currently, only the Dusky cluster satisfies this condition. Nibi and SHARCNET OOD system are excluded since they are located on Waterloo's campus.  Contact the Western Abaqus license server administrator  to inquire about using the Western Abaqus license.  You will need to provide your username and possibly make arrangements to purchase tokens.  If you are granted access then you may proceed to configure your abaqus.lic file to point to the Western license server:
 
 === Configure license file ===

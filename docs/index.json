@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-01-11T06:18:33.719394+00:00",
-  "total_pages": 422,
+  "last_updated": "2026-01-18T06:18:36.042507+00:00",
+  "total_pages": 428,
   "pages": [
     {
       "page_id": 10049,
@@ -436,10 +436,10 @@
     },
     {
       "page_id": 9850,
-      "title": "BUSCO",
+      "title": "BUSCO/en",
       "url": "https://docs.alliancecan.ca/wiki/BUSCO/en",
       "category": "General",
-      "last_modified": "2024-05-01T23:07:01Z",
+      "last_modified": "2026-01-08T15:12:58Z",
       "file_path": "docs/pages/General/BUSCO.md",
       "slug": "BUSCO"
     },
@@ -1354,10 +1354,10 @@
     },
     {
       "page_id": 222,
-      "title": "Globus",
+      "title": "Globus/en",
       "url": "https://docs.alliancecan.ca/wiki/Globus/en",
       "category": "General",
-      "last_modified": "2025-08-28T22:13:01Z",
+      "last_modified": "2026-01-09T20:42:32Z",
       "file_path": "docs/pages/General/Globus.md",
       "slug": "Globus"
     },
@@ -1609,7 +1609,7 @@
       "title": "JupyterLab/en",
       "url": "https://docs.alliancecan.ca/wiki/JupyterLab/en",
       "category": "General",
-      "last_modified": "2025-12-03T19:36:53Z",
+      "last_modified": "2026-01-08T16:15:02Z",
       "file_path": "docs/pages/General/JupyterLab.md",
       "slug": "JupyterLab"
     },
@@ -3550,10 +3550,10 @@
     },
     {
       "page_id": 24790,
-      "title": "Visual Studio Code",
+      "title": "Visual Studio Code/en",
       "url": "https://docs.alliancecan.ca/wiki/Visual_Studio_Code/en",
       "category": "General",
-      "last_modified": "2025-10-21T20:16:42Z",
+      "last_modified": "2026-01-09T10:01:33Z",
       "file_path": "docs/pages/General/Visual_Studio_Code.md",
       "slug": "Visual_Studio_Code"
     },
@@ -3799,6 +3799,60 @@
       "last_modified": "2025-12-15T16:30:52Z",
       "file_path": "docs/pages/General/LS-DYNA.md",
       "slug": "LS-DYNA"
+    },
+    {
+      "page_id": 32184,
+      "title": "MLflow",
+      "url": "https://docs.alliancecan.ca/wiki/MLflow",
+      "category": "General",
+      "last_modified": "2026-01-14T15:02:43Z",
+      "file_path": "docs/pages/General/MLflow.md",
+      "slug": "MLflow"
+    },
+    {
+      "page_id": 26380,
+      "title": "Infrastructure renewal",
+      "url": "https://docs.alliancecan.ca/wiki/Infrastructure_renewal",
+      "category": "General",
+      "last_modified": "2026-01-11T11:54:26Z",
+      "file_path": "docs/pages/General/Infrastructure_renewal.md",
+      "slug": "Infrastructure_renewal"
+    },
+    {
+      "page_id": 7347,
+      "title": "Abaqus",
+      "url": "https://docs.alliancecan.ca/wiki/Abaqus",
+      "category": "General",
+      "last_modified": "2026-01-17T22:49:18Z",
+      "file_path": "docs/pages/General/Abaqus.md",
+      "slug": "Abaqus"
+    },
+    {
+      "page_id": 32248,
+      "title": "Open OnDemand/en",
+      "url": "https://docs.alliancecan.ca/wiki/Open_OnDemand/en",
+      "category": "General",
+      "last_modified": "2026-01-11T13:06:28Z",
+      "file_path": "docs/pages/General/Open_OnDemand.md",
+      "slug": "Open_OnDemand"
+    },
+    {
+      "page_id": 32185,
+      "title": "Tensorboard",
+      "url": "https://docs.alliancecan.ca/wiki/Tensorboard",
+      "category": "General",
+      "last_modified": "2026-01-15T14:00:50Z",
+      "file_path": "docs/pages/General/Tensorboard.md",
+      "slug": "Tensorboard"
+    },
+    {
+      "page_id": 32168,
+      "title": "Trillium Open OnDemand Quickstart/en",
+      "url": "https://docs.alliancecan.ca/wiki/Trillium_Open_OnDemand_Quickstart/en",
+      "category": "General",
+      "last_modified": "2026-01-11T11:26:05Z",
+      "file_path": "docs/pages/General/Trillium_Open_OnDemand_Quickstart.md",
+      "slug": "Trillium_Open_OnDemand_Quickstart"
     }
   ]
 }

@@ -2,7 +2,7 @@
 title: "BUSCO/en"
 url: "https://docs.alliancecan.ca/wiki/BUSCO/en"
 category: "General"
-last_modified: "2024-05-01T23:07:01Z"
+last_modified: "2026-01-08T15:12:58Z"
 page_id: 9850
 display_title: "BUSCO"
 ---
@@ -23,7 +23,7 @@ To see the latest available version, run
 2. Create the virtual environment.
 
 3. Install the wheel and its dependencies.
-1.81 pandas2.1.0 busco5.5.0
+6.0.0
 }}
 
 4. Validate the installation.

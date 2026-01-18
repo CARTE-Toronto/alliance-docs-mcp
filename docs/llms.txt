@@ -1,6 +1,6 @@
 # Alliance Documentation - Page Directory
-# Generated: 2026-01-11T06:18:33.725471+00:00
-# Total pages: 422
+# Generated: 2026-01-18T06:18:36.048837+00:00
+# Total pages: 428
 
 - A tutorial on 'tar' (User Guide): https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/en
 - ABINIT (General): https://docs.alliancecan.ca/wiki/ABINIT/en
@@ -11,6 +11,7 @@
 - AMS (General): https://docs.alliancecan.ca/wiki/AMS/en
 - ARM software (General): https://docs.alliancecan.ca/wiki/ARM_software/en
 - Abaqus (General): https://docs.alliancecan.ca/wiki/Abaqus/en
+- Abaqus (General): https://docs.alliancecan.ca/wiki/Abaqus
 - Access to files of users leaving a project (User Guide): https://docs.alliancecan.ca/wiki/Access_to_files_of_users_leaving_a_project/en
 - Accessing CVMFS (General): https://docs.alliancecan.ca/wiki/Accessing_CVMFS/en
 - Accessing object storage with WinSCP (General): https://docs.alliancecan.ca/wiki/Accessing_object_storage_with_WinSCP/en
@@ -51,7 +52,7 @@
 - BEAST (General): https://docs.alliancecan.ca/wiki/BEAST/en
 - BLAS and LAPACK (General): https://docs.alliancecan.ca/wiki/BLAS_and_LAPACK/en
 - BLAST (General): https://docs.alliancecan.ca/wiki/BLAST/en
-- BUSCO (General): https://docs.alliancecan.ca/wiki/BUSCO/en
+- BUSCO/en (General): https://docs.alliancecan.ca/wiki/BUSCO/en
 - Backing up your VM (General): https://docs.alliancecan.ca/wiki/Backing_up_your_VM/en
 - Best practices for job submission (General): https://docs.alliancecan.ca/wiki/Best_practices_for_job_submission/en
 - Bioinformatics (General): https://docs.alliancecan.ca/wiki/Bioinformatics/en
@@ -155,8 +156,8 @@
 - Getting started with the new national systems (Getting Started): https://docs.alliancecan.ca/wiki/Getting_started_with_the_new_national_systems/en
 - Getting started/en (Getting Started): https://docs.alliancecan.ca/wiki/Getting_started/en
 - Git (General): https://docs.alliancecan.ca/wiki/Git/en
-- Globus (General): https://docs.alliancecan.ca/wiki/Globus/en
 - Globus Command Line Interface (General): https://docs.alliancecan.ca/wiki/Globus_Command_Line_Interface
+- Globus/en (General): https://docs.alliancecan.ca/wiki/Globus/en
 - Gprof (General): https://docs.alliancecan.ca/wiki/Gprof/en
 - Graham (General): https://docs.alliancecan.ca/wiki/Graham/en
 - Gurobi (General): https://docs.alliancecan.ca/wiki/Gurobi/en
@@ -174,6 +175,7 @@
 - Including source code within the wiki (General): https://docs.alliancecan.ca/wiki/Including_source_code_within_the_wiki/en
 - Infrastructure for Research Data Management (General): https://docs.alliancecan.ca/wiki/Infrastructure_for_Research_Data_Management
 - Infrastructure renewal (General): https://docs.alliancecan.ca/wiki/Infrastructure_renewal/en
+- Infrastructure renewal (General): https://docs.alliancecan.ca/wiki/Infrastructure_renewal
 - Infrastructure renewal completed events (General): https://docs.alliancecan.ca/wiki/Infrastructure_renewal_completed_events/en
 - Infrastructure renewal completed events (General): https://docs.alliancecan.ca/wiki/Infrastructure_renewal_completed_events
 - Installing software in your home directory (Getting Started): https://docs.alliancecan.ca/wiki/Installing_software_in_your_home_directory/en
@@ -204,6 +206,7 @@
 - META-Farm: Advanced features and troubleshooting (META-Farm): https://docs.alliancecan.ca/wiki/META-Farm:_Advanced_features_and_troubleshooting/en
 - MIKE (General): https://docs.alliancecan.ca/wiki/MIKE/en
 - ML Performance Guide (User Guide): https://docs.alliancecan.ca/wiki/ML_Performance_Guide
+- MLflow (General): https://docs.alliancecan.ca/wiki/MLflow
 - MPI (General): https://docs.alliancecan.ca/wiki/MPI/en
 - MPI-IO (General): https://docs.alliancecan.ca/wiki/MPI-IO/en
 - MPI4py (General): https://docs.alliancecan.ca/wiki/MPI4py/en
@@ -256,6 +259,7 @@
 - Octave (General): https://docs.alliancecan.ca/wiki/Octave
 - Open Babel (General): https://docs.alliancecan.ca/wiki/Open_Babel/en
 - Open OnDemand (General): https://docs.alliancecan.ca/wiki/Open_OnDemand
+- Open OnDemand/en (General): https://docs.alliancecan.ca/wiki/Open_OnDemand/en
 - OpenACC (General): https://docs.alliancecan.ca/wiki/OpenACC
 - OpenACC Tutorial (User Guide): https://docs.alliancecan.ca/wiki/OpenACC_Tutorial/en
 - OpenACC Tutorial - Adding directives (User Guide): https://docs.alliancecan.ca/wiki/OpenACC_Tutorial_-_Adding_directives/en
@@ -360,6 +364,7 @@
 - Technical glossary for the resource allocation competitions (Technical Reference): https://docs.alliancecan.ca/wiki/Technical_glossary_for_the_resource_allocation_competitions/en
 - Technical support (Technical Reference): https://docs.alliancecan.ca/wiki/Technical_support/en
 - TensorFlow (General): https://docs.alliancecan.ca/wiki/TensorFlow/en
+- Tensorboard (General): https://docs.alliancecan.ca/wiki/Tensorboard
 - Terminology (General): https://docs.alliancecan.ca/wiki/Terminology
 - Terraform (General): https://docs.alliancecan.ca/wiki/Terraform/en
 - Tesseract (General): https://docs.alliancecan.ca/wiki/Tesseract
@@ -373,6 +378,7 @@
 - Transferring files with Aspera Connect/ascp (General): https://docs.alliancecan.ca/wiki/Transferring_files_with_Aspera_Connect/ascp/en
 - Transition from Niagara to Trillium (General): https://docs.alliancecan.ca/wiki/Transition_from_Niagara_to_Trillium/en
 - Transpileur quantique (General): https://docs.alliancecan.ca/wiki/Transpileur_quantique/en
+- Trillium Open OnDemand Quickstart/en (General): https://docs.alliancecan.ca/wiki/Trillium_Open_OnDemand_Quickstart/en
 - Trillium Quickstart (General): https://docs.alliancecan.ca/wiki/Trillium_Quickstart/en
 - Trillium/en (General): https://docs.alliancecan.ca/wiki/Trillium/en
 - Tuning Lustre (General): https://docs.alliancecan.ca/wiki/Tuning_Lustre/en
@@ -405,7 +411,7 @@
 - VirSorter2 (General): https://docs.alliancecan.ca/wiki/VirSorter2/en
 - Virtual machine flavors (General): https://docs.alliancecan.ca/wiki/Virtual_machine_flavors/en
 - VisIt (General): https://docs.alliancecan.ca/wiki/VisIt/en
-- Visual Studio Code (General): https://docs.alliancecan.ca/wiki/Visual_Studio_Code/en
+- Visual Studio Code/en (General): https://docs.alliancecan.ca/wiki/Visual_Studio_Code/en
 - Visualization (General): https://docs.alliancecan.ca/wiki/Visualization/en
 - VoxCeleb (General): https://docs.alliancecan.ca/wiki/VoxCeleb
 - Vtune (General): https://docs.alliancecan.ca/wiki/Vtune/en
