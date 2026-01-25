@@ -2,7 +2,7 @@
 title: "Rorqual/en"
 url: "https://docs.alliancecan.ca/wiki/Rorqual/en"
 category: "General"
-last_modified: "2025-09-09T21:49:06Z"
+last_modified: "2026-01-14T13:02:33Z"
 page_id: 26842
 display_title: "Rorqual"
 ---

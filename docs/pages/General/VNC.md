@@ -2,7 +2,7 @@
 title: "VNC/en"
 url: "https://docs.alliancecan.ca/wiki/VNC/en"
 category: "General"
-last_modified: "2025-11-28T18:39:32Z"
+last_modified: "2026-01-14T14:09:01Z"
 page_id: 8518
 display_title: "VNC"
 ---
@@ -38,11 +38,11 @@ Now you need a VNC server to connect to, such as a temporary vncserver started o
 
 == Login nodes ==
 
-You may run lightweight applications (that do not require a gpu) within a remote VNC desktop on a cluster login node (memory and cputime limits apply).  To do this, you must first connect to a cluster login node.  Using nibi cluster to demonstrate :
+You may run lightweight applications (that do not require a gpu) within a remote VNC desktop on a cluster login node (memory and cputime limits apply).  To do this, you must first connect to a cluster login node.  Using the Nibi cluster to demonstrate :
 
  [laptop:~] ssh nibi.alliancecan.ca
 
-Next run vncserver -list to check if you have an old unused vncserver(s) still running on whichever nibi login node you get connected to.  If you do then kill them off by running the following pkill command on
+Next run vncserver -list to check if you have an old unused vncserver(s) still running on whichever Nibi login node you get connected to.  If you do then kill them off by running the following pkill command on
 
  [l4(login node):~] pkill Xvnc -u $USER
 
@@ -81,7 +81,7 @@ If your program requires memory and/or cputime limits greater than those provide
 
 1) Start a VNC server
 
-Before starting your VNC server, log into a cluster (such as nibi) and create a compute node allocation using the salloc command (24hr time limit applies). For example, to request an interactive job using 4 CPUs and 16GB of memory you could use the command:
+Before starting your VNC server, log into a cluster (such as Nibi) and create a compute node allocation using the salloc command (24hr time limit applies). For example, to request an interactive job using 4 CPUs and 16GB of memory you could use the command:
 
  [l4(login node):~] salloc --time=1:00:00 --cpus-per-task=4 --mem=16000 --account=def-piusername
  salloc: Pending job allocation 1149016
@@ -112,14 +112,14 @@ Run the grep command on the log file to determine which port your VNC server is 
 
 Once your VNC server has been started, you must create a secure "bridge" or "tunnel" from your laptop to the compute node where your vncserver is running (as determined in the previous step above).  There are two types of tunnel commands that maybe used depending on which cluster you are using.
 
-For all clusters (except nibi) the previously recommended form of the tunnel command ssh username@clustername -L localforwardedport:computenode:remotelisteningport may continue to be used.  As an  example, if a vncserver is started on rorqual compute node rc12509 and the local port on your laptop to be forwarded is again 5905 the appropriate tunnel command becomes:
+For all clusters (except Nibi) the previously recommended form of the tunnel command ssh username@clustername -L localforwardedport:computenode:remotelisteningport may continue to be used.  As an  example, if a vncserver is started on rorqual compute node rc12509 and the local port on your laptop to be forwarded is again 5905 the appropriate tunnel command becomes:
 
  [laptop:~] ssh username@rorqual.alliancecan.ca -L 5905:rc12509:5901
  Duo two-factor login for username
  Enter a passcode or select one of the following options:
  [rc12509(compute node):~]
 
-For nibi, a new form of the tunnel command ssh -J username@clustername -L localforwardedport:localhost:remotelisteningport computenode must be used.  In addition a SSH key pair must created on your laptop with the contents of the pub key entered into your ~/.ssh/authorized_keys file on nibi.  This approach will also work on any other cluster and so may eventually be preferred.  Continuing with the above example, where c48 is the compute node that you started your vncserver on, and 5905 is the local port on your laptop being forwarded, the tunnel command would be:
+For Nibi, a new form of the tunnel command ssh -J username@clustername -L localforwardedport:localhost:remotelisteningport computenode must be used.  In addition a SSH key pair must created on your laptop with the contents of the pub key entered into your ~/.ssh/authorized_keys file on nibi.  This approach will also work on any other cluster and so may eventually be preferred.  Continuing with the above example, where c48 is the compute node that you started your vncserver on, and 5905 is the local port on your laptop being forwarded, the tunnel command would be:
 
  [laptop:~] ssh -J username@nibi.alliancecan.ca -L 5905:localhost:5901 c48
  Duo two-factor login for username

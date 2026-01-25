@@ -1,9 +1,9 @@
 ---
-title: "CUDA/en"
-url: "https://docs.alliancecan.ca/wiki/CUDA/en"
+title: "CUDA"
+url: "https://docs.alliancecan.ca/wiki/CUDA"
 category: "General"
-last_modified: "2023-06-01T21:58:01Z"
-page_id: 6116
+last_modified: "2026-01-21T14:03:08Z"
+page_id: 6103
 display_title: "CUDA"
 ---
 
@@ -23,7 +23,7 @@ $ module load cuda
 
 The following program will add two numbers together on a GPU. Save the file as add.cu. The cu file extension is important!.
 
-nvcc to create an executable named add.
+Compile the program with nvcc to create an executable named add.
 
 $ nvcc add.cu -o add
 
@@ -54,9 +54,9 @@ To learn more about how the above program works and how to make the use of GPU p
 
 === Compute capability ===
 
-NVidia has created this technical term, which they describe as follows:
-
-The compute capability of a device is represented by a version number, also sometimes called its "SM version". This version number identifies the features supported by the GPU hardware and is used by applications at runtime to determine which hardware features and/or instructions are available on the present GPU."  (CUDA Toolkit Documentation, section 2.6)
+NVidia has created this technical term, "which indicates what features are supported by that GPU and specifies some hardware parameters for that GPU."
+See Compute Capability and Streaming Multiprocessor Versions
+for more details.
 
 The following errors are connected with compute capability:
 
@@ -73,10 +73,10 @@ If you are using cmake, provide the following flag:
 cmake .. -DCMAKE_CUDA_ARCHITECTURES=XX
 
 where “XX” is the compute capability of the Nvidia GPU that you expect to run the application on.
-To find the value to replace “XX“, see the Available GPUs table.
+To find the value to replace “XX“, see CUDA GPU Compute Capability and omit the decimal point.
 
-For example, if you will run your code on a Narval A100 node, its compute capability is 80.
-The correct flag to use when compiling with nvcc is
+For example, if you will run your code on a Narval A100 node, the NVidia table gives its compute capability as "8.0".
+The correct flag to use when compiling with nvcc is then:
 
 -gencode arch=compute_80,code=[sm_80,compute_80]
 

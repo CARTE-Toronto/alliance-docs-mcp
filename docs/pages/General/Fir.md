@@ -2,7 +2,7 @@
 title: "Fir/en"
 url: "https://docs.alliancecan.ca/wiki/Fir/en"
 category: "General"
-last_modified: "2025-12-03T14:47:51Z"
+last_modified: "2026-01-14T13:03:03Z"
 page_id: 26936
 display_title: "Fir"
 ---
@@ -66,7 +66,7 @@ PROJECT     	$HOME/project/${def-project-id}	Large and adjustable per-project qu
 nodes	cores	available memory 	CPU                                                 	Storage    	GPU
 864  	192  	750G or 768000M  	2 x AMD EPYC 9655 (Zen 5) @ 2.7 GHz, 384MB cache L3 	7.84TB NVMe
 8    	192  	6000G or 6144000M	2 x AMD EPYC 9654 (Zen 4) @ 2.4 GHz, 384MB cache L3 	7.84TB NVMe
-160  	48   	1125G or 1152000M	1 x AMD EPYC 9454 (Zen 4) @ 2.75 GHz, 256MB cache L3	7.84TB NVMe	4 x NVidia H100 SXM5 (80 GB memory)
+160  	48   	1125G or 1152000M	1 x AMD EPYC 9454 (Zen 4) @ 2.75 GHz, 256MB cache L3	7.84TB NVMe	4 x NVidia H100 SXM5 (80 GB memory), connected via NVLink
 
 ==CPU nodes==
 

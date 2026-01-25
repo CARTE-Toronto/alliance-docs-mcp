@@ -2,13 +2,14 @@
 title: "Nibi/en"
 url: "https://docs.alliancecan.ca/wiki/Nibi/en"
 category: "General"
-last_modified: "2025-12-04T17:06:02Z"
+last_modified: "2026-01-14T13:03:03Z"
 page_id: 27510
 display_title: "Nibi"
 ---
 
 Availability: since 31 July 2025
 SSH login node: nibi.alliancecan.ca
+Automation node: robot.nibi.alliancecan.ca
 Web interface: ondemand.sharcnet.ca
 Globus collection: alliancecan#nibi
 Data transfer node (rsync, scp, sftp,...): use login nodes
@@ -44,7 +45,7 @@ For better performance of tightly coupled multi-node jobs, you may constrain the
 nodes	cores	available memory 	node-local storage	CPU                                      	GPU
 700  	192  	748G or 766000M  	3T                	2 x Intel 6972P @ 2.4 GHz, 384MB cache L3
 10   	192  	6000G or 6144000M	3T                	2 x Intel 6972P @ 2.4 GHz, 384MB cache L3
-36   	112  	2000G or 2048000M	11T               	2 x Intel 8570 @ 2.1 GHz, 300MB cache L3 	8 x Nvidia H100 SXM (80 GB)
+36   	112  	2000G or 2048000M	11T               	2 x Intel 8570 @ 2.1 GHz, 300MB cache L3 	8 x Nvidia H100 SXM (80 GB), connected via NVLink
 6    	96   	495G or 507000M  	3T                	4 x AMD MI300A @ 2.1GHz (Zen4+CDNA3)     	The CPU cores and CDNA3-based GPUs are in the same socket and share a unified memory.
 
 =Site specifics=

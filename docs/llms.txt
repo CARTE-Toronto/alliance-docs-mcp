@@ -1,6 +1,6 @@
 # Alliance Documentation - Page Directory
-# Generated: 2026-01-18T06:18:36.048837+00:00
-# Total pages: 428
+# Generated: 2026-01-25T06:19:17.525547+00:00
+# Total pages: 434
 
 - A tutorial on 'tar' (User Guide): https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/en
 - ABINIT (General): https://docs.alliancecan.ca/wiki/ABINIT/en
@@ -33,9 +33,10 @@
 - Ansys (General): https://docs.alliancecan.ca/wiki/Ansys
 - Ansys/en (General): https://docs.alliancecan.ca/wiki/Ansys/en
 - AnsysEDT (General): https://docs.alliancecan.ca/wiki/AnsysEDT/en
+- AnsysEDT (General): https://docs.alliancecan.ca/wiki/AnsysEDT
 - Apache Spark (General): https://docs.alliancecan.ca/wiki/Apache_Spark/en
 - Apply for a CCDB account (General): https://docs.alliancecan.ca/wiki/Apply_for_a_CCDB_account/en
-- Apptainer (General): https://docs.alliancecan.ca/wiki/Apptainer/en
+- Apptainer/en (General): https://docs.alliancecan.ca/wiki/Apptainer/en
 - Arbutus (General): https://docs.alliancecan.ca/wiki/Arbutus/en
 - Arbutus Migration Guide (User Guide): https://docs.alliancecan.ca/wiki/Arbutus_Migration_Guide/en
 - Arbutus object storage (General): https://docs.alliancecan.ca/wiki/Arbutus_object_storage/en
@@ -75,6 +76,7 @@
 - CPLEX (General): https://docs.alliancecan.ca/wiki/CPLEX/en
 - CPMD (General): https://docs.alliancecan.ca/wiki/CPMD/en
 - CUDA (General): https://docs.alliancecan.ca/wiki/CUDA/en
+- CUDA (General): https://docs.alliancecan.ca/wiki/CUDA
 - CUDA tutorial (User Guide): https://docs.alliancecan.ca/wiki/CUDA_tutorial/en
 - CVMFS (General): https://docs.alliancecan.ca/wiki/CVMFS/en
 - Cedar (General): https://docs.alliancecan.ca/wiki/Cedar/en
@@ -129,7 +131,7 @@
 - FTP server in the Cloud (General): https://docs.alliancecan.ca/wiki/FTP_server_in_the_Cloud/en
 - Faiss (General): https://docs.alliancecan.ca/wiki/Faiss/en
 - FastTree (General): https://docs.alliancecan.ca/wiki/FastTree/en
-- Fir (General): https://docs.alliancecan.ca/wiki/Fir/en
+- Fir/en (General): https://docs.alliancecan.ca/wiki/Fir/en
 - Firedrake (General): https://docs.alliancecan.ca/wiki/Firedrake
 - Flax (General): https://docs.alliancecan.ca/wiki/Flax
 - Formation (General): https://docs.alliancecan.ca/wiki/Formation
@@ -161,6 +163,7 @@
 - Gprof (General): https://docs.alliancecan.ca/wiki/Gprof/en
 - Graham (General): https://docs.alliancecan.ca/wiki/Graham/en
 - Gurobi (General): https://docs.alliancecan.ca/wiki/Gurobi/en
+- Gurobi (General): https://docs.alliancecan.ca/wiki/Gurobi
 - HDF5 (General): https://docs.alliancecan.ca/wiki/HDF5/en
 - HPC4Health (General): https://docs.alliancecan.ca/wiki/HPC4Health/en
 - Ha fip (General): https://docs.alliancecan.ca/wiki/Ha_fip
@@ -249,6 +252,7 @@
 - Narval/en (General): https://docs.alliancecan.ca/wiki/Narval/en
 - National systems (General): https://docs.alliancecan.ca/wiki/National_systems/en
 - NetCDF (General): https://docs.alliancecan.ca/wiki/NetCDF/en
+- NetCDF (General): https://docs.alliancecan.ca/wiki/NetCDF
 - Nextcloud (General): https://docs.alliancecan.ca/wiki/Nextcloud/en
 - Nextflow (General): https://docs.alliancecan.ca/wiki/Nextflow/en
 - Niagara (General): https://docs.alliancecan.ca/wiki/Niagara/en
@@ -322,7 +326,7 @@
 - Recovering data from a compromised VM (General): https://docs.alliancecan.ca/wiki/Recovering_data_from_a_compromised_VM/en
 - Research Data Management (General): https://docs.alliancecan.ca/wiki/Research_Data_Management/en
 - Resource Allocation Competition (General): https://docs.alliancecan.ca/wiki/Resource_Allocation_Competition/en
-- Rorqual (General): https://docs.alliancecan.ca/wiki/Rorqual/en
+- Rorqual/en (General): https://docs.alliancecan.ca/wiki/Rorqual/en
 - Running jobs/en (General): https://docs.alliancecan.ca/wiki/Running_jobs/en
 - Rust (General): https://docs.alliancecan.ca/wiki/Rust/en
 - SAIGE (General): https://docs.alliancecan.ca/wiki/SAIGE/en
@@ -378,6 +382,7 @@
 - Transferring files with Aspera Connect/ascp (General): https://docs.alliancecan.ca/wiki/Transferring_files_with_Aspera_Connect/ascp/en
 - Transition from Niagara to Trillium (General): https://docs.alliancecan.ca/wiki/Transition_from_Niagara_to_Trillium/en
 - Transpileur quantique (General): https://docs.alliancecan.ca/wiki/Transpileur_quantique/en
+- Trillium Open OnDemand Quickstart (General): https://docs.alliancecan.ca/wiki/Trillium_Open_OnDemand_Quickstart
 - Trillium Open OnDemand Quickstart/en (General): https://docs.alliancecan.ca/wiki/Trillium_Open_OnDemand_Quickstart/en
 - Trillium Quickstart (General): https://docs.alliancecan.ca/wiki/Trillium_Quickstart/en
 - Trillium/en (General): https://docs.alliancecan.ca/wiki/Trillium/en
@@ -394,6 +399,7 @@
 - Using a resource allocation (General): https://docs.alliancecan.ca/wiki/Using_a_resource_allocation/en
 - Using cloud vGPUs (General): https://docs.alliancecan.ca/wiki/Using_cloud_vGPUs/en
 - Using ipv6 in cloud (General): https://docs.alliancecan.ca/wiki/Using_ipv6_in_cloud/en
+- Using nearline storage (General): https://docs.alliancecan.ca/wiki/Using_nearline_storage
 - Using nearline storage/en (General): https://docs.alliancecan.ca/wiki/Using_nearline_storage/en
 - Using node-local storage (General): https://docs.alliancecan.ca/wiki/Using_node-local_storage/en
 - Using swift (General): https://docs.alliancecan.ca/wiki/Using_swift
@@ -404,7 +410,7 @@
 - VM Best Practices (General): https://docs.alliancecan.ca/wiki/VM_Best_Practices/en
 - VM recovery via cloud console (General): https://docs.alliancecan.ca/wiki/VM_recovery_via_cloud_console/en
 - VMD (General): https://docs.alliancecan.ca/wiki/VMD/en
-- VNC (General): https://docs.alliancecan.ca/wiki/VNC/en
+- VNC/en (General): https://docs.alliancecan.ca/wiki/VNC/en
 - VTK (General): https://docs.alliancecan.ca/wiki/VTK/en
 - Valgrind (General): https://docs.alliancecan.ca/wiki/Valgrind/en
 - Version control (General): https://docs.alliancecan.ca/wiki/Version_control/en

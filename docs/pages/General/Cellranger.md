@@ -2,7 +2,7 @@
 title: "Cellranger"
 url: "https://docs.alliancecan.ca/wiki/Cellranger"
 category: "General"
-last_modified: "2024-08-19T18:55:15Z"
+last_modified: "2026-01-13T18:38:59Z"
 page_id: 20864
 display_title: "Cellranger"
 ---
@@ -88,7 +88,7 @@ You can run the aggr pipeline as follows
     #!/bin/bash
     #SBATCH --account=def-someprof
     #SBATCH -N 1
-    #SBATCH --ntasks-per-node=8
+    #SBATCH --cpus-per-task=8
     #SBATCH --mem=64g
     #SBATCH --time=24:00:00
 
@@ -100,8 +100,8 @@ You can run the aggr pipeline as follows
                      --fastqs=$FASTQS \
                      --transcriptome=refdata-gex-GRCh38-2020-A \
                      --create-bam=true \
-                     --localcores=8 \
-                     --localmem=64
+                     --localcores=$SLURM_CPUS_PER_TASK \
+                     --localmem=$SLURM_MEM_PER_NODE
 
 = References =
 official documentation

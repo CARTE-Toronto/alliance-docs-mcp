@@ -2,7 +2,7 @@
 title: "Abaqus"
 url: "https://docs.alliancecan.ca/wiki/Abaqus"
 category: "General"
-last_modified: "2026-01-17T22:49:18Z"
+last_modified: "2026-01-19T22:28:48Z"
 page_id: 7347
 display_title: "Abaqus"
 ---
@@ -181,6 +181,8 @@ To start Abaqus in gui mode there must be at least one unused cae license accord
 
 = Site-specific use =
 == SHARCNET license ==
+[[ The abaqus.lic The SHARCNET license is down for renewal and server relocation until approximately Jan21.  Once its working again. this message will be renewed and the following paragraph updated to describe the new license expiry date.  Note that the old server license3.sharcnet.ca entry in your ~/.license/abaqus.lic file will need to be changed to license1.computecanada.ca to point to the new server.  ]]
+
 The SHARCNET license has been renewed until 17-jan-2026.  It provides a small but free license consisting of 2 cae and 35 execute tokens where usage limits are imposed 10 tokens/user and 15 tokens/group.  For groups that have purchased dedicated tokens, the free token usage limits are added to their reservation.  The free tokens are available on a first come first serve basis and mainly intended for testing and light usage before deciding whether or not to purchase dedicated tokens.  Costs for dedicated tokens (in 2021) were approximately CAD$110 per compute token and CAD$400 per GUI token: submit a ticket to request an official quote.  The license can be used by any Alliance researcher, but only on SHARCNET hardware.  Groups that purchase dedicated tokens to run on the SHARCNET license server may likewise only use them on SHARCNET hardware including the SHARCNET OOD system (to run Abaqus in graphical mode) or Nibi/Dusky clusters (for submitting compute batch jobs to the queue).  Before you can use the license, you must contact technical support and request access.  In your email 1) mention that it is for use on SHARCNET systems and 2) include a copy/paste of the following License Agreement statement with your full name and username entered in the indicated locations.  Please note that every user must do this it cannot be done one time only for a group; this includes PIs who have purchased their own dedicated tokens.
 
 === License agreement ===
@@ -201,10 +203,10 @@ for the following purposes:
 -----------------------------------------------------------------------------------
 
 === Configure license file ===
-Configure your license file as follows, noting that it is only usable on SHARCNET systems such as nibi and dusky clusters or the SHARCNET OOD desktop system.
+Configure your license file as follows, noting that it is only usable on SHARCNET systems such as nibi and dusky clusters or the SHARCNET OOD desktop system.  The license is currently down and expected usable again by about Jan21.
 
 [l2 (nibi login node):~] cat ~/.licenses/abaqus.lic
-prepend_path("ABAQUSLM_LICENSE_FILE","27050@license3.sharcnet.ca")
+prepend_path("ABAQUSLM_LICENSE_FILE","27050@license1.computecanada.ca")
 
 If your Abaqus job fails with the error message [*** ABAQUS/eliT_CheckLicense rank 0 terminated by signal 11 (Segmentation fault)] then verify your abaqus.lic file contains ABAQUSLM_LICENSE_FILE when using abaqus/202X modules.  If your Abaqus jobs fails with error message [License server machine is down or not responding, etc.] and you are using abaqus/6.14.1 then replace ABAQUSLM_LICENSE_FILE with LM_LICENSE_FILE.
 

@@ -1,9 +1,9 @@
 ---
-title: "NetCDF/en"
-url: "https://docs.alliancecan.ca/wiki/NetCDF/en"
+title: "NetCDF"
+url: "https://docs.alliancecan.ca/wiki/NetCDF"
 category: "General"
-last_modified: "2018-12-10T15:26:15Z"
-page_id: 6483
+last_modified: "2026-01-21T14:03:52Z"
+page_id: 5557
 display_title: "NetCDF"
 ---
 
@@ -38,7 +38,7 @@ This section summarizes configuration details.
 
 == Environment modules ==
 
-The following modules providing NetCDF are available on Compute Canada systems via CVMFS:
+The following modules providing NetCDF are available on our clusters via CVMFS:
 * netcdf
 ** for linking with programs containing C instructions only
 * netcdf-c++

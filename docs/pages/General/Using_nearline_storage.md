@@ -1,9 +1,9 @@
 ---
-title: "Using nearline storage/en"
-url: "https://docs.alliancecan.ca/wiki/Using_nearline_storage/en"
+title: "Using nearline storage"
+url: "https://docs.alliancecan.ca/wiki/Using_nearline_storage"
 category: "General"
-last_modified: "2025-12-09T19:11:14Z"
-page_id: 9323
+last_modified: "2026-01-16T18:26:54Z"
+page_id: 5571
 display_title: "Using nearline storage"
 ---
 
@@ -113,8 +113,6 @@ You can explicitly force a file to be recalled from tape without actually readin
 To use /nearline, just put files into your ~/nearline/PROJECT directory. After a period of time (24 hours as of February 2019), they will be copied onto tape. If the file remains unchanged for another period (24 hours as of February 2019), the copy on disk will be removed, making the file virtualized on tape.
 
 If you accidentally (or deliberately) delete a file from ~/nearline, the tape copy will be retained for up to 60 days. To restore such a file contact technical support with the full path for the file(s) and desired version (by date), just as you would for restoring a backup. Note that since you will need the full path for the file, it is important for you to retain a copy of the complete directory structure of your /nearline space. For example, you can run the command ls -R > ~/nearline_contents.txt from the ~/nearline/PROJECT directory so that you have a copy of the location of all the files.
-
-/nearline service similar to that on Béluga.
 
 /nearline service similar to that on Béluga, except:
 # It may take longer than 24 hours for the first tape copy of the data to be created.

@@ -2,7 +2,7 @@
 title: "Apptainer/en"
 url: "https://docs.alliancecan.ca/wiki/Apptainer/en"
 category: "General"
-last_modified: "2025-12-02T14:36:02Z"
+last_modified: "2026-01-13T17:59:20Z"
 page_id: 23356
 display_title: "Apptainer/en"
 ---

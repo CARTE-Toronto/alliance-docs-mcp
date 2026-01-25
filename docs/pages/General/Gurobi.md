@@ -1,9 +1,9 @@
 ---
-title: "Gurobi/en"
-url: "https://docs.alliancecan.ca/wiki/Gurobi/en"
+title: "Gurobi"
+url: "https://docs.alliancecan.ca/wiki/Gurobi"
 category: "General"
-last_modified: "2025-01-20T19:16:02Z"
-page_id: 14002
+last_modified: "2026-01-21T14:03:34Z"
+page_id: 10596
 display_title: "Gurobi"
 ---
 
@@ -11,19 +11,22 @@ Gurobi is a commercial software suite for solving complex optimization problems.
 
 == License limitations ==
 
-We support and provide a free license to use Gurobi on the Graham, Cedar, Béluga and Niagara clusters.  The license provides a total number of 4096 simultaneous uses (tokens in use) and permits distributed optimization with up to 100 nodes.  A single user can run multiple simultaneous jobs.  In order to use Gurobi, you must agree to certain conditions. Please  contact support and include a copy of the following completed agreement.  You will then be added into our license file as a user within a few days.
+We support and provide a free license to use Gurobi on the Nibi, Narval, Fir, Rorqual and Trillium clusters.  The license provides a total number of 4096 simultaneous uses (tokens in use) and permits distributed optimization with up to 100 nodes.  A single user can run multiple simultaneous jobs.  In order to use Gurobi, you must agree to certain conditions. Please  contact support and include a copy of the following completed agreement.  You will then be added into our license file as a user within a few days.
 
 ===Academic usage agreement===
 
 My Alliance username is "_______" and I am a member of the academic institution "_____________________."  This message confirms that I will only use the Gurobi license provided on Digital Research Alliance of Canada systems for the purpose of non-commercial research project(s) to be published in publicly available article(s).
 
 ===Configuring your account===
-You do NOT need to create a ~/.licenses/gurobi.lic file.  The required settings to use our Gurobi license are configured by default when you load a Gurobi module on any cluster.  To verify your username has been added to our Gurobi license and is working properly, run the following command:
+You do NOT need to create a ~/.licenses/gurobi.lic file.  The required settings to use our Gurobi license are configured by default when you load a Gurobi module on any cluster.
 
- $ module load gurobi
+===Testing your license===
+To verify your username has successfully been added to the Alliance Gurobi license, log into any cluster and run the following command:
+
+$ module load gurobi
  $ gurobi_cl 1> /dev/null && echo Success || echo Fail
 
-If it returns "Success" you can begin using Gurobi immediately.  If the test returns "Fail" then check whether a file named ~/.license/gurobi exists; if so, rename or remove this file, reload the module and try the test again.  If it still returns "Fail", check whether there are any environment variables containing GUROBI defined in either of our your ~/.bashrc or ~/.bash_profile files.  If you find any, comment or remove those lines, log out and log in again, reload the Gurobi module and try the test again.  If you still get "Fail",  contact support for help.
+If it returns "Success" you can begin using Gurobi immediately.  If the test returns "Fail" then check whether a file named ~/.license/gurobi exists.  If it does then remove it, reload the gurobi module and run the test again.  If it still returns "Fail" check whether there are any environment variables containing GUROBI being defined in either of our your ~/.bashrc or ~/.bash_profile files.  If you find any, comment or remove the lines then logout and login again, reload the Gurobi module and run the test again.  If you still get "Fail",  contact support for help.
 
 ===Minimizing license checkouts===
 
@@ -33,7 +36,7 @@ Note that all Gurobi license checkouts are handled by a single license server lo
 
 ===Gurobi command-line tools===
 
- [gra-login2:~] salloc --time=1:00:0 --cpus-per-task=8 --mem=1G --account=def-xyz
+[gra-login2:~] salloc --time=1:00:0 --cpus-per-task=8 --mem=1G --account=def-xyz
  [gra800:~] module load gurobi
  [gra800:~] gurobi_cl Record=1 Threads=8 Method=2 ResultFile=p0033.sol LogFile=p0033.log $GUROBI_HOME/examples/data/p0033.mps
  [gra800:~] gurobi_cl --help

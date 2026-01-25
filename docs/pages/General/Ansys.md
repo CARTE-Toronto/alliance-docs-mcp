@@ -1,9 +1,9 @@
 ---
-title: "Ansys"
-url: "https://docs.alliancecan.ca/wiki/Ansys"
+title: "Ansys/en"
+url: "https://docs.alliancecan.ca/wiki/Ansys/en"
 category: "General"
-last_modified: "2026-01-06T15:43:10Z"
-page_id: 4568
+last_modified: "2026-01-21T14:03:10Z"
+page_id: 4948
 display_title: "Ansys"
 ---
 
@@ -68,10 +68,10 @@ If Fail is output then jobs will likely fail requiring a problem ticket to be su
 
 Ansys simulations are typically forward compatible but NOT backwards compatible.  This means that simulations created using an older version of Ansys can be expected to load and run fine with any newer version.  For example, a simulation created and saved with ansys/2022R2 should load and run smoothly with ansys/2023R2 but NOT the other way around.  While it may be possible to start a simulation running with an older version random error messages or crashing will likely occur.  Regarding Fluent simulations, if you cannot recall which version of ansys was used to create your cas file try grepping it as follows to look for clues :
 
-$ grep -ia fluent combustor.cas
+ $ grep -ia fluent combustor.cas
    (0 "fluent15.0.7  build-id: 596")
 
-$ grep -ia fluent cavity.cas.h5
+ $ grep -ia fluent cavity.cas.h5
    ANSYS_FLUENT 24.1 Build 1018
 
 == Platform support ==
@@ -91,7 +91,7 @@ Most users will likely want to load the latest module version equipped with the 
 = Cluster batch job submission =
 The Ansys software suite comes with multiple implementations of MPI to support parallel computation. Unfortunately, none of them support our Slurm scheduler. For this reason, we need special instructions for each Ansys package on how to start a parallel job. In the sections below, we give examples of submission scripts for some of the packages.  While the slurm scripts should work with on all clusters, Niagara users may need to make some additional changes covered here.
 
-== Ansys Fluent ==
+== Fluent ==
 Typically, you would use the following procedure to run Fluent on one of our clusters:
 
 # Prepare your Fluent job using Fluent from the Ansys Workbench on your desktop machine up to the point where you would run the calculation.
@@ -150,17 +150,17 @@ The first step is to transfer your User-Defined Function or UDF (namely the samp
 
 To tell fluent to interpret your UDF at runtime, add the following command line into your journal file before the cas/dat files are read or initialized. The filename sampleudf.c should be replaced with the name of your source file.  The command remains the same regardless if the simulation is being run in serial or parallel.  To ensure the UDF can be found in the same directory as the journal file, open your cas file in the fluent gui, remove any managed definitions and resave it.   Doing this will ensure only the following command/method is in control when fluent runs. To use an interpreted UDF with parallel jobs, it will need to be parallelized as described in the section below.
 
-define/user-defined/interpreted-functions "sampleudf.c" "cpp" 10000 no
+ define/user-defined/interpreted-functions "sampleudf.c" "cpp" 10000 no
 
 ==== Compiled ====
 
 To use this approach, your UDF must be compiled on an Alliance cluster at least once.  Doing so will create a libudf subdirectory structure containing the required libudf.so shared library.   The libudf directory cannot simply be copied from a remote system (such as your laptop) to the Alliance since the library dependencies of the shared library will not be satisfied, resulting in fluent crashing on startup.  That said, once you have compiled your UDF on an Alliance cluster, you can transfer the newly created libudf to any other Alliance cluster, providing your account loads the same StdEnv environment module version.  Once copied, the UDF can be used by uncommenting the second (load) libudf line below in your journal file when submitting jobs to the cluster.  Both (compile and load) libudf lines should not be left uncommented in your journal file when submitting jobs on the cluster, otherwise your UDF will automatically (re)compiled for each and every job.  Not only is this highly inefficient, but it will also lead to racetime-like build conflicts if multiple jobs are run from the same directory. Besides configuring your journal file to build your UDF, the fluent gui (run on any cluster compute node or gra-vdi) may also be used.  To do this, you would navigate to the Compiled UDFs Dialog Box, add the UDF source file and click Build.   When using a compiled UDF with parallel jobs, your source file should be parallelized as discussed in the section below.
 
-define/user-defined/compiled-functions compile libudf yes sampleudf.c "" ""
+ define/user-defined/compiled-functions compile libudf yes sampleudf.c "" ""
 
 and/or
 
-define/user-defined/compiled-functions load libudf
+ define/user-defined/compiled-functions load libudf
 
 ==== Parallel ====
 
@@ -180,7 +180,7 @@ where a basic manually created injection steady file format might look like:
   (( 2.90e-02  5.00e-03 0.0 -1.00e-03  0.0  0.0  1.00e-04  2.93e+02  1.00e-06   0.0   0.0        0.0 ) injection-0:1 )
 noting that injection files for DPM simulations are generally setup for either steady or unsteady particle tracking where the format of the former is described in subsection Part III: Solution Mode | Chapter 24: Modeling Discrete Phase | 24.3. Setting Initial Conditions for the Discrete Phase | 24.3.13 Point Properties for File Injections | 24.3.13.1 Steady File Format of the 2024R2 Fluent Customization Manual.
 
-== Ansys CFX ==
+== CFX ==
 
 === Slurm scripts ===
 
@@ -213,22 +213,26 @@ In the following slurm scripts, lines beginning with ##SBATCH are commented.
 
 Ansys allocates 1024 MB total memory and 1024 MB database memory by default for APDL jobs. These values can be manually specified (or changed) by adding arguments -m 1024 and/or -db 1024 to the mapdl command line in the above scripts. When using a remote institutional license server with multiple Ansys licenses, it may be necessary to add -p aa_r or -ppf anshpc, depending on which Ansys module you are using. As always, perform detailed scaling tests before running production jobs to ensure that the optimal number of cores and minimum amount memory is specified in your scripts. The single node (SMP Shared Memory Parallel) scripts will typically perform better than the multinode (DIS Distributed Memory Parallel) scripts and therefore should be used whenever possible. To help avoid compatibility issues the Ansys module loaded in your script should ideally match the version used to generate the input file:
 
- [gra-login2:~/testcase] cat YOURAPDLFILE.inp | grep version
+  [gra-login2:~/testcase] cat YOURAPDLFILE.inp | grep version
  ! ANSYS input file written by Workbench version 2019 R3
 
-== Ansys ROCKY ==
+== Rocky ==
 
-Besides being able to run simulations in gui mode (as discussed in the Graphical usage section below) Ansys Rocky can also run simulations in non-gui mode.  Both modes support running Rocky with cpus only or with cpus and gpus.  In the below section two sample slurm scripts are  provided where each script would be submitted to the graham queue with the sbatch command as per usual.  At the time of this writing neither script has been tested and therefore extensive customization will likely be required.  It's important to note that these scripts are only usable on graham since the rocky module which they both load is only (at the present time) installed on graham (locally).
+Besides being able to run simulations in gui mode (as discussed in the Graphical usage section below) Ansys Rocky can also run simulations in non-gui mode.  Both modes support running Rocky with cpus only or with cpus and gpus.  Use of the ansysrocky/2024R2.0 module locally installed only on nibi and loadable by doing module load ansysrocky/2024R2.0 StdEnv/2023 ansys/2024R2.04 should be discontinued as it is no longer supported and will be removed.  Instead use Rocky included within the ansys/2025R1 module (and future versions that will be installed) available on all clusters.
 
 === Slurm scripts ===
 
-To get a full listing of command line options run Rocky -h on the command line after loading any rocky module (currently only ansysrocky/2023R2 is available on Graham).   If Rocky is being run with gpus to solving coupled problems, the number of cpus you should request from slurm (on the same node) should be increased to a maximum until the scalability limit of the coupled application is reached.   If however Rocky is being run with gpus to solve standalone uncoupled problems, then only a minimal number of cpus should be requested that will allow be sufficient for Rocky to still run optimally.  For instance only 2cpus or possibly 3cpus may be required.  When Rocky is run with >= 4 cpus then rocky_hpc licenses will be required which the SHARCNET license does provide.
+To get a full listing of command line options run Rocky -h on the command line after loading any rocky module.  Note that it is currently necessary to set your path to Rocky (as is shown in the scripts below) for the Rocky command to be found. The path will be included in future module version installs and ansys/2025R1 when updated at such time this message will be removed.  If Rocky is being run with gpus to solving coupled problems, the number of cpus you should request from slurm (on the same node) should be increased to a maximum until the scalability limit of the coupled application is reached.   If however Rocky is being run with gpus to solve standalone uncoupled problems, then only a minimal number of cpus should be requested that will allow be sufficient for Rocky to still run optimally.  For instance only 2cpus or possibly 3cpus may be required.  When Rocky is run with >= 4 cpus then rocky_hpc licenses will be required which the SHARCNET license does provide.  The scripts below have not been tested since the clusters were updated across the Alliance in fall 2025 therefore some adjustments maybe required.
+
+== Electronics ==
+
+Slurm scripts for using AnsysEDT is provided in a separate wiki page here.
 
 = Graphical use =
 
 To run Ansys programs in graphical mode click on one of the following OnDemand or Jupyterhub links.  A job submission web page to configure the resources for an interactive session should appear in your browser :
 
-NIBI: https://ondemand.sharcnet.ca
+ NIBI: https://ondemand.sharcnet.ca
  FIR: https://jupyterhub.fir.alliancecan.ca
  RORQUAL: https://jupyterhub.rorqual.alliancecan.ca
  NARVAL:  https://jupyterhub.narval.alliancecan.ca/
@@ -322,14 +326,16 @@ Compute Node (with GPU requested)
 
 === Rocky ===
 ::: module load StdEnv/2023 ansys/2025R1 (or newer versions)
+::: export PATH=$EBROOTANSYS/v251/rocky:$PATH (path to be included in future module versions)
 ::: Rocky The ansys module handles reading your ~/licenses/ansys.lic
 ::: RockySolver Run rocky solver directly from command line (add -h for help, untested)
 ::: RockySchedular Start rocky schedular gui to submit/run jobs on present node (untested)
 ::: o The SHARCNET license includes Rocky and is therefore free for all researchers to use
 ::: o Rocky supports GPU-accelerated computing however this capability not been tested or documented yet
 
-== SSH issues ==
-::: Some Ansys GUI programs can be run remotely on a cluster compute node by forwarding X over SSH to your local desktop.  Unlike VNC, this approach is untested and unsupported since it relies on a properly setup X display server for your particular operating system OR the selection, installation and configuration of a suitable X client emulator package such as MobaXterm.  Most users will find interactive response times unacceptably slow for basic menu tasks let alone performing more complex tasks such as those involving graphics rendering.  Startup times for GUI programs can also be very slow depending on your Internet connection. For example, in one test it took 40 minutes to fully start the gui up over SSH while starting it with vncviewer required only 34 seconds.  Despite the potential slowness when connecting over SSH to run GUI programs, doing so may still be of interest if your only goal is to open a simulation and perform some basic menu operations or run some calculations. The basic steps are given here as a starting point: 1) ssh -Y username@alliancecan.ca 2) salloc --x11 --time=1:00:00 --mem=16G --cpus-per-task=4 [--gpus-per-node=1] --account=def-mygroup; 3) once connected onto a compute node try running xclock.  If the clock appears on your desktop, proceed to load the desired Ansys module and try running the program.
+== Electronics ==
+
+Information describing howto run AnsysEDT in graphical mode maybe found here here.
 
 = Site-specific usage =
 
@@ -459,4 +465,6 @@ After a job completes, its "Job Wall-clock time" can be obtained from seff myjob
 
 = Help resources =
 
-Documentation for recent versions Ansys 202[4|5]R[1|2] is fully available here.  Documentation for older versions such as Ansys 2023R[1|2] however requires login.  Developer documentation can be found in the Ansys Developer Portal. Additional learning resources include the Ansys HowTo videos, the Ansys Educator Educator Hub and the Ansys Webinar series.
+The official full documentation for recent versions Ansys 202[4|5]R[1|2] is available here.  Documentation for older versions such as Ansys 2023R[1|2] however requires login.  Developer documentation can be found in the Ansys Developer Portal. Additional learning resources include the Ansys HowTo videos, the Ansys Educator Educator Hub and the Ansys Webinar series.
+
+XoverSSH Legacy Note: Some programs can be run remotely on a cluster compute node by forwarding X over SSH to your local desktop.  Unlike VNC, this approach is untested and unsupported since it relies on a properly setup X display server for your particular operating system OR the selection, installation and configuration of a suitable X client emulator package such as MobaXterm.  Most users will find interactive response times unacceptably slow for basic menu tasks let alone performing more complex tasks such as those involving graphics rendering.  Startup times for GUI programs can also be very slow depending on your Internet connection. For example, in one test it took 40 minutes to fully start the gui up over SSH while starting it with vncviewer required only 34 seconds.  Despite the potential slowness, using this method to connect may still be of interest if your only goal is to open a simulation and perform some basic menu operations or run some calculations and response delays can be tolerated. The basic steps are given here as a starting point: 1) ssh -Y username@alliancecan.ca 2) salloc --x11 --time=1:00:00 --mem=16G --cpus-per-task=4 [--gpus-per-node=1] --account=def-mygroup; 3) once connected onto a compute node try running xclock.  If the clock appears on your desktop, proceed to load the desired Ansys module and try running the program.

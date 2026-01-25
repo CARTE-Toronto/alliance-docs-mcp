@@ -2,7 +2,7 @@
 title: "TamIA/en"
 url: "https://docs.alliancecan.ca/wiki/TamIA/en"
 category: "General"
-last_modified: "2025-12-03T21:24:01Z"
+last_modified: "2026-01-14T21:11:02Z"
 page_id: 28130
 display_title: "TamIA"
 ---
@@ -74,6 +74,15 @@ nodes	cores	available memory	CPU                                    	storage    
 
 ===Software environments===
 StdEnv/2023 is the standard environment on tamIA.
+
+=== Tâches GPU ===
+Les tâches sont assignées sur les nœuds complets. Utilisez une des options Slurm suivantes :
+
+Pour une tâche sur un nœud avec GPU H100 : --gpus=h100:4
+
+Pour une tâche sur un nœud avec GPU H200 : --gpus=h200:8
+
+Pour les tâches avec plusieurs nœuds, utiliser --gpus-per-nodes=h100:4 ou --gpus-per-nodes=h200:8.
 
 ==Monitoring jobs==
 

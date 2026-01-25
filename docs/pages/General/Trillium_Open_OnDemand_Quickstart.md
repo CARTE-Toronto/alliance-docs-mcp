@@ -1,11 +1,13 @@
 ---
-title: "Trillium Open OnDemand Quickstart/en"
-url: "https://docs.alliancecan.ca/wiki/Trillium_Open_OnDemand_Quickstart/en"
+title: "Trillium Open OnDemand Quickstart"
+url: "https://docs.alliancecan.ca/wiki/Trillium_Open_OnDemand_Quickstart"
 category: "General"
-last_modified: "2026-01-11T11:26:05Z"
-page_id: 32168
+last_modified: "2026-01-23T19:06:41Z"
+page_id: 32098
 display_title: "Trillium Open OnDemand Quickstart"
 ---
+
+This page is specifically for the Open OnDemand service attached to Trillium.  General information on the Open OnDemand instances in the clusters of the Alliance can be found on  Open_OnDemand.
 
 = Porting existing virtual environments to Open OnDemand =
 
@@ -57,10 +59,10 @@ Note: The template scripts provided in Open Composer are basic examples to get y
 
 To monitor your submitted jobs in Open Composer, navigate to the History tab. This will display a list of all your submitted jobs, along with their status: Queued, Running, Completed, Failed. You can filter the jobs by using the Filter text box at the top right or by using the checkboxes below. Clicking on different column fields will give different information about the job:
 
-* Job ID: displays detailed Slurm information about the job
-* Application: opens the job script editor of the template you used
+* Job ID: opens the job in my.SciNet, which displays performance statistics and more detailed Slurm information about the job. Note: my.SciNet may show 'Not found or not permitted' if the job hasn't started yet or was cancelled.
+* Application: opens the job script editor of the template you used.
 * Script Location: opens an OOD file browser window at the location of the job script. Clicking on the small terminal icon will open a terminal in the job script location.
-* Script Name: displays the job script that was submitted to the scheduler
+* Script Name: displays the job script that was submitted to the scheduler.
 
 To resubmit or modify a previously run job click on the job script under the Script Name column and click Load Parameters. This will take you back to the job submission page where further modifications can be made to the job.
 
@@ -72,6 +74,8 @@ Open Composer currently supports the following applications:
 * OpenMP Slurm Job
 * Hybrid MPI/OpenMP Slurm Job
 * Python Slurm Job
+* R Slurm Job
+* VASP Slurm Job
 
 =Job monitoring=
 
@@ -108,6 +112,7 @@ We currently support the following applications:
 * Trillium Desktop
 * ParaView
 * Forge DDT/MAP
+* MATLAB
 * SAS4
 * Stata4
 * Open Composer
@@ -141,7 +146,7 @@ feature                 	Jupyter Hub (decommissioned)                           
 authentication          	password                                                     	password + MFA
 first installed         	2017                                                         	2025
 last update             	2021                                                         	2025
-supports                	Jupyter Notebook, JupyterLab (R, Python, Julia)              	Jupyter Notebook, JupyterLab (R, Python), Rstudio, VSCode, Desktop, SAS4, Stata4, ParaView, Forge DDT/MAP
+supports                	Jupyter Notebook, JupyterLab (R, Python, Julia)              	Jupyter Notebook, JupyterLab (R, Python), Rstudio, VSCode, Desktop, SAS4, Stata4, ParaView, Forge DDT/MAP, MATLAB
 start and continue later	Yes                                                          	Yes1
 command terminal        	No                                                           	Yes
 file management         	Yes (limited)                                                	Yes

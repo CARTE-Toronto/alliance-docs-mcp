@@ -2,7 +2,7 @@
 title: "Trillium/en"
 url: "https://docs.alliancecan.ca/wiki/Trillium/en"
 category: "General"
-last_modified: "2025-12-09T19:10:38Z"
+last_modified: "2026-01-14T13:03:03Z"
 page_id: 26932
 display_title: "Trillium"
 ---
@@ -37,7 +37,7 @@ Parallel storage: 29 petabytes, NVMe SSD based storage from VAST Data.
 
 nodes	cores	available memory	CPU                                                	GPU
 1224 	192  	749G or 767000M 	2 x AMD EPYC 9655 (Zen 5) @ 2.6 GHz, 384MB cache L3
-63   	96   	749G or 767000M 	1 x AMD EPYC 9654 (Zen 4) @ 2.4 GHz, 384MB cache L3	4 x NVidia H100 SXM (80 GB memory)
+63   	96   	749G or 767000M 	1 x AMD EPYC 9654 (Zen 4) @ 2.4 GHz, 384MB cache L3	4 x NVidia H100 SXM (80 GB memory), connected via NVLink
 
 = Technical details =
 
