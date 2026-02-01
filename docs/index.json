@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-01-25T06:19:17.518713+00:00",
-  "total_pages": 434,
+  "last_updated": "2026-02-01T06:37:32.378763+00:00",
+  "total_pages": 436,
   "pages": [
     {
       "page_id": 10049,
@@ -256,10 +256,10 @@
     },
     {
       "page_id": 28884,
-      "title": "AnsysEDT",
+      "title": "AnsysEDT/en",
       "url": "https://docs.alliancecan.ca/wiki/AnsysEDT/en",
       "category": "General",
-      "last_modified": "2025-09-04T19:06:52Z",
+      "last_modified": "2026-01-21T14:03:10Z",
       "file_path": "docs/pages/General/AnsysEDT.md",
       "slug": "AnsysEDT"
     },
@@ -634,10 +634,10 @@
     },
     {
       "page_id": 6116,
-      "title": "CUDA",
+      "title": "CUDA/en",
       "url": "https://docs.alliancecan.ca/wiki/CUDA/en",
       "category": "General",
-      "last_modified": "2023-06-01T21:58:01Z",
+      "last_modified": "2026-01-21T14:03:13Z",
       "file_path": "docs/pages/General/CUDA.md",
       "slug": "CUDA"
     },
@@ -679,10 +679,10 @@
     },
     {
       "page_id": 20857,
-      "title": "CephFS",
+      "title": "CephFS/en",
       "url": "https://docs.alliancecan.ca/wiki/CephFS/en",
       "category": "General",
-      "last_modified": "2025-01-21T20:20:02Z",
+      "last_modified": "2026-01-21T14:04:10Z",
       "file_path": "docs/pages/General/CephFS.md",
       "slug": "CephFS"
     },
@@ -1390,10 +1390,10 @@
     },
     {
       "page_id": 14002,
-      "title": "Gurobi",
+      "title": "Gurobi/en",
       "url": "https://docs.alliancecan.ca/wiki/Gurobi/en",
       "category": "General",
-      "last_modified": "2025-01-20T19:16:02Z",
+      "last_modified": "2026-01-21T14:04:07Z",
       "file_path": "docs/pages/General/Gurobi.md",
       "slug": "Gurobi"
     },
@@ -2137,10 +2137,10 @@
     },
     {
       "page_id": 6483,
-      "title": "NetCDF",
+      "title": "NetCDF/en",
       "url": "https://docs.alliancecan.ca/wiki/NetCDF/en",
       "category": "General",
-      "last_modified": "2018-12-10T15:26:15Z",
+      "last_modified": "2026-01-21T14:04:08Z",
       "file_path": "docs/pages/General/NetCDF.md",
       "slug": "NetCDF"
     },
@@ -2551,10 +2551,10 @@
     },
     {
       "page_id": 4520,
-      "title": "PyTorch",
+      "title": "PyTorch/en",
       "url": "https://docs.alliancecan.ca/wiki/PyTorch/en",
       "category": "General",
-      "last_modified": "2025-11-12T21:15:20Z",
+      "last_modified": "2026-01-22T16:04:26Z",
       "file_path": "docs/pages/General/PyTorch.md",
       "slug": "PyTorch"
     },
@@ -2803,10 +2803,10 @@
     },
     {
       "page_id": 22859,
-      "title": "SAIGE",
+      "title": "SAIGE/en",
       "url": "https://docs.alliancecan.ca/wiki/SAIGE/en",
       "category": "General",
-      "last_modified": "2023-07-07T16:32:21Z",
+      "last_modified": "2026-01-29T14:36:01Z",
       "file_path": "docs/pages/General/SAIGE.md",
       "slug": "SAIGE"
     },
@@ -3037,10 +3037,10 @@
     },
     {
       "page_id": 3195,
-      "title": "Storage and file management",
+      "title": "Storage and file management/en",
       "url": "https://docs.alliancecan.ca/wiki/Storage_and_file_management/en",
       "category": "General",
-      "last_modified": "2025-10-16T21:52:46Z",
+      "last_modified": "2026-01-29T14:34:55Z",
       "file_path": "docs/pages/General/Storage_and_file_management.md",
       "slug": "Storage_and_file_management"
     },
@@ -3316,10 +3316,10 @@
     },
     {
       "page_id": 4369,
-      "title": "Using GPUs with Slurm",
+      "title": "Using GPUs with Slurm/en",
       "url": "https://docs.alliancecan.ca/wiki/Using_GPUs_with_Slurm/en",
       "category": "General",
-      "last_modified": "2025-09-10T20:39:53Z",
+      "last_modified": "2026-01-31T13:12:51Z",
       "file_path": "docs/pages/General/Using_GPUs_with_Slurm.md",
       "slug": "Using_GPUs_with_Slurm"
     },
@@ -3400,7 +3400,7 @@
       "title": "Using nearline storage/en",
       "url": "https://docs.alliancecan.ca/wiki/Using_nearline_storage/en",
       "category": "General",
-      "last_modified": "2025-12-09T19:11:14Z",
+      "last_modified": "2026-01-21T14:02:02Z",
       "file_path": "docs/pages/General/Using_nearline_storage.md",
       "slug": "Using_nearline_storage"
     },
@@ -3850,7 +3850,7 @@
       "title": "Trillium Open OnDemand Quickstart/en",
       "url": "https://docs.alliancecan.ca/wiki/Trillium_Open_OnDemand_Quickstart/en",
       "category": "General",
-      "last_modified": "2026-01-11T11:26:05Z",
+      "last_modified": "2026-01-29T14:36:04Z",
       "file_path": "docs/pages/General/Trillium_Open_OnDemand_Quickstart.md",
       "slug": "Trillium_Open_OnDemand_Quickstart"
     },
@@ -3907,6 +3907,24 @@
       "last_modified": "2026-01-14T18:05:11Z",
       "file_path": "docs/pages/General/AnsysEDT.md",
       "slug": "AnsysEDT"
+    },
+    {
+      "page_id": 26921,
+      "title": "Trillium",
+      "url": "https://docs.alliancecan.ca/wiki/Trillium",
+      "category": "General",
+      "last_modified": "2026-01-28T20:41:24Z",
+      "file_path": "docs/pages/General/Trillium.md",
+      "slug": "Trillium"
+    },
+    {
+      "page_id": 3658,
+      "title": "AI and Machine Learning",
+      "url": "https://docs.alliancecan.ca/wiki/AI_and_Machine_Learning",
+      "category": "General",
+      "last_modified": "2024-10-16T16:55:03Z",
+      "file_path": "docs/pages/General/AI_and_Machine_Learning.md",
+      "slug": "AI_and_Machine_Learning"
     }
   ]
 }

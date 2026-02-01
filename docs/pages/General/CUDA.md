@@ -1,9 +1,9 @@
 ---
-title: "CUDA"
-url: "https://docs.alliancecan.ca/wiki/CUDA"
+title: "CUDA/en"
+url: "https://docs.alliancecan.ca/wiki/CUDA/en"
 category: "General"
-last_modified: "2026-01-21T14:03:08Z"
-page_id: 6103
+last_modified: "2026-01-21T14:03:13Z"
+page_id: 6116
 display_title: "CUDA"
 ---
 
@@ -23,7 +23,7 @@ $ module load cuda
 
 The following program will add two numbers together on a GPU. Save the file as add.cu. The cu file extension is important!.
 
-Compile the program with nvcc to create an executable named add.
+nvcc to create an executable named add.
 
 $ nvcc add.cu -o add
 

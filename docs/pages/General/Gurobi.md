@@ -1,9 +1,9 @@
 ---
-title: "Gurobi"
-url: "https://docs.alliancecan.ca/wiki/Gurobi"
+title: "Gurobi/en"
+url: "https://docs.alliancecan.ca/wiki/Gurobi/en"
 category: "General"
-last_modified: "2026-01-21T14:03:34Z"
-page_id: 10596
+last_modified: "2026-01-21T14:04:07Z"
+page_id: 14002
 display_title: "Gurobi"
 ---
 
@@ -23,7 +23,7 @@ You do NOT need to create a ~/.licenses/gurobi.lic file.  The required settings 
 ===Testing your license===
 To verify your username has successfully been added to the Alliance Gurobi license, log into any cluster and run the following command:
 
-$ module load gurobi
+ $ module load gurobi
  $ gurobi_cl 1> /dev/null && echo Success || echo Fail
 
 If it returns "Success" you can begin using Gurobi immediately.  If the test returns "Fail" then check whether a file named ~/.license/gurobi exists.  If it does then remove it, reload the gurobi module and run the test again.  If it still returns "Fail" check whether there are any environment variables containing GUROBI being defined in either of our your ~/.bashrc or ~/.bash_profile files.  If you find any, comment or remove the lines then logout and login again, reload the Gurobi module and run the test again.  If you still get "Fail",  contact support for help.
@@ -36,7 +36,7 @@ Note that all Gurobi license checkouts are handled by a single license server lo
 
 ===Gurobi command-line tools===
 
-[gra-login2:~] salloc --time=1:00:0 --cpus-per-task=8 --mem=1G --account=def-xyz
+ [gra-login2:~] salloc --time=1:00:0 --cpus-per-task=8 --mem=1G --account=def-xyz
  [gra800:~] module load gurobi
  [gra800:~] gurobi_cl Record=1 Threads=8 Method=2 ResultFile=p0033.sol LogFile=p0033.log $GUROBI_HOME/examples/data/p0033.mps
  [gra800:~] gurobi_cl --help

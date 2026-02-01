@@ -1,9 +1,9 @@
 ---
-title: "NetCDF"
-url: "https://docs.alliancecan.ca/wiki/NetCDF"
+title: "NetCDF/en"
+url: "https://docs.alliancecan.ca/wiki/NetCDF/en"
 category: "General"
-last_modified: "2026-01-21T14:03:52Z"
-page_id: 5557
+last_modified: "2026-01-21T14:04:08Z"
+page_id: 6483
 display_title: "NetCDF"
 ---
 

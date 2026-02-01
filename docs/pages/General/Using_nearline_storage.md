@@ -1,9 +1,9 @@
 ---
-title: "Using nearline storage"
-url: "https://docs.alliancecan.ca/wiki/Using_nearline_storage"
+title: "Using nearline storage/en"
+url: "https://docs.alliancecan.ca/wiki/Using_nearline_storage/en"
 category: "General"
-last_modified: "2026-01-16T18:26:54Z"
-page_id: 5571
+last_modified: "2026-01-21T14:02:02Z"
+page_id: 9323
 display_title: "Using nearline storage"
 ---
 

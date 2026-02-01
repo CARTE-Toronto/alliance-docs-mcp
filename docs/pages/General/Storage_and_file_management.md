@@ -2,7 +2,7 @@
 title: "Storage and file management/en"
 url: "https://docs.alliancecan.ca/wiki/Storage_and_file_management/en"
 category: "General"
-last_modified: "2025-10-16T21:52:46Z"
+last_modified: "2026-01-29T14:34:55Z"
 page_id: 3195
 display_title: "Storage and file management"
 ---
@@ -101,24 +101,17 @@ Nearline Space	1 TB and 5000 files per group                                    
 
 Since April 1, 2024, new Rapid Access Service (RAS) policies allow larger quotas for project and nearline spaces. For more details, see the "Storage" section at Rapid Access Service.  Quota changes larger than those permitted by RAS will require an application to the annual Resource Allocation Competition.
 
-location	quota                             	quota                             	block size	expiration time	backed up	on login nodes	on compute nodes
-$HOME   	100 GB per user                   	100 GB per user                   	1 MB      	               	yes      	yes           	read-only
-$SCRATCH	25 TB per user (dynamic per group)	25 TB per user (dynamic per group)	16 MB     	2 months       	no       	yes           	yes
-$SCRATCH	up to 4 users per group           	50TB                              	16 MB     	2 months       	no       	yes           	yes
-$SCRATCH	up to 11 users per group          	125TB                             	16 MB     	2 months       	no       	yes           	yes
-$SCRATCH	up to 28 users per group          	250TB                             	16 MB     	2 months       	no       	yes           	yes
-$SCRATCH	up to 60 users per group          	400TB                             	16 MB     	2 months       	no       	yes           	yes
-$SCRATCH	above 60 users per group          	500TB                             	16 MB     	2 months       	no       	yes           	yes
-$PROJECT	by group allocation (RRG or RPP)  	by group allocation (RRG or RPP)  	16 MB     	               	yes      	yes           	yes
-$ARCHIVE	by group allocation               	by group allocation               	          	               	dual-copy	no            	no
-$BBUFFER	10 TB per user                    	10 TB per user                    	1 MB      	very short     	no       	yes           	yes
+Filesystem Characteristics
 
-Inode vs. Space quota (PROJECT and SCRATCH)
-dynamic quota per group (SCRATCH)
+Location	Quota                                                                 	Expiration Time	Backed Up	On Login Nodes	On Compute Nodes
+$HOME   	100 GB and 1M files per user                                          	               	yes      	yes           	read-only
+$SCRATCH	25 TB and 10M files per user                                          	TBD            	no       	yes           	yes
+$PROJECT	by RRG or RPP allocation, and 1 TB and 2M files per default allocation	               	yes      	yes           	read-only
+$ARCHIVE	by RRG or RPP allocation                                              	               	dual-copy	no            	no
+
 Compute nodes do not have local storage.
 Archive (a.k.a. nearline) space is on HPSS
 Backup means a recent snapshot, not an archive of all data that ever was.
-$BBUFFER stands for Burst Buffer, a faster parallel storage tier for temporary data.
 
 Filesystem Characteristics
 

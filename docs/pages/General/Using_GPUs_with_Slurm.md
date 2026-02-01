@@ -2,7 +2,7 @@
 title: "Using GPUs with Slurm/en"
 url: "https://docs.alliancecan.ca/wiki/Using_GPUs_with_Slurm/en"
 category: "General"
-last_modified: "2025-09-10T20:39:53Z"
+last_modified: "2026-01-31T13:12:51Z"
 page_id: 4369
 display_title: "Using GPUs with Slurm"
 ---
@@ -10,47 +10,73 @@ display_title: "Using GPUs with Slurm"
 = Introduction =
 
 To request one or more GPUs for a Slurm job, use this form:
-  --gpus-per-node=[type:]number
+  --gpus-per-node=:
 
-The square-bracket notation means that you must specify the number of GPUs, and you may optionally specify the GPU type.  Valid types are listed in the Available GPUs table below, in the column headed "Slurm type specifier".  Here are two examples:
-  --gpus-per-node=2
-  --gpus-per-node=v100:1
+For example:
+  --gpus-per-node=a100:1
 
-The first line requests two GPUs per node, of any type available on the cluster.  The second line requests one GPU per node, with the GPU being of the V100 type.
+This requests a single A100 GPU (unless you also use --nodes to specify more than a single node).
+See the following section, Available GPUs, for valid models.
 
 The following form can also be used:
-  --gres=gpu[[:type]:number]
-This is older, and we expect it will no longer be supported in some future release of Slurm.  We recommend that you replace it in your scripts with the above --gpus-per-node form.
+  --gres=gpu::
+This form may not be supported in the future.  We recommend that you replace it in your scripts with --gpus-per-node.
 
-There are a variety of other directives that you can use to request GPU resources: --gpus, --gpus-per-socket, --gpus-per-task, --mem-per-gpu, and --ntasks-per-gpu.  Please see the Slurm documentation for sbatch for more about these.  Our staff did not test all the combinations; if you don't get the result you expect, contact technical support.
+Slurm supports a variety of other directives that you can use to request GPU resources: --gpus, --gpus-per-socket, --gpus-per-task, --mem-per-gpu, and --ntasks-per-gpu.  Please see the Slurm documentation for sbatch for more about these.  Our staff do not test all of these; if you try one but don't get the result you expect, contact technical support.
 
 For general advice on job scheduling, see Running jobs.
 
 = Available GPUs =
-These are the GPUs currently available:
+The following table summarizes the available GPU models:
 
-Cluster 	Specifications                                                                                       	Slurm typespecifier                                                                                  	GPU model                                                                                            	ComputeCapability(*)                                                                                 	Notes
-Fir     	Details                                                                                              	Options                                                                                              	H100-80gb                                                                                            	90                                                                                                   	Two GPUs per CPU socket; all GPUs connected via NVLink
-Narval  	Details                                                                                              	Options                                                                                              	A100-40gb                                                                                            	80                                                                                                   	Two GPUs per CPU socket; all GPUs connected via NVLink
-Nibi    	Details                                                                                              	Options                                                                                              	H100-80gb                                                                                            	90                                                                                                   	Two GPUs per CPU socket; all GPUs connected via NVLink
-Nibi    	Details                                                                                              	Options                                                                                              	MI300A-128gb                                                                                         	N.A.                                                                                                 	Unified memory between CPU and GPU
-Rorqual 	Details                                                                                              	Options                                                                                              	H100-80gb                                                                                            	90                                                                                                   	Two GPUs per CPU socket; all GPUs connected via NVLink
-Trillium	Details                                                                                              	Options                                                                                              	H100-80gb                                                                                            	90                                                                                                   	Two GPUs per CPU socket; all GPUs connected via NVLink
-Arbutus 	Cloud resources are not schedulable via Slurm. See Cloud resources for details of available hardware.	Cloud resources are not schedulable via Slurm. See Cloud resources for details of available hardware.	Cloud resources are not schedulable via Slurm. See Cloud resources for details of available hardware.	Cloud resources are not schedulable via Slurm. See Cloud resources for details of available hardware.
+Cluster  	GPU model   	Model specifiersfor Slurm    	Notes
+Fir      	H100-80gb   	h100
+Fir      	H100-80gb   	nvidia_h100_80gb_hbm3_1g.10gb	MIG
+Fir      	H100-80gb   	nvidia_h100_80gb_hbm3_2g.20gb	MIG
+Fir      	H100-80gb   	nvidia_h100_80gb_hbm3_3g.40gb	MIG
+Narval   	A100-40gb   	a100
+Narval   	A100-40gb   	a100_1g.5gb                  	MIG
+Narval   	A100-40gb   	a100_2g.10gb                 	MIG
+Narval   	A100-40gb   	a100_3g.20gb                 	MIG
+Narval   	A100-40gb   	a100_4g.20gb                 	MIG
+Nibi     	H100-80gb   	h100
+Nibi     	H100-80gb   	nvidia_h100_80gb_hbm3_1g.10gb	MIG
+Nibi     	H100-80gb   	nvidia_h100_80gb_hbm3_2g.20gb	MIG
+Nibi     	H100-80gb   	nvidia_h100_80gb_hbm3_3g.40gb	MIG
+Nibi     	MI300A-128gb	(none; see Nibi)
+Rorqual  	H100-80gb   	h100
+Rorqual  	H100-80gb   	nvidia_h100_80gb_hbm3_1g.10gb	MIG; synonyms h100_1g.10gb, h100_1.10, h100_10gb
+Rorqual  	H100-80gb   	nvidia_h100_80gb_hbm3_2g.20gb	MIG; synonyms h100_2g.20gb, h100_2.20, h100_20gb
+Rorqual  	H100-80gb   	nvidia_h100_80gb_hbm3_3g.40gb	MIG; synonyms h100_3g.40gb, h100_3.40, h100_40gb
+Trillium 	H100-80gb   	h100
+Killarney	H100-80gb   	h100                         	 
+Killarney	L40S-48gb   	l40s                         	 
+tamIA    	H100-80gb   	h100                         	 
+tamIA    	H200        	h200                         	 
+Vulcan   	L40S-48gb   	l40s                         	 
+Vulcan
 
-(*) Compute Capability is a technical term created by NVIDIA as a compact way to describe what hardware functions are available on some models of GPU and not on others.
-It is not a measure of performance and is relevant only if you are compiling your own GPU programs.  See the page on CUDA programming for more.
+GPU models (including MIGs models) available on any given cluster can be obtained from Slurm with the following command.
+This may be useful if the table above has not been updated with the latest changes.
+
+grep gpused 's/gpu://g'sed 's/),/\n/g'cut -d: -f1sortuniq}}
+
+There are short synonyms available for some of the MIG models at certain sites; this command will not provide those synonyms.
+Also, the presence of a GPU model does not guarantee that you will be able to use that model in your jobs; there may be
+further restrictions on what models are available based on (for example) which to research group you belong.
+For further information see the site-specific page by clicking on the cluster name in the above table, or contact support.
+
+If you do not supply a model specifier your job may be rejected or it may be sent to an arbitrary GPU model.
+There are very few programs which can use an arbitrary GPU efficiently,
+so we strongly recommend that you always request a specific GPU model.
+
+There are GPUs available at Arbutus, but like other cloud resources they cannot be scheduled via Slurm.
+See Cloud resources for more details.
 
 == Multi-Instance GPUs (MIGs) ==
-MIG, a technology that allows to partition a GPU into multiple instances. Please see Multi-Instance_GPU.
-
-= Selecting the type of GPU to use =
-
-Some clusters have more than one GPU type available, and some clusters only have GPUs on certain nodes.
-
-If you do not supply a type specifier, Slurm may send your job to a node equipped with any type of GPU.
-For certain workflows this may be undesirable; for example, molecular dynamics code requires high double-precision performance, for which T4 GPUs are not appropriate.
-In such a case, make sure you include a type specifier.
+MIG is a technology that partitions a GPU into multiple instances.
+Your jobs might be able to use a MIG instance instead of a whole GPU.
+Please see Multi-Instance_GPU for more about this.
 
 = Requesting CPU cores and system memory =
 
@@ -95,8 +121,6 @@ With this method, you can run multiple tasks in one submission. The -j4 paramete
 
 == Profiling GPU tasks ==
 
-On Fir and Nibi, GPU profiling is not available since performance counters are not accessible.
-
 On Narval and Rorqual, profiling is possible but requires disabling the
 NVIDIA Data Center GPU Manager (DCGM). This must be done during job submission by setting the DISABLE_DCGM environment variable:
 
@@ -106,3 +130,10 @@ Then, in your interactive job, wait until DCGM is disabled on the node:
  grep 'Hostengine build info:')" ]; do  sleep 5; done}}
 
 Finally, launch your profiler. For more details on profilers, see Debugging and profiling.
+
+On Fir and Nibi, GPU profiling like the above technique is not available yet.
+
+= See also =
+CUDA
+Multi-Instance GPU
+Running jobs

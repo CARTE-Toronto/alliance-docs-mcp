@@ -1,9 +1,9 @@
 ---
-title: "Trillium Open OnDemand Quickstart"
-url: "https://docs.alliancecan.ca/wiki/Trillium_Open_OnDemand_Quickstart"
+title: "Trillium Open OnDemand Quickstart/en"
+url: "https://docs.alliancecan.ca/wiki/Trillium_Open_OnDemand_Quickstart/en"
 category: "General"
-last_modified: "2026-01-23T19:06:41Z"
-page_id: 32098
+last_modified: "2026-01-29T14:36:04Z"
+page_id: 32168
 display_title: "Trillium Open OnDemand Quickstart"
 ---
 

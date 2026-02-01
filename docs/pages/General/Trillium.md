@@ -1,19 +1,20 @@
 ---
-title: "Trillium/en"
-url: "https://docs.alliancecan.ca/wiki/Trillium/en"
+title: "Trillium"
+url: "https://docs.alliancecan.ca/wiki/Trillium"
 category: "General"
-last_modified: "2026-01-14T13:03:03Z"
-page_id: 26932
+last_modified: "2026-01-28T20:41:24Z"
+page_id: 26921
 display_title: "Trillium"
 ---
 
 Availability: Aug/07 2025
 Login node: trillium.alliancecan.ca and trillium-gpu.alliancecan.ca
-Globus collections:  alliancecan#trillium
+Globus collections: alliancecan#trillium (file system)
+alliancecan#hpss (archive/nearline)
 Data transfer node (rsync, scp, sftp,...): tri-dm{2,3,4}.scinet.utoronto.ca
 Automation node: robot3.scinet.utoronto.ca
-Open OnDemand: https://ondemand.scinet.utoronto.ca (includes JupyterLab)
-Portal: https://my.scinet.utoronto.ca
+Open OnDemand: ondemand.scinet.utoronto.ca (includes JupyterLab)
+Portal: my.scinet.utoronto.ca
 
 Trillium is a large parallel cluster built by Lenovo Canada and hosted by SciNet at the University of Toronto.
 

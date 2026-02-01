@@ -1,9 +1,9 @@
 ---
-title: "AI and Machine Learning/en"
-url: "https://docs.alliancecan.ca/wiki/AI_and_Machine_Learning/en"
+title: "AI and Machine Learning"
+url: "https://docs.alliancecan.ca/wiki/AI_and_Machine_Learning"
 category: "General"
-last_modified: "2024-10-16T16:55:18Z"
-page_id: 11862
+last_modified: "2024-10-16T16:55:03Z"
+page_id: 3658
 display_title: "AI and Machine Learning"
 ---
 

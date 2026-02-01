@@ -1,12 +1,13 @@
 # Alliance Documentation - Page Directory
-# Generated: 2026-01-25T06:19:17.525547+00:00
-# Total pages: 434
+# Generated: 2026-02-01T06:37:32.385523+00:00
+# Total pages: 436
 
 - A tutorial on 'tar' (User Guide): https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/en
 - ABINIT (General): https://docs.alliancecan.ca/wiki/ABINIT/en
 - ACPYPE (General): https://docs.alliancecan.ca/wiki/ACPYPE
 - ADF (General): https://docs.alliancecan.ca/wiki/ADF/en
 - AI and Machine Learning (General): https://docs.alliancecan.ca/wiki/AI_and_Machine_Learning/en
+- AI and Machine Learning (General): https://docs.alliancecan.ca/wiki/AI_and_Machine_Learning
 - AMBER (General): https://docs.alliancecan.ca/wiki/AMBER/en
 - AMS (General): https://docs.alliancecan.ca/wiki/AMS/en
 - ARM software (General): https://docs.alliancecan.ca/wiki/ARM_software/en
@@ -32,8 +33,8 @@
 - Anaconda (General): https://docs.alliancecan.ca/wiki/Anaconda/en
 - Ansys (General): https://docs.alliancecan.ca/wiki/Ansys
 - Ansys/en (General): https://docs.alliancecan.ca/wiki/Ansys/en
-- AnsysEDT (General): https://docs.alliancecan.ca/wiki/AnsysEDT/en
 - AnsysEDT (General): https://docs.alliancecan.ca/wiki/AnsysEDT
+- AnsysEDT/en (General): https://docs.alliancecan.ca/wiki/AnsysEDT/en
 - Apache Spark (General): https://docs.alliancecan.ca/wiki/Apache_Spark/en
 - Apply for a CCDB account (General): https://docs.alliancecan.ca/wiki/Apply_for_a_CCDB_account/en
 - Apptainer/en (General): https://docs.alliancecan.ca/wiki/Apptainer/en
@@ -75,14 +76,14 @@
 - CP2K (General): https://docs.alliancecan.ca/wiki/CP2K/en
 - CPLEX (General): https://docs.alliancecan.ca/wiki/CPLEX/en
 - CPMD (General): https://docs.alliancecan.ca/wiki/CPMD/en
-- CUDA (General): https://docs.alliancecan.ca/wiki/CUDA/en
 - CUDA (General): https://docs.alliancecan.ca/wiki/CUDA
 - CUDA tutorial (User Guide): https://docs.alliancecan.ca/wiki/CUDA_tutorial/en
+- CUDA/en (General): https://docs.alliancecan.ca/wiki/CUDA/en
 - CVMFS (General): https://docs.alliancecan.ca/wiki/CVMFS/en
 - Cedar (General): https://docs.alliancecan.ca/wiki/Cedar/en
 - Cellranger (General): https://docs.alliancecan.ca/wiki/Cellranger
-- CephFS (General): https://docs.alliancecan.ca/wiki/CephFS/en
 - CephFS (General): https://docs.alliancecan.ca/wiki/CephFS
+- CephFS/en (General): https://docs.alliancecan.ca/wiki/CephFS/en
 - Changing username (User Guide): https://docs.alliancecan.ca/wiki/Changing_username
 - Chapel (General): https://docs.alliancecan.ca/wiki/Chapel/en
 - CheckV (General): https://docs.alliancecan.ca/wiki/CheckV/en
@@ -162,8 +163,8 @@
 - Globus/en (General): https://docs.alliancecan.ca/wiki/Globus/en
 - Gprof (General): https://docs.alliancecan.ca/wiki/Gprof/en
 - Graham (General): https://docs.alliancecan.ca/wiki/Graham/en
-- Gurobi (General): https://docs.alliancecan.ca/wiki/Gurobi/en
 - Gurobi (General): https://docs.alliancecan.ca/wiki/Gurobi
+- Gurobi/en (General): https://docs.alliancecan.ca/wiki/Gurobi/en
 - HDF5 (General): https://docs.alliancecan.ca/wiki/HDF5/en
 - HPC4Health (General): https://docs.alliancecan.ca/wiki/HPC4Health/en
 - Ha fip (General): https://docs.alliancecan.ca/wiki/Ha_fip
@@ -251,8 +252,8 @@
 - NVTOP (General): https://docs.alliancecan.ca/wiki/NVTOP/en
 - Narval/en (General): https://docs.alliancecan.ca/wiki/Narval/en
 - National systems (General): https://docs.alliancecan.ca/wiki/National_systems/en
-- NetCDF (General): https://docs.alliancecan.ca/wiki/NetCDF/en
 - NetCDF (General): https://docs.alliancecan.ca/wiki/NetCDF
+- NetCDF/en (General): https://docs.alliancecan.ca/wiki/NetCDF/en
 - Nextcloud (General): https://docs.alliancecan.ca/wiki/Nextcloud/en
 - Nextflow (General): https://docs.alliancecan.ca/wiki/Nextflow/en
 - Niagara (General): https://docs.alliancecan.ca/wiki/Niagara/en
@@ -300,8 +301,8 @@
 - Pthreads (General): https://docs.alliancecan.ca/wiki/Pthreads/en
 - PyKeOps (General): https://docs.alliancecan.ca/wiki/PyKeOps/en
 - PyRETIS (General): https://docs.alliancecan.ca/wiki/PyRETIS/en
-- PyTorch (General): https://docs.alliancecan.ca/wiki/PyTorch/en
 - PyTorch (General): https://docs.alliancecan.ca/wiki/PyTorch
+- PyTorch/en (General): https://docs.alliancecan.ca/wiki/PyTorch/en
 - Python (General): https://docs.alliancecan.ca/wiki/Python/en
 - QGIS (General): https://docs.alliancecan.ca/wiki/QGIS
 - QIIME (General): https://docs.alliancecan.ca/wiki/QIIME/en
@@ -329,7 +330,7 @@
 - Rorqual/en (General): https://docs.alliancecan.ca/wiki/Rorqual/en
 - Running jobs/en (General): https://docs.alliancecan.ca/wiki/Running_jobs/en
 - Rust (General): https://docs.alliancecan.ca/wiki/Rust/en
-- SAIGE (General): https://docs.alliancecan.ca/wiki/SAIGE/en
+- SAIGE/en (General): https://docs.alliancecan.ca/wiki/SAIGE/en
 - SAS (General): https://docs.alliancecan.ca/wiki/SAS
 - SQLite (General): https://docs.alliancecan.ca/wiki/SQLite/en
 - SSH (General): https://docs.alliancecan.ca/wiki/SSH/en
@@ -356,7 +357,7 @@
 - Star-CCM+ (General): https://docs.alliancecan.ca/wiki/Star-CCM%2B/en
 - Star-CCM+ (General): https://docs.alliancecan.ca/wiki/Star-CCM%2B
 - Stata (General): https://docs.alliancecan.ca/wiki/Stata
-- Storage and file management (General): https://docs.alliancecan.ca/wiki/Storage_and_file_management/en
+- Storage and file management/en (General): https://docs.alliancecan.ca/wiki/Storage_and_file_management/en
 - Structure (General): https://docs.alliancecan.ca/wiki/Structure/en
 - SubatomicPhysics (General): https://docs.alliancecan.ca/wiki/SubatomicPhysics/en
 - Symbolic algebra software (General): https://docs.alliancecan.ca/wiki/Symbolic_algebra_software/en
@@ -382,6 +383,7 @@
 - Transferring files with Aspera Connect/ascp (General): https://docs.alliancecan.ca/wiki/Transferring_files_with_Aspera_Connect/ascp/en
 - Transition from Niagara to Trillium (General): https://docs.alliancecan.ca/wiki/Transition_from_Niagara_to_Trillium/en
 - Transpileur quantique (General): https://docs.alliancecan.ca/wiki/Transpileur_quantique/en
+- Trillium (General): https://docs.alliancecan.ca/wiki/Trillium
 - Trillium Open OnDemand Quickstart (General): https://docs.alliancecan.ca/wiki/Trillium_Open_OnDemand_Quickstart
 - Trillium Open OnDemand Quickstart/en (General): https://docs.alliancecan.ca/wiki/Trillium_Open_OnDemand_Quickstart/en
 - Trillium Quickstart (General): https://docs.alliancecan.ca/wiki/Trillium_Quickstart/en
@@ -390,7 +392,7 @@
 - Tutoriel Apprentissage machine (General): https://docs.alliancecan.ca/wiki/Tutoriel_Apprentissage_machine/en
 - User roles to access resources and services of the Alliance Federation (User Guide): https://docs.alliancecan.ca/wiki/User_roles_to_access_resources_and_services_of_the_Alliance_Federation/en
 - Using Conda in Apptainer/en (General): https://docs.alliancecan.ca/wiki/Using_Conda_in_Apptainer/en
-- Using GPUs with Slurm (General): https://docs.alliancecan.ca/wiki/Using_GPUs_with_Slurm/en
+- Using GPUs with Slurm/en (General): https://docs.alliancecan.ca/wiki/Using_GPUs_with_Slurm/en
 - Using Nix (General): https://docs.alliancecan.ca/wiki/Using_Nix
 - Using Nix: nix-env (Using Nix): https://docs.alliancecan.ca/wiki/Using_Nix:_nix-env
 - Using SSH keys in Linux (General): https://docs.alliancecan.ca/wiki/Using_SSH_keys_in_Linux/en

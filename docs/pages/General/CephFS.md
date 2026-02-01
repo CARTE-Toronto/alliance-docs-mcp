@@ -1,9 +1,9 @@
 ---
-title: "CephFS"
-url: "https://docs.alliancecan.ca/wiki/CephFS"
+title: "CephFS/en"
+url: "https://docs.alliancecan.ca/wiki/CephFS/en"
 category: "General"
-last_modified: "2026-01-07T14:08:19Z"
-page_id: 16840
+last_modified: "2026-01-21T14:04:10Z"
+page_id: 20857
 display_title: "CephFS"
 ---
 
@@ -41,7 +41,7 @@ If you do not already have a quota for the service, you will need to request thi
 
 ; Note the share details which you will need later.
 : In Project --> Share --> Shares, click on the name of the share.
-: In the Share Overview, note the three elements circled in red in the image above: Path, which will be used in the  mount command on the VM, the Access to, which will be the client name and the Access Key that will let the VM's client connect.
+: In the Share Overview, note the three elements circled in red in the image above: Path, which will be used in the  mount command on the VM; the Access to, which will be the client name; and the Access Key that will let the VM's client connect.
 
 == Attach the CephFS network to your VM ==
 
@@ -134,7 +134,7 @@ Look for Project --> Share --> Shares, then click on the name of the share.
 
 Notice the non-standard : before the device path. It is not a typo!
 The mount options are different on different systems.
-The namespace option is required for SD4H/Juno, while other options are performance tweaks.
+The namespace option is required for SD4H/Juno, while other options are performance tweaks.  The nofail option ensures that the system will boot even in the unlikely case that the CephFS service is down or unreachable.
 
 You can also do the mount directly from the command line:
 
