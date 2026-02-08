@@ -2,7 +2,7 @@
 title: "Globus/en"
 url: "https://docs.alliancecan.ca/wiki/Globus/en"
 category: "General"
-last_modified: "2026-01-09T20:42:32Z"
+last_modified: "2026-01-29T14:35:28Z"
 page_id: 222
 display_title: "Globus"
 ---
@@ -102,7 +102,7 @@ Globus sharing makes collaboration with your colleagues easy. Sharing enables pe
 Verify in the table below that the system hosting your files has sharing enabled.
 
 System                  	Sharing enabled
-Niagara                 	No.
+Trillium                	No.
 General-purpose clusters	In: /home, yes (except on Rorqual)./scratch, no (except on Narval)./project, on demand (see below).
 
 On general-purpose clusters, Globus sharing is enabled for the /home directory, except on the Rorqual cluster. If you would like to test a Globus share you can create one in your /home directory.
@@ -110,6 +110,7 @@ On general-purpose clusters, Globus sharing is enabled for the /home directory, 
 By default, we disable sharing on /project to prevent users accidentally sharing other users' files. To enable sharing on /project, the PI needs to contact globus@tech.alliancecan.ca with:
 
 * confirmation that Globus sharing should be enabled,
+* the name of the cluster,
 * the path to enable,
 * whether the sharing will be read only, or sharing if it can be read and write.
 

@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-02-01T06:37:32.378763+00:00",
-  "total_pages": 436,
+  "last_updated": "2026-02-08T06:38:04.917713+00:00",
+  "total_pages": 437,
   "pages": [
     {
       "page_id": 10049,
@@ -958,10 +958,10 @@
     },
     {
       "page_id": 27324,
-      "title": "Dask",
+      "title": "Dask/en",
       "url": "https://docs.alliancecan.ca/wiki/Dask/en",
       "category": "General",
-      "last_modified": "2025-05-30T08:34:16Z",
+      "last_modified": "2026-01-28T14:35:21Z",
       "file_path": "docs/pages/General/Dask.md",
       "slug": "Dask"
     },
@@ -1357,7 +1357,7 @@
       "title": "Globus/en",
       "url": "https://docs.alliancecan.ca/wiki/Globus/en",
       "category": "General",
-      "last_modified": "2026-01-09T20:42:32Z",
+      "last_modified": "2026-01-29T14:35:28Z",
       "file_path": "docs/pages/General/Globus.md",
       "slug": "Globus"
     },
@@ -1609,7 +1609,7 @@
       "title": "JupyterLab/en",
       "url": "https://docs.alliancecan.ca/wiki/JupyterLab/en",
       "category": "General",
-      "last_modified": "2026-01-08T16:15:02Z",
+      "last_modified": "2026-01-30T15:54:28Z",
       "file_path": "docs/pages/General/JupyterLab.md",
       "slug": "JupyterLab"
     },
@@ -3094,7 +3094,7 @@
       "title": "TamIA/en",
       "url": "https://docs.alliancecan.ca/wiki/TamIA/en",
       "category": "General",
-      "last_modified": "2026-01-14T21:11:02Z",
+      "last_modified": "2026-01-29T14:36:01Z",
       "file_path": "docs/pages/General/TamIA.md",
       "slug": "TamIA"
     },
@@ -3265,7 +3265,7 @@
       "title": "Trillium/en",
       "url": "https://docs.alliancecan.ca/wiki/Trillium/en",
       "category": "General",
-      "last_modified": "2026-01-14T13:03:03Z",
+      "last_modified": "2026-01-29T14:36:01Z",
       "file_path": "docs/pages/General/Trillium.md",
       "slug": "Trillium"
     },
@@ -3319,7 +3319,7 @@
       "title": "Using GPUs with Slurm/en",
       "url": "https://docs.alliancecan.ca/wiki/Using_GPUs_with_Slurm/en",
       "category": "General",
-      "last_modified": "2026-01-31T13:12:51Z",
+      "last_modified": "2026-02-02T13:09:02Z",
       "file_path": "docs/pages/General/Using_GPUs_with_Slurm.md",
       "slug": "Using_GPUs_with_Slurm"
     },
@@ -3925,6 +3925,15 @@
       "last_modified": "2024-10-16T16:55:03Z",
       "file_path": "docs/pages/General/AI_and_Machine_Learning.md",
       "slug": "AI_and_Machine_Learning"
+    },
+    {
+      "page_id": 5690,
+      "title": "COMSOL",
+      "url": "https://docs.alliancecan.ca/wiki/COMSOL",
+      "category": "General",
+      "last_modified": "2026-02-06T17:40:33Z",
+      "file_path": "docs/pages/General/COMSOL.md",
+      "slug": "COMSOL"
     }
   ]
 }

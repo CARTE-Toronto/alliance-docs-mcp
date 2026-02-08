@@ -2,7 +2,7 @@
 title: "JupyterLab/en"
 url: "https://docs.alliancecan.ca/wiki/JupyterLab/en"
 category: "General"
-last_modified: "2026-01-08T16:15:02Z"
+last_modified: "2026-01-30T15:54:28Z"
 page_id: 15666
 display_title: "JupyterLab"
 ---
@@ -273,3 +273,13 @@ In your submission script, run your converted notebook with:
 python my-current-notebook.py
 
 And submit your non-interactive job:
+
+= Troubleshooting =
+== ERROR: Could not install packages due to an OSError: [Errno 30] Read-only file system ==
+When installing packages in your notebook, you may run into an error where pip tries to uninstall a package in a read-only location.
+
+For many cases, in your notebook cell, you can use:
+
+to install the package that caused the error but note it may not work for all packages for instance pyarrow, opencv, mpi4py.
+
+In case of questions, please contact us: Technical support

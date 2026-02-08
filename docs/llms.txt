@@ -1,6 +1,6 @@
 # Alliance Documentation - Page Directory
-# Generated: 2026-02-01T06:37:32.385523+00:00
-# Total pages: 436
+# Generated: 2026-02-08T06:38:04.924250+00:00
+# Total pages: 437
 
 - A tutorial on 'tar' (User Guide): https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/en
 - ABINIT (General): https://docs.alliancecan.ca/wiki/ABINIT/en
@@ -71,6 +71,7 @@
 - CESM (General): https://docs.alliancecan.ca/wiki/CESM
 - CFOUR (General): https://docs.alliancecan.ca/wiki/CFOUR/en
 - CMake (General): https://docs.alliancecan.ca/wiki/CMake/en
+- COMSOL (General): https://docs.alliancecan.ca/wiki/COMSOL
 - COMSOL/en (General): https://docs.alliancecan.ca/wiki/COMSOL/en
 - COVID19 related requests (General): https://docs.alliancecan.ca/wiki/COVID19_related_requests/en
 - CP2K (General): https://docs.alliancecan.ca/wiki/CP2K/en
@@ -115,7 +116,7 @@
 - DL POLY (General): https://docs.alliancecan.ca/wiki/DL_POLY/en
 - Dalton (General): https://docs.alliancecan.ca/wiki/Dalton/en
 - Dar (General): https://docs.alliancecan.ca/wiki/Dar/en
-- Dask (General): https://docs.alliancecan.ca/wiki/Dask/en
+- Dask/en (General): https://docs.alliancecan.ca/wiki/Dask/en
 - Data backup and restoration (General): https://docs.alliancecan.ca/wiki/Data_backup_and_restoration
 - Data management at Niagara (General): https://docs.alliancecan.ca/wiki/Data_management_at_Niagara/en
 - Data protection, privacy, and confidentiality (General): https://docs.alliancecan.ca/wiki/Data_protection,_privacy,_and_confidentiality/en

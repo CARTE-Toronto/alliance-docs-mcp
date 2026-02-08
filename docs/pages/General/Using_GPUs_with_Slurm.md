@@ -2,7 +2,7 @@
 title: "Using GPUs with Slurm/en"
 url: "https://docs.alliancecan.ca/wiki/Using_GPUs_with_Slurm/en"
 category: "General"
-last_modified: "2026-01-31T13:12:51Z"
+last_modified: "2026-02-02T13:09:02Z"
 page_id: 4369
 display_title: "Using GPUs with Slurm"
 ---
@@ -16,7 +16,7 @@ For example:
   --gpus-per-node=a100:1
 
 This requests a single A100 GPU (unless you also use --nodes to specify more than a single node).
-See the following section, Available GPUs, for valid models.
+See the following section, Available GPUs, for valid model specifiers.
 
 The following form can also be used:
   --gres=gpu::
@@ -27,7 +27,7 @@ Slurm supports a variety of other directives that you can use to request GPU res
 For general advice on job scheduling, see Running jobs.
 
 = Available GPUs =
-The following table summarizes the available GPU models:
+The following table summarizes the available GPU models and their corresponding specifiers:
 
 Cluster  	GPU model   	Model specifiersfor Slurm    	Notes
 Fir      	H100-80gb   	h100
@@ -56,19 +56,19 @@ tamIA    	H200        	h200                         	 
 Vulcan   	L40S-48gb   	l40s                         	 
 Vulcan
 
-GPU models (including MIGs models) available on any given cluster can be obtained from Slurm with the following command.
+GPU model specifiers (including MIG specifiers) available on any given cluster can be obtained from Slurm with the following command.
 This may be useful if the table above has not been updated with the latest changes.
 
 grep gpused 's/gpu://g'sed 's/),/\n/g'cut -d: -f1sortuniq}}
 
-There are short synonyms available for some of the MIG models at certain sites; this command will not provide those synonyms.
-Also, the presence of a GPU model does not guarantee that you will be able to use that model in your jobs; there may be
-further restrictions on what models are available based on (for example) which to research group you belong.
+There are short synonyms available for some of the MIG specifiers at certain sites; this command will not provide those synonyms.
+Also, the presence of a GPU model does not guarantee that you will be able to use one of the corresponding specifiers in your jobs; there may be
+further restrictions on what model specifiers are available based on (for example) which research group you belong.
 For further information see the site-specific page by clicking on the cluster name in the above table, or contact support.
 
-If you do not supply a model specifier your job may be rejected or it may be sent to an arbitrary GPU model.
+If you do not supply a model specifier your job may be rejected or it may be sent to an arbitrary GPU instance.
 There are very few programs which can use an arbitrary GPU efficiently,
-so we strongly recommend that you always request a specific GPU model.
+so we strongly recommend that you always provide a specific GPU model specifier in your job scripts.
 
 There are GPUs available at Arbutus, but like other cloud resources they cannot be scheduled via Slurm.
 See Cloud resources for more details.
@@ -124,7 +124,7 @@ With this method, you can run multiple tasks in one submission. The -j4 paramete
 On Narval and Rorqual, profiling is possible but requires disabling the
 NVIDIA Data Center GPU Manager (DCGM). This must be done during job submission by setting the DISABLE_DCGM environment variable:
 
-1 salloc --accountdef-someuser --gpus-per-node1 --mem4000M --time03:00}}
+1 salloc --accountdef-someuser --gpus-per-nodea100:1 --mem4000M --time03:00}}
 
 Then, in your interactive job, wait until DCGM is disabled on the node:
  grep 'Hostengine build info:')" ]; do  sleep 5; done}}

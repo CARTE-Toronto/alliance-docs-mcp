@@ -1,9 +1,9 @@
 ---
-title: "COMSOL/en"
-url: "https://docs.alliancecan.ca/wiki/COMSOL/en"
+title: "COMSOL"
+url: "https://docs.alliancecan.ca/wiki/COMSOL"
 category: "General"
-last_modified: "2026-01-07T14:08:31Z"
-page_id: 6233
+last_modified: "2026-02-06T17:40:33Z"
+page_id: 5690
 display_title: "COMSOL"
 ---
 
@@ -34,11 +34,17 @@ Researchers who own a COMSOL license subscription from CMC should use the follow
 * Trillium: SERVER scinet-cmc ANY 6601
 
 For example, a license file created on Nibi cluster would look as follows:
- [l2:~] cat ~/.licenses/comsol.lic
+ [l2 (login node):~] cat ~/.licenses/comsol.lic
  SERVER 10.25.1.56 ANY 6601
  USE_SERVER
 
 If initial license checkout attempts fail, create a support case with CMC
+
+== Checking license use ==
+
+To determine the number of licenses checked out by your running comsol job(s) it is necessary to queury the licence server that you are using.  As described | here this maybe done using the lmstat command. However as this command is not installed with Comsol by default, the following one liner workaround which uses lmutil from the latest installed ansys module maybe run on any cluster login node instead.  As long as you rely upon the standard ~/.licenses/comsol.lic to define which license server you are using, it should work though may take a minute to return if the server is busy :
+
+  [l2 (login-node):~] module load ansys; $EBROOTANSYS/v$(echo ${EBVERSIONANSYS:2:2}${EBVERSIONANSYS:5:1})/licensingclient/linx64/lmutil lmstat -c ~/.licenses/comsol.lic -a | sed '/^$/d' | egrep 'License|UP|$USER|Total of'  | grep -v 'Total of 0'
 
 == Installed products ==
 
@@ -72,57 +78,34 @@ Note 1: If your multiple node job crashes on startup with a java segmentation fa
  sed -i 's/-Xmx2g/-Xmx4g/g' comsolbatch.ini
  sed -i 's/-Xmx768m/-Xmx4g/g' java.opts
 
-Note 2:  On Narval, jobs may run slow when submitted with comsol/6.0.0.405 to multiple nodes using the above Slurm script.  If this occurs, use comsol/6.0 instead and open a ticket to report the problem. The latest comsol/6.1.X modules have not been tested on Narval yet.
-
-Note 3:  On Graham, there is a small chance jobs will run slow or hang during startup when submitted to a single node with the above script-smp.sh script.  If this occurs, use the multiple node script-dis.sh script instead adding #SBATCH --nodes=1 and then open a ticket to report the problem.
+Note: If a job runs slow or hangs during startup when submitted to a single node with the above script-smp.sh script, try using the above multiple node script-dis.sh script instead with #SBATCH --nodes=1 and then please open a ticket to report the problem including the job number and cluster name.
 
 = Graphical use =
 
-COMSOL can be run interactively in full graphical mode using either of the following methods.
+To run comsol in graphical mode open a remote desktop on an OnDemand or JupyterLab system by clicking one of the following links.  Note that the old approach of using a TigerVNC client/server pair should still work but is no longer recommended or supported.  For either approach  ~/.licenses/comsol.lic must first be configured.  Note that running command module avail comsol will display which comsol versions are available within the StdEnv version that you currently have loaded ie) StdEnv/2023 .  If you find the upper menu items are greyed out and not clickable after starting COMSOL in GUI mode then your ~/.comsol maybe corrupted so try deleting it.
 
-== On cluster nodes ==
+== OnDemand ==
+1. Start an OnDemand desktop session by clicking one of the following OnDemand links
+ NIBI: https://ondemand.sharcnet.ca
+ TRILLIUM: https://ondemand.scinet.utoronto.ca
+2. Open a new terminal window in your desktop and run one of:
+: COMSOL 6.2 (or newer versions)
+:: module load StdEnv/2023  (default)
+:: module load comsol/6.4
+:: comsol
+: COMSOL 6.1 (or older versions)
+:: module load StdEnv/2020  (default)
+:: module load comsol/6.1
+:: comsol
 
-Suitable to interactively run computationally intensive test jobs using ALL available cores and memory reserved by salloc on a single cluster compute node:
-
-: 1) Connect to a compute node (3-hour time limit) with TigerVNC.
-: 2) Open a terminal window in vncviewer and run:
-::;  export XDG_RUNTIME_DIR=${SLURM_TMPDIR}
-: 3) Start COMSOL Multiphysics 6.2 (or newer versions).
-::; module load StdEnv/2023
-::; module load comsol/6.3
-::; comsol
-: 4) Start COMSOL Multiphysics 5.6 (or newer versions).
-::; module load StdEnv/2020
-::; module load comsol/5.6
-::; comsol
-: 5) Start COMSOL Multiphysics 5.5 (or older versions).
-::; module load StdEnv/2016
-::; module load comsol/5.5
-::; comsol
-
-== On VDI nodes ==
-
-Suitable interactive use on gra-vdi includes: running compute calculations with a maximum of 12 cores and 128GB memory, creating or modifying simulation input files, performing post-processing or data visualization tasks.  If you need more cores or memory when working in graphical mode, use COMSOL on a cluster compute node (as shown above) where you can reserve up to all available cores and/or memory on the node.
-
-: 1) Connect to gra-vdi (no time limit) with TigerVNC.
-: 2) Open a terminal window in vncviewer.
-: 3) Start COMSOL Multiphysics 6.2 (or newer versions).
-::; module load CcEnv StdEnv/2023
-::; module avail comsol
-::; module load comsol/6.3
-::; comsol -np 12 -Dosgi.locking=none
-: 4) Start COMSOL Multiphysics 6.2 (or older versions).
-::; module load CcEnv StdEnv/2020
-::; module avail comsol
-::; module load comsol/5.6
-::; comsol -np 12 -Dosgi.locking=none
-: 5) Start COMSOL Multiphysics 5.5 (or older versions).
-::; module load CcEnv StdEnv/2016
-::; module avail comsol
-::; module load comsol/5.5
-::; comsol -np 12 -Dosgi.locking=none
-
-Note: If all the upper menu items are greyed out immediately after COMSOL starts in GUI mode, and are therefore not clickable, your ~/.comsol maybe corrupted.  To fix the problem rename or remove it by running rm -rf ~/.comsol and try starting COMSOL again.  This may occur if you previously loaded a COMSOL module from the SnEnv on gra-vdi.
+== JupyterLab ==
+1. Start a JupyterHub desktop session by clicking one of the following JupyterHub links
+ FIR: https://jupyterhub.fir.alliancecan.ca
+ NARVAL:  https://portail.narval.calculquebec.ca/
+ RORQUAL: https://jupyterhub.rorqual.alliancecan.ca
+2. Highlight a comsol module such as comsol/6.4 in the left hand side Available Module section
+3. Click Load for the highlighted module and a Comsol (VNC) Icon will appear in desktop
+4. Click the Icon and comsol should automatically be started in a remote Juypter desktop
 
 =Parameter sweeps=
 
