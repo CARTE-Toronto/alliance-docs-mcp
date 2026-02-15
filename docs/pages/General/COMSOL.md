@@ -1,9 +1,9 @@
 ---
-title: "COMSOL"
-url: "https://docs.alliancecan.ca/wiki/COMSOL"
+title: "COMSOL/en"
+url: "https://docs.alliancecan.ca/wiki/COMSOL/en"
 category: "General"
-last_modified: "2026-02-06T17:40:33Z"
-page_id: 5690
+last_modified: "2026-02-04T11:57:02Z"
+page_id: 6233
 display_title: "COMSOL"
 ---
 
@@ -34,17 +34,11 @@ Researchers who own a COMSOL license subscription from CMC should use the follow
 * Trillium: SERVER scinet-cmc ANY 6601
 
 For example, a license file created on Nibi cluster would look as follows:
- [l2 (login node):~] cat ~/.licenses/comsol.lic
+ [l2:~] cat ~/.licenses/comsol.lic
  SERVER 10.25.1.56 ANY 6601
  USE_SERVER
 
 If initial license checkout attempts fail, create a support case with CMC
-
-== Checking license use ==
-
-To determine the number of licenses checked out by your running comsol job(s) it is necessary to queury the licence server that you are using.  As described | here this maybe done using the lmstat command. However as this command is not installed with Comsol by default, the following one liner workaround which uses lmutil from the latest installed ansys module maybe run on any cluster login node instead.  As long as you rely upon the standard ~/.licenses/comsol.lic to define which license server you are using, it should work though may take a minute to return if the server is busy :
-
-  [l2 (login-node):~] module load ansys; $EBROOTANSYS/v$(echo ${EBVERSIONANSYS:2:2}${EBVERSIONANSYS:5:1})/licensingclient/linx64/lmutil lmstat -c ~/.licenses/comsol.lic -a | sed '/^$/d' | egrep 'License|UP|$USER|Total of'  | grep -v 'Total of 0'
 
 == Installed products ==
 
@@ -82,11 +76,14 @@ Note: If a job runs slow or hangs during startup when submitted to a single node
 
 = Graphical use =
 
-To run comsol in graphical mode open a remote desktop on an OnDemand or JupyterLab system by clicking one of the following links.  Note that the old approach of using a TigerVNC client/server pair should still work but is no longer recommended or supported.  For either approach  ~/.licenses/comsol.lic must first be configured.  Note that running command module avail comsol will display which comsol versions are available within the StdEnv version that you currently have loaded ie) StdEnv/2023 .  If you find the upper menu items are greyed out and not clickable after starting COMSOL in GUI mode then your ~/.comsol maybe corrupted so try deleting it.
+To run comsol in graphical mode open a remote desktop on an OnDemand or JupyterLab system.  The old approach of using a TigerVNC client/server pair should still work but is no longer recommended or supported.  For either approach  ~/.licenses/comsol.lic must first be configured.  Note that running command module avail comsol will display which comsol versions are available within the StdEnv version that you currently have loaded ie) StdEnv/2023 .  Alternatively, running module spider starccm-mixed will show all available comsol module versions available within all StdEnv module versions.   If you find the upper menu items are greyed out and not clickable after starting COMSOL in GUI mode then your ~/.comsol maybe corrupted so try deleting it.
 
 == OnDemand ==
-1. Start an OnDemand desktop session by clicking one of the following OnDemand links
+1. Connect to an OnDemand system using one of the following URLs in your laptop browser :
  NIBI: https://ondemand.sharcnet.ca
+ FIR: https://jupyterhub.fir.alliancecan.ca
+ NARVAL:  https://portail.narval.calculquebec.ca/
+ RORQUAL: https://jupyterhub.rorqual.alliancecan.ca
  TRILLIUM: https://ondemand.scinet.utoronto.ca
 2. Open a new terminal window in your desktop and run one of:
 : COMSOL 6.2 (or newer versions)
@@ -97,15 +94,6 @@ To run comsol in graphical mode open a remote desktop on an OnDemand or JupyterL
 :: module load StdEnv/2020  (default)
 :: module load comsol/6.1
 :: comsol
-
-== JupyterLab ==
-1. Start a JupyterHub desktop session by clicking one of the following JupyterHub links
- FIR: https://jupyterhub.fir.alliancecan.ca
- NARVAL:  https://portail.narval.calculquebec.ca/
- RORQUAL: https://jupyterhub.rorqual.alliancecan.ca
-2. Highlight a comsol module such as comsol/6.4 in the left hand side Available Module section
-3. Click Load for the highlighted module and a Comsol (VNC) Icon will appear in desktop
-4. Click the Icon and comsol should automatically be started in a remote Juypter desktop
 
 =Parameter sweeps=
 

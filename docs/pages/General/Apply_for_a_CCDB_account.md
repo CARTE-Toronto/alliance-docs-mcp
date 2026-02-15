@@ -1,15 +1,15 @@
 ---
-title: "Apply for a CCDB account/en"
-url: "https://docs.alliancecan.ca/wiki/Apply_for_a_CCDB_account/en"
+title: "Apply for a CCDB account"
+url: "https://docs.alliancecan.ca/wiki/Apply_for_a_CCDB_account"
 category: "General"
-last_modified: "2025-08-15T17:34:03Z"
-page_id: 29533
+last_modified: "2026-02-06T19:28:03Z"
+page_id: 29471
 display_title: "Apply for a CCDB account"
 ---
 
 Users must register with the CCDB portal in order to access the resources hosted across Canada by the Alliance and its regional partners, collectively known as the Alliance Federation. ﻿CCDB is a gateway to account and allocation information for Advanced Computing Platform managed through the Digital Research Alliance of Canada (the Alliance). The CCDB was established to share information between the Alliance and its regional partners and users can access all of the available resources with their CCDB account.
 
-Any faculty member at a Canadian university is eligible to register and, once registered, can sponsor the students, research staff and collaborators working on their research projects.
+Any faculty member at a CFI-eligible Canadian university is eligible to register and, once registered, can sponsor the students, research staff and collaborators working on their research projects.
 
 Researchers coming from government, non-profits, and industry may also be eligible to use Federation resources. These inquiries should be directed to accounts@tech.alliancecan.ca.
 

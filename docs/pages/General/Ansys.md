@@ -1,9 +1,9 @@
 ---
-title: "Ansys/en"
-url: "https://docs.alliancecan.ca/wiki/Ansys/en"
+title: "Ansys"
+url: "https://docs.alliancecan.ca/wiki/Ansys"
 category: "General"
-last_modified: "2026-01-21T14:03:10Z"
-page_id: 4948
+last_modified: "2026-02-06T18:51:31Z"
+page_id: 4568
 display_title: "Ansys"
 ---
 
@@ -23,15 +23,13 @@ The following table provides established values for the CMC and SHARCNET license
 
  TABLE: Preconfigured license servers
 
-License 	System/Cluster	LICSERVER                	FLEXPORT	NOTES
-CMC     	fir           	172.26.0.101             	6624    	None
-CMC     	narval/rorqual	10.100.64.10             	6624    	None
-CMC     	nibi          	10.25.1.56               	6624    	NewIP Feb21/2025
-CMC     	trillium      	scinet-cmc               	6624    	None
-SHARCNET	fir           	license1.computecanada.ca	1055    	Currently NOT working
-SHARCNET	narval/rorqual	license3.sharcnet.ca     	1055    	Supports <= ansys/2024R2.04
-SHARCNET	nibi          	license1.computecanada.ca	1055    	Supports <= ansys/2025R1.02
-SHARCNET	trillium      	localhost                	1055    	Currently NOT working
+License 	System/Cluster         	LICSERVER                	FLEXPORT	NOTES
+CMC     	fir                    	172.26.0.101             	6624    	Discontinue Use (to be shutdown)
+CMC     	narval/rorqual         	10.100.64.10             	6624    	Discontinue Use (to be shutdown)
+CMC     	nibi                   	10.25.1.56               	6624    	Discontinue Use (to be shutdown)
+CMC     	trillium               	scinet-cmc               	6624    	Discontinue Use (to be shutdown)
+SHARCNET	nibi/fir/narval/rorqual	license1.computecanada.ca	1055    	Supports <= ansys/2025R1.02
+SHARCNET	trillium               	localhost                	1055    	Undergoing Testing (not ready for use)
 
 Researchers who purchase a new CMC license subscription must submit your Alliance account username otherwise license checkouts will fail. The number of cores that can be used with a CMC license is described in the Other Tricks and Tips sections of the Ansys Electronics Desktop and  Ansys Mechanical/Fluids quick start guides.
 
@@ -68,10 +66,10 @@ If Fail is output then jobs will likely fail requiring a problem ticket to be su
 
 Ansys simulations are typically forward compatible but NOT backwards compatible.  This means that simulations created using an older version of Ansys can be expected to load and run fine with any newer version.  For example, a simulation created and saved with ansys/2022R2 should load and run smoothly with ansys/2023R2 but NOT the other way around.  While it may be possible to start a simulation running with an older version random error messages or crashing will likely occur.  Regarding Fluent simulations, if you cannot recall which version of ansys was used to create your cas file try grepping it as follows to look for clues :
 
- $ grep -ia fluent combustor.cas
+$ grep -ia fluent combustor.cas
    (0 "fluent15.0.7  build-id: 596")
 
- $ grep -ia fluent cavity.cas.h5
+$ grep -ia fluent cavity.cas.h5
    ANSYS_FLUENT 24.1 Build 1018
 
 == Platform support ==
@@ -150,17 +148,17 @@ The first step is to transfer your User-Defined Function or UDF (namely the samp
 
 To tell fluent to interpret your UDF at runtime, add the following command line into your journal file before the cas/dat files are read or initialized. The filename sampleudf.c should be replaced with the name of your source file.  The command remains the same regardless if the simulation is being run in serial or parallel.  To ensure the UDF can be found in the same directory as the journal file, open your cas file in the fluent gui, remove any managed definitions and resave it.   Doing this will ensure only the following command/method is in control when fluent runs. To use an interpreted UDF with parallel jobs, it will need to be parallelized as described in the section below.
 
- define/user-defined/interpreted-functions "sampleudf.c" "cpp" 10000 no
+define/user-defined/interpreted-functions "sampleudf.c" "cpp" 10000 no
 
 ==== Compiled ====
 
 To use this approach, your UDF must be compiled on an Alliance cluster at least once.  Doing so will create a libudf subdirectory structure containing the required libudf.so shared library.   The libudf directory cannot simply be copied from a remote system (such as your laptop) to the Alliance since the library dependencies of the shared library will not be satisfied, resulting in fluent crashing on startup.  That said, once you have compiled your UDF on an Alliance cluster, you can transfer the newly created libudf to any other Alliance cluster, providing your account loads the same StdEnv environment module version.  Once copied, the UDF can be used by uncommenting the second (load) libudf line below in your journal file when submitting jobs to the cluster.  Both (compile and load) libudf lines should not be left uncommented in your journal file when submitting jobs on the cluster, otherwise your UDF will automatically (re)compiled for each and every job.  Not only is this highly inefficient, but it will also lead to racetime-like build conflicts if multiple jobs are run from the same directory. Besides configuring your journal file to build your UDF, the fluent gui (run on any cluster compute node or gra-vdi) may also be used.  To do this, you would navigate to the Compiled UDFs Dialog Box, add the UDF source file and click Build.   When using a compiled UDF with parallel jobs, your source file should be parallelized as discussed in the section below.
 
- define/user-defined/compiled-functions compile libudf yes sampleudf.c "" ""
+define/user-defined/compiled-functions compile libudf yes sampleudf.c "" ""
 
 and/or
 
- define/user-defined/compiled-functions load libudf
+define/user-defined/compiled-functions load libudf
 
 ==== Parallel ====
 
@@ -213,7 +211,7 @@ In the following slurm scripts, lines beginning with ##SBATCH are commented.
 
 Ansys allocates 1024 MB total memory and 1024 MB database memory by default for APDL jobs. These values can be manually specified (or changed) by adding arguments -m 1024 and/or -db 1024 to the mapdl command line in the above scripts. When using a remote institutional license server with multiple Ansys licenses, it may be necessary to add -p aa_r or -ppf anshpc, depending on which Ansys module you are using. As always, perform detailed scaling tests before running production jobs to ensure that the optimal number of cores and minimum amount memory is specified in your scripts. The single node (SMP Shared Memory Parallel) scripts will typically perform better than the multinode (DIS Distributed Memory Parallel) scripts and therefore should be used whenever possible. To help avoid compatibility issues the Ansys module loaded in your script should ideally match the version used to generate the input file:
 
-  [gra-login2:~/testcase] cat YOURAPDLFILE.inp | grep version
+ [gra-login2:~/testcase] cat YOURAPDLFILE.inp | grep version
  ! ANSYS input file written by Workbench version 2019 R3
 
 == Rocky ==
@@ -232,40 +230,48 @@ Slurm scripts for using AnsysEDT is provided in a separate wiki page here.
 
 To run Ansys programs in graphical mode click on one of the following OnDemand or Jupyterhub links.  A job submission web page to configure the resources for an interactive session should appear in your browser :
 
- NIBI: https://ondemand.sharcnet.ca
+NIBI: https://ondemand.sharcnet.ca
  FIR: https://jupyterhub.fir.alliancecan.ca
  RORQUAL: https://jupyterhub.rorqual.alliancecan.ca
  NARVAL:  https://jupyterhub.narval.alliancecan.ca/
  TRILLIUM: https://ondemand.scinet.utoronto.ca
 
-Submit your resource request and then wait.  If you started a Juypter Lab launcher interface then you can simply load an ansys software module from the left side menu and then click one of the ansys icons to start cfx, fluent mapdl or workbench.  Otherwise if you started a Compute/Basic Desktop from the Nibi OnDemand system then you will need to open a terminal window and manually load an ansys module and run one of the following programs from the command line.  For this later case, if your work requires accelerated graphics then either a whole GPU resource (H100 or T4 at the time of this writing) should be requested.  Since the various ansys applications launched in graphical mode behave differently when different ansys module versions are loaded, recommendations for adding command line argument and exporting environment variables for virtualgl or mesa environments have been documented below depending on whether a GPU has been requested or not and wether a On Demand or Juypter Lab system launcher is being used.
+Submit your resource request and then wait.  If you started a Juypter Lab launcher interface then you can simply load an ansys software module from the left side menu and then click one of the ansys icons to start cfx, fluent mapdl or workbench.  Otherwise if you started a Compute/Basic Desktop from the Nibi OnDemand system then you will need to open a terminal window, manually load an ansys module and then type the program name to start it command line.  For this later case, if the application requires accelerated graphics to run properly (for instance for fluent to support 3d rendering) then either a whole GPU resource (H100 or T4 at the time of this writing) should be requested.  Since the various ansys applications launched in graphical mode behave differently when different ansys module versions are loaded, recommendations for adding command line argument and exporting environment variables for virtualgl or mesa environments are suggested below depending on whether a GPU has been requested or not and whether a On Demand or Juypter Lab desktop is being used.
 
 === Fluids ===
 
+This section shows howto start Ansys Fluid applications from the command line of an On Demand Desktop or the convenience Icon's of a Juypter Lab Desktop.
+
 ==== Fluent ====
 
-When starting Fluent from a terminal window command line of an On Demand Desktop or the convenience Icon of a Juypter Lab Desktop the following steps should be done including setting the indicated Environment Variables depending on which type of Compute Node the desktop is being started on (with or without a gpu).
+To start fluent the following steps should be done including setting the indicated Environment Variables depending on which type of Compute Node the desktop is being started on (with or without a gpu).
 
 ::: module load StdEnv/2023 ansys/2025R1
 ::: fluent
 
+In the following steps, when the Fluent Launcher popup selector panel appears, click the Environment Tab and copy/paste the following environment variable settings. Do NOT include the text between the round brackets, these are comments. Also do NOT put the word export in front of the variable names.
+
 Compute Node (no GPU requested) or Basic Desktop
 
-::: In the Fluent Launcher Click the Environment Tab
-::: Copy/paste the following environment variable settings:
-:::: I_MPI_HYDRA_BOOTSTRAP=ssh     (required on nibi)
-:::: HOOPS_PICTURE=opengl2-mesa           (2025R1 or newer)
-:::: HOOPS_PICTURE=null                   (2024R2 or older)
+:::: I_MPI_HYDRA_BOOTSTRAP=ssh            (required on nibi)
+:::: HOOPS_PICTURE=opengl2-mesa           (version 2025R1 or newer)
+:::: HOOPS_PICTURE=null                   (version 2024R2 or older)
 ::: Click the Start button
 
 Compute Node (with GPU requested)
 
-::: In the Fluent Launcher Click the Environment Tab
-::: Copy/paste the following environment variable settings:
+::: When starting an OnDemand Desktop on nibi that requests a GPU you must currently choose a full h100 (80GB) GPU so the required VirtualGL environment variables are automatically setup in the Deskop environment required to enable OpenGL graphics calls to be accelerated with OpenGL.
 :::: I_MPI_HYDRA_BOOTSTRAP=ssh            (required on nibi)
-:::: HOOPS_PICTURE=opengl2                (2025R1 or newer)
-:::: HOOPS_PICTURE=opengl                 (2024R2 or older)
+:::: HOOPS_PICTURE=opengl2                (version 2025R1 or newer)
+:::: HOOPS_PICTURE=opengl                 (version 2024R2 or older)
 ::: Click the Start button
+
+ If I_MPI_HYDRA_BOOTSTRAP=ssh is not set properly on nibi when fluent is started from within OOD Compute Desktop sessions and  intelmpi is used then fluent will crash on startup producing the following error output.  Should this occur completely exit fluent, shutdown workbench and start over again.
+ [mpiexec@g4.nibi.sharcnet] Error: Unable to run bstrap_proxy on g4.nibi.sharcnet (pid 2251587, exit code 256)
+ [mpiexec@g4.nibi.sharcnet] poll_for_event (../../../../../src/pm/i_hydra/libhydra/demux/hydra_demux_poll.c:157): check exit codes error
+ [mpiexec@g4.nibi.sharcnet] HYD_dmx_poll_wait_for_proxy_event (../../../../../src/pm/i_hydra/libhydra/demux/hydra_demux_poll.c:206): poll for  event error
+ [mpiexec@g4.nibi.sharcnet] HYD_bstrap_setup (../../../../../src/pm/i_hydra/libhydra/bstrap/src/intel/i_hydra_bstrap.c:1063): error waiting for event
+ [mpiexec@g4.nibi.sharcnet] Error setting up the bootstrap proxies
 
 ==== CFX ====
 
@@ -285,7 +291,7 @@ The following steps for starting the Mechanical APDL gui from the command line o
 
 === Workbench ===
 
-Note that when starting Fluent from within Workbench the same GPU dependent Environment Variable settings should be specified in the Environment Tabl of the Fluent Launcher that are explained in the Fluids section above when starting fluent from a terminal window command line.
+This sections shows howto start workbench (and optionally fluent) on either an On Demand Desktop or Jupyter Lab Desktop.
 
 ==== On Demand Desktop ====
 
@@ -294,10 +300,31 @@ Compute Node (no GPU requested) or Basic Desktop
 ::: module load StdEnv/2023 ansys/2025R1
 ::: runwb2 -oglmesa
 
+::: To start fluent from within workbench click Fluid Flow (Fluent) in the left hand Analysis Menu, then click Setup in the center canvas Fluid Flow (Fluent) popup.  Once the Fluent Launcher selector panel popup appears, click the Environment Tab and copy/paste the following environment variable settings:
+:::: I_MPI_HYDRA_BOOTSTRAP=ssh            (required on nibi)
+:::: HOOPS_PICTURE=opengl2-mesa                (version 2025R1 or newer)
+:::: HOOPS_PICTURE=null                   (version 2024R2 or older)
+::: Click the Start button
+
 Compute Node (with GPU requested)
+
+For this option to work on nibi, as mentioned in the first paragraph of this section, a full h100(80GB) GPU must be selected from the GPU pulldown when starting the OnDemand desktop session.  This particular GPU selection is required since it the only one (currently) on nibi that will ensure the VirtualGL environment variables required to enable accelerated OpenGL graphics calls are setup in the Deskop environment.  Once your desktop appears, open a terminal window and start workbench as follows :
 
 ::: module load StdEnv/2023 ansys/2025R1
 ::: runwb2
+
+To optionally start fluent from within workbench click Fluid Flow (Fluent) in the left hand Analysis Menu, then click Setup in the center canvas Fluid Flow (Fluent) popup.  Once the Fluent Launcher selector panel popup appears, click the Environment Tab and copy/paste the following environment variable settings.
+::: I_MPI_HYDRA_BOOTSTRAP=ssh            (required on nibi only)
+::: HOOPS_PICTURE=opengl2           (version 2025R1 or newer)
+::: HOOPS_PICTURE=null                   (version 2024R2 or older)
+:: Click the Start button
+
+ If I_MPI_HYDRA_BOOTSTRAP=ssh is not set properly on nibi when fluent is started from within OOD Compute Desktop sessions and  intelmpi is used then fluent will crash on startup produce the following error output.  If this occurs completely exit fluent, shutdown workbench then start again.
+ [mpiexec@g4.nibi.sharcnet] Error: Unable to run bstrap_proxy on g4.nibi.sharcnet (pid 2251587, exit code 256)
+ [mpiexec@g4.nibi.sharcnet] poll_for_event (../../../../../src/pm/i_hydra/libhydra/demux/hydra_demux_poll.c:157): check exit codes error
+ [mpiexec@g4.nibi.sharcnet] HYD_dmx_poll_wait_for_proxy_event (../../../../../src/pm/i_hydra/libhydra/demux/hydra_demux_poll.c:206): poll for  event error
+ [mpiexec@g4.nibi.sharcnet] HYD_bstrap_setup (../../../../../src/pm/i_hydra/libhydra/bstrap/src/intel/i_hydra_bstrap.c:1063): error waiting for event
+ [mpiexec@g4.nibi.sharcnet] Error setting up the bootstrap proxies
 
 ==== Jupyter Lab Desktop ====
 
@@ -349,39 +376,20 @@ Some researchers may prefer to purchase a license subscription from CMC to gain 
 
 ==== License file ====
 
-To use the SHARCNET Ansys license on any Alliance cluster, simply configure your ansys.lic file as follows:
+As of February 2026 the old license3.sharcnet.ca license server has been permanently shutdown.  To use the SHARCNET Ansys license on any Alliance cluster, simply configure your ansys.lic file as follows instead:
 
 [username@cluster:~] cat ~/.licenses/ansys.lic
-setenv("ANSYSLMD_LICENSE_FILE", "1055@license3.sharcnet.ca")
-setenv("ANSYSLI_SERVERS", "2325@license3.sharcnet.ca")
+setenv("ANSYSLMD_LICENSE_FILE", "1055@license1.computecanada.ca")
 
 ==== License query  ====
 
 To show the number of licenses in use by your username and the total in use by all users, run:
 
-ssh graham.computecanada.ca
+ssh nibi.alliancecan.ca
 module load ansys
-lmutil lmstat -c $ANSYSLMD_LICENSE_FILE -a | grep "Users of\|$USER"
+$EBROOTANSYS/v$(echo ${EBVERSIONANSYS:2:2}${EBVERSIONANSYS:5:1})/licensingclient/linx64/lmutil lmstat -c $ANSYSLMD_LICENSE_FILE -a | grep "Users of\|$USER"
 
-If you discover any licenses unexpectedly in use by your username (usually due to ansys not exiting cleanly on gra-vdi), connect to the node where it's running, open a terminal window and run the following command to terminate the rogue processes pkill -9 -e -u $USER -f "ansys" after which your licenses should be freed.  Note that gra-vdi consists of two nodes (gra-vdi3 and gra-vdi4) which researchers are randomly placed on when connecting to gra-vdi.computecanada.ca with TigerVNC.  Therefore it's necessary to specify the full hostname (gra-vdi3.sharcnet.ca or grav-vdi4.sharcnet.ca) when connecting with tigervnc to ensure you log into the correct node before running pkill.
-
-=== Local modules ===
-
-When using gra-vdi, researchers have the choice of loading Ansys modules from our global environment (after loading CcEnv) or loading Ansys modules installed locally on the machine itself (after loading SnEnv).  The local modules may be of interest as they include some Ansys programs and versions not yet supported by the standard environment.  When starting programs from local Ansys modules, you can select the CMC license server or continue to use the SHARCNET license server by default.  Settings from ~/.licenses/ansys.lic are only used when dash gui is appended to the ansys program name for instance fluent-gui instead of simply fluent.  Suitable usage of Ansys on gra-vdi : run a single job interactively (in the gui or from the command line) with up to 8 cores and 128G RAM, create or modify simulation input files, post process or visualize data.  To load and use a local ansys module on gra-vdi do the following:
-
-# Connect to gra-vdi.computecanada.ca with TigerVNC.
-# Open a new terminal window and load a module:
-# module load SnEnv ansys/2024R2 (or older)
-# Directly start one of the following ansys programs from the command line:
-# runwb2[-gui]|fluent[-gui]|cfx5[-gui]|icemcfd[-gui]|apdl[-gui]|Rocky[-gui]
-
-If you run cfx5-gui your ~/.licenses/ansys.lic file will first be read and then you will get the option to instead select the CMC server and finally choose which CFX program will be started in gui mode from the following :
-    1) CFX-Launcher  (cfx5 -> cfx5launch)
-    2) CFX-Pre       (cfx5pre)
-    3) CFD-Post      (cfdpost -> cfx5post)
-    4) CFX-Solver    (cfx5solve)
-
-License feature preferences previously setup with anslic_admin are no longer supported (2021-09-09).  If a license problem occurs, try removing the ~/.ansys directory in your /home account to clear the settings.  If problems persist please contact our technical support and provide the contents of your ~/.licenses/ansys.lic file.
+If you discover any licenses unexpectedly in use by your username (due to ansys not exiting cleanly), connect to the node where it's running, open a terminal window and run the following command to terminate the rogue processes pkill -9 -e -u $USER -f "ansys" after which your licenses should be freed.
 
 = Additive Manufacturing =
 

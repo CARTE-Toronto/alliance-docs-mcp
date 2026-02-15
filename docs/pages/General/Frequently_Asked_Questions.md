@@ -2,7 +2,7 @@
 title: "Frequently Asked Questions/en"
 url: "https://docs.alliancecan.ca/wiki/Frequently_Asked_Questions/en"
 category: "General"
-last_modified: "2024-07-15T19:47:35Z"
+last_modified: "2026-02-06T20:01:02Z"
 page_id: 5091
 display_title: "Frequently Asked Questions"
 ---
@@ -36,96 +36,6 @@ Emacs uses the fsync system call when saving files to reduce the risk of losing 
 (setq write-region-inhibit-fsync t)
 
 More about this setting here: Customize save in Emacs
-
-== Moving files across the project, scratch and home filesystems ==
-On our general purpose clusters, the scratch and home filesystems have quotas that are per-user, while the project filesystem has quotas that are per-project. Because the underlying implementation of quotas on the Lustre filesystem
-is currently based on group ownership of files, it is important to ensure that the files have the right group. On the scratch and home filesystems, the correct group is typically the group with the same name as your username. On the project filesystem, group name should follow the pattern prefix-piusername where prefix is typically one of def, rrg, rpp.
-
-=== Moving files between scratch and home filesystems ===
-Since the quotas of these two filesystems are based on your personal group, you should be able to move files across the two using
-
-=== Moving files from scratch or home filesystems to project ===
-If you want to move files from your scratch or home space into a project space, you should not use the mv command. Instead, we recommend using the regular cp, or the rsync command.
-
-It is very important to run cp and rsync correctly to ensure that the files copied over to the project space have the correct group ownership. With cp, do not use the archive -a option. And when using rsync, make sure you specify the --no-g --no-p options, like so:
-
-Once the files are copied, you can then delete them from your scratch space.
-
-=== Moving files from project to scratch or home filesystems ===
-If you want to move files from your project into your scratch or home space, you should not use the mv command. Instead, we recommend using the regular cp, or the rsync command.
-
-It is very important to run cp and rsync correctly to ensure that the files copied over to the project space have the correct group ownership. With cp, do not use the archive -a option. And when using rsync, make sure you specify the --no-g --no-p options, like so:
-
-=== Moving files between two project spaces ===
-If you want to move files between two project spaces, you should not use the mv command. Instead, we recommend using the regular cp, or the rsync command.
-
-It is very important to run cp or rsync correctly to ensure that the files copied over have the correct group ownership. With cp, do not use the archive -a option. And when using rsync, make sure you specify the --no-g --no-p options, like so:
-
-Once you have copied your data over, please delete the old data.
-
-== Disk quota exceeded error on /project filesystems ==
-:Also see: Project layout
-Some users have seen this message or some similar quota error on their /project folders. Other users have reported obscure failures while transferring files into their /project folder from another cluster. Many of the problems reported are due to bad file ownership.
-
-Use diskusage_report to see if you are at or over your quota:
-
-[ymartin@cedar5 ~]$ diskusage_report
-                             Description                Space           # of files
-                     Home (user ymartin)             345M/50G            9518/500k
-                  Scratch (user ymartin)              93M/20T           6532/1000k
-                 Project (group ymartin)          5472k/2048k            158/5000k
-            Project (group def-zrichard)            20k/1000G              4/5000k
-
-The example above illustrates a frequent problem: /project for user ymartin contains too much data in files belonging to group ymartin. The data should instead be in files belonging to def-zrichard. To see the project groups you may use, run the following command:
- stat -c %G $HOME/projects/*/
-
-Note the two lines labelled Project.
-*Project (group ymartin) describes files belonging to group ymartin, which has the same name as the user. This user is the only member of this group, which has a very small quota (2048k).
-*Project (group def-zrichard) describes files belonging to a project group. Your account may be associated with one or more project groups, and they will typically have names like def-zrichard, rrg-someprof-ab, or rpp-someprof.
-
-In this example, files have somehow been created belonging to group ymartin instead of group def-zrichard. This is neither the desired nor the expected behaviour.
-
-By design, new files and directories in /project will normally be created belonging to a project group. The main reasons why files may be associated with the wrong group are
-* files were moved from /home to /project with the mvcommand; to avoid this, see  advice above;
-* files were transferred from another cluster using rsync or scp with an option to preserve the original group ownership. If you have a recurring problem with ownership, check the options you are using with your file transfer program;
-* you have no setgid bit set on your Project folders.
-
-=== How to fix the problem ===
-If you already have data in your /project directory with the wrong group ownership, you can use the find to display those files:
- lfs find ~/projects/*/ -group $USER
-
-Next, change ownership from $USER to the project group, for example:
- chown -h -R $USER:def-professor -- ~/projects/def-professor/$USER/
-
-Then, set the setgid bit on all directories (for more information, see Group ID) to ensure that newly created files will inherit the directory's group membership, for example:
- lfs find ~/projects/def-professor/$USER -type d -print0 | xargs -0 chmod g+s
-
-Finally, verify that project space directories have correct permissions set
- chmod 2770 ~/projects/def-professor/
- chmod 2700 ~/projects/def-professor/$USER
-
-=== Another explanation ===
-Each file in Linux belongs to a person and a group at the same time. By default, a file you create belongs to you, user username, and your group, named the same username. That is it is owned by username:username. Your group is created at the same time your account was created and you are the only user in that group.
-
-This file ownership is good for your home directory and the scratch space, as shown hereː
-
-                              Description                Space           # of files
-                      Home (user username)              15G/53G             74k/500k
-                   Scratch (user username)           1522G/100T            65k/1000k
-                  Project (group username)            34G/2048k             330/2048
-             Project (group def-professor)            28k/1000G               9/500k
-
-The quota is set for these for a user username.
-
-The other two lines are set for groups username and def-professor in Project space. It is not important what users own the files in that space, but the group the files belong to determines the quota limit.
-
-You see that files that are owned by username group (your default group) have very small limit in the project space, only 2MB, and you already have 34 GB of data that is owned by your group (your files). This is why you cannot write more data there. Because you are trying to place data there owned by a group that has very little allocation there.
-
-On the other hand, the allocation for the group def-professor, your professor's group, does not use almost any space and has 1 TB limit. The files that can be put there should have username:def-professor ownership.
-
-Now, depending on how you copy your files, what software you use, that software either will respect the ownership of the directory and apply the correct group, or it may insist on retaining the ownership of the source data. In the latter case, you will have a problem like you have now.
-
-Most probably your original data belongs to username:username, properly, upon moving it, it should belong to username:def-professor, but your software probably insists on keeping the original ownership and this causes the problem.
 
 == sbatch: error: Batch job submission failed: Socket timed out on send/recv operation ==
 

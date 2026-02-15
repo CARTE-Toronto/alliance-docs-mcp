@@ -1,9 +1,9 @@
 ---
-title: "Running jobs/en"
-url: "https://docs.alliancecan.ca/wiki/Running_jobs/en"
+title: "Running jobs"
+url: "https://docs.alliancecan.ca/wiki/Running_jobs"
 category: "General"
-last_modified: "2025-12-16T20:07:47Z"
-page_id: 2538
+last_modified: "2026-02-05T21:06:04Z"
+page_id: 1952
 display_title: "Running jobs"
 ---
 
@@ -244,23 +244,23 @@ $ module spider quantumespresso/6.1
       Quantum ESPRESSO is an integrated suite of computer codes for electronic-structure calculations and materials modeling at the nanoscale. It is based on density-functional theory, plane waves, and pseudopotentials (both
       norm-conserving and ultrasoft).
 
-    Properties:
+Properties:
       Chemistry libraries/apps / Logiciels de chimie
 
-    You will need to load all module(s) on any one of the lines below before the "quantumespresso/6.1" module is available to load.
+You will need to load all module(s) on any one of the lines below before the "quantumespresso/6.1" module is available to load.
 
-      nixpkgs/16.09  intel/2016.4  openmpi/2.1.1
+nixpkgs/16.09  intel/2016.4  openmpi/2.1.1
 
-    Help:
+Help:
 
-      Description
+Description
       ===========
       Quantum ESPRESSO  is an integrated suite of computer codes
        for electronic-structure calculations and materials modeling at the nanoscale.
        It is based on density-functional theory, plane waves, and pseudopotentials
         (both norm-conserving and ultrasoft).
 
-      More information
+More information
       ================
        - Homepage: http://www.pwscf.org/
 

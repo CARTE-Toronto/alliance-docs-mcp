@@ -2,7 +2,7 @@
 title: "Apptainer/en"
 url: "https://docs.alliancecan.ca/wiki/Apptainer/en"
 category: "General"
-last_modified: "2026-01-13T17:59:20Z"
+last_modified: "2026-02-04T11:51:02Z"
 page_id: 23356
 display_title: "Apptainer/en"
 ---
@@ -41,7 +41,8 @@ HPC clusters typically use Apptainer. Many users ask about other Linux container
 ** Podman version 4 supports Apptainer .SIF files.
 * Docker
 ** Using Docker on a multiuser cluster creates security risks, therefore we do not make Docker available on our HPC clusters.
-** You can install and use Docker on your own computer and use it to create an Apptainer image, which can then be uploaded to an HPC cluster as outlined in this section later on this page.
+** In many cases you can build an Apptainer image from a Docker image; see Building an SIF image below.
+** You can install Docker on your own computer and use it to create an Apptainer image, which can then be uploaded to an HPC cluster as outlined in Creating an Apptainer container from a Dockerfile below.
 
 ==Other items==
 ===General===
@@ -286,7 +287,7 @@ Know that some containers will not build successfully without using a root accou
 
 If all you need is to use a Docker image as-is with Apptainer, often those images can be built and run without issues, e.g.,  without any need to have additional permissions or explicitly use --fakeroot. Should you need to modify the image after creating it, you may need elevated permissions to successfully do this, e.g., if the image's Linux distribution package manager requires such and you need to install a package using it. For this reason, the examples shown below assume one only needs to use a Docker image as-is.
 
-==Building a SIF image==
+==Building an SIF image==
 
 NOTE:  Please note and heed the advice concerning building images/overlays in section Building images and overlays  above.
 

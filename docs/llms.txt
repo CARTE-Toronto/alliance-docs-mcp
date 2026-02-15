@@ -1,6 +1,6 @@
 # Alliance Documentation - Page Directory
-# Generated: 2026-02-08T06:38:04.924250+00:00
-# Total pages: 437
+# Generated: 2026-02-15T06:38:55.929494+00:00
+# Total pages: 439
 
 - A tutorial on 'tar' (User Guide): https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/en
 - ABINIT (General): https://docs.alliancecan.ca/wiki/ABINIT/en
@@ -11,8 +11,8 @@
 - AMBER (General): https://docs.alliancecan.ca/wiki/AMBER/en
 - AMS (General): https://docs.alliancecan.ca/wiki/AMS/en
 - ARM software (General): https://docs.alliancecan.ca/wiki/ARM_software/en
-- Abaqus (General): https://docs.alliancecan.ca/wiki/Abaqus/en
 - Abaqus (General): https://docs.alliancecan.ca/wiki/Abaqus
+- Abaqus/en (General): https://docs.alliancecan.ca/wiki/Abaqus/en
 - Access to files of users leaving a project (User Guide): https://docs.alliancecan.ca/wiki/Access_to_files_of_users_leaving_a_project/en
 - Accessing CVMFS (General): https://docs.alliancecan.ca/wiki/Accessing_CVMFS/en
 - Accessing object storage with WinSCP (General): https://docs.alliancecan.ca/wiki/Accessing_object_storage_with_WinSCP/en
@@ -37,6 +37,7 @@
 - AnsysEDT/en (General): https://docs.alliancecan.ca/wiki/AnsysEDT/en
 - Apache Spark (General): https://docs.alliancecan.ca/wiki/Apache_Spark/en
 - Apply for a CCDB account (General): https://docs.alliancecan.ca/wiki/Apply_for_a_CCDB_account/en
+- Apply for a CCDB account (General): https://docs.alliancecan.ca/wiki/Apply_for_a_CCDB_account
 - Apptainer/en (General): https://docs.alliancecan.ca/wiki/Apptainer/en
 - Arbutus (General): https://docs.alliancecan.ca/wiki/Arbutus/en
 - Arbutus Migration Guide (User Guide): https://docs.alliancecan.ca/wiki/Arbutus_Migration_Guide/en
@@ -98,7 +99,7 @@
 - Cloud resources (General): https://docs.alliancecan.ca/wiki/Cloud_resources/en
 - Cloud shared security responsibility model (General): https://docs.alliancecan.ca/wiki/Cloud_shared_security_responsibility_model/en
 - Cloud storage options (General): https://docs.alliancecan.ca/wiki/Cloud_storage_options/en
-- Cloud troubleshooting guide (User Guide): https://docs.alliancecan.ca/wiki/Cloud_troubleshooting_guide/en
+- Cloud troubleshooting guide/en (User Guide): https://docs.alliancecan.ca/wiki/Cloud_troubleshooting_guide/en
 - Clusterstats (General): https://docs.alliancecan.ca/wiki/Clusterstats
 - Comet.ml (General): https://docs.alliancecan.ca/wiki/Comet.ml/en
 - Computational chemistry (General): https://docs.alliancecan.ca/wiki/Computational_chemistry/en
@@ -139,8 +140,8 @@
 - Formation (General): https://docs.alliancecan.ca/wiki/Formation
 - Fortran (General): https://docs.alliancecan.ca/wiki/Fortran/en
 - FreeSurfer (General): https://docs.alliancecan.ca/wiki/FreeSurfer/en
-- Frequently Asked Questions (General): https://docs.alliancecan.ca/wiki/Frequently_Asked_Questions/en
 - Frequently Asked Questions about the CCDB (General): https://docs.alliancecan.ca/wiki/Frequently_Asked_Questions_about_the_CCDB/en
+- Frequently Asked Questions/en (General): https://docs.alliancecan.ca/wiki/Frequently_Asked_Questions/en
 - GAMESS-US (General): https://docs.alliancecan.ca/wiki/GAMESS-US/en
 - GATK (General): https://docs.alliancecan.ca/wiki/GATK/en
 - GBrowse (General): https://docs.alliancecan.ca/wiki/GBrowse/en
@@ -329,6 +330,7 @@
 - Research Data Management (General): https://docs.alliancecan.ca/wiki/Research_Data_Management/en
 - Resource Allocation Competition (General): https://docs.alliancecan.ca/wiki/Resource_Allocation_Competition/en
 - Rorqual/en (General): https://docs.alliancecan.ca/wiki/Rorqual/en
+- Running jobs (General): https://docs.alliancecan.ca/wiki/Running_jobs
 - Running jobs/en (General): https://docs.alliancecan.ca/wiki/Running_jobs/en
 - Rust (General): https://docs.alliancecan.ca/wiki/Rust/en
 - SAIGE/en (General): https://docs.alliancecan.ca/wiki/SAIGE/en
@@ -355,8 +357,8 @@
 - Snowflurry (General): https://docs.alliancecan.ca/wiki/Snowflurry/en
 - SpaCy (General): https://docs.alliancecan.ca/wiki/SpaCy/en
 - Standard software environments (General): https://docs.alliancecan.ca/wiki/Standard_software_environments/en
-- Star-CCM+ (General): https://docs.alliancecan.ca/wiki/Star-CCM%2B/en
 - Star-CCM+ (General): https://docs.alliancecan.ca/wiki/Star-CCM%2B
+- Star-CCM+/en (General): https://docs.alliancecan.ca/wiki/Star-CCM%2B/en
 - Stata (General): https://docs.alliancecan.ca/wiki/Stata
 - Storage and file management/en (General): https://docs.alliancecan.ca/wiki/Storage_and_file_management/en
 - Structure (General): https://docs.alliancecan.ca/wiki/Structure/en
@@ -408,7 +410,7 @@
 - Using swift (General): https://docs.alliancecan.ca/wiki/Using_swift
 - Utiliser des modules (General): https://docs.alliancecan.ca/wiki/Utiliser_des_modules/en
 - Uv (General): https://docs.alliancecan.ca/wiki/Uv/en
-- VASP (General): https://docs.alliancecan.ca/wiki/VASP/en
+- VASP/en (General): https://docs.alliancecan.ca/wiki/VASP/en
 - VLLM (General): https://docs.alliancecan.ca/wiki/VLLM
 - VM Best Practices (General): https://docs.alliancecan.ca/wiki/VM_Best_Practices/en
 - VM recovery via cloud console (General): https://docs.alliancecan.ca/wiki/VM_recovery_via_cloud_console/en

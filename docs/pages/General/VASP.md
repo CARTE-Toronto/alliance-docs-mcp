@@ -2,7 +2,7 @@
 title: "VASP/en"
 url: "https://docs.alliancecan.ca/wiki/VASP/en"
 category: "General"
-last_modified: "2025-11-18T19:41:29Z"
+last_modified: "2026-02-03T15:23:01Z"
 page_id: 4649
 display_title: "VASP"
 ---
@@ -11,12 +11,9 @@ display_title: "VASP"
 : Reference: VASP website
 
 == Licensing ==
-VASP is commercial software which can only be licensed to groups that are hired by a single legal entity, which is incompatible with the way we operate. We have tried to negotiate an agreement with the licensor which would let us install the software everywhere on our infrastructure, but without success. For that reason you may have to install VASP yourself (though see Site exceptions below). Please read the terms of your own license, as you are likely subject to the same restriction. This limits the support we are allowed to offer to users who need help installing the software. Please see Building VASP yourself below for instructions on installing the software.
+VASP can only be used by research groups that have been licensed by the developers, VASP Software GmbH.  Your PI (principal investigator, professor) must register at the VASP website and obtain a license.
 
-=== Site exceptions ===
-Simon Fraser University, the University of Waterloo, and the University of Toronto own Fir, Nibi, and Trillium, respectively, and have a license with VASP. Some of their employees are therefore allowed to access and install specific versions of VASP on those clusters and provide limited support.
-
-If you wish to use the prebuilt VASP binaries on Fir, Nibi and/or Trillium, you must contact Technical support requesting access to VASP with the following information:
+Once you have a license, if you wish to use the prebuilt VASP binaries on Fir, Nibi, or Trillium, contact Technical support requesting access to VASP with the following information:
 * Include license holder (your PI) information:
 ** Name
 ** Email address
@@ -28,12 +25,19 @@ If you wish to use the prebuilt VASP binaries on Fir, Nibi and/or Trillium, you 
 
 If you are licensed for version 5 you may also use version 4, but a version 4 license does not permit you to use version 5. The same for version 6, if you are licensed for version 6 you may also use versions 5 and 4.
 
+You may also choose to install VASP yourself, according to the terms of your license.  See Building VASP yourself below.
+
+=== Why? ===
+VASP Software GmbH will only grant licenses to groups that are hired by a single legal entity, which is incompatible with the way we operate. We have tried to negotiate an agreement with the licensor which would let us install the software everywhere on our infrastructure, but without success. Please read the terms of your own license, as you are likely subject to the same restriction. This limits the support we can offer to users who need help installing the software.
+
+Simon Fraser University, the University of Waterloo, and the University of Toronto own Fir, Nibi, and Trillium, respectively, and have licenses with VASP. Some of their employees are therefore allowed to install specific versions of VASP on those clusters and provide limited support.
+
 == Using prebuilt VASP ==
 
-Prebuilt VASP binary files have been installed only on Fir, Nibi, and Trillium (replacing Cedar, Graham, and Niagara). According to our license agreement, we are not allowed to install VASP centrally on other computer clusters. However,  users may want to install VASP on their own home directory. Please have a look at Building VASP yourself. To load prebuilt VASP on Fir and Nibi, please do the following:
+To load prebuilt VASP on Fir and Nibi, please do the following:
 
 For vasp/5.4.4
- module load StdEnv/2023  intel/2023.2.1  openmpi/4.1.5
+ module load StdEnv/2023  intel/2023.2.1 intelmpi/2021.9.0
  module load vasp/5.4.4
 For vasp/6.4.2
  module load StdEnv/2023 intel/2023.2.1 intelmpi/2021.9.0
@@ -42,7 +46,8 @@ For vasp/6.4.2
 # Run module spider vasp to see which versions are available.
 # Choose your version and run module spider vasp/ to see which dependencies you need to load for this particular version.
 # Load the dependencies and the VASP module, for example:
- module load intel/2020.1.217  intelmpi/2019.7.217 vasp/5.4.4
+ module load StdEnv/2023 intel/2023.2.1 intelmpi/2021.9.0
+ module load vasp/6.4.2
 See Using modules for more information.
 
 To use VASP on Trillium, modules may be loaded as follows:

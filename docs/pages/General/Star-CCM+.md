@@ -1,9 +1,9 @@
 ---
-title: "Star-CCM+"
-url: "https://docs.alliancecan.ca/wiki/Star-CCM%2B"
+title: "Star-CCM+/en"
+url: "https://docs.alliancecan.ca/wiki/Star-CCM%2B/en"
 category: "General"
-last_modified: "2026-01-02T06:33:23Z"
-page_id: 4355
+last_modified: "2026-02-04T11:51:55Z"
+page_id: 5428
 display_title: "Star-CCM+"
 ---
 

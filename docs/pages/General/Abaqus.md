@@ -1,14 +1,13 @@
 ---
-title: "Abaqus"
-url: "https://docs.alliancecan.ca/wiki/Abaqus"
+title: "Abaqus/en"
+url: "https://docs.alliancecan.ca/wiki/Abaqus/en"
 category: "General"
-last_modified: "2026-01-19T22:28:48Z"
-page_id: 7347
+last_modified: "2026-02-04T11:55:22Z"
+page_id: 10030
 display_title: "Abaqus"
 ---
 
 __FORCETOC__
-
 Abaqus FEA is a software suite for finite element analysis and computer-aided engineering.
 
 = Using your own license =
@@ -125,7 +124,6 @@ An estimate for the total slurm node memory (--mem=) required for a simulation t
      1          1.89E+14             3612              96345
 
 Alternatively a total memory estimate for a single node threaded process can be obtained by running the simulation interactively on a compute node and then monitoring the memory use with the top (or ps) command as follows:
-
 1) First obtain an allocation on a compute node and start your simulation running:
 
 2) Next ssh into the compute node (c50 according to the sq command) and then run top i.e.
@@ -138,7 +136,7 @@ To completely satisfy the recommended "MEMORY TO OPERATIONS REQUIRED MINIMIZE I/
 
 To determine the required slurm memory for multi-node slurm scripts, memory estimates (per compute process) required to minimize I/O are given in the output dat file of completed jobs.  If mp_host_split is not specified (or is set to 1) then the total number of compute processes will equal the number of nodes.  The mem-per-cpu value can then be roughly determined by multiplying the largest memory estimate by the number of nodes and then dividing by the number or ntasks.  If however a value for mp_host_split is specified (greater than 1) than the mem-per-cpu value can be roughly determined from the largest memory estimate times the number of nodes times the value of mp_host_split divided by the number of tasks.  Note that mp_host_split must be less than or equal to the number of cores per node assigned by slurm at runtime otherwise Abaqus will terminate.  This scenario can be controlled by uncommenting to specify a value for tasks-per-node.  The following definitive statement is given in every output dat file and mentioned here for reference:
 
- THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+  THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
  THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
  THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
  SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
@@ -181,9 +179,8 @@ To start Abaqus in gui mode there must be at least one unused cae license accord
 
 = Site-specific use =
 == SHARCNET license ==
-[[ The abaqus.lic The SHARCNET license is down for renewal and server relocation until approximately Jan21.  Once its working again. this message will be renewed and the following paragraph updated to describe the new license expiry date.  Note that the old server license3.sharcnet.ca entry in your ~/.license/abaqus.lic file will need to be changed to license1.computecanada.ca to point to the new server.  ]]
 
-The SHARCNET license has been renewed until 17-jan-2026.  It provides a small but free license consisting of 2 cae and 35 execute tokens where usage limits are imposed 10 tokens/user and 15 tokens/group.  For groups that have purchased dedicated tokens, the free token usage limits are added to their reservation.  The free tokens are available on a first come first serve basis and mainly intended for testing and light usage before deciding whether or not to purchase dedicated tokens.  Costs for dedicated tokens (in 2021) were approximately CAD$110 per compute token and CAD$400 per GUI token: submit a ticket to request an official quote.  The license can be used by any Alliance researcher, but only on SHARCNET hardware.  Groups that purchase dedicated tokens to run on the SHARCNET license server may likewise only use them on SHARCNET hardware including the SHARCNET OOD system (to run Abaqus in graphical mode) or Nibi/Dusky clusters (for submitting compute batch jobs to the queue).  Before you can use the license, you must contact technical support and request access.  In your email 1) mention that it is for use on SHARCNET systems and 2) include a copy/paste of the following License Agreement statement with your full name and username entered in the indicated locations.  Please note that every user must do this it cannot be done one time only for a group; this includes PIs who have purchased their own dedicated tokens.
+The SHARCNET license has been renewed until 17-jan-2027 and is operational.  It provides a small shared free pool consisting of 3 cae and 54 execute tokens for all researchers.  Maximum usage limits are currently set at: 1cae/user, 10 tokens/user and 15 tokens/group.  These free tokens are available on a first come first serve basis and mainly intended for testing and light usage before deciding whether or not to purchase dedicated tokens.  Costs for dedicated tokens (in 2021) were approximately CAD$110 per compute token and CAD$400 per GUI token: submit a ticket to request an official quote if interested.  The free SHARCNET license can be used by any registered Alliance researcher, but only on SHARCNET hardware, and only after agreeing to the below Academic License User Agreement.  Groups that purchase dedicated tokens to run on the SHARCNET license server may likewise ONLY use them on SHARCNET hardware (as dictated by the negotiated license agreement with Simulia) including the SHARCNET OOD system (to run Abaqus in graphical mode) or Nibi/Dusky clusters (for submitting compute batch jobs to the queue).  Before you can use the license, you must contact technical support and request access.  In your email 1) mention that it is for use on SHARCNET systems and 2) include a copy/paste of the following License Agreement statement with your full name and username entered in the indicated locations.  Please note that every user must do this it cannot be done one time only for a group; this includes PIs who have purchased their own dedicated tokens.
 
 === License agreement ===
 ----------------------------------------------------------------------------------
@@ -203,7 +200,7 @@ for the following purposes:
 -----------------------------------------------------------------------------------
 
 === Configure license file ===
-Configure your license file as follows, noting that it is only usable on SHARCNET systems such as nibi and dusky clusters or the SHARCNET OOD desktop system.  The license is currently down and expected usable again by about Jan21.
+Configure your license file as follows, noting that it is only usable on SHARCNET systems such as nibi and dusky clusters or the SHARCNET OOD desktop system.  Note that the old license3.sharcnet.ca server has been permanently shutdown thus you must update your abaqus.lic file as follows to use the free SHARCNET license:
 
 [l2 (nibi login node):~] cat ~/.licenses/abaqus.lic
 prepend_path("ABAQUSLM_LICENSE_FILE","27050@license1.computecanada.ca")
