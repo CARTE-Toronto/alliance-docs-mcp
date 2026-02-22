@@ -2,7 +2,7 @@
 title: "Ansys"
 url: "https://docs.alliancecan.ca/wiki/Ansys"
 category: "General"
-last_modified: "2026-02-06T18:51:31Z"
+last_modified: "2026-02-17T18:27:30Z"
 page_id: 4568
 display_title: "Ansys"
 ---
@@ -24,12 +24,12 @@ The following table provides established values for the CMC and SHARCNET license
  TABLE: Preconfigured license servers
 
 License 	System/Cluster         	LICSERVER                	FLEXPORT	NOTES
-CMC     	fir                    	172.26.0.101             	6624    	Discontinue Use (to be shutdown)
-CMC     	narval/rorqual         	10.100.64.10             	6624    	Discontinue Use (to be shutdown)
-CMC     	nibi                   	10.25.1.56               	6624    	Discontinue Use (to be shutdown)
-CMC     	trillium               	scinet-cmc               	6624    	Discontinue Use (to be shutdown)
-SHARCNET	nibi/fir/narval/rorqual	license1.computecanada.ca	1055    	Supports <= ansys/2025R1.02
-SHARCNET	trillium               	localhost                	1055    	Undergoing Testing (not ready for use)
+CMC     	fir                    	172.26.0.101             	6624    	Discontinue use (to be shutdown)
+CMC     	narval/rorqual         	10.100.64.10             	6624    	Discontinue use (to be shutdown)
+CMC     	nibi                   	10.25.1.56               	6624    	Discontinue use (to be shutdown)
+CMC     	trillium               	scinet-cmc               	6624    	Discontinue use (to be shutdown)
+SHARCNET	nibi/fir/narval/rorqual	license1.computecanada.ca	1055
+SHARCNET	trillium               	localhost                	1055
 
 Researchers who purchase a new CMC license subscription must submit your Alliance account username otherwise license checkouts will fail. The number of cores that can be used with a CMC license is described in the Other Tricks and Tips sections of the Ansys Electronics Desktop and  Ansys Mechanical/Fluids quick start guides.
 

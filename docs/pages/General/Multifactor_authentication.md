@@ -2,7 +2,7 @@
 title: "Multifactor authentication/en"
 url: "https://docs.alliancecan.ca/wiki/Multifactor_authentication/en"
 category: "General"
-last_modified: "2025-07-16T16:11:06Z"
+last_modified: "2026-02-10T16:05:44Z"
 page_id: 22441
 display_title: "Multifactor authentication"
 ---
@@ -43,31 +43,36 @@ File:Duo-mobile-scan-qr-code.png|Step 6
 File:Scanning-CCDB-QR-code.jpg|Step 7
 
 == Use a YubiKey ==
-A YubiKey is a hardware token made by the Yubico company. If you do not have a smartphone or tablet, do not wish to use your phone or tablet for multifactor authentication, or are often in a situation when using your phone or tablet is not possible, then a YubiKey is your best option.
+A YubiKey is a small hardware token made by the Yubico company. If you do not wish to use your phone or tablet for multifactor authentication, do not have a smartphone or tablet that supports Duo, or are often in a situation when using your phone or tablet is not possible, then a YubiKey is your best option.  Different YubiKey models can fit in USB-A, USB-C, or Lightning ports, and some also support near-field communication (NFC) for use with a phone or tablet.
 
-Note that some YubiKey models are not compatible because they don't all support the "Yubico OTP" function, which is required. We recommend using the YubiKey 5 Series, but older devices you may already have could work, see this Yubico identification page for reference.
+A YubiKey must support the "Yubico OTP" function to work with our systems.
+We recommend using the YubiKey 5 Series, but older or newer devices may also work.
+See this Yubico identification page to determine whether a specific product offers the function "Yubico OTP".
 
-A YubiKey 5 is the size of a small USB stick and costs between $67 and $100. Different models can fit in USB-A, USB-C, or Lightning ports, and some also support near-field communication (NFC) for use with a phone or tablet.
+If you register a YubiKey for multifactor authentication, when you log on to one of our clusters you will be prompted for a one-time password (OTP)---
+although the prompt may use different terminology such as "Enter a passcode".
+You respond by touching a button on your YubiKey, which generates a string of characters to complete your authentication.
+Using a YubiKey does not require any typing on the keyboard: the YubiKey connected to your computer “types” the string when you touch its button.
 
-Multiple protocols are supported by YubiKeys. Our clusters use the Yubico One-Time Password (OTP). After you have registered a YubiKey for multifactor authentication, when you log on to one of our clusters you will be prompted for a one-time password (OTP). You respond by touching a button on your YubiKey, which generates a string of characters to complete your authentication. Using a YubiKey does not require any typing on the keyboard: the YubiKey connected to your computer “types” the string when you touch its button.
-
-To register your YubiKey you will need its Public ID, Private ID, and Secret Key. If you have this information, go to the Multifactor authentication management page. If you do not have this information, configure your key using the steps below.
+To register a YubiKey you will need its Public ID, Private ID, and Secret Key.
+If you have this information, go to the Multifactor authentication management page.
+If you do not have this information, configure your key using the steps below.
 
 === Configuring your YubiKey for Yubico OTP ===
 
-# Download and install the YubiKey Manager software from the Yubico website.
-# Insert your YubiKey and launch the YubiKey Manager software.
-# In the YubiKey Manager software, select Applications, then OTP.  (Images below illustrate this and the next few steps.)
-# Select Configure for either slot 1 or slot 2. Slot 1 corresponds to a short touch (pressing for 1 to 2.5 seconds), while slot 2 is a long touch on the key (pressing for 3 to 5 seconds). Slot 1 is typically pre-registered for Yubico cloud mode. If you are already using this slot for other services, either use slot 2, or click on Swap to transfer the configuration to slot 2 before configuring slot 1.
-# Select Yubico OTP.
-# Select Use serial, then generate a private ID and a secret key. Securely save a copy of the data in the Public ID, Private ID, and Secret Key fields before you click on Finish, as you will need the data for the next step.
-# IMPORTANT: Make sure you clicked on "Finish" in the previous step.
+# Download and install the YubiKey Authenticator application from the Yubico website.
+# Insert your YubiKey and launch the YubiKey Authenticator software.
+# In YubiKey Authenticator, select Slots.  (Images below illustrate this and the next few steps.)
+# Select either slot 1 or slot 2. Slot 1 corresponds to a short touch (pressing for 1 to 2.5 seconds), while slot 2 is a long touch on the key (pressing for 3 to 5 seconds). Slot 1 is typically pre-registered for Yubico cloud mode. If you are already using this slot for other services, either use slot 2, or click on Swap slots to transfer the configuration to slot 2 before configuring slot 1.
+# Select Yubico OTP / Program a Yubico OTP credential.
+# In the "Public ID" field click Use serial, then generate a Private ID and a Secret key. Securely save a copy of the data in the Public ID, Private ID, and Secret key fields, as you will need them shortly.
+# IMPORTANT: Click on "Save".
 # Log into the CCDB to register your YubiKey in the Multifactor authentication management page.
 
-File:Yubico Manager OTP.png|Step 3
-File:Yubico Manager OTP configuration.png|Step 4
-File:Select Yubico OTP.png|Step 5
-File:Generate Yubikey IDs.png|Step 6, Step 7
+File:Yubico-Authenticator-Step3.png|Step 3
+File:Yubico-Authenticator-Step4.png|Step 4, Step 5
+File:Yubico-Authenticator-Step6.png|Step 6
+File:Yubico-Authenticator-Step7.png|Step 7
 CCDB Yubikeys.png|Step 8
 
 You can test your Yubikey setup by pressing the button on it any time while it is inserted into your computer.  If set up correctly, it should generate a code at your prompt or cursor.

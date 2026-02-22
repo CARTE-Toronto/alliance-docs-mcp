@@ -1,18 +1,19 @@
 ---
-title: "Abaqus/en"
-url: "https://docs.alliancecan.ca/wiki/Abaqus/en"
+title: "Abaqus"
+url: "https://docs.alliancecan.ca/wiki/Abaqus"
 category: "General"
-last_modified: "2026-02-04T11:55:22Z"
-page_id: 10030
+last_modified: "2026-02-11T20:32:13Z"
+page_id: 7347
 display_title: "Abaqus"
 ---
 
 __FORCETOC__
+
 Abaqus FEA is a software suite for finite element analysis and computer-aided engineering.
 
-= Using your own license =
+= Licensing =
 
-[[ A module for abaqus/2026 will not be available on Alliance clusters until ~Jan25 (delayed).  The new version should resolve the *** buffer overflow detected *** errors occurring with abaqus/2021.  A workaround for this issue has been added into the Single node computing slurm scripts below.  To use it copy the two unshare related lines that appear directly before the abaqus command line into your scripts being sure there are no empty lines or spaces after the continuation slashes.  Further testing has shown that simply increasing the value of ABA_SINT_CAP in your local abaqus_v6.env file will not reliably solve this problem afterall. ]]
+== Using your license file==
 
 Abaqus software modules are available on our clusters; however, you must provide your own license. To configure your account on a cluster, log in and create a file named $HOME/.licenses/abaqus.lic containing the following line. Next, replace port@server with the flexlm port number and server IP address (or fully qualified hostname) of your Abaqus license server.  If you want to use legacy version 6.14.1 then replace ABAQUSLM_LICENSE_FILE with LM_LICENSE_FILE.
 
@@ -22,7 +23,25 @@ If your license has not been set up for use on an Alliance cluster, some additio
 * IP address of your Abaqus license server
 You will then be sent a list of cluster IP addresses so that your administrator can open the local server firewall to allow connections from the cluster on both ports. Please note that a special license agreement must generally be negotiated and signed by SIMULIA and your institution before a local  license may be used remotely on Alliance hardware.
 
+== FLEXnet/DSLS Servers ==
+
+Similar to previously installed modules the abaqus/2026 module is configured by default to work with Simulia FLEXnet license server such as the free SHARCNET license server.  To use a local DSLS based institutional license server two small text files abaqus_v6.env and DSLicSrv.txt should be created in your simulation submit directory as follows.  These will be read automatically when abaqus starts running to reconfigure itself accordingly.
+
+ [l2 (login node):~/mysimdir] cat abaqus_v6.env
+ license_server_type=DSLS
+ dsls_license_config="DSLicSrv.txt"
+
+ [l2 (login node):~/mysimdir] DSLicSrv.txt
+ YOUR-SERVER-HOSTNAME:PORT-NUMBER
+
+= Version compatibility =
+
+== Module Changes ==
+
+A new module for abaqus/2026 is now installed into the default StdEnv/2023 environment.  This new version resolves the *** buffer overflow detected *** error with abaqus/2021 on all recent clusters.  Note that each slurm script on this wiki page has been updated to work with both abaqus/2026 and abaqus/2021 where possible therefore all personal slurm scripts should likewise be updated by researchers.  The abaqus/2026 module contains the initial Abaqus 2026 Golden release.  Another module named abaqus/2026.2606 containing Abaqus 2026 FP.CFA.2606 level updates will be installed next.
+
 = Cluster job submission =
+
 Below are prototype Slurm scripts for submitting thread and mpi-based parallel simulations to single or multiple compute nodes.  Most users will find it sufficient to use one of the project directory scripts provided in the Single node computing sections. The optional memory= argument found in the last line of the scripts is intended for larger memory or problematic jobs where 3072MB offset value may require tuning.  A listing of all Abaqus command line arguments can be obtained by loading an Abaqus module and running: abaqus -help | less.
 
 Single node jobs that run less than one day should find the project directory script located in the first tab sufficient. However, single node jobs that run for more than a day should use one of the restart scripts.  Jobs that create large restart files will benefit by writing to the local disk through the use of the SLURM_TMPDIR environment variable utilized in the temporary directory scripts provided in the two rightmost tabs of the single node standard and explicit analysis sections.  The restart scripts shown here will continue jobs that have been terminated early for some reason.  Such job failures can occur if a job reaches its maximum requested runtime before completing and is killed by the queue or if the compute node the job was running on crashed due to an unexpected hardware failure.  Other restart types are possible by further tailoring of the input file (not shown here) to continue a job with additional steps or change the analysis (see the documentation for version specific details).
@@ -60,7 +79,7 @@ The restart input file should contain:
 
 === Multiple node computing ===
 
-[[ The below script for Multinode computing is no longer usable with abaqus/2021 due to an increased process id range configuration on Alliance clusters. The issue will be resolved once abaqus/2026 is installed.  In the meantime please use one of the Single node computing slurm scripts provided above. ]] Users with large memory or compute needs (and correspondingly large licenses) can use the following script to perform mpi-based computing over an arbitrary range of nodes ideally left to the scheduler to  automatically determine.  A companion template script to perform restart of multinode jobs is not provided due to additional limitations when they can be used.
+Users with large memory or compute needs (and correspondingly access to a large licenses) can use the following script to perform mpi-based computing over an arbitrary range of nodes ideally left to the scheduler to  automatically determine.  A companion template script to perform restart of multinode jobs is not provided due to additional limitations when they can be used.  Only abaqus/2026 or newer maybe used with this script.
 
  xargs)"
 for i in `echo "$nodes"  xargs -n1  uniq`; do hostlist=${hostlist}$(echo "['${i}',$(echo "$nodes"  xargs -n1  grep $i  wc -l)],"); done
@@ -70,11 +89,12 @@ export $mphostlist
 echo "$mphostlist" > abaqus_v6.env
 
 abaqus job=testsp1-mpi input=mystd-sim.inp \
-  scratch=$SLURM_TMPDIR cpus=$SLURM_NTASKS interactive mp_mode=mpi \
-  #mp_host_split=1  # number of dmp processes per node >= 1 (uncomment to specify)
+scratch=$SLURM_TMPDIR cpus=$SLURM_NTASKS interactive mp_mode=mpi \
+#mp_host_split=1  # number of dmp processes per node >= 1 (uncomment to specify)
 }}
 
 == Explicit analysis ==
+
 Abaqus solvers support thread-based and mpi-based parallelization.  Scripts for each type are provided below for running explicit analysis type jobs on single or multiple nodes respectively.  Template scripts to perform multinode job restarts are not currently provided pending further testing.
 
 === Single node computing ===
@@ -95,7 +115,7 @@ No input file modifications are required to restart the analysis.
 
 === Multiple node computing ===
 
-[[ The below script for Multinode computing is no longer usable with abaqus/2021 due to an increased process id range configuration on Alliance clusters. The issue will be resolved once abaqus/2026 is installed.  In the meantime please use one of the Single node computing slurm scripts provided above. ]]
+Users with large memory or compute needs (and correspondingly access to a large licenses) can use the following script to perform mpi-based computing over an arbitrary range of nodes ideally left to the scheduler to  automatically determine.  A companion template script to perform restart of multinode jobs is not provided due to additional limitations how they can be used.  Only abaqus/2026 or newer maybe used with this script.
 
  xargs)"
 for i in `echo "$nodes"  xargs -n1  uniq`; do hostlist=${hostlist}$(echo "['${i}',$(echo "$nodes"  xargs -n1  grep $i  wc -l)],"); done
@@ -105,8 +125,8 @@ export $mphostlist
 echo "$mphostlist" > abaqus_v6.env
 
 abaqus job=testep1-mpi input=myexp-sim.inp \
-  scratch=$SLURM_TMPDIR cpus=$SLURM_NTASKS interactive mp_mode=mpi \
-  #mp_host_split=1  # number of dmp processes per node >= 1 (uncomment to specify)
+scratch=$SLURM_TMPDIR cpus=$SLURM_NTASKS interactive mp_mode=mpi \
+#mp_host_split=1  # number of dmp processes per node >= 1 (uncomment to specify)
 }}
 
 == Memory estimates ==
@@ -136,7 +156,7 @@ To completely satisfy the recommended "MEMORY TO OPERATIONS REQUIRED MINIMIZE I/
 
 To determine the required slurm memory for multi-node slurm scripts, memory estimates (per compute process) required to minimize I/O are given in the output dat file of completed jobs.  If mp_host_split is not specified (or is set to 1) then the total number of compute processes will equal the number of nodes.  The mem-per-cpu value can then be roughly determined by multiplying the largest memory estimate by the number of nodes and then dividing by the number or ntasks.  If however a value for mp_host_split is specified (greater than 1) than the mem-per-cpu value can be roughly determined from the largest memory estimate times the number of nodes times the value of mp_host_split divided by the number of tasks.  Note that mp_host_split must be less than or equal to the number of cores per node assigned by slurm at runtime otherwise Abaqus will terminate.  This scenario can be controlled by uncommenting to specify a value for tasks-per-node.  The following definitive statement is given in every output dat file and mentioned here for reference:
 
-  THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+ THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
  THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
  THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
  SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
@@ -148,32 +168,46 @@ To determine the required slurm memory for multi-node slurm scripts, memory esti
  ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
 
 = Graphical use =
-It is now recommended to use OpenOnDemand or JupyterLab to run graphical applications at the Alliance.
+
+It is recommended to use an OpenOnDemand or JupyterLab to run graphical applications at the Alliance.
 
 == OnDemand ==
 
-1. Connect to an OnDemand system using one of the following URLs in your laptop browser :
+1. Start an OnDemand desktop session by clicking one of the following OnDemand links:
  NIBI: https://ondemand.sharcnet.ca
- FIR: https://jupyterhub.fir.alliancecan.ca
- RORQUAL: https://jupyterhub.rorqual.alliancecan.ca
  TRILLIUM: https://ondemand.scinet.utoronto.ca
-2. Open a new terminal window within your desktop and load one of :
- module load StdEnv/2020 abaqus/2021, or
- module load StdEnv/2023 abaqus/2025 <- coming soon
-3. Start the application in graphical mode:
+
+2. Open a new terminal window within your desktop and load :
+ module load abaqus/2026
+
+3. Start the application in graphical mode using the cae option.  If you are on either: 1) a node without a GPU or 2) a node with a GPU but without VirtualGL support, then append to use the mesa option:
+ abaqus cae -mesa
+
+4. If you require better graphical performance and are on a node with a GPU and VirtualGL support then start abaqus without the -mesa option.  When using the nibi OnDemand desktop a full h100 (80GB) GPU from the GPU pulldown must be selected.
  abaqus cae
 
-To start Abaqus in gui mode there must be at least one unused cae license according to :
+5. To start Abaqus in gui mode there must be at least one unused cae license according to :
 
  $ abaqus licensing lmstat -c $ABAQUSLM_LICENSE_FILE -a | grep "Users of cae"
  Users of cae:  (Total of 4 licenses issued;  Total of 3 licenses in use)
 
+== JupyterLab ==
+
+1. Start a JupyterHub desktop session by clicking one of the following JupyterHub links
+ FIR: https://jupyterhub.fir.alliancecan.ca
+ NARVAL:  https://portail.narval.calculquebec.ca/
+ RORQUAL: https://jupyterhub.rorqual.alliancecan.ca
+2. Highlight an abaqus module such as abaqus/2026 in the left hand side Available Module section
+3. Click Load for the highlighted module and a Abaqus (VNC) Icon will appear in desktop
+4. Click the Icon and abaqus should automatically be started in a remote Juypter desktop
+
 == VncViewer ==
 
-1. Connect with a VncViewer client to a login or compute node by following TigerVNC
+This approach is considered obsolete please use the above OnDemand/JuypterHub desktop instead.
+
+1. Connect with a VncViewer client to a login or compute node without a GPU by following TigerVNC
 2. Open a new terminal window and enter the following
- module load StdEnv/2020 abaqus/2021, or
- module load StdEnv/2023 abaqus/2025 <- coming soon
+ module load abaqus/2026
 3. Start the application with
  abaqus cae -mesa
 

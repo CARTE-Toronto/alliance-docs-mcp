@@ -1,9 +1,9 @@
 ---
-title: "AnsysEDT/en"
-url: "https://docs.alliancecan.ca/wiki/AnsysEDT/en"
+title: "AnsysEDT"
+url: "https://docs.alliancecan.ca/wiki/AnsysEDT"
 category: "General"
-last_modified: "2026-01-21T14:03:10Z"
-page_id: 28884
+last_modified: "2026-02-13T15:36:34Z"
+page_id: 28712
 display_title: "AnsysEDT"
 ---
 
@@ -26,50 +26,38 @@ Jobs may be submitted to a cluster queue with the sbatch script-name.sh command 
 
 = Graphical use =
 
-Ansys programs may be run interactively in GUI mode on any cluster compute nodes or On Demand systems.
-
-== Compute nodes ==
-
-AnsysEDT  can be run interactively on a single compute node for up to 24 hours.  This approach is ideal for testing large simulations, since all cores and memory can be requested with salloc as described in TigerVNC.  Once connected with vncviewer, any of the following program versions can be started after loading the required modules as shown below.
-
-::: Start an interactive session using the following form of the salloc command (to specify cores and available memory):
-::: salloc --time=3:00:00 --nodes=1 --cores=8 --mem=16G --account=def-group
-::: xfwm4 --replace & (then hit enter twice)
-::: module load StdEnv/2023 ansysedt/2023R2, or
-::: module load StdEnv/2023 ansysedt/2024R2.1
-::: ansysedt
-::: o Click Tools -> Options -> HPC and Analysis Options -> Edit then :
-:::: 1) untick Use Automatic Settings box (required one time only)
-:::: 2) under Machines tab do not change Cores (auto-detected from slurm)
-::: o To run interactive analysis click:  Project -> Analyze All
+To run starccm+ in graphical mode use an  OnDemand or JupyterLab system to start a remote desktop as follows:
 
 == OnDemand ==
-
-To run starccm+ in graphical interactive mode on a remote desktop it is recommended to use an OnDemand or JupyterLab system as follows:
 
 1. Connect to an OnDemand system using one of the following URLs in your laptop browser :
  NIBI: https://ondemand.sharcnet.ca
  FIR: https://jupyterhub.fir.alliancecan.ca
+ NARVAL:  https://portail.narval.calculquebec.ca/
  RORQUAL: https://jupyterhub.rorqual.alliancecan.ca
  TRILLIUM: https://ondemand.scinet.utoronto.ca
 2. Open a new terminal window in your desktop and run:
 ::: module load StdEnv/2023  (default)
 ::: module load ansysedt/2024R2.1 **OR** ansysedt/2023R2
 ::: Type ansysedt in the terminal and wait for the gui to start
+3. Verify the following settings
 ::: The following only needs to be done once:
-:::: click Tools -> Options -> HPC and Analysis Options -> Options
-:::: change HPC License pulldown to Pool (allows > 4 cores to be used)
-:::: click OK
-3.  To run the 2024R2.1 Antennas example copy the corresponding version into your account:
+:::: click Tools -> Options -> HPC and Analysis Options -> Edit
+:::: When the Analysis Configuration panel appears untic Use Automatic Settings
+:::: Ensure the settings in the Machine tab correspond requested desktop resources such as:
+::::  | Tasks 1 | Cores 4 | Allocated_Cores | GPUs 0 | RAM 90 | tic Enabled |
+:::: Click the OK button to save any changes and close the Analysis Configuration panel
+:::: Click the OK button close the HPC and Analysis Options panel
+4.  To retrieve the 2024R2.1 Antennas examples, copy its directory under your account as follows:
 :::: module load ansysedt/2024R2.1
-:::: mkdir -p ~/Ansoft/$EBVERSIONANSYSEDT; cd ~/Ansoft/$EBVERSIONANSYSEDT; rm -rf Antennas
+:::: mkdir -p ~/Ansoft/$EBVERSIONANSYSEDT; rm -rf ~/Ansoft/$EBVERSIONANSYSEDT/Antennas
 :::: cp -a $EBROOTANSYSEDT/v242/Linux64/Examples/HFSS/Antennas ~/Ansoft/$EBVERSIONANSYSEDT
-4. Now to run the example:
-:::: open a simulation .aedt file then click HFSS -> Validation Check
-:::: (if errors are reported by the validation check, close then reopen the simulation and repeat as required)
-::::  to run simulation click Project -> Analyze All
-:::: to quit without saving the converged solution click File -> Close -> No
-::: If the program crashes and won't restart try running the following commands:
+5. Now to run the example:
+:::: Open one of the Antennas examples .aedt files then click HFSS -> Validation Check
+:::: Click simulation -> setup -> advanced -> Mesh/Solution options -> Use Defaults
+:::: Start simulation running by clicking Simulation -> Analyze All
+:::: To quit without saving the converged solution click File -> Close -> No
+6. If ansysedt crashes and won't restart try running the following commands:
 :::: pkill -9 -u $USER -f "ansys*|mono|mwrpcss|apip-standalone-service"
 :::: rm -rf ~/.mw (ansysedt will re-run first-time configuration on startup)
 

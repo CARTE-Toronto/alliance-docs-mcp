@@ -1,9 +1,9 @@
 ---
-title: "Star-CCM+/en"
-url: "https://docs.alliancecan.ca/wiki/Star-CCM%2B/en"
+title: "Star-CCM+"
+url: "https://docs.alliancecan.ca/wiki/Star-CCM%2B"
 category: "General"
-last_modified: "2026-02-04T11:51:55Z"
-page_id: 5428
+last_modified: "2026-02-05T18:49:39Z"
+page_id: 4355
 display_title: "Star-CCM+"
 ---
 
@@ -99,6 +99,7 @@ To run starccm+ in graphical mode it is recommended to use an  OnDemand or Jupyt
 1. Connect to an OnDemand system using one of the following URLs in your laptop browser :
  NIBI: https://ondemand.sharcnet.ca
  FIR: https://jupyterhub.fir.alliancecan.ca
+ NARVAL:  https://portail.narval.calculquebec.ca/
  RORQUAL: https://jupyterhub.rorqual.alliancecan.ca
  TRILLIUM: https://ondemand.scinet.utoronto.ca
 2. Open a new terminal window in your desktop and run one of:

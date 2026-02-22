@@ -2,7 +2,7 @@
 title: "Gaussian/en"
 url: "https://docs.alliancecan.ca/wiki/Gaussian/en"
 category: "General"
-last_modified: "2025-09-05T19:26:33Z"
+last_modified: "2026-02-13T17:19:49Z"
 page_id: 3737
 display_title: "Gaussian"
 ---
@@ -57,9 +57,9 @@ To use Gaussian 09 or Gaussian 03, simply modify the module load gaussian/g16.c0
 
 ====g16 (g09, g03)====
 
-This option will save the default runtime files (unnamed .rwf, .inp, .d2e, .int, .skr files) temporarily in $SLURM_TMPDIR (/localscratch/username.jobid.0/) on the compute node where the job was scheduled to. The files will be removed by the scheduler when a job is done (successful or not). If you do not expect to use the .rwf file to restart in a later time, you can use this option.
+This option will save the default runtime files (unnamed .rwf, .inp, .d2e, .int, .skr files) temporarily in $SLURM_TMPDIR (/localscratch/username.jobid.0/) on the compute node where the job was scheduled to run. Gaussian jobs will run faster when using the /localscratch. These files will be automatically removed by the scheduler when the job finishes, whether successfully or not. If you plan to use the .rwf file to restart the job in a later time, you must explicitly specify and name your own .rwf file in the Gaussian input file.
 
-/localscratch is ~800G shared by all jobs running on the same node. If your job files would be bigger than or close to that size range, you would instead use the G16 (G09, G03) option.
+/localscratch is ~3TB shared by all jobs running on the same node. If your job files would be bigger than or close to that size range, you would instead use the G16 (G09, G03) option.
 
 The following example is a g16 job script:
 
@@ -95,7 +95,7 @@ where version is either g03.d10, g09.e01, or g16.b01
 == Notes ==
 # NBO7 is included in g16.c01 version only, both nbo6 and nbo7 keywords will run NBO7 in g16.c01
 # NBO6 is available in g09.e01 and g16.b01 versions.
-# You can watch a recorded webinar/tutorial: Gaussian16 and NBO7 on Graham and Cedar (2022)
+# You can find a webinar slides:  Running Gaussian16 and NBO7 effectively on Nibi and Fir (2026)
 
 == Errors ==
 Some of the error messages produced by Gaussian have been collected, with suggestions for their resolution. See Gaussian error messages.

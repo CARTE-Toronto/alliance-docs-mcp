@@ -2,7 +2,7 @@
 title: "JupyterHub/en"
 url: "https://docs.alliancecan.ca/wiki/JupyterHub/en"
 category: "General"
-last_modified: "2025-09-30T16:07:01Z"
+last_modified: "2026-02-09T14:34:48Z"
 page_id: 4743
 display_title: "JupyterHub"
 ---
@@ -21,7 +21,6 @@ Some regional initiatives offer access to computing resources through JupyterHub
 On the following clusters‡, use your Alliance username and password to connect to JupyterHub:
 
 JupyterHub	Comments
-Béluga    	Provides access to JupyterLab servers spawned through jobs on the Béluga cluster.
 Fir       	Provides access to JupyterLab servers spawned through jobs on the Fir cluster.
 Narval    	Provides access to JupyterLab servers spawned through jobs on the Narval cluster.
 Rorqual   	Provides access to JupyterLab servers spawned through jobs on the Rorqual cluster.

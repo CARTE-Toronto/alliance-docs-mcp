@@ -1,6 +1,6 @@
 # Alliance Documentation - Page Directory
-# Generated: 2026-02-15T06:38:55.929494+00:00
-# Total pages: 439
+# Generated: 2026-02-22T06:35:38.402284+00:00
+# Total pages: 440
 
 - A tutorial on 'tar' (User Guide): https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/en
 - ABINIT (General): https://docs.alliancecan.ca/wiki/ABINIT/en
@@ -152,10 +152,11 @@
 - GLOST (General): https://docs.alliancecan.ca/wiki/GLOST/en
 - GNU Parallel (General): https://docs.alliancecan.ca/wiki/GNU_Parallel/en
 - GPAW (General): https://docs.alliancecan.ca/wiki/GPAW/en
+- GROMACS (General): https://docs.alliancecan.ca/wiki/GROMACS
 - GROMACS/en (General): https://docs.alliancecan.ca/wiki/GROMACS/en
 - Galaxy (General): https://docs.alliancecan.ca/wiki/Galaxy/en
-- Gaussian (General): https://docs.alliancecan.ca/wiki/Gaussian/en
 - Gaussian error messages (General): https://docs.alliancecan.ca/wiki/Gaussian_error_messages/en
+- Gaussian/en (General): https://docs.alliancecan.ca/wiki/Gaussian/en
 - General directives for migration (General): https://docs.alliancecan.ca/wiki/General_directives_for_migration/en
 - Generating SSH keys in Windows (General): https://docs.alliancecan.ca/wiki/Generating_SSH_keys_in_Windows/en
 - Getting started with the new national systems (Getting Started): https://docs.alliancecan.ca/wiki/Getting_started_with_the_new_national_systems/en
@@ -192,7 +193,7 @@
 - Julia (General): https://docs.alliancecan.ca/wiki/Julia/en
 - Julia (General): https://docs.alliancecan.ca/wiki/Julia
 - Jupyter (General): https://docs.alliancecan.ca/wiki/Jupyter/en
-- JupyterHub (General): https://docs.alliancecan.ca/wiki/JupyterHub/en
+- JupyterHub/en (General): https://docs.alliancecan.ca/wiki/JupyterHub/en
 - JupyterLab/en (General): https://docs.alliancecan.ca/wiki/JupyterLab/en
 - JupyterNotebook (General): https://docs.alliancecan.ca/wiki/JupyterNotebook/en
 - Kentutils (General): https://docs.alliancecan.ca/wiki/Kentutils
@@ -247,8 +248,8 @@
 - MrBayes (General): https://docs.alliancecan.ca/wiki/MrBayes/en
 - MuJoCo (General): https://docs.alliancecan.ca/wiki/MuJoCo/en
 - Multi-Instance GPU (General): https://docs.alliancecan.ca/wiki/Multi-Instance_GPU/en
-- Multifactor authentication (General): https://docs.alliancecan.ca/wiki/Multifactor_authentication/en
 - Multifactor authentication/ (General): https://docs.alliancecan.ca/wiki/Multifactor_authentication/
+- Multifactor authentication/en (General): https://docs.alliancecan.ca/wiki/Multifactor_authentication/en
 - NAMD (General): https://docs.alliancecan.ca/wiki/NAMD/en
 - NCCL (General): https://docs.alliancecan.ca/wiki/NCCL
 - NVTOP (General): https://docs.alliancecan.ca/wiki/NVTOP/en

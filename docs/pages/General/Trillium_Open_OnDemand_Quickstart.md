@@ -1,9 +1,9 @@
 ---
-title: "Trillium Open OnDemand Quickstart/en"
-url: "https://docs.alliancecan.ca/wiki/Trillium_Open_OnDemand_Quickstart/en"
+title: "Trillium Open OnDemand Quickstart"
+url: "https://docs.alliancecan.ca/wiki/Trillium_Open_OnDemand_Quickstart"
 category: "General"
-last_modified: "2026-01-29T14:36:04Z"
-page_id: 32168
+last_modified: "2026-02-09T17:30:12Z"
+page_id: 32098
 display_title: "Trillium Open OnDemand Quickstart"
 ---
 
@@ -88,6 +88,7 @@ Open OnDemand also features interactive applications that can be run directly fr
 * Length of job in hours
 * Number of cores
 * Amount of memory to allocate (GB)
+* GPU resources (Note: only the h100_1.10 MIG profile is currently available, which provides 10GB of memory and 1/8 of the compute resources of a full NVIDIA H100 GPU.)
 * Notify me by email when the job starts
 
 When you have chosen your job parameters click on the Launch button to submit your job to the queue. You will be taken to the My Interactive Sessions page where you can see the status of your job, i.e. queued, running or completed. Once the job has been assigned a node and is running, you can click on the Connect to ... button to launch the application. The application will open in a new tab in your browser, and you can interact with it as if it was running locally.
@@ -160,7 +161,7 @@ software stack          	NiaEnv, CCEnv                                          
 system issue alerts     	No                                                           	Yes
 user quota alerts       	No                                                           	Yes
 error logs              	No                                                           	Yes
-hardware                	1 x CPU with 40 Intel "CascadeLake" cores at 2.5 GHz, 1TB RAM	62 x CPU with 40 Intel "CascadeLake" cores at 2.5 GHz, 180GB RAM (default)3 x CPU with 40 Intel "CascadeLake" cores at 2.5 GHz, 1TB RAM (high memory)
+hardware                	1 x CPU with 40 Intel "CascadeLake" cores at 2.5 GHz, 1TB RAM	62 x CPU with 40 Intel "CascadeLake" cores at 2.5 GHz, 180GB RAM (default)3 x CPU with 40 Intel "CascadeLake" cores at 2.5 GHz, 1TB RAM (high memory) 4 x NVIDIA H100 80GB GPUs, with 96-core AMD EPYC 9654 CPU at 2.4 GHz, 810GB RAM
 
 1 Within the requested limits.
 

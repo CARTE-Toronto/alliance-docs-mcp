@@ -2,7 +2,7 @@
 title: "Getting started/en"
 url: "https://docs.alliancecan.ca/wiki/Getting_started/en"
 category: "Getting Started"
-last_modified: "2025-12-05T13:37:27Z"
+last_modified: "2026-02-11T19:29:01Z"
 page_id: 635
 display_title: "Getting started"
 ---
@@ -50,6 +50,19 @@ Trillium is a homogeneous cluster (or supercomputer) designed for large parallel
 
 Your password to log in to all new national systems is the same one you use to log into CCDB. Your username will be displayed at the top of the page once you've logged in.
 
+==What system should I use?==
+This question is hard to answer because of the range of needs we serve and the wide variety of resources we have available. If the descriptions above are insufficient, contact our technical support.
+
+In order to identify the best resource to use, we may ask specific questions, such as:
+* What software do you want to use?
+** Does the software require a commercial license?
+** Can the software be used non-interactively? That is, can it be controlled from a file prepared prior to its execution rather than through the graphical interface?
+** Can it run on the Linux operating system?
+* How much memory, time, computing power, accelerators, storage, network bandwidth and so forth—are required by a typical job? Rough estimates are fine.
+* How frequently will you need to run this type of job?
+
+You may know the answer to these questions or not. If you do not, our technical support team is there to help you find the answers. Then they will be able to direct you to the most appropriate resources for your needs.
+
 ==What training is available?==
 
 Most workshops are organized by the Alliance's regional partners; both online and in-person training opportunities exist on a wide variety of subjects and at different levels of sophistication. We invite you to consult the following regional training calendars and websites for more information,
@@ -69,17 +82,4 @@ Most workshops are organized by the Alliance's regional partners; both online an
 * ACENET
 ** Training information
 ** ACENET YouTube Channel
-One can also find a shared calendar of upcoming workshops.
-
-==What system should I use?==
-This question is hard to answer because of the range of needs we serve and the wide variety of resources we have available. If the descriptions above are insufficient, contact our technical support.
-
-In order to identify the best resource to use, we may ask specific questions, such as:
-* What software do you want to use?
-** Does the software require a commercial license?
-** Can the software be used non-interactively? That is, can it be controlled from a file prepared prior to its execution rather than through the graphical interface?
-** Can it run on the Linux operating system?
-* How much memory, time, computing power, accelerators, storage, network bandwidth and so forth—are required by a typical job? Rough estimates are fine.
-* How frequently will you need to run this type of job?
-
-You may know the answer to these questions or not. If you do not, our technical support team is there to help you find the answers. Then they will be able to direct you to the most appropriate resources for your needs.
+See the complete and merged list of upcoming training events on Explora.
