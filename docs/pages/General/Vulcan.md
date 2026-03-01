@@ -2,7 +2,7 @@
 title: "Vulcan/en"
 url: "https://docs.alliancecan.ca/wiki/Vulcan/en"
 category: "General"
-last_modified: "2025-08-09T15:27:02Z"
+last_modified: "2026-02-18T19:56:01Z"
 page_id: 28485
 display_title: "Vulcan"
 ---
@@ -22,7 +22,7 @@ Internet access is not generally available from the compute nodes. A globally av
 
 Maximum duration of jobs is 7 days.
 
-Vulcan is currently open to Amii affiliated PIs with CCAI Chairs. Further access will be announced at a later date.
+Vulcan is currently open to all researchers doing research on AI or applying AI methods in their research.
 
 ==Access==
 To access the Vulcan cluster, each researcher must first request access in CCDB.
@@ -36,7 +36,7 @@ If you are a PI and need to sponsor other researchers you will have to add them 
 ==Vulcan hardware specifications==
 
 Nodes	Model      	CPU                      	Cores	System Memory	GPUs per node       	Total GPUs
-205  	Dell R760xa	2 x Intel Xeon Gold 6448Y	64   	512 GB       	4 x NVIDIA L40s 48GB	820
+252  	Dell R760xa	2 x Intel Xeon Gold 6448Y	64   	512 GB       	4 x NVIDIA L40s 48GB	1008
 
 ==Storage system==
 

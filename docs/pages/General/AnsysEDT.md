@@ -1,9 +1,9 @@
 ---
-title: "AnsysEDT"
-url: "https://docs.alliancecan.ca/wiki/AnsysEDT"
+title: "AnsysEDT/en"
+url: "https://docs.alliancecan.ca/wiki/AnsysEDT/en"
 category: "General"
-last_modified: "2026-02-13T15:36:34Z"
-page_id: 28712
+last_modified: "2026-02-17T08:08:54Z"
+page_id: 28884
 display_title: "AnsysEDT"
 ---
 

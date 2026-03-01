@@ -1,9 +1,9 @@
 ---
-title: "Running jobs"
-url: "https://docs.alliancecan.ca/wiki/Running_jobs"
+title: "Running jobs/en"
+url: "https://docs.alliancecan.ca/wiki/Running_jobs/en"
 category: "General"
-last_modified: "2026-02-05T21:06:04Z"
-page_id: 1952
+last_modified: "2026-02-22T14:31:02Z"
+page_id: 2538
 display_title: "Running jobs"
 ---
 
@@ -52,7 +52,7 @@ The ST column of the output shows the status of each job. The two most common st
 
 If you want to know more about the output of sq or squeue, or learn how to change the output, see the  online manual page for squeue.  sq is a local customization.
 
-Do not run sq or squeue from a script or program at high frequency (e.g. every few seconds). Responding to squeue adds load to Slurm, and may interfere with its performance or correct operation.  See Email notification below for a much better way to learn when your job starts or ends.
+Do not run sq or squeue from a script or program at high frequency (e.g. every few seconds). Responding to squeue adds load to Slurm, and may interfere with its performance or correct operation.  See Email notification for a much better way to learn when your job starts or ends.
 
 ==Where does the output go?==
 
@@ -244,23 +244,23 @@ $ module spider quantumespresso/6.1
       Quantum ESPRESSO is an integrated suite of computer codes for electronic-structure calculations and materials modeling at the nanoscale. It is based on density-functional theory, plane waves, and pseudopotentials (both
       norm-conserving and ultrasoft).
 
-Properties:
+    Properties:
       Chemistry libraries/apps / Logiciels de chimie
 
-You will need to load all module(s) on any one of the lines below before the "quantumespresso/6.1" module is available to load.
+    You will need to load all module(s) on any one of the lines below before the "quantumespresso/6.1" module is available to load.
 
-nixpkgs/16.09  intel/2016.4  openmpi/2.1.1
+      nixpkgs/16.09  intel/2016.4  openmpi/2.1.1
 
-Help:
+    Help:
 
-Description
+      Description
       ===========
       Quantum ESPRESSO  is an integrated suite of computer codes
        for electronic-structure calculations and materials modeling at the nanoscale.
        It is based on density-functional theory, plane waves, and pseudopotentials
         (both norm-conserving and ultrasoft).
 
-More information
+      More information
       ================
        - Homepage: http://www.pwscf.org/
 

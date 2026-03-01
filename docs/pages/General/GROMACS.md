@@ -1,9 +1,9 @@
 ---
-title: "GROMACS"
-url: "https://docs.alliancecan.ca/wiki/GROMACS"
+title: "GROMACS/en"
+url: "https://docs.alliancecan.ca/wiki/GROMACS/en"
 category: "General"
-last_modified: "2026-02-11T19:10:43Z"
-page_id: 1881
+last_modified: "2026-02-17T08:09:03Z"
+page_id: 4167
 display_title: "GROMACS"
 ---
 
@@ -534,7 +534,6 @@ Testing.
 ==== Installing for gromacs/2021 (StdEnv/2020) ====
 
 1. Load required modules and create the virtualenv
-
 1.22.2 seaborn0.13.1 gmx_MMPBSA1.5.0.3 ParmEd3.4.4
 }}
 

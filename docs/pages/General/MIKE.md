@@ -2,12 +2,12 @@
 title: "MIKE/en"
 url: "https://docs.alliancecan.ca/wiki/MIKE/en"
 category: "General"
-last_modified: "2025-09-03T12:24:42Z"
+last_modified: "2026-02-17T13:15:33Z"
 page_id: 21986
 display_title: "MIKE"
 ---
 
-MIKE powered by DHI is a a hydraulic and hydrological modeling software package.
+MIKE powered by DHI is a hydraulic and hydrological modeling software package.
 
 == License requirements ==
 MIKE is a commercial product and each user needs to supply their own license.

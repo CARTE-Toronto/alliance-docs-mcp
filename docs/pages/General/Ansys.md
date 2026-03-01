@@ -2,7 +2,7 @@
 title: "Ansys"
 url: "https://docs.alliancecan.ca/wiki/Ansys"
 category: "General"
-last_modified: "2026-02-17T18:27:30Z"
+last_modified: "2026-02-27T05:36:35Z"
 page_id: 4568
 display_title: "Ansys"
 ---
@@ -266,7 +266,7 @@ Compute Node (with GPU requested)
 :::: HOOPS_PICTURE=opengl                 (version 2024R2 or older)
 ::: Click the Start button
 
- If I_MPI_HYDRA_BOOTSTRAP=ssh is not set properly on nibi when fluent is started from within OOD Compute Desktop sessions and  intelmpi is used then fluent will crash on startup producing the following error output.  Should this occur completely exit fluent, shutdown workbench and start over again.
+If I_MPI_HYDRA_BOOTSTRAP=ssh is not set properly on nibi when fluent is started from within OOD Compute Desktop sessions and  intelmpi is used then fluent will crash on startup producing the following error output.  Should this occur completely exit fluent, shutdown workbench and start over again.
  [mpiexec@g4.nibi.sharcnet] Error: Unable to run bstrap_proxy on g4.nibi.sharcnet (pid 2251587, exit code 256)
  [mpiexec@g4.nibi.sharcnet] poll_for_event (../../../../../src/pm/i_hydra/libhydra/demux/hydra_demux_poll.c:157): check exit codes error
  [mpiexec@g4.nibi.sharcnet] HYD_dmx_poll_wait_for_proxy_event (../../../../../src/pm/i_hydra/libhydra/demux/hydra_demux_poll.c:206): poll for  event error
@@ -309,7 +309,6 @@ Compute Node (no GPU requested) or Basic Desktop
 Compute Node (with GPU requested)
 
 For this option to work on nibi, as mentioned in the first paragraph of this section, a full h100(80GB) GPU must be selected from the GPU pulldown when starting the OnDemand desktop session.  This particular GPU selection is required since it the only one (currently) on nibi that will ensure the VirtualGL environment variables required to enable accelerated OpenGL graphics calls are setup in the Deskop environment.  Once your desktop appears, open a terminal window and start workbench as follows :
-
 ::: module load StdEnv/2023 ansys/2025R1
 ::: runwb2
 
@@ -319,7 +318,7 @@ To optionally start fluent from within workbench click Fluid Flow (Fluent) in th
 ::: HOOPS_PICTURE=null                   (version 2024R2 or older)
 :: Click the Start button
 
- If I_MPI_HYDRA_BOOTSTRAP=ssh is not set properly on nibi when fluent is started from within OOD Compute Desktop sessions and  intelmpi is used then fluent will crash on startup produce the following error output.  If this occurs completely exit fluent, shutdown workbench then start again.
+If I_MPI_HYDRA_BOOTSTRAP=ssh is not set properly on nibi when fluent is started from within OOD Compute Desktop sessions and  intelmpi is used then fluent will crash on startup produce the following error output.  If this occurs completely exit fluent, shutdown workbench then start again.
  [mpiexec@g4.nibi.sharcnet] Error: Unable to run bstrap_proxy on g4.nibi.sharcnet (pid 2251587, exit code 256)
  [mpiexec@g4.nibi.sharcnet] poll_for_event (../../../../../src/pm/i_hydra/libhydra/demux/hydra_demux_poll.c:157): check exit codes error
  [mpiexec@g4.nibi.sharcnet] HYD_dmx_poll_wait_for_proxy_event (../../../../../src/pm/i_hydra/libhydra/demux/hydra_demux_poll.c:206): poll for  event error

@@ -1,9 +1,9 @@
 ---
-title: "Cloud resources/en"
-url: "https://docs.alliancecan.ca/wiki/Cloud_resources/en"
+title: "Cloud resources"
+url: "https://docs.alliancecan.ca/wiki/Cloud_resources"
 category: "General"
-last_modified: "2024-12-19T17:48:01Z"
-page_id: 184
+last_modified: "2026-02-23T19:12:43Z"
+page_id: 128
 display_title: "Cloud resources"
 ---
 
@@ -44,22 +44,17 @@ Total vCPUs: 2,048
 Total RAM: 7,680 GB
 500 TB of persistent Ceph storage.
 
-===Graham cloud===
-Address: graham.cloud.alliancecan.ca
+===Nibi cloud===
+Address: nibi.cloud.alliancecan.ca
 
-Node count	CPU                      	Memory (GB)	Local (ephemeral) storage	Interconnect	GPU	Total CPUs	Total vCPUS
-6         	2 x E5-2683 v4           	256        	2x 500GB SSD in RAID0    	1 x 10GbE   	N/A	192
-2         	2 x E5-2683 v4           	512        	2x 500GB SSD in RAID0    	1 x 10GbE   	N/A	64
-8         	2 x E5-2637 v4           	128        	2x 500GB SSD in RAID0    	1 x 10GbE   	N/A	256
-8         	2 x Xeon(R) Gold 6130 CPU	256        	2x 500GB SSD in RAID0    	1 x 10GbE   	N/A	256
-3         	2 x E5-2640 v4           	256        	2x 500GB SSD in RAID0    	1 x 10GbE   	N/A	120
-12        	2 x Xeon(R) Gold 6248 CPU	768        	2x 1TB SSD in RAID0      	1 x 10GbE   	N/A	480
+Node count	CPU                                 	Memory (GB)	Local (ephemeral) storage	Interconnect                  	GPU	Total CPUs	Total vCPUS
+18        	2 X AMD EPYC 9474F 48-Core Processor	1511       	3.5 TB                   	1 X 1GbE, 1 X 25GbE, 1 X 50GbE	N/A	1728      	3456
 
 Location: University of Waterloo
-Total CPUs: 1,368
-Total vCPUs:
-Total RAM: 15,616 GB
-84 TB of persistent Ceph storage.
+Total CPUs: 1728
+Total vCPUs: 3456
+Total RAM: 26.57 TB (27202.94 GB | 27,860,544 MB)
+Ceph storage: 7.46 PB
 
 ===Béluga cloud===
 Address: beluga.cloud.alliancecan.ca
@@ -76,10 +71,10 @@ Total RAM: 36,864 GiB
 1.7 PiB of erasure coded persistent HDD Ceph storage.
 
 ==Software==
-Alliance cloud OpenStack platform versions as of March 11, 2021
+Alliance cloud OpenStack platform versions as of February 23, 2026
 * Arbutus: Ussuri
 * Cedar: Train
-* Graham: Ussuri
+* Nibi: Flamingo
 * Béluga: Victoria
 
 See the OpenStack releases for a list of all OpenStack versions.

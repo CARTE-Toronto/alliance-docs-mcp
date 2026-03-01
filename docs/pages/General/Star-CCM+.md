@@ -1,9 +1,9 @@
 ---
-title: "Star-CCM+"
-url: "https://docs.alliancecan.ca/wiki/Star-CCM%2B"
+title: "Star-CCM+/en"
+url: "https://docs.alliancecan.ca/wiki/Star-CCM%2B/en"
 category: "General"
-last_modified: "2026-02-05T18:49:39Z"
-page_id: 4355
+last_modified: "2026-02-26T07:20:37Z"
+page_id: 5428
 display_title: "Star-CCM+"
 ---
 
@@ -93,7 +93,7 @@ exit $RET
 
 = Graphical use =
 
-To run starccm+ in graphical mode it is recommended to use an  OnDemand or JupyterLab system to start a remote desktop.  In addition to configuring ~/.licenses/starccm.lic research groups with a POD license should also run export LM_PROJECT='CD-ADAPCO PROJECT ID'and optionally append -power to the list of command starccm+ line options below.  Note that module avail starccm-mixed will display which starccm versions are available within the StdEnv/version that you currently have loaded.  Alternatively running module spider starccm-mixed will show all available starccm module versions available within all StdEnv module versions.
+To run starccm+ in graphical mode it is recommended to use an  OnDemand or JupyterLab system to start a remote desktop.  In addition to configuring ~/.licenses/starccm.lic, research groups with a POD license should also run export LM_PROJECT='CD-ADAPCO PROJECT ID' before starting starccm+ as shown below.  Additional command line options such as -power may also need to be appended depending on your license type.  Note that module avail starccm-mixed will display which starccm versions are available within the StdEnv/version that you currently have loaded.  Alternatively running module spider starccm-mixed will show all available starccm module versions available within all StdEnv module versions.
 
 == OnDemand ==
 1. Connect to an OnDemand system using one of the following URLs in your laptop browser :

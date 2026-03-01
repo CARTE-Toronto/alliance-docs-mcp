@@ -1,9 +1,9 @@
 ---
-title: "Apply for a CCDB account"
-url: "https://docs.alliancecan.ca/wiki/Apply_for_a_CCDB_account"
+title: "Apply for a CCDB account/en"
+url: "https://docs.alliancecan.ca/wiki/Apply_for_a_CCDB_account/en"
 category: "General"
-last_modified: "2026-02-06T19:28:03Z"
-page_id: 29471
+last_modified: "2026-02-17T08:09:21Z"
+page_id: 29533
 display_title: "Apply for a CCDB account"
 ---
 

@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-02-22T06:35:38.395874+00:00",
-  "total_pages": 440,
+  "last_updated": "2026-03-01T06:33:57.306431+00:00",
+  "total_pages": 443,
   "pages": [
     {
       "page_id": 10049,
@@ -259,7 +259,7 @@
       "title": "AnsysEDT/en",
       "url": "https://docs.alliancecan.ca/wiki/AnsysEDT/en",
       "category": "General",
-      "last_modified": "2026-01-21T14:03:10Z",
+      "last_modified": "2026-02-17T08:08:54Z",
       "file_path": "docs/pages/General/AnsysEDT.md",
       "slug": "AnsysEDT"
     },
@@ -274,10 +274,10 @@
     },
     {
       "page_id": 29533,
-      "title": "Apply for a CCDB account",
+      "title": "Apply for a CCDB account/en",
       "url": "https://docs.alliancecan.ca/wiki/Apply_for_a_CCDB_account/en",
       "category": "General",
-      "last_modified": "2025-08-15T17:34:03Z",
+      "last_modified": "2026-02-17T08:09:21Z",
       "file_path": "docs/pages/General/Apply_for_a_CCDB_account.md",
       "slug": "Apply_for_a_CCDB_account"
     },
@@ -385,7 +385,7 @@
       "title": "Automation in the context of multifactor authentication/en",
       "url": "https://docs.alliancecan.ca/wiki/Automation_in_the_context_of_multifactor_authentication/en",
       "category": "General",
-      "last_modified": "2025-12-09T19:11:06Z",
+      "last_modified": "2026-02-20T19:34:39Z",
       "file_path": "docs/pages/General/Automation_in_the_context_of_multifactor_authentication.md",
       "slug": "Automation_in_the_context_of_multifactor_authentication"
     },
@@ -592,7 +592,7 @@
       "title": "COMSOL/en",
       "url": "https://docs.alliancecan.ca/wiki/COMSOL/en",
       "category": "General",
-      "last_modified": "2026-02-04T11:57:02Z",
+      "last_modified": "2026-02-24T11:40:00Z",
       "file_path": "docs/pages/General/COMSOL.md",
       "slug": "COMSOL"
     },
@@ -1276,7 +1276,7 @@
       "title": "GROMACS/en",
       "url": "https://docs.alliancecan.ca/wiki/GROMACS/en",
       "category": "General",
-      "last_modified": "2025-12-19T17:19:48Z",
+      "last_modified": "2026-02-17T08:09:03Z",
       "file_path": "docs/pages/General/GROMACS.md",
       "slug": "GROMACS"
     },
@@ -1750,10 +1750,10 @@
     },
     {
       "page_id": 21986,
-      "title": "MIKE",
+      "title": "MIKE/en",
       "url": "https://docs.alliancecan.ca/wiki/MIKE/en",
       "category": "General",
-      "last_modified": "2025-09-03T12:24:42Z",
+      "last_modified": "2026-02-17T13:15:33Z",
       "file_path": "docs/pages/General/MIKE.md",
       "slug": "MIKE"
     },
@@ -2788,7 +2788,7 @@
       "title": "Running jobs/en",
       "url": "https://docs.alliancecan.ca/wiki/Running_jobs/en",
       "category": "General",
-      "last_modified": "2025-12-16T20:07:47Z",
+      "last_modified": "2026-02-22T14:31:02Z",
       "file_path": "docs/pages/General/Running_jobs.md",
       "slug": "Running_jobs"
     },
@@ -3022,7 +3022,7 @@
       "title": "Star-CCM+/en",
       "url": "https://docs.alliancecan.ca/wiki/Star-CCM%2B/en",
       "category": "General",
-      "last_modified": "2026-02-04T11:51:55Z",
+      "last_modified": "2026-02-26T07:20:37Z",
       "file_path": "docs/pages/General/Star-CCM+.md",
       "slug": "Star-CCM+"
     },
@@ -3094,7 +3094,7 @@
       "title": "TamIA/en",
       "url": "https://docs.alliancecan.ca/wiki/TamIA/en",
       "category": "General",
-      "last_modified": "2026-01-29T14:36:01Z",
+      "last_modified": "2026-02-20T19:46:38Z",
       "file_path": "docs/pages/General/TamIA.md",
       "slug": "TamIA"
     },
@@ -3226,10 +3226,10 @@
     },
     {
       "page_id": 2144,
-      "title": "Transferring data",
+      "title": "Transferring data/en",
       "url": "https://docs.alliancecan.ca/wiki/Transferring_data/en",
       "category": "General",
-      "last_modified": "2025-08-29T12:50:27Z",
+      "last_modified": "2026-02-17T13:12:57Z",
       "file_path": "docs/pages/General/Transferring_data.md",
       "slug": "Transferring_data"
     },
@@ -3586,10 +3586,10 @@
     },
     {
       "page_id": 28485,
-      "title": "Vulcan",
+      "title": "Vulcan/en",
       "url": "https://docs.alliancecan.ca/wiki/Vulcan/en",
       "category": "General",
-      "last_modified": "2025-08-09T15:27:02Z",
+      "last_modified": "2026-02-18T19:56:01Z",
       "file_path": "docs/pages/General/Vulcan.md",
       "slug": "Vulcan"
     },
@@ -3760,7 +3760,7 @@
       "title": "Ansys",
       "url": "https://docs.alliancecan.ca/wiki/Ansys",
       "category": "General",
-      "last_modified": "2026-02-17T18:27:30Z",
+      "last_modified": "2026-02-27T05:36:35Z",
       "file_path": "docs/pages/General/Ansys.md",
       "slug": "Ansys"
     },
@@ -3850,7 +3850,7 @@
       "title": "Trillium Open OnDemand Quickstart/en",
       "url": "https://docs.alliancecan.ca/wiki/Trillium_Open_OnDemand_Quickstart/en",
       "category": "General",
-      "last_modified": "2026-01-29T14:36:04Z",
+      "last_modified": "2026-02-17T08:09:28Z",
       "file_path": "docs/pages/General/Trillium_Open_OnDemand_Quickstart.md",
       "slug": "Trillium_Open_OnDemand_Quickstart"
     },
@@ -3961,6 +3961,33 @@
       "last_modified": "2026-02-11T19:10:43Z",
       "file_path": "docs/pages/General/GROMACS.md",
       "slug": "GROMACS"
+    },
+    {
+      "page_id": 128,
+      "title": "Cloud resources",
+      "url": "https://docs.alliancecan.ca/wiki/Cloud_resources",
+      "category": "General",
+      "last_modified": "2026-02-23T19:12:43Z",
+      "file_path": "docs/pages/General/Cloud_resources.md",
+      "slug": "Cloud_resources"
+    },
+    {
+      "page_id": 32466,
+      "title": "How to obtain the list of users in a PAICE tier",
+      "url": "https://docs.alliancecan.ca/wiki/How_to_obtain_the_list_of_users_in_a_PAICE_tier",
+      "category": "User Guide",
+      "last_modified": "2026-02-20T12:12:32Z",
+      "file_path": "docs/pages/User Guide/How_to_obtain_the_list_of_users_in_a_PAICE_tier.md",
+      "slug": "How_to_obtain_the_list_of_users_in_a_PAICE_tier"
+    },
+    {
+      "page_id": 15593,
+      "title": "QuantumATK",
+      "url": "https://docs.alliancecan.ca/wiki/QuantumATK",
+      "category": "General",
+      "last_modified": "2026-02-24T18:35:42Z",
+      "file_path": "docs/pages/General/QuantumATK.md",
+      "slug": "QuantumATK"
     }
   ]
 }

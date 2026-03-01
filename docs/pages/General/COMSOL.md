@@ -1,9 +1,9 @@
 ---
-title: "COMSOL"
-url: "https://docs.alliancecan.ca/wiki/COMSOL"
+title: "COMSOL/en"
+url: "https://docs.alliancecan.ca/wiki/COMSOL/en"
 category: "General"
-last_modified: "2026-02-17T08:09:02Z"
-page_id: 5690
+last_modified: "2026-02-24T11:40:00Z"
+page_id: 6233
 display_title: "COMSOL"
 ---
 
@@ -42,9 +42,9 @@ If initial license checkout attempts fail, create a support case with CMC
 
 == Checking license use ==
 
-To determine the number of licenses checked out by your running comsol job(s) it is necessary to queury the licence server that you are using.  As described | here this maybe done using the lmstat command. However as this command is not installed with Comsol by default, the following one liner workaround which uses lmutil from the latest installed ansys module maybe run on any cluster login node instead.  As long as you rely upon the standard ~/.licenses/comsol.lic to define which license server you are using, it should work though may take a minute to return if the server is busy :
+To determine the number of licenses checked out by your running comsol job(s) it is necessary to query the licence server you are using.  As described | here, this maybe done using the lmstat command. However, as this command is not installed with COMSOL by default, the following one liner workaround which uses lmutil from the latest installed ansys module may be run on any cluster login node instead.  As long as you rely upon the standard ~/.licenses/comsol.lic to define which license server you are using, it should work, but may take a minute to return if the server is busy.
 
-[l2 (login-node):~] module load ansys; $EBROOTANSYS/v$(echo ${EBVERSIONANSYS:2:2}${EBVERSIONANSYS:5:1})/licensingclient/linx64/lmutil lmstat -c ~/.licenses/comsol.lic -a | sed '/^$/d' | egrep 'License|UP|$USER|Total of'  | grep -v 'Total of 0'
+  [l2 (login-node):~] module load ansys; $EBROOTANSYS/v$(echo ${EBVERSIONANSYS:2:2}${EBVERSIONANSYS:5:1})/licensingclient/linx64/lmutil lmstat -c ~/.licenses/comsol.lic -a | sed '/^$/d' | egrep 'License|UP|$USER|Total of'  | grep -v 'Total of 0'
 
 == Installed products ==
 

@@ -2,13 +2,14 @@
 title: "TamIA/en"
 url: "https://docs.alliancecan.ca/wiki/TamIA/en"
 category: "General"
-last_modified: "2026-01-29T14:36:01Z"
+last_modified: "2026-02-20T19:46:38Z"
 page_id: 28130
 display_title: "TamIA"
 ---
 
 Availability : March 31, 2025
 Login node : tamia.alliancecan.ca
+Automation node : robot.tamia.ecpia.ca
 Globus collection : TamIA's Globus v5 Server
 Data transfer node (rsync, scp, sftp,...) : tamia.alliancecan.ca
 Portal : https://portail.tamia.ecpia.ca/

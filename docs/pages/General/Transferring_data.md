@@ -2,7 +2,7 @@
 title: "Transferring data/en"
 url: "https://docs.alliancecan.ca/wiki/Transferring_data/en"
 category: "General"
-last_modified: "2025-08-29T12:50:27Z"
+last_modified: "2026-02-17T13:12:57Z"
 page_id: 2144
 display_title: "Transferring data"
 ---
@@ -65,7 +65,7 @@ The above rsync examples all involve transfers from a local system into a projec
 
 where REMOTENAME can be a directory or file preceded by its path location and somedir will be created if it doesn't already exist.  In its simplest incarnation rsync can also be used locally within a single system to transfer a directory or file (from home or scratch) into project by dropping the cluster name:
 
-where somedir will be created if it doesn't already exist before copying LOCALNAME into it.  For comparison purposes, the copy command can similarely be used to transfer LOCALNAME from home to project by doing:
+where somedir will be created if it doesn't already exist before copying LOCALNAME into it.  For comparison purposes, the copy command can similarly be used to transfer LOCALNAME from home to project by doing:
 "mode,timestamps" LOCALNAME ~/projects/def-professor/someuser/somedir/}}
 however unlike rsync, if LOCALNAME is a directory, it will be renamed to somedir if somedir does not exist.
 

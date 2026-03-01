@@ -2,7 +2,7 @@
 title: "Automation in the context of multifactor authentication/en"
 url: "https://docs.alliancecan.ca/wiki/Automation_in_the_context_of_multifactor_authentication/en"
 category: "General"
-last_modified: "2025-12-09T19:11:06Z"
+last_modified: "2026-02-20T19:34:39Z"
 page_id: 24806
 display_title: "Automation in the context of multifactor authentication"
 ---
@@ -51,6 +51,7 @@ Here is the hostname of the node to be used for unattended connections on each c
 * Narval: robot.narval.alliancecan.ca
 * Nibi: robot.nibi.alliancecan.ca
 * Rorqual: robot.rorqual.alliancecan.ca
+* tamIA: robot.tamia.ecpia.ca
 * Trillium: robot2.scinet.utoronto.ca
 
 = Using the right key =

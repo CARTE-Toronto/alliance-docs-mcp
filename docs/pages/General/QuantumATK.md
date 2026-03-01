@@ -1,9 +1,9 @@
 ---
-title: "QuantumATK/en"
-url: "https://docs.alliancecan.ca/wiki/QuantumATK/en"
+title: "QuantumATK"
+url: "https://docs.alliancecan.ca/wiki/QuantumATK"
 category: "General"
-last_modified: "2025-10-07T15:04:23Z"
-page_id: 19833
+last_modified: "2026-02-24T18:35:42Z"
+page_id: 15593
 display_title: "QuantumATK"
 ---
 
@@ -23,8 +23,9 @@ and put this file in the folder $HOME/.licenses/ where  is your license server a
 
 Researchers who purchase a QuantumATK license subscription from CMC may use the following settings in their quantumatk.lic file:
 
+* Fir: SERVER 172.26.0.101 ANY 6053
 * Narval: SERVER 10.100.64.10 ANY 6053
 * Rorqual: SERVER 10.100.64.10 ANY 6053
 * Trillium: SERVER nia-cmc ANY 6053
 
-If initial license checkout attempts fail contact  to verify they have your username on file.
+If initial license checkout attempts fail, create a support case with CMC.
