@@ -1,9 +1,9 @@
 ---
-title: "Trillium Open OnDemand Quickstart/en"
-url: "https://docs.alliancecan.ca/wiki/Trillium_Open_OnDemand_Quickstart/en"
+title: "Trillium Open OnDemand Quickstart"
+url: "https://docs.alliancecan.ca/wiki/Trillium_Open_OnDemand_Quickstart"
 category: "General"
-last_modified: "2026-02-17T08:09:28Z"
-page_id: 32168
+last_modified: "2026-03-05T22:24:41Z"
+page_id: 32098
 display_title: "Trillium Open OnDemand Quickstart"
 ---
 
@@ -31,6 +31,8 @@ The Open OnDemand platform provides a file browser that allows you to manage you
 * Create new files/directories
 * Delete files/directories
 * Edit existing files
+
+Storage quotas can also be displayed by clicking on the Storage Quotas link in the Files tab.
 
 ==Uploading files==
 

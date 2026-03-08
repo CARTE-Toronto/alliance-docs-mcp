@@ -1,14 +1,13 @@
 ---
-title: "Abaqus"
-url: "https://docs.alliancecan.ca/wiki/Abaqus"
+title: "Abaqus/en"
+url: "https://docs.alliancecan.ca/wiki/Abaqus/en"
 category: "General"
-last_modified: "2026-02-11T20:32:13Z"
-page_id: 7347
+last_modified: "2026-02-27T12:52:40Z"
+page_id: 10030
 display_title: "Abaqus"
 ---
 
 __FORCETOC__
-
 Abaqus FEA is a software suite for finite element analysis and computer-aided engineering.
 
 = Licensing =
@@ -36,7 +35,7 @@ Similar to previously installed modules the abaqus/2026 module is configured by 
 
 = Version compatibility =
 
-== Module Changes ==
+== Module change ==
 
 A new module for abaqus/2026 is now installed into the default StdEnv/2023 environment.  This new version resolves the *** buffer overflow detected *** error with abaqus/2021 on all recent clusters.  Note that each slurm script on this wiki page has been updated to work with both abaqus/2026 and abaqus/2021 where possible therefore all personal slurm scripts should likewise be updated by researchers.  The abaqus/2026 module contains the initial Abaqus 2026 Golden release.  Another module named abaqus/2026.2606 containing Abaqus 2026 FP.CFA.2606 level updates will be installed next.
 
@@ -146,7 +145,7 @@ An estimate for the total slurm node memory (--mem=) required for a simulation t
 Alternatively a total memory estimate for a single node threaded process can be obtained by running the simulation interactively on a compute node and then monitoring the memory use with the top (or ps) command as follows:
 1) First obtain an allocation on a compute node and start your simulation running:
 
-2) Next ssh into the compute node (c50 according to the sq command) and then run top i.e.
+2) Next ssh into the compute node (c50 according to the sq command) and then run top, i.e.
 
 3) watch the VIRT and RES columns until steady peak memory values are observed
 
@@ -156,7 +155,7 @@ To completely satisfy the recommended "MEMORY TO OPERATIONS REQUIRED MINIMIZE I/
 
 To determine the required slurm memory for multi-node slurm scripts, memory estimates (per compute process) required to minimize I/O are given in the output dat file of completed jobs.  If mp_host_split is not specified (or is set to 1) then the total number of compute processes will equal the number of nodes.  The mem-per-cpu value can then be roughly determined by multiplying the largest memory estimate by the number of nodes and then dividing by the number or ntasks.  If however a value for mp_host_split is specified (greater than 1) than the mem-per-cpu value can be roughly determined from the largest memory estimate times the number of nodes times the value of mp_host_split divided by the number of tasks.  Note that mp_host_split must be less than or equal to the number of cores per node assigned by slurm at runtime otherwise Abaqus will terminate.  This scenario can be controlled by uncommenting to specify a value for tasks-per-node.  The following definitive statement is given in every output dat file and mentioned here for reference:
 
- THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+  THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
  THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
  THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
  SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
@@ -174,7 +173,7 @@ It is recommended to use an OpenOnDemand or JupyterLab to run graphical applicat
 == OnDemand ==
 
 1. Start an OnDemand desktop session by clicking one of the following OnDemand links:
- NIBI: https://ondemand.sharcnet.ca
+ Nibi: https://ondemand.sharcnet.ca
  TRILLIUM: https://ondemand.scinet.utoronto.ca
 
 2. Open a new terminal window within your desktop and load :

@@ -1,13 +1,13 @@
 # Alliance Documentation - Page Directory
-# Generated: 2026-03-01T06:33:57.313419+00:00
-# Total pages: 443
+# Generated: 2026-03-08T06:30:59.234048+00:00
+# Total pages: 444
 
 - A tutorial on 'tar' (User Guide): https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/en
 - ABINIT (General): https://docs.alliancecan.ca/wiki/ABINIT/en
 - ACPYPE (General): https://docs.alliancecan.ca/wiki/ACPYPE
 - ADF (General): https://docs.alliancecan.ca/wiki/ADF/en
-- AI and Machine Learning (General): https://docs.alliancecan.ca/wiki/AI_and_Machine_Learning/en
 - AI and Machine Learning (General): https://docs.alliancecan.ca/wiki/AI_and_Machine_Learning
+- AI and Machine Learning/en (General): https://docs.alliancecan.ca/wiki/AI_and_Machine_Learning/en
 - AMBER (General): https://docs.alliancecan.ca/wiki/AMBER/en
 - AMS (General): https://docs.alliancecan.ca/wiki/AMS/en
 - ARM software (General): https://docs.alliancecan.ca/wiki/ARM_software/en
@@ -440,6 +440,7 @@
 - Working with processors that have non-uniform memory access (NUMA) (General): https://docs.alliancecan.ca/wiki/Working_with_processors_that_have_non-uniform_memory_access_(NUMA)
 - Working with volumes (General): https://docs.alliancecan.ca/wiki/Working_with_volumes/en
 - XGBoost (General): https://docs.alliancecan.ca/wiki/XGBoost/en
+- XGBoost (General): https://docs.alliancecan.ca/wiki/XGBoost
 - Yt (General): https://docs.alliancecan.ca/wiki/Yt/en
 - Zfs (General): https://docs.alliancecan.ca/wiki/Zfs
 - ÉcoleCQ2019 (General): https://docs.alliancecan.ca/wiki/%C3%89coleCQ2019

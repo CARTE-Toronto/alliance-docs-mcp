@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-03-01T06:33:57.306431+00:00",
-  "total_pages": 443,
+  "last_updated": "2026-03-08T06:30:59.227488+00:00",
+  "total_pages": 444,
   "pages": [
     {
       "page_id": 10049,
@@ -31,10 +31,10 @@
     },
     {
       "page_id": 11862,
-      "title": "AI and Machine Learning",
+      "title": "AI and Machine Learning/en",
       "url": "https://docs.alliancecan.ca/wiki/AI_and_Machine_Learning/en",
       "category": "General",
-      "last_modified": "2024-10-16T16:55:18Z",
+      "last_modified": "2026-02-27T12:53:02Z",
       "file_path": "docs/pages/General/AI_and_Machine_Learning.md",
       "slug": "AI_and_Machine_Learning"
     },
@@ -79,7 +79,7 @@
       "title": "Abaqus/en",
       "url": "https://docs.alliancecan.ca/wiki/Abaqus/en",
       "category": "General",
-      "last_modified": "2026-02-04T11:55:22Z",
+      "last_modified": "2026-02-27T12:52:40Z",
       "file_path": "docs/pages/General/Abaqus.md",
       "slug": "Abaqus"
     },
@@ -1951,7 +1951,7 @@
       "title": "Modules avx",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx",
       "category": "General",
-      "last_modified": "2025-12-01T12:01:07Z",
+      "last_modified": "2026-02-27T19:18:04Z",
       "file_path": "docs/pages/General/Modules_avx.md",
       "slug": "Modules_avx"
     },
@@ -1960,7 +1960,7 @@
       "title": "Modules avx2",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx2",
       "category": "General",
-      "last_modified": "2025-12-01T00:01:17Z",
+      "last_modified": "2026-03-06T15:50:17Z",
       "file_path": "docs/pages/General/Modules_avx2.md",
       "slug": "Modules_avx2"
     },
@@ -1969,7 +1969,7 @@
       "title": "Modules avx512",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx512",
       "category": "General",
-      "last_modified": "2025-12-01T00:01:18Z",
+      "last_modified": "2026-02-27T22:19:49Z",
       "file_path": "docs/pages/General/Modules_avx512.md",
       "slug": "Modules_avx512"
     },
@@ -1987,7 +1987,7 @@
       "title": "Modules sse3",
       "url": "https://docs.alliancecan.ca/wiki/Modules_sse3",
       "category": "General",
-      "last_modified": "2025-12-01T12:01:21Z",
+      "last_modified": "2026-02-27T19:18:09Z",
       "file_path": "docs/pages/General/Modules_sse3.md",
       "slug": "Modules_sse3"
     },
@@ -3877,7 +3877,7 @@
       "title": "Trillium Open OnDemand Quickstart",
       "url": "https://docs.alliancecan.ca/wiki/Trillium_Open_OnDemand_Quickstart",
       "category": "General",
-      "last_modified": "2026-02-09T17:30:12Z",
+      "last_modified": "2026-03-05T22:24:41Z",
       "file_path": "docs/pages/General/Trillium_Open_OnDemand_Quickstart.md",
       "slug": "Trillium_Open_OnDemand_Quickstart"
     },
@@ -3988,6 +3988,15 @@
       "last_modified": "2026-02-24T18:35:42Z",
       "file_path": "docs/pages/General/QuantumATK.md",
       "slug": "QuantumATK"
+    },
+    {
+      "page_id": 9826,
+      "title": "XGBoost",
+      "url": "https://docs.alliancecan.ca/wiki/XGBoost",
+      "category": "General",
+      "last_modified": "2026-03-05T22:24:56Z",
+      "file_path": "docs/pages/General/XGBoost.md",
+      "slug": "XGBoost"
     }
   ]
 }
