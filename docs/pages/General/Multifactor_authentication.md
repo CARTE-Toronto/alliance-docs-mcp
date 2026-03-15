@@ -1,9 +1,9 @@
 ---
-title: "Multifactor authentication/en"
-url: "https://docs.alliancecan.ca/wiki/Multifactor_authentication/en"
+title: "Multifactor authentication"
+url: "https://docs.alliancecan.ca/wiki/Multifactor_authentication"
 category: "General"
-last_modified: "2026-02-10T16:05:44Z"
-page_id: 22441
+last_modified: "2026-03-06T22:47:49Z"
+page_id: 16662
 display_title: "Multifactor authentication"
 ---
 
@@ -60,6 +60,7 @@ If you do not have this information, configure your key using the steps below.
 
 === Configuring your YubiKey for Yubico OTP ===
 
+# If you use a pop-up blocker, disable it because some of the following steps involve pop-up windows
 # Download and install the YubiKey Authenticator application from the Yubico website.
 # Insert your YubiKey and launch the YubiKey Authenticator software.
 # In YubiKey Authenticator, select Slots.  (Images below illustrate this and the next few steps.)

@@ -1,9 +1,9 @@
 ---
-title: "Ansys"
-url: "https://docs.alliancecan.ca/wiki/Ansys"
+title: "Ansys/en"
+url: "https://docs.alliancecan.ca/wiki/Ansys/en"
 category: "General"
-last_modified: "2026-02-27T05:36:35Z"
-page_id: 4568
+last_modified: "2026-03-06T19:42:02Z"
+page_id: 4948
 display_title: "Ansys"
 ---
 
@@ -53,23 +53,29 @@ where the  can be found in the first line of the license file with format "SERVE
 
 == Checking license ==
 
-To test if your ansys.lic is configured and working properly copy/paste the following sequence of commands on the cluster you are submitting jobs to.  The only required change would be to specify YOURUSERID.  If the software on a remote license server has not been updated then a failure can occur if the latest module version of ansys is loaded to test with.  Therefore to be certain the license checkouts will work when jobs are run in the queue, the same ansys module version that you load in your slurm scripts should be specified below.
- [login-node:~] cd /tmp
- [login-node:~] salloc --time1:0:0 --mem1000M --accountdef-YOURUSERID
- [login-node:~] module load StdEnv/2023; module load ansys/2023R2
- [login-node:~] $EBROOTANSYS/v$(echo ${EBVERSIONANSYS:2:2}${EBVERSIONANSYS:5:1})/licensingclient/linx64/lmutil lmstat -c $ANSYSLMD_LICENSE_FILE | grep "ansyslmd: UP" 1> /dev/null && echo Success  echo Fail
+To test if your ansys.lic is configured and working properly with your license server, run the following sequence of commands on the same cluster that you will be submitting jobs to:
 
-If Success is output license checkouts should work when jobs are submitted to the queue.
-If Fail is output then jobs will likely fail requiring a problem ticket to be submitted to resolve.
+ [login-node:~] cd /tmp
+ [login-node:/tmp] salloc --time1:0:0 --mem1000M --accountdef-YOURUSERID
+ [compute-node/tmp] module load StdEnv/2023; module load ansys/2025R2.04
+ [compute-node:/tmp] $EBROOTANSYS/v$(echo ${EBVERSIONANSYS:2:2}${EBVERSIONANSYS:5:1})/licensingclient/linx64/lmutil lmstat -c $ANSYSLMD_LICENSE_FILE | grep "ansyslmd: UP" 1> /dev/null && echo Success  echo Fail
+Success output indicates license checkouts should work when jobs are submitted to the queue.
+Fail output indicates a problem with the licensing setup somewhere and jobs will likely fail.
+
+If there is an Ansys license server checkout problem, then the following message will appear in slurm output files when fluent jobs are started by slurm scripts in the queue *OR* when fluent is start interactively simply by doing the following:
+
+ [compute-node:/tmp] fluent -g 2d -n 2
+ Connected License Server List:
+ Hit return to exit.
 
 = Version compatibility =
 
 Ansys simulations are typically forward compatible but NOT backwards compatible.  This means that simulations created using an older version of Ansys can be expected to load and run fine with any newer version.  For example, a simulation created and saved with ansys/2022R2 should load and run smoothly with ansys/2023R2 but NOT the other way around.  While it may be possible to start a simulation running with an older version random error messages or crashing will likely occur.  Regarding Fluent simulations, if you cannot recall which version of ansys was used to create your cas file try grepping it as follows to look for clues :
 
-$ grep -ia fluent combustor.cas
+ $ grep -ia fluent combustor.cas
    (0 "fluent15.0.7  build-id: 596")
 
-$ grep -ia fluent cavity.cas.h5
+ $ grep -ia fluent cavity.cas.h5
    ANSYS_FLUENT 24.1 Build 1018
 
 == Platform support ==
@@ -148,17 +154,17 @@ The first step is to transfer your User-Defined Function or UDF (namely the samp
 
 To tell fluent to interpret your UDF at runtime, add the following command line into your journal file before the cas/dat files are read or initialized. The filename sampleudf.c should be replaced with the name of your source file.  The command remains the same regardless if the simulation is being run in serial or parallel.  To ensure the UDF can be found in the same directory as the journal file, open your cas file in the fluent gui, remove any managed definitions and resave it.   Doing this will ensure only the following command/method is in control when fluent runs. To use an interpreted UDF with parallel jobs, it will need to be parallelized as described in the section below.
 
-define/user-defined/interpreted-functions "sampleudf.c" "cpp" 10000 no
+ define/user-defined/interpreted-functions "sampleudf.c" "cpp" 10000 no
 
 ==== Compiled ====
 
 To use this approach, your UDF must be compiled on an Alliance cluster at least once.  Doing so will create a libudf subdirectory structure containing the required libudf.so shared library.   The libudf directory cannot simply be copied from a remote system (such as your laptop) to the Alliance since the library dependencies of the shared library will not be satisfied, resulting in fluent crashing on startup.  That said, once you have compiled your UDF on an Alliance cluster, you can transfer the newly created libudf to any other Alliance cluster, providing your account loads the same StdEnv environment module version.  Once copied, the UDF can be used by uncommenting the second (load) libudf line below in your journal file when submitting jobs to the cluster.  Both (compile and load) libudf lines should not be left uncommented in your journal file when submitting jobs on the cluster, otherwise your UDF will automatically (re)compiled for each and every job.  Not only is this highly inefficient, but it will also lead to racetime-like build conflicts if multiple jobs are run from the same directory. Besides configuring your journal file to build your UDF, the fluent gui (run on any cluster compute node or gra-vdi) may also be used.  To do this, you would navigate to the Compiled UDFs Dialog Box, add the UDF source file and click Build.   When using a compiled UDF with parallel jobs, your source file should be parallelized as discussed in the section below.
 
-define/user-defined/compiled-functions compile libudf yes sampleudf.c "" ""
+ define/user-defined/compiled-functions compile libudf yes sampleudf.c "" ""
 
 and/or
 
-define/user-defined/compiled-functions load libudf
+ define/user-defined/compiled-functions load libudf
 
 ==== Parallel ====
 
@@ -186,20 +192,24 @@ A summary of command-line options can be printed by running cfx5solve -help wher
 
 == Workbench ==
 
-Before submitting a project file to the queue on a cluster (for the first time) follow these steps to initialize it.
-# Connect to the cluster with TigerVNC.
-# Switch to the directory where the project file is located (YOURPROJECT.wbpj) and start Workbench with the same Ansys module you used to create your project.
-# In Workbench, open the project with File -> Open.
-# In the main window, right-click on Setup and select Clear All Generated Data.
-# In the top menu bar pulldown, select File -> Exit to exit Workbench.
+Before submitting a Workbench job to the queue with a slurm script, you must initialize it once as described in the following steps.
+# On the cluster where you will submit workbench jobs (Nibi for example) open an OnDemand desktop.  Choosing either a Compute node (without a GPU) or a Basic Desktop resource will be sufficient.
+# In the desktop open a terminal window and cd into the directory where your project directory is located that contains your YOURPROJECT.wbpj file.
+# Remove the old project cache directory by running rm -rf _ProjectScratch as this can be very large from previous runs.
+# Open a terminal window and load the module version that you will be using in your slurm script for example module load ansys/2025R2.04
+# Open the Workbench gui with your project file.  This can be done by issuing runwb2 -f YOURPROJECT.wbpj directly from the command line.  If and when a popup appears asking "Do you want to recover the project before opening ? (Any changes made since the last save will be lost.)" answer No.
+# In the context menu popup that should appear in the center Project Schematic window, right-click on Model and select Reset.  When Ansys Workbench pops up a warning that "This operation will delete the operations local and generated data" click Ok to accept and proceed.
+# In the top menu bar pulldown, select File -> Save then File -> Exit to shutdown Workbench.
 # In the Ansys Workbench popup, when asked The current project has been modified. Do you want to save it?, click on the No button.
 # Quit Workbench and submit your job using one of the Slurm scripts shown below.
 
-To avoid writing the solution when a running job successfully completes remove ;Save(Overwrite=True) from within the last line of your script.  Doing this will make it easier to run multiple test jobs (for scaling purposes when changing ntasks), since the initialized solution will not be overwritten each time.  Alternatively, keep a copy of the initialized YOURPROJECT.wbpj file and YOURPROJECT_files subdirectory and restore them after the solution is written.
+ Since a Compute Node with upto 96cores, 768GB memory and 8hours runtime can now be reserved for an OnDemand desktop session, consider running your Workbench simulations directly from within the Workbench native gui when possible as a more intuitive option compared to submitting the job to the queue with a slurm script.
 
 === Slurm scripts ===
 
 A project file can be submitted to the queue by customizing one of the following scripts and then running the sbatch script-wbpj-202X.sh command:
+
+To avoid writing the solution when a running job successfully completes change Save(Overwrite=True) to Save(Overwrite=False) in the last line of the above slurm script.  Doing this will make it easier to determine how well the simulation scales when #SBATCH --ntasks is increased since the initialized solution will not be overwritten by each test job.
 
 == Mechanical ==
 
@@ -211,7 +221,7 @@ In the following slurm scripts, lines beginning with ##SBATCH are commented.
 
 Ansys allocates 1024 MB total memory and 1024 MB database memory by default for APDL jobs. These values can be manually specified (or changed) by adding arguments -m 1024 and/or -db 1024 to the mapdl command line in the above scripts. When using a remote institutional license server with multiple Ansys licenses, it may be necessary to add -p aa_r or -ppf anshpc, depending on which Ansys module you are using. As always, perform detailed scaling tests before running production jobs to ensure that the optimal number of cores and minimum amount memory is specified in your scripts. The single node (SMP Shared Memory Parallel) scripts will typically perform better than the multinode (DIS Distributed Memory Parallel) scripts and therefore should be used whenever possible. To help avoid compatibility issues the Ansys module loaded in your script should ideally match the version used to generate the input file:
 
- [gra-login2:~/testcase] cat YOURAPDLFILE.inp | grep version
+  [gra-login2:~/testcase] cat YOURAPDLFILE.inp | grep version
  ! ANSYS input file written by Workbench version 2019 R3
 
 == Rocky ==
@@ -230,7 +240,7 @@ Slurm scripts for using AnsysEDT is provided in a separate wiki page here.
 
 To run Ansys programs in graphical mode click on one of the following OnDemand or Jupyterhub links.  A job submission web page to configure the resources for an interactive session should appear in your browser :
 
-NIBI: https://ondemand.sharcnet.ca
+ NIBI: https://ondemand.sharcnet.ca
  FIR: https://jupyterhub.fir.alliancecan.ca
  RORQUAL: https://jupyterhub.rorqual.alliancecan.ca
  NARVAL:  https://jupyterhub.narval.alliancecan.ca/
@@ -238,20 +248,16 @@ NIBI: https://ondemand.sharcnet.ca
 
 Submit your resource request and then wait.  If you started a Juypter Lab launcher interface then you can simply load an ansys software module from the left side menu and then click one of the ansys icons to start cfx, fluent mapdl or workbench.  Otherwise if you started a Compute/Basic Desktop from the Nibi OnDemand system then you will need to open a terminal window, manually load an ansys module and then type the program name to start it command line.  For this later case, if the application requires accelerated graphics to run properly (for instance for fluent to support 3d rendering) then either a whole GPU resource (H100 or T4 at the time of this writing) should be requested.  Since the various ansys applications launched in graphical mode behave differently when different ansys module versions are loaded, recommendations for adding command line argument and exporting environment variables for virtualgl or mesa environments are suggested below depending on whether a GPU has been requested or not and whether a On Demand or Juypter Lab desktop is being used.
 
-=== Fluids ===
+=== Fluent ===
 
-This section shows howto start Ansys Fluid applications from the command line of an On Demand Desktop or the convenience Icon's of a Juypter Lab Desktop.
-
-==== Fluent ====
-
-To start fluent the following steps should be done including setting the indicated Environment Variables depending on which type of Compute Node the desktop is being started on (with or without a gpu).
+To start Ansys Fuent from the command line of an On Demand Desktop, open a terminal window and run the commands:
 
 ::: module load StdEnv/2023 ansys/2025R1
 ::: fluent
 
-In the following steps, when the Fluent Launcher popup selector panel appears, click the Environment Tab and copy/paste the following environment variable settings. Do NOT include the text between the round brackets, these are comments. Also do NOT put the word export in front of the variable names.
+When the Fluent Launcher popup selector panel appears, click the Environment Tab and copy/paste the following environment variable settings, depending on whether you started your On Demand session with a GPU for graphical acceleration. Do not include the text between the round brackets (as these are comments) and do not put export in front of any variable names.
 
-Compute Node (no GPU requested) or Basic Desktop
+Compute Node (no GPU requested)
 
 :::: I_MPI_HYDRA_BOOTSTRAP=ssh            (required on nibi)
 :::: HOOPS_PICTURE=opengl2-mesa           (version 2025R1 or newer)
@@ -273,7 +279,7 @@ If I_MPI_HYDRA_BOOTSTRAP=ssh is not set properly on nibi when fluent is started 
  [mpiexec@g4.nibi.sharcnet] HYD_bstrap_setup (../../../../../src/pm/i_hydra/libhydra/bstrap/src/intel/i_hydra_bstrap.c:1063): error waiting for event
  [mpiexec@g4.nibi.sharcnet] Error setting up the bootstrap proxies
 
-==== CFX ====
+=== CFX ===
 
 When starting CFX from an On Demand Desktop the following arguments maybe specified on the terminal window command line depending on whether a GPU was requested when the Desktop was started.
 

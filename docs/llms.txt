@@ -1,6 +1,6 @@
 # Alliance Documentation - Page Directory
-# Generated: 2026-03-08T06:30:59.234048+00:00
-# Total pages: 444
+# Generated: 2026-03-15T06:43:40.978215+00:00
+# Total pages: 447
 
 - A tutorial on 'tar' (User Guide): https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/en
 - ABINIT (General): https://docs.alliancecan.ca/wiki/ABINIT/en
@@ -45,7 +45,7 @@
 - Arbutus object storage clients (General): https://docs.alliancecan.ca/wiki/Arbutus_object_storage_clients/en
 - Arbutus user documentation (User Guide): https://docs.alliancecan.ca/wiki/Arbutus_user_documentation
 - Archiving and compressing files (General): https://docs.alliancecan.ca/wiki/Archiving_and_compressing_files/en
-- Arrow (General): https://docs.alliancecan.ca/wiki/Arrow/en
+- Arrow/en (General): https://docs.alliancecan.ca/wiki/Arrow/en
 - Astronomy and High Energy Physics Interactive Analysis Facility (General): https://docs.alliancecan.ca/wiki/Astronomy_and_High_Energy_Physics_Interactive_Analysis_Facility
 - Authoring guidelines (User Guide): https://docs.alliancecan.ca/wiki/Authoring_guidelines/en
 - Automating VM creation (General): https://docs.alliancecan.ca/wiki/Automating_VM_creation/en
@@ -128,6 +128,7 @@
 - Deepspeed (General): https://docs.alliancecan.ca/wiki/Deepspeed
 - Delft3D (General): https://docs.alliancecan.ca/wiki/Delft3D
 - Diskusage Explorer/en (General): https://docs.alliancecan.ca/wiki/Diskusage_Explorer/en
+- DummyWheel/en (General): https://docs.alliancecan.ca/wiki/DummyWheel/en
 - EasyBuild (General): https://docs.alliancecan.ca/wiki/EasyBuild/en
 - Estimer et prévenir le gaspillage des ressources (General): https://docs.alliancecan.ca/wiki/Estimer_et_pr%C3%A9venir_le_gaspillage_des_ressources
 - FEniCS/en (General): https://docs.alliancecan.ca/wiki/FEniCS/en
@@ -250,6 +251,7 @@
 - MrBayes (General): https://docs.alliancecan.ca/wiki/MrBayes/en
 - MuJoCo (General): https://docs.alliancecan.ca/wiki/MuJoCo/en
 - Multi-Instance GPU (General): https://docs.alliancecan.ca/wiki/Multi-Instance_GPU/en
+- Multifactor authentication (General): https://docs.alliancecan.ca/wiki/Multifactor_authentication
 - Multifactor authentication/ (General): https://docs.alliancecan.ca/wiki/Multifactor_authentication/
 - Multifactor authentication/en (General): https://docs.alliancecan.ca/wiki/Multifactor_authentication/en
 - NAMD (General): https://docs.alliancecan.ca/wiki/NAMD/en
@@ -277,10 +279,11 @@
 - OpenACC Tutorial - Introduction (User Guide): https://docs.alliancecan.ca/wiki/OpenACC_Tutorial_-_Introduction/en
 - OpenACC Tutorial - Optimizing loops (User Guide): https://docs.alliancecan.ca/wiki/OpenACC_Tutorial_-_Optimizing_loops/en
 - OpenACC Tutorial - Profiling (User Guide): https://docs.alliancecan.ca/wiki/OpenACC_Tutorial_-_Profiling/en
-- OpenCV (General): https://docs.alliancecan.ca/wiki/OpenCV/en
+- OpenCV/en (General): https://docs.alliancecan.ca/wiki/OpenCV/en
 - OpenFOAM (General): https://docs.alliancecan.ca/wiki/OpenFOAM/en
 - OpenFOAM (General): https://docs.alliancecan.ca/wiki/OpenFOAM
 - OpenMM (General): https://docs.alliancecan.ca/wiki/OpenMM/en
+- OpenMM (General): https://docs.alliancecan.ca/wiki/OpenMM
 - OpenMP (General): https://docs.alliancecan.ca/wiki/OpenMP/en
 - OpenMolcas (General): https://docs.alliancecan.ca/wiki/OpenMolcas
 - OpenSim (General): https://docs.alliancecan.ca/wiki/OpenSim
@@ -340,12 +343,12 @@
 - SAIGE/en (General): https://docs.alliancecan.ca/wiki/SAIGE/en
 - SAS (General): https://docs.alliancecan.ca/wiki/SAS
 - SQLite (General): https://docs.alliancecan.ca/wiki/SQLite/en
-- SSH (General): https://docs.alliancecan.ca/wiki/SSH/en
 - SSH Keys (General): https://docs.alliancecan.ca/wiki/SSH_Keys/en
 - SSH configuration file (General): https://docs.alliancecan.ca/wiki/SSH_configuration_file/en
 - SSH host keys (General): https://docs.alliancecan.ca/wiki/SSH_host_keys/en
 - SSH security improvements (General): https://docs.alliancecan.ca/wiki/SSH_security_improvements/en
 - SSH tunnelling (General): https://docs.alliancecan.ca/wiki/SSH_tunnelling/en
+- SSH/en (General): https://docs.alliancecan.ca/wiki/SSH/en
 - Samtools (General): https://docs.alliancecan.ca/wiki/Samtools/en
 - Scalability (General): https://docs.alliancecan.ca/wiki/Scalability/en
 - Scratch purging policy (General): https://docs.alliancecan.ca/wiki/Scratch_purging_policy/en

@@ -1,31 +1,48 @@
 ---
-title: "OpenMM/en"
-url: "https://docs.alliancecan.ca/wiki/OpenMM/en"
+title: "OpenMM"
+url: "https://docs.alliancecan.ca/wiki/OpenMM"
 category: "General"
-last_modified: "2024-10-16T16:58:41Z"
-page_id: 19330
+last_modified: "2026-03-09T21:46:17Z"
+page_id: 19215
 display_title: "OpenMM"
 ---
 
 =Introduction=
-OpenMMOpenMM home page: https://openmm.org/ is a toolkit for molecular simulation. It can be used either as a standalone application for running simulations or as a library you call from your own code. It provides a combination of extreme flexibility (through custom forces and integrators), openness, and high performance (especially on recent GPUs) that make it unique among MD simulation packages.
+OpenMMOpenMM home page: https://openmm.org/ is an open-source molecular dynamics toolkit designed for flexibility and programmability. It is used via Python, offering both application-level classes for running simulations and a lower-level API that allows users to integrate OpenMM directly into their own code for custom workflows. OpenMM can natively read and simulate systems prepared with AMBER, GROMACS, and CHARMM, enabling seamless reuse of existing biomolecular setups. Its plugin architecture supports integration with machine-learning potentials, including TorchMD-Net, MACE, TorchANI, AIMNet2, and DeepMD for general-purpose or hybrid ML/MM simulations.
 
-= Running a simulation with AMBER topology and restart files =
+== Strengths ==
+* Flexible Python interface with both high-level classes and low-level API access for custom workflows.
+* High-level plugin framework for ML-driven potentials and hybrid simulations.
+* Efficient execution on CPUs and GPUs, suitable for HPC platforms.
+* Native support for major biomolecular formats (AMBER, GROMACS, CHARMM).
+* Open-source with an active ecosystem of plugins for ML and advanced force fields.
 
-== Preparing the Python virtual environment ==
+== Weak points ==
+* Slower than highly optimized classical MM engines (GROMACS, AMBER) for large-scale production runs.
+* Flexibility can add complexity for hybrid ML/MM simulations.
+* Specialized trajectory analysis may require external tools.
 
-This example is for the openmm/7.7.0 module.
+=  Environment modules =
 
-1. Create and activate the Python virtual environment.
+$ module load StdEnv/2023 gcc/12.3 openmpi/4.1.5 cuda/12.6 openmm/8.4.0 ambertools/25.0
 
-2. Install ParmEd and netCDF4 Python modules.
-3.4.3 netCDF4
-}}
+Note: The ambertools module is optional and required only if you plan to simulate AMBER-prepared systems.
 
-== Job submission ==
+Optionally, create a Python virtual environment if you want to install extra packages (e.g., ML potentials).
+
+= Preparing Input Files =
+
+OpenMM can directly read Amber topology and coordinate/restart files if simulating AMBER systems.
+
+Ensure your system is equilibrated and minimized in Amber or another package before transferring files to HPC.
+
+For GROMACS or CHARMM systems, OpenMM can read their respective formats without AmberTools.
+
+= Job submission =
 Below is a job script for a simulation using one GPU.
 
-Here openmm_input.py is a Python script loading Amber files, creating the OpenMM simulation system, setting up the integration, and running dynamics. An example is available here.
+= Python simulation script =
+The example Python script below loads Amber parameter and restart files, builds the OpenMM simulation system, sets up the integrator, and runs the dynamics.
 
 = Performance and benchmarking =
 
