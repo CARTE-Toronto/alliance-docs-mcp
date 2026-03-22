@@ -1,9 +1,9 @@
 ---
-title: "Ansys/en"
-url: "https://docs.alliancecan.ca/wiki/Ansys/en"
+title: "Ansys"
+url: "https://docs.alliancecan.ca/wiki/Ansys"
 category: "General"
-last_modified: "2026-03-06T19:42:02Z"
-page_id: 4948
+last_modified: "2026-03-19T21:58:30Z"
+page_id: 4568
 display_title: "Ansys"
 ---
 
@@ -55,7 +55,7 @@ where the  can be found in the first line of the license file with format "SERVE
 
 To test if your ansys.lic is configured and working properly with your license server, run the following sequence of commands on the same cluster that you will be submitting jobs to:
 
- [login-node:~] cd /tmp
+[login-node:~] cd /tmp
  [login-node:/tmp] salloc --time1:0:0 --mem1000M --accountdef-YOURUSERID
  [compute-node/tmp] module load StdEnv/2023; module load ansys/2025R2.04
  [compute-node:/tmp] $EBROOTANSYS/v$(echo ${EBVERSIONANSYS:2:2}${EBVERSIONANSYS:5:1})/licensingclient/linx64/lmutil lmstat -c $ANSYSLMD_LICENSE_FILE | grep "ansyslmd: UP" 1> /dev/null && echo Success  echo Fail
@@ -64,7 +64,7 @@ Fail output indicates a problem with the licensing setup somewhere and jobs will
 
 If there is an Ansys license server checkout problem, then the following message will appear in slurm output files when fluent jobs are started by slurm scripts in the queue *OR* when fluent is start interactively simply by doing the following:
 
- [compute-node:/tmp] fluent -g 2d -n 2
+[compute-node:/tmp] fluent -g 2d -n 2
  Connected License Server List:
  Hit return to exit.
 
@@ -72,10 +72,10 @@ If there is an Ansys license server checkout problem, then the following message
 
 Ansys simulations are typically forward compatible but NOT backwards compatible.  This means that simulations created using an older version of Ansys can be expected to load and run fine with any newer version.  For example, a simulation created and saved with ansys/2022R2 should load and run smoothly with ansys/2023R2 but NOT the other way around.  While it may be possible to start a simulation running with an older version random error messages or crashing will likely occur.  Regarding Fluent simulations, if you cannot recall which version of ansys was used to create your cas file try grepping it as follows to look for clues :
 
- $ grep -ia fluent combustor.cas
+$ grep -ia fluent combustor.cas
    (0 "fluent15.0.7  build-id: 596")
 
- $ grep -ia fluent cavity.cas.h5
+$ grep -ia fluent cavity.cas.h5
    ANSYS_FLUENT 24.1 Build 1018
 
 == Platform support ==
@@ -154,17 +154,17 @@ The first step is to transfer your User-Defined Function or UDF (namely the samp
 
 To tell fluent to interpret your UDF at runtime, add the following command line into your journal file before the cas/dat files are read or initialized. The filename sampleudf.c should be replaced with the name of your source file.  The command remains the same regardless if the simulation is being run in serial or parallel.  To ensure the UDF can be found in the same directory as the journal file, open your cas file in the fluent gui, remove any managed definitions and resave it.   Doing this will ensure only the following command/method is in control when fluent runs. To use an interpreted UDF with parallel jobs, it will need to be parallelized as described in the section below.
 
- define/user-defined/interpreted-functions "sampleudf.c" "cpp" 10000 no
+define/user-defined/interpreted-functions "sampleudf.c" "cpp" 10000 no
 
 ==== Compiled ====
 
 To use this approach, your UDF must be compiled on an Alliance cluster at least once.  Doing so will create a libudf subdirectory structure containing the required libudf.so shared library.   The libudf directory cannot simply be copied from a remote system (such as your laptop) to the Alliance since the library dependencies of the shared library will not be satisfied, resulting in fluent crashing on startup.  That said, once you have compiled your UDF on an Alliance cluster, you can transfer the newly created libudf to any other Alliance cluster, providing your account loads the same StdEnv environment module version.  Once copied, the UDF can be used by uncommenting the second (load) libudf line below in your journal file when submitting jobs to the cluster.  Both (compile and load) libudf lines should not be left uncommented in your journal file when submitting jobs on the cluster, otherwise your UDF will automatically (re)compiled for each and every job.  Not only is this highly inefficient, but it will also lead to racetime-like build conflicts if multiple jobs are run from the same directory. Besides configuring your journal file to build your UDF, the fluent gui (run on any cluster compute node or gra-vdi) may also be used.  To do this, you would navigate to the Compiled UDFs Dialog Box, add the UDF source file and click Build.   When using a compiled UDF with parallel jobs, your source file should be parallelized as discussed in the section below.
 
- define/user-defined/compiled-functions compile libudf yes sampleudf.c "" ""
+define/user-defined/compiled-functions compile libudf yes sampleudf.c "" ""
 
 and/or
 
- define/user-defined/compiled-functions load libudf
+define/user-defined/compiled-functions load libudf
 
 ==== Parallel ====
 
@@ -193,8 +193,8 @@ A summary of command-line options can be printed by running cfx5solve -help wher
 == Workbench ==
 
 Before submitting a Workbench job to the queue with a slurm script, you must initialize it once as described in the following steps.
-# On the cluster where you will submit workbench jobs (Nibi for example) open an OnDemand desktop.  Choosing either a Compute node (without a GPU) or a Basic Desktop resource will be sufficient.
-# In the desktop open a terminal window and cd into the directory where your project directory is located that contains your YOURPROJECT.wbpj file.
+# On the cluster where you will submit workbench jobs (Nibi for example) open an OnDemand desktop.  For the purpose of this section it will be sufficient and fastest to select either a Compute Desktop (without a GPU) or a Basic Desktop resource.
+# Once the desktop appears, open a terminal window and cd into your directory containiong your YOURPROJECT.wbpj file.
 # Remove the old project cache directory by running rm -rf _ProjectScratch as this can be very large from previous runs.
 # Open a terminal window and load the module version that you will be using in your slurm script for example module load ansys/2025R2.04
 # Open the Workbench gui with your project file.  This can be done by issuing runwb2 -f YOURPROJECT.wbpj directly from the command line.  If and when a popup appears asking "Do you want to recover the project before opening ? (Any changes made since the last save will be lost.)" answer No.
@@ -203,7 +203,7 @@ Before submitting a Workbench job to the queue with a slurm script, you must ini
 # In the Ansys Workbench popup, when asked The current project has been modified. Do you want to save it?, click on the No button.
 # Quit Workbench and submit your job using one of the Slurm scripts shown below.
 
- Since a Compute Node with upto 96cores, 768GB memory and 8hours runtime can now be reserved for an OnDemand desktop session, consider running your Workbench simulations directly from within the Workbench native gui when possible as a more intuitive option compared to submitting the job to the queue with a slurm script.
+Since a Compute Node with upto 96cores, 768GB memory and 8hours runtime can now be reserved for an OnDemand desktop session, consider running your Workbench simulations directly from within the Workbench native gui when possible as a more intuitive option compared to submitting the job to the queue with a slurm script.
 
 === Slurm scripts ===
 
@@ -221,7 +221,7 @@ In the following slurm scripts, lines beginning with ##SBATCH are commented.
 
 Ansys allocates 1024 MB total memory and 1024 MB database memory by default for APDL jobs. These values can be manually specified (or changed) by adding arguments -m 1024 and/or -db 1024 to the mapdl command line in the above scripts. When using a remote institutional license server with multiple Ansys licenses, it may be necessary to add -p aa_r or -ppf anshpc, depending on which Ansys module you are using. As always, perform detailed scaling tests before running production jobs to ensure that the optimal number of cores and minimum amount memory is specified in your scripts. The single node (SMP Shared Memory Parallel) scripts will typically perform better than the multinode (DIS Distributed Memory Parallel) scripts and therefore should be used whenever possible. To help avoid compatibility issues the Ansys module loaded in your script should ideally match the version used to generate the input file:
 
-  [gra-login2:~/testcase] cat YOURAPDLFILE.inp | grep version
+ [gra-login2:~/testcase] cat YOURAPDLFILE.inp | grep version
  ! ANSYS input file written by Workbench version 2019 R3
 
 == Rocky ==
@@ -238,19 +238,19 @@ Slurm scripts for using AnsysEDT is provided in a separate wiki page here.
 
 = Graphical use =
 
-To run Ansys programs in graphical mode click on one of the following OnDemand or Jupyterhub links.  A job submission web page to configure the resources for an interactive session should appear in your browser :
+To run Ansys programs in graphical mode click on one of the following OnDemand or Jupyterhub desktop links :
 
- NIBI: https://ondemand.sharcnet.ca
+NIBI: https://ondemand.sharcnet.ca
  FIR: https://jupyterhub.fir.alliancecan.ca
  RORQUAL: https://jupyterhub.rorqual.alliancecan.ca
  NARVAL:  https://jupyterhub.narval.alliancecan.ca/
  TRILLIUM: https://ondemand.scinet.utoronto.ca
 
-Submit your resource request and then wait.  If you started a Juypter Lab launcher interface then you can simply load an ansys software module from the left side menu and then click one of the ansys icons to start cfx, fluent mapdl or workbench.  Otherwise if you started a Compute/Basic Desktop from the Nibi OnDemand system then you will need to open a terminal window, manually load an ansys module and then type the program name to start it command line.  For this later case, if the application requires accelerated graphics to run properly (for instance for fluent to support 3d rendering) then either a whole GPU resource (H100 or T4 at the time of this writing) should be requested.  Since the various ansys applications launched in graphical mode behave differently when different ansys module versions are loaded, recommendations for adding command line argument and exporting environment variables for virtualgl or mesa environments are suggested below depending on whether a GPU has been requested or not and whether a On Demand or Juypter Lab desktop is being used.
+A job submission web page should appear in your browser.  Configure the resources required for your interactive desktop session and click Launch or Start.  If either accelerated graphics or computations will be conducted from within your desktop session then be sure to specify a GPU resource.  Once the desktop load an ansys module.  If you started a Juypter Lab powered desktop then this can be done by clicking the left hand menu, or if you started an OnDemand desktop manually type module load ansys/version on the command line.  To start one the common Ansys programs such as fluent, cfx, workbench and so forth refer to the following section which provides advice for setting environment variables and arguments required by virtualgl or mesa based graphical environments depending on whether a node with a GPU resource was specified or not.
 
 === Fluent ===
 
-To start Ansys Fuent from the command line of an On Demand Desktop, open a terminal window and run the commands:
+To start Ansys Fluent from the command line of an On Demand Desktop, open a terminal window and run the commands:
 
 ::: module load StdEnv/2023 ansys/2025R1
 ::: fluent
@@ -314,17 +314,17 @@ Compute Node (no GPU requested) or Basic Desktop
 
 Compute Node (with GPU requested)
 
-For this option to work on nibi, as mentioned in the first paragraph of this section, a full h100(80GB) GPU must be selected from the GPU pulldown when starting the OnDemand desktop session.  This particular GPU selection is required since it the only one (currently) on nibi that will ensure the VirtualGL environment variables required to enable accelerated OpenGL graphics calls are setup in the Deskop environment.  Once your desktop appears, open a terminal window and start workbench as follows :
+For this option to work on nibi for the purpose of accelerating graphics choose t4 (15GB) from the GPU selector pulldown list when configuring the resources for your OnDemand desktop session.  This particular setting will ensure the environment variables used by VirtualGL to enable accelerated OpenGL graphics calls are automatically setup in your Deskop environment when it starts.  Once your desktop appears, open a terminal window and start workbench as follows :
 ::: module load StdEnv/2023 ansys/2025R1
 ::: runwb2
 
-To optionally start fluent from within workbench click Fluid Flow (Fluent) in the left hand Analysis Menu, then click Setup in the center canvas Fluid Flow (Fluent) popup.  Once the Fluent Launcher selector panel popup appears, click the Environment Tab and copy/paste the following environment variable settings.
-::: I_MPI_HYDRA_BOOTSTRAP=ssh            (required on nibi only)
-::: HOOPS_PICTURE=opengl2           (version 2025R1 or newer)
-::: HOOPS_PICTURE=null                   (version 2024R2 or older)
-:: Click the Start button
+::: To start fluent from within workbench click Fluid Flow (Fluent) in the left hand Analysis Menu, then click Setup in the center canvas Fluid Flow (Fluent) popup.  Once the Fluent Launcher selector panel popup appears, click the Environment Tab and copy/paste the following environment variable settings.
+:::: I_MPI_HYDRA_BOOTSTRAP=ssh            (required on nibi only)
+:::: HOOPS_PICTURE=opengl2           (version 2025R1 or newer)
+:::: HOOPS_PICTURE=null                   (version 2024R2 or older)
+::: Click the Start button
 
-If I_MPI_HYDRA_BOOTSTRAP=ssh is not set properly on nibi when fluent is started from within OOD Compute Desktop sessions and  intelmpi is used then fluent will crash on startup produce the following error output.  If this occurs completely exit fluent, shutdown workbench then start again.
+If I_MPI_HYDRA_BOOTSTRAP=ssh is not set on nibi when fluent is started from within an OOD Compute Desktop session and intelmpi is used, then fluent will crash on startup produce the following error output.  If this occurs completely exit fluent, cleanly shutdown workbench and start over.
  [mpiexec@g4.nibi.sharcnet] Error: Unable to run bstrap_proxy on g4.nibi.sharcnet (pid 2251587, exit code 256)
  [mpiexec@g4.nibi.sharcnet] poll_for_event (../../../../../src/pm/i_hydra/libhydra/demux/hydra_demux_poll.c:157): check exit codes error
  [mpiexec@g4.nibi.sharcnet] HYD_dmx_poll_wait_for_proxy_event (../../../../../src/pm/i_hydra/libhydra/demux/hydra_demux_poll.c:206): poll for  event error
@@ -388,13 +388,45 @@ setenv("ANSYSLMD_LICENSE_FILE", "1055@license1.computecanada.ca")
 
 ==== License query  ====
 
-To show the number of licenses in use by your username and the total in use by all users, run:
+To show the number of ansys licenses in use by your username and the total in use by all users, run:
 
 ssh nibi.alliancecan.ca
 module load ansys
-$EBROOTANSYS/v$(echo ${EBVERSIONANSYS:2:2}${EBVERSIONANSYS:5:1})/licensingclient/linx64/lmutil lmstat -c $ANSYSLMD_LICENSE_FILE -a | grep "Users of\|$USER"
+$EBROOTANSYS/v$(echo ${EBVERSIONANSYS:2:2}${EBVERSIONANSYS:5:1})/licensingclient/linx64/lmutil \
+lmstat -c $ANSYSLMD_LICENSE_FILE -a | grep "Users of\|$USER" | grep -v " Total of 0 licenses in use"
 
-If you discover any licenses unexpectedly in use by your username (due to ansys not exiting cleanly), connect to the node where it's running, open a terminal window and run the following command to terminate the rogue processes pkill -9 -e -u $USER -f "ansys" after which your licenses should be freed.
+==== Example  ====
+
+Consider the case where a user submits a 8core fluent job and 32core fluent job.  Once both jobs start running, the user runs the lmutil queuery command and the output shown below is generated.  Here it can be seen that a total of (8-4) + (32-4) = 32 ansyshpc licenses are used by the two jobs.  As a result the total number of ansyhpc licenses increases from 1568 to 1600 so that only (1986-1600) = 386 ansyshpc licenses remain available for additional jobs submitted by all users.  Therefore if a 400 core parallel job attempts to start at this moment, it will fail to start since (400-4) = 396 anshpc licenses would be required.   The user has two options, wait for a sufficient number of  ansyshpc licenses to come available OR reduce the job size to 390 cores or less and resubmit immediately.  This example focuses on the ansyshpc feature since it is most generously overcommitted to allow any user to submit the largest job possible, but it also shows that the actual number of ansyshpc licenses available per user may be on some ocassions far less than the current 512 per user ansyshpc limit.
+
+ [l2(nibi):~] sq
+            JOBID     USER        ACCOUNT           NAME  ST  TIME_LEFT NODES CPUS MIN_MEM NODELIST (REASON)
+         10161023  roberpj   cc-debug_cpu script-flu-int   R    2:57:19     4    8     N/A      4G c[630-633] (None)
+         10161033  roberpj   cc-debug_cpu script-flu-int   R    2:58:25    16   32     N/A      4G c[627-628,630-633,637,642,645,655,657,662,665,667,669,682] (None)
+ [l2(nibi):~]
+ [l2(nibi):~] module load ansys
+ [l2(nibi):~]
+ [l2(nibi):~] $EBROOTANSYS/v$(echo ${EBVERSIONANSYS:2:2}${EBVERSIONANSYS:5:1})/licensingclient/linx64/lmutil  \
+              lmstat -c $ANSYSLMD_LICENSE_FILE -a | grep "Users of\|$USER" | grep -v " Total of 0 licenses in use"
+ Users of anshpc:  (Total of 1986 licenses issued;  Total of 1600 licenses in use)
+    roberpj c630 c630.nibi.sharcnet 1238925 (v2025.0506) (license1.computecanada.ca/1055 2579), start Wed 3/11 16:46, 4 licenses, PID: 1239140
+    roberpj c627 c627.nibi.sharcnet 509821 (v2025.0506) (license1.computecanada.ca/1055 5716), start Wed 3/11 16:48, 28 licenses, PID: 510058
+ Users of cfd_base:  (Total of 275 licenses issued;  Total of 19 licenses in use)
+    roberpj c630 c630.nibi.sharcnet 1238925 (v2025.0506) (license1.computecanada.ca/1055 10327), start Wed 3/11 16:46, PID: 1239140
+    roberpj c627 c627.nibi.sharcnet 509821 (v2025.0506) (license1.computecanada.ca/1055 7171), start Wed 3/11 16:47, PID: 510058
+ Users of cfd_preppost:  (Total of 275 licenses issued;  Total of 1 license in use)
+ Users of cfd_preppost_pro:  (Total of 275 licenses issued;  Total of 1 license in use)
+ Users of cfd_solve_level1:  (Total of 275 licenses issued;  Total of 18 licenses in use)
+    roberpj c630 c630.nibi.sharcnet 1238925 (v2025.0506) (license1.computecanada.ca/1055 7994), start Wed 3/11 16:46, PID: 1239140
+    roberpj c627 c627.nibi.sharcnet 509821 (v2025.0506) (license1.computecanada.ca/1055 6200), start Wed 3/11 16:47, PID: 510058
+ Users of cfd_solve_level2:  (Total of 275 licenses issued;  Total of 18 licenses in use)
+    roberpj c630 c630.nibi.sharcnet 1238925 (v2025.0506) (license1.computecanada.ca/1055 10520), start Wed 3/11 16:46, PID: 1239140
+    roberpj c627 c627.nibi.sharcnet 509821 (v2025.0506) (license1.computecanada.ca/1055 375), start Wed 3/11 16:47, PID: 510058
+ Users of elec_solve_hfss:  (Total of 275 licenses issued;  Total of 1 license in use)
+ Users of elec_solve_level1:  (Total of 275 licenses issued;  Total of 1 license in use)
+ Users of elec_solve_level2:  (Total of 275 licenses issued;  Total of 1 license in use)
+
+A rare situation can occur where the output from the License query command reveals there are some Ansys licenses unexpectedly still in use by your username on some desktop or compute node.  For instance if an ansys gui program run on a remote desktop node was not shutdown cleanly leaving some ansys processes still running.  Or an ansys program crashes on a cluster compute node inside an salloc session that was being run interactively from the command line, once again leaving some rogue ansys processes still running.  To kill all potentially responsible ansys rogue processes either close the desktop, scancel the salloc session, or simply open a terminal window on the effected node and issue the  command pkill -9 -e -u $USER -f "ansys".  Any ansys licenses that were being held open should immediately be returned to the SHARCNET license server and become available for use again by yourself or other researchers.
 
 = Additive Manufacturing =
 
@@ -460,7 +492,7 @@ Resource utilization:
 
 Once your additive job has been running for a few minutes, a snapshot of its resource utilization on the compute node(s) can be obtained with the following srun command.  Sample output corresponding to an eight core submission script is shown next.  It can be seen that two nodes were selected by the scheduler:
 
- [gra-login1:~] srun --jobid=myjobid top -bn1 -u $USER | grep R | grep -v top
+ [gra-login1:~] srun --overlap --jobid=myjobid top -bn1 -u $USER | grep R | grep -v top
    PID USER   PR  NI    VIRT    RES    SHR S  %CPU %MEM    TIME+  COMMAND
  22843 demo   20   0 2272124 256048  72796 R  88.0  0.2  1:06.24  ansys.e
  22849 demo   20   0 2272118 256024  72822 R  99.0  0.2  1:06.37  ansys.e

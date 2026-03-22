@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-03-15T06:43:40.971055+00:00",
-  "total_pages": 447,
+  "last_updated": "2026-03-22T06:38:07.060940+00:00",
+  "total_pages": 449,
   "pages": [
     {
       "page_id": 10049,
@@ -418,10 +418,10 @@
     },
     {
       "page_id": 9806,
-      "title": "BLAST",
+      "title": "BLAST/en",
       "url": "https://docs.alliancecan.ca/wiki/BLAST/en",
       "category": "General",
-      "last_modified": "2024-01-25T20:21:02Z",
+      "last_modified": "2026-03-11T18:12:59Z",
       "file_path": "docs/pages/General/BLAST.md",
       "slug": "BLAST"
     },
@@ -1330,7 +1330,7 @@
       "title": "Getting started/en",
       "url": "https://docs.alliancecan.ca/wiki/Getting_started/en",
       "category": "Getting Started",
-      "last_modified": "2026-02-11T19:29:01Z",
+      "last_modified": "2026-03-17T15:37:43Z",
       "file_path": "docs/pages/Getting Started/Getting_started.md",
       "slug": "Getting_started"
     },
@@ -1960,7 +1960,7 @@
       "title": "Modules avx2",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx2",
       "category": "General",
-      "last_modified": "2026-03-10T23:13:14Z",
+      "last_modified": "2026-03-20T21:12:05Z",
       "file_path": "docs/pages/General/Modules_avx2.md",
       "slug": "Modules_avx2"
     },
@@ -2902,10 +2902,10 @@
     },
     {
       "page_id": 6041,
-      "title": "Scratch purging policy",
+      "title": "Scratch purging policy/en",
       "url": "https://docs.alliancecan.ca/wiki/Scratch_purging_policy/en",
       "category": "General",
-      "last_modified": "2025-07-25T17:33:02Z",
+      "last_modified": "2026-03-19T18:59:54Z",
       "file_path": "docs/pages/General/Scratch_purging_policy.md",
       "slug": "Scratch_purging_policy"
     },
@@ -3553,7 +3553,7 @@
       "title": "Visual Studio Code/en",
       "url": "https://docs.alliancecan.ca/wiki/Visual_Studio_Code/en",
       "category": "General",
-      "last_modified": "2026-01-09T10:01:33Z",
+      "last_modified": "2026-03-11T16:59:59Z",
       "file_path": "docs/pages/General/Visual_Studio_Code.md",
       "slug": "Visual_Studio_Code"
     },
@@ -3760,7 +3760,7 @@
       "title": "Ansys",
       "url": "https://docs.alliancecan.ca/wiki/Ansys",
       "category": "General",
-      "last_modified": "2026-02-27T05:36:35Z",
+      "last_modified": "2026-03-19T21:58:30Z",
       "file_path": "docs/pages/General/Ansys.md",
       "slug": "Ansys"
     },
@@ -4024,6 +4024,24 @@
       "last_modified": "2026-03-06T15:42:34Z",
       "file_path": "docs/pages/General/DummyWheel.md",
       "slug": "DummyWheel"
+    },
+    {
+      "page_id": 32795,
+      "title": "Cryosparc",
+      "url": "https://docs.alliancecan.ca/wiki/Cryosparc",
+      "category": "General",
+      "last_modified": "2026-03-18T21:42:30Z",
+      "file_path": "docs/pages/General/Cryosparc.md",
+      "slug": "Cryosparc"
+    },
+    {
+      "page_id": 9028,
+      "title": "Data management at Trillium",
+      "url": "https://docs.alliancecan.ca/wiki/Data_management_at_Trillium",
+      "category": "General",
+      "last_modified": "2026-03-11T18:13:44Z",
+      "file_path": "docs/pages/General/Data_management_at_Trillium.md",
+      "slug": "Data_management_at_Trillium"
     }
   ]
 }

@@ -2,7 +2,7 @@
 title: "BLAST/en"
 url: "https://docs.alliancecan.ca/wiki/BLAST/en"
 category: "General"
-last_modified: "2024-01-25T20:21:02Z"
+last_modified: "2026-03-11T18:12:59Z"
 page_id: 9806
 display_title: "BLAST"
 ---
@@ -14,8 +14,13 @@ You can find more information on its arguments in the user manual
 or with
 
 == Databases ==
-Some frequently used sequence databases are installed on the clusters in /cvmfs/bio.data.computecanada.ca/content/databases/Core/blast_dbs/2022_03_23/.
-Examine that directory and its subdirectories, e.g. with
+NCBI non-redundant protein (nr) and non-redundant nucleotide databases (nt) are installed on the clusters in /cvmfs/bio.data.computecanada.ca/content/databases/Core/blast_dbs.
+
+The latest version of databases are stored at:
+
+For nr database: /cvmfs/bio.data.computecanada.ca/content/databases/Core/blast_dbs/2025_06_21/nr/nr
+
+For nt database: /cvmfs/bio.data.computecanada.ca/content/databases/Core/blast_dbs/2025_06_21/nt/nt
 
 == Accelerating the search ==
 For the examples below, the file ref.fa will be used as the reference database in FASTA format, and seq.fa as the queries.

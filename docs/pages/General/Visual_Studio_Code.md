@@ -2,7 +2,7 @@
 title: "Visual Studio Code/en"
 url: "https://docs.alliancecan.ca/wiki/Visual_Studio_Code/en"
 category: "General"
-last_modified: "2026-01-09T10:01:33Z"
+last_modified: "2026-03-11T16:59:59Z"
 page_id: 24790
 display_title: "Visual Studio Code"
 ---
@@ -12,7 +12,7 @@ Visual Studio Code is an integrated development environment (IDE) from Microsoft
 * Use VS Code locally and avoid connecting it to the systems. Save your changes to your project files with Git, and pull the changes onto the systems when ready to test.
 * Use nano or vim to edit files directly on the systems.
 * For debugging and quick testing, you can load the code-server module.
-* When all the above are not possible, one can configure VS Code for remote connections.
+* When all the above are not possible, configure VS Code for remote connections.
 
 __FORCETOC__
 
@@ -22,7 +22,7 @@ The advantages of using VS Code locally are
 * direct access: you can interact with files, extensions, and terminals directly on your machine with zero latency;
 * offline capability: you’re not tied to an internet connection or remote server, so you can code anytime, anywhere.
 
-It is recommended to develop locally with VS Code. You are then able to customize and extend VS Code with your preferred extensions and language.
+We recommend that you develop locally with VS Code. You are then able to customize and extend VS Code with your preferred extensions and language.
 
 Once you are ready to test your project on the systems, you can save your changes into a Git repository, push them to a remote host like GitHub or GitLab, then connect to the system and pull your changes to perform the test.
 
@@ -34,9 +34,9 @@ Then clone your repository (if it does not exist).
 
 or change directory to your repository and pull the changes with
 
-You can then test your changes in a short (with minimal resources) interactive job.
+Then test your changes in a short interactive job using minimal resources.
 
-= File edition on the systems =
+= Editing files on the systems=
 While VS Code is great for local development, sometimes you need direct access to files on a remote system. In such cases, terminal-based editors like nano or vim offer a lightweight and efficient way to edit files directly from the command line.
 
 If you prefer a graphical interface, the JupyterLab text editor provides a versatile alternative. It supports Markdown, Python scripts, and other formats.
@@ -68,7 +68,7 @@ Then create (or add) an SSH configuration file to your local computer:
 
 3. Save it and restart VS Code.
 
-== Remote system configuration ==
+== Remote configuration ==
 1. Log in to the system via an external terminal.
 
 2. Create the directory.
@@ -107,3 +107,4 @@ Update your ssh configuration to add the following lines:
 
 = Special notes =
 * VScode is banned on tamIA login nodes.
+* VScode is banned on Fir login nodes.

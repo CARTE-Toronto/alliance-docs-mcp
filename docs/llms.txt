@@ -1,6 +1,6 @@
 # Alliance Documentation - Page Directory
-# Generated: 2026-03-15T06:43:40.978215+00:00
-# Total pages: 447
+# Generated: 2026-03-22T06:38:07.068144+00:00
+# Total pages: 449
 
 - A tutorial on 'tar' (User Guide): https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/en
 - ABINIT (General): https://docs.alliancecan.ca/wiki/ABINIT/en
@@ -54,7 +54,7 @@
 - Available software (General): https://docs.alliancecan.ca/wiki/Available_software/en
 - BEAST (General): https://docs.alliancecan.ca/wiki/BEAST/en
 - BLAS and LAPACK (General): https://docs.alliancecan.ca/wiki/BLAS_and_LAPACK/en
-- BLAST (General): https://docs.alliancecan.ca/wiki/BLAST/en
+- BLAST/en (General): https://docs.alliancecan.ca/wiki/BLAST/en
 - BUSCO/en (General): https://docs.alliancecan.ca/wiki/BUSCO/en
 - Backing up your VM (General): https://docs.alliancecan.ca/wiki/Backing_up_your_VM/en
 - Best practices for job submission (General): https://docs.alliancecan.ca/wiki/Best_practices_for_job_submission/en
@@ -111,6 +111,7 @@
 - Connecting with MobaXTerm (General): https://docs.alliancecan.ca/wiki/Connecting_with_MobaXTerm/en
 - Connecting with PuTTY (General): https://docs.alliancecan.ca/wiki/Connecting_with_PuTTY/en
 - Creating a web server on a cloud (General): https://docs.alliancecan.ca/wiki/Creating_a_web_server_on_a_cloud/en
+- Cryosparc (General): https://docs.alliancecan.ca/wiki/Cryosparc
 - Cybersecurity Basics/Health Check (General): https://docs.alliancecan.ca/wiki/Cybersecurity_Basics/Health_Check
 - Cybersecurity for your personal computer (General): https://docs.alliancecan.ca/wiki/Cybersecurity_for_your_personal_computer/en
 - Cybersecurity: Personal computer health check (Cybersecurity): https://docs.alliancecan.ca/wiki/Cybersecurity:_Personal_computer_health_check/en
@@ -121,6 +122,7 @@
 - Dask/en (General): https://docs.alliancecan.ca/wiki/Dask/en
 - Data backup and restoration (General): https://docs.alliancecan.ca/wiki/Data_backup_and_restoration
 - Data management at Niagara (General): https://docs.alliancecan.ca/wiki/Data_management_at_Niagara/en
+- Data management at Trillium (General): https://docs.alliancecan.ca/wiki/Data_management_at_Trillium
 - Data protection, privacy, and confidentiality (General): https://docs.alliancecan.ca/wiki/Data_protection,_privacy,_and_confidentiality/en
 - Database servers (General): https://docs.alliancecan.ca/wiki/Database_servers/en
 - Debugging and profiling (General): https://docs.alliancecan.ca/wiki/Debugging_and_profiling/en
@@ -351,7 +353,7 @@
 - SSH/en (General): https://docs.alliancecan.ca/wiki/SSH/en
 - Samtools (General): https://docs.alliancecan.ca/wiki/Samtools/en
 - Scalability (General): https://docs.alliancecan.ca/wiki/Scalability/en
-- Scratch purging policy (General): https://docs.alliancecan.ca/wiki/Scratch_purging_policy/en
+- Scratch purging policy/en (General): https://docs.alliancecan.ca/wiki/Scratch_purging_policy/en
 - Securing your account (General): https://docs.alliancecan.ca/wiki/Securing_your_account/en
 - Security considerations when running a VM (General): https://docs.alliancecan.ca/wiki/Security_considerations_when_running_a_VM/en
 - Security corrections for virtual machines (General): https://docs.alliancecan.ca/wiki/Security_corrections_for_virtual_machines
