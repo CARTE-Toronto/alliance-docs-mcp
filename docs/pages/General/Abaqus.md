@@ -1,13 +1,14 @@
 ---
-title: "Abaqus/en"
-url: "https://docs.alliancecan.ca/wiki/Abaqus/en"
+title: "Abaqus"
+url: "https://docs.alliancecan.ca/wiki/Abaqus"
 category: "General"
-last_modified: "2026-02-27T12:52:40Z"
-page_id: 10030
+last_modified: "2026-03-19T21:56:59Z"
+page_id: 7347
 display_title: "Abaqus"
 ---
 
 __FORCETOC__
+
 Abaqus FEA is a software suite for finite element analysis and computer-aided engineering.
 
 = Licensing =
@@ -26,11 +27,11 @@ You will then be sent a list of cluster IP addresses so that your administrator 
 
 Similar to previously installed modules the abaqus/2026 module is configured by default to work with Simulia FLEXnet license server such as the free SHARCNET license server.  To use a local DSLS based institutional license server two small text files abaqus_v6.env and DSLicSrv.txt should be created in your simulation submit directory as follows.  These will be read automatically when abaqus starts running to reconfigure itself accordingly.
 
- [l2 (login node):~/mysimdir] cat abaqus_v6.env
+[l2 (login node):~/mysimdir] cat abaqus_v6.env
  license_server_type=DSLS
  dsls_license_config="DSLicSrv.txt"
 
- [l2 (login node):~/mysimdir] DSLicSrv.txt
+[l2 (login node):~/mysimdir] DSLicSrv.txt
  YOUR-SERVER-HOSTNAME:PORT-NUMBER
 
 = Version compatibility =
@@ -155,7 +156,7 @@ To completely satisfy the recommended "MEMORY TO OPERATIONS REQUIRED MINIMIZE I/
 
 To determine the required slurm memory for multi-node slurm scripts, memory estimates (per compute process) required to minimize I/O are given in the output dat file of completed jobs.  If mp_host_split is not specified (or is set to 1) then the total number of compute processes will equal the number of nodes.  The mem-per-cpu value can then be roughly determined by multiplying the largest memory estimate by the number of nodes and then dividing by the number or ntasks.  If however a value for mp_host_split is specified (greater than 1) than the mem-per-cpu value can be roughly determined from the largest memory estimate times the number of nodes times the value of mp_host_split divided by the number of tasks.  Note that mp_host_split must be less than or equal to the number of cores per node assigned by slurm at runtime otherwise Abaqus will terminate.  This scenario can be controlled by uncommenting to specify a value for tasks-per-node.  The following definitive statement is given in every output dat file and mentioned here for reference:
 
-  THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+ THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
  THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
  THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
  SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
@@ -265,12 +266,12 @@ When the output of query I) above indicates that a job for a particular username
 
 The following shows the situation where a user submitted two 6-core jobs (each requiring 12 tokens) in quick succession.  The scheduler then started each job on a different node in the order they were submitted.  Since the user had 10 Abaqus compute tokens, the first job (27527287) was able to acquire exactly enough (10) tokens for the solver to begin running.  The second job (27527297) not having access to any more tokens entered an idle "queued" state (as can be seen from the lmstat output) until the first job completed, wasting the available resources and depreciating the user's fair share level in the process ...
 
- [l2 (nibi login node):~] sq
+[l2 (nibi login node):~] sq
             JOBID     USER              ACCOUNT           NAME  ST  TIME_LEFT NODES CPUS TRES_PER_N MIN_MEM NODELIST (REASON)
          27530366  roberpj         cc-debug_cpu  scriptsp2.txt   R    9:56:13     1    6        N/A      8G     c107  (None)
          27530407  roberpj         cc-debug_cpu  scriptsp2.txt   R    9:59:37     1    6        N/A      8G     c292  (None)
 
- [l2 (nibi login node):~] abaqus licensing lmstat -c $ABAQUSLM_LICENSE_FILE -a | egrep "Users|start|queued"
+[l2 (nibi login node):~] abaqus licensing lmstat -c $ABAQUSLM_LICENSE_FILE -a | egrep "Users|start|queued"
  Users of abaqus:  (Total of 78 licenses issued;  Total of 53 licenses in use)
     roberpj c107 /dev/tty (v62.6) (license3.sharcnet.ca/27050 1042), start Mon 11/25 17:15, 10 licenses
     roberpj c292 /dev/tty (v62.6) (license3.sharcnet.ca/27050 125) queued for 10 licenses
@@ -278,7 +279,7 @@ The following shows the situation where a user submitted two 6-core jobs (each r
 To avoid license shortage problems when submitting multiple jobs when working with expensive Abaqus tokens either use a job dependency, job array or at the very least set up a slurm email notification to know when your job completes before manually submitting another one.
 
 === Specify job resources ===
-To ensure optimal usage of both your Abaqus tokens and our resources, it's important to carefully specify the required memory and ncpus in your Slurm script.  The values can be determined by submitting a few short test jobs to the queue then checking their utilization.  For completed jobs use seff JobNumber to show the total Memory Utilized and Memory Efficiency. If the Memory Efficiency is less than ~90%, decrease the value of the #SBATCH --mem= setting in your Slurm script accordingly.  Notice that the seff JobNumber command also shows the total CPU (time) Utilized and CPU Efficiency. If the CPU Efficiency is less than ~90%, perform scaling tests to determine the optimal number of CPUs for optimal performance and then update the value of #SBATCH --cpus-per-task= in your Slurm script.  For running jobs, use the srun --jobid=29821580 --pty top -d 5 -u $USER command to watch the %CPU, %MEM and RES for each Abaqus parent process on the compute node. The %CPU and %MEM columns display the percent usage relative to the total available on the node while the RES column shows the per process resident memory size (in human readable format for values over 1GB). Further information regarding how to monitor jobs is available on our documentation wiki
+To ensure optimal usage of both your Abaqus tokens and our resources, it's important to carefully specify the required memory and ncpus in your Slurm script.  The values can be determined by submitting a few short test jobs to the queue then checking their utilization.  For completed jobs use seff JobNumber to show the total Memory Utilized and Memory Efficiency. If the Memory Efficiency is less than ~90%, decrease the value of the #SBATCH --mem= setting in your Slurm script accordingly.  Notice that the seff JobNumber command also shows the total CPU (time) Utilized and CPU Efficiency. If the CPU Efficiency is less than ~90%, perform scaling tests to determine the optimal number of CPUs for optimal performance and then update the value of #SBATCH --cpus-per-task= in your Slurm script.  For running jobs, use the srun --overlap --jobid=29821580 --pty top -d 5 -u $USER command to watch the %CPU, %MEM and RES for each Abaqus parent process on the compute node. The %CPU and %MEM columns display the percent usage relative to the total available on the node while the RES column shows the per process resident memory size (in human readable format for values over 1GB). Further information regarding how to monitor jobs is available on our documentation wiki
 
 === Core token mapping ===
 

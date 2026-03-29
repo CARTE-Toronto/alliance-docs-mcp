@@ -2,7 +2,7 @@
 title: "Python/en"
 url: "https://docs.alliancecan.ca/wiki/Python/en"
 category: "General"
-last_modified: "2025-09-18T12:26:01Z"
+last_modified: "2026-03-26T22:31:02Z"
 page_id: 2586
 display_title: "Python"
 ---
@@ -94,7 +94,7 @@ Parallel filesystems such as the ones used on our clusters are very good at read
 
 As a workaround for this kind of slowdown, and especially for single-node Python jobs, you can create your virtual environment inside of your job, using the compute node's local disk. It may seem counter-intuitive to recreate your environment for every job, but it can be faster than running from the parallel filesystem, and will give you some protection against some filesystem performance issues. This approach, of creating a node-local virtualenv, has to be done for each node in the job, since the virtualenv is only accessible on one node.  Following job submission script demonstrates how to do this for a single-node job:
 
-where the requirements.txt file will have been created from a test environment. For example, if you want to create an environment for TensorFlow, you would do the following on a login node :
+where the requirements.txt file will have been created from a test environment. For example, if you want to create an environment for TensorFlow, you would do the following on a login node:
 /tmp/$RANDOM
 |virtualenv --no-download $ENVDIR
 |source $ENVDIR/bin/activate
@@ -159,7 +159,7 @@ numpy   1.23.0     cp310     generic
 }}
 Or use the long option:
 
-With the pip format, you can use different operators : ==, <, >, ~=, <=,>=, !=. For instance, to list inferior versions:
+With the pip format, you can use different operators: ==, <, >, ~=, <=,>=, !=. For instance, to list inferior versions:
 
 And to list all available versions:
 
@@ -181,15 +181,58 @@ Here is how to pre-download a package called tensorboardX on a login node, and i
 # If the filename does not end with none-any, and ends with something like linux_x86_64 or manylinux*_x86_64, the wheel might not function correctly. You should contact Technical support so that we compile the wheel and make it available on our systems.
 # Then, when installing, use the path for file pip install tensorboardX-1.9-py2.py3-none-any.whl.
 
+=== Installing from a remote repository (Github) ===
+
+In some cases the source package is not available on the python package index (PyPI), but it is available from a remote repository.
+That remote repository may be Git, Subversion, Bazaar or Mercurial based but we'll focus on Git-based below.
+
+Using the URL to the remote repository, you can specify:
+* a branch name (the-best-feature)
+* a tag (v1.0.1)
+* a short or full commit identifier (da39a3ee5e6b4b0d3255bfef95601890afd80709)
+* a reference, like to a pull request (refs/pull/123/head)
+
+With an activated virtual environment:
+
+It is important to use a tag (version) or commit id in order to have a reproducible installation.
+If you use the HEAD of the repository, it may (or may not) work today, but tomorrow may bring issues, as the authors have made some changes.
+
+On Github, you can find the tags or releases under the Releases section on the right panel.
+
+For more information on installing from a version control system (VCS), see vcs-support
+
+=== Creating a local wheel ===
+
+In some contexts,
+* some packages are provided only from a remote repository (i.e. Github) without any version nor tags nor releases;
+* or you need to modify its source code.
+Then you can create a local wheel to ensure reproducibility of your jobs.
+
+Based on Installing from a remote repository (Github), you can create a local wheel from a remote repository, with an activated virtual environment:
+
+where the above will clone and checkout the repository at the given reference (tag, commit id, etc.) and pip will then build a wheel in the wheel directory ($HOME).
+
+If you need to modify the source files, then first clone the repository:
+
+Then create a local wheel:
+
+Finally, with the local wheel, you can install it in your virtual environment:
+
+or add it to your requirements file:
+
+If you aim to create a requirements file, then you should use --no-index and then freeze the state of your virtual environment:
+
+See also Creating virtual environments inside of your jobs.
+
 == Parallel programming with the Python multiprocessing module ==
 
-Doing parallel programming with Python can be an easy way to get results faster. A usual way of doing so is to use the multiprocessing module. Of particular interest is the Pool class of this module, since it allows one to control the number of processes started in parallel, and apply the same calculation to multiple data. As an example, suppose we want to calculate the cube of a list of numbers. The serial code would look like this :
+Doing parallel programming with Python can be an easy way to get results faster. A usual way of doing so is to use the multiprocessing module. Of particular interest is the Pool class of this module, since it allows one to control the number of processes started in parallel, and apply the same calculation to multiple data. As an example, suppose we want to calculate the cube of a list of numbers. The serial code would look like this:
 
-Using the Pool class, running in parallel, the above codes become :
+Using the Pool class, running in parallel, the above codes become:
 
-The above examples will however be limited to using 4 processes. On a cluster, it is very important to use the cores that are allocated to your job. Launching more processes than you have cores requested will slow down your calculation and possibly overload the compute node. Launching fewer processes than you have cores will result in wasted resources and cores remaining idle. The correct number of cores to use in your code is determined by the amount of resources you requested to the scheduler. For example, if you have the same computation to perform on many tens of data or more, it would make sense to use all of the cores of a node. In this case, you can write your job submission script with the following header :
+The above examples will however be limited to using 4 processes. On a cluster, it is very important to use the cores that are allocated to your job. Launching more processes than you have cores requested will slow down your calculation and possibly overload the compute node. Launching fewer processes than you have cores will result in wasted resources and cores remaining idle. The correct number of cores to use in your code is determined by the amount of resources you requested to the scheduler. For example, if you have the same computation to perform on many tens of data or more, it would make sense to use all of the cores of a node. In this case, you can write your job submission script with the following header:
 
-and then, your code would become the following :
+and then, your code would become the following:
 
 Note that in the above example, the function cube itself is sequential. If you are calling some external library, such as numpy, it is possible that the functions called by your code are themselves parallel. If you want to distribute processes with the technique above, you should verify whether the functions you call are themselves parallel, and if they are, you need to control how many threads they will take themselves. If, for example, they take all the cores available (32 in the above example), and you are yourself starting 32 processes, this will slow down your code and possibly overload the node as well.
 
@@ -230,6 +273,10 @@ Typically, one would use w, s, l, p, n to debug a file.
 
 For more information, see the Python Debugger.
 
+== Attaching to a running process ==
+With Python 3.14 and higher, one can attach to a running process and start PDB at the current step.
+In a different terminal, execute:
+
 == Troubleshooting ==
 
 === Python script is hanging ===
@@ -239,7 +286,7 @@ By using the faulthandler module, you can edit your script to allow dumping a tr
 You can also inspect a python process while the job is running, without modifying it beforehand, using py-spy:
 
 # Install py-spy in a virtualenv in your home
-# Attach to the running job, using srun --pty --jobid JOBID bash
+# Attach to the running job, using srun --overlap --pty --jobid JOBID bash
 # Use htop -u $USER to find the process ID of your python script
 # Activate the virtualenv where py-spy is installed
 # Run py-spy top --pid PID to see live feedback about where your code is spending time

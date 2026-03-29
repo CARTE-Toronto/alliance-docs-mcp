@@ -1,6 +1,6 @@
 # Alliance Documentation - Page Directory
-# Generated: 2026-03-22T06:38:07.068144+00:00
-# Total pages: 449
+# Generated: 2026-03-29T06:53:09.647438+00:00
+# Total pages: 450
 
 - A tutorial on 'tar' (User Guide): https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/en
 - ABINIT (General): https://docs.alliancecan.ca/wiki/ABINIT/en
@@ -246,7 +246,7 @@
 - Modules sse3 (General): https://docs.alliancecan.ca/wiki/Modules_sse3
 - MonarQ (General): https://docs.alliancecan.ca/wiki/MonarQ/en
 - MonarQ/en-ca (General): https://docs.alliancecan.ca/wiki/MonarQ/en-ca
-- Monitoring jobs (General): https://docs.alliancecan.ca/wiki/Monitoring_jobs/en
+- Monitoring jobs/en (General): https://docs.alliancecan.ca/wiki/Monitoring_jobs/en
 - Moose (General): https://docs.alliancecan.ca/wiki/Moose/en
 - Mounting /project space on a VM in the cloud (General): https://docs.alliancecan.ca/wiki/Mounting_/project_space_on_a_VM_in_the_cloud/en
 - Mp2 (General): https://docs.alliancecan.ca/wiki/Mp2/en
@@ -258,7 +258,7 @@
 - Multifactor authentication/en (General): https://docs.alliancecan.ca/wiki/Multifactor_authentication/en
 - NAMD (General): https://docs.alliancecan.ca/wiki/NAMD/en
 - NCCL (General): https://docs.alliancecan.ca/wiki/NCCL
-- NVTOP (General): https://docs.alliancecan.ca/wiki/NVTOP/en
+- NVTOP/en (General): https://docs.alliancecan.ca/wiki/NVTOP/en
 - Narval/en (General): https://docs.alliancecan.ca/wiki/Narval/en
 - National systems (General): https://docs.alliancecan.ca/wiki/National_systems/en
 - NetCDF (General): https://docs.alliancecan.ca/wiki/NetCDF
@@ -313,7 +313,7 @@
 - PyRETIS (General): https://docs.alliancecan.ca/wiki/PyRETIS/en
 - PyTorch (General): https://docs.alliancecan.ca/wiki/PyTorch
 - PyTorch/en (General): https://docs.alliancecan.ca/wiki/PyTorch/en
-- Python (General): https://docs.alliancecan.ca/wiki/Python/en
+- Python/en (General): https://docs.alliancecan.ca/wiki/Python/en
 - QGIS (General): https://docs.alliancecan.ca/wiki/QGIS
 - QIIME (General): https://docs.alliancecan.ca/wiki/QIIME/en
 - Qiskit (General): https://docs.alliancecan.ca/wiki/Qiskit/en
@@ -345,6 +345,7 @@
 - SAIGE/en (General): https://docs.alliancecan.ca/wiki/SAIGE/en
 - SAS (General): https://docs.alliancecan.ca/wiki/SAS
 - SQLite (General): https://docs.alliancecan.ca/wiki/SQLite/en
+- SSH (General): https://docs.alliancecan.ca/wiki/SSH
 - SSH Keys (General): https://docs.alliancecan.ca/wiki/SSH_Keys/en
 - SSH configuration file (General): https://docs.alliancecan.ca/wiki/SSH_configuration_file/en
 - SSH host keys (General): https://docs.alliancecan.ca/wiki/SSH_host_keys/en

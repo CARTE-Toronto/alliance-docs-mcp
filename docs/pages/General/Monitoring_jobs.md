@@ -2,7 +2,7 @@
 title: "Monitoring jobs/en"
 url: "https://docs.alliancecan.ca/wiki/Monitoring_jobs/en"
 category: "General"
-last_modified: "2025-05-08T19:22:05Z"
+last_modified: "2026-03-19T19:00:14Z"
 page_id: 28553
 display_title: "Monitoring jobs"
 ---
@@ -72,12 +72,15 @@ It is possible to connect to the node running a job and execute new processes th
 
 Suppose you want to run the utility nvidia-smi to monitor GPU usage on a node where you have a job running. The following command runs watch on the node assigned to the given job, which in turn runs nvidia-smi every 30 seconds, displaying the output on your terminal.
 
- $ srun --jobid 123456 --pty watch -n 30 nvidia-smi
+ $ srun --jobid 123456 --overlap --pty watch -n 30 nvidia-smi
 
 It is possible to launch multiple monitoring commands using tmux. The following command launches htop and nvidia-smi in separate panes to monitor the activity on a node assigned to the given job.
 
- $ srun --jobid 123456 --pty tmux new-session -d 'htop -u $USER' \; split-window -h 'watch nvidia-smi' \; attach
+ $ srun --jobid 123456 --overlap --pty tmux new-session -d 'htop -u $USER' \; split-window -h 'watch nvidia-smi' \; attach
 
 Processes launched with srun share the resources with the job specified. You should therefore be careful not to launch processes that would use a significant portion of the resources allocated for the job. Using too much memory, for example, might result in the job being killed; using too many CPU cycles will slow down the job.
 
 Noteː The srun commands shown above work only to monitor a job submitted with sbatch. To monitor an interactive job, create multiple panes with tmux and start each process in its own pane.
+
+== Monitoring a GPU job ==
+See Monitor GPU usage

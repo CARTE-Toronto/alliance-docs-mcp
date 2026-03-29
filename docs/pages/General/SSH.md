@@ -1,19 +1,21 @@
 ---
-title: "SSH/en"
-url: "https://docs.alliancecan.ca/wiki/SSH/en"
+title: "SSH"
+url: "https://docs.alliancecan.ca/wiki/SSH"
 category: "General"
-last_modified: "2026-03-06T19:41:37Z"
-page_id: 506
+last_modified: "2026-03-27T18:18:00Z"
+page_id: 63
 display_title: "SSH"
 ---
 
 Secure Shell (SSH) is a widely used standard to connect to remote machines securely. The SSH connection is encrypted, including the username and password. SSH is the standard way for you to connect in order to execute commands, submit jobs, check the progress of jobs, and in some cases, transfer files.
 
-Various implementations of the SSH standard exist for most major operating systems.
-*On macOS and Linux, the most widely used client is OpenSSH, a command line application installed by default.
+= What you need =
+
+You will need an SSH client program.  One or more clients exist for most major operating systems.
+*On macOS and Linux, the most widely used client is OpenSSH, a command-line application installed by default.
 *For recent versions of Windows, SSH is available in the PowerShell terminal, in the cmd prompt, or through Windows Subsystem for Linux (WSL). There are also 3rd-party SSH clients that are popular, such as PuTTY, MobaXTerm, WinSCP, and Bitvise.
 
-To use any of these implementations of SSH successfully, you must:
+To use any of these SSH clients successfully, you must:
 * know the name of the machine to which you want to connect. This will be something like fir.alliancecan.ca or trillium.alliancecan.ca.
 * know your username, typically something like ansmith. The username is not your CCI, like abc-123, nor a CCRI like abc-123-01, nor your email address.
 * know your password, or have an SSH key. Your password is the same one you use to log in to CCDB.  You may register and use an SSH key instead of a password; we highly recommend this since it provides better security.
@@ -62,3 +64,9 @@ If you see any of the other error messages, you will have to upgrade your OS and
 Here are known versions that will fail and will have to be upgraded:
 * OpenSSH on CentOS/RHEL 5
 *  PuTTY v0.64 and earlier on Windows
+
+= Warnings =
+
+== "connection is not using a post-quantum key exchange algorithm" ==
+
+We recommend you ignore this warning.  It warns that if encrypted traffic is recorded today, some hypothetical future computer (e.g., a quantum computer) may be able to decode the contents.  This is really just a matter of what key length can be brute-forced, so is nothing new or urgent.  We do not plan to reconfigure our systems immediately. You can suppress the warning by configuring your SSH client with WarnWeakCrypto no as described at the link given in the warning message.

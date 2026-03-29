@@ -2,7 +2,7 @@
 title: "NVTOP/en"
 url: "https://docs.alliancecan.ca/wiki/NVTOP/en"
 category: "General"
-last_modified: "2024-12-09T22:42:01Z"
+last_modified: "2026-03-19T19:00:29Z"
 page_id: 26990
 display_title: "NVTOP"
 ---
@@ -13,7 +13,7 @@ Because a picture is worth a thousand words:
 
 __FORCETOC__
 
-= Monitor GPUs usage =
+= Monitor GPU usage =
 NVTOP can monitor single or multiple GPUs. It can show the GPU usage and its memory.
 One can also select a specific device from the menu (F2 -> GPU Select).
 
