@@ -2,7 +2,7 @@
 title: "Qiskit/en"
 url: "https://docs.alliancecan.ca/wiki/Qiskit/en"
 category: "General"
-last_modified: "2025-03-31T21:16:04Z"
+last_modified: "2026-03-27T18:18:35Z"
 page_id: 26302
 display_title: "Qiskit"
 ---
@@ -26,33 +26,3 @@ where X.Y.Z is the version number, for  example 1.4.0. To install the most recen
 
 You can then submit your job to the scheduler.
 == Using Qiskit with MonarQ (in preparation)==
-
-== Use case: Bell states ==
-Before you create a simulation of the first Bell state on Narval, the required modules need to be loaded.
-    from qiskit_aer import AerSimulator
-    from qiskit import QuantumCircuit, transpile
-    from qiskit.visualization import plot_histogram
-
-Define the circuit. Apply an Hadamard gate to create a superposition state on the first qubit and a CNOT gate to intricate the first and second qubits.
-    circuit = QuantumCircuit(2,2)
-    circuit.h(0)
-    circuit.cx(0,1)
-    circuit.measure_all()
-
-Nous voulons utiliser le simulateur par défaut, soit AerSimulator étant le simulateur par défaut. Nous obtenons le dénombrement des états finaux des qubits après 1000 mesures.
-    simulator = AerSimulator()
-    result = simulator.run(circuit, shots=1000).result()
-    counts = result.get_counts()
-    print(counts)
-    {'00': 489, '11': 535}
-Nous affichons un histogramme des résultats avec la commande
-    plot_histogram(counts)
-
-We will use the default simulator AerSimulator. This provides the final number of qubits after having made 1000 measurements.
-    simulator = AerSimulator()
-    result = simulator.run(circuit, shots=1000).result()
-    counts = result.get_counts()
-    print(counts)
-    {'00': 489, '11': 535}
-The results are displayed.
-    plot_histogram(counts)

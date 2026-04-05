@@ -2,7 +2,7 @@
 title: "Open OnDemand/en"
 url: "https://docs.alliancecan.ca/wiki/Open_OnDemand/en"
 category: "General"
-last_modified: "2026-01-11T13:06:28Z"
+last_modified: "2026-03-27T18:19:01Z"
 page_id: 32248
 display_title: "Open OnDemand"
 ---
@@ -29,13 +29,13 @@ The Open OnDemand platform provides a file browser that allows you to manage you
 * Delete files/directories
 * Edit existing files
 
-==Uploading Files==
+==Uploading files==
 
-The current file size upload limit is 10GB, if you need to upload a file larger than this or are facing upload issues due to a bad internet connection for example please try using Globus. There is a Globus button in the file browser at the top right,  300px, which will take you to the Globus web interface where you can login with your Alliance username and password. The path navigated to in the Open OnDemand file browser will be the same path opened in Globus.
+The current file size upload limit is 10GB; if you need to upload a file larger than this or are facing upload issues due to a bad internet connection for example, please try using Globus. There is a Globus button in the file browser at the top right,  300px, which will take you to the Globus web interface where you can log in with your Alliance username and password. The path navigated to in the Open OnDemand file browser will be the same path opened in Globus.
 
 =Job submission=
 
-Open OnDemand also provides a job submission interface that allows you to submit batch jobs. Navigate to the Jobs tab and select Job Composer, this will take you to the job submission form. From here click on the New Job button which will offer you the following options:
+Open OnDemand also provides a job submission interface that allows you to submit batch jobs. Navigate to the Jobs tab and select Job Composer; this will take you to the job submission form. From here click on the New Job button which will offer you the following options:
 
 * From Default Template - allows you to create a job from scratch
 * From Template - allows you to select from some example jobs, e.g. MPI and OpenMP
@@ -48,7 +48,7 @@ The page also shows the status of your job so you can see whether it is queued, 
 
 =Job monitoring=
 
-To get an overview of all your jobs in the queue you can use the job monitoring interface. Navigate to the Jobs tab and select Active Jobs. You can filter the jobs by using the Filter text box at the top right. Columns can also be sorted by clicking on the column headers, for example you can sort by job status (running, completed, failed, etc.). Clicking on > to the left of a job will show you more details about the job, such as the start/end time, node list and account charged etc. You might also want to show all jobs in the queue, you can do this by clicking on the drop-down menu at the top right and selecting All Jobs.
+To get an overview of all your jobs in the queue you can use the job monitoring interface. Navigate to the Jobs tab and select Active Jobs. You can filter the jobs by using the Filter text box at the top right. Columns can also be sorted by clicking on the column headers, for example you can sort by job status (running, completed, failed, etc.). Clicking on > to the left of a job will show you more details about the job, such as the start/end time, node list and account charged etc. You might also want to show all jobs in the queue; you can do this by clicking on the drop-down menu at the top right and selecting All Jobs.
 
 =Interactive applications=
 
@@ -61,9 +61,9 @@ Open OnDemand also features interactive applications that can be run directly fr
 
 When you have chosen your job parameters click on the Launch button to submit your job to the queue. You will be taken to the My Interactive Sessions page where you can see the status of your job, i.e. queued, running or completed. Once the job has been assigned a node and is running, you can click on the Connect to ... button to launch the application. The application will open in a new tab in your browser, and you can interact with it as if it was running locally.
 
-If you would like terminal access to the node where the application is running, to monitor the performance for example you can click on the button beside Host starting with >_. This will open a terminal window in your browser where you can run commands on the node directly.
+If you would like terminal access to the node where the application is running, to monitor the performance for example, you can click on the button beside Host starting with >_. This will open a terminal window in your browser where you can run commands on the node directly.
 
-If for whatever reason you would like to kill the job, you can do so by clicking on the red Delete button in the job panel in the My Interactive Sessions page.
+If for whatever reason you would like to kill the job, you can do so by clicking on the red Cancel button in the job panel in the My Interactive Sessions page.
 
     Figure 5: Interactive app submission form.
 
@@ -73,8 +73,8 @@ If for whatever reason you would like to kill the job, you can do so by clicking
 
 =Terminal access=
 
-Sometimes you might prefer to use a terminal to interact with the cluster, Open OnDemand provides a web-based terminal that you can use to access the command line interface. To access the terminal, navigate to the Clusters tab and select Cluster_Name Shell Access. This will open a new tab in your browser with a terminal window where you can run commands as you would in a regular terminal session.
+If you prefer to use a terminal to interact with the cluster, Open OnDemand provides a web-based terminal to access the command line interface. To access the terminal, navigate to the Clusters tab and select Cluster_Name Shell Access. This will open a new tab in your browser with a terminal window where you can run commands as you would in a terminal application.
 
-= Debugging Errors =
+= Debugging errors =
 
 If you encounter any errors while using an interactive Open OnDemand job, you can check the logs for more information. To access the logs, navigate to the My Interactive Sessions tab and find your active session. Click on the output.log link (see Figure. 8) to open a separate tab which displays the output of your job. This file contains the standard output and error messages generated by the job, which can help you identify any issues that may have occurred during the session. When submitting a ticket to SciNet support, please include the output.log file, your Session ID, which is displayed as a long string of characters, e.g.  8feb45fa-bc65-4846-8398-2a73c1bf8e5a, and any other relevant information to help us assist you more effectively.

@@ -1,5 +1,5 @@
 # Alliance Documentation - Page Directory
-# Generated: 2026-03-29T06:53:09.647438+00:00
+# Generated: 2026-04-05T06:54:52.591127+00:00
 # Total pages: 450
 
 - A tutorial on 'tar' (User Guide): https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/en
@@ -194,7 +194,7 @@
 - Interpretable AI (General): https://docs.alliancecan.ca/wiki/Interpretable_AI
 - Java (General): https://docs.alliancecan.ca/wiki/Java/en
 - Job arrays (General): https://docs.alliancecan.ca/wiki/Job_arrays/en
-- Job scheduling policies (General): https://docs.alliancecan.ca/wiki/Job_scheduling_policies/en
+- Job scheduling policies/en (General): https://docs.alliancecan.ca/wiki/Job_scheduling_policies/en
 - Julia (General): https://docs.alliancecan.ca/wiki/Julia/en
 - Julia (General): https://docs.alliancecan.ca/wiki/Julia
 - Jupyter (General): https://docs.alliancecan.ca/wiki/Jupyter/en
@@ -316,7 +316,7 @@
 - Python/en (General): https://docs.alliancecan.ca/wiki/Python/en
 - QGIS (General): https://docs.alliancecan.ca/wiki/QGIS
 - QIIME (General): https://docs.alliancecan.ca/wiki/QIIME/en
-- Qiskit (General): https://docs.alliancecan.ca/wiki/Qiskit/en
+- Qiskit/en (General): https://docs.alliancecan.ca/wiki/Qiskit/en
 - Quantum ESPRESSO (General): https://docs.alliancecan.ca/wiki/Quantum_ESPRESSO/en
 - QuantumATK (General): https://docs.alliancecan.ca/wiki/QuantumATK/en
 - QuantumATK (General): https://docs.alliancecan.ca/wiki/QuantumATK

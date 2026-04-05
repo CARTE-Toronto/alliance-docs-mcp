@@ -2,7 +2,7 @@
 title: "Using GPUs with Slurm/en"
 url: "https://docs.alliancecan.ca/wiki/Using_GPUs_with_Slurm/en"
 category: "General"
-last_modified: "2026-02-02T13:09:02Z"
+last_modified: "2026-03-27T18:18:21Z"
 page_id: 4369
 display_title: "Using GPUs with Slurm"
 ---
@@ -29,31 +29,31 @@ For general advice on job scheduling, see Running jobs.
 = Available GPUs =
 The following table summarizes the available GPU models and their corresponding specifiers:
 
-Cluster  	GPU model   	Model specifiersfor Slurm    	Notes
-Fir      	H100-80gb   	h100
-Fir      	H100-80gb   	nvidia_h100_80gb_hbm3_1g.10gb	MIG
-Fir      	H100-80gb   	nvidia_h100_80gb_hbm3_2g.20gb	MIG
-Fir      	H100-80gb   	nvidia_h100_80gb_hbm3_3g.40gb	MIG
-Narval   	A100-40gb   	a100
-Narval   	A100-40gb   	a100_1g.5gb                  	MIG
-Narval   	A100-40gb   	a100_2g.10gb                 	MIG
-Narval   	A100-40gb   	a100_3g.20gb                 	MIG
-Narval   	A100-40gb   	a100_4g.20gb                 	MIG
-Nibi     	H100-80gb   	h100
-Nibi     	H100-80gb   	nvidia_h100_80gb_hbm3_1g.10gb	MIG
-Nibi     	H100-80gb   	nvidia_h100_80gb_hbm3_2g.20gb	MIG
-Nibi     	H100-80gb   	nvidia_h100_80gb_hbm3_3g.40gb	MIG
-Nibi     	MI300A-128gb	(none; see Nibi)
-Rorqual  	H100-80gb   	h100
-Rorqual  	H100-80gb   	nvidia_h100_80gb_hbm3_1g.10gb	MIG; synonyms h100_1g.10gb, h100_1.10, h100_10gb
-Rorqual  	H100-80gb   	nvidia_h100_80gb_hbm3_2g.20gb	MIG; synonyms h100_2g.20gb, h100_2.20, h100_20gb
-Rorqual  	H100-80gb   	nvidia_h100_80gb_hbm3_3g.40gb	MIG; synonyms h100_3g.40gb, h100_3.40, h100_40gb
-Trillium 	H100-80gb   	h100
-Killarney	H100-80gb   	h100                         	 
-Killarney	L40S-48gb   	l40s                         	 
-tamIA    	H100-80gb   	h100                         	 
-tamIA    	H200        	h200                         	 
-Vulcan   	L40S-48gb   	l40s                         	 
+Cluster  	GPU model   	MIG	Model specifiersfor Slurm    	Synonyms for Slurm
+Fir      	H100-80gb   	   	h100
+Fir      	H100-80gb   	1/8	nvidia_h100_80gb_hbm3_1g.10gb
+Fir      	H100-80gb   	2/8	nvidia_h100_80gb_hbm3_2g.20gb
+Fir      	H100-80gb   	3/8	nvidia_h100_80gb_hbm3_3g.40gb
+Narval   	A100-40gb   	   	a100
+Narval   	A100-40gb   	1/8	a100_1g.5gb
+Narval   	A100-40gb   	2/8	a100_2g.10gb
+Narval   	A100-40gb   	2/8	a100_3g.20gb
+Narval   	A100-40gb   	4/8	a100_4g.20gb
+Nibi     	H100-80gb   	   	h100
+Nibi     	H100-80gb   	1/8	nvidia_h100_80gb_hbm3_1g.10gb	h100_1g.10gb h100_1.10 h100_10gb
+Nibi     	H100-80gb   	2/8	nvidia_h100_80gb_hbm3_2g.20gb	h100_2g.20gb h100_2.20 h100_20gb
+Nibi     	H100-80gb   	3/8	nvidia_h100_80gb_hbm3_3g.40gb	h100_3g.40gb h100_3.40 h100_40gb
+Nibi     	MI300A-128gb	   	mi300a
+Rorqual  	H100-80gb   	   	h100
+Rorqual  	H100-80gb   	1/8	nvidia_h100_80gb_hbm3_1g.10gb	h100_1g.10gb h100_1.10 h100_10gb
+Rorqual  	H100-80gb   	2/8	nvidia_h100_80gb_hbm3_2g.20gb	h100_2g.20gb h100_2.20 h100_20gb
+Rorqual  	H100-80gb   	3/8	nvidia_h100_80gb_hbm3_3g.40gb	h100_3g.40gb h100_3.40 h100_40gb
+Trillium 	H100-80gb   	   	h100
+Killarney	H100-80gb   	   	h100
+Killarney	L40S-48gb   	   	l40s
+tamIA    	H100-80gb   	   	h100
+tamIA    	H200        	   	h200
+Vulcan   	L40S-48gb   	   	l40s
 Vulcan
 
 GPU model specifiers (including MIG specifiers) available on any given cluster can be obtained from Slurm with the following command.
@@ -90,7 +90,7 @@ If you need only a single CPU core and one GPU:
 == Multi-threaded job ==
 For a GPU job which needs multiple CPUs in a single node:
 
-For each GPU requested, we recommend
+For each full GPU requested, we recommend
 * on Fir, no more than 12 CPU cores;
 * on Narval, no more than 12 CPU cores
 * on Nibi, no more than 14 CPU cores,
@@ -137,3 +137,9 @@ On Fir and Nibi, GPU profiling like the above technique is not available yet.
 CUDA
 Multi-Instance GPU
 Running jobs
+
+Metrix monitoring portal
+
+NVTOP (htop-like monitor for GPUs)
+
+Cuda Multi-Process Service (MPS)

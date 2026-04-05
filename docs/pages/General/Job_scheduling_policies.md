@@ -2,7 +2,7 @@
 title: "Job scheduling policies/en"
 url: "https://docs.alliancecan.ca/wiki/Job_scheduling_policies/en"
 category: "General"
-last_modified: "2025-12-02T18:49:00Z"
+last_modified: "2026-04-01T16:46:02Z"
 page_id: 4074
 display_title: "Job scheduling policies"
 ---
@@ -17,7 +17,8 @@ by understanding the policies affecting job scheduling.
 
 ===Priority and fair-share ===
 
-The order in which jobs are considered for scheduling is determined by priority. Priority on our systems is determined using the Fair Tree algorithm.A detailed description of Fair Tree can be found at https://slurm.schedmd.com/SC14/BYU_Fair_Tree.pdf, with references to early rock'n'roll music.
+The order in which jobs are considered for scheduling is determined by priority.
+Priority on our systems is determined using the "fair tree" algorithm, described here and here.
 
 Each job is charged to a Resource Allocation Project (RAP).
 You specify the project with the --account argument to sbatch.
@@ -172,3 +173,6 @@ Running partition-stats is somewhat costly to the scheduler. Please do not write
 There may be a limit on the number of jobs you can have in the system at any one time.
 
 On Narval, Nibi and Rorqual, normal accounts can have no more than 1000 jobs in a pending or running state at any time.  Each task of a job array counts as one job.  The limit is applied using Slurm's MaxSubmit parameter.
+
+== Changes over time ==
+See Scheduling policy updates to see changes which might affect the behaviour of your job scripts, and when the changes were implemented.
