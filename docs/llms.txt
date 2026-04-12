@@ -1,5 +1,5 @@
 # Alliance Documentation - Page Directory
-# Generated: 2026-04-05T06:54:52.591127+00:00
+# Generated: 2026-04-12T07:03:01.580638+00:00
 # Total pages: 450
 
 - A tutorial on 'tar' (User Guide): https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/en
@@ -40,7 +40,7 @@
 - Apply for a CCDB account/en (General): https://docs.alliancecan.ca/wiki/Apply_for_a_CCDB_account/en
 - Apptainer/en (General): https://docs.alliancecan.ca/wiki/Apptainer/en
 - Arbutus (General): https://docs.alliancecan.ca/wiki/Arbutus/en
-- Arbutus Migration Guide (User Guide): https://docs.alliancecan.ca/wiki/Arbutus_Migration_Guide/en
+- Arbutus Migration Guide/en (User Guide): https://docs.alliancecan.ca/wiki/Arbutus_Migration_Guide/en
 - Arbutus object storage (General): https://docs.alliancecan.ca/wiki/Arbutus_object_storage/en
 - Arbutus object storage clients (General): https://docs.alliancecan.ca/wiki/Arbutus_object_storage_clients/en
 - Arbutus user documentation (User Guide): https://docs.alliancecan.ca/wiki/Arbutus_user_documentation
