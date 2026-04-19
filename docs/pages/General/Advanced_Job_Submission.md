@@ -1,34 +1,41 @@
 ---
-title: "Advanced Job Submission"
-url: "https://docs.alliancecan.ca/wiki/Advanced_Job_Submission"
+title: "Advanced Job Submission/en"
+url: "https://docs.alliancecan.ca/wiki/Advanced_Job_Submission/en"
 category: "General"
-last_modified: "2021-11-04T18:52:45Z"
-page_id: 13946
+last_modified: "2026-04-13T17:26:02Z"
+page_id: 32846
 display_title: "Advanced Job Submission"
 ---
 
-== Submitting Numerous Compute Tasks ==
-In case you have multiple data files to process with many different combinations of parameters, you should not have to create and submit thousands of job scripts to the scheduler. Here are three proposed tools to answer this kind of need:
+== Managing numerous compute tasks ==
 
-* GNU Parallel: fill an entire compute node with serial compute tasks addressing multiple combinations of arguments.
-* Job Arrays: a single script that represents multiple Slurm jobs, each of them identified by an integer value.
-* GLOST: the Greedy Launcher Of Small Tasks is a kind of sophisticated mix of both above tools.
-* META: a suite of scripts designed in SHARCNET to automate high-throughput computing (running a large number of related serial, parallel, or GPU calculations).
+The following tools are helpful when you need to process multiple files with or without different parameter combinations (parameter sweep):
 
-== Inter-job Dependencies ==
-While Slurm jobs are building-blocks of pipelines, inter-job dependencies are the links and relationships between each step of pipelines. For example, if two different jobs need to run one after the other, the second job depends on the first one. The dependency could depend on the start time, the end time or the final status of the first job. Typically, we want the second job to be started only once the first job has succeeded:
- JOBID1=$(sbatch --parsable job1.sh)           # Save the first job ID
- sbatch --dependency=afterok:$JOBID1 job2.sh   # Submit a job with a dependency to the first job
+* Job Arrays: to submit several compute tasks in one single script, an ideal method when each job exceeds one hour and the number of jobs is under one thousand;
+* GNU Parallel: to run and manage several short compute tasks, including parameter sweeps, on a single node reserved via a parallel job;
+* GLOST: the Greedy Launcher Of Small Tasks uses MPI and a manager-worker architecture to progressively run a long list of serial tasks on CPU cores reserved via a parallel job;
+* META: a suite of scripts designed at SHARCNET to automate high-throughput computing (running a large number of related serial, parallel, or GPU calculations).
 
-Note:
-* Multiple jobs can have the same dependency (multiple jobs are waiting after one job)
-* A job can have multiple dependencies (one job is waiting after multiple jobs)
-* There are multiple types of dependencies: after, afterany, afterok, afternotok, etc. For more details, please look for the --dependency option on the official Sbatch documentation page.
+== Inter-job dependencies ==
+
+While Slurm jobs are the building blocks for compute pipelines, inter-job dependencies are the links and relationships between the steps of a pipeline. For example, if two different jobs need to run one after the other, the second job depends on the first one. The second could depend on the start time, the end time or the final status of the first job. Typically, we want the second job to be started only once the first job has succeeded. For example:
+
+$(sbatch --parsable job1.sh)           # Save the first job ID
+|sbatch --dependencyafterok:$JOBID1 job2.sh   # Depends on the first job
+}}
+
+Notes
+* Multiple jobs can have the same dependency (multiple jobs waiting for one job).
+* A job can have multiple dependencies (one job waiting for multiple jobs).
+* There are multiple types of dependencies: after, afterany, afterok, afternotok, etc. For more details, see the --dependency option on the official sbatch documentation page.
 
 == Heterogeneous jobs ==
-The Slurm scheduler supports heterogeneous jobs. This could be very useful if you know in advance that your MPI application will require more cores and more memory for the main process than for other processes.
 
-For example, if the main process requires 5 cores and 16GB of RAM, while other processes only require 1 core and 1GB of RAM, we can specify both types of requirements in a job script:
+The Slurm scheduler supports heterogeneous jobs. This could be very useful if you know in advance that your MPI application will require more CPU cores and more memory for the main process than for the other processes.
 
-Or we can separate resource requests with a colon (:) on the sbatch commande line:
- sbatch --ntasks=1 --cpus-per-task=5 --mem-per-cpu=16000M : --ntasks=15 --cpus-per-task=1 --mem-per-cpu=1000M  mpi_job.sh
+For example, if the main process requires 8 cores and a total of 32GB of RAM, while the other processes only require 1 core and 1GB of RAM, we can specify both types of requirements in a job script:
+
+Or we can separate resource requests with a colon (:) on the sbatch command line:
+
+1 --cpus-per-task8 --mem-per-cpu4000M : --ntasks15 --cpus-per-task1 --mem-per-cpu1000M  mpi_job.sh
+}}

@@ -2,7 +2,7 @@
 title: "Multi-Instance GPU/en"
 url: "https://docs.alliancecan.ca/wiki/Multi-Instance_GPU/en"
 category: "General"
-last_modified: "2025-12-03T14:48:04Z"
+last_modified: "2026-04-15T22:22:01Z"
 page_id: 26132
 display_title: "Multi-Instance GPU"
 ---
@@ -21,23 +21,31 @@ See section Finding which of your jobs should use an instance for more details.
 =Limitations =
 The MIG technology does not support CUDA Inter-Process Communication (IPC), which optimizes data transfers between GPUs over NVLink and NVSwitch.
 This limitation also reduces communication efficiency between instances.
-Consequently, launching an executable on more than one instance at a time does not improve performance and should be avoided.
+Consequently, requesting more than one MIG instance in a job is not permitted.
+Such a job will be rejected at submission time.
+If you feel you need more than one MIG instance, then either:
+* Request a larger instance (e.g. a 3g instead of three 1g instances).
+* Request an entire GPU or multiple GPUs.
+* Use MPS rather than MIG.
+* Contact Support explaining the reason you want to try running on multiple MIGs, and we can help you do the experiment.
 
-Please note that graphic APIs are not supported (for example, OpenGL, Vulkan, etc.); see Application Considerations.
+Graphic APIs are not supported (for example, OpenGL, Vulkan, etc.); see Application Considerations.
 
 GPU jobs requiring many CPU cores may also require a full GPU instead of an instance. The maximum number of CPU cores per instance depends on the number of cores per full GPU and on the configured MIG profiles. Both vary between clusters and between GPU nodes in a cluster.
 
 = Available configurations =
-While there are many possible MIG configurations and profiles, the supported profiles are system dependant:
+While there are many possible MIG configurations and profiles, the supported profiles are system dependent:
 * Narval, with NVIDIA A100-40gb GPUs
 * Rorqual, with NVIDIA H100-80gb GPUs
-* Nibi:
-** nvidia_h100_80gb_hbm3_1g.10gb
-** nvidia_h100_80gb_hbm3_2g.20gb
-** nvidia_h100_80gb_hbm3_3g.40gb
+* Nibi, with NVIDIA H100-80gb GPUS
+* Fir, with NVIDIA H100-80gb GPUS
 
 The profile name describes the size of the instance.
-For example, a 3g.20gb instance has 20 GB of GPU memory and offers 3/8th of the computing performance of a full GPU. Using less powerful profiles will have a lower impact on your allocation and priority.
+* H100-1g.10gb: 1/8th of the computing power with 10GB GPU memory
+* H100-2g.20gb: 2/8th of the computing power with 20GB GPU memory
+* H100-3g.40gb: 3/8th of the computing power with 40GB GPU memory
+
+Using less powerful profiles will have a lower impact on your allocation and priority.
 
 To list all the flavours of MIGs (plus the full size GPU names) available on a given cluster, one can run the following command:
 
@@ -69,6 +77,14 @@ It was also launched using a single CPU core. When taking into account these thr
 Another way to monitor the usage of a running job is by attaching to the node where the job is currently running and then by using nvidia-smi to read the GPU metrics in real time.
 This will not provide maximum and average values for memory and power usage of the entire job, but it may be helpful to identify and troubleshoot underperforming jobs.
 
-= Can I use multiple instances on the same GPU? =
+=GPU configuration details=
 
-No.  While this is possible in principle, we don't support this.  If you want to run multiple independent tasks on a GPU, you should use MPS rather than MIG.
+Note that while NVidia's MIG documentation speaks in terms of sevenths and eighths of a GPU, the reality is rather more complicated. An H100 SXM5 GPU has a total of 132 processing units (streaming multiprocessors; "SMs"). The number 132 factorizes into 11*3*2*2, which is divisible neither by seven nor by eight.
+
+Under MIG, an H100 SXM5's 132 SMs are partitioned into:
+
+* One instance of 60 SMs (nvidia_h100_80gb_hbm3_3g.40gb)
+* One instance of 32 SMs (nvidia_h100_80gb_hbm3_2g.20gb)
+* Two instances of 16 SMs (nvidia_h100_80gb_hbm3_1g.10gb)
+
+leaving eight SMs unassigned and effectively lost (60+32+16+16+(8) = 124 assigned + 8 unassigned = 132). Rather than speaking of eighths then, we should consider a MIGed H100 divided into thirty-thirdths, however unwieldy this may be. What NVidia calls "one eighth" is therefore 4/33 of an H100 GPU, "two eighths" is 8/33 and "three eighths" is 15/33, with 2/33 of the GPU not assigned to any instance.

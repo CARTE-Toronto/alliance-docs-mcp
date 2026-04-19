@@ -2,7 +2,7 @@
 title: "Cloud Quick Start/en"
 url: "https://docs.alliancecan.ca/wiki/Cloud_Quick_Start/en"
 category: "General"
-last_modified: "2023-12-19T15:00:02Z"
+last_modified: "2026-04-09T18:20:04Z"
 page_id: 228
 display_title: "Cloud Quick Start"
 ---

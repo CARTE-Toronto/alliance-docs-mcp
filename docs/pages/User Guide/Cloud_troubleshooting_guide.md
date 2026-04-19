@@ -2,7 +2,7 @@
 title: "Cloud troubleshooting guide/en"
 url: "https://docs.alliancecan.ca/wiki/Cloud_troubleshooting_guide/en"
 category: "User Guide"
-last_modified: "2026-02-06T23:17:41Z"
+last_modified: "2026-04-07T23:35:03Z"
 page_id: 15409
 display_title: "Cloud troubleshooting guide"
 ---
@@ -34,7 +34,7 @@ More about contacting support and submitting tickets can be found at Technical S
 ==Issue: I can't reach my virtual machine==
 
  If you cannot connect to your virtual machine, or cannot connect to some service your virtual machine is running, check the System Status page. If there is an incident on your hosting cloud, wait until the incident is resolved then try to connect again.
- If there is no incident reported on the System Status page for the cloud hosting your project, try to log in to the OpenStack dashboard for your cloud project.  For example, if your project is hosted at Arbutus use this link to log in: https://arbutus.cloud.computecanada.ca.  Login links for other clouds can be found on the cloud wiki page.
+ If there is no incident reported on the System Status page for the cloud hosting your project, try to log in to the OpenStack dashboard for your cloud project.  For example, if your project is hosted at Arbutus use this link to log in: https://arbutus.alliancecan.ca.  Login links for other clouds can be found on the cloud wiki page.
  If you cannot reach the login page for your cloud, verify that you have internet connectivity:  Try to reach https://www.google.com with a browser, for example.  If you have internet connectivity but cannot reach the login page for your cloud, submit a ticket to the cloud queue by emailing cloud@tech.alliancecan.ca. Include your name, username, hosting cloud, and project name, and the steps you have taken thus far. For more on submitting tickets see Technical Support .
  If you are able to reach the login page for your cloud but cannot log in, please see the “Can’t login to Cloud” guide in the previous section on this page.
  If you are able to log in to your cloud dashboard, there are a few things you can do to see if your VM is running:
@@ -54,6 +54,7 @@ More about contacting support and submitting tickets can be found at Technical S
 Operating System	Username
 Debian          	debian
 Ubuntu          	ubuntu
+AlmaLinux       	almalinux
 CentOS          	centos
 Fedora          	fedora
 

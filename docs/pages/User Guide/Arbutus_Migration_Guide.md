@@ -1,9 +1,9 @@
 ---
-title: "Arbutus Migration Guide/en"
-url: "https://docs.alliancecan.ca/wiki/Arbutus_Migration_Guide/en"
+title: "Arbutus Migration Guide"
+url: "https://docs.alliancecan.ca/wiki/Arbutus_Migration_Guide"
 category: "User Guide"
-last_modified: "2026-04-05T19:03:02Z"
-page_id: 9289
+last_modified: "2026-04-13T17:25:56Z"
+page_id: 9230
 display_title: "Arbutus Migration Guide"
 ---
 
@@ -48,7 +48,7 @@ Prior to migrating instances, we recommend that you complete the following preli
 # IMPORTANT: Back up any critical data! While the Arbutus Cloud has redundant storage systems, no backups or copies of instances are made by the Arbutus Cloud Team. Project owners are responsible for creating backups which may be necessary for your migration.
 # Get the OpenStack RC file(s) from Legacy Arbutus and new Arbutus (used to set environment variables used by the OpenStack command-line tools) after logging in to the URLs above with your account credentials:
 #* Under Project -> API Access -> Download OpenStack RC File
-# Copy the OpenStack RC files to the host you will be using for the migration and follow the instructions in the “New Arbutus RC File Modifications” Section
+# Copy the OpenStack RC files to the host you will be using for the migration and follow the instructions in the  New Arbutus RC File Modifications Section
 # Test the RC file(s) to confirm you can access your projects in both clouds:
 #* Activate an RC file by sourcing it (`source opensrc.sh`) in a shell session.
 #* Only one RC file can be active in a given shell session at a time.

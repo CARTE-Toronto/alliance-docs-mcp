@@ -2,12 +2,12 @@
 title: "Working with volumes/en"
 url: "https://docs.alliancecan.ca/wiki/Working_with_volumes/en"
 category: "General"
-last_modified: "2023-03-30T21:32:31Z"
+last_modified: "2026-04-07T23:35:15Z"
 page_id: 21268
 display_title: "Working with volumes"
 ---
 
-A volume provides storage which is not destroyed when a VM is terminated. On our clouds, volumes use Ceph storage with either a 3-fold replication factor or erasure codes to provide safety against hardware failure. On Arbutus, the Default volume type uses erasure codes to provide data safety while reducing the extra storage costs of 3-fold replication while the OS or Database volume type still uses the 3-fold replication factor. More documentation about OpenStack volumes can be found here.
+A volume provides storage which is not destroyed when a VM is terminated. On our clouds, volumes use Ceph storage with either a 3-fold replication factor or erasure codes to provide safety against hardware failure. On Arbutus, the rbd1 volume type is stored on spinning disk hard drives and uses erasure codes to provide data safety while reducing the extra storage costs of 3-fold replication. The high_performance volume type is stored on solid state NVMe drives and uses the less storage efficient but higher performance 3-fold replication factor. More documentation about OpenStack volumes can be found here.
 
 =Creating a volume=
 

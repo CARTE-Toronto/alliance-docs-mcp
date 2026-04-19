@@ -1,9 +1,9 @@
 ---
-title: "Ansys"
-url: "https://docs.alliancecan.ca/wiki/Ansys"
+title: "Ansys/en"
+url: "https://docs.alliancecan.ca/wiki/Ansys/en"
 category: "General"
-last_modified: "2026-03-28T10:39:45Z"
-page_id: 4568
+last_modified: "2026-04-16T19:38:16Z"
+page_id: 4948
 display_title: "Ansys"
 ---
 
@@ -24,10 +24,10 @@ The following table provides established values for the CMC and SHARCNET license
  TABLE: Preconfigured license servers
 
 License 	System/Cluster         	LICSERVER                	FLEXPORT	NOTES
-CMC     	fir                    	172.26.0.101             	6624    	Discontinue use (to be shutdown)
-CMC     	narval/rorqual         	10.100.64.10             	6624    	Discontinue use (to be shutdown)
-CMC     	nibi                   	10.25.1.56               	6624    	Discontinue use (to be shutdown)
-CMC     	trillium               	scinet-cmc               	6624    	Discontinue use (to be shutdown)
+CMC     	fir                    	172.26.0.101             	6624    	Discontinue use (to be shutdown May1/2026)
+CMC     	narval/rorqual         	10.100.64.10             	6624    	Discontinue use (to be shutdown May1/2026)
+CMC     	nibi                   	10.25.1.56               	6624    	Discontinue use (to be shutdown May1/2026)
+CMC     	trillium               	scinet-cmc               	6624    	Discontinue use (to be shutdown May1/2026)
 SHARCNET	nibi/fir/narval/rorqual	license1.computecanada.ca	1055
 SHARCNET	trillium               	localhost                	1055
 
@@ -55,7 +55,7 @@ where the  can be found in the first line of the license file with format "SERVE
 
 To test if your ansys.lic is configured and working properly with your license server, run the following sequence of commands on the same cluster that you will be submitting jobs to:
 
-[login-node:~] cd /tmp
+ [login-node:~] cd /tmp
  [login-node:/tmp] salloc --time1:0:0 --mem1000M --accountdef-YOURUSERID
  [compute-node/tmp] module load StdEnv/2023; module load ansys/2025R2.04
  [compute-node:/tmp] $EBROOTANSYS/v$(echo ${EBVERSIONANSYS:2:2}${EBVERSIONANSYS:5:1})/licensingclient/linx64/lmutil lmstat -c $ANSYSLMD_LICENSE_FILE | grep "ansyslmd: UP" 1> /dev/null && echo Success  echo Fail
@@ -64,7 +64,7 @@ Fail output indicates a problem with the licensing setup somewhere and jobs will
 
 If there is an Ansys license server checkout problem, then the following message will appear in slurm output files when fluent jobs are started by slurm scripts in the queue *OR* when fluent is start interactively simply by doing the following:
 
-[compute-node:/tmp] fluent -g 2d -n 2
+ [compute-node:/tmp] fluent -g 2d -n 2
  Connected License Server List:
  Hit return to exit.
 
@@ -72,10 +72,10 @@ If there is an Ansys license server checkout problem, then the following message
 
 Ansys simulations are typically forward compatible but NOT backwards compatible.  This means that simulations created using an older version of Ansys can be expected to load and run fine with any newer version.  For example, a simulation created and saved with ansys/2022R2 should load and run smoothly with ansys/2023R2 but NOT the other way around.  While it may be possible to start a simulation running with an older version random error messages or crashing will likely occur.  Regarding Fluent simulations, if you cannot recall which version of ansys was used to create your cas file try grepping it as follows to look for clues :
 
-$ grep -ia fluent combustor.cas
+ $ grep -ia fluent combustor.cas
    (0 "fluent15.0.7  build-id: 596")
 
-$ grep -ia fluent cavity.cas.h5
+ $ grep -ia fluent cavity.cas.h5
    ANSYS_FLUENT 24.1 Build 1018
 
 == Platform support ==
@@ -154,17 +154,17 @@ The first step is to transfer your User-Defined Function or UDF (namely the samp
 
 To tell fluent to interpret your UDF at runtime, add the following command line into your journal file before the cas/dat files are read or initialized. The filename sampleudf.c should be replaced with the name of your source file.  The command remains the same regardless if the simulation is being run in serial or parallel.  To ensure the UDF can be found in the same directory as the journal file, open your cas file in the fluent gui, remove any managed definitions and resave it.   Doing this will ensure only the following command/method is in control when fluent runs. To use an interpreted UDF with parallel jobs, it will need to be parallelized as described in the section below.
 
-define/user-defined/interpreted-functions "sampleudf.c" "cpp" 10000 no
+ define/user-defined/interpreted-functions "sampleudf.c" "cpp" 10000 no
 
 ==== Compiled ====
 
-To use this approach, your UDF must be compiled on an Alliance cluster at least once.  Doing so will create a libudf subdirectory structure containing the required libudf.so shared library.   The libudf directory cannot simply be copied from a remote system (such as your laptop) to the Alliance since the library dependencies of the shared library will not be satisfied, resulting in fluent crashing on startup.  That said, once you have compiled your UDF on an Alliance cluster, you can transfer the newly created libudf to any other Alliance cluster, providing your account loads the same StdEnv environment module version.  Once copied, the UDF can be used by uncommenting the second (load) libudf line below in your journal file when submitting jobs to the cluster.  Both (compile and load) libudf lines should not be left uncommented in your journal file when submitting jobs on the cluster, otherwise your UDF will automatically (re)compiled for each and every job.  Not only is this highly inefficient, but it will also lead to racetime-like build conflicts if multiple jobs are run from the same directory. Besides configuring your journal file to build your UDF, the fluent gui (run on any cluster compute node or gra-vdi) may also be used.  To do this, you would navigate to the Compiled UDFs Dialog Box, add the UDF source file and click Build.   When using a compiled UDF with parallel jobs, your source file should be parallelized as discussed in the section below.
+To use this approach, your UDF must be compiled on an Alliance cluster at least once.  Doing so will create a libudf subdirectory structure containing the required libudf.so shared library.   The libudf directory cannot simply be copied from a remote system (such as your laptop) to the Alliance since the library dependencies of the shared library will not be satisfied, resulting in fluent crashing on startup.  That said, once you have compiled your UDF on an Alliance cluster, you can transfer the newly created libudf to any other Alliance cluster, providing your account loads the same StdEnv environment module version.  Once copied, the UDF can be used by uncommenting the second (load) libudf line below in your journal file when submitting jobs to the cluster.  Both (compile and load) libudf lines should not be left uncommented in your journal file when submitting jobs on the cluster, otherwise your UDF will automatically (re)compiled for each and every job.  Not only is this highly inefficient, but it will also lead to racetime-like build conflicts if multiple jobs are run from the same directory. Besides configuring your journal file to build your UDF, the fluent gui may also be used.  To do this, navigate to the Compiled UDFs Dialog Box, add the UDF source file and click Build.   When using a compiled UDF with parallel jobs, your source file should be parallelized as discussed in the section below.
 
-define/user-defined/compiled-functions compile libudf yes sampleudf.c "" ""
+ define/user-defined/compiled-functions compile libudf yes sampleudf.c "" ""
 
 and/or
 
-define/user-defined/compiled-functions load libudf
+ define/user-defined/compiled-functions load libudf
 
 ==== Parallel ====
 
@@ -203,7 +203,7 @@ Before submitting a Workbench job to the queue with a slurm script, you must ini
 # In the Ansys Workbench popup, when asked The current project has been modified. Do you want to save it?, click on the No button.
 # Quit Workbench and submit your job using one of the Slurm scripts shown below.
 
-Since a Compute Node with upto 96cores, 768GB memory and 8hours runtime can now be reserved for an OnDemand desktop session, consider running your Workbench simulations directly from within the Workbench native gui when possible as a more intuitive option compared to submitting the job to the queue with a slurm script.
+ Since a Compute Node with upto 96cores, 768GB memory and 8hours runtime can now be reserved for an OnDemand desktop session, consider running your Workbench simulations directly from within the Workbench native gui when possible as a more intuitive option compared to submitting the job to the queue with a slurm script.
 
 === Slurm scripts ===
 
@@ -221,7 +221,7 @@ In the following slurm scripts, lines beginning with ##SBATCH are commented.
 
 Ansys allocates 1024 MB total memory and 1024 MB database memory by default for APDL jobs. These values can be manually specified (or changed) by adding arguments -m 1024 and/or -db 1024 to the mapdl command line in the above scripts. When using a remote institutional license server with multiple Ansys licenses, it may be necessary to add -p aa_r or -ppf anshpc, depending on which Ansys module you are using. As always, perform detailed scaling tests before running production jobs to ensure that the optimal number of cores and minimum amount memory is specified in your scripts. The single node (SMP Shared Memory Parallel) scripts will typically perform better than the multinode (DIS Distributed Memory Parallel) scripts and therefore should be used whenever possible. To help avoid compatibility issues the Ansys module loaded in your script should ideally match the version used to generate the input file:
 
- [gra-login2:~/testcase] cat YOURAPDLFILE.inp | grep version
+  [gra-login2:~/testcase] cat YOURAPDLFILE.inp | grep version
  ! ANSYS input file written by Workbench version 2019 R3
 
 == Rocky ==
@@ -240,7 +240,7 @@ Slurm scripts for using AnsysEDT is provided in a separate wiki page here.
 
 To run Ansys programs in graphical mode click on one of the following OnDemand or Jupyterhub desktop links :
 
-NIBI: https://ondemand.sharcnet.ca
+ NIBI: https://ondemand.sharcnet.ca
  FIR: https://jupyterhub.fir.alliancecan.ca
  RORQUAL: https://jupyterhub.rorqual.alliancecan.ca
  NARVAL:  https://jupyterhub.narval.alliancecan.ca/
@@ -377,7 +377,7 @@ The SHARCNET Ansys license is free for academic use by any Alliance researcher o
 
  ⚖️ Scaling tests should be run before launching long jobs to the determine optimal scalable job size so that the limited licenses and hardware is used as efficiently as possible and total job run and startup times are minimized.  Parallel jobs that do not achieve at least 50% CPU utilization will probably be flagged by the system, resulting in a followup by an Alliance team member.
 
-The SHARCNET Ansys license permits each researcher to run upto 8 simultaneous jobs with 768 hpc cores.   Thus the following maximum sized full node job combinations maybe run : 1jobx4nodes, 2jobsx2nodes/job, or 4jobsx192cores/job.   However since there are only 1986 anshpc in the SHARCNET Ansys license pool this means the license is heavily oversubscribed by a factor of approximately 768x12/1986=4.5x.  This estimate is based on the assumption there are a dozen active users running ansys jobs at any given time.   This oversubscription level requires most researchers use less than 1986/12=166cores so that just a few other researchers can run much larger jobs otherwise frequent license checkout failures will occur.  The best way to minimize the number of cores used is to perform detail scaling tests to ensure the job size is optimally chosen.   Should a job fail on startup due to a shortage of licenses then it will manually need to be resubmitted.  There is no need to submit a support ticket each time this happens since the SHARCNET license is monitored for such failures.  If too many license failures begin to occur then the total nunber of ansyshpc licenses that each user can checkout will be reduced from 768 to 384 and this wiki page section updated accordingly.  If your research requires you to use 768 hpc cores on a regular basis then consider using an ANSYS license server at your local institution (instead of the SHARCNET license) assuming there is one.  If there is not, then consider contributing towards the purchase of a larger SHARCNET license. If you do then your maximum checkout limit will be increased by the number of cores your contribution added to the SHARCNET license while all other non-contributing researchers will remain limited to 768.
+The SHARCNET Ansys license is made available on a first come first serve basis.  It currently permits each researcher to run a maximum of simultaneous 16 jobs using a total of upto 512 hpc cores across all clusters, therefore any of the following maximum job size combinations can be run simultaneously: 1x512, 2x256, 4x128, 8x64, 16x32 or more commonly one of these full node combinations: 1x384, 2x192 or 1x192 cores.  Note however the SHARCNET license is oversubscribed so there is potential for jobs to fail on startup if all (or nearly all) of the 1986 anshpc licenses in the SHARCNET license pool are in use.  Should this occur you will need to manually resubmit your job to the queue.   If over time there is an increasing number of license shortage instances then the total anshpc core limit per researcher maybe decreased from 512 to 384.  If you need more than 512 hpc cores for your research then consider using the local ANSYS License server at your institution if one is available OR open a ticket to request help purchasing additional licenses for the SHARCNET license in which case your maximum job size anshpc limit would be increased respectively.
 
 ==== License file ====
 
@@ -397,7 +397,7 @@ lmstat -c $ANSYSLMD_LICENSE_FILE -a | grep "Users of\|$USER" | grep -v " Total o
 
 ==== Example  ====
 
-Consider the case where a user submits a 8core fluent job and 32core fluent job.  Once both jobs start running, the user runs the lmutil queuery command and the output shown below is generated.  Here it can be seen that a total of (8-4) + (32-4) = 32 ansyshpc licenses are used by the two jobs.  As a result the total number of ansyhpc licenses increases from 1568 to 1600 so that only (1986-1600) = 386 ansyshpc licenses remain available for additional jobs submitted by all users.  Therefore if a 400 core parallel job attempts to start at this moment, it will fail to start since (400-4) = 396 anshpc licenses would be required.   The user has two options, wait for a sufficient number of  ansyshpc licenses to come available OR reduce the job size to 390 cores or less and resubmit immediately.  This example focuses on the ansyshpc feature since it is most generously overcommitted to allow any user to submit the largest job possible, but it also shows that the actual number of ansyshpc licenses available per user may be on some ocassions far less than the current 512 per user ansyshpc limit.
+Consider the case where a user submits a 8core fluent job and 32core fluent job.  Once both jobs start running, the user runs the lmutil queuery command and the output shown below is generated.  Here it can be seen that a total of (8-4) + (32-4) = 32 anshpc licenses are used by the two jobs.  As a result the total number of anshpc licenses increases from 1568 to 1600 so that only (1986-1600) = 386 anshpc licenses remain available for additional jobs submitted by all users.  Therefore if a 400 core parallel job attempts to start at this moment, it will fail to start since (400-4) = 396 anshpc licenses would be required.   The user has two options, wait for a sufficient number of  anshpc licenses to come available OR reduce the job size to 390 cores or less and resubmit immediately.  This example focuses on the anshpc feature since it is most generously overcommitted to allow any user to submit the largest job possible, but it also shows that the actual number of anshpc licenses available per user may sometimes be far less than the 512 per user limit would suggest.
 
  [l2(nibi):~] sq
             JOBID     USER        ACCOUNT           NAME  ST  TIME_LEFT NODES CPUS MIN_MEM NODELIST (REASON)
@@ -462,11 +462,11 @@ This section describes how to make the Ansys Additive Manufacturing ACT extensio
 
 == Run Additive ==
 
-=== Gra-vdi ===
+=== OnDemand ===
 
-A user can run a single Ansys Additive Manufacturing job on gra-vdi with up to 16 cores as follows:
+A user can run a single Ansys Additive Manufacturing job in an graphical OnDemand session by doing:
 
-* Start Workbench on Gra-vdi as described above in Enable Additive.
+* Start Workbench as described above in Enable Additive.
 * click File -> Open and select test.wbpj then click Open
 * click View -> reset workspace if you get a grey screen
 * start Mechanical, Clear Generated Data, tick Distributed, specify Cores
@@ -476,7 +476,7 @@ Check utilization:
 * open another terminal and run: top -u $USER   **OR**  ps u -u $USER | grep ansys
 * kill rogue processes from previous runs:  pkill -9 -e -u $USER -f "ansys|mwrpcss|mwfwrapper|ENGINE"
 
-Please note that rogue processes can persistently tie up licenses between gra-vdi login sessions or cause other unusual errors when trying to start gui programs on gra-vdi.  Although rare, rogue processes can occur if an ansys gui session (fluent, workbench, etc) is not cleanly terminated by the user before vncviewer is terminated either manually or unexpectedly - for instance due to a transient network outage or hung filesystem.  If the latter is to blame then the processes may not by killable until normal disk access is restored.
+Please note that rogue ansys related processes can persistently continue tie up valuable licenses inside a running OnDemand login node sessions if an ansys gui session (fluent, workbench, mechanical, etc) is not cleanly terminated by the user or is terminated unexpectedly by a network outage or hung filesystem.  If the latter is to blame the processes may not by killable until normal disk access is restored.
 
 ===Cluster===
 

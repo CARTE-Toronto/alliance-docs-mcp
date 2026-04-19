@@ -2,7 +2,7 @@
 title: "JupyterHub/en"
 url: "https://docs.alliancecan.ca/wiki/JupyterHub/en"
 category: "General"
-last_modified: "2026-02-09T14:34:48Z"
+last_modified: "2026-04-09T18:18:37Z"
 page_id: 4743
 display_title: "JupyterHub"
 ---
@@ -66,9 +66,9 @@ Note: JupyterHub could also have been configured to force a specific user interf
 
 The JupyterLab interface is now described in our JupyterLab page.
 
-= Possible error messages =
+= Troubleshooting =
 
-== Spawn failed: Timeout ==
+== "Spawn failed: Timeout" ==
 
 Most JupyterHub errors are caused by the underlying job scheduler which is either unresponsive or not able to find appropriate resources for your session. For example:
 
@@ -77,10 +77,25 @@ Most JupyterHub errors are caused by the underlying job scheduler which is eithe
 ** If you already have another interactive job on the same cluster, your Jupyter session will be waiting along with other regular batch jobs in the queue. If possible, stop or cancel any other interactive job before using JupyterHub.
 ** There may be just no resource available at the moment. Check the status page for any issue and try again later.
 
-== Authentication error: Error 403 ==
+== "Authentication error: Error 403" ==
 
 Your account or your access to the cluster is currently inactive:
 # Make sure your account is active, that is it has been renewed
 # Make sure your access to a cluster is enabled
+
+== Startup hangs ==
+
+If JupyterHub posts the message "Your server is starting up.  You will be redirected automatically when it's ready for you" and stays there indefinitely:
+* Check for the problems described above under "Spawn failed: Timeout".
+* If none of those seem to apply, log on to the cluster with an ordinary SSH client (since JH doesn't work).
+* Use sq to identify the Slurm job corresponding to your JupyterHub session.
+* Cancel the Slurm job with scancel.
+* Delete hidden Jupyter files with
+
+ cd ~
+ rm -r .local/share/jupyter
+ rm -r .jupyter
+
+* Try again.  (Jupyter will recreate the hidden files.)
 
 = References =

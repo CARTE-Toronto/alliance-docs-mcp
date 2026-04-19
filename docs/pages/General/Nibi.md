@@ -2,7 +2,7 @@
 title: "Nibi/en"
 url: "https://docs.alliancecan.ca/wiki/Nibi/en"
 category: "General"
-last_modified: "2026-01-14T13:03:03Z"
+last_modified: "2026-04-15T22:23:06Z"
 page_id: 27510
 display_title: "Nibi"
 ---
@@ -34,7 +34,7 @@ Note also that Nibi is using a new, experimental mechanism for handling /scratch
 
 The topology of the network is described in the file:
 
- /opt/software/slurm/24.11.6/etc/topology.conf
+ /etc/slurm/topology.conf
 
 For better performance of tightly coupled multi-node jobs, you may constrain them to use only one network switch, by adding this option to your job submission script:
 
@@ -46,14 +46,44 @@ nodes	cores	available memory 	node-local storage	CPU                            
 700  	192  	748G or 766000M  	3T                	2 x Intel 6972P @ 2.4 GHz, 384MB cache L3
 10   	192  	6000G or 6144000M	3T                	2 x Intel 6972P @ 2.4 GHz, 384MB cache L3
 36   	112  	2000G or 2048000M	11T               	2 x Intel 8570 @ 2.1 GHz, 300MB cache L3 	8 x Nvidia H100 SXM (80 GB), connected via NVLink
-6    	96   	495G or 507000M  	3T                	4 x AMD MI300A @ 2.1GHz (Zen4+CDNA3)     	The CPU cores and CDNA3-based GPUs are in the same socket and share a unified memory.
+6    	96   	495G or 507000M  	3T                	4 x AMD MI300A @ 2.1GHz (Zen4+CDNA3)     	The CPU cores and CDNA3-based GPUs are in the same socket and share a unified memory.  See section below for use instructions.
+
+== GPU instances ==
+Available GPU instance names are:
+
+Model or instance	Model or instance	Short name  	Without unit	By memory	Full name
+GPU              	H100-80gb        	h100        	h100        	h100_80gb	nvidia_h100_80gb_hbm3
+MIG              	H100-1g.10gb     	h100_1g.10gb	h100_1.10   	h100_10gb	nvidia_h100_80gb_hbm3_1g.10gb
+MIG              	H100-2g.20gb     	h100_2g.20gb	h100_2.20   	h100_20gb	nvidia_h100_80gb_hbm3_2g.20gb
+MIG              	H100-3g.40gb     	h100_3g.40gb	h100_3.40   	h100_40gb	nvidia_h100_80gb_hbm3_3g.40gb
+
+To request one or more full H100 GPUs, you need to use one of the following Slurm options:
+
+* One H100-80gb : --gpus=h100:1 or --gpus=h100_80gb:1
+* Multiple H100-80gb per node :
+** --gpus-per-node=h100:2
+** --gpus-per-node=h100:3
+** --gpus-per-node=h100:4
+* For multiple full H100 GPUs spread anywhere: --gpus=h100:n (replace n with the number of GPUs you want)
+
+Approximately half of the GPU nodes are configured with MIG technology, and only 3 GPU instance sizes are available:
+
+* H100-1g.10gb: 1/8th of the computing power with 10GB GPU memory
+* H100-2g.20gb: 2/8th of the computing power with 20GB GPU memory
+* H100-3g.40gb: 3/8th of the computing power with 40GB GPU memory
+To request one and only one GPU instance for your compute job, use the corresponding option:
+
+* H100-1g.10gb : --gpus=h100_1g.10gb:1
+* H100-2g.20gb : --gpus=h100_2g.20gb:1
+* H100-3g.40gb : --gpus=h100_3g.40gb:1
+The maximum recommended number of CPU cores and system memory per GPU instance is listed in this table.
 
 =Site specifics=
 ==Internet access==
 All nodes on Nibi have Internet access, no special firewall permission or proxying is necessary.
 
 ==Project space==
-User directories are no longer created by default on /project. User's can always create their own directories in the group's /project using mkdir. This allows groups to decide how their /project is organized for sharing data amongst group members.
+User directories are no longer created by default on /project. Users can always create their own directories in the group's /project using mkdir. This allows groups to decide how their /project is organised for sharing data amongst group members.
 
 ==Scratch quota==
 An 1 TB soft quota on scratch applies to each user. This soft quota can be exceeded for up to 60 days after which no additional files may be written to scratch. Files may be written again once the user has removed or deleted enough files to bring their total scratch use under 1 TB. See the Storage and file management for more information.
@@ -90,3 +120,12 @@ You will see JupyterLab is opened in the web browser on the Desktop with your $H
 
 ==Support for VDI via OOD==
 Nibi no longer offers Virtual Desktop Infrastructure (VDI). Instead, it provides a remote desktop environment through the portal of Open OnDemand (OOD), offering improved hardware performance and software support.
+
+==AMD MI300A nodes==
+
+These should be currently scheduled as full nodes.  It is the user's responsibility to make sure the processes inside the job run with correct core and memory binding.  Here is a representative job script that uses 4 processes.
+
+==Oops, I accidentally deleted my files, what should I do?==
+A backup mechanism on Nibi takes a snapshot of your files on /home and /project every 30 minutes and saves the snapshots for two weeks.  If you accidentally delete a file, you may be able to retrieve it from these snapshots, providing the file was deleted less than two weeks ago.  However, if one makes changes to a file after the most recent snapshot then deletes it, the changes cannot be recovered.
+
+To find a deleted file, use the oops command to check the current directory, or give an optional directory name to check there instead. To recover a file, copy it from the path returned by oops using standard tools like cp. Snapshots are read-only; you cannot delete or change files in snapshots, you must copy them first. Do not refer to files in snapshots in your job scripts.
