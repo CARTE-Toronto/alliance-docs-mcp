@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-19T07:06:14.797941+00:00",
-  "total_pages": 452,
+  "last_updated": "2026-04-26T07:16:36.292254+00:00",
+  "total_pages": 453,
   "pages": [
     {
       "page_id": 10049,
@@ -1960,7 +1960,7 @@
       "title": "Modules avx2",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx2",
       "category": "General",
-      "last_modified": "2026-03-23T13:10:51Z",
+      "last_modified": "2026-04-17T19:40:24Z",
       "file_path": "docs/pages/General/Modules_avx2.md",
       "slug": "Modules_avx2"
     },
@@ -1969,7 +1969,7 @@
       "title": "Modules avx512",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx512",
       "category": "General",
-      "last_modified": "2026-03-20T21:11:43Z",
+      "last_modified": "2026-04-17T19:40:16Z",
       "file_path": "docs/pages/General/Modules_avx512.md",
       "slug": "Modules_avx512"
     },
@@ -3400,7 +3400,7 @@
       "title": "Using nearline storage/en",
       "url": "https://docs.alliancecan.ca/wiki/Using_nearline_storage/en",
       "category": "General",
-      "last_modified": "2026-01-21T14:02:02Z",
+      "last_modified": "2026-04-17T17:55:56Z",
       "file_path": "docs/pages/General/Using_nearline_storage.md",
       "slug": "Using_nearline_storage"
     },
@@ -3850,7 +3850,7 @@
       "title": "Trillium Open OnDemand Quickstart/en",
       "url": "https://docs.alliancecan.ca/wiki/Trillium_Open_OnDemand_Quickstart/en",
       "category": "General",
-      "last_modified": "2026-02-17T08:09:28Z",
+      "last_modified": "2026-04-17T19:46:21Z",
       "file_path": "docs/pages/General/Trillium_Open_OnDemand_Quickstart.md",
       "slug": "Trillium_Open_OnDemand_Quickstart"
     },
@@ -4069,6 +4069,15 @@
       "last_modified": "2026-04-13T17:25:56Z",
       "file_path": "docs/pages/User Guide/Arbutus_Migration_Guide.md",
       "slug": "Arbutus_Migration_Guide"
+    },
+    {
+      "page_id": 32978,
+      "title": "Scheduling policy updates/en",
+      "url": "https://docs.alliancecan.ca/wiki/Scheduling_policy_updates/en",
+      "category": "General",
+      "last_modified": "2026-04-17T16:30:01Z",
+      "file_path": "docs/pages/General/Scheduling_policy_updates.md",
+      "slug": "Scheduling_policy_updates"
     }
   ]
 }

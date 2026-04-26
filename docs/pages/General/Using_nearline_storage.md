@@ -2,7 +2,7 @@
 title: "Using nearline storage/en"
 url: "https://docs.alliancecan.ca/wiki/Using_nearline_storage/en"
 category: "General"
-last_modified: "2026-01-21T14:02:02Z"
+last_modified: "2026-04-17T17:55:56Z"
 page_id: 9323
 display_title: "Using nearline storage"
 ---
@@ -18,10 +18,6 @@ Retrieving small files from tape is inefficient, while extremely large files pos
 *Files smaller than ~10GB should be combined into archive files (tarballs) using tar or a similar tool.
 *Files larger than 4TB should be split in chunks of 1TB using the split command or a similar tool.
 *DO NOT SEND SMALL FILES TO NEARLINE, except for indexes (see Create an index below).
-
-=== Do not compress your data ===
-
-There is no need to compress the data in /nearline since the tape archive system automatically performs compression using specialized circuitry. If your data is already compressed, it can be copied to /nearline without any issues.
 
 === Use tar or dar ===
 
