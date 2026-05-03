@@ -2,7 +2,7 @@
 title: "Zfs"
 url: "https://docs.alliancecan.ca/wiki/Zfs"
 category: "General"
-last_modified: "2023-02-27T21:12:55Z"
+last_modified: "2026-04-23T19:56:49Z"
 page_id: 10338
 display_title: "Zfs"
 ---
@@ -70,6 +70,13 @@ data  quota                 none                   default
 zpools can be further subdived into datasets. A dataset allows you to operate on smaller portions of your zpool independently. For example setting a different compression algorithims for the dataset. To create a dataset within the data zpool do the following.
 
 [name@server]$ sudo zfs create data/www
+
+==Listing zpools==
+The existing pools can be listed with the command zpool list.
+
+[name@server]$ zpool list
+NAME           SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT
+data            19G   156K    19G        -         -     0%     0%  1.00x    ONLINE  -
 
 ==Growing a zpool==
 Growing a zpool is a relatively simple task when compared to other file systems and logical volume mangers. It is a two step process 1) add a new volume to your VM and 2) add the new device to your zpool that's it. Below is the command to add a new device to the zpool data.

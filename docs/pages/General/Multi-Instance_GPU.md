@@ -1,9 +1,9 @@
 ---
-title: "Multi-Instance GPU/en"
-url: "https://docs.alliancecan.ca/wiki/Multi-Instance_GPU/en"
+title: "Multi-Instance GPU"
+url: "https://docs.alliancecan.ca/wiki/Multi-Instance_GPU"
 category: "General"
-last_modified: "2026-04-15T22:22:01Z"
-page_id: 26132
+last_modified: "2026-04-24T16:32:16Z"
+page_id: 26110
 display_title: "Multi-Instance GPU"
 ---
 
@@ -26,8 +26,9 @@ Such a job will be rejected at submission time.
 If you feel you need more than one MIG instance, then either:
 * Request a larger instance (e.g. a 3g instead of three 1g instances).
 * Request an entire GPU or multiple GPUs.
+* Consider whether you can avoid requesting multiple MIGs using a job array, META-Farm, GNU Parallel, or GLOST.
 * Use MPS rather than MIG.
-* Contact Support explaining the reason you want to try running on multiple MIGs, and we can help you do the experiment.
+* Contact Support explaining the reason you want to try running on multiple MIGs.  An analyst can help you find an efficient alternative, or arrange a scheduling exception for you.
 
 Graphic APIs are not supported (for example, OpenGL, Vulkan, etc.); see Application Considerations.
 

@@ -2,7 +2,7 @@
 title: "Managing your cloud resources with OpenStack/en"
 url: "https://docs.alliancecan.ca/wiki/Managing_your_cloud_resources_with_OpenStack/en"
 category: "General"
-last_modified: "2023-07-07T20:42:10Z"
+last_modified: "2026-04-21T22:39:15Z"
 page_id: 705
 display_title: "Managing your cloud resources with OpenStack"
 ---
@@ -33,7 +33,7 @@ Please see this page for more information about creating and managing disk image
 Please see this page for more information about managing certain characteristics of your VMs in the dashboard.
 
 =Availability zones=
-Availability zones allow you to indicate what group of physical hardware you would like your VM to run on. On Beluga and Graham clouds, there is only one availability zone, nova, so there isn't any choice in the matter. However, on Arbutus there are three availability zones: Compute, Persistent_01, and Persistent_02. The Compute and Persistent zones only run compute or persistent flavors respectively (see Virtual machine flavors). Using two persistent zones can present an advantage; for example, two instances of a website can run in two different zones to ensure its continuous availability in the case where one of the sites goes down.
+Availability zones allow you to indicate what group of physical hardware you would like your VM to run on. On Beluga and Graham clouds, there is only one availability zone, nova, so there isn't any choice in the matter. However, on Arbutus there are three availability zones: Compute, Nova, and Persistent. The Compute and Persistent zones only run compute or persistent flavors respectively (see Virtual machine flavors). Using two persistent zones can present an advantage; for example, two instances of a website can run in two different zones to ensure its continuous availability in the case where one of the sites goes down.
 
 =Security groups=
 A security group is a set of rules to control network traffic into and out of your virtual machines. To manage security groups, go to Project->Network->Security Groups. You will see a list of currently defined security groups. If you have not previously defined any security groups, there will be a single default security group.

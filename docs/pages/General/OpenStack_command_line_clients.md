@@ -2,7 +2,7 @@
 title: "OpenStack command line clients/en"
 url: "https://docs.alliancecan.ca/wiki/OpenStack_command_line_clients/en"
 category: "General"
-last_modified: "2024-10-07T15:31:51Z"
+last_modified: "2026-04-22T23:09:03Z"
 page_id: 780
 display_title: "OpenStack command line clients"
 ---
@@ -42,6 +42,7 @@ If you wish to explore the OpenStack API for Python, add export PYTHONPATH=${HOM
 ==Connecting CLI to OpenStack==
 Your command line client must now be told how to find your OpenStack project on our clouds.
 The most convenient way to do this is to download an OpenStack environment setup file. On the OpenStack dashboard go to Project-> API Access-> Download OpenStack RC File.
+If you are connecting to the new Arbutus cloud (not legacy Arbutus), you will need to make some additional changes to your RC file described here: New Arbutus RC File Modifications.
 
 Then source the file with something like  It will ask you for your OpenStack password, which is simply your CCDB password. Test your setup by typing
 

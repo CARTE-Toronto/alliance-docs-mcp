@@ -2,7 +2,7 @@
 title: "Ansys/en"
 url: "https://docs.alliancecan.ca/wiki/Ansys/en"
 category: "General"
-last_modified: "2026-04-16T19:38:16Z"
+last_modified: "2026-05-01T22:06:12Z"
 page_id: 4948
 display_title: "Ansys"
 ---
@@ -23,15 +23,12 @@ The following table provides established values for the CMC and SHARCNET license
 
  TABLE: Preconfigured license servers
 
-License 	System/Cluster         	LICSERVER                	FLEXPORT	NOTES
-CMC     	fir                    	172.26.0.101             	6624    	Discontinue use (to be shutdown May1/2026)
-CMC     	narval/rorqual         	10.100.64.10             	6624    	Discontinue use (to be shutdown May1/2026)
-CMC     	nibi                   	10.25.1.56               	6624    	Discontinue use (to be shutdown May1/2026)
-CMC     	trillium               	scinet-cmc               	6624    	Discontinue use (to be shutdown May1/2026)
-SHARCNET	nibi/fir/narval/rorqual	license1.computecanada.ca	1055
-SHARCNET	trillium               	localhost                	1055
-
-Researchers who purchase a new CMC license subscription must submit your Alliance account username otherwise license checkouts will fail. The number of cores that can be used with a CMC license is described in the Other Tricks and Tips sections of the Ansys Electronics Desktop and  Ansys Mechanical/Fluids quick start guides.
+License 	System/Cluster                  	LICSERVER                	FLEXPORT	NOTES
+CMC     	fir                             	172.26.0.101             	6624    	Discontinue use (shutdown Apr 23, 2026)
+CMC     	narval/rorqual                  	10.100.64.10             	6624    	Discontinue use (shutdown Apr 23, 2026)
+CMC     	nibi                            	10.25.1.56               	6624    	Discontinue use (shutdown Apr 23, 2026)
+CMC     	trillium                        	scinet-cmc               	6624    	Discontinue use (shutdown Apr 23, 2026)
+SHARCNET	nibi/fir/narval/rorqual/trillium	license1.computecanada.ca	1055
 
 === Local license servers  ===
 
@@ -230,7 +227,7 @@ Besides being able to run simulations in gui mode (as discussed in the Graphical
 
 === Slurm scripts ===
 
-To get a full listing of command line options run Rocky -h on the command line after loading any rocky module.  Note that it is currently necessary to set your path to Rocky (as is shown in the scripts below) for the Rocky command to be found. The path will be included in future module version installs and ansys/2025R1 when updated at such time this message will be removed.  If Rocky is being run with gpus to solving coupled problems, the number of cpus you should request from slurm (on the same node) should be increased to a maximum until the scalability limit of the coupled application is reached.   If however Rocky is being run with gpus to solve standalone uncoupled problems, then only a minimal number of cpus should be requested that will allow be sufficient for Rocky to still run optimally.  For instance only 2cpus or possibly 3cpus may be required.  When Rocky is run with >= 4 cpus then rocky_hpc licenses will be required which the SHARCNET license does provide.  The scripts below have not been tested since the clusters were updated across the Alliance in fall 2025 therefore some adjustments maybe required.
+To get a full listing of command line options run Rocky -h on the command line after loading the ansys module.  If Rocky is being run with gpus to solve a coupled problem, the number of cpus requested from slurm should be increased to a maximum until the scalability limit of the coupled application is reached. If Rocky is being run with gpus to solve a standalone uncoupled problem, then a minimal number of cpus should be requested for Rocky to run optimally. The two slurm scripts below show how to run a basic standalone Rocky simulation.  Some customizations maybe required to run them on different clusters.
 
 == Electronics ==
 
@@ -238,9 +235,9 @@ Slurm scripts for using AnsysEDT is provided in a separate wiki page here.
 
 = Graphical use =
 
-To run Ansys programs in graphical mode click on one of the following OnDemand or Jupyterhub desktop links :
+To run Ansys programs in graphical mode using an OnDemand or Jupyterhub desktop click one of the following links :
 
- NIBI: https://ondemand.sharcnet.ca
+  NIBI: https://ondemand.sharcnet.ca
  FIR: https://jupyterhub.fir.alliancecan.ca
  RORQUAL: https://jupyterhub.rorqual.alliancecan.ca
  NARVAL:  https://jupyterhub.narval.alliancecan.ca/
@@ -252,27 +249,27 @@ A job submission web page should appear in your browser.  Configure the resource
 
 To start Ansys Fluent from the command line of an On Demand Desktop, open a terminal window and run the commands:
 
-::: module load StdEnv/2023 ansys/2025R1
+::: module load StdEnv/2023 ansys/2025R2.04
 ::: fluent
 
-When the Fluent Launcher popup selector panel appears, click the Environment Tab and copy/paste the following environment variable settings, depending on whether you started your On Demand session with a GPU for graphical acceleration. Do not include the text between the round brackets (as these are comments) and do not put export in front of any variable names.
+When the Fluent Launcher popup selector panel appears, click the Environment Tab and copy/paste the following environment variable settings, depending on whether you started your On Demand session with a GPU for graphical acceleration. Do not include the text between the round brackets (as these are comments) and do not put export in front of any variable names.  If the graphics console window becomes corrupted when starting the gui, restart fluent setting HOOPS_PICTURE=null to disable creation of the Graphics panel.
 
 Compute Node (no GPU requested)
 
-:::: I_MPI_HYDRA_BOOTSTRAP=ssh            (required on nibi)
-:::: HOOPS_PICTURE=opengl2-mesa           (version 2025R1 or newer)
-:::: HOOPS_PICTURE=null                   (version 2024R2 or older)
+::: I_MPI_HYDRA_BOOTSTRAP=ssh      (required on nibi w/ intelmpi)
+::: HOOPS_PICTURE=opengl2-mesa    (version 2025R1 or newer)
+::: HOOPS_PICTURE=x11/lin                (version 2024R2.04 or older)
 ::: Click the Start button
 
 Compute Node (with GPU requested)
 
-::: When starting an OnDemand Desktop on nibi that requests a GPU you must currently choose a full h100 (80GB) GPU so the required VirtualGL environment variables are automatically setup in the Deskop environment required to enable OpenGL graphics calls to be accelerated with OpenGL.
-:::: I_MPI_HYDRA_BOOTSTRAP=ssh            (required on nibi)
-:::: HOOPS_PICTURE=opengl2                (version 2025R1 or newer)
-:::: HOOPS_PICTURE=opengl                 (version 2024R2 or older)
+To use hardware accelerated graphics with fluent on nibi cluster choose a t4 (15GB) from the GPU selector pulldown list for your OnDemand desktop session.  Doing this will ensure the environment variables used by VirtualGL to enable accelerated OpenGL graphics calls are automatically setup inside your Deskop environment for the current session.  Once your desktop appears, open a terminal window and start workbench as follows :
+::: I_MPI_HYDRA_BOOTSTRAP=ssh      (required on nibi)
+::: HOOPS_PICTURE=opengl2    (version 2025R1 or newer)
+::: HOOPS_PICTURE=opengl                 (version 2024R2.04 or older)
 ::: Click the Start button
 
-If I_MPI_HYDRA_BOOTSTRAP=ssh is not set properly on nibi when fluent is started from within OOD Compute Desktop sessions and  intelmpi is used then fluent will crash on startup producing the following error output.  Should this occur completely exit fluent, shutdown workbench and start over again.
+NOTE: When running fluent on the Nibi cluster, the environment variable I_MPI_HYDRA_BOOTSTRAP=ssh must be manually set; otherwise, fluent will crash when started inside OOD Compute Desktop sessions when intelmpi is used.  Error output such as the following will be created.  Should this occur, completely exit fluent, cleanly shut down workbench and start over again.
  [mpiexec@g4.nibi.sharcnet] Error: Unable to run bstrap_proxy on g4.nibi.sharcnet (pid 2251587, exit code 256)
  [mpiexec@g4.nibi.sharcnet] poll_for_event (../../../../../src/pm/i_hydra/libhydra/demux/hydra_demux_poll.c:157): check exit codes error
  [mpiexec@g4.nibi.sharcnet] HYD_dmx_poll_wait_for_proxy_event (../../../../../src/pm/i_hydra/libhydra/demux/hydra_demux_poll.c:206): poll for  event error
@@ -299,52 +296,60 @@ The following steps for starting the Mechanical APDL gui from the command line o
 
 This sections shows howto start workbench (and optionally fluent) on either an On Demand Desktop or Jupyter Lab Desktop.
 
-==== On Demand Desktop ====
+==== OnDemand Desktop ====
 
 Compute Node (no GPU requested) or Basic Desktop
 
-::: module load StdEnv/2023 ansys/2025R1
-::: runwb2 -oglmesa
+If accelerated graphics is not required for your desktop session then specify GPU Node to select a Compute Node without a GPU for your OOD session.  Doing this will use mesa software emulation for opengl calls instead of running on a more expensive and difficult to reserve GPU node :
+::: module load StdEnv/2023 ansys/2025R2.04
+::: runwb2
 
-::: To start fluent from within workbench click Fluid Flow (Fluent) in the left hand Analysis Menu, then click Setup in the center canvas Fluid Flow (Fluent) popup.  Once the Fluent Launcher selector panel popup appears, click the Environment Tab and copy/paste the following environment variable settings:
-:::: I_MPI_HYDRA_BOOTSTRAP=ssh            (required on nibi)
-:::: HOOPS_PICTURE=opengl2-mesa                (version 2025R1 or newer)
-:::: HOOPS_PICTURE=null                   (version 2024R2 or older)
+To start fluent from within workbench click Fluid Flow (Fluent) or (Fluent with Fluent Meshing) in the left hand Analysis Menu, then click Setup in the center canvas Fluid Flow (Fluent) popup.  Once the Fluent Launcher selector panel popup appears, click the Environment Tab and copy/paste the following environment variable settings:
+::: I_MPI_HYDRA_BOOTSTRAP=ssh      (required on nibi cluster only)
+::: HOOPS_PICTURE=opengl2-mesa    (optional for 2025R1 or newer)
 ::: Click the Start button
 
 Compute Node (with GPU requested)
 
-For this option to work on nibi for the purpose of accelerating graphics choose t4 (15GB) from the GPU selector pulldown list when configuring the resources for your OnDemand desktop session.  This particular setting will ensure the environment variables used by VirtualGL to enable accelerated OpenGL graphics calls are automatically setup in your Deskop environment when it starts.  Once your desktop appears, open a terminal window and start workbench as follows :
-::: module load StdEnv/2023 ansys/2025R1
+If accelerated graphics is required on nibi cluster then choose t4 (15GB) from the GPU selector pulldown list for your OnDemand desktop session.  Doing this will ensure the environment variables used by VirtualGL to enable accelerated OpenGL graphics calls are automatically setup inside your Deskop environment for the current session.  Once your desktop appears, open a terminal window and start workbench as follows :
+::: module load StdEnv/2023 ansys/2025R2.04
 ::: runwb2
 
-::: To start fluent from within workbench click Fluid Flow (Fluent) in the left hand Analysis Menu, then click Setup in the center canvas Fluid Flow (Fluent) popup.  Once the Fluent Launcher selector panel popup appears, click the Environment Tab and copy/paste the following environment variable settings.
-:::: I_MPI_HYDRA_BOOTSTRAP=ssh            (required on nibi only)
-:::: HOOPS_PICTURE=opengl2           (version 2025R1 or newer)
-:::: HOOPS_PICTURE=null                   (version 2024R2 or older)
+To start fluent from within workbench, click Fluid Flow (Fluent) or (Fluent with Fluent Meshing) in the left hand Analysis Menu, then click Setup in the center canvas Fluid Flow Fluent) popup.  Once the Fluent Launcher selector panel popup appears, click the Environment Tab and copy/paste the following environment variable settings.
+::: I_MPI_HYDRA_BOOTSTRAP=ssh     (required on nibi cluster only)
+::: HOOPS_PICTURE=opengl2             (optional for 2025R1 or newer)
 ::: Click the Start button
 
-If I_MPI_HYDRA_BOOTSTRAP=ssh is not set on nibi when fluent is started from within an OOD Compute Desktop session and intelmpi is used, then fluent will crash on startup produce the following error output.  If this occurs completely exit fluent, cleanly shutdown workbench and start over.
+When using nibi cluster I_MPI_HYDRA_BOOTSTRAP=ssh must be manually set when the default intelmpi is used otherwiose fluent will crash on startup producing error output such as the following.  To recover from this close fluent, shutdown workbench and try again.
  [mpiexec@g4.nibi.sharcnet] Error: Unable to run bstrap_proxy on g4.nibi.sharcnet (pid 2251587, exit code 256)
  [mpiexec@g4.nibi.sharcnet] poll_for_event (../../../../../src/pm/i_hydra/libhydra/demux/hydra_demux_poll.c:157): check exit codes error
  [mpiexec@g4.nibi.sharcnet] HYD_dmx_poll_wait_for_proxy_event (../../../../../src/pm/i_hydra/libhydra/demux/hydra_demux_poll.c:206): poll for  event error
  [mpiexec@g4.nibi.sharcnet] HYD_bstrap_setup (../../../../../src/pm/i_hydra/libhydra/bstrap/src/intel/i_hydra_bstrap.c:1063): error waiting for event
  [mpiexec@g4.nibi.sharcnet] Error setting up the bootstrap proxies
 
-==== Jupyter Lab Desktop ====
+==== Jupyterhub Desktop ====
 
 Compute Node (no GPU requested)
 
 ::: Click to load ansys/2025R1 (or newer version) in the Desktop left hand side menu
-::: Click the "Workbench (VNC)" icon located in the Jupyter Lab desktop center window
-::: Since the default icon is configured for a gpu node, we must customize it so
-::: workbench can be restart in mesa mode.  To proceed, Exit the Workbench desktop,
-::: open a terminal window, and run the following commands on the command line:
+::: Click the "Workbench (VNC)" icon located in the Jupyter Lab desktop center window.
+:::: If the graphics of any application (such as fluent) started within workbench
+:::: appear unusable due to corrupted graphics then try carrying out the following
+:::: steps.  They will create a custom runwb2 desktop icon so that workbench
+:::: can be started mesa mode.  If the one of the applications that you will be starting
+:::: in workbench is fluent then when the Fluent launcher starts you may also try setting
+:::: HOOPS_PICTURE=opengl2-mesa variable in the Fluent Launcher window.
+::: To proceed, exit Workbench and then open a terminal window.  Copy paste the following
+::: command into the Remote Clipboard located in the top right corner of your jupyter desktop.
+::: Now the commands can be pasted into terminal ie)
 ::: cd ~/Desktop; cp -p $(realpath workbench.desktop) workbench-mesa.desktop
-::: then edit workbench-mesa.desktop and change runwb2 -> runwb2 -oglmesa
-::: Save the file then click your newly customized icon to start workbench.
-::: Note the workbench icon that you created will persist for future sessions
-::: until manually deleted with: rm -f ~/Desktop/workbench-mesa.desktop
+::: Open the newly created file in a text editor such as nano by doing the following:
+::: nano ~/Desktop/workbench-mesa.desktop.  Change all instances of runwb2
+::: to  runwb2 -oglmesa and then exit the editor saving the changes.  Now REFRESH
+::: the Jupyter desktop by pressing the key combination control-R.  The new icon should now
+::: appear in the desktop along with the original workbench icon. Double click it to start workbench.
+::: The new icon will persist for future sessions until manually deleted with the command
+::: rm -f ~/Desktop/workbench-mesa.desktop.
 
 Compute Node (with GPU requested)
 
@@ -357,13 +362,12 @@ Compute Node (with GPU requested)
 ::: ensight -X
 
 === Rocky ===
-::: module load StdEnv/2023 ansys/2025R1 (or newer versions)
-::: export PATH=$EBROOTANSYS/v251/rocky:$PATH (path to be included in future module versions)
+::: module load StdEnv/2023 ansys/2025R2.04 (or 2025R1, 2025R1.02, 2025R2)
 ::: Rocky The ansys module handles reading your ~/licenses/ansys.lic
-::: RockySolver Run rocky solver directly from command line (add -h for help, untested)
-::: RockySchedular Start rocky schedular gui to submit/run jobs on present node (untested)
+::: RockySolver Run the solver directly from command line (untested)
+::: RockySchedular Start the schedular gui to submit/run jobs on present node (untested)
+::: o Rocky supports GPU-accelerated computing, however this capability is currently untested
 ::: o The SHARCNET license includes Rocky and is therefore free for all researchers to use
-::: o Rocky supports GPU-accelerated computing however this capability not been tested or documented yet
 
 == Electronics ==
 

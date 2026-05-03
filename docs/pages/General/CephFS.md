@@ -2,7 +2,7 @@
 title: "CephFS/en"
 url: "https://docs.alliancecan.ca/wiki/CephFS/en"
 category: "General"
-last_modified: "2026-01-21T14:04:10Z"
+last_modified: "2026-04-21T22:39:17Z"
 page_id: 20857
 display_title: "CephFS"
 ---
@@ -84,9 +84,9 @@ We can see that the CephFS network is attached to the first VM.
 
 === Required packages for the Red Hat family (RHEL, CentOS, Fedora, Rocky, Alma ) ===
 Check the available releases at https://download.ceph.com/ and look for recent rpm-* directories.
-As of July 2024, quincy is the latest stable release.
-The compatible distributions (distros) are listed at https://download.ceph.com/rpm-quincy/.
-Here we show configuration examples for Enterprise Linux 8 and Enterprise Linux 9.
+As of April 2026, tentacle is the latest stable release.
+The compatible distributions (distros) are listed at https://download.ceph.com/rpm-tentacle/.
+Here we show configuration examples for Enterprise Linux 9 and derivatives. As of April 2026, the CephFS client is not available for Enterprise Linux 10 and derivatives.
 
 ; Install relevant repositories for access to ceph client packages:
 
@@ -99,11 +99,11 @@ You can now install the ceph lib, cephfs client and other dependencies:
 === Required packages for the Debian family (Debian, Ubuntu, Mint, etc.) ===
 You can get the repository once you have figured out your distro {codename} with lsb_release -sc
 
-sudo apt-add-repository 'deb https://download.ceph.com/debian-quincy/ {codename} main'
+sudo apt-add-repository 'deb https://download.ceph.com/debian-tentacle/ {codename} main'
 
 If the previous command gave an error, revert it with the following command and go to the next step:
 
-sudo add-apt-repository -r 'deb https://download.ceph.com/debian-quincy/ {codename} main'
+sudo add-apt-repository -r 'deb https://download.ceph.com/debian-tentacle/ {codename} main'
 
 You can now install the ceph lib, cephfs client and other dependencies:
 

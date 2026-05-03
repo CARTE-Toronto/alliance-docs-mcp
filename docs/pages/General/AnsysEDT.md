@@ -1,9 +1,9 @@
 ---
-title: "AnsysEDT/en"
-url: "https://docs.alliancecan.ca/wiki/AnsysEDT/en"
+title: "AnsysEDT"
+url: "https://docs.alliancecan.ca/wiki/AnsysEDT"
 category: "General"
-last_modified: "2026-02-17T08:08:54Z"
-page_id: 28884
+last_modified: "2026-04-23T14:28:09Z"
+page_id: 28712
 display_title: "AnsysEDT"
 ---
 
@@ -26,7 +26,7 @@ Jobs may be submitted to a cluster queue with the sbatch script-name.sh command 
 
 = Graphical use =
 
-To run starccm+ in graphical mode use an  OnDemand or JupyterLab system to start a remote desktop as follows:
+To run AnsysEDT in graphical mode use an  OnDemand or JupyterLab system to start a remote desktop as follows:
 
 == OnDemand ==
 

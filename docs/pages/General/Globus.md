@@ -2,7 +2,7 @@
 title: "Globus/en"
 url: "https://docs.alliancecan.ca/wiki/Globus/en"
 category: "General"
-last_modified: "2026-01-29T14:35:28Z"
+last_modified: "2026-04-29T15:46:06Z"
 page_id: 222
 display_title: "Globus"
 ---
@@ -138,7 +138,7 @@ Otherwise you will receive the error:
 
 ==== Step 3 - Configure a shared collection on Globus ====
 
-Log into the Alliance Globus portal with your Globus credentials. Once you are logged in, you will see a transfer window. In the endpoint field, type the endpoint identifier for the endpoint you wish to share from (e.g. alliancecan#fir, computecanada#graham-globus, alliancecan#rorqual, alliancecan#trillium_home etc.) and activate the endpoint if asked to.
+Log into the Alliance Globus portal with your Globus credentials. Once you are logged in, you will see a transfer window. In the endpoint field, type the endpoint identifier for the endpoint you wish to share from (e.g. alliancecan#fir, computecanada#graham-globus, alliancecan#rorqual, etc.) and activate the endpoint if asked to. Note that on Trillium, there is no share via Globus.
 
 Select a folder that you wish to share, then click the Share button to the right of the folder list.
 
@@ -230,7 +230,7 @@ Server is designed for headless (command line only, no GUI) installations and ha
 
 == Object storage on Arbutus ==
 
-Accessing the object storage requires a cloud project with object storage allocated. The steps below are only needed once.
+Please note that these instructions now refer to accessing Legacy Arbutus Object Storage only. Accessing the object storage requires a cloud project with object storage allocated. The steps below are only needed once.
 To access the Arbutus object storage, generate the storage access ID and secret key with the OpenStack command line client.
 1. Import your credentials with source -openrc.sh.
 2. Create the storage access ID and secret key with openstack ec2 credentials create.

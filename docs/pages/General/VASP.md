@@ -2,7 +2,7 @@
 title: "VASP/en"
 url: "https://docs.alliancecan.ca/wiki/VASP/en"
 category: "General"
-last_modified: "2026-02-03T15:23:01Z"
+last_modified: "2026-04-21T22:39:12Z"
 page_id: 4649
 display_title: "VASP"
 ---
@@ -126,11 +126,12 @@ Alternatively to build a custom version of VASP, please see Installing software 
 Installing VASP 5 or Installing VASP 6.
 
 Recipe Name              	Version	Environment	Source file           	CPU/GPU	VTSTtools	vaspSOL
-VASP-5.4.4-iimpi-2020a.eb	5.4.4  	StdEnv/2023	vasp.5.4.4.pl2.tgz    	CPU    	yes      	yes
+VASP-5.4.4-iimpi-2020a.eb	5.4.4  	StdEnv/2020	vasp.5.4.4.pl2.tgz    	CPU    	yes      	yes
 VASP-6.1.2-iimpi-2020a.eb	6.1.2  	StdEnv/2020	vasp.6.1.2_patched.tgz	CPU    	yes      	yes
 VASP-6.2.1-iimpi-2020a.eb	6.2.1  	StdEnv/2020	vasp.6.2.1.tgz        	CPU    	yes      	yes
 VASP-6.3.0-iimpi-2020a.eb	6.3.0  	StdEnv/2020	vasp.6.3.0.tgz        	CPU    	yes      	yes
 VASP-6.3.1-iimpi-2020a.eb	6.3.1  	StdEnv/2020	vasp.6.3.1.tgz        	CPU    	yes      	yes
+VASP-5.4.4-iimpi-2023a.eb	5.4.4  	StdEnv/2023	vasp.5.4.4.pl2.tgz    	CPU    	yes      	yes
 VASP-6.4.2-iimpi-2023a.eb	6.4.2  	StdEnv/2023	vasp.6.4.2.tar        	CPU    	yes      	yes
 VASP-6.4.3-iimpi-2023a.eb	6.4.3  	StdEnv/2023	vasp.6.4.3.tar        	CPU    	yes      	yes
 VASP-6.5.0-iimpi-2023a.eb	6.5.0  	StdEnv/2023	vasp.6.5.0.tgz        	CPU    	No       	No
