@@ -2,7 +2,7 @@
 title: "Using a resource allocation/en"
 url: "https://docs.alliancecan.ca/wiki/Using_a_resource_allocation/en"
 category: "General"
-last_modified: "2024-06-11T18:00:31Z"
+last_modified: "2026-04-29T20:10:02Z"
 page_id: 10335
 display_title: "Using a resource allocation"
 ---
@@ -25,7 +25,7 @@ In general, there are two main types of RAPs:
 *Default RAP: A default RAP is automatically created when a PI role is activated. Default quotas and Rapid Access Service quotas for storage and cloud resources are managed via this default RAP. The Default RAP allows PIs and sponsored users to make opportunistic use of compute resources with the default (that is, the lowest) priority. The default RAPI typically takes the form abc-123-aa and has an associated group name that follows the convention def-profname.
 *RAC RAP: This RAP is created when the PI receives an award through the Resource Allocation Competition. The RAC RAPI typically takes the form abc-123-ab, with an associated group name that follows the convention rrg-profname or rpp-profname for HPC resources, or cpp-profname or crg-profname for cloud resources.
 
-A RAC award consists of one or more allocations.  Each allocation consists of a resource (such as graham-cpu, graham-gpu, graham-storage) and an amount, and has a designation like abc-123-aa-001.
+A RAC award consists of one or more allocations.  Each allocation consists of a resource (such as nibi-cpu, nibi-gpu, nibi-storage) and an amount, and has a designation like abc-123-aa-001.
 
 You can find RAPIs and their corresponding group names and allocations by visiting the CCDB portal.
 See Running jobs: Accounts and projects for an illustration.
@@ -38,9 +38,11 @@ Alliance accounts are per person: Account sharing is strictly forbidden. Each of
 
 = Information on each resource =
 
-For more information, please click on the tab below corresponding to where you have been granted resources.  General-purpose clusters are Béluga, Cedar, and Graham.   More than one tab may apply if, for example, you have been granted an allocation on both Niagara and a general-purpose cluster.
+For more information, please click on the tab below corresponding to where you have been granted resources.  General-purpose clusters are Rorqual, Fir, Nibi and Narval.   More than one tab may apply if, for example, you have been granted an allocation on both Trillium and a general-purpose cluster.
 
 === Who can use the allocation? ===
+
+Note: Information in this section is for RAC allocations and RAC projects.
 
 By default, every role that you have sponsored through your Alliance CCDB registration has access to your RAC award. Any co-PIs that were listed on your RAC application will also have access.
 

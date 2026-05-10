@@ -2,45 +2,45 @@
 title: "Scheduling policy updates/en"
 url: "https://docs.alliancecan.ca/wiki/Scheduling_policy_updates/en"
 category: "General"
-last_modified: "2026-04-17T16:30:01Z"
+last_modified: "2026-04-30T16:36:23Z"
 page_id: 32978
 display_title: "Scheduling policy updates"
 ---
 
-This page is intended to record when changes to job scheduling policies are made
-which might change the behaviour of job submission commands (sbatch, salloc, srun).
+This page records changes to job scheduling policies
+which might affect the behaviour of job submission commands sbatch, salloc and  srun.
 
-== Account related changes ==
+== Accounts ==
 
 === RAC allocations ===
 
 * RAC 2026 accounts activated
-** fir: 2026-04-06
-** nibi: 2026-04-06
-** narval: 2026-04-07
-** rorqual: 2026-04-07
+** Fir: 2026-04-06
+** Nibi: 2026-04-06
+** Narval: 2026-04-07
+** Rorqual: 2026-04-07
 
-=== Other policy changes on accounts ===
+=== Other account updates ===
 
-* Sub-allocations enabled
-** fir: 2026-04-06
-** nibi: 2026-04-06
-** narval: 2026-04-07
-** rorqual: 2026-04-07
+* Sub-allocations available
+** Fir: 2026-04-06
+** Nibi: 2026-04-06
+** Narval: 2026-04-07
+** Rorqual: 2026-04-07
 
-== CPU jobs related changes ==
+== CPU jobs ==
 
-(None at the moment)
+(none as of May 1, 2026)
 
-== GPU jobs related changes ==
+== GPU jobs ==
 
-* All GPU requests must specify a GPU or instance model
-** fir: 2026-04-06
-** nibi: 2026-04-06
-** narval: [not done yet]
-** rorqual: 2026-04-17
-* Multiple MIGs cannot be requested in a single job
-** fir: 2026-04-06
-** nibi: 2026-04-06
-** narval: [not done yet]
-** rorqual: 2026-04-17
+* All GPU requests must specify a GPU model or an instance model
+** Fir: 2026-04-06
+** Nibi: 2026-04-06
+** Narval: (coming soon)
+** Rorqual: 2026-04-17
+* Only one MIG instance may be requested at a time
+** Fir: 2026-04-06
+** Nibi: 2026-04-06
+** Narval: (coming soon)
+** Rorqual: 2026-04-17

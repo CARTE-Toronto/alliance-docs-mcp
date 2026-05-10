@@ -2,7 +2,7 @@
 title: "Ansys/en"
 url: "https://docs.alliancecan.ca/wiki/Ansys/en"
 category: "General"
-last_modified: "2026-05-01T22:06:12Z"
+last_modified: "2026-05-05T21:17:00Z"
 page_id: 4948
 display_title: "Ansys"
 ---
@@ -223,11 +223,9 @@ Ansys allocates 1024 MB total memory and 1024 MB database memory by default for 
 
 == Rocky ==
 
-Besides being able to run simulations in gui mode (as discussed in the Graphical usage section below) Ansys Rocky can also run simulations in non-gui mode.  Both modes support running Rocky with cpus only or with cpus and gpus.  Use of the ansysrocky/2024R2.0 module locally installed only on nibi and loadable by doing module load ansysrocky/2024R2.0 StdEnv/2023 ansys/2024R2.04 should be discontinued as it is no longer supported and will be removed.  Instead use Rocky included within the ansys/2025R1 module (and future versions that will be installed) available on all clusters.
+This section provides sample slurm scripts to solve standalone non-coupled Rocky simulations in a cluster queue. Both scripts are configured with RESUME=0 so simulations are solved from the beginning by default.  To restart a partially completed simulation set RESUME=1 and resubmit the script to the queue.  To get a full listing of command line options run Rocky -h on the command line after loading the ansys module.  Since a lock file is generated every time a simulation is started, only one job should be submitted at a time from the same directory. Regarding which script to use, while all simulations should be tested independently, for a basic test case the GPU only script was found to outperform the CPU only script by a factor of 3.5x. Further increases in resources beyond 6cpus (for the CPU only script) or 2cpu + 1g (1/7 of a H100 gpu for the GPU based script) provided no further speedup based on scaling testing for either script.   Given these results it appears likely the GPU based script will provide significantly faster solution times compared to just using CPUS for other standalone Rocky simulations.  As shown in on each cluster wiki page or as summarized on in https://docs.alliancecan.ca/wiki/Allocations_and_compute_scheduling#Ratios_in_bundles all clusters but narval have H100 gpus.  Therefore when using the GPU script on Narval the --gpus slurm option should be changed to instead request an a100 gpu.  Note that at this time only Rocky with the ansys/2025R2|2.04 modules have been tested but not the ansys/2025R1|1.02 modules yet.
 
 === Slurm scripts ===
-
-To get a full listing of command line options run Rocky -h on the command line after loading the ansys module.  If Rocky is being run with gpus to solve a coupled problem, the number of cpus requested from slurm should be increased to a maximum until the scalability limit of the coupled application is reached. If Rocky is being run with gpus to solve a standalone uncoupled problem, then a minimal number of cpus should be requested for Rocky to run optimally. The two slurm scripts below show how to run a basic standalone Rocky simulation.  Some customizations maybe required to run them on different clusters.
 
 == Electronics ==
 
@@ -363,11 +361,11 @@ Compute Node (with GPU requested)
 
 === Rocky ===
 ::: module load StdEnv/2023 ansys/2025R2.04 (or 2025R1, 2025R1.02, 2025R2)
-::: Rocky The ansys module handles reading your ~/licenses/ansys.lic
+::: Rocky The Rocky command starts rocky in standalone gui mode
 ::: RockySolver Run the solver directly from command line (untested)
-::: RockySchedular Start the schedular gui to submit/run jobs on present node (untested)
-::: o Rocky supports GPU-accelerated computing, however this capability is currently untested
-::: o The SHARCNET license includes Rocky and is therefore free for all researchers to use
+::: RockySchedular Gui to interactively submit/run jobs on present node (untested)
+::: o The ansys module handles reading your ~/licenses/ansys.lic file
+::: o The SHARCNET ansys license includes Rocky thus free to use
 
 == Electronics ==
 

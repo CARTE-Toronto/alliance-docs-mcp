@@ -2,7 +2,7 @@
 title: "Bioinformatics/en"
 url: "https://docs.alliancecan.ca/wiki/Bioinformatics/en"
 category: "General"
-last_modified: "2025-05-26T09:45:20Z"
+last_modified: "2026-04-29T20:10:02Z"
 page_id: 5198
 display_title: "Bioinformatics"
 ---
@@ -27,6 +27,29 @@ Much bioinformatics software is available as Python packages.
 Python packages which have been customized for use on our systems are listed at Available Python wheels.
 Packages not found there may be obtained from the internet in the usual fashion.
 See Python for guidance on both these things.
+
+== useGalaxy.ca ==
+
+UseGalaxy.ca is the main Canadian public Galaxy server. It provides a web-based interface for running bioinformatics analyses, workflows, and data visualization tasks without requiring users to work directly on the command line.
+
+UseGalaxy.ca is useful for researchers who want to perform common life-science data analyses through a graphical interface. It provides access to community-maintained tools, workflows, reference genomes, annotation datasets, and training resources. Users can log in using supported institutional authentication or Google authentication.
+
+UseGalaxy.ca may be a good option when:
+
+* you prefer a web-based interface instead of command-line tools;
+* you want to run standard bioinformatics workflows without installing software locally;
+* you want to learn, teach, or share reproducible bioinformatics workflows;
+* your analysis fits within the policies and resource limits of the public Galaxy service.
+
+For more information, please refer to our TUD at: https://docs.alliancecan.ca/wiki/Galaxy
+
+Useful links:
+
+* UseGalaxy.ca start page
+* About UseGalaxy.ca
+* Data transfer options
+* Acceptable use policy
+* Service levels and data retention
 
 =Data=
 

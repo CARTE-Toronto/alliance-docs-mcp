@@ -1,9 +1,9 @@
 ---
-title: "OpenMM"
-url: "https://docs.alliancecan.ca/wiki/OpenMM"
+title: "OpenMM/en"
+url: "https://docs.alliancecan.ca/wiki/OpenMM/en"
 category: "General"
-last_modified: "2026-03-09T21:46:17Z"
-page_id: 19215
+last_modified: "2026-04-29T20:20:22Z"
+page_id: 19330
 display_title: "OpenMM"
 ---
 
@@ -24,13 +24,13 @@ OpenMMOpenMM home page: https://openmm.org/ is an open-source molecular dynamics
 
 =  Environment modules =
 
-$ module load StdEnv/2023 gcc/12.3 openmpi/4.1.5 cuda/12.6 openmm/8.4.0 ambertools/25.0
+ $ module load StdEnv/2023 gcc/12.3 openmpi/4.1.5 cuda/12.6 openmm/8.4.0 ambertools/25.0
 
 Note: The ambertools module is optional and required only if you plan to simulate AMBER-prepared systems.
 
 Optionally, create a Python virtual environment if you want to install extra packages (e.g., ML potentials).
 
-= Preparing Input Files =
+= Preparing input files =
 
 OpenMM can directly read Amber topology and coordinate/restart files if simulating AMBER systems.
 

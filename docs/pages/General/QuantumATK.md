@@ -1,9 +1,9 @@
 ---
-title: "QuantumATK"
-url: "https://docs.alliancecan.ca/wiki/QuantumATK"
+title: "QuantumATK/en"
+url: "https://docs.alliancecan.ca/wiki/QuantumATK/en"
 category: "General"
-last_modified: "2026-02-24T18:35:42Z"
-page_id: 15593
+last_modified: "2026-04-29T20:10:02Z"
+page_id: 19833
 display_title: "QuantumATK"
 ---
 
@@ -26,6 +26,6 @@ Researchers who purchase a QuantumATK license subscription from CMC may use the 
 * Fir: SERVER 172.26.0.101 ANY 6053
 * Narval: SERVER 10.100.64.10 ANY 6053
 * Rorqual: SERVER 10.100.64.10 ANY 6053
-* Trillium: SERVER nia-cmc ANY 6053
+* Trillium: SERVER scinet-cmc ANY 6053
 
 If initial license checkout attempts fail, create a support case with CMC.

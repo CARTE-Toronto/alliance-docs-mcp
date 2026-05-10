@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-03T07:46:45.787766+00:00",
+  "last_updated": "2026-05-10T07:55:34.844519+00:00",
   "total_pages": 454,
   "pages": [
     {
@@ -250,7 +250,7 @@
       "title": "Ansys/en",
       "url": "https://docs.alliancecan.ca/wiki/Ansys/en",
       "category": "General",
-      "last_modified": "2026-05-01T22:06:12Z",
+      "last_modified": "2026-05-05T21:17:00Z",
       "file_path": "docs/pages/General/Ansys.md",
       "slug": "Ansys"
     },
@@ -304,7 +304,7 @@
       "title": "Arbutus Migration Guide/en",
       "url": "https://docs.alliancecan.ca/wiki/Arbutus_Migration_Guide/en",
       "category": "User Guide",
-      "last_modified": "2026-04-05T19:03:02Z",
+      "last_modified": "2026-05-08T22:47:02Z",
       "file_path": "docs/pages/User Guide/Arbutus_Migration_Guide.md",
       "slug": "Arbutus_Migration_Guide"
     },
@@ -463,10 +463,10 @@
     },
     {
       "page_id": 5198,
-      "title": "Bioinformatics",
+      "title": "Bioinformatics/en",
       "url": "https://docs.alliancecan.ca/wiki/Bioinformatics/en",
       "category": "General",
-      "last_modified": "2025-05-26T09:45:20Z",
+      "last_modified": "2026-04-29T20:10:02Z",
       "file_path": "docs/pages/General/Bioinformatics.md",
       "slug": "Bioinformatics"
     },
@@ -1282,10 +1282,10 @@
     },
     {
       "page_id": 15711,
-      "title": "Galaxy",
+      "title": "Galaxy/en",
       "url": "https://docs.alliancecan.ca/wiki/Galaxy/en",
       "category": "General",
-      "last_modified": "2025-09-10T18:32:40Z",
+      "last_modified": "2026-05-01T12:18:53Z",
       "file_path": "docs/pages/General/Galaxy.md",
       "slug": "Galaxy"
     },
@@ -1960,7 +1960,7 @@
       "title": "Modules avx2",
       "url": "https://docs.alliancecan.ca/wiki/Modules_avx2",
       "category": "General",
-      "last_modified": "2026-04-17T19:40:24Z",
+      "last_modified": "2026-05-08T20:54:59Z",
       "file_path": "docs/pages/General/Modules_avx2.md",
       "slug": "Modules_avx2"
     },
@@ -2299,10 +2299,10 @@
     },
     {
       "page_id": 19330,
-      "title": "OpenMM",
+      "title": "OpenMM/en",
       "url": "https://docs.alliancecan.ca/wiki/OpenMM/en",
       "category": "General",
-      "last_modified": "2024-10-16T16:58:41Z",
+      "last_modified": "2026-04-29T20:20:22Z",
       "file_path": "docs/pages/General/OpenMM.md",
       "slug": "OpenMM"
     },
@@ -2596,10 +2596,10 @@
     },
     {
       "page_id": 19833,
-      "title": "QuantumATK",
+      "title": "QuantumATK/en",
       "url": "https://docs.alliancecan.ca/wiki/QuantumATK/en",
       "category": "General",
-      "last_modified": "2025-10-07T15:04:23Z",
+      "last_modified": "2026-04-29T20:10:02Z",
       "file_path": "docs/pages/General/QuantumATK.md",
       "slug": "QuantumATK"
     },
@@ -3370,10 +3370,10 @@
     },
     {
       "page_id": 10335,
-      "title": "Using a resource allocation",
+      "title": "Using a resource allocation/en",
       "url": "https://docs.alliancecan.ca/wiki/Using_a_resource_allocation/en",
       "category": "General",
-      "last_modified": "2024-06-11T18:00:31Z",
+      "last_modified": "2026-04-29T20:10:02Z",
       "file_path": "docs/pages/General/Using_a_resource_allocation.md",
       "slug": "Using_a_resource_allocation"
     },
@@ -3850,7 +3850,7 @@
       "title": "Trillium Open OnDemand Quickstart/en",
       "url": "https://docs.alliancecan.ca/wiki/Trillium_Open_OnDemand_Quickstart/en",
       "category": "General",
-      "last_modified": "2026-04-17T19:46:21Z",
+      "last_modified": "2026-04-29T20:10:02Z",
       "file_path": "docs/pages/General/Trillium_Open_OnDemand_Quickstart.md",
       "slug": "Trillium_Open_OnDemand_Quickstart"
     },
@@ -4018,12 +4018,12 @@
     },
     {
       "page_id": 32690,
-      "title": "DummyWheel/en",
-      "url": "https://docs.alliancecan.ca/wiki/DummyWheel/en",
+      "title": "Dummy wheel/en",
+      "url": "https://docs.alliancecan.ca/wiki/Dummy_wheel/en",
       "category": "General",
-      "last_modified": "2026-03-06T15:42:34Z",
-      "file_path": "docs/pages/General/DummyWheel.md",
-      "slug": "DummyWheel"
+      "last_modified": "2026-04-30T17:53:33Z",
+      "file_path": "docs/pages/General/Dummy_wheel.md",
+      "slug": "Dummy_wheel"
     },
     {
       "page_id": 32795,
@@ -4075,7 +4075,7 @@
       "title": "Scheduling policy updates/en",
       "url": "https://docs.alliancecan.ca/wiki/Scheduling_policy_updates/en",
       "category": "General",
-      "last_modified": "2026-04-17T16:30:01Z",
+      "last_modified": "2026-04-30T16:36:23Z",
       "file_path": "docs/pages/General/Scheduling_policy_updates.md",
       "slug": "Scheduling_policy_updates"
     },

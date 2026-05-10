@@ -1,5 +1,5 @@
 # Alliance Documentation - Page Directory
-# Generated: 2026-05-03T07:46:45.795408+00:00
+# Generated: 2026-05-10T07:55:34.850511+00:00
 # Total pages: 454
 
 - A tutorial on 'tar' (User Guide): https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/en
@@ -60,7 +60,7 @@
 - BUSCO/en (General): https://docs.alliancecan.ca/wiki/BUSCO/en
 - Backing up your VM (General): https://docs.alliancecan.ca/wiki/Backing_up_your_VM/en
 - Best practices for job submission (General): https://docs.alliancecan.ca/wiki/Best_practices_for_job_submission/en
-- Bioinformatics (General): https://docs.alliancecan.ca/wiki/Bioinformatics/en
+- Bioinformatics/en (General): https://docs.alliancecan.ca/wiki/Bioinformatics/en
 - Biomolecular simulation (General): https://docs.alliancecan.ca/wiki/Biomolecular_simulation/en
 - Biorepo containers (General): https://docs.alliancecan.ca/wiki/Biorepo_containers
 - BraCeR (General): https://docs.alliancecan.ca/wiki/BraCeR
@@ -132,7 +132,7 @@
 - Deepspeed (General): https://docs.alliancecan.ca/wiki/Deepspeed
 - Delft3D (General): https://docs.alliancecan.ca/wiki/Delft3D
 - Diskusage Explorer/en (General): https://docs.alliancecan.ca/wiki/Diskusage_Explorer/en
-- DummyWheel/en (General): https://docs.alliancecan.ca/wiki/DummyWheel/en
+- Dummy wheel/en (General): https://docs.alliancecan.ca/wiki/Dummy_wheel/en
 - EasyBuild (General): https://docs.alliancecan.ca/wiki/EasyBuild/en
 - Estimer et prévenir le gaspillage des ressources (General): https://docs.alliancecan.ca/wiki/Estimer_et_pr%C3%A9venir_le_gaspillage_des_ressources
 - FEniCS/en (General): https://docs.alliancecan.ca/wiki/FEniCS/en
@@ -160,7 +160,7 @@
 - GPAW (General): https://docs.alliancecan.ca/wiki/GPAW/en
 - GROMACS (General): https://docs.alliancecan.ca/wiki/GROMACS
 - GROMACS/en (General): https://docs.alliancecan.ca/wiki/GROMACS/en
-- Galaxy (General): https://docs.alliancecan.ca/wiki/Galaxy/en
+- Galaxy/en (General): https://docs.alliancecan.ca/wiki/Galaxy/en
 - Gaussian error messages (General): https://docs.alliancecan.ca/wiki/Gaussian_error_messages/en
 - Gaussian/en (General): https://docs.alliancecan.ca/wiki/Gaussian/en
 - General directives for migration (General): https://docs.alliancecan.ca/wiki/General_directives_for_migration/en
@@ -287,8 +287,8 @@
 - OpenCV/en (General): https://docs.alliancecan.ca/wiki/OpenCV/en
 - OpenFOAM (General): https://docs.alliancecan.ca/wiki/OpenFOAM/en
 - OpenFOAM (General): https://docs.alliancecan.ca/wiki/OpenFOAM
-- OpenMM (General): https://docs.alliancecan.ca/wiki/OpenMM/en
 - OpenMM (General): https://docs.alliancecan.ca/wiki/OpenMM
+- OpenMM/en (General): https://docs.alliancecan.ca/wiki/OpenMM/en
 - OpenMP (General): https://docs.alliancecan.ca/wiki/OpenMP/en
 - OpenMolcas (General): https://docs.alliancecan.ca/wiki/OpenMolcas
 - OpenSim (General): https://docs.alliancecan.ca/wiki/OpenSim
@@ -321,8 +321,8 @@
 - QIIME (General): https://docs.alliancecan.ca/wiki/QIIME/en
 - Qiskit/en (General): https://docs.alliancecan.ca/wiki/Qiskit/en
 - Quantum ESPRESSO (General): https://docs.alliancecan.ca/wiki/Quantum_ESPRESSO/en
-- QuantumATK (General): https://docs.alliancecan.ca/wiki/QuantumATK/en
 - QuantumATK (General): https://docs.alliancecan.ca/wiki/QuantumATK
+- QuantumATK/en (General): https://docs.alliancecan.ca/wiki/QuantumATK/en
 - R-INLA (General): https://docs.alliancecan.ca/wiki/R-INLA/en
 - R/en (General): https://docs.alliancecan.ca/wiki/R/en
 - RAC Annual Reports (General): https://docs.alliancecan.ca/wiki/RAC_Annual_Reports/en
@@ -415,7 +415,7 @@
 - Using SSH keys in Linux (General): https://docs.alliancecan.ca/wiki/Using_SSH_keys_in_Linux/en
 - Using a new empty volume on a Linux VM (General): https://docs.alliancecan.ca/wiki/Using_a_new_empty_volume_on_a_Linux_VM/en
 - Using a new empty volume on a Windows VM (General): https://docs.alliancecan.ca/wiki/Using_a_new_empty_volume_on_a_Windows_VM
-- Using a resource allocation (General): https://docs.alliancecan.ca/wiki/Using_a_resource_allocation/en
+- Using a resource allocation/en (General): https://docs.alliancecan.ca/wiki/Using_a_resource_allocation/en
 - Using cloud vGPUs (General): https://docs.alliancecan.ca/wiki/Using_cloud_vGPUs/en
 - Using ipv6 in cloud (General): https://docs.alliancecan.ca/wiki/Using_ipv6_in_cloud/en
 - Using nearline storage (General): https://docs.alliancecan.ca/wiki/Using_nearline_storage
