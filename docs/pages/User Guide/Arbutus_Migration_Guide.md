@@ -2,12 +2,12 @@
 title: "Arbutus Migration Guide/en"
 url: "https://docs.alliancecan.ca/wiki/Arbutus_Migration_Guide/en"
 category: "User Guide"
-last_modified: "2026-05-08T22:47:02Z"
+last_modified: "2026-05-11T19:39:48Z"
 page_id: 9289
 display_title: "Arbutus Migration Guide"
 ---
 
-This document describes how to migrate virtual machine (VM) instances from the legacy Arbutus Cloud to the new Arbutus Cloud. Because you know your workload best, we recommend that you migrate your instances yourself, according to your own application requirements and schedule.
+This document describes how to migrate virtual machine (VM) instances from the legacy (that is, old) Arbutus Cloud to the new Arbutus Cloud. Because you know your workload best, we recommend that you migrate your instances yourself, according to your own application requirements and schedule.
 
 Migration is necessary for all cloud resources (e.g., instances, storage volumes, object storage containers, networks, keys, etc.) currently on the legacy Arbutus Cloud because it will be decommissioned in 2026. The deadline for both RAS and RAC projects to migrate to the new Arbutus Cloud is August 31, 2026.
 
@@ -226,13 +226,13 @@ There are several steps that need to be taken in order to make this work. The si
 ## Install Globus Connect Personal on each instance, using the proper guide. The guide for Linux is https://docs.globus.org/how-to/globus-connect-personal-linux/.
 ## Adjust instances’ configuration to enable communication with the Globus Service:
 ### Ensure each VM has an external IP address.
-### Ensure firewall rules on your VMs permit communication on the necessary ports.  See also Managing_your_cloud_resources_with_OpenStack#Security_Groups.
+### Ensure firewall rules on your VMs permit communication on the necessary ports.  See also Security groups.
 ### The user running Globus Connect Personal must have access to data on the instances’ storage systems.
 ## Run Globus Connect Personal as a background process in the user space.
 ## As a Globus Connect Personal Plus subscriber (enabled in step 1), create a shared endpoint on one or both VMs.
 # Using any Globus Interface (globus.org, globus.computecanada.ca) access both endpoints just created and transfer data:
 ## Read data transfer manual here https://docs.globus.org/how-to/get-started/.
-## Additional instructions here https://docs.alliancecan.ca/wiki/Globus#Transfer_between_two_personal_endpoints.
+## Additional instructions here Transfer between two personal endpoints.
 
 For more on configuration details, see: https://computecanada.github.io/DHSI-cloud-course/globus/
 
@@ -252,11 +252,11 @@ A typical use case would be:
 
 Once your data is transferred to the new instance, there may be some post-transfer configurations required, for example:
 
-# updating firewall rules to use any new IP addresses and networks if a host-based firewall (e.g. iptables, firewalld, etc.) is used;
-# working with your DNS provider to update DNS entries for any custom domains (e.g., www.myarbutusproject.ca);
-# updating IP addresses in configuration files (e.g., /etc/hosts, /etc/resolv.conf, /etc/haproxy/haproxy.cfg, /var/www/ /var/lib/pgsql/data/pg_hba.conf);
-# altering usernames (e.g., 'root'@'192.168.65.%) in MySQL;
-# renewing Let’s Encrypt Transport Layer Security (TLS) certificates using certbot or other utilities if, for example, there are IP addresses in the certificate’s Subject Alternate Name (SAM).
+* updating firewall rules to use any new IP addresses and networks if a host-based firewall (e.g. iptables, firewalld, etc.) is used;
+* working with your DNS provider to update DNS entries for any custom domains (e.g., www.myarbutusproject.ca);
+* updating IP addresses in configuration files (e.g., /etc/hosts, /etc/resolv.conf, /etc/haproxy/haproxy.cfg, /var/www/ /var/lib/pgsql/data/pg_hba.conf);
+* altering usernames (e.g., 'root'@'192.168.65.%) in MySQL;
+* renewing Let’s Encrypt Transport Layer Security (TLS) certificates using certbot or other utilities if, for example, there are IP addresses in the certificate’s Subject Alternate Name (SAM).
 
 Make sure you test the configuration before informing your research team and users that the migration has been completed.
 

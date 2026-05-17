@@ -1,5 +1,5 @@
 # Alliance Documentation - Page Directory
-# Generated: 2026-05-10T07:55:34.850511+00:00
+# Generated: 2026-05-17T08:09:24.409188+00:00
 # Total pages: 454
 
 - A tutorial on 'tar' (User Guide): https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/en
@@ -205,7 +205,7 @@
 - JupyterNotebook (General): https://docs.alliancecan.ca/wiki/JupyterNotebook/en
 - Kentutils (General): https://docs.alliancecan.ca/wiki/Kentutils
 - Keras (General): https://docs.alliancecan.ca/wiki/Keras/en
-- Killarney (General): https://docs.alliancecan.ca/wiki/Killarney/en
+- Killarney/en (General): https://docs.alliancecan.ca/wiki/Killarney/en
 - LAMMPS (General): https://docs.alliancecan.ca/wiki/LAMMPS/en
 - LS-DYNA (General): https://docs.alliancecan.ca/wiki/LS-DYNA/en
 - LS-DYNA (General): https://docs.alliancecan.ca/wiki/LS-DYNA
@@ -403,7 +403,7 @@
 - Trillium (General): https://docs.alliancecan.ca/wiki/Trillium
 - Trillium Open OnDemand Quickstart (General): https://docs.alliancecan.ca/wiki/Trillium_Open_OnDemand_Quickstart
 - Trillium Open OnDemand Quickstart/en (General): https://docs.alliancecan.ca/wiki/Trillium_Open_OnDemand_Quickstart/en
-- Trillium Quickstart (General): https://docs.alliancecan.ca/wiki/Trillium_Quickstart/en
+- Trillium Quickstart/en (General): https://docs.alliancecan.ca/wiki/Trillium_Quickstart/en
 - Trillium/en (General): https://docs.alliancecan.ca/wiki/Trillium/en
 - Tuning Lustre (General): https://docs.alliancecan.ca/wiki/Tuning_Lustre/en
 - Tutoriel Apprentissage machine (General): https://docs.alliancecan.ca/wiki/Tutoriel_Apprentissage_machine/en

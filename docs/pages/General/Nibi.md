@@ -2,7 +2,7 @@
 title: "Nibi/en"
 url: "https://docs.alliancecan.ca/wiki/Nibi/en"
 category: "General"
-last_modified: "2026-04-15T22:23:06Z"
+last_modified: "2026-05-07T16:48:24Z"
 page_id: 27510
 display_title: "Nibi"
 ---
@@ -123,7 +123,11 @@ Nibi no longer offers Virtual Desktop Infrastructure (VDI). Instead, it provides
 
 ==AMD MI300A nodes==
 
-These should be currently scheduled as full nodes.  It is the user's responsibility to make sure the processes inside the job run with correct core and memory binding.  Here is a representative job script that uses 4 processes.
+At this time, the MI300A should be scheduled as full nodes.  It is the user's responsibility to make sure the processes inside the job run with the correct core and memory bindings.  Here is a representative job script that uses 4 processes.
+
+NOTE: Your code must be compiled with ROCm to use the MI300A nodes properly.  Code compiled with CUDA will not work, as it will not be able to use the AMD GPUs.
+
+As of May 2026, work has just started to support the MI300A in our software stack and there are no modules available with ROCm support.  You can install software yourself, building against the ROCm toolkit we installed in the /opt/rocm directory.   Please write to technical support if you run into problems.
 
 ==Oops, I accidentally deleted my files, what should I do?==
 A backup mechanism on Nibi takes a snapshot of your files on /home and /project every 30 minutes and saves the snapshots for two weeks.  If you accidentally delete a file, you may be able to retrieve it from these snapshots, providing the file was deleted less than two weeks ago.  However, if one makes changes to a file after the most recent snapshot then deletes it, the changes cannot be recovered.

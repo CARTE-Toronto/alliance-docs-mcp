@@ -2,7 +2,7 @@
 title: "AlphaFold3/en"
 url: "https://docs.alliancecan.ca/wiki/AlphaFold3/en"
 category: "General"
-last_modified: "2026-04-10T17:41:03Z"
+last_modified: "2026-05-07T20:27:38Z"
 page_id: 27116
 display_title: "AlphaFold3"
 ---

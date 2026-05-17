@@ -2,7 +2,7 @@
 title: "Killarney/en"
 url: "https://docs.alliancecan.ca/wiki/Killarney/en"
 category: "General"
-last_modified: "2025-11-03T20:57:05Z"
+last_modified: "2026-05-06T20:29:02Z"
 page_id: 28159
 display_title: "Killarney"
 ---
@@ -22,8 +22,10 @@ Killarney is currently open to Vector affiliated PIs with CCAI Chairs as well as
 ==Access==
 To access Killarney, each researcher must request access in the CCDB.
 
-Principal Investigators must be granted an AIP-type RAP (prefix aip- ) by their AI Institution. For the PI to sponsor researchers in their AIP RAP, the PI must:
+Principal Investigators must be granted an AIP-type RAP (prefix aip- ) by their AI Institution,
+or by applying for General Access to PAICE Systems.
 
+For the PI to sponsor researchers in their AIP RAP, the PI must:
 * Go to the "Resource Allocation Projects" table on the CCDB Home page.
 * Locate the RAPI of your AIP project (with the aip- prefix) and click on it to reach the RAP management page.
 * At the bottom of the RAP management page, click on "Manage RAP memberships."
@@ -33,9 +35,9 @@ To ensure the integrity and security of this resource, Vector enforces geo-block
 
 ==Killarney hardware specifications==
 
-Performance Tier   	Nodes	Model      	CPU                      	Cores	System Memory	GPUs per node           	Total GPUs
-Standard Compute   	168  	Dell 750xa 	2 x Intel Xeon Gold 6338 	64   	512 GB       	4 x NVIDIA L40S 48GB    	672
-Performance Compute	10   	Dell XE9680	2 x Intel Xeon Gold 6442Y	48   	2048 GB      	8 x NVIDIA H100 SXM 80GB	80
+Performance Tier   	Nodes	Model      	CPU                      	Cores	System Memory	Storage    	GPUs per node           	Total GPUs
+Standard Compute   	168  	Dell 750xa 	2 x Intel Xeon Gold 6338 	64   	512 GB       	350 GB SSD 	4 x NVIDIA L40S 48GB    	672
+Performance Compute	10   	Dell XE9680	2 x Intel Xeon Gold 6442Y	48   	2048 GB      	800 GB NVMe	8 x NVIDIA H100 SXM 80GB	80
 
 ==Storage system==
 

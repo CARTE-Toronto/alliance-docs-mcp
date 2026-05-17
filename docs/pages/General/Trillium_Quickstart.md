@@ -2,7 +2,7 @@
 title: "Trillium Quickstart/en"
 url: "https://docs.alliancecan.ca/wiki/Trillium_Quickstart/en"
 category: "General"
-last_modified: "2025-11-04T19:42:25Z"
+last_modified: "2026-05-07T20:02:06Z"
 page_id: 29436
 display_title: "Trillium Quickstart"
 ---
@@ -44,7 +44,7 @@ Please read this present document carefully.  The Frequently Asked Questions is 
 
 There are two ways to access Trillium:
 
-# Via your browser with Open OnDemand. This is recommended for users who are not familiar with Linux or the command line. Please see our quickstart guide for more instructions on how to use Open OnDemand.
+# Via your browser with Open OnDemand. This is recommended for users who are not familiar with Linux or the command line. Please see our Trillium Open OnDemand Quickstart guide for more instructions on how to use Open OnDemand.
 # Terminal access with ssh. Please read the following instructions.
 
 As with all SciNet and Alliance compute systems, access is done via SSH (secure shell). Furthermore, for Trillium specifically, authentication is only allowed via SSH keys that are uploaded to the CCDB.  Please refer to this page on how to generate your SSH key pair, upload, and use SSH Keys.
@@ -386,16 +386,16 @@ Runs the hybrid_example application. While SLURM will inform mpirun how many pro
 
 === Partitions and limits ===
 
-As with the CPU subcluster, there are limits to the size and duration of your jobs, the number of jobs you can run, and the number of jobs you can have queued, and whether a user is part of a group with a RAC allocation or not. There are more partitions for this subcluster than for the CPU subcluster to support scheduling by GPU instead of by node (each node has 4 GPUs).
+As with the CPU subcluster, on the GPU subcluster, there are limits to the size and duration of your jobs, the number of jobs you can run, and the number of jobs you can have queued, and whether a user is part of a group with a RAC allocation or not. There are more partitions for this subcluster than for the CPU subcluster to support scheduling by GPU instead of by node (each node has 4 GPUs).
 
 On Trillium, you are only allowed to request exactly 1 GPU or a multiple of 4 GPUs. You cannot request --gpus-per-node=2 or 3, nor can you use NVIDIA's MIG technology to allocate a subdivision of a GPU.  Inside a job, you can use NVIDIA's Multi-Process Service (MPS) to share a GPU among processes running on the same job.
 
 * For single-GPU jobs, use --gpus-per-node=1.
 * For whole-node GPU job, use --gpus-per-node=4.
 
-Usage           	Partition	Limit on Running jobs	Limit on Submitted jobs (incl. running)	Min. size of jobs              	Max. size of jobs                                                                                                                 	Min. walltime	Max. walltime
-GPU compute jobs	compute  	150                  	500                                    	1/4 node (24 cores / 1GPU)	default: 5 nodes (480 cores/20 GPUs)  with allocation: 25 nodes (2400 cores/100 GPUs)	15 minutes   	24 hours
-Testing GPU jobs	debug    	1                    	1                                      	1/4 node (24 cores / 1 GPU)    	2 nodes (192 cores/ 8 GPUs)                                                                                                       	N/A          	2 hours (1 GPU) - 30 minutes (8 GPUs)
+Usage           	Partition                                                                                                                      	Limit on Running jobs	Limit on Submitted jobs (incl. running)	Min. size of jobs              	Max. size of jobs                                                                                                                 	Min. walltime	Max. walltime
+GPU compute jobs	computeDo not specify this partition explicitly; you must allow the scheduler to select the appropriate partition for your job.	150                  	500                                    	1/4 node (24 cores / 1GPU)	default: 5 nodes (480 cores/20 GPUs)  with allocation: 25 nodes (2400 cores/100 GPUs)	15 minutes   	24 hours
+Testing GPU jobs	debug                                                                                                                          	1                    	1                                      	1/4 node (24 cores / 1 GPU)    	2 nodes (192 cores/ 8 GPUs)                                                                                                       	N/A          	2 hours (1 GPU) - 30 minutes (8 GPUs)
 
 Even if you respect these limits, your jobs will still have to wait in the queue. The waiting time depends on many factors such as your group's allocation amount, how much allocation has been used in the recent past, the number of requested nodes and walltime, and how many other jobs are waiting in the queue.
 
@@ -417,10 +417,10 @@ module load python/3.11.5
 source ~/myenv/bin/activate
 
 # Check GPU allocation
-srun nvidia-smi
+nvidia-smi
 
 # Run your workload
-srun python my_script.py
+python my_script.py
 
 === Example: Whole-Node (4 GPUs) Job ===
 
@@ -429,6 +429,7 @@ srun python my_script.py
 #SBATCH --output=whole_node_gpu_job_%j.out
 #SBATCH --nodes=1
 #SBATCH --gpus-per-node=4
+#SBATCH --ntasks-per-node=4
 #SBATCH --time=02:00:00
 
 module load StdEnv/2023
@@ -447,6 +448,7 @@ srun python my_distributed_script.py
 #SBATCH --output=multi_node_gpu_job_%j.out
 #SBATCH --nodes=2                        # Request 2 full nodes
 #SBATCH --gpus-per-node=4                # 4 GPUs per node (full node)
+#SBATCH --ntasks-per-node=4
 #SBATCH --time=04:00:00
 
 module load StdEnv/2023
